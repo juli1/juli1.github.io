@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>You break my Heart (Heartbleed for Dummies) - Julien Delange</title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="description" content="Tales of a guy living in Pittsburgh addicted with Computer-Science, Running and Peanut Butter">
+    <link rel="canonical" href="http://julien.gunnm.org/geek/2014/04/17/heartbleed-for-dummies/">
+
+    
+    <meta name="keywords" content="geek, heartbleed, nsa, privacy, security"/>
+    
+
+    <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/main.css">
+
+    <!-- Twitter Cards -->
+    <meta property="twitter:title" content="You break my Heart (Heartbleed for Dummies)" />
+    <meta property="twitter:description" content="Tales of a guy living in Pittsburgh addicted with Computer-Science, Running and Peanut Butter" />
+    <meta property="twitter:card" content="summary" />
+    <meta property="twitter:site" content="@juli1pb" />
+    <meta property="twitter:creator" content="@juli1pb" />
+    <meta property="twitter:image:src" content="/assets/profile.png"/>
+
+
+    <!-- Facebook opengraph -->
+    <meta property="og:site_name" content="Julien Delange" />
+    <meta property="og:type" content="article" />
+    <meta property="og:image" content="/assets/profile.png" />
+    <meta property="og:title" content="You break my Heart (Heartbleed for Dummies)" />
+    <meta property="og:description" content="Tales of a guy living in Pittsburgh addicted with Computer-Science, Running and Peanut Butter" />
+
+</head>
+
+
+    <body>
+
+    <header class="site-header">
+
+  <div class="wrap">
+
+    <a class="site-title" href="/">Julien Delange</a>
+
+    <nav class="site-nav">
+      <a href="#" class="menu-icon">
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+           viewBox="0 0 18 15" enable-background="new 0 0 18 15" xml:space="preserve">
+          <path fill="#505050" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0
+            h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#505050" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484
+            h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#505050" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0
+            c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </a>
+      <div class="trigger">
+         <a class="page-link" href="/work">Work</a>
+         <a class="page-link" href="/running">Running</a>
+
+         <a class="page-link" href="/blog">Blog</a>
+        <!-- 
+          
+        
+          <a class="page-link" href="/about/">About</a>
+        
+          <a class="page-link" href="/blog/">Blog</a>
+        
+          
+        
+          
+        
+          <a class="page-link" href="/running/">Running Agenda and Past Races</a>
+        
+          
+        
+          <a class="page-link" href="/work/">Projects & Publications</a>
+         -->
+         <a class="page-link" href="/about">About</a>
+      </div>
+    </nav>
+
+  </div>
+
+</header>
+
+
+    <div class="page-content">
+      <div class="wrap">
+      <div class="post">
+
+  <header class="post-header">
+    <h1>You break my Heart (Heartbleed for Dummies)</h1>
+    <p class="meta">
+      <!-- Apr 17, 2014 -->
+      <!--  • {"login"=>"juli1sod", "email"=>"julien@gunnm.org", "display_name"=>"juli1", "first_name"=>"", "last_name"=>""}
+       • {"_edit_last"=>"37961297", "_publicize_pending"=>"1", "publicize_facebook_url"=>"https://facebook.com/1479975995553695", "_wpas_done_6804551"=>"1", "_publicize_done_external"=>"a:1:{s:8:\"facebook\";a:1:{i:100006239262805;b:1;}}", "publicize_google_plus_url"=>"https://plus.google.com/115130796853491920531/posts/jZnqo8dSYfF", "_wpas_done_6804547"=>"1", "publicize_twitter_user"=>"juli1pb", "publicize_twitter_url"=>"http://t.co/L6pMKxQ2YY", "_wpas_done_7007816"=>"1", "_wpas_skip_6804551"=>"1", "_wpas_skip_6804547"=>"1", "_wpas_skip_7007816"=>"1"} -->
+   </p>
+  </header>
+
+  <article class="post-content">
+  <h1>A great catch</h1>
+<p>On April, 5 2014, a <a href="http://www.cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-0160">major security issue</a> has been<a href="http://git.openssl.org/gitweb/?p=openssl.git;a=commit;h=96db9023b881d7cd9f379b0c154650d6c108e9a3"> fixed</a> in <a href="http://www.openssl.org/">OpenSSL</a>. For those who are non-geek, OpenSSL is a software library (code that anybody can reuse) released under a <a href="http://en.wikipedia.org/wiki/Free_software">free-software</a> license that aims at handling security issues. This is a free-software, as in free speech: the source code is available on-line and anybody can contribute and add its own corrections/fixes. So, you have the freedom to do whatever you want with it (according to the license terms). But OpenSSL is also free as in free beer: you get a great piece of software without paying anything. But this nice present come without any guarantee and if you are reusing it, it is your duty to check that it satisfy your quality criteria. Who's using OpenSSL? More or less everybody because the software is used by web servers and web browsers and, as we used today mostly web-based application, you are probably using it.</p>
+<h1>Can you explain this bug?</h1>
+<p>One of the best effort to explain it is the <a href="http://m.xkcd.com/1354/#">xkcd webcomic</a>. To make it simple: when your computer is talking to the server, it sometimes keeps the connection alive and established so that you do not have to re-initialize a new connection every time you want to exchange new information. For that purpose, your program (web browser, application, etc.) sends a request to make sure that the server is there and asks it to reply a specific message. When replying, the server includes the requested message plus other information from the server memory. The bug is that the server should just reply the specific message and <strong>not</strong> send <strong>any</strong> additional information.</p>
+<p>Problem is: this additional piece of information is totally random and might contain useful and/or critical data. In fact, this additional data can be <strong>any</strong> data the server might access (password, web content, etc.). Some argued that only non-critical data have been exposed but a <a href="http://blog.cloudflare.com/the-results-of-the-cloudflare-challenge">challenge showed that even private keys</a> (the one you are not supposed to exchange when using cryptography mechanisms) have been affected. For example, there is evidence that when trying to exploit the bug on yahoo mail service, <a href="http://arstechnica.com/security/2014/04/critical-crypto-bug-exposes-yahoo-mail-passwords-russian-roulette-style/">attackers can get other users passwords</a>.</p>
+<p>&nbsp;</p>
+<p style="text-align:center;"><a href="http://juli1pb.files.wordpress.com/2014/04/code-clean.jpg"><img class="aligncenter size-full wp-image-246" src="/assets/code-clean.jpg" alt="code-clean" width="240" height="192" /></a><em>"Cleaning OpenSSL bugs might take some time"</em> - picture taken from the <a href="https://www.flickr.com/photos/ezu/">Martino Sabia</a> gallery</p>
+<p style="text-align:center;">
+<h1>Who introduce this bug? (so that we can bury his body, say he is a communist, go to his house and steal his groceries)</h1>
+<p>As OpenSSL is a free-software with contributors all over the world, anybody can modify the code. Thanks to appropriate tools, we can track who is modifying what part of the code. And thus, know who introduced the bug. It turns out that the code related to the bug was introduced by a German guy (Robin Seggelmann - see the<a href="http://git.openssl.org/gitweb/?p=openssl.git;a=commit;h=4817504d069b4c5082161b02a22116ad75f822b1"> related git commit</a>). Unfortunately, this nationality is not appropriate for suspicious people thinking spying agencies introduced the bug on purpose. And, <a href="http://www.smh.com.au/it-pro/security-it/man-who-introduced-serious-heartbleed-security-flaw-denies-he-inserted-it-deliberately-20140410-zqta1.html">according to the person</a> that introduced the bug,<a href="http://www.pcpro.co.uk/news/388162/heartbleed-coder-bug-in-openssl-was-an-honest-mistake"> it was a mistake related when working on bug fixes and new features</a>. In addition, the change was also reviewed by somebody else <a href="http://www.smh.com.au/it-pro/security-it/man-who-introduced-serious-heartbleed-security-flaw-denies-he-inserted-it-deliberately-20140410-zqta1.html">that also missed the potential flaw</a>.</p>
+<p>Of course, since the public declaration, there was plenty of rumors about who really introduced the code, if the original developer was paid to do it, <a href="https://www.eff.org/deeplinks/2014/04/wild-heart-were-intelligence-agencies-using-heartbleed-november-2013">who already exploited the vulnerability</a>, etc. Considering my experience in software engineering and the code reviews I have done so far, such a bug is pretty common in many software and usually not spotted during reviews. This is why code reviews are necessary but not sufficient and you still need to use other methods (static analysis, runtime checking, etc.) for safe and secure coding.</p>
+<p>But enough debate, instead of taking part of this discussion, let's stick to the facts.</p>
+<p>&nbsp;</p>
+<h1>Why the bug was not fixed before?</h1>
+<p>The bug was introduced in <a href="http://git.openssl.org/gitweb/?p=openssl.git;a=commit;h=4817504d069b4c5082161b02a22116ad75f822b1">December 2011</a> and eventually fixed in April 2014. It was there for about more than 2 years. Within this time frame, anybody that knew about this issue may have exploited it to steal data from services providers using the defective version of OpenSSL.</p>
+<p>Finding such a bug requires to review the code, either manually (a coder review the code) or by automated analysis tools or testing. In any case, it requires some efforts which comes at some cost. Problem is: OpenSSL is a free software (as in free speech) and contributors might introduce new code that contains security flaws. Which is just normal: by definition, humans make mistake and when producing code, they sometimes introduce errors (<a href="http://arstechnica.com/security/2014/03/critical-crypto-bug-leaves-linux-hundreds-of-apps-open-to-eavesdropping/">think about the GNUtls bug</a>). Of course, when coding errors might have significant impacts, there are some reviews. But this time, the review was done manually and the reviewer did not catch the bug. Which (again) is normal: most of the time, when reviewing the code, there is no bug and reviewers are not used to make a deep investigation. Which is (again) normal and human - think about a new security clerk that controls people going in and out a building: he will be very careful during his first days, but, after a couple of days, will start to know who is supposed to go in/out and sometimes, make some exception and let you in even if you do not have your badge. This is human: you are used to a routine and less careful. This probably why car accidents are more likely to occur on roads and course you are used to take (for example, when commuting to work).</p>
+<p>But let's come back on software analysis: other than manual code review, other techniques can be used to detect such issues: <a href="http://en.wikipedia.org/wiki/Software_testing">testing</a>, <a href="http://en.wikipedia.org/wiki/Static_analysis">static analysis</a>, etc. It does not seem that OpenSSL has a test procedure that can find or catch such a bug. But users do not seem to put so much efforts on testing this piece of software, despite its criticality and importance. Which is (again) human: why would you want to test something that is used by many other people since several years and free! You just assume that other folks will detect any defect/issue and take the free (as in free beer) software as is!</p>
+<p>This was probably the biggest mistake here: users of OpenSSL did not understand that free software is free as in free speech, not free beer. In other words, you can take the code, use it and contribute but you might have additional work/cost if you want to make sure this software is safe and compliant to your own quality standards. Hopefully, some users (as google) have engineers that investigate such piece of code (and eventually discover and fix issues) but the late discovery show that the effort is not sufficient.</p>
+<p>Now, the interesting thing is, as this piece of software is particularly critical, other people pay this cost, not for fixing it but exploiting it. They might do the tests, pay the costs for the technology to find the bug and finally exploit it until its public discovery. In other words, others might be willing to pay the cost of testing to retrieve private data. In that particular case, the <a href="http://en.wikipedia.org/wiki/Return_on_investment">Return On Investment (ROI)</a> for detecting and exploiting this bug is definitively worth it: institutions can then steal data at (almost) no-cost from users all over the world: it does not require any high processing capacity (instead of trying to <a href="http://en.wikipedia.org/wiki/Brute-force_attack">brute force</a> an encryption key) or high bandwidth capacity (as for a <a href="http://en.wikipedia.org/wiki/Denial_of_service">Denial Of Service</a> attack). You can put a bunch of <a href="http://en.wikipedia.org/wiki/Raspberry_pi">raspberry-pi</a> ($50 each) and try to steal data on a 24/7 schedule.</p>
+<p>Also, this does not mean or demonstrate that Open-Source or Free Software means low quality: a<a href="http://www.ciol.com/ciol/features/213112/coverity-scan-report-source-software-quality-outpaces-proprietary-code"> recent study by Coverity</a> shows that software under this license has a better quality than proprietary products. On the other hand, because the code is publicly available, this is more easy to find issues while proprietary software is more difficult to analyze.</p>
+<p>Important questions are now: how many critical bugs as this one are still unfixed, how safe is proprietary software since analysis is more difficult to do and what are the best mitigation techniques?</p>
+<p>&nbsp;</p>
+<p style="text-align:center;"><a href="https://www.flickr.com/photos/sum-it/"><img class="aligncenter size-medium wp-image-253" src="/assets/code-review.jpg?w=300" alt="code-review" width="300" height="225" /></a><em>OpenSSL Code Review </em>- Picture under Creative Commons by <a href="https://www.flickr.com/photos/sum-it/">Sumit Sati</a></p>
+<p>&nbsp;</p>
+<h1>Can the NSA find any pictures of my cat naked using this bug?</h1>
+<p>Since the <a href="http://en.wikipedia.org/wiki/Edward_Snowden">Snowden </a>revelations, everybody is nervous about their privacy. We shifted from a behavior where everybody share everything everywhere to a mode where we are suspicious about anything. <a href="http://www.smh.com.au/it-pro/security-it/man-who-introduced-serious-heartbleed-security-flaw-denies-he-inserted-it-deliberately-20140410-zqta1.html">Conspiracy theories</a> about potential use of the bug have spread over the internet: did spying agencies know what was going on? If yes, did they exploit the bug or not?</p>
+<p>Some sources report that NSA <a href="http://www.bloomberg.com/news/2014-04-11/nsa-said-to-have-used-heartbleed-bug-exposing-consumers.html">was aware of the bug and has been using it for a long time </a>(about 2 years). The official twitter feed from the <a href="https://twitter.com/NSA_PAO/status/454720059156754434">NSA reports that the agency was not aware of the bug</a>. But after all: does it really matters? If you are using online services such as gmail/facebook/twitter, they probably have more than one way to get access to your data.</p>
+<p>On the other hand, other spying agencies and/or company may have used the bug to access private data including private encryption keys. As usual, <a href="https://www.eff.org/deeplinks/2014/04/wild-heart-were-intelligence-agencies-using-heartbleed-november-2013">rumors have spread about exploitation of the bug before the release of the fix</a> but no serious evidence was available so far.</p>
+<p>&nbsp;</p>
+<h1>Which companies were affected?</h1>
+<p>This might be important to know who is really impacted by the bug. What really matters is if the service provider is really affected. The server discloses private information and you never used the bug but other might exploit it to retrieve information you stored using services from various services providers.</p>
+<p>Knowing exactly who is really impacted depends on the version of OpenSSL that was used by your service provider. Some services <a href="http://status.kickstarter.com/incidents/v30n2pc3fpms">were not impacted at all</a> while other might have sent part of your data without knowing it.</p>
+<p>For the impacted services, a timeline has been established by <a href="http://www.smh.com.au/it-pro/security-it/heartbleed-disclosure-timeline-who-knew-what-and-when-20140414-zqurk.html">the Sunday Morning Herald</a>. It shows the relation between the bug discovery, how it was disclosed and eventually fixed in popular operating systems. It turns out that few of them were aware quickly, which can be understood: the more people know about the bug, the more potential attacks you can have. So far, as almost 70% of webservers are using OpenSSL, many sites were affected when the bug went public.</p>
+<h1>How to avoid such situation in the future?</h1>
+<p>As pointed out earlier in this post, this error is likely due to the manual development process: the developer made a mistake (but who never do one once in a while?) which was not caught by the reviewer (and again, who did not made some mistake when checking something?). But all the development efforts is made manually by two people whereas such issue can be found by other techniques such as:</p>
+<ol>
+<li><strong>Using automated analysis tools</strong>. As automated analysis tools are computer program, they (by definition) do not do human mistakes. Also, these programs can be executed on a daily basis and so, use them as the code evolved to discover regression while improving the code. This could be used to detect new issues on code freshly added by developers. Tests such as code coverage, coding guidelines checking, etc... can be automated. The problem? It requires to pay the cost: maintain an infrastructure to execute the tests. having a team to make sure issues are resolved, etc.</li>
+<li><strong>Increase the work force</strong>. Have more people to work on the project and review the code. In this case, the code was reviewed by one person but one solution would have to get more reviewers.</li>
+<li><strong>Make independent review</strong>. Having independent code review can definitively address this type of issue. As this kind of review is also partly done manually, it may not spot all issues. But this is definitively useful and could be done (for example) at each major milestone/release.</li>
+</ol>
+<p>This is list not complete but are likely the usual techniques for finding such issues. Commercial projects use this type of review. So, why not for free software as well? Someone has to pay the cost for it. And, as most OpenSSL users are also competitors, are they willing to pay for a review that can benefit their competitor? As far as I know, there is not such an initiative and review/investigation are not coordinated and made by each company. I might be totally wrong because I am not involved with the biggest users of the software and have no evidence of coordination initiatives) but  it seems that having a joint initiative would be useful and each one could take the benefits of it.</p>
+<p>&nbsp;</p>
+<h1>Is there any potential other bug like this?</h1>
+<p>From a statistical point of view, all the software you are currently using for reading this article potentially contain a bunch of bugs. <a href="http://queue.acm.org/detail.cfm?id=2602816">Think about what your machine is currently running</a>:</p>
+<ul>
+<li><strong>an Operating System</strong> - the kernel (not the graphical part) is made of almost several M of lines of code. <a href="http://arstechnica.com/business/2012/04/linux-kernel-in-2011-15-million-total-lines-of-code-and-microsoft-is-a-top-contributor/">In 2011, Linux was made of more than 15M lines of code</a> (and consider Linux is the kernel for Android phones). This is just the kernel part, we even do not include the graphical part of your system.</li>
+<li><strong>a web-browser</strong> - <a href="http://almossawi.com/firefox/">almost 4M lines of code as well</a> (at least for Firefox, probably one of the best browser)</li>
+<li><strong>a compiler</strong> used to convert source code into executable binaries - GCC (one of the most popular compiler - the one used for compiling the Linux kernel for example) was made of more than <a href="http://www.phoronix.com/scan.php?page=news_item&amp;px=MTE1OTg">7M of lines of code in 2012</a>.</li>
+</ul>
+<p>According to different sources, <a href="http://amartester.blogspot.com/2007/04/bugs-per-lines-of-code.html">the number of bugs per lines of code varies</a> according to various factors (such as the language, experience of the developers, coding rules, etc.). Even if we consider the lowest estimate of 1 bug per 1000 lines of code (and realistic estimates would be more likely 10 to 20 bugs per 1000 lines of code), this is obvious that the software you are currently executing have some flaws and defects. On top of that, add potential developers that may introduce defects on purposes and you can have a good idea of the level of trust you can put in your computer. There is a reason why the <a href="http://web.archive.org/web/20090610052743/http://www.nist.gov/public_affairs/releases/n02-10.htm">NIST institute estimates in 2002 that software errors cost approximately $60B</a>: from a statistical perspective, this is obvious that your computer has bug. The question is: what is their severity and how they can be exploited.</p>
+<p>&nbsp;</p>
+<h1>How can I stay safe?</h1>
+<p>First of all, <a href="https://filippo.io/Heartbleed/">you can test the servers of your service provider</a>. Second of all, the best thing is common sense and just keep private data ... private. Do not put online data you do not want to disclose. Online services are not safe unless you control what is the underlying software that hosts it. This is a necessary but not sufficient condition (see below).</p>
+<p>It sounds ridiculous, old-school but this is just common sense: if you do not want to take the risk to disclose data, do not share! Keep your private information at home, backup on a hard drive and do not send it on google drive, dropbox or other online storage service. Convenience has a price, and, as pointed out since a long time, you might pay with your privacy.</p>
+<p>So, what about people having their own self-hosted online service (with their own server running a linux distribution such as <a href="https://wiki.debian.org/FreedomBox">FreedomBox</a>)? He is vulnerable despite trying to protect himself by avoiding common online services. Well, because this one is smaller, this might potentially be a target with less interest. Of course, once the bug has been disclosed, many bots will automate any attack and try to get data from any host. A common guideline would be to avoid to use the latest version of a software and stick to established and well-known versions. But this might not be sufficient: even the current Debian stable (wheezy) was exposed. However, this rule might prevent you from future exploits that would eventually be discovered quicker after they are introduced.</p>
+<h1>The Take-Away</h1>
+<p>What the average Joe should do to protect himself from potential new security issue:</p>
+<ol>
+<li><strong>Use common sense</strong>. DO NOT PUT ONLINE DATA YOU DO NOT WANT TO SHARE. Do not trust online services you do not control.</li>
+<li>Do <strong>not to use the same service for everything</strong>. In case this service is hacked, is interrupted or experience issues, you can lose data or experience issues if the service is unavailable</li>
+<li><strong>Use free-software as much as you can</strong>. Forget the bullshit trends and stick to this rule. Code of free-software is available so that bugs can be discovered and fixed at the earliest. Proprietary applications are more difficult to analyze and finding bugs is more complicated and you have no clue if anybody found it (and if they are eventually fixed). Excited by the latest trendy browser that shows pictures of kitties while the page is loading? You have no clue what this piece of software contains and actually does! Just use <a href="http://www.getfirefox.com">firefox</a>, an established browser supported by a large community and that supports standards.</li>
+</ol>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+  </article>
+
+</div>
+
+      </div>
+    </div>
+
+    <footer class="site-footer">
+
+  <div class="wrap">
+
+    <h2 class="footer-heading">Julien Delange</h2>
+
+    <div class="footer-col-1 column">
+      <ul>
+        <li>
+          <a href="https://github.com/juli1">
+            <span class="icon github">
+              <svg version="1.1" class="github-icon-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                 viewBox="0 0 16 16" enable-background="new 0 0 16 16" xml:space="preserve">
+                <path fill-rule="evenodd" clip-rule="evenodd" fill="#C2C2C2" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761
+                c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32
+                c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472
+                c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037
+                C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65
+                c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261
+                c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082
+                c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129
+                c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/>
+              </svg>
+            </span>
+            <span class="username">juli1</span>
+          </a>
+        </li>
+        <li>
+          <a href="https://twitter.com/juli1pb">
+            <span class="icon twitter">
+              <svg version="1.1" class="twitter-icon-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                 viewBox="0 0 16 16" enable-background="new 0 0 16 16" xml:space="preserve">
+                <path fill="#C2C2C2" d="M15.969,3.058c-0.586,0.26-1.217,0.436-1.878,0.515c0.675-0.405,1.194-1.045,1.438-1.809
+                c-0.632,0.375-1.332,0.647-2.076,0.793c-0.596-0.636-1.446-1.033-2.387-1.033c-1.806,0-3.27,1.464-3.27,3.27
+                c0,0.256,0.029,0.506,0.085,0.745C5.163,5.404,2.753,4.102,1.14,2.124C0.859,2.607,0.698,3.168,0.698,3.767
+                c0,1.134,0.577,2.135,1.455,2.722C1.616,6.472,1.112,6.325,0.671,6.08c0,0.014,0,0.027,0,0.041c0,1.584,1.127,2.906,2.623,3.206
+                C3.02,9.402,2.731,9.442,2.433,9.442c-0.211,0-0.416-0.021-0.615-0.059c0.416,1.299,1.624,2.245,3.055,2.271
+                c-1.119,0.877-2.529,1.4-4.061,1.4c-0.264,0-0.524-0.015-0.78-0.046c1.447,0.928,3.166,1.469,5.013,1.469
+                c6.015,0,9.304-4.983,9.304-9.304c0-0.142-0.003-0.283-0.009-0.423C14.976,4.29,15.531,3.714,15.969,3.058z"/>
+              </svg>
+            </span>
+            <span class="username">juli1pb</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+
+   <div class="footer-col-2 column">
+      <ul>
+         <li>
+            <a href="https://www.strava.com/athletes/juli1">
+             <span class="icon twitter">
+                <img src="/assets/strava-logo.png"/>
+             </span>
+             <span class="username">juli1</span>
+            </a>
+         </li>
+         <li>
+            <a href="http://www.flickr.com/photos/juli1/">
+             <span class="icon twitter">
+                <img src="/assets/flickr-icon.png"/>
+             </span>
+             <span class="username">juli1</span>
+            </a>
+         </li>
+         <!-- <li><a href="mailto:julien@gunnm.org">julien@gunnm.org</a></li> -->
+      </ul>
+   </div>
+
+
+    <div class="footer-col-3 column">
+      <p class="text">Tales of a guy living in Pittsburgh addicted with Computer-Science, Running and Peanut Butter</p>
+    </div>
+
+  </div>
+
+</footer>
+
+
+    </body>
+</html>

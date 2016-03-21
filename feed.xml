@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Julien Delange</title>
+    <description>Tales of a guy living in Pittsburgh addicted with Computer-Science, Running and Peanut Butter</description>
+    <link>http://julien.gunnm.org/</link>
+    <atom:link href="http://julien.gunnm.org/feed.xml" rel="self" type="application/rss+xml" />
+    <pubDate>Mon, 21 Mar 2016 04:02:00 -0400</pubDate>
+    <lastBuildDate>Mon, 21 Mar 2016 04:02:00 -0400</lastBuildDate>
+    <generator>Jekyll v3.1.2</generator>
+    
+      <item>
+        <title>Packing the agenda</title>
+        <description>&lt;p style=&quot;text-align:center;&quot;&gt;&lt;em&gt;This&lt;/em&gt; just happened.&lt;/p&gt;
+&lt;p style=&quot;text-align:center;&quot;&gt;
+&lt;p&gt;&lt;img class=&quot;aligncenter size-full wp-image-2244&quot; src=&quot;/assets/rc.png&quot; alt=&quot;rc&quot; width=&quot;638&quot; height=&quot;76&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;Not sure if it will help the healing process or make me feel any better. But it lines up for training program until the last race in August. First thing first, I have to fix my big toe, it looks in a bad shape for now.&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;&lt;img class=&quot;aligncenter wp-image-2245 size-medium&quot; src=&quot;/assets/nail.jpg?w=169&quot; alt=&quot;nail&quot; width=&quot;169&quot; height=&quot;300&quot; /&gt;&lt;/p&gt;
+</description>
+        <pubDate>Tue, 08 Mar 2016 08:13:20 -0500</pubDate>
+        <link>http://julien.gunnm.org/fitness/pittsburgh/running/2016/03/08/packing-the-agenda/</link>
+        <guid isPermaLink="true">http://julien.gunnm.org/fitness/pittsburgh/running/2016/03/08/packing-the-agenda/</guid>
+        
+        <category>healing</category>
+        
+        <category>injury</category>
+        
+        <category>rachel carson</category>
+        
+        
+        <category>fitness</category>
+        
+        <category>pittsburgh</category>
+        
+        <category>running</category>
+        
+      </item>
+    
+      <item>
+        <title>Entering the star system</title>
+        <description>&lt;p&gt;Last week, I was featured on &lt;a href=&quot;http://theruncommuter.com&quot;&gt;The Run Commuter website&lt;/a&gt;. I got my own article, which is definitively a true honor. I feel that I now belong to the club of the runners that got this exposure. It is also really funny because I just got injured one week before it was published.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://theruncommuter.com/the-new-run-commuters-february-2016/&quot; rel=&quot;attachment wp-att-2239&quot;&gt;&lt;img class=&quot;aligncenter size-full wp-image-2239&quot; src=&quot;/assets/runcommuter.png&quot; alt=&quot;runcommuter&quot; width=&quot;660&quot; height=&quot;348&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;And this week, the pacer page on the Pittsburgh marathon was just published. And of course, &lt;a href=&quot;http://www.thepittsburghmarathon.com/pace-team&quot;&gt;my ugly face is on it&lt;/a&gt;. Yay.&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.thepittsburghmarathon.com/pace-team&quot; rel=&quot;attachment wp-att-2240&quot;&gt;&lt;img class=&quot;aligncenter size-full wp-image-2240&quot; src=&quot;/assets/paceteam.png&quot; alt=&quot;paceteam&quot; width=&quot;660&quot; height=&quot;191&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;It seems that all of that is finally getting real and I will have to run a half marathon in 1:45 in May while entertaining people around me. I tried to avoid everything running related since several weeks, including contact with the running community but it might be time to treat the several muscles injuries, tendinitis and remain of fractures that keep me away from running since several weeks now. Between a coming trip to Japan, another in France and a last one in Italy, I should find some time to train.&lt;/p&gt;
+</description>
+        <pubDate>Thu, 25 Feb 2016 17:35:42 -0500</pubDate>
+        <link>http://julien.gunnm.org/fitness/pittsburgh/running/2016/02/25/entering-the-star-system/</link>
+        <guid isPermaLink="true">http://julien.gunnm.org/fitness/pittsburgh/running/2016/02/25/entering-the-star-system/</guid>
+        
+        <category>injury</category>
+        
+        <category>pacer</category>
+        
+        <category>pittsburgh marathon</category>
+        
+        <category>tendinitis</category>
+        
+        
+        <category>fitness</category>
+        
+        <category>pittsburgh</category>
+        
+        <category>running</category>
+        
+      </item>
+    
+      <item>
+        <title>BeagleBoard Black (BBB) and GPIO</title>
+        <description>&lt;p&gt;When you buy a &lt;a href=&quot;http://beagleboard.org/black&quot;&gt;Beagleboard Black&lt;/a&gt; (a.k.a. BBB), it comes with a pre-installed version of debian with more or less everything you need to get started. I purchased the board for another purpose and develop seL4 components on top of it. But before starting to develop on seL4, it is useful to know exactly how the board works: once you know how the board works, you can start to write your code and know for sure that the bug comes from your code.&lt;/p&gt;
+&lt;p&gt;In this article, I will explain quickly how to set up a simple circuit to test the GPIO of the beaglebone.&lt;/p&gt;
+&lt;p&gt;[caption id=&quot;attachment_2231&quot; align=&quot;aligncenter&quot; width=&quot;300&quot;]&lt;img class=&quot;  wp-image-2231 aligncenter&quot; src=&quot;/assets/cape-headers-digital.png?w=255&quot; alt=&quot;cape-headers-digital.png&quot; width=&quot;300&quot; height=&quot;225&quot; /&gt; Mapping between pin numbers and GPIO ID from&lt;a href=&quot;http://beagleboard.org/support/bone101&quot;&gt; bone 101&lt;/a&gt;[/caption]&lt;/p&gt;
+&lt;h1&gt;Setting up the circuit&lt;/h1&gt;
+&lt;p&gt;To test the circuit, you need only a breadboard, a resistance and a LED. Simple.&lt;/p&gt;
+&lt;p&gt;Connect the PIN 14 (which is mapped to GPIO id 50, see table) from bank P9 (green cable on the picture) on the breadboard. Connect it to a resistance and a LED. The other pin of the LED is then connected to the ground (last PIN of P9).&lt;/p&gt;
+&lt;p&gt;[caption id=&quot;attachment_2224&quot; align=&quot;aligncenter&quot; width=&quot;460&quot;]&lt;img class=&quot;  wp-image-2224 aligncenter&quot; src=&quot;/assets/board.jpg&quot; alt=&quot;board&quot; width=&quot;460&quot; height=&quot;345&quot; /&gt; Wiring scheme of the example[/caption]&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+&lt;h1&gt;Controlling the GPIO in Linux&lt;/h1&gt;
+&lt;p&gt;In Linux, the GPIO can be controlled using the SysFS abstraction layer. You can access it through&lt;em&gt; /sys/class/gpio. &lt;/em&gt;I am using the pre-installed debian software on the board.&lt;/p&gt;
+&lt;p&gt;To control a particular pin, you must export it. You do it by writing the value of the pin you want to export into &lt;em&gt;/sys/class/gpio/export&lt;/em&gt;. Then, a new directory is &lt;em&gt;/sys/class/gpio/gpio&amp;lt;PIN-NUMBER&amp;gt;&lt;/em&gt; is created with many different files to control the pin (direction, value, etc.).&lt;/p&gt;
+&lt;p&gt;In our example, the &lt;strong&gt;pin 14 from the bank P9&lt;/strong&gt; correspond to &lt;strong&gt;GPIO 50&lt;/strong&gt;. You can see the corresponding mapping between the pin and GPIO number in the &lt;a href=&quot;http://beagleboard.org/support/bone101&quot;&gt;beaglebone 101 &lt;/a&gt;document.&lt;/p&gt;
+&lt;p&gt;So, let&#39;s start by exporting this pin:&lt;/p&gt;
+&lt;pre&gt;echo 50 &amp;gt; /sys/class/gpio/export&lt;/pre&gt;
+&lt;p&gt;Then, a new directory /sys/class/gpio/gpio50 is created.&lt;/p&gt;
+&lt;p&gt;Let&#39;s set its direction to out&lt;/p&gt;
+&lt;pre&gt;echo out &amp;gt; /sys/class/gpio/gpio50/direction&lt;/pre&gt;
+&lt;p&gt;And let&#39;s set its value to 1&lt;/p&gt;
+&lt;pre&gt;echo 1 &amp;gt; /sys/class/gpio/gpio50/value&lt;/pre&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;And finally, if you want to make the LED blinks every second, you can use this command:&lt;/p&gt;
+&lt;pre&gt;while [ 1 ]; do echo 1 &amp;gt; /sys/class/gpio/gpio50/value ; sleep 1 ; echo 0 &amp;gt; /sys/class/gpio/gpio50/value ; sleep 1 ; done&lt;/pre&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;https://www.youtube.com/watch?v=k-g114EUXaE&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+&lt;h1&gt;Sources&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;How to use GPIO as outputs &lt;a href=&quot;http://www.dummies.com/how-to/content/setting-beaglebone-gpios-as-outputs.html&quot;&gt;http://www.dummies.com/how-to/content/setting-beaglebone-gpios-as-outputs.html&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;GPIO programming on the beaglebone: &lt;a href=&quot;http://elinux.org/images/3/33/GPIO_Programming_on_the_Beaglebone.pdf&quot;&gt;http://elinux.org/images/3/33/GPIO_Programming_on_the_Beaglebone.pdf&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;BeagleBone 101: &lt;a href=&quot;http://beagleboard.org/support/bone101&quot;&gt;http://beagleboard.org/support/bone101&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Sun, 21 Feb 2016 14:34:43 -0500</pubDate>
+        <link>http://julien.gunnm.org/geek/misc/programming/2016/02/21/beagleboard-black-bbb-and-gpio/</link>
+        <guid isPermaLink="true">http://julien.gunnm.org/geek/misc/programming/2016/02/21/beagleboard-black-bbb-and-gpio/</guid>
+        
+        
+        <category>geek</category>
+        
+        <category>misc</category>
+        
+        <category>programming</category>
+        
+      </item>
+    
+      <item>
+        <title>Enjoying the break</title>
+        <description>&lt;p&gt;No running since more than a week and definitively enjoying the rest.&lt;/p&gt;
+&lt;p&gt;Not sure how long it is going to last.&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;&lt;img class=&quot;aligncenter size-full wp-image-2186&quot; src=&quot;/assets/25005411756_a68e52da45_z.jpg&quot; alt=&quot;25005411756_a68e52da45_z&quot; width=&quot;480&quot; height=&quot;640&quot; /&gt;&lt;/p&gt;
+</description>
+        <pubDate>Mon, 15 Feb 2016 10:10:01 -0500</pubDate>
+        <link>http://julien.gunnm.org/fitness/running/2016/02/15/enjoying-the-break/</link>
+        <guid isPermaLink="true">http://julien.gunnm.org/fitness/running/2016/02/15/enjoying-the-break/</guid>
+        
+        <category>climbing</category>
+        
+        <category>rest</category>
+        
+        <category>running</category>
+        
+        
+        <category>fitness</category>
+        
+        <category>running</category>
+        
+      </item>
+    
+      <item>
+        <title>Shame on you WS100</title>
+        <description>&lt;p&gt;&lt;a href=&quot;http://www.sacbee.com/news/local/article59462939.html&quot;&gt;Western States 100 added a new rule in order that deny race entry to any athlete who has been caught using performance-enhancing drugs from competing in Western States&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;What a shame.&lt;/p&gt;
+&lt;p&gt;Armstrong did not even mention he wanted to run this race. He runs every now and then (&lt;a href=&quot;https://www.strava.com/athletes/1712082&quot;&gt;his strava profile&lt;/a&gt; is very active) and recently won a trail race. But he did not sign up for the race.&lt;/p&gt;
+&lt;p&gt;The organizers reacted over a non-existing threat. Just by fear. Or just to make noise.&lt;/p&gt;
+&lt;p&gt;But why banning him? This sport is all about community, not about rejection. We are a welcoming community. How many of us struggled with life, suffered from various addictions and find salvation through ultra running? How many stories of people stopping drinking, doing drugs or losing weight that stopped when they start running? Armstrong wants to join us? He is more than welcome. There is no reason to reject him.&lt;/p&gt;
+&lt;p&gt;There are many solutions to offer a fair treatment if he is running: enable drug testing during the race (for &lt;strong&gt;every&lt;/strong&gt; runner - let&#39;s be serious: some elites &lt;strong&gt;&lt;em&gt;are&lt;/em&gt;&lt;/strong&gt; using performance enhancing drugs, why not testing them?) or just let him to race without receiving an award/money. But there is no reason to reject somebody without trying to work things out. And by taking such a decision, the race organizers might have show that our sport is slowly evolving ... probably not for the best.&lt;/p&gt;
+</description>
+        <pubDate>Wed, 10 Feb 2016 21:31:55 -0500</pubDate>
+        <link>http://julien.gunnm.org/misc/running/2016/02/10/shame-on-you-ws100/</link>
+        <guid isPermaLink="true">http://julien.gunnm.org/misc/running/2016/02/10/shame-on-you-ws100/</guid>
+        
+        
+        <category>misc</category>
+        
+        <category>running</category>
+        
+      </item>
+    
+      <item>
+        <title>Work &amp; Injury</title>
+        <description>&lt;p&gt;This week, a new blog post about my ongoing work on software security has been published on the &lt;a href=&quot;https://insights.sei.cmu.edu/sei_blog/2016/02/improving-system-and-software-security-with-aadl.html&quot;&gt;SEI blog&lt;/a&gt;. This work is being very exciting and I am currently working on other publication. During the next week, I will also work on a code generator that will transform an architecture model into C code executed on top of &lt;a href=&quot;http://sel4.systems&quot;&gt;seL4&lt;/a&gt;, the only formally verified kernel that has been used for the &lt;a href=&quot;http://www.darpa.mil/program/high-assurance-cyber-military-systems&quot;&gt;HACMS&lt;/a&gt; program from DARPA. This will facilitates the design, implementation and verification of secure systems.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://insights.sei.cmu.edu/sei_blog/2016/02/improving-system-and-software-security-with-aadl.html&quot;&gt;&lt;img class=&quot;alignnone size-full wp-image-2127&quot; src=&quot;/assets/screenshot-2016-02-04-at-11-11-07-pm.png&quot; alt=&quot;Screenshot 2016-02-04 at 11.11.07 PM&quot; width=&quot;1010&quot; height=&quot;413&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;On a running side, running is becoming so painful that I no longer enjoy it. Every step is painful. A pause is necessary after every mile.&lt;/p&gt;
+&lt;p&gt;I need a new strategy to recover, avoid any permanent damage and maintain my fitness level. But running is no longer an option.&lt;/p&gt;
+&lt;p&gt;More on that soon.&lt;/p&gt;
+</description>
+        <pubDate>Fri, 05 Feb 2016 00:21:53 -0500</pubDate>
+        <link>http://julien.gunnm.org/geek/running/2016/02/05/work-injury/</link>
+        <guid isPermaLink="true">http://julien.gunnm.org/geek/running/2016/02/05/work-injury/</guid>
+        
+        
+        <category>geek</category>
+        
+        <category>running</category>
+        
+      </item>
+    
+      <item>
+        <title>Paris Charles de Gaulle Airport: a metaphor of the evolution of France</title>
+        <description>&lt;p&gt;As a researcher working with an international standard committee, publishing papers and attending international conferences, I travel a lot. I often visit Europe, and, coming from the USA, the Paris Charles de Gaulle (CDG) airport is where I take most of my connecting flights. Last, as a french-native, I sometimes come back in the country to visit my family and then, land at this airport.&lt;/p&gt;
+&lt;p&gt;[caption id=&quot;attachment_2106&quot; align=&quot;alignright&quot; width=&quot;339&quot;]&lt;img class=&quot;  wp-image-2106 aligncenter&quot; src=&quot;/assets/cdgdropoff.jpg?w=680&quot; alt=&quot;cdgdropoff&quot; width=&quot;339&quot; height=&quot;452&quot; /&gt; The way to the passenger drop-off. You have big baggages? Be ready for a nice workout and work on your arms![/caption]&lt;/p&gt;
+&lt;p&gt;As a french citizen and having lived in this country for more than 27 years, I am ashamed of this airport. It does not make justice to this country and its capital, which deserve better than that. This airport reproduces everything you can hate about france.&lt;/p&gt;
+&lt;p&gt;I regularly took this airport since 2008. I tried to provide feedback, I thought that it might help the airport to improve itself. This airport is also rated as one of the worst in Europe (see &lt;a href=&quot;http://travel.cnn.com/explorations/life/10-most-hated-airports-324645/&quot;&gt;here on CNN &lt;/a&gt;or here on &lt;a href=&quot;http://www.offtoeurope.com/europes-best-and-worst-airports/&quot;&gt;offeurope&lt;/a&gt; or here ). So, with this in mind and also with regularly feedback from its users (I hope I was not the same to send feedback), I was hoping progress would have happened over the last years. But after 8 more years, all what I see is just an airport that is a real mess, where passengers get lost, transiting from two gates within the same terminal can take more than 30 minutes and does not even provide basic services such an airport deserves. This is what you want to show to the visitors of the most visited capital in the world? Probably not.&lt;/p&gt;
+&lt;p&gt;For example, let&#39;s see at some of the reasons the airport is so bad:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;accessibility between terminals&lt;/strong&gt;: terminals are a mess and for some terminals, you need to take a bus to move within the terminal. But not for all terminals! It can take up to 30 to 45 minutes to navigate within the same terminal. So, if you have to switch terminals, at least one hour is a reasonable bet&lt;/li&gt;
+&lt;li&gt;a&lt;strong&gt;ccessibility within the airport&lt;/strong&gt;: stairs and lift are very very narrow and disabled people might have a hard time moving. Like everything in france, everything is narrow and small (french have this tendency to associate &quot;petit&quot; with all the words). Unfortunately, tourists coming for 2 weeks have big baggages. So, using the stairs is just a mess and most of the times, this is just a pain to carry your baggage. Also, when you arrive at some terminal, you have to use stairs and there are only small lift if you have heavy baggage or if you are disabled. Welcome in france, the country where we welcome everybody, especially the people in good health and will not stay too long!&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;accessibility of restrooms&lt;/strong&gt;: there are very limited, their maintenance is terrible so that you might not even use them. Most of them no longer have soap and dryer are not working. I understand no why my US friends think french people do not clean themselves&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;lack of information of baggage claims&lt;/strong&gt;: when you exit your flights, signs for baggage claims and information about where to find your baggage are hidden and not available. On my last flight, I found my baggage on a random ramp. Sure, there was a screen to give information but there was nothing on the screen itself. Ah, the pleasure to find your own baggage at 9pm!&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;lack of information at border controls&lt;/strong&gt;: recently, during a connection, I got stuck in a corridor because of ID control. While I understand the airport has no control on the requirements of french authorities, it could at least provide accurate information to passengers. Instead of waiting 30 minutes while connecting flights in a corridor without giving any information, I would expect to wait in a big hall/room where the ID control takes places (what you have in most US airport) and where people can seat, go to the restroom or have access to water (if there was any water fountain). But as the room dedicated to ID check is as big as the stairs (remember, in france, everything is small), there is no space and so, people wait in line in a corridor and just wondering what is going on. This is probably a way to show to our tourists how dedicated we are to them.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;wireless&lt;/strong&gt;: the wireless requires to authenticate, give your name, e-mail, nationality, etc so that they can trace you and send you obnoxious ads. Fine. But you have to authenticate every time you move and your device connects to a new access point. So, you land: you have to authenticate. You try to access again when moving: you have to authenticate again every minute. You arrive at your gate: authenticate again. I think this is a way to promote the Minitel, a french thing that was supposed to beat the internet. Seriously, this shows the incompetence of the airport to provide a reasonably sized and user-friendly wireless network.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;availability of water fountains&lt;/strong&gt;: most airports now provide water fountains. This is important for an economic and ecological perspectives: why do you want to buy plastic bottles if you carry your own? And why paying for water, this is not a common good, especially when the Mayor of Paris previously declared the tap water was as good as bottled water? While there are plenty of water fountains in other airports (probably one next to every restroom in the USA), I found one or two in the whole airport. No kidding. I tried to reach out on twitter about this issue, the airport staff told me they can give me a map of the water fountains. So, just to make sure: every tourist that want water would need to contact the airport to find a water fountain! Please do not be too thirsty and take enough time: if you have to go to another gate, it might take more than 30 minutes to fill your bottle and so, more than one hour to come back to your gate. France is definitively a leader in the green economy!&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;[caption id=&quot;attachment_2111&quot; align=&quot;aligncenter&quot; width=&quot;503&quot;]&lt;img class=&quot;  wp-image-2111 aligncenter&quot; src=&quot;/assets/cdgbus.jpg&quot; alt=&quot;cdgbus.jpg&quot; width=&quot;503&quot; height=&quot;377&quot; /&gt; Taking the terminal E2? This is the bus map with all the drops. Ask an attendant at the airport, some are not aware there is a bus![/caption]&lt;/p&gt;
+&lt;p&gt;These are just some issues I recurrently experienced as a user of the airport. I am ashamed to know that tourists arrive to this country by such a airport. It should be a convenient, pleasant and useful place that welcomes and helps you when you arrive. It should be easy to use and navigate and go to the city (and I did not even talk about transportation to the city which is also a real shame). Not the actual mess we see every day and that &lt;a href=&quot;http://travel.cnn.com/explorations/life/10-most-hated-airports-324645/&quot;&gt;people actually hates&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;I do not understand why the company that manages the airport made this mess. The airport is not too old and I do not understand why there are so many accessibility issues (people using the terminal 2F can probably testify about the restroom accessibility). This is the hub of the most visited capital, so, having a good airport is a strategic investment. Other European cities develop very nice airports (particularly &lt;a href=&quot;http://www.offtoeurope.com/europes-best-and-worst-airports/&quot;&gt;Amsterdam with Schiphol&lt;/a&gt;, very convenient), which proves making a big HUB with a lot of tourist transits is possible.&lt;/p&gt;
+&lt;p&gt;What astonished me is that the evolution of this airport sounds exactly as the evolution of this country. We changed the appearance, it looks nice from the outside (there are a lot of fancy shop in the airport, you can buy all the bullshit stuff that makes france famous) but they did not invest in the fundamentals: moving, getting around, services, connecting and having information. This is also the general feeling I have when I see this country: a strong focus on trying to work on the unnecessary cosmetics details whereas the fundamentals are still being neglected. Beyond these issues is the denial of the people: when you tell people that the airport have issues, they reply to you that there are no issue and that you are doing things wrong. They are telling you that the airport is not the problem and that you are the problem. Unfortunately and currently, facts and numbers showed the reality: the airport is considered as one of the worst in the world and it seems that france is definitively a sinking ship people are trying to escape.&lt;/p&gt;
+&lt;p&gt;Sad.&lt;/p&gt;
+</description>
+        <pubDate>Mon, 01 Feb 2016 09:01:02 -0500</pubDate>
+        <link>http://julien.gunnm.org/frenchy%20stuff/misc/2016/02/01/paris-charles-de-gaulle-airport-a-metaphor-of-the-evolution-of-france/</link>
+        <guid isPermaLink="true">http://julien.gunnm.org/frenchy%20stuff/misc/2016/02/01/paris-charles-de-gaulle-airport-a-metaphor-of-the-evolution-of-france/</guid>
+        
+        
+        <category>frenchy stuff</category>
+        
+        <category>misc</category>
+        
+      </item>
+    
+      <item>
+        <title>Killing Treadmill boredom with TED talks</title>
+        <description>&lt;p&gt;[caption id=&quot;attachment_2083&quot; align=&quot;alignright&quot; width=&quot;360&quot;]&lt;img class=&quot; size-full wp-image-2083 alignright&quot; src=&quot;/assets/cheese.jpg&quot; alt=&quot;cheese&quot; width=&quot;360&quot; height=&quot;640&quot; /&gt; Shopping and tasting cheese in Toulouse[/caption]&lt;/p&gt;
+&lt;p&gt;With the cold weather and travels, it is difficult to go &lt;em&gt;always&lt;/em&gt; outside. It might be possible but definitively inefficient: if I have 30 minutes, this is way better to hit the gym rather than spending 10 minutes to look at the area on google maps, see where to go, ask for a map at the reception, etc. For short workouts, it is more convenient and efficient to hit the gym.&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;On the downside, such places are packed with gym rats and the view is not as entertaining as trails. Also, watching TV becomes boring very quickly. Plus, &lt;a href=&quot;http://www.netflix.com&quot;&gt;netflix&lt;/a&gt; or &lt;a href=&quot;http://www.pandora.com&quot;&gt;pandora&lt;/a&gt; are either blocked or too slow (depending on the country and hotel policy for using the wireless network). So, I took advantage of the &lt;a href=&quot;https://play.google.com/store/apps/details?id=com.ted.android&quot;&gt;TED android application&lt;/a&gt;: you can download video to watch later. So, you can browse all the talks, choose carefully some talks and find good one while you actually work out.&lt;/p&gt;
+&lt;p&gt;I tried to make a short list of good TED talks - if you are planning to hit the gym or looking for some stuff to watch at home, there is a list. I hope it might be useful to some of you.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.ted.com/talks/benjamin_wallace_on_the_price_of_happiness&quot;&gt;The Price of Happiness&lt;/a&gt; by Benjamin Wallace - expensive stuff will not make you happy, this talk explains why. I always believe the most important value is in things that cannot have a price.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.ted.com/talks/william_li?language=en&quot;&gt;Can we eat to starve cancer?&lt;/a&gt; by William Li - inspiring talk that presents a new way to treat and potentially kill cancer. While we focus on invasive solution, I truly believe a long-term, proactive approach that focuses on what we eat everyday is more efficient than the actual solution that are invasive, aggressive and intrusive.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.ted.com/talks/james_veitch_this_is_what_happens_when_you_reply_to_spam_email?language=en&quot;&gt;This is what happens when you reply to spam&lt;/a&gt; by James Veitch - epic and funny talk, very refreshing&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.ted.com/talks/marc_kushner_why_the_buildings_of_the_future_will_be_shaped_by_you#&quot;&gt;Why the building of the future will be shaped by ... you&lt;/a&gt; by Marc Kushner - amazing talk about the value and important of architecture: how it shapes and impacts our life. Small changes have a big impact for years. Definitively a topic to think about and can apply to many other domains (who said software or computer architecture?)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.ted.com/talks/ann_cooper_talks_school_lunches&quot;&gt;What&#39;s wrong with school lunches&lt;/a&gt; by Ann Cooper - a simple (but smart) talk about actual issues with food provided in schools. Valuable talk by somebody that actually works in this domain.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+</description>
+        <pubDate>Tue, 26 Jan 2016 16:30:31 -0500</pubDate>
+        <link>http://julien.gunnm.org/fitness/misc/running/2016/01/26/killing-treadmill-boredom-with-ted-talks/</link>
+        <guid isPermaLink="true">http://julien.gunnm.org/fitness/misc/running/2016/01/26/killing-treadmill-boredom-with-ted-talks/</guid>
+        
+        <category>Shopping andan dTouous</category>
+        
+        
+        <category>fitness</category>
+        
+        <category>misc</category>
+        
+        <category>running</category>
+        
+      </item>
+    
+      <item>
+        <title>Bonjour Toulouse</title>
+        <description>&lt;p&gt;After some days in the country side, it is now time to head to Toulouse to give a tutorial during the &lt;a href=&quot;http://projects.laas.fr/IFSE/FMF/J6/&quot;&gt;formal method day&lt;/a&gt; at the &lt;a href=&quot;https://www.laas.fr&quot;&gt;LAAS lab &lt;/a&gt;and &lt;a href=&quot;http://www.erts2016.org/authors_detail_inverted_Delange%20Julien.html&quot;&gt;present one research paper at ERTS 2016&lt;/a&gt;. I had a last run in Normandy this morning.&lt;/p&gt;
+&lt;p&gt;[caption id=&quot;attachment_2051&quot; align=&quot;aligncenter&quot; width=&quot;523&quot;]&lt;img class=&quot; wp-image-2051&quot; src=&quot;/assets/normandyemorning.jpg?w=300&quot; alt=&quot;Road in Normandy in the Morning&quot; width=&quot;523&quot; height=&quot;392&quot; /&gt; Road in Normandy in the Morning[/caption]&lt;/p&gt;
+&lt;p&gt;My right leg is definitively destroyed. The repeated long runs on pavement in Prague had a cost I am paying right now. After reaching my weekly goal of 60 miles, I might take some time off: too painful to run, it feels it might eventually hide more serious damages.&lt;/p&gt;
+&lt;p&gt;In the meantime, &lt;a href=&quot;https://www.facebook.com/francois.dhaene/&quot;&gt;Francois d&#39;Haene&lt;/a&gt; won &lt;a href=&quot;http://www.hk100-ultra.com/&quot;&gt;HK100&lt;/a&gt;. No kidding.&lt;/p&gt;
+&lt;p&gt;[caption id=&quot;attachment_2052&quot; align=&quot;aligncenter&quot; width=&quot;300&quot;]&lt;img class=&quot;size-medium wp-image-2052&quot; src=&quot;/assets/dhaene.png?w=300&quot; alt=&quot;D&#39;Haene finishing strong HK100 (photo irunfar)&quot; width=&quot;300&quot; height=&quot;199&quot; /&gt; D&#39;Haene finishing strong HK100 (photo irunfar)[/caption]&lt;/p&gt;
+&lt;p&gt;Congratulations dude!&lt;/p&gt;
+</description>
+        <pubDate>Sun, 24 Jan 2016 12:18:19 -0500</pubDate>
+        <link>http://julien.gunnm.org/geek/misc/running/2016/01/24/bonjour-toulouse/</link>
+        <guid isPermaLink="true">http://julien.gunnm.org/geek/misc/running/2016/01/24/bonjour-toulouse/</guid>
+        
+        <category>d&#39;haene</category>
+        
+        <category>hk100</category>
+        
+        <category>normandy</category>
+        
+        <category>toulouse</category>
+        
+        
+        <category>geek</category>
+        
+        <category>misc</category>
+        
+        <category>running</category>
+        
+      </item>
+    
+      <item>
+        <title>Back to my roots</title>
+        <description>&lt;p&gt;I came back home for few days in my hometown in france.&lt;/p&gt;
+&lt;p&gt;Went for a run, exploring the trails around.&lt;/p&gt;
+&lt;p&gt;Should finally run my 60 miles-week.&lt;/p&gt;
+&lt;p&gt;Back to my roots. For some days.&lt;/p&gt;
+&lt;p&gt;And it feels good.&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;[caption id=&quot;attachment_2034&quot; align=&quot;aligncenter&quot; width=&quot;500&quot;]&lt;img class=&quot;  wp-image-2034 aligncenter&quot; src=&quot;/assets/home.jpg&quot; alt=&quot;home&quot; width=&quot;500&quot; height=&quot;375&quot; /&gt; Good Morning from Le Neubourg, France[/caption]&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;And of course, my family got everything I like. It seems they understand now that my heart is definitively not in this part of the world.&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;&lt;img class=&quot;  wp-image-2036 aligncenter&quot; src=&quot;/assets/pb.jpg&quot; alt=&quot;pb&quot; width=&quot;296&quot; height=&quot;395&quot; /&gt;&lt;/p&gt;
+</description>
+        <pubDate>Fri, 22 Jan 2016 18:11:40 -0500</pubDate>
+        <link>http://julien.gunnm.org/geek/misc/running/2016/01/22/back-to-my-roots/</link>
+        <guid isPermaLink="true">http://julien.gunnm.org/geek/misc/running/2016/01/22/back-to-my-roots/</guid>
+        
+        <category>frenchy</category>
+        
+        <category>running</category>
+        
+        
+        <category>geek</category>
+        
+        <category>misc</category>
+        
+        <category>running</category>
+        
+      </item>
+    
+  </channel>
+</rss>
