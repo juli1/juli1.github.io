@@ -5,8 +5,8 @@
     <description>Tales of a guy living in Pittsburgh addicted with Computer-Science, Running and Peanut Butter</description>
     <link>http://julien.gunnm.org/</link>
     <atom:link href="http://julien.gunnm.org/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Mon, 21 Mar 2016 04:02:00 -0400</pubDate>
-    <lastBuildDate>Mon, 21 Mar 2016 04:02:00 -0400</lastBuildDate>
+    <pubDate>Tue, 22 Mar 2016 01:24:37 -0400</pubDate>
+    <lastBuildDate>Tue, 22 Mar 2016 01:24:37 -0400</lastBuildDate>
     <generator>Jekyll v3.1.2</generator>
     
       <item>
@@ -72,12 +72,21 @@
         <title>BeagleBoard Black (BBB) and GPIO</title>
         <description>&lt;p&gt;When you buy a &lt;a href=&quot;http://beagleboard.org/black&quot;&gt;Beagleboard Black&lt;/a&gt; (a.k.a. BBB), it comes with a pre-installed version of debian with more or less everything you need to get started. I purchased the board for another purpose and develop seL4 components on top of it. But before starting to develop on seL4, it is useful to know exactly how the board works: once you know how the board works, you can start to write your code and know for sure that the bug comes from your code.&lt;/p&gt;
 &lt;p&gt;In this article, I will explain quickly how to set up a simple circuit to test the GPIO of the beaglebone.&lt;/p&gt;
-&lt;p&gt;[caption id=&quot;attachment_2231&quot; align=&quot;aligncenter&quot; width=&quot;300&quot;]&lt;img class=&quot;  wp-image-2231 aligncenter&quot; src=&quot;/assets/cape-headers-digital.png?w=255&quot; alt=&quot;cape-headers-digital.png&quot; width=&quot;300&quot; height=&quot;225&quot; /&gt; Mapping between pin numbers and GPIO ID from&lt;a href=&quot;http://beagleboard.org/support/bone101&quot;&gt; bone 101&lt;/a&gt;[/caption]&lt;/p&gt;
+
+
+&lt;img class=&quot;  wp-image-2231 aligncenter&quot; src=&quot;/assets/cape-headers-digital.png&quot; alt=&quot;cape-headers-digital.png&quot; width=&quot;300&quot; height=&quot;225&quot; /&gt;
+
+&lt;p&gt;Mapping between pin numbers and GPIO ID from&lt;a href=&quot;http://beagleboard.org/support/bone101&quot;&gt; bone 101&lt;/a&gt;
+&lt;/p&gt;
+
 &lt;h1&gt;Setting up the circuit&lt;/h1&gt;
 &lt;p&gt;To test the circuit, you need only a breadboard, a resistance and a LED. Simple.&lt;/p&gt;
 &lt;p&gt;Connect the PIN 14 (which is mapped to GPIO id 50, see table) from bank P9 (green cable on the picture) on the breadboard. Connect it to a resistance and a LED. The other pin of the LED is then connected to the ground (last PIN of P9).&lt;/p&gt;
-&lt;p&gt;[caption id=&quot;attachment_2224&quot; align=&quot;aligncenter&quot; width=&quot;460&quot;]&lt;img class=&quot;  wp-image-2224 aligncenter&quot; src=&quot;/assets/board.jpg&quot; alt=&quot;board&quot; width=&quot;460&quot; height=&quot;345&quot; /&gt; Wiring scheme of the example[/caption]&lt;/p&gt;
-&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+
+&lt;img class=&quot;  wp-image-2224 aligncenter&quot; src=&quot;/assets/board.jpg&quot; alt=&quot;board&quot; width=&quot;460&quot; height=&quot;345&quot; /&gt;
+&lt;p&gt;Wiring scheme of the example&lt;/p&gt;
+
+
 &lt;h1&gt;Controlling the GPIO in Linux&lt;/h1&gt;
 &lt;p&gt;In Linux, the GPIO can be controlled using the SysFS abstraction layer. You can access it through&lt;em&gt; /sys/class/gpio. &lt;/em&gt;I am using the pre-installed debian software on the board.&lt;/p&gt;
 &lt;p&gt;To control a particular pin, you must export it. You do it by writing the value of the pin you want to export into &lt;em&gt;/sys/class/gpio/export&lt;/em&gt;. Then, a new directory is &lt;em&gt;/sys/class/gpio/gpio&amp;lt;PIN-NUMBER&amp;gt;&lt;/em&gt; is created with many different files to control the pin (direction, value, etc.).&lt;/p&gt;
@@ -181,7 +190,10 @@
       <item>
         <title>Paris Charles de Gaulle Airport: a metaphor of the evolution of France</title>
         <description>&lt;p&gt;As a researcher working with an international standard committee, publishing papers and attending international conferences, I travel a lot. I often visit Europe, and, coming from the USA, the Paris Charles de Gaulle (CDG) airport is where I take most of my connecting flights. Last, as a french-native, I sometimes come back in the country to visit my family and then, land at this airport.&lt;/p&gt;
-&lt;p&gt;[caption id=&quot;attachment_2106&quot; align=&quot;alignright&quot; width=&quot;339&quot;]&lt;img class=&quot;  wp-image-2106 aligncenter&quot; src=&quot;/assets/cdgdropoff.jpg?w=680&quot; alt=&quot;cdgdropoff&quot; width=&quot;339&quot; height=&quot;452&quot; /&gt; The way to the passenger drop-off. You have big baggages? Be ready for a nice workout and work on your arms![/caption]&lt;/p&gt;
+
+&lt;img class=&quot;  wp-image-2106 aligncenter&quot; src=&quot;/assets/cdgdropoff.jpg&quot; alt=&quot;cdgdropoff&quot; width=&quot;339&quot; height=&quot;452&quot; /&gt;
+&lt;p&gt;The way to the passenger drop-off. You have big baggages? Be ready for a nice workout and work on your arms!&lt;/p&gt;
+
 &lt;p&gt;As a french citizen and having lived in this country for more than 27 years, I am ashamed of this airport. It does not make justice to this country and its capital, which deserve better than that. This airport reproduces everything you can hate about france.&lt;/p&gt;
 &lt;p&gt;I regularly took this airport since 2008. I tried to provide feedback, I thought that it might help the airport to improve itself. This airport is also rated as one of the worst in Europe (see &lt;a href=&quot;http://travel.cnn.com/explorations/life/10-most-hated-airports-324645/&quot;&gt;here on CNN &lt;/a&gt;or here on &lt;a href=&quot;http://www.offtoeurope.com/europes-best-and-worst-airports/&quot;&gt;offeurope&lt;/a&gt; or here ). So, with this in mind and also with regularly feedback from its users (I hope I was not the same to send feedback), I was hoping progress would have happened over the last years. But after 8 more years, all what I see is just an airport that is a real mess, where passengers get lost, transiting from two gates within the same terminal can take more than 30 minutes and does not even provide basic services such an airport deserves. This is what you want to show to the visitors of the most visited capital in the world? Probably not.&lt;/p&gt;
 &lt;p&gt;For example, let&#39;s see at some of the reasons the airport is so bad:&lt;/p&gt;
@@ -194,7 +206,9 @@
 &lt;li&gt;&lt;strong&gt;wireless&lt;/strong&gt;: the wireless requires to authenticate, give your name, e-mail, nationality, etc so that they can trace you and send you obnoxious ads. Fine. But you have to authenticate every time you move and your device connects to a new access point. So, you land: you have to authenticate. You try to access again when moving: you have to authenticate again every minute. You arrive at your gate: authenticate again. I think this is a way to promote the Minitel, a french thing that was supposed to beat the internet. Seriously, this shows the incompetence of the airport to provide a reasonably sized and user-friendly wireless network.&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;availability of water fountains&lt;/strong&gt;: most airports now provide water fountains. This is important for an economic and ecological perspectives: why do you want to buy plastic bottles if you carry your own? And why paying for water, this is not a common good, especially when the Mayor of Paris previously declared the tap water was as good as bottled water? While there are plenty of water fountains in other airports (probably one next to every restroom in the USA), I found one or two in the whole airport. No kidding. I tried to reach out on twitter about this issue, the airport staff told me they can give me a map of the water fountains. So, just to make sure: every tourist that want water would need to contact the airport to find a water fountain! Please do not be too thirsty and take enough time: if you have to go to another gate, it might take more than 30 minutes to fill your bottle and so, more than one hour to come back to your gate. France is definitively a leader in the green economy!&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;[caption id=&quot;attachment_2111&quot; align=&quot;aligncenter&quot; width=&quot;503&quot;]&lt;img class=&quot;  wp-image-2111 aligncenter&quot; src=&quot;/assets/cdgbus.jpg&quot; alt=&quot;cdgbus.jpg&quot; width=&quot;503&quot; height=&quot;377&quot; /&gt; Taking the terminal E2? This is the bus map with all the drops. Ask an attendant at the airport, some are not aware there is a bus![/caption]&lt;/p&gt;
+
+&lt;img class=&quot;  wp-image-2111 aligncenter&quot; src=&quot;/assets/cdgbus.jpg&quot; alt=&quot;cdgbus.jpg&quot; width=&quot;503&quot; height=&quot;377&quot; /&gt; &lt;p&gt;Taking the terminal E2? This is the bus map with all the drops. Ask an attendant at the airport, some are not aware there is a bus!&lt;/p&gt;
+
 &lt;p&gt;These are just some issues I recurrently experienced as a user of the airport. I am ashamed to know that tourists arrive to this country by such a airport. It should be a convenient, pleasant and useful place that welcomes and helps you when you arrive. It should be easy to use and navigate and go to the city (and I did not even talk about transportation to the city which is also a real shame). Not the actual mess we see every day and that &lt;a href=&quot;http://travel.cnn.com/explorations/life/10-most-hated-airports-324645/&quot;&gt;people actually hates&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;I do not understand why the company that manages the airport made this mess. The airport is not too old and I do not understand why there are so many accessibility issues (people using the terminal 2F can probably testify about the restroom accessibility). This is the hub of the most visited capital, so, having a good airport is a strategic investment. Other European cities develop very nice airports (particularly &lt;a href=&quot;http://www.offtoeurope.com/europes-best-and-worst-airports/&quot;&gt;Amsterdam with Schiphol&lt;/a&gt;, very convenient), which proves making a big HUB with a lot of tourist transits is possible.&lt;/p&gt;
 &lt;p&gt;What astonished me is that the evolution of this airport sounds exactly as the evolution of this country. We changed the appearance, it looks nice from the outside (there are a lot of fancy shop in the airport, you can buy all the bullshit stuff that makes france famous) but they did not invest in the fundamentals: moving, getting around, services, connecting and having information. This is also the general feeling I have when I see this country: a strong focus on trying to work on the unnecessary cosmetics details whereas the fundamentals are still being neglected. Beyond these issues is the denial of the people: when you tell people that the airport have issues, they reply to you that there are no issue and that you are doing things wrong. They are telling you that the airport is not the problem and that you are the problem. Unfortunately and currently, facts and numbers showed the reality: the airport is considered as one of the worst in the world and it seems that france is definitively a sinking ship people are trying to escape.&lt;/p&gt;
@@ -213,7 +227,8 @@
     
       <item>
         <title>Killing Treadmill boredom with TED talks</title>
-        <description>&lt;p&gt;[caption id=&quot;attachment_2083&quot; align=&quot;alignright&quot; width=&quot;360&quot;]&lt;img class=&quot; size-full wp-image-2083 alignright&quot; src=&quot;/assets/cheese.jpg&quot; alt=&quot;cheese&quot; width=&quot;360&quot; height=&quot;640&quot; /&gt; Shopping and tasting cheese in Toulouse[/caption]&lt;/p&gt;
+        <description>&lt;img class=&quot; size-full wp-image-2083 alignright&quot; src=&quot;/assets/cheese.jpg&quot; alt=&quot;cheese&quot;/&gt; &lt;p&gt;Shopping and tasting cheese in Toulouse&lt;/p&gt;
+
 &lt;p&gt;With the cold weather and travels, it is difficult to go &lt;em&gt;always&lt;/em&gt; outside. It might be possible but definitively inefficient: if I have 30 minutes, this is way better to hit the gym rather than spending 10 minutes to look at the area on google maps, see where to go, ask for a map at the reception, etc. For short workouts, it is more convenient and efficient to hit the gym.&lt;/p&gt;
 &lt;p&gt;&amp;nbsp;&lt;/p&gt;
 &lt;p&gt;On the downside, such places are packed with gym rats and the view is not as entertaining as trails. Also, watching TV becomes boring very quickly. Plus, &lt;a href=&quot;http://www.netflix.com&quot;&gt;netflix&lt;/a&gt; or &lt;a href=&quot;http://www.pandora.com&quot;&gt;pandora&lt;/a&gt; are either blocked or too slow (depending on the country and hotel policy for using the wireless network). So, I took advantage of the &lt;a href=&quot;https://play.google.com/store/apps/details?id=com.ted.android&quot;&gt;TED android application&lt;/a&gt;: you can download video to watch later. So, you can browse all the talks, choose carefully some talks and find good one while you actually work out.&lt;/p&gt;
@@ -246,10 +261,16 @@
       <item>
         <title>Bonjour Toulouse</title>
         <description>&lt;p&gt;After some days in the country side, it is now time to head to Toulouse to give a tutorial during the &lt;a href=&quot;http://projects.laas.fr/IFSE/FMF/J6/&quot;&gt;formal method day&lt;/a&gt; at the &lt;a href=&quot;https://www.laas.fr&quot;&gt;LAAS lab &lt;/a&gt;and &lt;a href=&quot;http://www.erts2016.org/authors_detail_inverted_Delange%20Julien.html&quot;&gt;present one research paper at ERTS 2016&lt;/a&gt;. I had a last run in Normandy this morning.&lt;/p&gt;
-&lt;p&gt;[caption id=&quot;attachment_2051&quot; align=&quot;aligncenter&quot; width=&quot;523&quot;]&lt;img class=&quot; wp-image-2051&quot; src=&quot;/assets/normandyemorning.jpg?w=300&quot; alt=&quot;Road in Normandy in the Morning&quot; width=&quot;523&quot; height=&quot;392&quot; /&gt; Road in Normandy in the Morning[/caption]&lt;/p&gt;
+
+&lt;img class=&quot; wp-image-2051&quot; src=&quot;/assets/normandyemorning.jpg&quot; alt=&quot;Road in Normandy in the Morning&quot; width=&quot;523&quot; height=&quot;392&quot; /&gt; &lt;p&gt;Road in Normandy in the Morning&lt;/p&gt;
+
 &lt;p&gt;My right leg is definitively destroyed. The repeated long runs on pavement in Prague had a cost I am paying right now. After reaching my weekly goal of 60 miles, I might take some time off: too painful to run, it feels it might eventually hide more serious damages.&lt;/p&gt;
 &lt;p&gt;In the meantime, &lt;a href=&quot;https://www.facebook.com/francois.dhaene/&quot;&gt;Francois d&#39;Haene&lt;/a&gt; won &lt;a href=&quot;http://www.hk100-ultra.com/&quot;&gt;HK100&lt;/a&gt;. No kidding.&lt;/p&gt;
-&lt;p&gt;[caption id=&quot;attachment_2052&quot; align=&quot;aligncenter&quot; width=&quot;300&quot;]&lt;img class=&quot;size-medium wp-image-2052&quot; src=&quot;/assets/dhaene.png?w=300&quot; alt=&quot;D&#39;Haene finishing strong HK100 (photo irunfar)&quot; width=&quot;300&quot; height=&quot;199&quot; /&gt; D&#39;Haene finishing strong HK100 (photo irunfar)[/caption]&lt;/p&gt;
+
+
+&lt;img class=&quot;size-medium wp-image-2052&quot; src=&quot;/assets/dhaene.png?w=300&quot; alt=&quot;D&#39;Haene finishing strong HK100 (photo irunfar)&quot; width=&quot;300&quot; height=&quot;199&quot; /&gt;
+&lt;p&gt;D&#39;Haene finishing strong HK100 (photo irunfar)&lt;/p&gt;
+
 &lt;p&gt;Congratulations dude!&lt;/p&gt;
 </description>
         <pubDate>Sun, 24 Jan 2016 12:18:19 -0500</pubDate>
