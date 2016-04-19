@@ -3,6 +3,21 @@
   
     
     <url>
+      <loc>http://julien.gunnm.org/geek/sel4/2016/04/18/periodic-tasks-with-sel4/</loc>
+      
+        <lastmod>2016-04-18T09:13:20-04:00</lastmod>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.5</priority>
+      
+    </url>
+    
+  
+    
+    <url>
       <loc>http://julien.gunnm.org/fitness/pittsburgh/running/2016/03/08/packing-the-agenda/</loc>
       
         <lastmod>2016-03-08T08:13:20-05:00</lastmod>
@@ -738,7 +753,7 @@
   
     
     <url>
-      <loc>http://julien.gunnm.org/fitness/race%20report/running/2015/07/27/burning-river-100-race-report-a-k-a-how-to-run-30-hours-with-diarrhea/</loc>
+      <loc>http://julien.gunnm.org/fitness/race%20report/running/2015/07/27/burning-river-2015/</loc>
       
         <lastmod>2015-07-27T15:25:51-04:00</lastmod>
       
@@ -3505,7 +3520,7 @@
     <url>
       <loc>http://julien.gunnm.org/404</loc>
       
-        <lastmod>2016-03-22T07:10:49-04:00</lastmod>
+        <lastmod>2016-04-19T15:44:47-04:00</lastmod>
       
       
         <changefreq>monthly</changefreq>
@@ -3543,7 +3558,7 @@
     <url>
       <loc>http://julien.gunnm.org</loc>
       
-        <lastmod>2016-03-22T07:10:49-04:00</lastmod>
+        <lastmod>2016-04-19T15:44:47-04:00</lastmod>
       
       
         <changefreq>daily</changefreq>
