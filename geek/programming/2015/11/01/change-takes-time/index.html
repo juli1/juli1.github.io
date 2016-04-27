@@ -79,6 +79,8 @@
         
           <a class="page-link" href="/about/">About</a>
         
+          <a class="page-link" href="/active-swissvale-guide/">Glacier Ridge Trail - Training Information</a>
+        
           <a class="page-link" href="/bibliography/">Publications</a>
         
           <a class="page-link" href="/blog/">Blog</a>
@@ -87,7 +89,7 @@
         
           
         
-          <a class="page-link" href="/moraine-training/">Glacier Ridge Trail - Training Information</a>
+          <a class="page-link" href="/moraine-training0/">Swissvale activity guide</a>
         
           <a class="page-link" href="/ohiopyle-training/">Laurel Highland Trail - Gate to 8 - Training Information</a>
         
@@ -123,7 +125,8 @@
   <p>When multi-core processors were released in the mid-2000s, developers had to face a new programming paradigm: multi-threading. For sure, <a href="https://en.wikipedia.org/wiki/Symmetric_multiprocessing">SMP</a> (<a href="https://en.wikipedia.org/wiki/Symmetric_multiprocessing">Symmetric Multiprocessing</a>) was already there since years but such machines were dedicated to particular applications.</p>
 <p>This new processor design had some side effects: since applications were no longer executed on a single processor and developers had to synchronize shared data and avoid what we call <a href="https://en.wikipedia.org/wiki/Race_condition">race condition</a>. Interestingly,  most of the time, a race condition will crash the application. When multi-core processors were introduced, many popular applications had such issues (see this <a href="https://discussions.apple.com/thread/247969?start=0&amp;tstart=0">discussion for iTunes</a>) - mostly because developers did not design an application with synchronization constraints in mind. Of course, now, this design constraints is understood by most developers.</p>
 <p>During a current project, I am investigating the common software vulnerabilities/weaknesses and their evolution over time. Among the most popular, the "race condition" issue. There is the picture.</p>
-<p>[caption id="attachment_1880" align="aligncenter" width="660"]<a href="https://juli1pb.files.wordpress.com/2015/11/race-condition.png"><img class="wp-image-1880 size-large" src="/assets/race-condition.png?w=660" alt="number of issues related to synchronization issues" width="660" height="460" /></a> Number of issues related to synchronization issues[/caption]</p>
+<p><a href="https://juli1pb.files.wordpress.com/2015/11/race-condition.png"><img class="wp-image-1880 size-large" src="/assets/race-condition.png?w=660" alt="number of issues related to synchronization issues" width="660" height="460" /></a></p>
+
 <p>If we look closely, there was very few reports until multi-core were introduced. It continues to increase until 2012 (why it decreases in 2011 is still unknown) and then start to decrease. Interestingly, there are still a lot of issues related to synchronization today.</p>
 <p>The take away from this data? Change takes time. A. Lot. It took almost 10 years for software developers to address the matter and stop writing buggy code. And there are still a lot of reported issues. Developers had to take this new constraint into account while they were not familiar with this paradigm. Teachers had to explain this issue and address the matters in class.</p>
 <p>Change takes time and it is very difficult to predict the impact of a change - I assume nobody assumed that it would take so long for the industry to adapt to this new constraint.</p>

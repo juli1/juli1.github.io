@@ -5,8 +5,8 @@
     <description>Tales of a guy living in Pittsburgh addicted with Computer-Science, Running and Peanut Butter</description>
     <link>http://julien.gunnm.org/</link>
     <atom:link href="http://julien.gunnm.org/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Wed, 20 Apr 2016 07:42:36 -0400</pubDate>
-    <lastBuildDate>Wed, 20 Apr 2016 07:42:36 -0400</lastBuildDate>
+    <pubDate>Tue, 26 Apr 2016 20:01:45 -0400</pubDate>
+    <lastBuildDate>Tue, 26 Apr 2016 20:01:45 -0400</lastBuildDate>
     <generator>Jekyll v3.1.3</generator>
     
       <item>
@@ -220,65 +220,6 @@ int run(void)
       </item>
     
       <item>
-        <title>Packing the agenda</title>
-        <description>&lt;p style=&quot;text-align:center;&quot;&gt;&lt;em&gt;This&lt;/em&gt; just happened.&lt;/p&gt;
-&lt;p style=&quot;text-align:center;&quot;&gt;
-&lt;p&gt;&lt;img class=&quot;aligncenter size-full wp-image-2244&quot; src=&quot;/assets/rc.png&quot; alt=&quot;rc&quot; width=&quot;638&quot; height=&quot;76&quot; /&gt;&lt;/p&gt;
-&lt;p&gt;&amp;nbsp;&lt;/p&gt;
-&lt;p&gt;Not sure if it will help the healing process or make me feel any better. But it lines up for training program until the last race in August. First thing first, I have to fix my big toe, it looks in a bad shape for now.&lt;/p&gt;
-&lt;p&gt;&amp;nbsp;&lt;/p&gt;
-&lt;p&gt;&lt;img class=&quot;aligncenter wp-image-2245 size-medium&quot; src=&quot;/assets/nail.jpg?w=169&quot; alt=&quot;nail&quot; width=&quot;169&quot; height=&quot;300&quot; /&gt;&lt;/p&gt;
-</description>
-        <pubDate>Tue, 08 Mar 2016 08:13:20 -0500</pubDate>
-        <link>http://julien.gunnm.org/fitness/pittsburgh/running/2016/03/08/packing-the-agenda/</link>
-        <guid isPermaLink="true">http://julien.gunnm.org/fitness/pittsburgh/running/2016/03/08/packing-the-agenda/</guid>
-        
-        <category>healing</category>
-        
-        <category>injury</category>
-        
-        <category>rachel carson</category>
-        
-        
-        <category>fitness</category>
-        
-        <category>pittsburgh</category>
-        
-        <category>running</category>
-        
-      </item>
-    
-      <item>
-        <title>Entering the star system</title>
-        <description>&lt;p&gt;Last week, I was featured on &lt;a href=&quot;http://theruncommuter.com&quot;&gt;The Run Commuter website&lt;/a&gt;. I got my own article, which is definitively a true honor. I feel that I now belong to the club of the runners that got this exposure. It is also really funny because I just got injured one week before it was published.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;http://theruncommuter.com/the-new-run-commuters-february-2016/&quot; rel=&quot;attachment wp-att-2239&quot;&gt;&lt;img class=&quot;aligncenter size-full wp-image-2239&quot; src=&quot;/assets/runcommuter.png&quot; alt=&quot;runcommuter&quot; width=&quot;660&quot; height=&quot;348&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;And this week, the pacer page on the Pittsburgh marathon was just published. And of course, &lt;a href=&quot;http://www.thepittsburghmarathon.com/pace-team&quot;&gt;my ugly face is on it&lt;/a&gt;. Yay.&lt;/p&gt;
-&lt;p&gt;&amp;nbsp;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;http://www.thepittsburghmarathon.com/pace-team&quot; rel=&quot;attachment wp-att-2240&quot;&gt;&lt;img class=&quot;aligncenter size-full wp-image-2240&quot; src=&quot;/assets/paceteam.png&quot; alt=&quot;paceteam&quot; width=&quot;660&quot; height=&quot;191&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;It seems that all of that is finally getting real and I will have to run a half marathon in 1:45 in May while entertaining people around me. I tried to avoid everything running related since several weeks, including contact with the running community but it might be time to treat the several muscles injuries, tendinitis and remain of fractures that keep me away from running since several weeks now. Between a coming trip to Japan, another in France and a last one in Italy, I should find some time to train.&lt;/p&gt;
-</description>
-        <pubDate>Thu, 25 Feb 2016 17:35:42 -0500</pubDate>
-        <link>http://julien.gunnm.org/fitness/pittsburgh/running/2016/02/25/entering-the-star-system/</link>
-        <guid isPermaLink="true">http://julien.gunnm.org/fitness/pittsburgh/running/2016/02/25/entering-the-star-system/</guid>
-        
-        <category>injury</category>
-        
-        <category>pacer</category>
-        
-        <category>pittsburgh marathon</category>
-        
-        <category>tendinitis</category>
-        
-        
-        <category>fitness</category>
-        
-        <category>pittsburgh</category>
-        
-        <category>running</category>
-        
-      </item>
-    
-      <item>
         <title>BeagleBoard Black (BBB) and GPIO</title>
         <description>&lt;p&gt;When you buy a &lt;a href=&quot;http://beagleboard.org/black&quot;&gt;Beagleboard Black&lt;/a&gt; (a.k.a. BBB), it comes with a pre-installed version of debian with more or less everything you need to get started. I purchased the board for another purpose and develop seL4 components on top of it. But before starting to develop on seL4, it is useful to know exactly how the board works: once you know how the board works, you can start to write your code and know for sure that the bug comes from your code.&lt;/p&gt;
 &lt;p&gt;In this article, I will explain quickly how to set up a simple circuit to test the GPIO of the beaglebone.&lt;/p&gt;
@@ -335,69 +276,6 @@ int run(void)
       </item>
     
       <item>
-        <title>Enjoying the break</title>
-        <description>&lt;p&gt;No running since more than a week and definitively enjoying the rest.&lt;/p&gt;
-&lt;p&gt;Not sure how long it is going to last.&lt;/p&gt;
-&lt;p&gt;&amp;nbsp;&lt;/p&gt;
-&lt;p&gt;&lt;img class=&quot;aligncenter size-full wp-image-2186&quot; src=&quot;/assets/25005411756_a68e52da45_z.jpg&quot; alt=&quot;25005411756_a68e52da45_z&quot; width=&quot;480&quot; height=&quot;640&quot; /&gt;&lt;/p&gt;
-</description>
-        <pubDate>Mon, 15 Feb 2016 10:10:01 -0500</pubDate>
-        <link>http://julien.gunnm.org/fitness/running/2016/02/15/enjoying-the-break/</link>
-        <guid isPermaLink="true">http://julien.gunnm.org/fitness/running/2016/02/15/enjoying-the-break/</guid>
-        
-        <category>climbing</category>
-        
-        <category>rest</category>
-        
-        <category>running</category>
-        
-        
-        <category>fitness</category>
-        
-        <category>running</category>
-        
-      </item>
-    
-      <item>
-        <title>Shame on you WS100</title>
-        <description>&lt;p&gt;&lt;a href=&quot;http://www.sacbee.com/news/local/article59462939.html&quot;&gt;Western States 100 added a new rule in order that deny race entry to any athlete who has been caught using performance-enhancing drugs from competing in Western States&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;What a shame.&lt;/p&gt;
-&lt;p&gt;Armstrong did not even mention he wanted to run this race. He runs every now and then (&lt;a href=&quot;https://www.strava.com/athletes/1712082&quot;&gt;his strava profile&lt;/a&gt; is very active) and recently won a trail race. But he did not sign up for the race.&lt;/p&gt;
-&lt;p&gt;The organizers reacted over a non-existing threat. Just by fear. Or just to make noise.&lt;/p&gt;
-&lt;p&gt;But why banning him? This sport is all about community, not about rejection. We are a welcoming community. How many of us struggled with life, suffered from various addictions and find salvation through ultra running? How many stories of people stopping drinking, doing drugs or losing weight that stopped when they start running? Armstrong wants to join us? He is more than welcome. There is no reason to reject him.&lt;/p&gt;
-&lt;p&gt;There are many solutions to offer a fair treatment if he is running: enable drug testing during the race (for &lt;strong&gt;every&lt;/strong&gt; runner - let&#39;s be serious: some elites &lt;strong&gt;&lt;em&gt;are&lt;/em&gt;&lt;/strong&gt; using performance enhancing drugs, why not testing them?) or just let him to race without receiving an award/money. But there is no reason to reject somebody without trying to work things out. And by taking such a decision, the race organizers might have show that our sport is slowly evolving ... probably not for the best.&lt;/p&gt;
-</description>
-        <pubDate>Wed, 10 Feb 2016 21:31:55 -0500</pubDate>
-        <link>http://julien.gunnm.org/misc/running/2016/02/10/shame-on-you-ws100/</link>
-        <guid isPermaLink="true">http://julien.gunnm.org/misc/running/2016/02/10/shame-on-you-ws100/</guid>
-        
-        
-        <category>misc</category>
-        
-        <category>running</category>
-        
-      </item>
-    
-      <item>
-        <title>Work &amp; Injury</title>
-        <description>&lt;p&gt;This week, a new blog post about my ongoing work on software security has been published on the &lt;a href=&quot;https://insights.sei.cmu.edu/sei_blog/2016/02/improving-system-and-software-security-with-aadl.html&quot;&gt;SEI blog&lt;/a&gt;. This work is being very exciting and I am currently working on other publication. During the next week, I will also work on a code generator that will transform an architecture model into C code executed on top of &lt;a href=&quot;http://sel4.systems&quot;&gt;seL4&lt;/a&gt;, the only formally verified kernel that has been used for the &lt;a href=&quot;http://www.darpa.mil/program/high-assurance-cyber-military-systems&quot;&gt;HACMS&lt;/a&gt; program from DARPA. This will facilitates the design, implementation and verification of secure systems.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://insights.sei.cmu.edu/sei_blog/2016/02/improving-system-and-software-security-with-aadl.html&quot;&gt;&lt;img class=&quot;alignnone size-full wp-image-2127&quot; src=&quot;/assets/screenshot-2016-02-04-at-11-11-07-pm.png&quot; alt=&quot;Screenshot 2016-02-04 at 11.11.07 PM&quot; width=&quot;1010&quot; height=&quot;413&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;On a running side, running is becoming so painful that I no longer enjoy it. Every step is painful. A pause is necessary after every mile.&lt;/p&gt;
-&lt;p&gt;I need a new strategy to recover, avoid any permanent damage and maintain my fitness level. But running is no longer an option.&lt;/p&gt;
-&lt;p&gt;More on that soon.&lt;/p&gt;
-</description>
-        <pubDate>Fri, 05 Feb 2016 00:21:53 -0500</pubDate>
-        <link>http://julien.gunnm.org/geek/running/2016/02/05/work-injury/</link>
-        <guid isPermaLink="true">http://julien.gunnm.org/geek/running/2016/02/05/work-injury/</guid>
-        
-        
-        <category>geek</category>
-        
-        <category>running</category>
-        
-      </item>
-    
-      <item>
         <title>Paris Charles de Gaulle Airport: a metaphor of the evolution of France</title>
         <description>&lt;p&gt;As a researcher working with an international standard committee, publishing papers and attending international conferences, I travel a lot. I often visit Europe, and, coming from the USA, the Paris Charles de Gaulle (CDG) airport is where I take most of my connecting flights. Last, as a french-native, I sometimes come back in the country to visit my family and then, land at this airport.&lt;/p&gt;
 
@@ -436,39 +314,6 @@ int run(void)
       </item>
     
       <item>
-        <title>Killing Treadmill boredom with TED talks</title>
-        <description>&lt;img class=&quot; size-full wp-image-2083 alignright&quot; src=&quot;/assets/cheese.jpg&quot; alt=&quot;cheese&quot;/&gt; &lt;p&gt;Shopping and tasting cheese in Toulouse&lt;/p&gt;
-
-&lt;p&gt;With the cold weather and travels, it is difficult to go &lt;em&gt;always&lt;/em&gt; outside. It might be possible but definitively inefficient: if I have 30 minutes, this is way better to hit the gym rather than spending 10 minutes to look at the area on google maps, see where to go, ask for a map at the reception, etc. For short workouts, it is more convenient and efficient to hit the gym.&lt;/p&gt;
-&lt;p&gt;&amp;nbsp;&lt;/p&gt;
-&lt;p&gt;On the downside, such places are packed with gym rats and the view is not as entertaining as trails. Also, watching TV becomes boring very quickly. Plus, &lt;a href=&quot;http://www.netflix.com&quot;&gt;netflix&lt;/a&gt; or &lt;a href=&quot;http://www.pandora.com&quot;&gt;pandora&lt;/a&gt; are either blocked or too slow (depending on the country and hotel policy for using the wireless network). So, I took advantage of the &lt;a href=&quot;https://play.google.com/store/apps/details?id=com.ted.android&quot;&gt;TED android application&lt;/a&gt;: you can download video to watch later. So, you can browse all the talks, choose carefully some talks and find good one while you actually work out.&lt;/p&gt;
-&lt;p&gt;I tried to make a short list of good TED talks - if you are planning to hit the gym or looking for some stuff to watch at home, there is a list. I hope it might be useful to some of you.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.ted.com/talks/benjamin_wallace_on_the_price_of_happiness&quot;&gt;The Price of Happiness&lt;/a&gt; by Benjamin Wallace - expensive stuff will not make you happy, this talk explains why. I always believe the most important value is in things that cannot have a price.&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.ted.com/talks/william_li?language=en&quot;&gt;Can we eat to starve cancer?&lt;/a&gt; by William Li - inspiring talk that presents a new way to treat and potentially kill cancer. While we focus on invasive solution, I truly believe a long-term, proactive approach that focuses on what we eat everyday is more efficient than the actual solution that are invasive, aggressive and intrusive.&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.ted.com/talks/james_veitch_this_is_what_happens_when_you_reply_to_spam_email?language=en&quot;&gt;This is what happens when you reply to spam&lt;/a&gt; by James Veitch - epic and funny talk, very refreshing&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.ted.com/talks/marc_kushner_why_the_buildings_of_the_future_will_be_shaped_by_you#&quot;&gt;Why the building of the future will be shaped by ... you&lt;/a&gt; by Marc Kushner - amazing talk about the value and important of architecture: how it shapes and impacts our life. Small changes have a big impact for years. Definitively a topic to think about and can apply to many other domains (who said software or computer architecture?)&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.ted.com/talks/ann_cooper_talks_school_lunches&quot;&gt;What&#39;s wrong with school lunches&lt;/a&gt; by Ann Cooper - a simple (but smart) talk about actual issues with food provided in schools. Valuable talk by somebody that actually works in this domain.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&amp;nbsp;&lt;/p&gt;
-&lt;p&gt;&amp;nbsp;&lt;/p&gt;
-</description>
-        <pubDate>Tue, 26 Jan 2016 16:30:31 -0500</pubDate>
-        <link>http://julien.gunnm.org/fitness/misc/running/2016/01/26/killing-treadmill-boredom-with-ted-talks/</link>
-        <guid isPermaLink="true">http://julien.gunnm.org/fitness/misc/running/2016/01/26/killing-treadmill-boredom-with-ted-talks/</guid>
-        
-        <category>Shopping andan dTouous</category>
-        
-        
-        <category>fitness</category>
-        
-        <category>misc</category>
-        
-        <category>running</category>
-        
-      </item>
-    
-      <item>
         <title>Bonjour Toulouse</title>
         <description>&lt;p&gt;After some days in the country side, it is now time to head to Toulouse to give a tutorial during the &lt;a href=&quot;http://projects.laas.fr/IFSE/FMF/J6/&quot;&gt;formal method day&lt;/a&gt; at the &lt;a href=&quot;https://www.laas.fr&quot;&gt;LAAS lab &lt;/a&gt;and &lt;a href=&quot;http://www.erts2016.org/authors_detail_inverted_Delange%20Julien.html&quot;&gt;present one research paper at ERTS 2016&lt;/a&gt;. I had a last run in Normandy this morning.&lt;/p&gt;
 
@@ -499,6 +344,238 @@ int run(void)
         <category>geek</category>
         
         <category>misc</category>
+        
+        <category>running</category>
+        
+      </item>
+    
+      <item>
+        <title>Let&#39;s stop charity, let&#39;s give a basic income</title>
+        <description>&lt;p&gt;Recently, the &lt;a href=&quot;https://thebillfold.com/dutch-city-of-utrecht-announces-basic-income-experiment-f31954a995ec#.lniq1cto1&quot;&gt;city of Utrecht initiated a new idea&lt;/a&gt;: everybody gets a basic, minimal income, no matter their social situation (working/non-working) or their initial income. What you earn comes on top of that.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.independent.org/publications/tir/article.asp?a=1044&quot;&gt;The idea has been around for a while&lt;/a&gt;. The principles behind it are pretty simple: &lt;em&gt;equality&lt;/em&gt;. You get a basic income so that you can live in this world and afford the basic, necessary things. After that, if you want something beyond what is strictly necessary, you have to work or find a way to get more money. In other words, we do not let people die in the streets but this is their own choice to decide if they want to do more. Want to have kids? Do not rely on the welfare system, get a job and make sure you can afford education, food and housing. Want to buy a nice house? Do not rely on the welfare system and start saving &lt;em&gt;now&lt;/em&gt;. On the other hand, when hard times hit you, you still have something so that you are not dying in the streets.&lt;/p&gt;
+&lt;p&gt;If you argue this is giving charity and getting people lazy, you are doing a mistake. With a basic income at 900€ in the Netherlands, you can afford nothing but very basic things (see &lt;a href=&quot;http://www.studyinholland.co.uk/cost_of_living.html&quot;&gt;this estimate for a monthly budget for a student ...&lt;/a&gt;). With that, you will live alone in a one bedroom apartment in the country side, cannot have a car and will just be able to eat and stay at home. Going out is very unlikely and the only restaurant you might be able to afford would be McDonalds. So, really nothing fancy but at least, it can help you when you are unemployed for few months.&lt;/p&gt;
+&lt;p&gt;Opponents to this idea argue that the basic would cost a lot. But considering how much it costs to give and manage the welfare system, the city of Utrecht has shown that it is in fact, it would be cheaper than maintaining the existing system.Looking at the numbers reported by &lt;a href=&quot;http://www.theguardian.com/world/2015/dec/26/dutch-city-utrecht-basic-income-uk-greens&quot;&gt;the guardian&lt;/a&gt;: the city of &lt;a href=&quot;https://en.wikipedia.org/wiki/Nijmegen&quot;&gt;Nijmegen&lt;/a&gt; gives £88m but it costs about £15m to just manage the welfare system. With that cost in mind, can we consider this system efficient? Giving a basic income would reduce the welfare management while ensuring a basic, simple and fair rule for everybody: no matter where you live, who you are, you have a basic income.&lt;/p&gt;
+&lt;p&gt;But beyond the debate about giving charity to everybody, this idea of a minimal wage highlight some questions we need to address as a society. The employment landscape changed a lot over the last years: we no longer work in the same company all our life, there will be always some unemployment periods, you might take a break at some point. The required skills of the workforce also changed and people needs to train, to adapt. We no longer have the same work all our life, and, as we live longer, we can expect changes. And more simply, there might not be enough work for everybody and unemployment might be something we cannot avoid. So do we really &lt;em&gt;need&lt;/em&gt; to work every day of our life? If not, how can we still offer a decent way to live for everybody in this world?&lt;/p&gt;
+&lt;p&gt;So, when looking at what happened over the last years and what is coming (more automation, no need to be physically in a company, etc.) is it necessary to maintain the current welfare system, especially considering its overhead and limitations? How can we make sure everybody can live decently and afford the basics? The idea of a basic income might be a good solution, more efficient and fair than what the patches introduced by what seems to be an outdated welfare system.&lt;/p&gt;
+</description>
+        <pubDate>Thu, 31 Dec 2015 09:44:11 -0500</pubDate>
+        <link>http://julien.gunnm.org/misc/2015/12/31/stop-charity-give-minimal-income/</link>
+        <guid isPermaLink="true">http://julien.gunnm.org/misc/2015/12/31/stop-charity-give-minimal-income/</guid>
+        
+        <category>basic income</category>
+        
+        <category>economics</category>
+        
+        <category>welfare</category>
+        
+        
+        <category>misc</category>
+        
+      </item>
+    
+      <item>
+        <title>Xmas homework(s)</title>
+        <description>&lt;p&gt;Among the joy of being an expatriate is that you do not have to go in your family and take advantage of this holiday period to rest, do some personal projects and dedicate time to things you wanted to do.&lt;/p&gt;
+&lt;p&gt;Since the last couple of days, I am trying to use &lt;a href=&quot;http://sel4.systems/&quot;&gt;SeL4&lt;/a&gt;, a security-oriented kernel that has been formally proven. Sounds sexy, right? For now, I am not quite sure to fully understand how it works and the development environment is huge. It reminds me my old days, when working on taste that requires a full virtual machine just to work. Ah, the joy of development environments that are designed like a Russian jail, so convenient and easy to use!&lt;/p&gt;
+&lt;p&gt;The goal of this project is to be able to generate SeL4 secure applications from architecture models (mostly &lt;a href=&quot;http://www.aadl.info&quot;&gt;AADL&lt;/a&gt;). The high-level security requirements would be verified at the model level and would ultimately be transformed into code. This is what I am trying to do during this holiday period.&lt;/p&gt;
+&lt;p&gt;I am also trying to train for &lt;a href=&quot;http://worldsendultra.com/&quot;&gt;Worlds Ends 100&lt;/a&gt; that will take place in May. Some friends have been there last week-end and told me the course is challenging and intense. As there is an aggressive 19 hours cut-off, I need to work my ass right &lt;em&gt;now&lt;/em&gt; in order to finish the race on time. Unfortunately, I do not have the opportunity to train on the course and all I can do is mimic the elevation profile in the parks around Pittsburgh.&lt;/p&gt;
+&lt;p&gt;On a side note, I am now an official pacer for the Pittsburgh Half-Marathon. If you are running the half and plan to finish in 1:45, I will be around you.&lt;/p&gt;
+&lt;p&gt;The weather in Pittsburgh is still surprisingly hot. More than 16C.&lt;/p&gt;
+&lt;p&gt;Happy Holidays.&lt;/p&gt;
+</description>
+        <pubDate>Tue, 22 Dec 2015 15:46:34 -0500</pubDate>
+        <link>http://julien.gunnm.org/misc/programming/running/2015/12/22/xmas-homeworks/</link>
+        <guid isPermaLink="true">http://julien.gunnm.org/misc/programming/running/2015/12/22/xmas-homeworks/</guid>
+        
+        <category>aadl</category>
+        
+        <category>security</category>
+        
+        <category>sel4</category>
+        
+        
+        <category>misc</category>
+        
+        <category>programming</category>
+        
+        <category>running</category>
+        
+      </item>
+    
+      <item>
+        <title>Getting cold and dark: what to wear?</title>
+        <description>&lt;p&gt;Time has come, it starts to be darker and colder out there. Each year at the same time, this is the same thing: people are getting nervous about what to wear, either to be seen or staying warm. We see people getting dressed for a light 5K as if they were going to run a marathon in the North Pole while others are as bright as a xmas tree. This is a 5K guy: and you are dressing as you were training for badwater with the snow. So, if this is definitively useless to over-do it, there are still some basic things to do. Just observe three rules: see/be seen, stay warm and break the ice.&lt;/p&gt;
+&lt;h1&gt;How to see and be seen&lt;/h1&gt;
+&lt;p&gt;First thing: &lt;strong&gt;to see&lt;/strong&gt;. For that, nothing better than a headlamp. I would not rely only on public lights - some area can be really dark and, if you are a woman, you probably want to see what is going on in these areas. If you are running often, a model with rechargeable batteries is a good idea, especially if you can charge it using micro-USB (and thus, use the same charger as your cellphone).&lt;/p&gt;
+&lt;p&gt;Second: &lt;strong&gt;be seen&lt;/strong&gt;. Last year, I got a &lt;a href=&quot;https://www.noxgear.com/tracer360&quot;&gt;tracer360&lt;/a&gt;, a vest that change its color. Clearly embarrassed for myself, I wore it (I meant, it was a present - at least, &lt;em&gt;you try it&lt;/em&gt;) and was feeling sorry for myself. I made probably more light than the traffic light. Yes, I was seen but it was clearly embarrassing and probably not necessary. I returned the present, pretexting it was not fitting me (and this was the truth as well).At a $70 MSRP, this is clearly a rip-off: a reflective vest (~ $20) will do as good without turning you into a local running attraction. So wear bright gear and if you are wondering if this is enough, take a reflective vest. But keep the xmas lights at home.&lt;/p&gt;
+&lt;h1&gt;Stay warm&lt;/h1&gt;
+&lt;p&gt;Same thing as for the reflective vest, vendors try to sell you expensive products where you really do not need to spend that much. Some products (such as the &lt;a href=&quot;http://www.runningwarehouse.com/Nike_Mens_Dri-Fit_Flash_Tight/descpage-NMDFFT.html&quot;&gt;Nike Dri-Fit Flash Tight&lt;/a&gt;) can cost up to $150, which would be even more expensive that the cost for everything you need to run at night. The basic rule is to use layers. One short-sleeve t-shirt on top of a long-sleeve t-shirt is a good start. Use a sweater when this is really cold outside. But be careful: after 20 to 30 minutes, you will be warm, so, dress accordingly to the distance you are running. You probably have plenty of tech t-shirt already from the packet in the races. Also, a tech sweater costs around $40.&lt;/p&gt;
+&lt;p&gt;Use light gloves made with technical materials. Just avoid the big gloves: the cold will accumulate and freeze your fingers.You can get gloves around $10 to $20.&lt;/p&gt;
+&lt;h1&gt;Break the ice&lt;/h1&gt;
+&lt;p&gt;When the temperature gets really cold, running on icy roads or trails can be dangerous. I paid the price last year and fractured my hip at the end of a run. Several solution: special shoes, yaktrax, screws or ice spikes.&lt;/p&gt;
+&lt;p&gt;I used &lt;a href=&quot;https://www.yaktrax.com/&quot;&gt;yaktrax&lt;/a&gt; last year and I was not satisfied. Hard to put, it sometimes detaches itself from the shoe and hardly sticks on the shoe. Also, it might not fit all shoes. The system is so hard to use that I did not use it everyday (too hard to put on the shoe). I would not recommend this system, especially considering its price (about $40 to $50).&lt;/p&gt;
+&lt;p&gt;The solution that many recommended is using either&lt;a href=&quot;http://www.icespike.com/&quot;&gt; ice spikes&lt;/a&gt; or simple screws on your shoes. Basically, ice spikes seem to be screws dedicated to running shoes. The idea: you put screws under your shoe that will get you traction on icy roads/trails. Of course, you might still fall but the general idea is that it reduces the likelihood to fall. This is what I am trying this year. A pack of ice spikes costs about $15~$20 with shipping.&lt;/p&gt;
+&lt;h1&gt;Hey dude, what do you use?&lt;/h1&gt;
+&lt;p&gt;Having the &lt;a href=&quot;http://www.mayoclinic.org/diseases-conditions/raynauds-disease/basics/definition/con-20022916&quot;&gt;Raunaud syndrome&lt;/a&gt;, I am clearly over-protecting my body against the cold. Even during summer, my fingers and toes can be blue-ish, so, I am trying to take care of this. Also, as I am running everyday, I experienced many different weather conditions.&lt;/p&gt;
+&lt;p&gt;On the top, I am using a long sleeves tech sweater over a short sleeves tech shirt. On the bottom, a tech pant over a tech running short. On the hands, a pair of tech gloves and on the head, a headband that protects my ears. Nothing else, and this is enough to keep me going through the winter. The use of technical material avoids the moisture to freeze and then, lower my body temperature. Finally, for the headlamp, a basic black diamond that can be charged on USB (charging after each use) and for the vest, a simple nathan reflective vest.&lt;/p&gt;
+&lt;p&gt;Overall, all the gear and devices cost me between about $150. Which very reasonable considering that can be the price of a single tech pant in some running store and I have seen some people spending 5 to 10 times that amount to run through the cold. Just do not over do it, save some money, spend it with your friends rather than on special gear and as &lt;a href=&quot;https://en.wikipedia.org/wiki/Public_Enemy_%28music_group%29&quot;&gt;Public Enemy&lt;/a&gt; used to say: &lt;a href=&quot;https://www.youtube.com/watch?v=9vQaVIoEjOM&quot;&gt;do not believe the hype&lt;/a&gt;.&lt;/p&gt;
+</description>
+        <pubDate>Tue, 08 Dec 2015 20:58:25 -0500</pubDate>
+        <link>http://julien.gunnm.org/fitness/running/2015/12/08/what-to-wear-for-running-in-the-dark-and-cold/</link>
+        <guid isPermaLink="true">http://julien.gunnm.org/fitness/running/2015/12/08/what-to-wear-for-running-in-the-dark-and-cold/</guid>
+        
+        <category>cold</category>
+        
+        <category>dark</category>
+        
+        <category>running</category>
+        
+        <category>what to wear</category>
+        
+        
+        <category>fitness</category>
+        
+        <category>running</category>
+        
+      </item>
+    
+      <item>
+        <title>It is an architecture problem</title>
+        <description>&lt;p&gt;The big news today (that got my attention!) is the Washington post about &lt;a href=&quot;http://www.washingtonpost.com/sf/business/2015/11/05/net-of-insecurity-the-kernel-of-the-argument/&quot;&gt;Linus&#39; thoughts on security, especially in the linux kernel&lt;/a&gt;.You probably do not know but today, Linux is one of the most used kernel in the world. Every Android device rely on it - most of non-critical embedded devices use it. You are probably not aware of it but you are probably using more Linux-powered devices than Windows or Mac.&lt;/p&gt;
+&lt;p&gt;The article is well written and explain most of the issues to a non-technical people. Great. But sometimes, it messes things up. For example, when the article reports that the &lt;a href=&quot;https://en.wikipedia.org/wiki/Ashley_Madison_data_breach&quot;&gt;ashley madison data breach&lt;/a&gt;, it is totally unrelated: the article focuses on the kernel, not the userspace. This is just not accurate to connect this attack with the linux kernel, it could happen with the same software running on a different kernel.&lt;/p&gt;
+&lt;p&gt;What users must understand is that security comes at a cost and while this is an important requirement for us, this is not the most critical and people do not pay attention to it until a big attack appears. Achieving high security impact other requirements and characteristics, such as performance. At the end, the question is: are you willing to have your system running slower to protect yourself against a potential security attack against your contact list that has not been discovered yet and would be fixed as soon as it is discovered?&lt;/p&gt;
+&lt;p style=&quot;text-align:center;&quot;&gt;A&lt;em&gt;re you willing to pay the cost of security without affecting other attributes?&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;It totally depends on your objective and priorities: if your system is a smartphone, you probably do not care because once discovered, the attack will be fixed and your phone will be automatically upgraded. But if you design a nuclear power plant, there is no room for a second chance, millions of people are already dead. So, you do not want that to happen at &lt;em&gt;any&lt;/em&gt; cost.&lt;/p&gt;
+&lt;p&gt;Linus made a good point on that as well: if you are running a safety-critical system, you just do not use Linux. If you are concerned about the security of Linux, solutions exists (e.g. &lt;a href=&quot;https://en.wikipedia.org/wiki/Security-Enhanced_Linux&quot;&gt;selinux&lt;/a&gt;, &lt;a href=&quot;https://grsecurity.net/&quot;&gt;grsecurity&lt;/a&gt;). And if tomorrow the kernel needs more security, the community will work the existing kernel and add the necessary layers - this is just that it has not been the focus so far or has been done through individual efforts. But at the end, if you really want to isolate software according to their criticality, this is no longer a matter of code but an architecture concern: you have to design your system and isolate components according to their security levels. Many existing approaches address that issue (for example, &lt;a href=&quot;https://en.wikipedia.org/wiki/Multiple_Independent_Levels_of_Security&quot;&gt;MILS&lt;/a&gt;) and there are many solutions to such design: gatekeepers (filtering insecure data before they are forwarded to the secure components), physical or logical separation, etc.&lt;/p&gt;
+&lt;p&gt;This is also what has been shown by the &lt;a href=&quot;http://www.wired.com/2015/07/hackers-remotely-kill-jeep-highway/&quot;&gt;attack on the Jeep&lt;/a&gt; by &lt;a href=&quot;https://www.youtube.com/watch?v=OobLb1McxnI&quot;&gt;Miller and Valasek&lt;/a&gt;: the entertainment system is connect to several networks connecting critical and non-critical devices without any filtering. By attacking the entertainment system, attackers were able to control a car from their couch. Great. Some will argue this is a software issue but I am still convinced this is an architecture issue: the entertainment system should not be connected to critical equipment without any filtering or protection mechanism.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.washingtonpost.com/sf/business/2015/11/05/net-of-insecurity-the-kernel-of-the-argument/&quot;&gt;The Washington post article&lt;/a&gt; is interesting but the whole discussion on the Linux kernel is just too much. Rather than putting the fault of an insecure Internet on linux developers, it would rather be more interesting to understand the real architecture defects of the network. And why people choose such insecure software: if Linux is so bad, why is it still soused? There are still many open questions but this article demonstrates how cybersecurity is not understood and addressed today, in our now over-connected world.&lt;/p&gt;
+</description>
+        <pubDate>Fri, 06 Nov 2015 16:04:45 -0500</pubDate>
+        <link>http://julien.gunnm.org/geek/programming/2015/11/06/it-is-an-architecture-problem/</link>
+        <guid isPermaLink="true">http://julien.gunnm.org/geek/programming/2015/11/06/it-is-an-architecture-problem/</guid>
+        
+        <category>architecture</category>
+        
+        <category>grsecurity</category>
+        
+        <category>linux</category>
+        
+        <category>mils</category>
+        
+        <category>security</category>
+        
+        <category>selinux</category>
+        
+        
+        <category>geek</category>
+        
+        <category>programming</category>
+        
+      </item>
+    
+      <item>
+        <title>Change takes time</title>
+        <description>&lt;p&gt;When multi-core processors were released in the mid-2000s, developers had to face a new programming paradigm: multi-threading. For sure, &lt;a href=&quot;https://en.wikipedia.org/wiki/Symmetric_multiprocessing&quot;&gt;SMP&lt;/a&gt; (&lt;a href=&quot;https://en.wikipedia.org/wiki/Symmetric_multiprocessing&quot;&gt;Symmetric Multiprocessing&lt;/a&gt;) was already there since years but such machines were dedicated to particular applications.&lt;/p&gt;
+&lt;p&gt;This new processor design had some side effects: since applications were no longer executed on a single processor and developers had to synchronize shared data and avoid what we call &lt;a href=&quot;https://en.wikipedia.org/wiki/Race_condition&quot;&gt;race condition&lt;/a&gt;. Interestingly,  most of the time, a race condition will crash the application. When multi-core processors were introduced, many popular applications had such issues (see this &lt;a href=&quot;https://discussions.apple.com/thread/247969?start=0&amp;amp;tstart=0&quot;&gt;discussion for iTunes&lt;/a&gt;) - mostly because developers did not design an application with synchronization constraints in mind. Of course, now, this design constraints is understood by most developers.&lt;/p&gt;
+&lt;p&gt;During a current project, I am investigating the common software vulnerabilities/weaknesses and their evolution over time. Among the most popular, the &quot;race condition&quot; issue. There is the picture.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://juli1pb.files.wordpress.com/2015/11/race-condition.png&quot;&gt;&lt;img class=&quot;wp-image-1880 size-large&quot; src=&quot;/assets/race-condition.png?w=660&quot; alt=&quot;number of issues related to synchronization issues&quot; width=&quot;660&quot; height=&quot;460&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;If we look closely, there was very few reports until multi-core were introduced. It continues to increase until 2012 (why it decreases in 2011 is still unknown) and then start to decrease. Interestingly, there are still a lot of issues related to synchronization today.&lt;/p&gt;
+&lt;p&gt;The take away from this data? Change takes time. A. Lot. It took almost 10 years for software developers to address the matter and stop writing buggy code. And there are still a lot of reported issues. Developers had to take this new constraint into account while they were not familiar with this paradigm. Teachers had to explain this issue and address the matters in class.&lt;/p&gt;
+&lt;p&gt;Change takes time and it is very difficult to predict the impact of a change - I assume nobody assumed that it would take so long for the industry to adapt to this new constraint.&lt;/p&gt;
+</description>
+        <pubDate>Sun, 01 Nov 2015 19:21:20 -0500</pubDate>
+        <link>http://julien.gunnm.org/geek/programming/2015/11/01/change-takes-time/</link>
+        <guid isPermaLink="true">http://julien.gunnm.org/geek/programming/2015/11/01/change-takes-time/</guid>
+        
+        <category>cve</category>
+        
+        <category>cwe</category>
+        
+        <category>race condition</category>
+        
+        
+        <category>geek</category>
+        
+        <category>programming</category>
+        
+      </item>
+    
+      <item>
+        <title>Tussey mOUnTaiNBACK 50 miles - Race Report</title>
+        <description>&lt;p&gt;Tussey mOUnTaiNBACK is a race I have in my heart. When I started to be more serious about running, I did the Tussey mOUnTaiNBACK relay with 3 persons. It was back in 2013, after my first marathon. With my team, &lt;em&gt;&quot;The Crazy Yinzers&quot;&lt;/em&gt; (entirely composed of non-native US persons) we spend the day on the trails and it was a fantastic experience. Kim, one of the most inspiring running buddy I had so far was part of it and made this day very special.&lt;/p&gt;
+&lt;p&gt;I always thought it would be really cool to run the whole thing by myself. Last year, I did not feel ready for this and already signed up for &lt;a href=&quot;http://julien.gunnm.org/2014/11/11/pittsburgh-eqt-10-milers-2014-edition/&quot;&gt;EQT 10 miler&lt;/a&gt; as a pacer (which was on the same day). Since then, I did a 50 milers (&lt;a href=&quot;http://julien.gunnm.org/2014/11/24/jfk50-race-report/&quot;&gt;JFK&lt;/a&gt;), a 100 milers (&lt;a href=&quot;http://julien.gunnm.org/2015/07/27/burning-river-100-race-report-a-k-a-how-to-run-30-hours-with-diarrhea/&quot;&gt;Burning River&lt;/a&gt;) and a couple of 50K.&lt;/p&gt;
+&lt;p&gt;So, this year, when registration opened, I took the opportunity and signed up. I wanted to do this, to give a try. Registration is very reasonable if you signed up as an ultra runner without a support vehicle (about $95). If you compare with JFK (about $200), this is a better deal and a better course (more on that later).&lt;/p&gt;
+&lt;p&gt;[caption id=&quot;attachment_1850&quot; align=&quot;aligncenter&quot; width=&quot;487&quot;]&lt;a href=&quot;https://juli1pb.files.wordpress.com/2015/10/map2.png&quot;&gt;&lt;img class=&quot;size-full wp-image-1850&quot; src=&quot;/assets/map2.png&quot; alt=&quot;Course Map&quot; width=&quot;487&quot; height=&quot;272&quot; /&gt;&lt;/a&gt; Course Map[/caption]&lt;/p&gt;
+&lt;h1&gt;&lt;/h1&gt;
+&lt;h1&gt;Race preparation&lt;/h1&gt;
+&lt;p&gt;Since &lt;a href=&quot;http://julien.gunnm.org/2015/07/27/burning-river-100-race-report-a-k-a-how-to-run-30-hours-with-diarrhea/&quot;&gt;Burning River 100&lt;/a&gt;, I have a strong desire of taking a break from running. Just for few weeks/months. Running every day and continue with long runs during the week end was mentally and physically exhausting. I made some races here and there but running was no longer my top priority. I ran to work every day, doing an average of 50 to 80 miles a week. It fulfills a utility function (commuting), nothing else: I prefer to run to work than driving - it keeps me sane for the day.&lt;/p&gt;
+&lt;p&gt;Also, the month before the race, I had a lot of work commitments and traveled in Seattle, Ottawa, France and Iowa. For sure, it was possible to train but it is more difficult. As I visited friends and attended conference receptions and dinners, free time was limited as well. The longest runs I had were two back to back 17 miles, mostly on flat roads. Not so bad but definitively not enough when you are training for a 50 miles in the mountains. I tried to train in the elliptical and do other workouts, but it was probably not a good strategy as I injured myself a week before the race.&lt;/p&gt;
+&lt;p&gt;[caption id=&quot;attachment_1864&quot; align=&quot;aligncenter&quot; width=&quot;500&quot;]&lt;a href=&quot;https://juli1pb.files.wordpress.com/2015/10/trained.jpg&quot;&gt;&lt;img class=&quot;size-full wp-image-1864&quot; src=&quot;/assets/trained.jpg&quot; alt=&quot;How I felt on race day&quot; width=&quot;500&quot; height=&quot;331&quot; /&gt;&lt;/a&gt; How I felt on race day[/caption]&lt;/p&gt;
+&lt;p&gt;Also, my diet, usually based on vegetables, non-meat fats (e.g. peanut butter!) and water/coffee was now focused on croissants, butter, crepes, bagels, potato, various deserts with champagne, wine or beer. I gained about 10 pounds total during that period. So, I was definitively not at the top of my fitness level. But after all, this is the best I could do, so, let&#39;s give a try!&lt;/p&gt;
+&lt;p&gt;[caption id=&quot;attachment_1845&quot; align=&quot;aligncenter&quot; width=&quot;300&quot;]&lt;a href=&quot;https://juli1pb.files.wordpress.com/2015/10/22306019939_09e2314097_z.jpg&quot;&gt;&lt;img class=&quot;wp-image-1845 size-medium&quot; src=&quot;/assets/22306019939_09e2314097_z.jpg?w=300&quot; alt=&quot;22306019939_09e2314097_z&quot; width=&quot;300&quot; height=&quot;225&quot; /&gt;&lt;/a&gt; You have to carb-load the right way[/caption]&lt;/p&gt;
+&lt;p&gt;I came back in Pennsylvania on Friday night before race week-end. I headed to State College on Saturday afternoon, took my hotel room (I was staying at the &lt;a href=&quot;http://www.toftrees.com/&quot;&gt;Toftrees&lt;/a&gt;, the official hotel for the race) and get ready for race day. Since I came back from my travels, I did not eat much, so that I was really hungry when I got there and ate probably enough for three days. Nothing better than brownies with ice cream and couple of beers to rinse your mouth!&lt;/p&gt;
+&lt;h1&gt;Time to go&lt;/h1&gt;
+&lt;p&gt;When going to the race start, I met Mark from North Park Trail Runners (NPTR) in the hotel lobby. He was doing the race with a relay team. Everybody seemed really excited, on my side I was still feeling that the high ABV of the beer I had the night before. When arriving on the race site, I saw Tim from the NPTR group, he was doing his first 50 miles. Also, Monica from North Park Trail Runner and Steel City Road Runners took an early start at 5am. If everything goes as planned, I should pass her sometimes around mile 25/30. It would give me an extra boost.&lt;/p&gt;
+&lt;p&gt;[caption id=&quot;attachment_1852&quot; align=&quot;alignright&quot; width=&quot;301&quot;]&lt;a href=&quot;https://juli1pb.files.wordpress.com/2015/10/pace.png&quot;&gt;&lt;img class=&quot;wp-image-1852 size-full&quot; src=&quot;/assets/pace.png&quot; alt=&quot;My miserable pace&quot; width=&quot;301&quot; height=&quot;219&quot; /&gt;&lt;/a&gt; Do you see the crash around mile 25? No kidding![/caption]&lt;/p&gt;
+&lt;p&gt;And then, it was almost 7am: time shut the fuck up and move my ass.&lt;/p&gt;
+&lt;p&gt;The race is in the mountain but not on trails. All the course is on gravel/dirt roads. Very runnable, not rocky/muddy, it would please runners afraid of single track trails. The course starts with a small elevation, about 800 feet over the first 3 miles. Then, this is rolling hills until mile 20.&lt;/p&gt;
+&lt;p&gt;For the first 20 miles, I was doing good. In fact, I did not really feel I was running, I was in this mode when you just know you need to go and keep running. In fact, I really enjoyed being outside, breathing fresh air and do not have to worry to be on time for the next meeting/conference/dinner/whatever. I arrived to mile 20 in less than three hours. At that time, I thought it would be possible to finish in less than 8 hours. It would be a PR and a good surprise: after a lack of training and a roller-coaster diet I could carry my fatty butt on 50 miles in less than 8 hours! It was encouraging!&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://juli1pb.files.wordpress.com/2015/10/austin.png&quot;&gt;&lt;img class=&quot;aligncenter size-full wp-image-1862&quot; src=&quot;/assets/austin.png&quot; alt=&quot;austin&quot; width=&quot;472&quot; height=&quot;416&quot; /&gt;&lt;/a&gt;But from mile 20 to mile 25, there is a good climb (1300 ft over 4 miles) and I power-hiked part of it. During that climb, I saw a lady walking up the hill. As Monica told me I would catch her around mile 25, I was wondering if it was her. So, I asked if she took an early start. She barely answered and told me no. Whatever.&lt;/p&gt;
+&lt;p&gt;&lt;img class=&quot;aligncenter wp-image-1867 size-full&quot; src=&quot;/assets/sub81.png&quot; alt=&quot;sub8&quot; width=&quot;497&quot; height=&quot;345&quot; /&gt;Once I was on top of the climb, I started the downhill part and realized something was wrong with my left foot. My Achilles was hurting. &lt;strong&gt;Really&lt;/strong&gt; bad. Running started to be painful. I thought it will pass. Quickly, I realized it will not get any better. And at mile 26, it was clear it will not be possible to continue like this and have to walk for a while. From now, it was bad. &lt;strong&gt;***Really***&lt;/strong&gt; bad.&lt;/p&gt;
+&lt;p&gt;[caption id=&quot;attachment_1842&quot; align=&quot;alignright&quot; width=&quot;300&quot;]&lt;a href=&quot;https://juli1pb.files.wordpress.com/2015/10/12052506_10208447246958361_2592119654351788654_o.jpg&quot;&gt;&lt;img class=&quot;wp-image-1842 size-medium&quot; src=&quot;/assets/12052506_10208447246958361_2592119654351788654_o.jpg?w=300&quot; alt=&quot;12052506_10208447246958361_2592119654351788654_o&quot; width=&quot;300&quot; height=&quot;200&quot; /&gt;&lt;/a&gt; At mile 48 - about to finish[/caption]&lt;/p&gt;
+&lt;p&gt;I totally changed my expectations: I ran more than half of the course and there was no way I would drop. There was still 7 hours to finish. It was possible to finish by just walking the rest of the course. So, instead of shooting for a time, I will then make the best of it and just have fun and enjoy the scenery.&lt;/p&gt;
+&lt;p&gt;I reached the Aid Station at mile 28. Some kids were helping and the lady I passed before was there again (she passed me again when I was walking). She was sitting and seemed in pain. She told me she was sick, did not know what happened. She told the volunteers that she was about to drop. And she dropped. When I left the Aid Station, she was in a really bad shape.&lt;/p&gt;
+&lt;p&gt;[caption id=&quot;attachment_1851&quot; align=&quot;aligncenter&quot; width=&quot;937&quot;]&lt;a href=&quot;https://juli1pb.files.wordpress.com/2015/10/elevation.png&quot;&gt;&lt;img class=&quot;size-full wp-image-1851&quot; src=&quot;/assets/elevation.png&quot; alt=&quot;Elevation Profile&quot; width=&quot;937&quot; height=&quot;211&quot; /&gt;&lt;/a&gt; Elevation Profile[/caption]&lt;/p&gt;
+&lt;p&gt;When I finally arrived at the aid station around mile 30, I met John, a really nice runner that was doing his first 50 miles. The dude had a really good pace and just ran 30 miles in about 5 hours. Really good for somebody that never ran more than a marathon before! John and I ran together for a while and it was a real pleasure to meet him. We talked about various stuff to keep our minds busy: Pittsburgh, running, work, our respective lives. I was glad I met him!&lt;/p&gt;
+&lt;p&gt;[caption id=&quot;attachment_1843&quot; align=&quot;alignright&quot; width=&quot;200&quot;]&lt;a href=&quot;https://juli1pb.files.wordpress.com/2015/10/12049528_10208447248118390_2538812960166916116_n.jpg&quot;&gt;&lt;img class=&quot;wp-image-1843 size-medium&quot; src=&quot;/assets/12049528_10208447248118390_2538812960166916116_n.jpg?w=200&quot; alt=&quot;Done and ready for pizza!&quot; width=&quot;200&quot; height=&quot;300&quot; /&gt;&lt;/a&gt; Done and ready for pizza![/caption]&lt;/p&gt;
+&lt;p&gt;I arrived at the next Aid Station. The volunteers told me Monica was 5 minutes away. I passed just after the Aid Station, which gives an extra boost. At that point, it was clear she will finish: she was running since almost 7 hours - so, she had 5 hours to finish 20 miles, which is totally doable by walking fast or alternate light jog and walk. As the pain was growing and I wanted to be done, I did not stick and took off.&lt;/p&gt;
+&lt;p&gt;About mile 38, Mark from NPTR passed me with his team and their support vehicle: his relay team was doing great and they were approaching the aid station at mile 40. I do not remember exactly how I made it to mile 40. A mile before the Aid Station, John finally came back. Then, there was a sign &lt;em&gt;1/2 mile until the Aid Station&lt;/em&gt; and of course, he suggested: &lt;em&gt;&quot;let&#39;s try to jog there?&quot;&lt;/em&gt;. You do not refuse that and this is why running with somebody is helpful: you stop making excuses.&lt;/p&gt;
+&lt;p&gt;From there, we continued together for a while. But as the pain increased, I let him go. I finished the last miles by combining walking the uphills and running the downhills and eventually crossed the finish line after 9 hours and 8 minutes (32th over 74 runners). Definitively not a record (I finished JFK in 8:58) but I had a ton of fun. And this all what matters.&lt;/p&gt;
+&lt;h1&gt;Post-Race Party&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&quot;https://juli1pb.files.wordpress.com/2015/10/22306020889_2384cca5b4_z.jpg&quot;&gt;&lt;img class=&quot;alignright wp-image-1846 size-medium&quot; src=&quot;/assets/22306020889_2384cca5b4_z.jpg?w=225&quot; alt=&quot;22306020889_2384cca5b4_z&quot; width=&quot;225&quot; height=&quot;300&quot; /&gt;&lt;/a&gt;Once you cross the finish line, you get a medal and can the post-race party. Here, there are food (subway sandwich, barbecue, pizza), beer and (the most important) massage. The pizza is probably the only reason to run the race: the dudes are amazing, the pizzas and made directly on site and are delicious. The beer is also really tasty. All together (massage, pizza and beer), this is probably the best combination to recover from such a race!&lt;/p&gt;
+&lt;p&gt;After that, I try to walk to my car and come back in Pittsburgh. As my muscles started to be cold again, I started to feel the pin. I evaluated the damages on my leg and realized that it was really bad. I will clearly not be able to run for few days. But who cares? It was a great day, I finished my second 50 miler, had great company. It, it was a fantastic, epic adventure. I loved and embraced every moment and would not change anything if I had to do it again.&lt;/p&gt;
+&lt;h1&gt;Should you do this race?&lt;/h1&gt;
+&lt;p&gt;If you are looking for a good first 50 milers, this might the race you are looking for. Not expensive (not a rip off as JFK), not too difficult and very friendly, this is a great event! There is a very good support, 11 aid stations over 50 miles. An aid station every 4 miles: you can even do the race without a hydration pack!&lt;/p&gt;
+&lt;p&gt;Compared to my previous experience in ultra(s), I would definitively consider Tussey as a really good event with the same vibes as good ultra races (e.g. Burning River, Oil Creek, Forget the PR). The race fees are affordable and the support on the course is great. You can also put drop bags on the race if you have special needs or do not take any support.&lt;/p&gt;
+&lt;p&gt;The downside would be the selection of food at the Aid-Station. In ultras, aid stations are usually packed and look like a buffet at Denny&#39;s. At Tussey, the food for ultra-runners is limited to chips, M&amp;amp;M&#39;s, PBJ sandwiches, gels and sometimes potato. But this is not a big deal: you can pack what you needs in drop bags. As long as you are aware of that, this is not an issue. And for such a distance, you can still pack your own food.&lt;/p&gt;
+&lt;p&gt;Finally, if you have some friends that are doing the relay, this is a great opportunity to spend time together. This is also what makes this race unique: this is rather a big party between ultra and non-ultra runners.&lt;/p&gt;
+&lt;p&gt;The post-race party is also well organized and friendly - selection of food is great, having massage is definitively a big advantage. From my perspective, in all aspects, this race is better than JFK (and for half the price).&lt;/p&gt;
+&lt;h1&gt;And now?&lt;/h1&gt;
+&lt;p&gt;Once I got back in Pittsburgh, I wanted to send a word to the lady that dropped around mile 28. I was hoping nothing serious happened to her. I remembered her bib number, so, I looked up her name. I found out she was &lt;a href=&quot;https://en.wikipedia.org/wiki/Connie_Gardner&quot;&gt;Connie Gardner&lt;/a&gt;, a three times first finisher and a well-known accomplished ultra-runner (see her &lt;a href=&quot;https://en.wikipedia.org/wiki/Connie_Gardner&quot;&gt;wikipedia page&lt;/a&gt;). I was shocked that I have even crossed her path and it made me realize that sometimes, you just have a bad day: you have to accept that and move on. I hope she is doing fine.&lt;/p&gt;
+&lt;p&gt;It is now time for a break for a few weeks. I have some small races around Pittsburgh but nothing serious (see the &lt;a href=&quot;http://julien.gunnm.org/healthy-stuff/running-stuff/&quot;&gt;coming races list&lt;/a&gt;). I will continue to run for commuting purposes but I will not train seriously for a while. I might run with NPTR from time to time but nothing more than 30 miles at a time.&lt;/p&gt;
+&lt;p&gt;The next ultra is &lt;a href=&quot;http://www.mohican50k.com/&quot;&gt;Forget the PR&lt;/a&gt; in April 2016, a 50K shakeout before going for &lt;a href=&quot;http://hikerun.com&quot;&gt;Hyner50K&lt;/a&gt;. Then, it will be time to train for the &lt;a href=&quot;http://patriplecrown.com/&quot;&gt;PA Triple Crown challenge&lt;/a&gt;. I already signed up for &lt;a href=&quot;http://www.hikerun.com&quot;&gt;Hyner 50K&lt;/a&gt; and E&lt;a href=&quot;http://easternstates100.com/&quot;&gt;astern States 100&lt;/a&gt;. But until now, it is time to rest, lose 10 pounds and hibernate in my bed while watching Netflix and reading the pile of books and other comics that are close to my bed.&lt;/p&gt;
+&lt;h1&gt;Special Note(s)&lt;/h1&gt;
+&lt;p&gt;Thanks to Mike Casper, the race director. He put a very nice event and being part of this running party is a real pleasure! Special kudos for the folks that made the pizza and gave massage at the finish line, it was very nice to have people trying to take care of your injury!&lt;/p&gt;
+&lt;p&gt;Thanks to all the North Park Trail Runners and Steel City Road Runners folks. Meeting friends during the course is always special and I was happy to be there to see Tim finishing (strong) his first 50 miles race.  Finally, thanks to John for running with me during the second part of the race, having a running is the best way to get to the finish! He was there, helped me to push to the finish and finally, helped to make this day very enjoyable!&lt;/p&gt;
+&lt;h1&gt;Notes &amp;amp; Links&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;Thanks to Brian Sukitch and David Dames for the pictures&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://connect.garmin.com/modern/activity/938265832&quot;&gt;Workout on garmin connect&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.mapmyrun.com/workout/1225673995&quot;&gt;Workout on mapmyrun&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.strava.com/activities/420385956&quot;&gt;Workout on strava&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://tusseymountainback.com/&quot;&gt;Race website&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.parunners.com/results/icalrepeat.detail/2015/10/25/592/-/tussey-mountainback-50-mile-ultramarathon-relay.html&quot;&gt;Race results&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.collegian.psu.edu/news/borough/article_38af3186-78fb-11e5-896a-2bddcacb477a.html&quot;&gt;Article on the Daily Collegian &lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.centredaily.com/2015/10/03/4950993_chris-rosenblum-duo-prepare-to.html?rh=1&quot;&gt;Article on the Central Daily Times&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Wed, 28 Oct 2015 06:05:32 -0400</pubDate>
+        <link>http://julien.gunnm.org/fitness/race%20report/running/2015/10/28/tussey-mountainback-50-miles-race-report/</link>
+        <guid isPermaLink="true">http://julien.gunnm.org/fitness/race%20report/running/2015/10/28/tussey-mountainback-50-miles-race-report/</guid>
+        
+        <category>achilles</category>
+        
+        <category>race report</category>
+        
+        <category>tussey mountainback</category>
+        
+        <category>ultra running</category>
+        
+        
+        <category>fitness</category>
+        
+        <category>race report</category>
         
         <category>running</category>
         
