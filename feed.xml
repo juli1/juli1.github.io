@@ -5,8 +5,8 @@
     <description>Tales of a guy living in Pittsburgh addicted with Computer-Science, Running and Peanut Butter</description>
     <link>http://julien.gunnm.org/</link>
     <atom:link href="http://julien.gunnm.org/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Thu, 12 May 2016 21:29:21 -0400</pubDate>
-    <lastBuildDate>Thu, 12 May 2016 21:29:21 -0400</lastBuildDate>
+    <pubDate>Sat, 28 May 2016 07:16:03 -0400</pubDate>
+    <lastBuildDate>Sat, 28 May 2016 07:16:03 -0400</lastBuildDate>
     <generator>Jekyll v3.1.3</generator>
     
       <item>
@@ -530,72 +530,6 @@ int run(void)
       </item>
     
       <item>
-        <title>Xmas homework(s)</title>
-        <description>&lt;p&gt;Among the joy of being an expatriate is that you do not have to go in your family and take advantage of this holiday period to rest, do some personal projects and dedicate time to things you wanted to do.&lt;/p&gt;
-&lt;p&gt;Since the last couple of days, I am trying to use &lt;a href=&quot;http://sel4.systems/&quot;&gt;SeL4&lt;/a&gt;, a security-oriented kernel that has been formally proven. Sounds sexy, right? For now, I am not quite sure to fully understand how it works and the development environment is huge. It reminds me my old days, when working on taste that requires a full virtual machine just to work. Ah, the joy of development environments that are designed like a Russian jail, so convenient and easy to use!&lt;/p&gt;
-&lt;p&gt;The goal of this project is to be able to generate SeL4 secure applications from architecture models (mostly &lt;a href=&quot;http://www.aadl.info&quot;&gt;AADL&lt;/a&gt;). The high-level security requirements would be verified at the model level and would ultimately be transformed into code. This is what I am trying to do during this holiday period.&lt;/p&gt;
-&lt;p&gt;I am also trying to train for &lt;a href=&quot;http://worldsendultra.com/&quot;&gt;Worlds Ends 100&lt;/a&gt; that will take place in May. Some friends have been there last week-end and told me the course is challenging and intense. As there is an aggressive 19 hours cut-off, I need to work my ass right &lt;em&gt;now&lt;/em&gt; in order to finish the race on time. Unfortunately, I do not have the opportunity to train on the course and all I can do is mimic the elevation profile in the parks around Pittsburgh.&lt;/p&gt;
-&lt;p&gt;On a side note, I am now an official pacer for the Pittsburgh Half-Marathon. If you are running the half and plan to finish in 1:45, I will be around you.&lt;/p&gt;
-&lt;p&gt;The weather in Pittsburgh is still surprisingly hot. More than 16C.&lt;/p&gt;
-&lt;p&gt;Happy Holidays.&lt;/p&gt;
-</description>
-        <pubDate>Tue, 22 Dec 2015 15:46:34 -0500</pubDate>
-        <link>http://julien.gunnm.org/misc/programming/running/2015/12/22/xmas-homeworks/</link>
-        <guid isPermaLink="true">http://julien.gunnm.org/misc/programming/running/2015/12/22/xmas-homeworks/</guid>
-        
-        <category>aadl</category>
-        
-        <category>security</category>
-        
-        <category>sel4</category>
-        
-        
-        <category>misc</category>
-        
-        <category>programming</category>
-        
-        <category>running</category>
-        
-      </item>
-    
-      <item>
-        <title>Getting cold and dark: what to wear?</title>
-        <description>&lt;p&gt;Time has come, it starts to be darker and colder out there. Each year at the same time, this is the same thing: people are getting nervous about what to wear, either to be seen or staying warm. We see people getting dressed for a light 5K as if they were going to run a marathon in the North Pole while others are as bright as a xmas tree. This is a 5K guy: and you are dressing as you were training for badwater with the snow. So, if this is definitively useless to over-do it, there are still some basic things to do. Just observe three rules: see/be seen, stay warm and break the ice.&lt;/p&gt;
-&lt;h1&gt;How to see and be seen&lt;/h1&gt;
-&lt;p&gt;First thing: &lt;strong&gt;to see&lt;/strong&gt;. For that, nothing better than a headlamp. I would not rely only on public lights - some area can be really dark and, if you are a woman, you probably want to see what is going on in these areas. If you are running often, a model with rechargeable batteries is a good idea, especially if you can charge it using micro-USB (and thus, use the same charger as your cellphone).&lt;/p&gt;
-&lt;p&gt;Second: &lt;strong&gt;be seen&lt;/strong&gt;. Last year, I got a &lt;a href=&quot;https://www.noxgear.com/tracer360&quot;&gt;tracer360&lt;/a&gt;, a vest that change its color. Clearly embarrassed for myself, I wore it (I meant, it was a present - at least, &lt;em&gt;you try it&lt;/em&gt;) and was feeling sorry for myself. I made probably more light than the traffic light. Yes, I was seen but it was clearly embarrassing and probably not necessary. I returned the present, pretexting it was not fitting me (and this was the truth as well).At a $70 MSRP, this is clearly a rip-off: a reflective vest (~ $20) will do as good without turning you into a local running attraction. So wear bright gear and if you are wondering if this is enough, take a reflective vest. But keep the xmas lights at home.&lt;/p&gt;
-&lt;h1&gt;Stay warm&lt;/h1&gt;
-&lt;p&gt;Same thing as for the reflective vest, vendors try to sell you expensive products where you really do not need to spend that much. Some products (such as the &lt;a href=&quot;http://www.runningwarehouse.com/Nike_Mens_Dri-Fit_Flash_Tight/descpage-NMDFFT.html&quot;&gt;Nike Dri-Fit Flash Tight&lt;/a&gt;) can cost up to $150, which would be even more expensive that the cost for everything you need to run at night. The basic rule is to use layers. One short-sleeve t-shirt on top of a long-sleeve t-shirt is a good start. Use a sweater when this is really cold outside. But be careful: after 20 to 30 minutes, you will be warm, so, dress accordingly to the distance you are running. You probably have plenty of tech t-shirt already from the packet in the races. Also, a tech sweater costs around $40.&lt;/p&gt;
-&lt;p&gt;Use light gloves made with technical materials. Just avoid the big gloves: the cold will accumulate and freeze your fingers.You can get gloves around $10 to $20.&lt;/p&gt;
-&lt;h1&gt;Break the ice&lt;/h1&gt;
-&lt;p&gt;When the temperature gets really cold, running on icy roads or trails can be dangerous. I paid the price last year and fractured my hip at the end of a run. Several solution: special shoes, yaktrax, screws or ice spikes.&lt;/p&gt;
-&lt;p&gt;I used &lt;a href=&quot;https://www.yaktrax.com/&quot;&gt;yaktrax&lt;/a&gt; last year and I was not satisfied. Hard to put, it sometimes detaches itself from the shoe and hardly sticks on the shoe. Also, it might not fit all shoes. The system is so hard to use that I did not use it everyday (too hard to put on the shoe). I would not recommend this system, especially considering its price (about $40 to $50).&lt;/p&gt;
-&lt;p&gt;The solution that many recommended is using either&lt;a href=&quot;http://www.icespike.com/&quot;&gt; ice spikes&lt;/a&gt; or simple screws on your shoes. Basically, ice spikes seem to be screws dedicated to running shoes. The idea: you put screws under your shoe that will get you traction on icy roads/trails. Of course, you might still fall but the general idea is that it reduces the likelihood to fall. This is what I am trying this year. A pack of ice spikes costs about $15~$20 with shipping.&lt;/p&gt;
-&lt;h1&gt;Hey dude, what do you use?&lt;/h1&gt;
-&lt;p&gt;Having the &lt;a href=&quot;http://www.mayoclinic.org/diseases-conditions/raynauds-disease/basics/definition/con-20022916&quot;&gt;Raunaud syndrome&lt;/a&gt;, I am clearly over-protecting my body against the cold. Even during summer, my fingers and toes can be blue-ish, so, I am trying to take care of this. Also, as I am running everyday, I experienced many different weather conditions.&lt;/p&gt;
-&lt;p&gt;On the top, I am using a long sleeves tech sweater over a short sleeves tech shirt. On the bottom, a tech pant over a tech running short. On the hands, a pair of tech gloves and on the head, a headband that protects my ears. Nothing else, and this is enough to keep me going through the winter. The use of technical material avoids the moisture to freeze and then, lower my body temperature. Finally, for the headlamp, a basic black diamond that can be charged on USB (charging after each use) and for the vest, a simple nathan reflective vest.&lt;/p&gt;
-&lt;p&gt;Overall, all the gear and devices cost me between about $150. Which very reasonable considering that can be the price of a single tech pant in some running store and I have seen some people spending 5 to 10 times that amount to run through the cold. Just do not over do it, save some money, spend it with your friends rather than on special gear and as &lt;a href=&quot;https://en.wikipedia.org/wiki/Public_Enemy_%28music_group%29&quot;&gt;Public Enemy&lt;/a&gt; used to say: &lt;a href=&quot;https://www.youtube.com/watch?v=9vQaVIoEjOM&quot;&gt;do not believe the hype&lt;/a&gt;.&lt;/p&gt;
-</description>
-        <pubDate>Tue, 08 Dec 2015 20:58:25 -0500</pubDate>
-        <link>http://julien.gunnm.org/fitness/running/2015/12/08/what-to-wear-for-running-in-the-dark-and-cold/</link>
-        <guid isPermaLink="true">http://julien.gunnm.org/fitness/running/2015/12/08/what-to-wear-for-running-in-the-dark-and-cold/</guid>
-        
-        <category>cold</category>
-        
-        <category>dark</category>
-        
-        <category>running</category>
-        
-        <category>what to wear</category>
-        
-        
-        <category>fitness</category>
-        
-        <category>running</category>
-        
-      </item>
-    
-      <item>
         <title>It is an architecture problem</title>
         <description>&lt;p&gt;The big news today (that got my attention!) is the Washington post about &lt;a href=&quot;http://www.washingtonpost.com/sf/business/2015/11/05/net-of-insecurity-the-kernel-of-the-argument/&quot;&gt;Linus&#39; thoughts on security, especially in the linux kernel&lt;/a&gt;.You probably do not know but today, Linux is one of the most used kernel in the world. Every Android device rely on it - most of non-critical embedded devices use it. You are probably not aware of it but you are probably using more Linux-powered devices than Windows or Mac.&lt;/p&gt;
 &lt;p&gt;The article is well written and explain most of the issues to a non-technical people. Great. But sometimes, it messes things up. For example, when the article reports that the &lt;a href=&quot;https://en.wikipedia.org/wiki/Ashley_Madison_data_breach&quot;&gt;ashley madison data breach&lt;/a&gt;, it is totally unrelated: the article focuses on the kernel, not the userspace. This is just not accurate to connect this attack with the linux kernel, it could happen with the same software running on a different kernel.&lt;/p&gt;
@@ -649,6 +583,195 @@ int run(void)
         <category>cwe</category>
         
         <category>race condition</category>
+        
+        
+        <category>geek</category>
+        
+        <category>programming</category>
+        
+      </item>
+    
+      <item>
+        <title>High Five</title>
+        <description>&lt;p&gt;&lt;a href=&quot;http://www.momentumphotography.net/&quot;&gt;Lance&lt;/a&gt;, the photographer that comes at the races from &lt;a href=&quot;http://www.alleghenytrailrunners.com/&quot;&gt;Allegheny Trailrunner&lt;/a&gt;, sent me my pictures from &lt;a href=&quot;http://julien.gunnm.org/2015/09/16/breaking-news-allegheny-trailrunners-tm-has-been-acquired-by-tough-mudder-tm-rockn-the-knob-2015-race-report/&quot;&gt;Rock The Knob&lt;/a&gt;. I am not a fan of race picture but found this one particularly funny and captured a great time, just before eating some hills.&lt;/p&gt;
+&lt;p&gt;Lance take the pictures and post them for free. If you like what he is doing, consider a donation - having great picture for free is amazing, making a small donation on a voluntary basis is better than the usual rip-off of company such a marathonfoto.&lt;/p&gt;
+&lt;p&gt;Thanks again to &lt;a href=&quot;http://www.momentumphotography.net/&quot;&gt;Lance&lt;/a&gt; for capturing such a moment.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://juli1pb.files.wordpress.com/2015/09/juliandelangertk2015-9.jpg&quot;&gt;&lt;img class=&quot;aligncenter size-large wp-image-1816&quot; src=&quot;/assets/juliandelangertk2015-9.jpg?w=683&quot; alt=&quot;JulianDelangeRTK2015-9&quot; width=&quot;683&quot; height=&quot;1024&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Fri, 25 Sep 2015 00:26:46 -0400</pubDate>
+        <link>http://julien.gunnm.org/misc/running/2015/09/25/high-five/</link>
+        <guid isPermaLink="true">http://julien.gunnm.org/misc/running/2015/09/25/high-five/</guid>
+        
+        <category>Allegheny Trailrunners</category>
+        
+        <category>rock the knobb</category>
+        
+        <category>running</category>
+        
+        
+        <category>misc</category>
+        
+        <category>running</category>
+        
+      </item>
+    
+      <item>
+        <title>How to get geocoding information in Java without Google maps API?</title>
+        <description>&lt;p&gt;For some project, you might want to use geocoding information, which means get the GPS coordinates from an address. If you want to use Google services, you are limited to a certain number of requests but your usage is connected with your account. There is a nice geocoding API available but&lt;/p&gt;
+&lt;p&gt;You might want to have as many requests as you want but also avoid Google to look at your applications are doing. After all, these requests are sent by the users of your own application, not you.&lt;/p&gt;
+&lt;p&gt;So, yes, sure, there is a nice &lt;a href=&quot;https://developers.google.com/maps/documentation/geocoding/intro&quot;&gt;geocoding API available with Google&lt;/a&gt;. But it seems to be restricted/limited. So, let&#39;s not use it. The alternative is to use the open website &lt;a href=&quot;http://www.openstreetmap.org&quot;&gt;OpenStreetMap&lt;/a&gt; (a.k.a. OSM), which has a webservice to &lt;a href=&quot;http://wiki.openstreetmap.org/wiki/Nominatim&quot;&gt;get geocoding information&lt;/a&gt;. It does not provide a full Java API but rather the data in a JSON or XML fornat. So, all we have to do is to write a Java API what issue requests to the webservice and retrieve the geocoding information from the JSON/XML.&lt;/p&gt;
+&lt;p&gt;I chose to get the information with the JSON format, this is pretty easy to use. To parse the JSON data from the service, I use &lt;a href=&quot;https://code.google.com/p/json-simple/&quot;&gt;json-simple&lt;/a&gt; available on maven.&lt;/p&gt;
+&lt;h1&gt;Getting the geocoding data&lt;/h1&gt;
+&lt;p&gt;Basically, the code issue a request to the geocoding webservice from OpenStreetMap, get the result and convert it into a JSON object. It then get the latitude/longitude information from the JSONObject.&lt;/p&gt;
+&lt;pre&gt;import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.util.HashMap;
+import java.util.Map;
+
+import org.apache.log4j.Logger;
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+import org.json.simple.JSONValue;
+import org.json.simple.parser.JSONParser;
+
+public class OpenStreetMapUtils {
+
+    public final static Logger log = Logger.getLogger(&quot;OpenStreeMapUtils&quot;);
+
+    private static OpenStreetMapUtils instance = null;
+    private JSONParser jsonParser;
+
+    public OpenStreetMapUtils() {
+        jsonParser = new JSONParser();
+    }
+
+    public static OpenStreetMapUtils getInstance() {
+        if (instance == null) {
+            instance = new OpenStreetMapUtils();
+        }
+        return instance;
+    }
+
+    private String getRequest(String url) throws Exception {
+
+        final URL obj = new URL(url);
+        final HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+
+        con.setRequestMethod(&quot;GET&quot;);
+
+        if (con.getResponseCode() != 200) {
+            return null;
+        }
+
+        BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
+        String inputLine;
+        StringBuffer response = new StringBuffer();
+
+        while ((inputLine = in.readLine()) != null) {
+            response.append(inputLine);
+        }
+        in.close();
+
+        return response.toString();
+    }
+
+    public Map&amp;lt;String, Double&amp;gt; getCoordinates(String address) {
+        Map&amp;lt;String, Double&amp;gt; res;
+        StringBuffer query;
+        String[] split = address.split(&quot; &quot;);
+        String queryResult = null;
+
+        query = new StringBuffer();
+        res = new HashMap&amp;lt;String, Double&amp;gt;();
+
+        query.append(&quot;http://nominatim.openstreetmap.org/search?q=&quot;);
+
+        if (split.length == 0) {
+            return null;
+        }
+
+        for (int i = 0; i &amp;lt; split.length; i++) {
+            query.append(split[i]);
+            if (i &amp;lt; (split.length - 1)) {
+                query.append(&quot;+&quot;);
+            }
+        }
+        query.append(&quot;&amp;amp;format=json&amp;amp;addressdetails=1&quot;);
+
+        log.debug(&quot;Query:&quot; + query);
+
+        try {
+            queryResult = getRequest(query.toString());
+        } catch (Exception e) {
+            log.error(&quot;Error when trying to get data with the following query &quot; + query);
+        }
+
+        if (queryResult == null) {
+            return null;
+        }
+
+        Object obj = JSONValue.parse(queryResult);
+        log.debug(&quot;obj=&quot; + obj);
+
+        if (obj instanceof JSONArray) {
+            JSONArray array = (JSONArray) obj;
+            if (array.size() &amp;gt; 0) {
+                JSONObject jsonObject = (JSONObject) array.get(0);
+
+                String lon = (String) jsonObject.get(&quot;lon&quot;);
+                String lat = (String) jsonObject.get(&quot;lat&quot;);
+                log.debug(&quot;lon=&quot; + lon);
+                log.debug(&quot;lat=&quot; + lat);
+                res.put(&quot;lon&quot;, Double.parseDouble(lon));
+                res.put(&quot;lat&quot;, Double.parseDouble(lat));
+
+            }
+        }
+
+        return res;
+    }
+}
+
+
+&lt;/pre&gt;
+&lt;h1&gt;Testing the service&lt;/h1&gt;
+&lt;p&gt;Then, to use the service, you can just use a main program like the following code.&lt;/p&gt;
+&lt;pre&gt;public class GetCoordinates {
+
+    static String address = &quot;The White House, Washington DC&quot;;
+
+    public static void main(String[] args) {
+        Map&amp;lt;String, Double&amp;gt; coords;
+        coords = OpenStreetMapUtils.getInstance().getCoordinates(address);
+        System.out.println(&quot;latitude :&quot; + coords.get(&quot;lat&quot;));
+        System.out.println(&quot;longitude:&quot; + coords.get(&quot;lon&quot;));
+    }
+}&lt;/pre&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+&lt;h1&gt;Checking&lt;/h1&gt;
+&lt;p&gt;When running the previous example, the program prints the following information:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;latitude&lt;/strong&gt; :38.8976989&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;longitude&lt;/strong&gt;:-77.036553192281&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Let&#39;s then check where are these coordinates! When putting the coordinates on Google Maps, I then got the following map. Sounds like it works!&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://juli1pb.files.wordpress.com/2015/09/coordinates.png&quot;&gt;&lt;img class=&quot;aligncenter size-large wp-image-1772&quot; src=&quot;/assets/coordinates.png?w=676&quot; alt=&quot;coordinates&quot; width=&quot;676&quot; height=&quot;416&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Sun, 13 Sep 2015 17:46:15 -0400</pubDate>
+        <link>http://julien.gunnm.org/geek/programming/2015/09/13/how-to-get-geocoding-information-in-java-without-google-maps-api/</link>
+        <guid isPermaLink="true">http://julien.gunnm.org/geek/programming/2015/09/13/how-to-get-geocoding-information-in-java-without-google-maps-api/</guid>
+        
+        <category>api</category>
+        
+        <category>google maps</category>
+        
+        <category>java</category>
+        
+        <category>openstreet map</category>
+        
+        <category>OSM</category>
         
         
         <category>geek</category>
