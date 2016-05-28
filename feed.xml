@@ -5,8 +5,8 @@
     <description>Tales of a guy living in Pittsburgh addicted with Computer-Science, Running and Peanut Butter</description>
     <link>http://julien.gunnm.org/</link>
     <atom:link href="http://julien.gunnm.org/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Sat, 28 May 2016 07:16:03 -0400</pubDate>
-    <lastBuildDate>Sat, 28 May 2016 07:16:03 -0400</lastBuildDate>
+    <pubDate>Sat, 28 May 2016 07:35:54 -0400</pubDate>
+    <lastBuildDate>Sat, 28 May 2016 07:35:54 -0400</lastBuildDate>
     <generator>Jekyll v3.1.3</generator>
     
       <item>
@@ -470,42 +470,6 @@ int run(void)
       </item>
     
       <item>
-        <title>Bonjour Toulouse</title>
-        <description>&lt;p&gt;After some days in the country side, it is now time to head to Toulouse to give a tutorial during the &lt;a href=&quot;http://projects.laas.fr/IFSE/FMF/J6/&quot;&gt;formal method day&lt;/a&gt; at the &lt;a href=&quot;https://www.laas.fr&quot;&gt;LAAS lab &lt;/a&gt;and &lt;a href=&quot;http://www.erts2016.org/authors_detail_inverted_Delange%20Julien.html&quot;&gt;present one research paper at ERTS 2016&lt;/a&gt;. I had a last run in Normandy this morning.&lt;/p&gt;
-
-&lt;img class=&quot; wp-image-2051&quot; src=&quot;/assets/normandyemorning.jpg&quot; alt=&quot;Road in Normandy in the Morning&quot; width=&quot;523&quot; height=&quot;392&quot; /&gt; &lt;p&gt;Road in Normandy in the Morning&lt;/p&gt;
-
-&lt;p&gt;My right leg is definitively destroyed. The repeated long runs on pavement in Prague had a cost I am paying right now. After reaching my weekly goal of 60 miles, I might take some time off: too painful to run, it feels it might eventually hide more serious damages.&lt;/p&gt;
-&lt;p&gt;In the meantime, &lt;a href=&quot;https://www.facebook.com/francois.dhaene/&quot;&gt;Francois d&#39;Haene&lt;/a&gt; won &lt;a href=&quot;http://www.hk100-ultra.com/&quot;&gt;HK100&lt;/a&gt;. No kidding.&lt;/p&gt;
-
-
-&lt;img class=&quot;size-medium wp-image-2052&quot; src=&quot;/assets/dhaene.png?w=300&quot; alt=&quot;D&#39;Haene finishing strong HK100 (photo irunfar)&quot; width=&quot;300&quot; height=&quot;199&quot; /&gt;
-&lt;p&gt;D&#39;Haene finishing strong HK100 (photo irunfar)&lt;/p&gt;
-
-&lt;p&gt;Congratulations dude!&lt;/p&gt;
-</description>
-        <pubDate>Sun, 24 Jan 2016 12:18:19 -0500</pubDate>
-        <link>http://julien.gunnm.org/geek/misc/running/2016/01/24/bonjour-toulouse/</link>
-        <guid isPermaLink="true">http://julien.gunnm.org/geek/misc/running/2016/01/24/bonjour-toulouse/</guid>
-        
-        <category>d&#39;haene</category>
-        
-        <category>hk100</category>
-        
-        <category>normandy</category>
-        
-        <category>toulouse</category>
-        
-        
-        <category>geek</category>
-        
-        <category>misc</category>
-        
-        <category>running</category>
-        
-      </item>
-    
-      <item>
         <title>Let&#39;s stop charity, let&#39;s give a basic income</title>
         <description>&lt;p&gt;Recently, the &lt;a href=&quot;https://thebillfold.com/dutch-city-of-utrecht-announces-basic-income-experiment-f31954a995ec#.lniq1cto1&quot;&gt;city of Utrecht initiated a new idea&lt;/a&gt;: everybody gets a basic, minimal income, no matter their social situation (working/non-working) or their initial income. What you earn comes on top of that.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;http://www.independent.org/publications/tir/article.asp?a=1044&quot;&gt;The idea has been around for a while&lt;/a&gt;. The principles behind it are pretty simple: &lt;em&gt;equality&lt;/em&gt;. You get a basic income so that you can live in this world and afford the basic, necessary things. After that, if you want something beyond what is strictly necessary, you have to work or find a way to get more money. In other words, we do not let people die in the streets but this is their own choice to decide if they want to do more. Want to have kids? Do not rely on the welfare system, get a job and make sure you can afford education, food and housing. Want to buy a nice house? Do not rely on the welfare system and start saving &lt;em&gt;now&lt;/em&gt;. On the other hand, when hard times hit you, you still have something so that you are not dying in the streets.&lt;/p&gt;
@@ -777,6 +741,41 @@ public class OpenStreetMapUtils {
         <category>geek</category>
         
         <category>programming</category>
+        
+      </item>
+    
+      <item>
+        <title>What is wrong with our GPS data?</title>
+        <description>&lt;p&gt;Recently, I have been surprised by the differences between the distance reported by my GPS watch (a &lt;a href=&quot;https://buy.garmin.com/en-US/US/on-the-trail/wrist-worn/fenix-2/prod159116.html&quot;&gt;Garmin Fenix 2&lt;/a&gt;) and what is reported when importing the data into website such as &lt;a href=&quot;http://www.mapmyrun.com/&quot;&gt;Mapmyrun&lt;/a&gt; or &lt;a href=&quot;https://www.strava.com&quot;&gt;Strava&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;[caption id=&quot;attachment_1766&quot; align=&quot;aligncenter&quot; width=&quot;676&quot;]&lt;a href=&quot;https://juli1pb.files.wordpress.com/2015/09/garmin.png&quot;&gt;&lt;img class=&quot;size-large wp-image-1766&quot; src=&quot;/assets/garmin.png?w=676&quot; alt=&quot;Data from Garmin Connect&quot; width=&quot;676&quot; height=&quot;322&quot; /&gt;&lt;/a&gt; Data from Garmin Connect[/caption]&lt;/p&gt;
+&lt;p&gt;It happened this week-end at Rock&#39;n The Knob, a 20 miles run on trails. I went off course, making an additional 1.5-ish mile. At the end of the run, &lt;a href=&quot;https://connect.garmin.com/activity/896378529&quot;&gt;my watch reported 21.27 miles&lt;/a&gt;, which made sense (20 miles for the race plus an additional mile or so for being off course). On the other hand, both &lt;a href=&quot;http://www.mapmyrun.com/workout/1165115349&quot;&gt;mapmyrun&lt;/a&gt; and &lt;a href=&quot;https://www.strava.com/activities/390754403&quot;&gt;strava&lt;/a&gt; report 18.9 miles.&lt;/p&gt;
+&lt;p&gt;[caption id=&quot;attachment_1767&quot; align=&quot;aligncenter&quot; width=&quot;615&quot;]&lt;a href=&quot;https://juli1pb.files.wordpress.com/2015/09/mapmyrun.png&quot;&gt;&lt;img class=&quot;size-full wp-image-1767&quot; src=&quot;/assets/mapmyrun.png&quot; alt=&quot;Same GPS file imported on mapmyrun&quot; width=&quot;615&quot; height=&quot;148&quot; /&gt;&lt;/a&gt; Same GPS file imported on mapmyrun[/caption]&lt;/p&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+&lt;p style=&quot;text-align:center;&quot;&gt;&lt;strong&gt;So, who can you trust?&lt;/strong&gt;&lt;/p&gt;
+&lt;p style=&quot;text-align:left;&quot;&gt;I tried to look at the strava website to see if they modify the GPS data. I found &lt;a href=&quot;https://strava.zendesk.com/entries/21629956-Why-is-Strava-showing-different-times-than-my-Garmin-&quot;&gt;the following discussion&lt;/a&gt; and the &lt;a href=&quot;https://strava.zendesk.com/entries/21278088-How-Distance-is-Calculated&quot;&gt;technical support note&lt;/a&gt; to be interesting. It seems that website are doing some post-upload processing that mostly change the data you import and try to remove any &lt;em&gt;bad&lt;/em&gt; GPS data. On the other hand, considering the race I did, it seems that this post-upload processing removes a lot of data, about 11%.&lt;/p&gt;
+&lt;p&gt;[caption id=&quot;attachment_1768&quot; align=&quot;aligncenter&quot; width=&quot;676&quot;]&lt;a href=&quot;https://juli1pb.files.wordpress.com/2015/09/strava.png&quot;&gt;&lt;img class=&quot;size-large wp-image-1768&quot; src=&quot;/assets/strava.png?w=676&quot; alt=&quot;Same GPS file on Strava&quot; width=&quot;676&quot; height=&quot;159&quot; /&gt;&lt;/a&gt; Same GPS file on Strava[/caption]&lt;/p&gt;
+&lt;p style=&quot;text-align:left;&quot;&gt;Many folks lately asked what is the most accurate data source between a watch and a phone. It turns out that this is not only the source of the data but also &lt;em&gt;where&lt;/em&gt; you put the data and &lt;em&gt;how&lt;/em&gt; it is processed. I am not a GPS specialist and strava or mapmyrun will not publish their own algorithms but for now, I rather trust my watch: so far, it has been consistent with other data sources (signs on the road, watches from other brands, etc.).&lt;/p&gt;
+</description>
+        <pubDate>Sun, 13 Sep 2015 16:31:16 -0400</pubDate>
+        <link>http://julien.gunnm.org/fitness/geek/running/2015/09/13/what-is-wrong-with-our-gps-data/</link>
+        <guid isPermaLink="true">http://julien.gunnm.org/fitness/geek/running/2015/09/13/what-is-wrong-with-our-gps-data/</guid>
+        
+        <category>difference between gps and mapmyrun</category>
+        
+        <category>difference between gps and strava</category>
+        
+        <category>gps</category>
+        
+        <category>mapmyrun</category>
+        
+        <category>strava</category>
+        
+        
+        <category>fitness</category>
+        
+        <category>geek</category>
+        
+        <category>running</category>
         
       </item>
     
