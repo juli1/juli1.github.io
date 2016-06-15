@@ -1,0 +1,234 @@
+diff --git a/include/plat/am335x/plat/machine/devices.h b/include/plat/am335x/plat/machine/devices.h
+index 8c9704e..ebd783c 100644
+--- a/include/plat/am335x/plat/machine/devices.h
++++ b/include/plat/am335x/plat/machine/devices.h
+@@ -22,6 +22,7 @@
+ /* Other devices on the SoC. */
+ #define INTC_PADDR      0x48200000
+ #define UART0_PADDR     0x44E09000
++#define UART1_PADDR     0x48022000
+ #define DMTIMER0_PADDR  0x44E05000
+ #define DMTIMER2_PADDR  0x48040000
+ #define DMTIMER3_PADDR  0x48042000
+diff --git a/src/plat/am335x/machine/hardware.c b/src/plat/am335x/machine/hardware.c
+index aa711f9..dd4bcdc 100644
+--- a/src/plat/am335x/machine/hardware.c
++++ b/src/plat/am335x/machine/hardware.c
+@@ -19,6 +19,8 @@
+ #include <plat/machine/devices.h>
+ #include <plat/machine/hardware.h>
+ 
++static void configureUartClocks(void);
++
+ /* pointer to end of kernel image */
+ /* need a fake array to get the pointer from the linker script */
+ extern char ki_end[1];
+@@ -44,6 +46,7 @@ BOOT_CODE p_region_t get_avail_p_reg(word_t i)
+ const p_region_t BOOT_RODATA dev_p_regs[] = {
+     /* SoC devices: */
+     { /* .start = */ UART0_PADDR,    /* .end = */ UART0_PADDR + (1 << PAGE_BITS) },
++    { /* .start = */ UART1_PADDR,    /* .end = */ UART1_PADDR + (1 << PAGE_BITS) },
+     { /* .start = */ DMTIMER2_PADDR, /* .end = */ DMTIMER2_PADDR + (1 << PAGE_BITS) },
+     { /* .start = */ DMTIMER3_PADDR, /* .end = */ DMTIMER3_PADDR + (1 << PAGE_BITS) },
+     { /* .start = */ DMTIMER4_PADDR, /* .end = */ DMTIMER4_PADDR + (1 << PAGE_BITS) },
+@@ -135,6 +138,7 @@ map_kernel_devices(void)
+ 
+ #define CMPER_REG(base, off) ((volatile uint32_t *)((base) + (off)))
+ #define CMPER_TIMER3_CLKCTRL    0x84
++#define CMPER_L4LS_CLKCTRL   (0x60)
+ #define CMPER_CLKCTRL_DISABLE   0
+ #define CMPER_CLKCTRL_ENABLE    2
+ #define CMPER_CLKSEL_TIMER3     0x50c
+@@ -308,6 +312,26 @@ disableWatchdog(void)
+     }
+ }
+ 
++#define CMPER_UART1_CLKCTRL   (0x6c)
++
++
++#define CMPER_UART1_CLKCTRL_IDLEST   (0x00030000u)
++#define CMPER_UART1_CLKCTRL_IDLEST_SHIFT   (0x00000010u)
++#define CMPER_UART1_CLKCTRL_IDLEST_DISABLE   (0x3u)
++#define CMPER_UART1_CLKCTRL_IDLEST_FUNC   (0x0u)
++#define CMPER_UART1_CLKCTRL_IDLEST_IDLE   (0x2u)
++#define CMPER_UART1_CLKCTRL_IDLEST_TRANS   (0x1u)
++
++#define CMPER_UART1_CLKCTRL_MODULEMODE   (0x00000003u)
++#define CMPER_UART1_CLKCTRL_MODULEMODE_SHIFT   (0x00000000u)
++#define CMPER_UART1_CLKCTRL_MODULEMODE_DISABLED   (0x0u)
++#define CMPER_UART1_CLKCTRL_MODULEMODE_ENABLE   (0x2u)
++#define CMPER_UART1_CLKCTRL_MODULEMODE_RESERVED   (0x3u)
++#define CMPER_UART1_CLKCTRL_MODULEMODE_RESERVED_1   (0x1u)
++
++#define CMPER_L4LS_CLKSTCTRL   (0x0)
++#define CMPER_L4LS_CLKSTCTRL_CLKACTIVITY_LCDC_GCLK   (0x00020000u)
++
+ /*
+  * Enable DMTIMER clocks, otherwise their registers wont be accessible.
+  * This could be moved out of kernel.
+@@ -329,6 +353,8 @@ enableTimers(void)
+     while ((*CMPER_REG(cmper, CMPER_TIMER3_CLKCTRL) & 3) != CMPER_CLKCTRL_ENABLE) {
+         continue;
+     }
++
++    configureUartClocks();
+ }
+ 
+ /* Configure dmtimer0 as kernel preemption timer */
+@@ -390,3 +416,156 @@ void plat_invalidateL2Range(paddr_t start, paddr_t end) {}
+ void plat_cleanInvalidateL2Range(paddr_t start, paddr_t end) {}
+ 
+ 
++#define SOC_PRCM_REGS CMPER_PPTR
++#define SOC_CM_PER_REGS (SOC_PRCM_REGS + 0)
++#define SOC_CM_WKUP_REGS (SOC_PRCM_REGS + 0x400)
++#define HWREG(x) (*((volatile unsigned int *)(x)))
++#define TRUE 1
++#define FALSE 0
++// from uart.c
++//#include "hw_cm_wkup.h"
++#define CM_WKUP_CLKSTCTRL (0x0)
++#define CM_WKUP_CONTROL_CLKCTRL (0x4)
++#define CM_WKUP_CONTROL_CLKCTRL_MODULEMODE (0x00000003u)
++#define CM_WKUP_CONTROL_CLKCTRL_MODULEMODE_ENABLE (0x2u)
++#define CM_WKUP_CLKSTCTRL_CLKTRCTRL (0x00000003u)
++#define CM_WKUP_CLKSTCTRL_CLKTRCTRL_SW_WKUP (0x2u)
++#define CM_WKUP_CM_L3_AON_CLKSTCTRL (0x18)
++#define CM_WKUP_CM_L3_AON_CLKSTCTRL_CLKTRCTRL (0x00000003u)
++#define CM_WKUP_CM_L3_AON_CLKSTCTRL_CLKTRCTRL_SW_WKUP (0x2u)
++#define CM_WKUP_CM_L3_AON_CLKSTCTRL_CLKACTIVITY_L3_AON_GCLK (0x00000008u)
++#define CM_WKUP_UART0_CLKCTRL (0xb4)
++#define CM_WKUP_UART0_CLKCTRL_MODULEMODE (0x00000003u)
++#define CM_WKUP_UART0_CLKCTRL_MODULEMODE_ENABLE (0x2u)
++#define CM_WKUP_CONTROL_CLKCTRL_IDLEST (0x00030000u)
++#define CM_WKUP_CONTROL_CLKCTRL_IDLEST_SHIFT (0x00000010u)
++#define CM_WKUP_CONTROL_CLKCTRL_IDLEST_FUNC (0x0u)
++#define CM_WKUP_L4WKUP_CLKCTRL_IDLEST (0x00030000u)
++#define CM_WKUP_L4WKUP_CLKCTRL_IDLEST_SHIFT (0x00000010u)
++#define CM_WKUP_L4WKUP_CLKCTRL_IDLEST_FUNC (0x0u)
++#define CM_WKUP_L4WKUP_CLKCTRL (0xc)
++#define CM_WKUP_CLKSTCTRL_CLKACTIVITY_L4_WKUP_GCLK (0x00000004u)
++#define CM_WKUP_CM_L4_WKUP_AON_CLKSTCTRL_CLKACTIVITY_L4_WKUP_AON_GCLK (0x00000004u)
++#define CM_WKUP_CM_L4_WKUP_AON_CLKSTCTRL (0xcc)
++#define CM_WKUP_CLKSTCTRL_CLKACTIVITY_UART0_GFCLK (0x00001000u)
++#define CM_WKUP_UART0_CLKCTRL_IDLEST (0x00030000u)
++#define CM_WKUP_UART0_CLKCTRL_IDLEST_SHIFT (0x00000010u)
++#define CM_WKUP_UART0_CLKCTRL_IDLEST_FUNC (0x0u)
++//#include "hw_cm_per.h"
++#define CM_PER_L3S_CLKSTCTRL (0x4)
++#define CM_PER_L3_CLKCTRL (0xe0)
++#define CM_PER_L3_CLKSTCTRL (0xc)
++#define CM_PER_L3_CLKCTRL_MODULEMODE (0x00000003u)
++#define CM_PER_L3_CLKCTRL_MODULEMODE_ENABLE (0x2u)
++#define CM_PER_L3_INSTR_CLKCTRL (0xdc)
++#define CM_PER_L3_INSTR_CLKCTRL_MODULEMODE (0x00000003u)
++#define CM_PER_L3_INSTR_CLKCTRL_MODULEMODE_ENABLE (0x2u)
++#define CM_PER_L3_CLKSTCTRL_CLKTRCTRL (0x00000003u)
++#define CM_PER_L3_CLKSTCTRL_CLKTRCTRL_SW_WKUP (0x2u)
++#define CM_PER_OCPWP_L3_CLKSTCTRL (0x12c)
++#define CM_PER_OCPWP_L3_CLKSTCTRL_CLKTRCTRL (0x00000003u)
++#define CM_PER_OCPWP_L3_CLKSTCTRL_CLKTRCTRL_SW_WKUP (0x2u)
++#define CM_PER_L3S_CLKSTCTRL_CLKTRCTRL (0x00000003u)
++#define CM_PER_L3S_CLKSTCTRL_CLKTRCTRL_SW_WKUP (0x2u)
++#define CM_PER_L3_CLKCTRL_IDLEST (0x00030000u)
++#define CM_PER_L3_CLKCTRL_IDLEST_SHIFT (0x00000010u)
++#define CM_PER_L3_CLKCTRL_IDLEST_FUNC (0x0u)
++#define CM_PER_L3_INSTR_CLKCTRL_IDLEST (0x00030000u)
++#define CM_PER_L3_INSTR_CLKCTRL_IDLEST_SHIFT (0x00000010u)
++#define CM_PER_L3_INSTR_CLKCTRL_IDLEST_FUNC (0x0u)
++#define CM_PER_L3_CLKSTCTRL_CLKACTIVITY_L3_GCLK (0x00000010u)
++#define CM_PER_OCPWP_L3_CLKSTCTRL_CLKACTIVITY_OCPWP_L3_GCLK (0x00000010u)
++#define CM_PER_L3S_CLKSTCTRL_CLKACTIVITY_L3S_GCLK (0x00000008u)
++#define REG(x)(*((volatile uint32_t *)(x)))
++
++static void configureUartClocks() {
++	// Configuring L3 Interface Clocks
++	// Writing to MODULEMODE field of CM_PER_L3_CLKCTRL register
++	HWREG(SOC_CM_PER_REGS + CM_PER_L3_CLKCTRL) |= CM_PER_L3_CLKCTRL_MODULEMODE_ENABLE;
++	// Waiting for MODULEMODE field to reflect the written value
++	while(CM_PER_L3_CLKCTRL_MODULEMODE_ENABLE != (HWREG(SOC_CM_PER_REGS + CM_PER_L3_CLKCTRL) &
++				CM_PER_L3_CLKCTRL_MODULEMODE));
++	// Writing to MODULEMODE field of CM_PER_L3_INSTR_CLKCTRL register
++	HWREG(SOC_CM_PER_REGS + CM_PER_L3_INSTR_CLKCTRL) |= CM_PER_L3_INSTR_CLKCTRL_MODULEMODE_ENABLE;
++	// Waiting for MODULEMODE field to reflect the written value
++	while(CM_PER_L3_INSTR_CLKCTRL_MODULEMODE_ENABLE != (HWREG(SOC_CM_PER_REGS + CM_PER_L3_INSTR_CLKCTRL) &
++				CM_PER_L3_INSTR_CLKCTRL_MODULEMODE));
++	// Writing to CLKTRCTRL field of CM_PER_L3_CLKSTCTRL register
++	HWREG(SOC_CM_PER_REGS + CM_PER_L3_CLKSTCTRL) |= CM_PER_L3_CLKSTCTRL_CLKTRCTRL_SW_WKUP;
++	// Waiting for CLKTRCTRL field to reflect the written value
++	while(CM_PER_L3_CLKSTCTRL_CLKTRCTRL_SW_WKUP != (HWREG(SOC_CM_PER_REGS + CM_PER_L3_CLKSTCTRL) &
++				CM_PER_L3_CLKSTCTRL_CLKTRCTRL));
++	// Writing to CLKTRCTRL field of CM_PER_OCPWP_L3_CLKSTCTRL register
++	HWREG(SOC_CM_PER_REGS + CM_PER_OCPWP_L3_CLKSTCTRL) |= CM_PER_OCPWP_L3_CLKSTCTRL_CLKTRCTRL_SW_WKUP;
++	//Waiting for CLKTRCTRL field to reflect the written value
++	while(CM_PER_OCPWP_L3_CLKSTCTRL_CLKTRCTRL_SW_WKUP != (HWREG(SOC_CM_PER_REGS + CM_PER_OCPWP_L3_CLKSTCTRL) &
++				CM_PER_OCPWP_L3_CLKSTCTRL_CLKTRCTRL));
++	// Writing to CLKTRCTRL field of CM_PER_L3S_CLKSTCTRL register
++	HWREG(SOC_CM_PER_REGS + CM_PER_L3S_CLKSTCTRL) |= CM_PER_L3S_CLKSTCTRL_CLKTRCTRL_SW_WKUP;
++	//Waiting for CLKTRCTRL field to reflect the written value
++	while(CM_PER_L3S_CLKSTCTRL_CLKTRCTRL_SW_WKUP != (HWREG(SOC_CM_PER_REGS + CM_PER_L3S_CLKSTCTRL) &
++				CM_PER_L3S_CLKSTCTRL_CLKTRCTRL));
++	// Checking fields for necessary values
++	// Waiting for IDLEST field in CM_PER_L3_CLKCTRL register to be set to 0x0
++	while((CM_PER_L3_CLKCTRL_IDLEST_FUNC << CM_PER_L3_CLKCTRL_IDLEST_SHIFT)!=
++			(HWREG(SOC_CM_PER_REGS + CM_PER_L3_CLKCTRL) & CM_PER_L3_CLKCTRL_IDLEST));
++	// Waiting for IDLEST field in CM_PER_L3_INSTR_CLKCTRL register to attain the desired value.
++	while((CM_PER_L3_INSTR_CLKCTRL_IDLEST_FUNC << CM_PER_L3_INSTR_CLKCTRL_IDLEST_SHIFT)!=
++			(HWREG(SOC_CM_PER_REGS + CM_PER_L3_INSTR_CLKCTRL) & CM_PER_L3_INSTR_CLKCTRL_IDLEST));
++	// Waiting for CLKACTIVITY_L3_GCLK field in CM_PER_L3_CLKSTCTRL register to attain the desired value.
++	while(CM_PER_L3_CLKSTCTRL_CLKACTIVITY_L3_GCLK != (HWREG(SOC_CM_PER_REGS + CM_PER_L3_CLKSTCTRL) &
++				CM_PER_L3_CLKSTCTRL_CLKACTIVITY_L3_GCLK));
++	// Waiting for CLKACTIVITY_OCPWP_L3_GCLK field in CM_PER_OCPWP_L3_CLKSTCTRL register to attain the desired value.
++	while(CM_PER_OCPWP_L3_CLKSTCTRL_CLKACTIVITY_OCPWP_L3_GCLK != (HWREG(SOC_CM_PER_REGS + CM_PER_OCPWP_L3_CLKSTCTRL) &
++				CM_PER_OCPWP_L3_CLKSTCTRL_CLKACTIVITY_OCPWP_L3_GCLK));
++	// Waiting for CLKACTIVITY_L3S_GCLK field in CM_PER_L3S_CLKSTCTRL register to attain the desired value.
++	while(CM_PER_L3S_CLKSTCTRL_CLKACTIVITY_L3S_GCLK != (HWREG(SOC_CM_PER_REGS + CM_PER_L3S_CLKSTCTRL) &
++				CM_PER_L3S_CLKSTCTRL_CLKACTIVITY_L3S_GCLK));
++	// Configuring registers related to Wake-Up region
++	// Writing to MODULEMODE field of CM_WKUP_CONTROL_CLKCTRL register
++	HWREG(SOC_CM_WKUP_REGS + CM_WKUP_CONTROL_CLKCTRL) |= CM_WKUP_CONTROL_CLKCTRL_MODULEMODE_ENABLE;
++	// Waiting for MODULEMODE field to reflect the written value
++	while(CM_WKUP_CONTROL_CLKCTRL_MODULEMODE_ENABLE != (HWREG(SOC_CM_WKUP_REGS + CM_WKUP_CONTROL_CLKCTRL) &
++				CM_WKUP_CONTROL_CLKCTRL_MODULEMODE));
++	// Writing to CLKTRCTRL field of CM_PER_L3S_CLKSTCTRL register
++	HWREG(SOC_CM_WKUP_REGS + CM_WKUP_CLKSTCTRL) |= CM_WKUP_CLKSTCTRL_CLKTRCTRL_SW_WKUP;
++	//Waiting for CLKTRCTRL field to reflect the written value
++	while(CM_WKUP_CLKSTCTRL_CLKTRCTRL_SW_WKUP != (HWREG(SOC_CM_WKUP_REGS + CM_WKUP_CLKSTCTRL) &
++				CM_WKUP_CLKSTCTRL_CLKTRCTRL));
++	// Writing to CLKTRCTRL field of CM_L3_AON_CLKSTCTRL register
++	HWREG(SOC_CM_WKUP_REGS + CM_WKUP_CM_L3_AON_CLKSTCTRL) |= CM_WKUP_CM_L3_AON_CLKSTCTRL_CLKTRCTRL_SW_WKUP;
++	//Waiting for CLKTRCTRL field to reflect the written value
++	while(CM_WKUP_CM_L3_AON_CLKSTCTRL_CLKTRCTRL_SW_WKUP != (HWREG(SOC_CM_WKUP_REGS + CM_WKUP_CM_L3_AON_CLKSTCTRL) &
++				CM_WKUP_CM_L3_AON_CLKSTCTRL_CLKTRCTRL));
++	// Writing to MODULEMODE field of CM_WKUP_UART0_CLKCTRL register
++	HWREG(SOC_CM_WKUP_REGS + CM_WKUP_UART0_CLKCTRL) |= CM_WKUP_UART0_CLKCTRL_MODULEMODE_ENABLE;
++	// Waiting for MODULEMODE field to reflect the written value
++	while(CM_WKUP_UART0_CLKCTRL_MODULEMODE_ENABLE != (HWREG(SOC_CM_WKUP_REGS + CM_WKUP_UART0_CLKCTRL) &
++				CM_WKUP_UART0_CLKCTRL_MODULEMODE));
++	// Verifying if the other bits are set to required settings
++	//
++	// Waiting for IDLEST field in CM_WKUP_CONTROL_CLKCTRL register to attain desired value.
++	while((CM_WKUP_CONTROL_CLKCTRL_IDLEST_FUNC << CM_WKUP_CONTROL_CLKCTRL_IDLEST_SHIFT) !=
++			(HWREG(SOC_CM_WKUP_REGS + CM_WKUP_CONTROL_CLKCTRL) & CM_WKUP_CONTROL_CLKCTRL_IDLEST));
++	// Waiting for CLKACTIVITY_L3_AON_GCLK field in CM_L3_AON_CLKSTCTRL register to attain desired value.
++	while(CM_WKUP_CM_L3_AON_CLKSTCTRL_CLKACTIVITY_L3_AON_GCLK !=
++			(HWREG(SOC_CM_WKUP_REGS + CM_WKUP_CM_L3_AON_CLKSTCTRL) &
++			 CM_WKUP_CM_L3_AON_CLKSTCTRL_CLKACTIVITY_L3_AON_GCLK));
++	// Waiting for IDLEST field in CM_WKUP_L4WKUP_CLKCTRL register to attain desired value.
++	while((CM_WKUP_L4WKUP_CLKCTRL_IDLEST_FUNC << CM_WKUP_L4WKUP_CLKCTRL_IDLEST_SHIFT) !=
++			(HWREG(SOC_CM_WKUP_REGS + CM_WKUP_L4WKUP_CLKCTRL) & CM_WKUP_L4WKUP_CLKCTRL_IDLEST));
++	// Waiting for CLKACTIVITY_L4_WKUP_GCLK field in CM_WKUP_CLKSTCTRL register to attain desired value.
++	while(CM_WKUP_CLKSTCTRL_CLKACTIVITY_L4_WKUP_GCLK != (HWREG(SOC_CM_WKUP_REGS + CM_WKUP_CLKSTCTRL) &
++				CM_WKUP_CLKSTCTRL_CLKACTIVITY_L4_WKUP_GCLK));
++	// Waiting for CLKACTIVITY_L4_WKUP_AON_GCLK field in CM_L4_WKUP_AON_CLKSTCTRL register to attain desired value.
++	while(CM_WKUP_CM_L4_WKUP_AON_CLKSTCTRL_CLKACTIVITY_L4_WKUP_AON_GCLK !=
++			(HWREG(SOC_CM_WKUP_REGS + CM_WKUP_CM_L4_WKUP_AON_CLKSTCTRL) &
++			 CM_WKUP_CM_L4_WKUP_AON_CLKSTCTRL_CLKACTIVITY_L4_WKUP_AON_GCLK));
++	// Waiting for CLKACTIVITY_UART0_GFCLK field in CM_WKUP_CLKSTCTRL register to attain desired value.
++	while(CM_WKUP_CLKSTCTRL_CLKACTIVITY_UART0_GFCLK != (HWREG(SOC_CM_WKUP_REGS + CM_WKUP_CLKSTCTRL) &
++				CM_WKUP_CLKSTCTRL_CLKACTIVITY_UART0_GFCLK));
++	// Waiting for IDLEST field in CM_WKUP_UART0_CLKCTRL register to attain desired value.
++	while((CM_WKUP_UART0_CLKCTRL_IDLEST_FUNC << CM_WKUP_UART0_CLKCTRL_IDLEST_SHIFT) !=
++			(HWREG(SOC_CM_WKUP_REGS + CM_WKUP_UART0_CLKCTRL) & CM_WKUP_UART0_CLKCTRL_IDLEST));
++}
++
