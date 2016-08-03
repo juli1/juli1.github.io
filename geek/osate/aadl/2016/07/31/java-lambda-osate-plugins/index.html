@@ -4,14 +4,14 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Julien Delange</title>
+    <title>Simplify your OSATE and AADL analysis code with Java 8 lambda - Julien Delange</title>
     <link rel="alternate" type="application/rss+xml" title="Julien Delange &raquo; Feed" href="/feed.xml" />
     <meta name="viewport" content="width=device-width">
-    <meta name="description" content="Personal website of Julien Delange">
-    <link rel="canonical" href="http://julien.gunnm.org/">
+    <meta name="description" content="How to use the Java 8 lambda mechanism to write more simple and clear OSATE plugins">
+    <link rel="canonical" href="http://julien.gunnm.org/geek/osate/aadl/2016/07/31/java-lambda-osate-plugins/">
 
     
-    <meta name="keywords" content="software engineering, eclipse, modeling, running, ultra-marathon"/>
+    <meta name="keywords" content="AADL, OSATE, java lambda"/>
     
 
     <!-- Latest compiled and minified CSS -->
@@ -29,8 +29,8 @@
     <link rel="stylesheet" href="/css/main.css">
 
     <!-- Twitter Cards -->
-    <meta property="twitter:title" content="" />
-    <meta property="twitter:description" content="Personal website of Julien Delange" />
+    <meta property="twitter:title" content="Simplify your OSATE and AADL analysis code with Java 8 lambda" />
+    <meta property="twitter:description" content="How to use the Java 8 lambda mechanism to write more simple and clear OSATE plugins" />
     <meta property="twitter:card" content="summary" />
     <meta property="twitter:site" content="@juli1pb" />
     <meta property="twitter:creator" content="@juli1pb" />
@@ -41,8 +41,8 @@
     <meta property="og:site_name" content="Julien Delange" />
     <meta property="og:type" content="article" />
     <meta property="og:image" content="/assets/profile.png" />
-    <meta property="og:title" content="" />
-    <meta property="og:description" content="Personal website of Julien Delange" />
+    <meta property="og:title" content="Simplify your OSATE and AADL analysis code with Java 8 lambda" />
+    <meta property="og:description" content="How to use the Java 8 lambda mechanism to write more simple and clear OSATE plugins" />
 
 </head>
 
@@ -106,23 +106,66 @@
 
     <div class="page-content">
       <div class="wrap">
-      <div id="profile-pic">
-   <img src="/assets/profile.png"/>
+      <div class="post">
+
+  <header class="post-header">
+    <h1>Simplify your OSATE and AADL analysis code with Java 8 lambda</h1>
+    <p class="meta">
+      <!-- Jul 31, 2016 -->
+      <!-- 
+       -->
+   </p>
+  </header>
+
+  <article class="post-content">
+  <p>If you already wrote analysis code inside <a href="http://www.osate.org">OSATE</a>, you probably know that when writing an analysis plug-in, filtering components (according to their type, property, etc) can be painful. It can introduce a lot of useless code that browse the model to find the component of interest. The code used to browse the model is long and add a lot of <strong>noise</strong>, making the review difficult.</p>
+
+<p>Over the last months, I started to use the <a href="http://www.eclipse.org/xtend/">xtend</a> language for writing my analysis plugin. It was a way to simplify my code and learn a new language. When I started to read about Java 8, I was excited to use the <a href="https://docs.oracle.com/javase/tutorial/java/javaOO/lambdaexpressions.html">lambda expression mechanism</a>. And realized that it can be leveraged to simplify the design of my AADL plugins.</p>
+
+<p>Bottom line: it remove a lot of <strong>noisy</strong> code to only focus on what is really important. It makes the code more understandable and easy to read.</p>
+
+<p>I will illustrate that with an example. In this example, I get all data components that have the <code class="highlighter-rouge">Data_Size</code> property set to 0. The difference between a standard, recursive implementation and the lambda-expression is simple: about 20 lines of code vs 3 lines of code.</p>
+
+<p>The imperative version looks like this (see below): you have to browse the component hierarchy and check the component category and <code class="highlighter-rouge">Data_Size</code> value. Really, what you care in this code is the condition that filter the component. All the rest is noise, not useful but can still introduce a lot of bugs.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">ComponentInstance</span><span class="o">&gt;</span> <span class="n">findComponentRecursive</span> <span class="o">(</span><span class="n">ComponentInstance</span> <span class="n">si</span><span class="o">)</span>
+<span class="o">{</span>
+   <span class="n">List</span><span class="o">&lt;</span><span class="n">ComponentInstance</span><span class="o">&gt;</span> <span class="n">res</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">ComponentInstance</span><span class="o">&gt;</span> <span class="o">();</span>
+
+   <span class="k">for</span> <span class="o">(</span><span class="n">ComponentInstance</span> <span class="n">ci</span> <span class="o">:</span> <span class="n">si</span><span class="o">.</span><span class="na">getComponentInstances</span><span class="o">())</span>
+   <span class="o">{</span>
+      <span class="k">if</span> <span class="o">(</span> <span class="o">(</span><span class="n">ci</span><span class="o">.</span><span class="na">getCategory</span><span class="o">()</span> <span class="o">==</span> <span class="n">ComponentCategory</span><span class="o">.</span><span class="na">DATA</span><span class="o">)</span> <span class="o">&amp;&amp;</span> <span class="o">(</span><span class="n">GetProperties</span><span class="o">.</span><span class="na">getDataSizeInBytes</span><span class="o">(</span><span class="n">ci</span><span class="o">)</span> <span class="o">==</span> <span class="mf">0.0</span> <span class="o">))</span>
+      <span class="o">{</span>
+         <span class="n">res</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">ci</span><span class="o">);</span>
+      <span class="o">}</span>
+
+      <span class="n">res</span><span class="o">.</span><span class="na">addAll</span><span class="o">(</span><span class="n">findComponentRecursive</span><span class="o">(</span><span class="n">ci</span><span class="o">));</span>
+   <span class="o">}</span>
+
+   <span class="k">return</span> <span class="n">res</span><span class="o">;</span>
+<span class="o">}</span>
+
+<span class="kd">public</span> <span class="kd">static</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">ComponentInstance</span><span class="o">&gt;</span> <span class="n">findComponent</span> <span class="o">(</span><span class="n">SystemInstance</span> <span class="n">si</span><span class="o">)</span>
+<span class="o">{</span>
+   <span class="k">return</span> <span class="n">findComponentRecursive</span> <span class="o">(</span><span class="n">si</span><span class="o">);</span>
+<span class="o">}</span>
+</code></pre>
 </div>
 
-<div class="home">
-   <div class="intro">
-      <p>
-         My name is Julien Delange. I am a software engineer working at the <a href="http://sei.cmu.edu">Carnegie Mellon Software Engineering Institute</a> and an occarional runner for distance between 5K and 100 miles. This website has most of the useful information on my <a href="/projects">research work</a> and <a href="/running">running agenda</a>. I also maintain a <a href="/blog">blog</a> on topics related to software engineering, programming and running. More about how to contact me in the <a href="/about">about section</a>.
-      </p>
-   </div>
-   <div class="lastpost">
-      <h1>Last from the blog:   <a href="/geek/osate/aadl/2016/07/31/java-lambda-osate-plugins/">Simplify your OSATE and AADL analysis code with Java 8 lambda</a></h1>
-   </div>
+<p>Let’s now have a look at the same implementation but with the lambda expression. What you really have is a method that filters the components using a predicate. Simple. Easy to read. Efficient.</p>
 
-   <div style="margin-top: 1.5em; text-align: center;">
-     <p>You can see <a href="/blog">all blog posts</a> or just subscribe to the <a href="/feed.xml">RSS feed</a></p>
-  </div>
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">ComponentInstance</span><span class="o">&gt;</span> <span class="n">findComponent</span> <span class="o">(</span><span class="n">SystemInstance</span> <span class="n">si</span><span class="o">)</span>
+<span class="o">{</span>
+   <span class="k">return</span> <span class="o">(</span><span class="n">List</span><span class="o">&lt;</span><span class="n">ComponentInstance</span><span class="o">&gt;)</span> <span class="n">si</span><span class="o">.</span><span class="na">getAllComponentInstances</span><span class="o">().</span><span class="na">stream</span><span class="o">()</span>
+      <span class="o">.</span><span class="na">filter</span><span class="o">(</span> <span class="n">comp</span> <span class="o">-&gt;</span> <span class="o">(</span><span class="n">comp</span><span class="o">.</span><span class="na">getCategory</span><span class="o">()</span> <span class="o">==</span> <span class="n">ComponentCategory</span><span class="o">.</span><span class="na">DATA</span><span class="o">)</span> <span class="o">&amp;&amp;</span> <span class="o">(</span><span class="n">GetProperties</span><span class="o">.</span><span class="na">getDataSizeInBytes</span><span class="o">(</span><span class="n">comp</span><span class="o">)</span> <span class="o">==</span> <span class="mf">0.0</span> <span class="o">)</span> <span class="o">).</span><span class="na">collect</span><span class="o">(</span><span class="n">Collectors</span><span class="o">.</span><span class="na">toList</span><span class="o">());</span>
+<span class="o">}</span>
+</code></pre>
+</div>
+
+<p>I am still reading code examples about Java 8 and using lambda. I am convinced it can help a lot to write better code, increase productivity and reduce bugs. If you are writing analysis plugins for AADL, I would definitively recommend to at list <a href="https://docs.oracle.com/javase/tutorial/java/javaOO/lambdaexpressions.html">have a look at the tutorial</a>.</p>
+
+  </article>
+
 </div>
 
       </div>
