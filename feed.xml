@@ -5,6 +5,7 @@
     <description>Tales of a guy living in Pittsburgh addicted with Computer-Science, Running and Peanut Butter</description>
     <link>http://julien.gunnm.org/</link>
     <atom:link href="http://julien.gunnm.org/feed.xml" rel="self" type="application/rss+xml" />
+<<<<<<< HEAD
     <pubDate>Mon, 22 Aug 2016 20:23:22 -0400</pubDate>
     <lastBuildDate>Mon, 22 Aug 2016 20:23:22 -0400</lastBuildDate>
     <generator>Jekyll v3.2.1</generator>
@@ -233,6 +234,321 @@ assembly
         }
         return 0;
 }
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;We imported some code to initialize and use UART1. The CAmkES code generator mapped the 0x48022000 address (defines in the CAmkES description for the hardware component) in the uartmem component. We assigned the address of the &lt;em&gt;uartmem&lt;/em&gt; variable into &lt;em&gt;devmem&lt;/em&gt;. We can then manipulate the device using this address.&lt;/p&gt;
+
+&lt;p&gt;The code of other functions (&lt;em&gt;UArtFIFOConfigure&lt;/em&gt; and &lt;em&gt;UARTsetup&lt;/em&gt;) are included in the &lt;a href=&quot;(/assets/pingbeagleboneinstance-uart1.tgz)&quot;&gt;zip file containing the full CAmkES application&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h1 id=&quot;booting-the-application&quot;&gt;Booting the application&lt;/h1&gt;
+
+&lt;p&gt;Once you compiled the application, you need to boot it! If you do not know how to compile or produce binary files for a CAmkES application that targets the Beaglebone Black, you can read the &lt;a href=&quot;http://sel4.systems/Info/CAmkES/GettingStarted.pml&quot;&gt;CAmkES documentation&lt;/a&gt; and the seL4 documentation about the &lt;a href=&quot;https://sel4.systems/Info/Hardware/Beaglebone/&quot;&gt;Beaglebone&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;The beaglebone uses something weird called the Device Tree Overlay. You can get &lt;a href=&quot;https://learn.adafruit.com/introduction-to-the-beaglebone-black-device-tree/device-tree-overlays&quot;&gt;information there&lt;/a&gt;. Long story short, this mechanism lets you configure how the PIN of the boards are connected to the AM335x SOC.&lt;/p&gt;
+
+&lt;p&gt;We do not need to change everything but still need to activate the UART1. You can do this when booting the board with u-boot. Type the following lines in u-boot:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;mw.l 0x44E10980 0x30
+mw.l 0x44E10984 0x00
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;This would be enough. It seems it cannot work in the component itself. On the other hand, as discussed in &lt;a href=&quot;http://sel4.systems/pipermail/devel/2016-June/000854.html&quot;&gt;this post&lt;/a&gt; it seems you can avoid that by inserting the following line in &lt;em&gt;platform_init()&lt;/em&gt;.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;*(volatile uint32_t*)0x44E10980 = 0x30;
+*(volatile uint32_t*)0x44E10984 = 0x00;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Then, time to load the binary. I used a network connection to do that.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;dhcp ${loadaddr} 192.168.1.1:sel4.img
+
+go ${loadaddr}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Then, just issue a &lt;em&gt;cat /dev/ttyUSB1&lt;/em&gt; and &lt;em&gt;voila!&lt;/em&gt;. The following picture show what I received from the UART1 of the BeagleBone Black.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/sel4-bb-term.png&quot; alt=&quot;Output from UART1&quot; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;debugging&quot;&gt;Debugging&lt;/h1&gt;
+
+&lt;p&gt;Sometimes, you need to debug and trace when things are going wrong. You might experience this. I would recommend the &lt;a href=&quot;https://github.com/SEL4PROJ/sel4-tutorials/blob/master/docs/seL4Tutorial.pdf&quot;&gt;seL4 tutorial&lt;/a&gt; that provides some useful direction. When having an exception in a partition, the following command is very useful.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;arm-none-eabi-objdump -dS /path/to/your/binary | less
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;In a nutshell, it gives you the assembly code, its address and with the associated C line. So, you can exactly know where to look for when you get the address related to a crash.&lt;/p&gt;
+
+&lt;p&gt;For example, when debugging the UART1 driver in the partition, I used this command a lot. Very useful. You might need it!&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;arm-none-eabi-objdump -dS build/arm/am335x/pingbeagleboneinstance/Cons_PingMe.instance.bin | less
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h1 id=&quot;special-thanks&quot;&gt;Special thanks&lt;/h1&gt;
+
+&lt;p&gt;The staff that are working on this project at CMU as well as the seL4 community!&lt;/p&gt;
+
+&lt;h1 id=&quot;resources&quot;&gt;Resources&lt;/h1&gt;
+&lt;ul&gt;
+  &lt;li&gt;Patch for the kernel: &lt;a href=&quot;/assets/sel4-kernel-uart1bb.diff&quot;&gt;available here&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;CAmkES application with the driver: &lt;a href=&quot;/assets/pingbeagleboneinstance-uart1.tgz&quot;&gt;available here&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Bare code for UART1 support: &lt;a href=&quot;https://e2e.ti.com/support/embedded/starterware/f/790/t/214547&quot;&gt;discussion on TI forums&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://sel4.systems/pipermail/devel/2016-June/000849.html&quot;&gt;Related thread on the seL4 mailing list&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Wed, 15 Jun 2016 09:13:20 -0400</pubDate>
+        <link>http://julien.gunnm.org/geek/sel4/beaglebone%20black/2016/06/15/beaglebone-black-sel4-uart1/</link>
+        <guid isPermaLink="true">http://julien.gunnm.org/geek/sel4/beaglebone%20black/2016/06/15/beaglebone-black-sel4-uart1/</guid>
+        
+        <category>sel4</category>
+        
+        <category>real-time</category>
+        
+        <category>CAmkES</category>
+        
+        
+        <category>geek</category>
+        
+        <category>sel4</category>
+        
+        <category>beaglebone black</category>
+        
+      </item>
+=======
+    <pubDate>Wed, 03 Aug 2016 10:57:13 -0400</pubDate>
+    <lastBuildDate>Wed, 03 Aug 2016 10:57:13 -0400</lastBuildDate>
+    <generator>Jekyll v3.1.3</generator>
+>>>>>>> e28c1865af35e19821e150c51add4dbac1bd90d1
+    
+      <item>
+        <title>Simplify your OSATE and AADL analysis code with Java 8 lambda</title>
+        <description>&lt;p&gt;If you already wrote analysis code inside &lt;a href=&quot;http://www.osate.org&quot;&gt;OSATE&lt;/a&gt;, you probably know that when writing an analysis plug-in, filtering components (according to their type, property, etc) can be painful. It can introduce a lot of useless code that browse the model to find the component of interest. The code used to browse the model is long and add a lot of &lt;strong&gt;noise&lt;/strong&gt;, making the review difficult.&lt;/p&gt;
+
+&lt;p&gt;Over the last months, I started to use the &lt;a href=&quot;http://www.eclipse.org/xtend/&quot;&gt;xtend&lt;/a&gt; language for writing my analysis plugin. It was a way to simplify my code and learn a new language. When I started to read about Java 8, I was excited to use the &lt;a href=&quot;https://docs.oracle.com/javase/tutorial/java/javaOO/lambdaexpressions.html&quot;&gt;lambda expression mechanism&lt;/a&gt;. And realized that it can be leveraged to simplify the design of my AADL plugins.&lt;/p&gt;
+
+&lt;p&gt;Bottom line: it remove a lot of &lt;strong&gt;noisy&lt;/strong&gt; code to only focus on what is really important. It makes the code more understandable and easy to read.&lt;/p&gt;
+
+&lt;p&gt;I will illustrate that with an example. In this example, I get all data components that have the &lt;code class=&quot;highlighter-rouge&quot;&gt;Data_Size&lt;/code&gt; property set to 0. The difference between a standard, recursive implementation and the lambda-expression is simple: about 20 lines of code vs 3 lines of code.&lt;/p&gt;
+
+&lt;p&gt;The imperative version looks like this (see below): you have to browse the component hierarchy and check the component category and &lt;code class=&quot;highlighter-rouge&quot;&gt;Data_Size&lt;/code&gt; value. Really, what you care in this code is the condition that filter the component. All the rest is noise, not useful but can still introduce a lot of bugs.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ComponentInstance&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;findComponentRecursive&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ComponentInstance&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;si&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+   &lt;span class=&quot;n&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ComponentInstance&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;res&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ArrayList&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ComponentInstance&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+
+   &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ComponentInstance&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ci&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;si&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getComponentInstances&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;())&lt;/span&gt;
+   &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ci&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getCategory&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ComponentCategory&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;DATA&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;GetProperties&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getDataSizeInBytes&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ci&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;0.0&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;))&lt;/span&gt;
+      &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+         &lt;span class=&quot;n&quot;&gt;res&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;add&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ci&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+      &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+      &lt;span class=&quot;n&quot;&gt;res&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;addAll&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;findComponentRecursive&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ci&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;));&lt;/span&gt;
+   &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+   &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;res&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ComponentInstance&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;findComponent&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;SystemInstance&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;si&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+   &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;findComponentRecursive&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;si&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Let’s now have a look at the same implementation but with the lambda expression. What you really have is a method that filters the components using a predicate. Simple. Easy to read. Efficient.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ComponentInstance&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;findComponent&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;SystemInstance&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;si&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+   &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ComponentInstance&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;si&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getAllComponentInstances&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;().&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;stream&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;
+      &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;filter&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;comp&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;comp&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getCategory&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ComponentCategory&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;DATA&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;GetProperties&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getDataSizeInBytes&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;comp&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;0.0&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;collect&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Collectors&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;toList&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;());&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;I am still reading code examples about Java 8 and using lambda. I am convinced it can help a lot to write better code, increase productivity and reduce bugs. If you are writing analysis plugins for AADL, I would definitively recommend to at list &lt;a href=&quot;https://docs.oracle.com/javase/tutorial/java/javaOO/lambdaexpressions.html&quot;&gt;have a look at the tutorial&lt;/a&gt;.&lt;/p&gt;
+</description>
+        <pubDate>Sun, 31 Jul 2016 09:13:20 -0400</pubDate>
+        <link>http://julien.gunnm.org/geek/osate/aadl/2016/07/31/java-lambda-osate-plugins/</link>
+        <guid isPermaLink="true">http://julien.gunnm.org/geek/osate/aadl/2016/07/31/java-lambda-osate-plugins/</guid>
+        
+        <category>AADL</category>
+        
+        <category>OSATE</category>
+        
+        <category>java lambda</category>
+        
+        
+        <category>geek</category>
+        
+        <category>osate</category>
+        
+        <category>aadl</category>
+        
+      </item>
+    
+      <item>
+        <title>Supporting the UART1 of the BeagleBone Black with seL4/CAmkES</title>
+        <description>&lt;h1 id=&quot;in-a-nutshell&quot;&gt;In a nutshell&lt;/h1&gt;
+
+&lt;p&gt;In this article, I explain how to support UART1 of the &lt;a href=&quot;http://beagleboard.org/black&quot;&gt;Beaglebone Black&lt;/a&gt; with seL4 and the CAmkES component approach. I explain how to test the UART1, build a cable, patch the kernel and make your application.&lt;/p&gt;
+
+&lt;h1 id=&quot;building-your-cable&quot;&gt;Building your cable&lt;/h1&gt;
+
+&lt;p&gt;First, you need a cable to connect to the UART1. I (well, the folks at work helped me to get one!) used &lt;a href=&quot;https://www.adafruit.com/products/954&quot;&gt;this USB to TTL serial cable from Adafruit&lt;/a&gt;, which worked fine. The white PIN is connected to PIN 24 on the P9 connector board and the green cable is connected to PIN 26 on the P9 connector board.&lt;/p&gt;
+
+&lt;p&gt;The picture is ugly but this is how it looks like.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/beaglebone-uart1.jpg&quot; alt=&quot;Beaglebone with UART1 cable&quot; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;testing-the-uart1-interface-with-debian&quot;&gt;Testing the UART1 interface with Debian&lt;/h1&gt;
+
+&lt;p&gt;You can use the UART1 interface with the pre-installed debian on the Beaglebone. It already supports UART1 operation. What you need to do is to build a cable, connect on the debian and send some stuff on the port.&lt;/p&gt;
+
+&lt;p&gt;The Beaglebone supports what we call a Device Tree Overlay. Long story short, this is a way to change the usage of each PIN. You then have to use the appropriate overlay to use the UART1. The default settings do not work, and you have to issue the following command to enable UART1.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;echo ADAFRUIT-UART1 &amp;gt; /sys/devices/bone_capemgr.*/slots
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Then, you can connect on the serial and issue whatever you want. Let’s say the UART1 of the Beaglebone Black is connected to /dev/ttyUSB1, you can then connected on screen and type anything.&lt;/p&gt;
+
+&lt;p&gt;On your computer, run the following command:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;screen  /dev/ttyO1 115200
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;On the Beaglebone Black, run the following command:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;screen /dev/ttyUSB1 115200
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Type stuff on both screen, you should see what is sent/received.&lt;/p&gt;
+
+&lt;p&gt;If it does not work, check your cables and/or the commands you invoked. Let’s move on.&lt;/p&gt;
+
+&lt;h1 id=&quot;implementing-the-kernel-side&quot;&gt;Implementing the kernel side&lt;/h1&gt;
+
+&lt;p&gt;First, checkout the seL4 and CAmkES repository. When you import the kernel, some stuff are not supported. For example, the UART1 is not declared. You then need to add the definition of UART1 in the kernel.&lt;/p&gt;
+
+&lt;p&gt;Edit the file &lt;em&gt;kernel/include/plat/am335x/plat/machine/devices.h&lt;/em&gt; and add the following line.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;#define UART1_PADDR     0x48022000
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Then, in &lt;em&gt;kernel/src/plat/am335x/machine/hardware.c&lt;/em&gt; you need to add the support for all UARTs. I found &lt;a href=&quot;https://e2e.ti.com/support/embedded/starterware/f/790/t/214547&quot;&gt;online a nice piece of code&lt;/a&gt; that configures all UARTs. I imported it directly into the kernel. You can see the code in &lt;a href=&quot;/assets/sel4-kernel-uart1bb.diff&quot;&gt;my patch&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h1 id=&quot;implementing-the-component&quot;&gt;Implementing the component&lt;/h1&gt;
+
+&lt;p&gt;So now, the kernel has the information about the UART1 device (&lt;em&gt;UART1_PADDR&lt;/em&gt;) and activate the necessary resources to handle it. Now, we need to describe the component using CAmkES and implement its driver in the user-space partition.&lt;/p&gt;
+
+&lt;h2 id=&quot;camkes-definition&quot;&gt;CAmkES definition&lt;/h2&gt;
+
+&lt;p&gt;We define a hardware CAmkES component that represents the UART component and we connect it to the device that is supposed to handle/manage it.&lt;/p&gt;
+
+&lt;p&gt;My assembly look like this:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;import &amp;lt;std_connector.camkes&amp;gt;;
+import &quot;components/timer/Timer.camkes&quot;;
+import &quot;components/ProducerThreadImpl/ProducerThreadImpl.camkes&quot;;
+import &quot;components/ConsumerThreadImpl/ConsumerThreadImpl.camkes&quot;;
+
+component UART{
+  hardware;
+  dataport Buf mem;
+}
+
+component ConsumerThreadImpl
+{
+  include &quot;generatedtypes.h&quot;;
+  control;
+  dataport simpletype data_sink;
+  consumes sig activator;
+  dataport Buf uartmem;
+}
+
+assembly
+{
+  composition
+  {
+    component Timerbase timerbase;
+    component Timer timer;
+    component UART drv;
+
+    component ProducerThreadImpl Prod_Pinger;
+    component ConsumerThreadImpl Cons_PingMe;
+
+    connection seL4SharedData connection0(from Prod_Pinger.data_source, to Cons_PingMe.data_sink);
+    connection seL4Notification notification0 (from timer.Prod_Pinger_activator, to Prod_Pinger.activator);
+    connection seL4Notification notification1 (from timer.Cons_PingMe_activator, to Cons_PingMe.activator);
+    connection seL4HardwareMMIO uart_mem (from Cons_PingMe.uartmem, to drv.mem);
+    connection seL4HardwareMMIO timer_mem (from timer.reg, to timerbase.reg);
+    connection seL4HardwareInterrupt timer_irq (from timerbase.irq, to timer.irq);
+   }
+
+  configuration
+  {
+    connection0.from_access = &quot;W&quot;;
+    connection0.to_access = &quot;R&quot;;
+    timerbase.reg_attributes = &quot;0x48040000:0x1000&quot;;
+    timerbase.irq_attributes = 68;
+    drv.mem_attributes       = &quot;0x48022000:0x1000&quot;;
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;In this declaration, the assembly has two interesting component:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;UART&lt;/strong&gt; (and its related instance &lt;em&gt;drv&lt;/em&gt;) represents the hardware component of the UART. We configure it in the configuration section and its memory area (see &lt;em&gt;drv.mem_attributes = 0x48022000:0x1000&lt;/em&gt;). This will then map the address &lt;em&gt;0x48022000&lt;/em&gt; into the partition in a pointer called uartmem.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;ConsumerThreadImpl&lt;/strong&gt; represents the component that is using the hardware component. This component will then contain all the code necessary to execute the driver.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;There are other artifacts of course, such as the timer and timerbase components that are here to handle the timer and activate periodic tasks. I detailed these aspects before, you can read &lt;a href=&quot;/geek/sel4/2016/04/18/periodic-tasks-with-sel4/&quot;&gt;this post in case you are interested&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;The architecture of our CAmkES application is as follow: the producer will send a number that is eventually send through the UART by the Consumer component.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/sel4-bb-uart1.png&quot; alt=&quot;CAmkES architecture&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;implementing-the-driver&quot;&gt;Implementing the driver&lt;/h2&gt;
+
+&lt;p&gt;Now, we need to implement the driver. As for the kernel, I used a lot of code from &lt;a href=&quot;https://e2e.ti.com/support/embedded/starterware/f/790/t/214547&quot;&gt;this post on the starterware forum&lt;/a&gt;. Mostly, the code first initialize the UART1 and send the string “hello” followed by the number received (module 10).&lt;/p&gt;
+
+&lt;p&gt;The code of the component looks like this:
+~~~~~~~~~~~~~~~
+int run(void)
+{
+        devmem = (unsigned int) uartmem;
+        unsigned int UARTparms = 0;
+        char mybuf[10];
+        int val;&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    memset (mybuf, 0, 10);
+    UartFIFOConfigure(devmem);
+    UARTparms = 0x3; // p4033 - 8 data bits, 1 stop bit, no parity
+    UARTsetup(devmem, 115200, UARTparms, UART16x_OPER_MODE);
+
+    while (1)
+    {
+
+            activator_wait();
+            user_ping_spg ((*data_sink) );
+            sprintf(mybuf, &quot;hello %d\n&quot;, (*data_sink % 10));
+            UART_tx(devmem, mybuf, 7);
+            UART_tx(devmem, &quot;hello&quot;, 5);
+            printf (&quot;UART= %d\n&quot;, val);
+
+    }
+    return 0; } ~~~~~~~~~~~~~~~
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 

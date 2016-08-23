@@ -247,12 +247,19 @@ assembly
 
 <p>Now, we need to implement the driver. As for the kernel, I used a lot of code from <a href="https://e2e.ti.com/support/embedded/starterware/f/790/t/214547">this post on the starterware forum</a>. Mostly, the code first initialize the UART1 and send the string “hello” followed by the number received (module 10).</p>
 
+<<<<<<< HEAD
 <p>The code of the component looks like this:</p>
 <div class="highlighter-rouge"><pre class="highlight"><code>int run(void)
+=======
+<p>The code of the component looks like this:
+~~~~~~~~~~~~~~~
+int run(void)
+>>>>>>> e28c1865af35e19821e150c51add4dbac1bd90d1
 {
         devmem = (unsigned int) uartmem;
         unsigned int UARTparms = 0;
         char mybuf[10];
+<<<<<<< HEAD
         int val;
 
         memset (mybuf, 0, 10);
@@ -273,6 +280,27 @@ assembly
         }
         return 0;
 }
+=======
+        int val;</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>    memset (mybuf, 0, 10);
+    UartFIFOConfigure(devmem);
+    UARTparms = 0x3; // p4033 - 8 data bits, 1 stop bit, no parity
+    UARTsetup(devmem, 115200, UARTparms, UART16x_OPER_MODE);
+
+    while (1)
+    {
+
+            activator_wait();
+            user_ping_spg ((*data_sink) );
+            sprintf(mybuf, "hello %d\n", (*data_sink % 10));
+            UART_tx(devmem, mybuf, 7);
+            UART_tx(devmem, "hello", 5);
+            printf ("UART= %d\n", val);
+
+    }
+    return 0; } ~~~~~~~~~~~~~~~
+>>>>>>> e28c1865af35e19821e150c51add4dbac1bd90d1
 </code></pre>
 </div>
 

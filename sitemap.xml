@@ -880,7 +880,11 @@
     <url>
       <loc>http://julien.gunnm.org/404</loc>
       
+<<<<<<< HEAD
         <lastmod>2016-08-22T20:23:22-04:00</lastmod>
+=======
+        <lastmod>2016-08-03T10:57:13-04:00</lastmod>
+>>>>>>> e28c1865af35e19821e150c51add4dbac1bd90d1
       
       
         <changefreq>monthly</changefreq>
@@ -918,7 +922,11 @@
     <url>
       <loc>http://julien.gunnm.org</loc>
       
+<<<<<<< HEAD
         <lastmod>2016-08-22T20:23:22-04:00</lastmod>
+=======
+        <lastmod>2016-08-03T10:57:13-04:00</lastmod>
+>>>>>>> e28c1865af35e19821e150c51add4dbac1bd90d1
       
       
         <changefreq>daily</changefreq>
