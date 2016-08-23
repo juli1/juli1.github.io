@@ -5,9 +5,319 @@
     <description>Tales of a guy living in Pittsburgh addicted with Computer-Science, Running and Peanut Butter</description>
     <link>http://julien.gunnm.org/</link>
     <atom:link href="http://julien.gunnm.org/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Sat, 28 May 2016 07:35:54 -0400</pubDate>
-    <lastBuildDate>Sat, 28 May 2016 07:35:54 -0400</lastBuildDate>
-    <generator>Jekyll v3.1.3</generator>
+    <pubDate>Mon, 22 Aug 2016 20:23:22 -0400</pubDate>
+    <lastBuildDate>Mon, 22 Aug 2016 20:23:22 -0400</lastBuildDate>
+    <generator>Jekyll v3.2.1</generator>
+    
+      <item>
+        <title>Simplify your OSATE and AADL analysis code with Java 8 lambda</title>
+        <description>&lt;p&gt;If you already wrote analysis code inside &lt;a href=&quot;http://www.osate.org&quot;&gt;OSATE&lt;/a&gt;, you probably know that when writing an analysis plug-in, filtering components (according to their type, property, etc) can be painful. It can introduce a lot of useless code that browse the model to find the component of interest. The code used to browse the model is long and add a lot of &lt;strong&gt;noise&lt;/strong&gt;, making the review difficult.&lt;/p&gt;
+
+&lt;p&gt;Over the last months, I started to use the &lt;a href=&quot;http://www.eclipse.org/xtend/&quot;&gt;xtend&lt;/a&gt; language for writing my analysis plugin. It was a way to simplify my code and learn a new language. When I started to read about Java 8, I was excited to use the &lt;a href=&quot;https://docs.oracle.com/javase/tutorial/java/javaOO/lambdaexpressions.html&quot;&gt;lambda expression mechanism&lt;/a&gt;. And realized that it can be leveraged to simplify the design of my AADL plugins.&lt;/p&gt;
+
+&lt;p&gt;Bottom line: it remove a lot of &lt;strong&gt;noisy&lt;/strong&gt; code to only focus on what is really important. It makes the code more understandable and easy to read.&lt;/p&gt;
+
+&lt;p&gt;I will illustrate that with an example. In this example, I get all data components that have the &lt;code class=&quot;highlighter-rouge&quot;&gt;Data_Size&lt;/code&gt; property set to 0. The difference between a standard, recursive implementation and the lambda-expression is simple: about 20 lines of code vs 3 lines of code.&lt;/p&gt;
+
+&lt;p&gt;The imperative version looks like this (see below): you have to browse the component hierarchy and check the component category and &lt;code class=&quot;highlighter-rouge&quot;&gt;Data_Size&lt;/code&gt; value. Really, what you care in this code is the condition that filter the component. All the rest is noise, not useful but can still introduce a lot of bugs.&lt;/p&gt;
+
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ComponentInstance&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;findComponentRecursive&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ComponentInstance&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;si&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+   &lt;span class=&quot;n&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ComponentInstance&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;res&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ArrayList&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ComponentInstance&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+
+   &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ComponentInstance&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ci&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;si&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getComponentInstances&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;())&lt;/span&gt;
+   &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ci&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getCategory&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ComponentCategory&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;DATA&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;GetProperties&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getDataSizeInBytes&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ci&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;0.0&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;))&lt;/span&gt;
+      &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+         &lt;span class=&quot;n&quot;&gt;res&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;add&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ci&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+      &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+      &lt;span class=&quot;n&quot;&gt;res&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;addAll&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;findComponentRecursive&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ci&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;));&lt;/span&gt;
+   &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+   &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;res&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ComponentInstance&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;findComponent&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;SystemInstance&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;si&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+   &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;findComponentRecursive&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;si&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Let’s now have a look at the same implementation but with the lambda expression. What you really have is a method that filters the components using a predicate. Simple. Easy to read. Efficient.&lt;/p&gt;
+
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ComponentInstance&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;findComponent&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;SystemInstance&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;si&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+   &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ComponentInstance&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;si&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getAllComponentInstances&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;().&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;stream&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;
+      &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;filter&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;comp&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;comp&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getCategory&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ComponentCategory&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;DATA&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;GetProperties&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getDataSizeInBytes&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;comp&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;0.0&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;collect&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Collectors&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;toList&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;());&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;I am still reading code examples about Java 8 and using lambda. I am convinced it can help a lot to write better code, increase productivity and reduce bugs. If you are writing analysis plugins for AADL, I would definitively recommend to at list &lt;a href=&quot;https://docs.oracle.com/javase/tutorial/java/javaOO/lambdaexpressions.html&quot;&gt;have a look at the tutorial&lt;/a&gt;.&lt;/p&gt;
+</description>
+        <pubDate>Sun, 31 Jul 2016 09:13:20 -0400</pubDate>
+        <link>http://julien.gunnm.org/geek/osate/aadl/2016/07/31/java-lambda-osate-plugins/</link>
+        <guid isPermaLink="true">http://julien.gunnm.org/geek/osate/aadl/2016/07/31/java-lambda-osate-plugins/</guid>
+        
+        <category>AADL</category>
+        
+        <category>OSATE</category>
+        
+        <category>java lambda</category>
+        
+        
+        <category>geek</category>
+        
+        <category>osate</category>
+        
+        <category>aadl</category>
+        
+      </item>
+    
+      <item>
+        <title>Supporting the UART1 of the BeagleBone Black with seL4/CAmkES</title>
+        <description>&lt;h1 id=&quot;in-a-nutshell&quot;&gt;In a nutshell&lt;/h1&gt;
+
+&lt;p&gt;In this article, I explain how to support UART1 of the &lt;a href=&quot;http://beagleboard.org/black&quot;&gt;Beaglebone Black&lt;/a&gt; with seL4 and the CAmkES component approach. I explain how to test the UART1, build a cable, patch the kernel and make your application.&lt;/p&gt;
+
+&lt;h1 id=&quot;building-your-cable&quot;&gt;Building your cable&lt;/h1&gt;
+
+&lt;p&gt;First, you need a cable to connect to the UART1. I (well, the folks at work helped me to get one!) used &lt;a href=&quot;https://www.adafruit.com/products/954&quot;&gt;this USB to TTL serial cable from Adafruit&lt;/a&gt;, which worked fine. The white PIN is connected to PIN 24 on the P9 connector board and the green cable is connected to PIN 26 on the P9 connector board.&lt;/p&gt;
+
+&lt;p&gt;The picture is ugly but this is how it looks like.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/beaglebone-uart1.jpg&quot; alt=&quot;Beaglebone with UART1 cable&quot; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;testing-the-uart1-interface-with-debian&quot;&gt;Testing the UART1 interface with Debian&lt;/h1&gt;
+
+&lt;p&gt;You can use the UART1 interface with the pre-installed debian on the Beaglebone. It already supports UART1 operation. What you need to do is to build a cable, connect on the debian and send some stuff on the port.&lt;/p&gt;
+
+&lt;p&gt;The Beaglebone supports what we call a Device Tree Overlay. Long story short, this is a way to change the usage of each PIN. You then have to use the appropriate overlay to use the UART1. The default settings do not work, and you have to issue the following command to enable UART1.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;echo ADAFRUIT-UART1 &amp;gt; /sys/devices/bone_capemgr.*/slots
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Then, you can connect on the serial and issue whatever you want. Let’s say the UART1 of the Beaglebone Black is connected to /dev/ttyUSB1, you can then connected on screen and type anything.&lt;/p&gt;
+
+&lt;p&gt;On your computer, run the following command:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;screen  /dev/ttyO1 115200
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;On the Beaglebone Black, run the following command:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;screen /dev/ttyUSB1 115200
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Type stuff on both screen, you should see what is sent/received.&lt;/p&gt;
+
+&lt;p&gt;If it does not work, check your cables and/or the commands you invoked. Let’s move on.&lt;/p&gt;
+
+&lt;h1 id=&quot;implementing-the-kernel-side&quot;&gt;Implementing the kernel side&lt;/h1&gt;
+
+&lt;p&gt;First, checkout the seL4 and CAmkES repository. When you import the kernel, some stuff are not supported. For example, the UART1 is not declared. You then need to add the definition of UART1 in the kernel.&lt;/p&gt;
+
+&lt;p&gt;Edit the file &lt;em&gt;kernel/include/plat/am335x/plat/machine/devices.h&lt;/em&gt; and add the following line.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;#define UART1_PADDR     0x48022000
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Then, in &lt;em&gt;kernel/src/plat/am335x/machine/hardware.c&lt;/em&gt; you need to add the support for all UARTs. I found &lt;a href=&quot;https://e2e.ti.com/support/embedded/starterware/f/790/t/214547&quot;&gt;online a nice piece of code&lt;/a&gt; that configures all UARTs. I imported it directly into the kernel. You can see the code in &lt;a href=&quot;/assets/sel4-kernel-uart1bb.diff&quot;&gt;my patch&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h1 id=&quot;implementing-the-component&quot;&gt;Implementing the component&lt;/h1&gt;
+
+&lt;p&gt;So now, the kernel has the information about the UART1 device (&lt;em&gt;UART1_PADDR&lt;/em&gt;) and activate the necessary resources to handle it. Now, we need to describe the component using CAmkES and implement its driver in the user-space partition.&lt;/p&gt;
+
+&lt;h2 id=&quot;camkes-definition&quot;&gt;CAmkES definition&lt;/h2&gt;
+
+&lt;p&gt;We define a hardware CAmkES component that represents the UART component and we connect it to the device that is supposed to handle/manage it.&lt;/p&gt;
+
+&lt;p&gt;My assembly look like this:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;import &amp;lt;std_connector.camkes&amp;gt;;
+import &quot;components/timer/Timer.camkes&quot;;
+import &quot;components/ProducerThreadImpl/ProducerThreadImpl.camkes&quot;;
+import &quot;components/ConsumerThreadImpl/ConsumerThreadImpl.camkes&quot;;
+
+component UART{
+  hardware;
+  dataport Buf mem;
+}
+
+component ConsumerThreadImpl
+{
+  include &quot;generatedtypes.h&quot;;
+  control;
+  dataport simpletype data_sink;
+  consumes sig activator;
+  dataport Buf uartmem;
+}
+
+assembly
+{
+  composition
+  {
+    component Timerbase timerbase;
+    component Timer timer;
+    component UART drv;
+
+    component ProducerThreadImpl Prod_Pinger;
+    component ConsumerThreadImpl Cons_PingMe;
+
+    connection seL4SharedData connection0(from Prod_Pinger.data_source, to Cons_PingMe.data_sink);
+    connection seL4Notification notification0 (from timer.Prod_Pinger_activator, to Prod_Pinger.activator);
+    connection seL4Notification notification1 (from timer.Cons_PingMe_activator, to Cons_PingMe.activator);
+    connection seL4HardwareMMIO uart_mem (from Cons_PingMe.uartmem, to drv.mem);
+    connection seL4HardwareMMIO timer_mem (from timer.reg, to timerbase.reg);
+    connection seL4HardwareInterrupt timer_irq (from timerbase.irq, to timer.irq);
+   }
+
+  configuration
+  {
+    connection0.from_access = &quot;W&quot;;
+    connection0.to_access = &quot;R&quot;;
+    timerbase.reg_attributes = &quot;0x48040000:0x1000&quot;;
+    timerbase.irq_attributes = 68;
+    drv.mem_attributes       = &quot;0x48022000:0x1000&quot;;
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;In this declaration, the assembly has two interesting component:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;UART&lt;/strong&gt; (and its related instance &lt;em&gt;drv&lt;/em&gt;) represents the hardware component of the UART. We configure it in the configuration section and its memory area (see &lt;em&gt;drv.mem_attributes = 0x48022000:0x1000&lt;/em&gt;). This will then map the address &lt;em&gt;0x48022000&lt;/em&gt; into the partition in a pointer called uartmem.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;ConsumerThreadImpl&lt;/strong&gt; represents the component that is using the hardware component. This component will then contain all the code necessary to execute the driver.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;There are other artifacts of course, such as the timer and timerbase components that are here to handle the timer and activate periodic tasks. I detailed these aspects before, you can read &lt;a href=&quot;/geek/sel4/2016/04/18/periodic-tasks-with-sel4/&quot;&gt;this post in case you are interested&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;The architecture of our CAmkES application is as follow: the producer will send a number that is eventually send through the UART by the Consumer component.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/sel4-bb-uart1.png&quot; alt=&quot;CAmkES architecture&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;implementing-the-driver&quot;&gt;Implementing the driver&lt;/h2&gt;
+
+&lt;p&gt;Now, we need to implement the driver. As for the kernel, I used a lot of code from &lt;a href=&quot;https://e2e.ti.com/support/embedded/starterware/f/790/t/214547&quot;&gt;this post on the starterware forum&lt;/a&gt;. Mostly, the code first initialize the UART1 and send the string “hello” followed by the number received (module 10).&lt;/p&gt;
+
+&lt;p&gt;The code of the component looks like this:&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;int run(void)
+{
+        devmem = (unsigned int) uartmem;
+        unsigned int UARTparms = 0;
+        char mybuf[10];
+        int val;
+
+        memset (mybuf, 0, 10);
+        UartFIFOConfigure(devmem);
+        UARTparms = 0x3; // p4033 - 8 data bits, 1 stop bit, no parity
+        UARTsetup(devmem, 115200, UARTparms, UART16x_OPER_MODE);
+
+        while (1)
+        {
+
+                activator_wait();
+                user_ping_spg ((*data_sink) );
+                sprintf(mybuf, &quot;hello %d\n&quot;, (*data_sink % 10));
+                UART_tx(devmem, mybuf, 7);
+                UART_tx(devmem, &quot;hello&quot;, 5);
+                printf (&quot;UART= %d\n&quot;, val);
+
+        }
+        return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;We imported some code to initialize and use UART1. The CAmkES code generator mapped the 0x48022000 address (defines in the CAmkES description for the hardware component) in the uartmem component. We assigned the address of the &lt;em&gt;uartmem&lt;/em&gt; variable into &lt;em&gt;devmem&lt;/em&gt;. We can then manipulate the device using this address.&lt;/p&gt;
+
+&lt;p&gt;The code of other functions (&lt;em&gt;UArtFIFOConfigure&lt;/em&gt; and &lt;em&gt;UARTsetup&lt;/em&gt;) are included in the &lt;a href=&quot;(/assets/pingbeagleboneinstance-uart1.tgz)&quot;&gt;zip file containing the full CAmkES application&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h1 id=&quot;booting-the-application&quot;&gt;Booting the application&lt;/h1&gt;
+
+&lt;p&gt;Once you compiled the application, you need to boot it! If you do not know how to compile or produce binary files for a CAmkES application that targets the Beaglebone Black, you can read the &lt;a href=&quot;http://sel4.systems/Info/CAmkES/GettingStarted.pml&quot;&gt;CAmkES documentation&lt;/a&gt; and the seL4 documentation about the &lt;a href=&quot;https://sel4.systems/Info/Hardware/Beaglebone/&quot;&gt;Beaglebone&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;The beaglebone uses something weird called the Device Tree Overlay. You can get &lt;a href=&quot;https://learn.adafruit.com/introduction-to-the-beaglebone-black-device-tree/device-tree-overlays&quot;&gt;information there&lt;/a&gt;. Long story short, this mechanism lets you configure how the PIN of the boards are connected to the AM335x SOC.&lt;/p&gt;
+
+&lt;p&gt;We do not need to change everything but still need to activate the UART1. You can do this when booting the board with u-boot. Type the following lines in u-boot:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;mw.l 0x44E10980 0x30
+mw.l 0x44E10984 0x00
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;This would be enough. It seems it cannot work in the component itself. On the other hand, as discussed in &lt;a href=&quot;http://sel4.systems/pipermail/devel/2016-June/000854.html&quot;&gt;this post&lt;/a&gt; it seems you can avoid that by inserting the following line in &lt;em&gt;platform_init()&lt;/em&gt;.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;*(volatile uint32_t*)0x44E10980 = 0x30;
+*(volatile uint32_t*)0x44E10984 = 0x00;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Then, time to load the binary. I used a network connection to do that.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;dhcp ${loadaddr} 192.168.1.1:sel4.img
+
+go ${loadaddr}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Then, just issue a &lt;em&gt;cat /dev/ttyUSB1&lt;/em&gt; and &lt;em&gt;voila!&lt;/em&gt;. The following picture show what I received from the UART1 of the BeagleBone Black.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/sel4-bb-term.png&quot; alt=&quot;Output from UART1&quot; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;debugging&quot;&gt;Debugging&lt;/h1&gt;
+
+&lt;p&gt;Sometimes, you need to debug and trace when things are going wrong. You might experience this. I would recommend the &lt;a href=&quot;https://github.com/SEL4PROJ/sel4-tutorials/blob/master/docs/seL4Tutorial.pdf&quot;&gt;seL4 tutorial&lt;/a&gt; that provides some useful direction. When having an exception in a partition, the following command is very useful.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;arm-none-eabi-objdump -dS /path/to/your/binary | less
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;In a nutshell, it gives you the assembly code, its address and with the associated C line. So, you can exactly know where to look for when you get the address related to a crash.&lt;/p&gt;
+
+&lt;p&gt;For example, when debugging the UART1 driver in the partition, I used this command a lot. Very useful. You might need it!&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;arm-none-eabi-objdump -dS build/arm/am335x/pingbeagleboneinstance/Cons_PingMe.instance.bin | less
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h1 id=&quot;special-thanks&quot;&gt;Special thanks&lt;/h1&gt;
+
+&lt;p&gt;The staff that are working on this project at CMU as well as the seL4 community!&lt;/p&gt;
+
+&lt;h1 id=&quot;resources&quot;&gt;Resources&lt;/h1&gt;
+&lt;ul&gt;
+  &lt;li&gt;Patch for the kernel: &lt;a href=&quot;/assets/sel4-kernel-uart1bb.diff&quot;&gt;available here&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;CAmkES application with the driver: &lt;a href=&quot;/assets/pingbeagleboneinstance-uart1.tgz&quot;&gt;available here&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Bare code for UART1 support: &lt;a href=&quot;https://e2e.ti.com/support/embedded/starterware/f/790/t/214547&quot;&gt;discussion on TI forums&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://sel4.systems/pipermail/devel/2016-June/000849.html&quot;&gt;Related thread on the seL4 mailing list&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Wed, 15 Jun 2016 09:13:20 -0400</pubDate>
+        <link>http://julien.gunnm.org/geek/sel4/beaglebone%20black/2016/06/15/beaglebone-black-sel4-uart1/</link>
+        <guid isPermaLink="true">http://julien.gunnm.org/geek/sel4/beaglebone%20black/2016/06/15/beaglebone-black-sel4-uart1/</guid>
+        
+        <category>sel4</category>
+        
+        <category>real-time</category>
+        
+        <category>CAmkES</category>
+        
+        
+        <category>geek</category>
+        
+        <category>sel4</category>
+        
+        <category>beaglebone black</category>
+        
+      </item>
     
       <item>
         <title>Swissvale activity guide</title>
@@ -59,9 +369,11 @@ Also, a good source of information about swissvale can be found on the
 
 &lt;h2 id=&quot;going-to-frick&quot;&gt;Going to Frick&lt;/h2&gt;
 
-&lt;p&gt;There are many options to go to Frick. If you go by running/biking/walking, the options are the following:
- * Go down commercial st and turn right at the bottom of commercial (location of Entrance Frick 1 on the map)
- * Use South Braddock and use the Park entrance at the CLASS building (location of Entrance Frick 2 on the map)&lt;/p&gt;
+&lt;p&gt;There are many options to go to Frick. If you go by running/biking/walking, the options are the following:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Go down commercial st and turn right at the bottom of commercial (location of Entrance Frick 1 on the map)&lt;/li&gt;
+  &lt;li&gt;Use South Braddock and use the Park entrance at the CLASS building (location of Entrance Frick 2 on the map)&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;p&gt;If you are driving your car, you can park around the park, either at the bottom of commercial, close to the CLASS building or close to the tennis court. The map has some dedicated places to indicate where you can park.&lt;/p&gt;
 
@@ -183,7 +495,7 @@ Also, a good source of information about swissvale can be found on the
 
 &lt;p&gt;As mentioned before, seL4 does not provide any timing service. It provides a service to schedule threads (using a Round-Robin policy with priorities) but does not provide anything to wait or be activated at a given period.&lt;/p&gt;
 
-&lt;p&gt;So, if you are looking for something like &lt;code&gt;pthread_cond_timedwait()&lt;/code&gt; or just &lt;code&gt;sleep()&lt;/code&gt; (which is &lt;strong&gt;NOT&lt;/strong&gt; real-time friendly by the way), you will feel out of luck.&lt;/p&gt;
+&lt;p&gt;So, if you are looking for something like &lt;code class=&quot;highlighter-rouge&quot;&gt;pthread_cond_timedwait()&lt;/code&gt; or just &lt;code class=&quot;highlighter-rouge&quot;&gt;sleep()&lt;/code&gt; (which is &lt;strong&gt;NOT&lt;/strong&gt; real-time friendly by the way), you will feel out of luck.&lt;/p&gt;
 
 &lt;p&gt;To overcome this issue, you must design your own timing service in a process that will ultimately activate the other tasks.&lt;/p&gt;
 
@@ -191,11 +503,13 @@ Also, a good source of information about swissvale can be found on the
 
 &lt;p&gt;We will implement a timing service with CAmkES. The timing service will define a hardware component (hardware timer) and a time manager that will activate the tasks according to their periods.&lt;/p&gt;
 
-&lt;p&gt;In the following example, we will have two periodic tasks: one is activated every second while the other one is activated every two seconds. We will then define four components:
- 1. The hardware component that abstracts the hardware platform
- 2. The time manager that manages the hardware components and send a signal to activate the other tasks. One signal will be sent every second, another every two seconds
- 3. One task connected to the first signal (activated every second)
- 4. One task connected to the second signal (activated every two seconds)&lt;/p&gt;
+&lt;p&gt;In the following example, we will have two periodic tasks: one is activated every second while the other one is activated every two seconds. We will then define four components:&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;The hardware component that abstracts the hardware platform&lt;/li&gt;
+  &lt;li&gt;The time manager that manages the hardware components and send a signal to activate the other tasks. One signal will be sent every second, another every two seconds&lt;/li&gt;
+  &lt;li&gt;One task connected to the first signal (activated every second)&lt;/li&gt;
+  &lt;li&gt;One task connected to the second signal (activated every two seconds)&lt;/li&gt;
+&lt;/ol&gt;
 
 &lt;p&gt;We will illustrate that with the x86 platform.&lt;/p&gt;
 
@@ -205,9 +519,9 @@ Also, a good source of information about swissvale can be found on the
 
 &lt;p&gt;&lt;img src=&quot;/assets/sel4-timer-architecture.png&quot; alt=&quot;architecture&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;The timer components and timer managment in CAmkES are defining like the following (&lt;code&gt;Timerbase&lt;/code&gt; being the hardware component and &lt;code&gt;Timer&lt;/code&gt; the time manager)&lt;/p&gt;
+&lt;p&gt;The timer components and timer managment in CAmkES are defining like the following (&lt;code class=&quot;highlighter-rouge&quot;&gt;Timerbase&lt;/code&gt; being the hardware component and &lt;code class=&quot;highlighter-rouge&quot;&gt;Timer&lt;/code&gt; the time manager)&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;component Timerbase {
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;component Timerbase {
    hardware;
    provides IOPort command;
    provides IOPort channel0;
@@ -224,21 +538,23 @@ component Timer {
   emits sig Hello2_Thr_activator;
 }
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
-&lt;p&gt;The &lt;code&gt;Timerbase&lt;/code&gt; component accesses two &lt;code&gt;IOPort&lt;/code&gt; that are hardware register/memories used to control the timer. This is architecture-dependent and related to the &lt;abbr title=&quot;Programmable Interval Interrupt&quot;&gt;PIT&lt;/abbr&gt;. The &lt;code&gt;irq&lt;/code&gt; corresponds to the interrupt sent by the system.&lt;/p&gt;
+&lt;p&gt;The &lt;code class=&quot;highlighter-rouge&quot;&gt;Timerbase&lt;/code&gt; component accesses two &lt;code class=&quot;highlighter-rouge&quot;&gt;IOPort&lt;/code&gt; that are hardware register/memories used to control the timer. This is architecture-dependent and related to the &lt;abbr title=&quot;Programmable Interval Interrupt&quot;&gt;PIT&lt;/abbr&gt;. The &lt;code class=&quot;highlighter-rouge&quot;&gt;irq&lt;/code&gt; corresponds to the interrupt sent by the system.&lt;/p&gt;
 
-&lt;p&gt;Now, let’s define the application component (application task). We call it &lt;code&gt;HelloThreadImpl&lt;/code&gt;. This task is a control task that will consumes a signal that activates it.&lt;/p&gt;
+&lt;p&gt;Now, let’s define the application component (application task). We call it &lt;code class=&quot;highlighter-rouge&quot;&gt;HelloThreadImpl&lt;/code&gt;. This task is a control task that will consumes a signal that activates it.&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;component HelloThreadImpl
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;component HelloThreadImpl
 {
   control;
   consumes sig activator;
 }
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
 &lt;p&gt;Then, we need to create an assembly that integrates and configures all components. The assembly corresponds to the components configuration showed in the picture before.&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;import &amp;lt;std_connector.camkes&amp;gt;;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;import &amp;lt;std_connector.camkes&amp;gt;;
 import &quot;components/timer/Timer.camkes&quot;;
 import &quot;components/HelloThreadImpl/HelloThreadImpl.camkes&quot;;
 assembly {
@@ -271,20 +587,21 @@ assembly {
   }
 }
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
-&lt;p&gt;We define the timer component (one of type &lt;code&gt;Timerbase&lt;/code&gt; and one of type &lt;code&gt;Timer&lt;/code&gt;) as well as two software components. The connections &lt;code&gt;notification0&lt;/code&gt; and &lt;code&gt;notification1&lt;/code&gt; are the one that will activate the tasks through a signal, to notify them that they can be activated.&lt;/p&gt;
+&lt;p&gt;We define the timer component (one of type &lt;code class=&quot;highlighter-rouge&quot;&gt;Timerbase&lt;/code&gt; and one of type &lt;code class=&quot;highlighter-rouge&quot;&gt;Timer&lt;/code&gt;) as well as two software components. The connections &lt;code class=&quot;highlighter-rouge&quot;&gt;notification0&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;notification1&lt;/code&gt; are the one that will activate the tasks through a signal, to notify them that they can be activated.&lt;/p&gt;
 
-&lt;p&gt;In the &lt;code&gt;configuration&lt;/code&gt; section, the hardware component is configured. This part is architecture-dependent and if you are planning to use such a pattern on another architecture, you would need to adapt the hardware component specification and its relative configuration section.&lt;/p&gt;
+&lt;p&gt;In the &lt;code class=&quot;highlighter-rouge&quot;&gt;configuration&lt;/code&gt; section, the hardware component is configured. This part is architecture-dependent and if you are planning to use such a pattern on another architecture, you would need to adapt the hardware component specification and its relative configuration section.&lt;/p&gt;
 
 &lt;h2 id=&quot;implementing-the-code&quot;&gt;Implementing the code&lt;/h2&gt;
 
-&lt;p&gt;Now, we need to implement the &lt;code&gt;Timer&lt;/code&gt; and the &lt;code&gt;HelloThreadImpl&lt;/code&gt; components.&lt;/p&gt;
+&lt;p&gt;Now, we need to implement the &lt;code class=&quot;highlighter-rouge&quot;&gt;Timer&lt;/code&gt; and the &lt;code class=&quot;highlighter-rouge&quot;&gt;HelloThreadImpl&lt;/code&gt; components.&lt;/p&gt;
 
 &lt;p&gt;For the timer, there is a part that is architecture-dependent and another that is generic and activates the tasks. We will skip the architecture-dependent part, you can look at it in the code by yourself. The most interesting part is in the interrupt handler.&lt;/p&gt;
 
 &lt;p&gt;In the driver interrupt handler, we get the current time in milliseconds. Then, depending on the value, we send a signal to activate a task. In the following code, we send a signal to the first task every 1000 ms and send a signal to the second task every 2000 ms.&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;void irq_callback(void *_ UNUSED)
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;void irq_callback(void *_ UNUSED)
 {
   timer_handle_irq(timer_drv, 0);
 
@@ -303,10 +620,11 @@ assembly {
   irq_reg_callback(irq_callback, NULL);
 }
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
-&lt;p&gt;Let’s have a look at the &lt;code&gt;HelloThreadImpl&lt;/code&gt; code now. It should be pretty obvious with an infinite loop waiting for a signal and executing a piece of code. The code is provided below.&lt;/p&gt;
+&lt;p&gt;Let’s have a look at the &lt;code class=&quot;highlighter-rouge&quot;&gt;HelloThreadImpl&lt;/code&gt; code now. It should be pretty obvious with an infinite loop waiting for a signal and executing a piece of code. The code is provided below.&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;#include &amp;lt;camkes.h&amp;gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;#include &amp;lt;camkes.h&amp;gt;
 
 #include &amp;lt;generatedtypes.h&amp;gt;
 #include &amp;lt;stdio.h&amp;gt;
@@ -327,6 +645,7 @@ int run(void)
   return 0;
 }
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
 &lt;h1 id=&quot;getting-the-code--run-it&quot;&gt;Getting the code &amp;amp; run it&lt;/h1&gt;
 &lt;p&gt;The code is availabe &lt;a href=&quot;/assets/sel4-timer.tgz&quot;&gt;there&lt;/a&gt;&lt;/p&gt;
@@ -336,16 +655,16 @@ int run(void)
 &lt;ul&gt;
   &lt;li&gt;Check out CAmkES and make sure it works on your system. To get started, have a look &lt;a href=&quot;https://wiki.sel4.systems/CAmkES&quot;&gt;on the instruction on the seL4 wiki&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;Get the code &lt;a href=&quot;/assets/sel4-timer.tgz&quot;&gt;here&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;decompress the archive into the &lt;code&gt;apps/&lt;/code&gt; directory of the CAmkES installation&lt;/li&gt;
-  &lt;li&gt;Edit the &lt;code&gt;Kconfig&lt;/code&gt; file at the root directory of your CAmkES installation and add in the &lt;code&gt;Applications&lt;/code&gt; section the following line: &lt;code&gt;source &quot;apps/twotasksx86instance/Kconfig&quot;&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;invoke &lt;code&gt;make ia32_simple_defconfig&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;invoke &lt;code&gt;make oldconfig&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;invoke &lt;code&gt;make&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;decompress the archive into the &lt;code class=&quot;highlighter-rouge&quot;&gt;apps/&lt;/code&gt; directory of the CAmkES installation&lt;/li&gt;
+  &lt;li&gt;Edit the &lt;code class=&quot;highlighter-rouge&quot;&gt;Kconfig&lt;/code&gt; file at the root directory of your CAmkES installation and add in the &lt;code class=&quot;highlighter-rouge&quot;&gt;Applications&lt;/code&gt; section the following line: &lt;code class=&quot;highlighter-rouge&quot;&gt;source &quot;apps/twotasksx86instance/Kconfig&quot;&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;invoke &lt;code class=&quot;highlighter-rouge&quot;&gt;make ia32_simple_defconfig&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;invoke &lt;code class=&quot;highlighter-rouge&quot;&gt;make oldconfig&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;invoke &lt;code class=&quot;highlighter-rouge&quot;&gt;make&lt;/code&gt;&lt;/li&gt;
   &lt;li&gt;If everything compiles fine, it means that a simple example for the ia32 platform works. We can then compiles the example from this article&lt;/li&gt;
-  &lt;li&gt;Invoke &lt;code&gt;make menuconfig&lt;/code&gt;. In the menu, in the &lt;code&gt;Applications&lt;/code&gt; section, unselect all examples and select &lt;code&gt;Generated CAmkES TwotasksX86Instance application &lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Invoke &lt;code class=&quot;highlighter-rouge&quot;&gt;make menuconfig&lt;/code&gt;. In the menu, in the &lt;code class=&quot;highlighter-rouge&quot;&gt;Applications&lt;/code&gt; section, unselect all examples and select &lt;code class=&quot;highlighter-rouge&quot;&gt;Generated CAmkES TwotasksX86Instance application &lt;/code&gt;&lt;/li&gt;
   &lt;li&gt;exit the configuration tool and save the changes&lt;/li&gt;
-  &lt;li&gt;invoke &lt;code&gt;make&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;simulate the system with qemu by invoking &lt;code&gt;qemu-system-i386 -nographic -kernel images/kernel-ia32-pc99 -initrd images/capdl-loader-experimental-image-ia32-pc99&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;invoke &lt;code class=&quot;highlighter-rouge&quot;&gt;make&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;simulate the system with qemu by invoking &lt;code class=&quot;highlighter-rouge&quot;&gt;qemu-system-i386 -nographic -kernel images/kernel-ia32-pc99 -initrd images/capdl-loader-experimental-image-ia32-pc99&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;When running the code, you should just see that you get more output every two seconds. Basically, every second, you get two &lt;em&gt;HELLO&lt;/em&gt; message on the console while every two seconds, you see two messages.&lt;/p&gt;
@@ -353,7 +672,7 @@ int run(void)
 &lt;h1 id=&quot;issues--limitations&quot;&gt;Issues &amp;amp; limitations&lt;/h1&gt;
 &lt;p&gt;In this post, I tried to explain how to use seL4 and its related &lt;abbr title=&quot;Architecture Description Language&quot;&gt;ADL&lt;/abbr&gt; in order to implement a popular design pattern for safety-critical systems: a periodic tasks. As seL4 provides very minimal services and as no built-in timing service, you must define them yourself.&lt;/p&gt;
 
-&lt;p&gt;Beyond that, one can notice that there is some issues with such an approach. First of all, it assumes that the system is &lt;em&gt;schedulable&lt;/em&gt; and that all tasks will complete their job and will not interfere with the execution of the other tasks. If one task that is at a high priority takes all the CPU (in other word, if the code in &lt;code&gt;user_hello_spg&lt;/code&gt; contains an infinite loop), your system will be stuck. One workaround would be to use the concept of domains in seL4 but unfortunately, it does not seem that CAmkES exports it to the user. Also, the system does not &lt;em&gt;enforce&lt;/em&gt; any timing budget. The NICTA team is working on some real-time extensions that might provide such services.&lt;/p&gt;
+&lt;p&gt;Beyond that, one can notice that there is some issues with such an approach. First of all, it assumes that the system is &lt;em&gt;schedulable&lt;/em&gt; and that all tasks will complete their job and will not interfere with the execution of the other tasks. If one task that is at a high priority takes all the CPU (in other word, if the code in &lt;code class=&quot;highlighter-rouge&quot;&gt;user_hello_spg&lt;/code&gt; contains an infinite loop), your system will be stuck. One workaround would be to use the concept of domains in seL4 but unfortunately, it does not seem that CAmkES exports it to the user. Also, the system does not &lt;em&gt;enforce&lt;/em&gt; any timing budget. The NICTA team is working on some real-time extensions that might provide such services.&lt;/p&gt;
 
 &lt;p&gt;Note: You might find some error/bugs in the code, this is mostly done for educational purposes. If you find any issue/bug, do not hesitate to contact me.&lt;/p&gt;
 
@@ -398,12 +717,12 @@ int run(void)
 &lt;p&gt;In Linux, the GPIO can be controlled using the SysFS abstraction layer. You can access it through&lt;em&gt; /sys/class/gpio. &lt;/em&gt;I am using the pre-installed debian software on the board.&lt;/p&gt;
 &lt;p&gt;To control a particular pin, you must export it. You do it by writing the value of the pin you want to export into &lt;em&gt;/sys/class/gpio/export&lt;/em&gt;. Then, a new directory is &lt;em&gt;/sys/class/gpio/gpio&amp;lt;PIN-NUMBER&amp;gt;&lt;/em&gt; is created with many different files to control the pin (direction, value, etc.).&lt;/p&gt;
 &lt;p&gt;In our example, the &lt;strong&gt;pin 14 from the bank P9&lt;/strong&gt; correspond to &lt;strong&gt;GPIO 50&lt;/strong&gt;. You can see the corresponding mapping between the pin and GPIO number in the &lt;a href=&quot;http://beagleboard.org/support/bone101&quot;&gt;beaglebone 101 &lt;/a&gt;document.&lt;/p&gt;
-&lt;p&gt;So, let&#39;s start by exporting this pin:&lt;/p&gt;
+&lt;p&gt;So, let's start by exporting this pin:&lt;/p&gt;
 &lt;pre&gt;echo 50 &amp;gt; /sys/class/gpio/export&lt;/pre&gt;
 &lt;p&gt;Then, a new directory /sys/class/gpio/gpio50 is created.&lt;/p&gt;
-&lt;p&gt;Let&#39;s set its direction to out&lt;/p&gt;
+&lt;p&gt;Let's set its direction to out&lt;/p&gt;
 &lt;pre&gt;echo out &amp;gt; /sys/class/gpio/gpio50/direction&lt;/pre&gt;
-&lt;p&gt;And let&#39;s set its value to 1&lt;/p&gt;
+&lt;p&gt;And let's set its value to 1&lt;/p&gt;
 &lt;pre&gt;echo 1 &amp;gt; /sys/class/gpio/gpio50/value&lt;/pre&gt;
 &lt;p&gt;&amp;nbsp;&lt;/p&gt;
 &lt;p&gt;And finally, if you want to make the LED blinks every second, you can use this command:&lt;/p&gt;
@@ -440,7 +759,7 @@ int run(void)
 
 &lt;p&gt;As a french citizen and having lived in this country for more than 27 years, I am ashamed of this airport. It does not make justice to this country and its capital, which deserve better than that. This airport reproduces everything you can hate about france.&lt;/p&gt;
 &lt;p&gt;I regularly took this airport since 2008. I tried to provide feedback, I thought that it might help the airport to improve itself. This airport is also rated as one of the worst in Europe (see &lt;a href=&quot;http://travel.cnn.com/explorations/life/10-most-hated-airports-324645/&quot;&gt;here on CNN &lt;/a&gt;or here on &lt;a href=&quot;http://www.offtoeurope.com/europes-best-and-worst-airports/&quot;&gt;offeurope&lt;/a&gt; or here ). So, with this in mind and also with regularly feedback from its users (I hope I was not the same to send feedback), I was hoping progress would have happened over the last years. But after 8 more years, all what I see is just an airport that is a real mess, where passengers get lost, transiting from two gates within the same terminal can take more than 30 minutes and does not even provide basic services such an airport deserves. This is what you want to show to the visitors of the most visited capital in the world? Probably not.&lt;/p&gt;
-&lt;p&gt;For example, let&#39;s see at some of the reasons the airport is so bad:&lt;/p&gt;
+&lt;p&gt;For example, let's see at some of the reasons the airport is so bad:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;accessibility between terminals&lt;/strong&gt;: terminals are a mess and for some terminals, you need to take a bus to move within the terminal. But not for all terminals! It can take up to 30 to 45 minutes to navigate within the same terminal. So, if you have to switch terminals, at least one hour is a reasonable bet&lt;/li&gt;
 &lt;li&gt;a&lt;strong&gt;ccessibility within the airport&lt;/strong&gt;: stairs and lift are very very narrow and disabled people might have a hard time moving. Like everything in france, everything is narrow and small (french have this tendency to associate &quot;petit&quot; with all the words). Unfortunately, tourists coming for 2 weeks have big baggages. So, using the stairs is just a mess and most of the times, this is just a pain to carry your baggage. Also, when you arrive at some terminal, you have to use stairs and there are only small lift if you have heavy baggage or if you are disabled. Welcome in france, the country where we welcome everybody, especially the people in good health and will not stay too long!&lt;/li&gt;
@@ -470,7 +789,7 @@ int run(void)
       </item>
     
       <item>
-        <title>Let&#39;s stop charity, let&#39;s give a basic income</title>
+        <title>Let's stop charity, let's give a basic income</title>
         <description>&lt;p&gt;Recently, the &lt;a href=&quot;https://thebillfold.com/dutch-city-of-utrecht-announces-basic-income-experiment-f31954a995ec#.lniq1cto1&quot;&gt;city of Utrecht initiated a new idea&lt;/a&gt;: everybody gets a basic, minimal income, no matter their social situation (working/non-working) or their initial income. What you earn comes on top of that.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;http://www.independent.org/publications/tir/article.asp?a=1044&quot;&gt;The idea has been around for a while&lt;/a&gt;. The principles behind it are pretty simple: &lt;em&gt;equality&lt;/em&gt;. You get a basic income so that you can live in this world and afford the basic, necessary things. After that, if you want something beyond what is strictly necessary, you have to work or find a way to get more money. In other words, we do not let people die in the streets but this is their own choice to decide if they want to do more. Want to have kids? Do not rely on the welfare system, get a job and make sure you can afford education, food and housing. Want to buy a nice house? Do not rely on the welfare system and start saving &lt;em&gt;now&lt;/em&gt;. On the other hand, when hard times hit you, you still have something so that you are not dying in the streets.&lt;/p&gt;
 &lt;p&gt;If you argue this is giving charity and getting people lazy, you are doing a mistake. With a basic income at 900€ in the Netherlands, you can afford nothing but very basic things (see &lt;a href=&quot;http://www.studyinholland.co.uk/cost_of_living.html&quot;&gt;this estimate for a monthly budget for a student ...&lt;/a&gt;). With that, you will live alone in a one bedroom apartment in the country side, cannot have a car and will just be able to eat and stay at home. Going out is very unlikely and the only restaurant you might be able to afford would be McDonalds. So, really nothing fancy but at least, it can help you when you are unemployed for few months.&lt;/p&gt;
@@ -495,7 +814,7 @@ int run(void)
     
       <item>
         <title>It is an architecture problem</title>
-        <description>&lt;p&gt;The big news today (that got my attention!) is the Washington post about &lt;a href=&quot;http://www.washingtonpost.com/sf/business/2015/11/05/net-of-insecurity-the-kernel-of-the-argument/&quot;&gt;Linus&#39; thoughts on security, especially in the linux kernel&lt;/a&gt;.You probably do not know but today, Linux is one of the most used kernel in the world. Every Android device rely on it - most of non-critical embedded devices use it. You are probably not aware of it but you are probably using more Linux-powered devices than Windows or Mac.&lt;/p&gt;
+        <description>&lt;p&gt;The big news today (that got my attention!) is the Washington post about &lt;a href=&quot;http://www.washingtonpost.com/sf/business/2015/11/05/net-of-insecurity-the-kernel-of-the-argument/&quot;&gt;Linus' thoughts on security, especially in the linux kernel&lt;/a&gt;.You probably do not know but today, Linux is one of the most used kernel in the world. Every Android device rely on it - most of non-critical embedded devices use it. You are probably not aware of it but you are probably using more Linux-powered devices than Windows or Mac.&lt;/p&gt;
 &lt;p&gt;The article is well written and explain most of the issues to a non-technical people. Great. But sometimes, it messes things up. For example, when the article reports that the &lt;a href=&quot;https://en.wikipedia.org/wiki/Ashley_Madison_data_breach&quot;&gt;ashley madison data breach&lt;/a&gt;, it is totally unrelated: the article focuses on the kernel, not the userspace. This is just not accurate to connect this attack with the linux kernel, it could happen with the same software running on a different kernel.&lt;/p&gt;
 &lt;p&gt;What users must understand is that security comes at a cost and while this is an important requirement for us, this is not the most critical and people do not pay attention to it until a big attack appears. Achieving high security impact other requirements and characteristics, such as performance. At the end, the question is: are you willing to have your system running slower to protect yourself against a potential security attack against your contact list that has not been discovered yet and would be fixed as soon as it is discovered?&lt;/p&gt;
 &lt;p style=&quot;text-align:center;&quot;&gt;A&lt;em&gt;re you willing to pay the cost of security without affecting other attributes?&lt;/em&gt;&lt;/p&gt;
@@ -574,206 +893,6 @@ int run(void)
         
         
         <category>misc</category>
-        
-        <category>running</category>
-        
-      </item>
-    
-      <item>
-        <title>How to get geocoding information in Java without Google maps API?</title>
-        <description>&lt;p&gt;For some project, you might want to use geocoding information, which means get the GPS coordinates from an address. If you want to use Google services, you are limited to a certain number of requests but your usage is connected with your account. There is a nice geocoding API available but&lt;/p&gt;
-&lt;p&gt;You might want to have as many requests as you want but also avoid Google to look at your applications are doing. After all, these requests are sent by the users of your own application, not you.&lt;/p&gt;
-&lt;p&gt;So, yes, sure, there is a nice &lt;a href=&quot;https://developers.google.com/maps/documentation/geocoding/intro&quot;&gt;geocoding API available with Google&lt;/a&gt;. But it seems to be restricted/limited. So, let&#39;s not use it. The alternative is to use the open website &lt;a href=&quot;http://www.openstreetmap.org&quot;&gt;OpenStreetMap&lt;/a&gt; (a.k.a. OSM), which has a webservice to &lt;a href=&quot;http://wiki.openstreetmap.org/wiki/Nominatim&quot;&gt;get geocoding information&lt;/a&gt;. It does not provide a full Java API but rather the data in a JSON or XML fornat. So, all we have to do is to write a Java API what issue requests to the webservice and retrieve the geocoding information from the JSON/XML.&lt;/p&gt;
-&lt;p&gt;I chose to get the information with the JSON format, this is pretty easy to use. To parse the JSON data from the service, I use &lt;a href=&quot;https://code.google.com/p/json-simple/&quot;&gt;json-simple&lt;/a&gt; available on maven.&lt;/p&gt;
-&lt;h1&gt;Getting the geocoding data&lt;/h1&gt;
-&lt;p&gt;Basically, the code issue a request to the geocoding webservice from OpenStreetMap, get the result and convert it into a JSON object. It then get the latitude/longitude information from the JSONObject.&lt;/p&gt;
-&lt;pre&gt;import java.io.BufferedReader;
-import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
-import java.net.URL;
-import java.util.HashMap;
-import java.util.Map;
-
-import org.apache.log4j.Logger;
-import org.json.simple.JSONArray;
-import org.json.simple.JSONObject;
-import org.json.simple.JSONValue;
-import org.json.simple.parser.JSONParser;
-
-public class OpenStreetMapUtils {
-
-    public final static Logger log = Logger.getLogger(&quot;OpenStreeMapUtils&quot;);
-
-    private static OpenStreetMapUtils instance = null;
-    private JSONParser jsonParser;
-
-    public OpenStreetMapUtils() {
-        jsonParser = new JSONParser();
-    }
-
-    public static OpenStreetMapUtils getInstance() {
-        if (instance == null) {
-            instance = new OpenStreetMapUtils();
-        }
-        return instance;
-    }
-
-    private String getRequest(String url) throws Exception {
-
-        final URL obj = new URL(url);
-        final HttpURLConnection con = (HttpURLConnection) obj.openConnection();
-
-        con.setRequestMethod(&quot;GET&quot;);
-
-        if (con.getResponseCode() != 200) {
-            return null;
-        }
-
-        BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
-        String inputLine;
-        StringBuffer response = new StringBuffer();
-
-        while ((inputLine = in.readLine()) != null) {
-            response.append(inputLine);
-        }
-        in.close();
-
-        return response.toString();
-    }
-
-    public Map&amp;lt;String, Double&amp;gt; getCoordinates(String address) {
-        Map&amp;lt;String, Double&amp;gt; res;
-        StringBuffer query;
-        String[] split = address.split(&quot; &quot;);
-        String queryResult = null;
-
-        query = new StringBuffer();
-        res = new HashMap&amp;lt;String, Double&amp;gt;();
-
-        query.append(&quot;http://nominatim.openstreetmap.org/search?q=&quot;);
-
-        if (split.length == 0) {
-            return null;
-        }
-
-        for (int i = 0; i &amp;lt; split.length; i++) {
-            query.append(split[i]);
-            if (i &amp;lt; (split.length - 1)) {
-                query.append(&quot;+&quot;);
-            }
-        }
-        query.append(&quot;&amp;amp;format=json&amp;amp;addressdetails=1&quot;);
-
-        log.debug(&quot;Query:&quot; + query);
-
-        try {
-            queryResult = getRequest(query.toString());
-        } catch (Exception e) {
-            log.error(&quot;Error when trying to get data with the following query &quot; + query);
-        }
-
-        if (queryResult == null) {
-            return null;
-        }
-
-        Object obj = JSONValue.parse(queryResult);
-        log.debug(&quot;obj=&quot; + obj);
-
-        if (obj instanceof JSONArray) {
-            JSONArray array = (JSONArray) obj;
-            if (array.size() &amp;gt; 0) {
-                JSONObject jsonObject = (JSONObject) array.get(0);
-
-                String lon = (String) jsonObject.get(&quot;lon&quot;);
-                String lat = (String) jsonObject.get(&quot;lat&quot;);
-                log.debug(&quot;lon=&quot; + lon);
-                log.debug(&quot;lat=&quot; + lat);
-                res.put(&quot;lon&quot;, Double.parseDouble(lon));
-                res.put(&quot;lat&quot;, Double.parseDouble(lat));
-
-            }
-        }
-
-        return res;
-    }
-}
-
-
-&lt;/pre&gt;
-&lt;h1&gt;Testing the service&lt;/h1&gt;
-&lt;p&gt;Then, to use the service, you can just use a main program like the following code.&lt;/p&gt;
-&lt;pre&gt;public class GetCoordinates {
-
-    static String address = &quot;The White House, Washington DC&quot;;
-
-    public static void main(String[] args) {
-        Map&amp;lt;String, Double&amp;gt; coords;
-        coords = OpenStreetMapUtils.getInstance().getCoordinates(address);
-        System.out.println(&quot;latitude :&quot; + coords.get(&quot;lat&quot;));
-        System.out.println(&quot;longitude:&quot; + coords.get(&quot;lon&quot;));
-    }
-}&lt;/pre&gt;
-&lt;p&gt;&amp;nbsp;&lt;/p&gt;
-&lt;h1&gt;Checking&lt;/h1&gt;
-&lt;p&gt;When running the previous example, the program prints the following information:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;latitude&lt;/strong&gt; :38.8976989&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;longitude&lt;/strong&gt;:-77.036553192281&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Let&#39;s then check where are these coordinates! When putting the coordinates on Google Maps, I then got the following map. Sounds like it works!&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://juli1pb.files.wordpress.com/2015/09/coordinates.png&quot;&gt;&lt;img class=&quot;aligncenter size-large wp-image-1772&quot; src=&quot;/assets/coordinates.png?w=676&quot; alt=&quot;coordinates&quot; width=&quot;676&quot; height=&quot;416&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-</description>
-        <pubDate>Sun, 13 Sep 2015 17:46:15 -0400</pubDate>
-        <link>http://julien.gunnm.org/geek/programming/2015/09/13/how-to-get-geocoding-information-in-java-without-google-maps-api/</link>
-        <guid isPermaLink="true">http://julien.gunnm.org/geek/programming/2015/09/13/how-to-get-geocoding-information-in-java-without-google-maps-api/</guid>
-        
-        <category>api</category>
-        
-        <category>google maps</category>
-        
-        <category>java</category>
-        
-        <category>openstreet map</category>
-        
-        <category>OSM</category>
-        
-        
-        <category>geek</category>
-        
-        <category>programming</category>
-        
-      </item>
-    
-      <item>
-        <title>What is wrong with our GPS data?</title>
-        <description>&lt;p&gt;Recently, I have been surprised by the differences between the distance reported by my GPS watch (a &lt;a href=&quot;https://buy.garmin.com/en-US/US/on-the-trail/wrist-worn/fenix-2/prod159116.html&quot;&gt;Garmin Fenix 2&lt;/a&gt;) and what is reported when importing the data into website such as &lt;a href=&quot;http://www.mapmyrun.com/&quot;&gt;Mapmyrun&lt;/a&gt; or &lt;a href=&quot;https://www.strava.com&quot;&gt;Strava&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;[caption id=&quot;attachment_1766&quot; align=&quot;aligncenter&quot; width=&quot;676&quot;]&lt;a href=&quot;https://juli1pb.files.wordpress.com/2015/09/garmin.png&quot;&gt;&lt;img class=&quot;size-large wp-image-1766&quot; src=&quot;/assets/garmin.png?w=676&quot; alt=&quot;Data from Garmin Connect&quot; width=&quot;676&quot; height=&quot;322&quot; /&gt;&lt;/a&gt; Data from Garmin Connect[/caption]&lt;/p&gt;
-&lt;p&gt;It happened this week-end at Rock&#39;n The Knob, a 20 miles run on trails. I went off course, making an additional 1.5-ish mile. At the end of the run, &lt;a href=&quot;https://connect.garmin.com/activity/896378529&quot;&gt;my watch reported 21.27 miles&lt;/a&gt;, which made sense (20 miles for the race plus an additional mile or so for being off course). On the other hand, both &lt;a href=&quot;http://www.mapmyrun.com/workout/1165115349&quot;&gt;mapmyrun&lt;/a&gt; and &lt;a href=&quot;https://www.strava.com/activities/390754403&quot;&gt;strava&lt;/a&gt; report 18.9 miles.&lt;/p&gt;
-&lt;p&gt;[caption id=&quot;attachment_1767&quot; align=&quot;aligncenter&quot; width=&quot;615&quot;]&lt;a href=&quot;https://juli1pb.files.wordpress.com/2015/09/mapmyrun.png&quot;&gt;&lt;img class=&quot;size-full wp-image-1767&quot; src=&quot;/assets/mapmyrun.png&quot; alt=&quot;Same GPS file imported on mapmyrun&quot; width=&quot;615&quot; height=&quot;148&quot; /&gt;&lt;/a&gt; Same GPS file imported on mapmyrun[/caption]&lt;/p&gt;
-&lt;p&gt;&amp;nbsp;&lt;/p&gt;
-&lt;p style=&quot;text-align:center;&quot;&gt;&lt;strong&gt;So, who can you trust?&lt;/strong&gt;&lt;/p&gt;
-&lt;p style=&quot;text-align:left;&quot;&gt;I tried to look at the strava website to see if they modify the GPS data. I found &lt;a href=&quot;https://strava.zendesk.com/entries/21629956-Why-is-Strava-showing-different-times-than-my-Garmin-&quot;&gt;the following discussion&lt;/a&gt; and the &lt;a href=&quot;https://strava.zendesk.com/entries/21278088-How-Distance-is-Calculated&quot;&gt;technical support note&lt;/a&gt; to be interesting. It seems that website are doing some post-upload processing that mostly change the data you import and try to remove any &lt;em&gt;bad&lt;/em&gt; GPS data. On the other hand, considering the race I did, it seems that this post-upload processing removes a lot of data, about 11%.&lt;/p&gt;
-&lt;p&gt;[caption id=&quot;attachment_1768&quot; align=&quot;aligncenter&quot; width=&quot;676&quot;]&lt;a href=&quot;https://juli1pb.files.wordpress.com/2015/09/strava.png&quot;&gt;&lt;img class=&quot;size-large wp-image-1768&quot; src=&quot;/assets/strava.png?w=676&quot; alt=&quot;Same GPS file on Strava&quot; width=&quot;676&quot; height=&quot;159&quot; /&gt;&lt;/a&gt; Same GPS file on Strava[/caption]&lt;/p&gt;
-&lt;p style=&quot;text-align:left;&quot;&gt;Many folks lately asked what is the most accurate data source between a watch and a phone. It turns out that this is not only the source of the data but also &lt;em&gt;where&lt;/em&gt; you put the data and &lt;em&gt;how&lt;/em&gt; it is processed. I am not a GPS specialist and strava or mapmyrun will not publish their own algorithms but for now, I rather trust my watch: so far, it has been consistent with other data sources (signs on the road, watches from other brands, etc.).&lt;/p&gt;
-</description>
-        <pubDate>Sun, 13 Sep 2015 16:31:16 -0400</pubDate>
-        <link>http://julien.gunnm.org/fitness/geek/running/2015/09/13/what-is-wrong-with-our-gps-data/</link>
-        <guid isPermaLink="true">http://julien.gunnm.org/fitness/geek/running/2015/09/13/what-is-wrong-with-our-gps-data/</guid>
-        
-        <category>difference between gps and mapmyrun</category>
-        
-        <category>difference between gps and strava</category>
-        
-        <category>gps</category>
-        
-        <category>mapmyrun</category>
-        
-        <category>strava</category>
-        
-        
-        <category>fitness</category>
-        
-        <category>geek</category>
         
         <category>running</category>
         

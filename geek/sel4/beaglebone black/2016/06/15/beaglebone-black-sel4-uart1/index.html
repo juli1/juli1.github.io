@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Supporting the UART1 of the BeagleBone Black with seL4/CAmkES - Julien Delange</title>
+    <link rel="alternate" type="application/rss+xml" title="Julien Delange &raquo; Feed" href="/feed.xml" />
+    <meta name="viewport" content="width=device-width">
+    <meta name="description" content="How to write a seL4/CAmkES application that uses the UART1 of the Beaglebone Black">
+    <link rel="canonical" href="http://julien.gunnm.org/geek/sel4/beaglebone%20black/2016/06/15/beaglebone-black-sel4-uart1/">
+
+    
+    <meta name="keywords" content="sel4, real-time, CAmkES"/>
+    
+
+    <!-- Latest compiled and minified CSS -->
+<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous"> -->
+
+<!-- Optional theme -->
+<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous"> -->
+
+<!-- Latest compiled and minified JavaScript -->
+<!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script> -->
+
+
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/main.css">
+
+    <!-- Twitter Cards -->
+    <meta property="twitter:title" content="Supporting the UART1 of the BeagleBone Black with seL4/CAmkES" />
+    <meta property="twitter:description" content="How to write a seL4/CAmkES application that uses the UART1 of the Beaglebone Black" />
+    <meta property="twitter:card" content="summary" />
+    <meta property="twitter:site" content="@juli1pb" />
+    <meta property="twitter:creator" content="@juli1pb" />
+    <meta property="twitter:image:src" content="/assets/beaglebone-uart1.jpg"/>
+
+
+    <!-- Facebook opengraph -->
+    <meta property="og:site_name" content="Julien Delange" />
+    <meta property="og:type" content="article" />
+    <meta property="og:image" content="/assets/beaglebone-uart1.jpg" />
+    <meta property="og:title" content="Supporting the UART1 of the BeagleBone Black with seL4/CAmkES" />
+    <meta property="og:description" content="How to write a seL4/CAmkES application that uses the UART1 of the Beaglebone Black" />
+
+</head>
+
+
+    <body>
+
+    <header class="site-header">
+
+  <div class="wrap">
+
+    <a class="site-title" href="/">Julien Delange</a>
+
+    <nav class="site-nav">
+      <a href="#" class="menu-icon">
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+           viewBox="0 0 18 15" enable-background="new 0 0 18 15" xml:space="preserve">
+          <path fill="#505050" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0
+            h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#505050" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484
+            h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#505050" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0
+            c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </a>
+      <div class="trigger">
+
+         <a class="page-link" href="/projects">Projects</a>
+         <a class="page-link" href="/bibliography">Bibliography</a>
+         <a class="page-link" href="/running">Running</a>
+
+         <a class="page-link" href="/blog">Blog</a>
+        <!-- 
+          
+        
+          <a class="page-link" href="/about/">About</a>
+        
+          <a class="page-link" href="/bibliography/">Publications</a>
+        
+          <a class="page-link" href="/blog/">Blog</a>
+        
+          
+        
+          
+        
+          <a class="page-link" href="/ohiopyle-training/">Laurel Highland Trail - Gate to 8 - Training Information</a>
+        
+          <a class="page-link" href="/projects/">Projects</a>
+        
+          <a class="page-link" href="/running/">Running Agenda and Past Races</a>
+        
+          
+         -->
+         <a class="page-link" href="/about">About</a>
+      </div>
+    </nav>
+
+  </div>
+
+</header>
+
+
+    <div class="page-content">
+      <div class="wrap">
+      <div class="post">
+
+  <header class="post-header">
+    <h1>Supporting the UART1 of the BeagleBone Black with seL4/CAmkES</h1>
+    <p class="meta">
+      <!-- Jun 15, 2016 -->
+      <!-- 
+       -->
+   </p>
+  </header>
+
+  <article class="post-content">
+  <h1 id="in-a-nutshell">In a nutshell</h1>
+
+<p>In this article, I explain how to support UART1 of the <a href="http://beagleboard.org/black">Beaglebone Black</a> with seL4 and the CAmkES component approach. I explain how to test the UART1, build a cable, patch the kernel and make your application.</p>
+
+<h1 id="building-your-cable">Building your cable</h1>
+
+<p>First, you need a cable to connect to the UART1. I (well, the folks at work helped me to get one!) used <a href="https://www.adafruit.com/products/954">this USB to TTL serial cable from Adafruit</a>, which worked fine. The white PIN is connected to PIN 24 on the P9 connector board and the green cable is connected to PIN 26 on the P9 connector board.</p>
+
+<p>The picture is ugly but this is how it looks like.</p>
+
+<p><img src="/assets/beaglebone-uart1.jpg" alt="Beaglebone with UART1 cable" /></p>
+
+<h1 id="testing-the-uart1-interface-with-debian">Testing the UART1 interface with Debian</h1>
+
+<p>You can use the UART1 interface with the pre-installed debian on the Beaglebone. It already supports UART1 operation. What you need to do is to build a cable, connect on the debian and send some stuff on the port.</p>
+
+<p>The Beaglebone supports what we call a Device Tree Overlay. Long story short, this is a way to change the usage of each PIN. You then have to use the appropriate overlay to use the UART1. The default settings do not work, and you have to issue the following command to enable UART1.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>echo ADAFRUIT-UART1 &gt; /sys/devices/bone_capemgr.*/slots
+</code></pre>
+</div>
+
+<p>Then, you can connect on the serial and issue whatever you want. Let’s say the UART1 of the Beaglebone Black is connected to /dev/ttyUSB1, you can then connected on screen and type anything.</p>
+
+<p>On your computer, run the following command:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>screen  /dev/ttyO1 115200
+</code></pre>
+</div>
+
+<p>On the Beaglebone Black, run the following command:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>screen /dev/ttyUSB1 115200
+</code></pre>
+</div>
+
+<p>Type stuff on both screen, you should see what is sent/received.</p>
+
+<p>If it does not work, check your cables and/or the commands you invoked. Let’s move on.</p>
+
+<h1 id="implementing-the-kernel-side">Implementing the kernel side</h1>
+
+<p>First, checkout the seL4 and CAmkES repository. When you import the kernel, some stuff are not supported. For example, the UART1 is not declared. You then need to add the definition of UART1 in the kernel.</p>
+
+<p>Edit the file <em>kernel/include/plat/am335x/plat/machine/devices.h</em> and add the following line.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>#define UART1_PADDR     0x48022000
+</code></pre>
+</div>
+
+<p>Then, in <em>kernel/src/plat/am335x/machine/hardware.c</em> you need to add the support for all UARTs. I found <a href="https://e2e.ti.com/support/embedded/starterware/f/790/t/214547">online a nice piece of code</a> that configures all UARTs. I imported it directly into the kernel. You can see the code in <a href="/assets/sel4-kernel-uart1bb.diff">my patch</a>.</p>
+
+<h1 id="implementing-the-component">Implementing the component</h1>
+
+<p>So now, the kernel has the information about the UART1 device (<em>UART1_PADDR</em>) and activate the necessary resources to handle it. Now, we need to describe the component using CAmkES and implement its driver in the user-space partition.</p>
+
+<h2 id="camkes-definition">CAmkES definition</h2>
+
+<p>We define a hardware CAmkES component that represents the UART component and we connect it to the device that is supposed to handle/manage it.</p>
+
+<p>My assembly look like this:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>import &lt;std_connector.camkes&gt;;
+import "components/timer/Timer.camkes";
+import "components/ProducerThreadImpl/ProducerThreadImpl.camkes";
+import "components/ConsumerThreadImpl/ConsumerThreadImpl.camkes";
+
+component UART{
+  hardware;
+  dataport Buf mem;
+}
+
+component ConsumerThreadImpl
+{
+  include "generatedtypes.h";
+  control;
+  dataport simpletype data_sink;
+  consumes sig activator;
+  dataport Buf uartmem;
+}
+
+assembly
+{
+  composition
+  {
+    component Timerbase timerbase;
+    component Timer timer;
+    component UART drv;
+
+    component ProducerThreadImpl Prod_Pinger;
+    component ConsumerThreadImpl Cons_PingMe;
+
+    connection seL4SharedData connection0(from Prod_Pinger.data_source, to Cons_PingMe.data_sink);
+    connection seL4Notification notification0 (from timer.Prod_Pinger_activator, to Prod_Pinger.activator);
+    connection seL4Notification notification1 (from timer.Cons_PingMe_activator, to Cons_PingMe.activator);
+    connection seL4HardwareMMIO uart_mem (from Cons_PingMe.uartmem, to drv.mem);
+    connection seL4HardwareMMIO timer_mem (from timer.reg, to timerbase.reg);
+    connection seL4HardwareInterrupt timer_irq (from timerbase.irq, to timer.irq);
+   }
+
+  configuration
+  {
+    connection0.from_access = "W";
+    connection0.to_access = "R";
+    timerbase.reg_attributes = "0x48040000:0x1000";
+    timerbase.irq_attributes = 68;
+    drv.mem_attributes       = "0x48022000:0x1000";
+  }
+}
+</code></pre>
+</div>
+
+<p>In this declaration, the assembly has two interesting component:</p>
+
+<ul>
+  <li><strong>UART</strong> (and its related instance <em>drv</em>) represents the hardware component of the UART. We configure it in the configuration section and its memory area (see <em>drv.mem_attributes = 0x48022000:0x1000</em>). This will then map the address <em>0x48022000</em> into the partition in a pointer called uartmem.</li>
+  <li><strong>ConsumerThreadImpl</strong> represents the component that is using the hardware component. This component will then contain all the code necessary to execute the driver.</li>
+</ul>
+
+<p>There are other artifacts of course, such as the timer and timerbase components that are here to handle the timer and activate periodic tasks. I detailed these aspects before, you can read <a href="/geek/sel4/2016/04/18/periodic-tasks-with-sel4/">this post in case you are interested</a>.</p>
+
+<p>The architecture of our CAmkES application is as follow: the producer will send a number that is eventually send through the UART by the Consumer component.</p>
+
+<p><img src="/assets/sel4-bb-uart1.png" alt="CAmkES architecture" /></p>
+
+<h2 id="implementing-the-driver">Implementing the driver</h2>
+
+<p>Now, we need to implement the driver. As for the kernel, I used a lot of code from <a href="https://e2e.ti.com/support/embedded/starterware/f/790/t/214547">this post on the starterware forum</a>. Mostly, the code first initialize the UART1 and send the string “hello” followed by the number received (module 10).</p>
+
+<p>The code of the component looks like this:</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>int run(void)
+{
+        devmem = (unsigned int) uartmem;
+        unsigned int UARTparms = 0;
+        char mybuf[10];
+        int val;
+
+        memset (mybuf, 0, 10);
+        UartFIFOConfigure(devmem);
+        UARTparms = 0x3; // p4033 - 8 data bits, 1 stop bit, no parity
+        UARTsetup(devmem, 115200, UARTparms, UART16x_OPER_MODE);
+
+        while (1)
+        {
+
+                activator_wait();
+                user_ping_spg ((*data_sink) );
+                sprintf(mybuf, "hello %d\n", (*data_sink % 10));
+                UART_tx(devmem, mybuf, 7);
+                UART_tx(devmem, "hello", 5);
+                printf ("UART= %d\n", val);
+
+        }
+        return 0;
+}
+</code></pre>
+</div>
+
+<p>We imported some code to initialize and use UART1. The CAmkES code generator mapped the 0x48022000 address (defines in the CAmkES description for the hardware component) in the uartmem component. We assigned the address of the <em>uartmem</em> variable into <em>devmem</em>. We can then manipulate the device using this address.</p>
+
+<p>The code of other functions (<em>UArtFIFOConfigure</em> and <em>UARTsetup</em>) are included in the <a href="(/assets/pingbeagleboneinstance-uart1.tgz)">zip file containing the full CAmkES application</a>.</p>
+
+<h1 id="booting-the-application">Booting the application</h1>
+
+<p>Once you compiled the application, you need to boot it! If you do not know how to compile or produce binary files for a CAmkES application that targets the Beaglebone Black, you can read the <a href="http://sel4.systems/Info/CAmkES/GettingStarted.pml">CAmkES documentation</a> and the seL4 documentation about the <a href="https://sel4.systems/Info/Hardware/Beaglebone/">Beaglebone</a>.</p>
+
+<p>The beaglebone uses something weird called the Device Tree Overlay. You can get <a href="https://learn.adafruit.com/introduction-to-the-beaglebone-black-device-tree/device-tree-overlays">information there</a>. Long story short, this mechanism lets you configure how the PIN of the boards are connected to the AM335x SOC.</p>
+
+<p>We do not need to change everything but still need to activate the UART1. You can do this when booting the board with u-boot. Type the following lines in u-boot:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>mw.l 0x44E10980 0x30
+mw.l 0x44E10984 0x00
+</code></pre>
+</div>
+
+<p>This would be enough. It seems it cannot work in the component itself. On the other hand, as discussed in <a href="http://sel4.systems/pipermail/devel/2016-June/000854.html">this post</a> it seems you can avoid that by inserting the following line in <em>platform_init()</em>.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>*(volatile uint32_t*)0x44E10980 = 0x30;
+*(volatile uint32_t*)0x44E10984 = 0x00;
+</code></pre>
+</div>
+
+<p>Then, time to load the binary. I used a network connection to do that.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>dhcp ${loadaddr} 192.168.1.1:sel4.img
+
+go ${loadaddr}
+</code></pre>
+</div>
+
+<p>Then, just issue a <em>cat /dev/ttyUSB1</em> and <em>voila!</em>. The following picture show what I received from the UART1 of the BeagleBone Black.</p>
+
+<p><img src="/assets/sel4-bb-term.png" alt="Output from UART1" /></p>
+
+<h1 id="debugging">Debugging</h1>
+
+<p>Sometimes, you need to debug and trace when things are going wrong. You might experience this. I would recommend the <a href="https://github.com/SEL4PROJ/sel4-tutorials/blob/master/docs/seL4Tutorial.pdf">seL4 tutorial</a> that provides some useful direction. When having an exception in a partition, the following command is very useful.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>arm-none-eabi-objdump -dS /path/to/your/binary | less
+</code></pre>
+</div>
+
+<p>In a nutshell, it gives you the assembly code, its address and with the associated C line. So, you can exactly know where to look for when you get the address related to a crash.</p>
+
+<p>For example, when debugging the UART1 driver in the partition, I used this command a lot. Very useful. You might need it!</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>arm-none-eabi-objdump -dS build/arm/am335x/pingbeagleboneinstance/Cons_PingMe.instance.bin | less
+</code></pre>
+</div>
+
+<h1 id="special-thanks">Special thanks</h1>
+
+<p>The staff that are working on this project at CMU as well as the seL4 community!</p>
+
+<h1 id="resources">Resources</h1>
+<ul>
+  <li>Patch for the kernel: <a href="/assets/sel4-kernel-uart1bb.diff">available here</a></li>
+  <li>CAmkES application with the driver: <a href="/assets/pingbeagleboneinstance-uart1.tgz">available here</a></li>
+  <li>Bare code for UART1 support: <a href="https://e2e.ti.com/support/embedded/starterware/f/790/t/214547">discussion on TI forums</a></li>
+  <li><a href="http://sel4.systems/pipermail/devel/2016-June/000849.html">Related thread on the seL4 mailing list</a></li>
+</ul>
+
+  </article>
+
+</div>
+
+      </div>
+    </div>
+
+    <footer class="site-footer">
+
+  <div class="wrap">
+
+    <h2 class="footer-heading">Julien Delange</h2>
+
+    <div class="footer-col-1 column">
+      <ul>
+        <li>
+          <a href="https://github.com/juli1">
+            <span class="icon github">
+              <svg version="1.1" class="github-icon-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                 viewBox="0 0 16 16" enable-background="new 0 0 16 16" xml:space="preserve">
+                <path fill-rule="evenodd" clip-rule="evenodd" fill="#C2C2C2" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761
+                c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32
+                c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472
+                c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037
+                C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65
+                c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261
+                c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082
+                c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129
+                c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/>
+              </svg>
+            </span>
+            <span class="username">juli1</span>
+          </a>
+        </li>
+        <li>
+          <a href="https://twitter.com/juli1pb">
+            <span class="icon twitter">
+              <svg version="1.1" class="twitter-icon-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                 viewBox="0 0 16 16" enable-background="new 0 0 16 16" xml:space="preserve">
+                <path fill="#C2C2C2" d="M15.969,3.058c-0.586,0.26-1.217,0.436-1.878,0.515c0.675-0.405,1.194-1.045,1.438-1.809
+                c-0.632,0.375-1.332,0.647-2.076,0.793c-0.596-0.636-1.446-1.033-2.387-1.033c-1.806,0-3.27,1.464-3.27,3.27
+                c0,0.256,0.029,0.506,0.085,0.745C5.163,5.404,2.753,4.102,1.14,2.124C0.859,2.607,0.698,3.168,0.698,3.767
+                c0,1.134,0.577,2.135,1.455,2.722C1.616,6.472,1.112,6.325,0.671,6.08c0,0.014,0,0.027,0,0.041c0,1.584,1.127,2.906,2.623,3.206
+                C3.02,9.402,2.731,9.442,2.433,9.442c-0.211,0-0.416-0.021-0.615-0.059c0.416,1.299,1.624,2.245,3.055,2.271
+                c-1.119,0.877-2.529,1.4-4.061,1.4c-0.264,0-0.524-0.015-0.78-0.046c1.447,0.928,3.166,1.469,5.013,1.469
+                c6.015,0,9.304-4.983,9.304-9.304c0-0.142-0.003-0.283-0.009-0.423C14.976,4.29,15.531,3.714,15.969,3.058z"/>
+              </svg>
+            </span>
+            <span class="username">juli1pb</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+
+   <div class="footer-col-2 column">
+      <ul>
+         <li>
+            <a href="https://www.strava.com/athletes/juli1">
+             <span class="icon twitter">
+                <img src="/assets/strava-logo.png"/>
+             </span>
+             <span class="username">juli1</span>
+            </a>
+         </li>
+         <li>
+            <a href="http://www.flickr.com/photos/juli1/">
+             <span class="icon twitter">
+                <img src="/assets/flickr-icon.png"/>
+             </span>
+             <span class="username">juli1</span>
+            </a>
+         </li>
+         <!-- <li><a href="mailto:julien@gunnm.org">julien@gunnm.org</a></li> -->
+      </ul>
+   </div>
+
+
+    <div class="footer-col-3 column">
+      <p class="text">Tales of a guy living in Pittsburgh addicted with Computer-Science, Running and Peanut Butter</p>
+    </div>
+
+  </div>
+
+</footer>
+
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-75409992-1', 'auto');
+      ga('send', 'pageview');
+
+    </script>
+    </body>
+</html>

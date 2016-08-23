@@ -134,7 +134,7 @@
 
 <p>As mentioned before, seL4 does not provide any timing service. It provides a service to schedule threads (using a Round-Robin policy with priorities) but does not provide anything to wait or be activated at a given period.</p>
 
-<p>So, if you are looking for something like <code>pthread_cond_timedwait()</code> or just <code>sleep()</code> (which is <strong>NOT</strong> real-time friendly by the way), you will feel out of luck.</p>
+<p>So, if you are looking for something like <code class="highlighter-rouge">pthread_cond_timedwait()</code> or just <code class="highlighter-rouge">sleep()</code> (which is <strong>NOT</strong> real-time friendly by the way), you will feel out of luck.</p>
 
 <p>To overcome this issue, you must design your own timing service in a process that will ultimately activate the other tasks.</p>
 
@@ -142,11 +142,13 @@
 
 <p>We will implement a timing service with CAmkES. The timing service will define a hardware component (hardware timer) and a time manager that will activate the tasks according to their periods.</p>
 
-<p>In the following example, we will have two periodic tasks: one is activated every second while the other one is activated every two seconds. We will then define four components:
- 1. The hardware component that abstracts the hardware platform
- 2. The time manager that manages the hardware components and send a signal to activate the other tasks. One signal will be sent every second, another every two seconds
- 3. One task connected to the first signal (activated every second)
- 4. One task connected to the second signal (activated every two seconds)</p>
+<p>In the following example, we will have two periodic tasks: one is activated every second while the other one is activated every two seconds. We will then define four components:</p>
+<ol>
+  <li>The hardware component that abstracts the hardware platform</li>
+  <li>The time manager that manages the hardware components and send a signal to activate the other tasks. One signal will be sent every second, another every two seconds</li>
+  <li>One task connected to the first signal (activated every second)</li>
+  <li>One task connected to the second signal (activated every two seconds)</li>
+</ol>
 
 <p>We will illustrate that with the x86 platform.</p>
 
@@ -156,9 +158,9 @@
 
 <p><img src="/assets/sel4-timer-architecture.png" alt="architecture" /></p>
 
-<p>The timer components and timer managment in CAmkES are defining like the following (<code>Timerbase</code> being the hardware component and <code>Timer</code> the time manager)</p>
+<p>The timer components and timer managment in CAmkES are defining like the following (<code class="highlighter-rouge">Timerbase</code> being the hardware component and <code class="highlighter-rouge">Timer</code> the time manager)</p>
 
-<pre><code>component Timerbase {
+<div class="highlighter-rouge"><pre class="highlight"><code>component Timerbase {
    hardware;
    provides IOPort command;
    provides IOPort channel0;
@@ -175,21 +177,23 @@ component Timer {
   emits sig Hello2_Thr_activator;
 }
 </code></pre>
+</div>
 
-<p>The <code>Timerbase</code> component accesses two <code>IOPort</code> that are hardware register/memories used to control the timer. This is architecture-dependent and related to the <abbr title="Programmable Interval Interrupt">PIT</abbr>. The <code>irq</code> corresponds to the interrupt sent by the system.</p>
+<p>The <code class="highlighter-rouge">Timerbase</code> component accesses two <code class="highlighter-rouge">IOPort</code> that are hardware register/memories used to control the timer. This is architecture-dependent and related to the <abbr title="Programmable Interval Interrupt">PIT</abbr>. The <code class="highlighter-rouge">irq</code> corresponds to the interrupt sent by the system.</p>
 
-<p>Now, let’s define the application component (application task). We call it <code>HelloThreadImpl</code>. This task is a control task that will consumes a signal that activates it.</p>
+<p>Now, let’s define the application component (application task). We call it <code class="highlighter-rouge">HelloThreadImpl</code>. This task is a control task that will consumes a signal that activates it.</p>
 
-<pre><code>component HelloThreadImpl
+<div class="highlighter-rouge"><pre class="highlight"><code>component HelloThreadImpl
 {
   control;
   consumes sig activator;
 }
 </code></pre>
+</div>
 
 <p>Then, we need to create an assembly that integrates and configures all components. The assembly corresponds to the components configuration showed in the picture before.</p>
 
-<pre><code>import &lt;std_connector.camkes&gt;;
+<div class="highlighter-rouge"><pre class="highlight"><code>import &lt;std_connector.camkes&gt;;
 import "components/timer/Timer.camkes";
 import "components/HelloThreadImpl/HelloThreadImpl.camkes";
 assembly {
@@ -222,20 +226,21 @@ assembly {
   }
 }
 </code></pre>
+</div>
 
-<p>We define the timer component (one of type <code>Timerbase</code> and one of type <code>Timer</code>) as well as two software components. The connections <code>notification0</code> and <code>notification1</code> are the one that will activate the tasks through a signal, to notify them that they can be activated.</p>
+<p>We define the timer component (one of type <code class="highlighter-rouge">Timerbase</code> and one of type <code class="highlighter-rouge">Timer</code>) as well as two software components. The connections <code class="highlighter-rouge">notification0</code> and <code class="highlighter-rouge">notification1</code> are the one that will activate the tasks through a signal, to notify them that they can be activated.</p>
 
-<p>In the <code>configuration</code> section, the hardware component is configured. This part is architecture-dependent and if you are planning to use such a pattern on another architecture, you would need to adapt the hardware component specification and its relative configuration section.</p>
+<p>In the <code class="highlighter-rouge">configuration</code> section, the hardware component is configured. This part is architecture-dependent and if you are planning to use such a pattern on another architecture, you would need to adapt the hardware component specification and its relative configuration section.</p>
 
 <h2 id="implementing-the-code">Implementing the code</h2>
 
-<p>Now, we need to implement the <code>Timer</code> and the <code>HelloThreadImpl</code> components.</p>
+<p>Now, we need to implement the <code class="highlighter-rouge">Timer</code> and the <code class="highlighter-rouge">HelloThreadImpl</code> components.</p>
 
 <p>For the timer, there is a part that is architecture-dependent and another that is generic and activates the tasks. We will skip the architecture-dependent part, you can look at it in the code by yourself. The most interesting part is in the interrupt handler.</p>
 
 <p>In the driver interrupt handler, we get the current time in milliseconds. Then, depending on the value, we send a signal to activate a task. In the following code, we send a signal to the first task every 1000 ms and send a signal to the second task every 2000 ms.</p>
 
-<pre><code>void irq_callback(void *_ UNUSED)
+<div class="highlighter-rouge"><pre class="highlight"><code>void irq_callback(void *_ UNUSED)
 {
   timer_handle_irq(timer_drv, 0);
 
@@ -254,10 +259,11 @@ assembly {
   irq_reg_callback(irq_callback, NULL);
 }
 </code></pre>
+</div>
 
-<p>Let’s have a look at the <code>HelloThreadImpl</code> code now. It should be pretty obvious with an infinite loop waiting for a signal and executing a piece of code. The code is provided below.</p>
+<p>Let’s have a look at the <code class="highlighter-rouge">HelloThreadImpl</code> code now. It should be pretty obvious with an infinite loop waiting for a signal and executing a piece of code. The code is provided below.</p>
 
-<pre><code>#include &lt;camkes.h&gt;
+<div class="highlighter-rouge"><pre class="highlight"><code>#include &lt;camkes.h&gt;
 
 #include &lt;generatedtypes.h&gt;
 #include &lt;stdio.h&gt;
@@ -278,6 +284,7 @@ int run(void)
   return 0;
 }
 </code></pre>
+</div>
 
 <h1 id="getting-the-code--run-it">Getting the code &amp; run it</h1>
 <p>The code is availabe <a href="/assets/sel4-timer.tgz">there</a></p>
@@ -287,16 +294,16 @@ int run(void)
 <ul>
   <li>Check out CAmkES and make sure it works on your system. To get started, have a look <a href="https://wiki.sel4.systems/CAmkES">on the instruction on the seL4 wiki</a></li>
   <li>Get the code <a href="/assets/sel4-timer.tgz">here</a></li>
-  <li>decompress the archive into the <code>apps/</code> directory of the CAmkES installation</li>
-  <li>Edit the <code>Kconfig</code> file at the root directory of your CAmkES installation and add in the <code>Applications</code> section the following line: <code>source "apps/twotasksx86instance/Kconfig"</code></li>
-  <li>invoke <code>make ia32_simple_defconfig</code></li>
-  <li>invoke <code>make oldconfig</code></li>
-  <li>invoke <code>make</code></li>
+  <li>decompress the archive into the <code class="highlighter-rouge">apps/</code> directory of the CAmkES installation</li>
+  <li>Edit the <code class="highlighter-rouge">Kconfig</code> file at the root directory of your CAmkES installation and add in the <code class="highlighter-rouge">Applications</code> section the following line: <code class="highlighter-rouge">source "apps/twotasksx86instance/Kconfig"</code></li>
+  <li>invoke <code class="highlighter-rouge">make ia32_simple_defconfig</code></li>
+  <li>invoke <code class="highlighter-rouge">make oldconfig</code></li>
+  <li>invoke <code class="highlighter-rouge">make</code></li>
   <li>If everything compiles fine, it means that a simple example for the ia32 platform works. We can then compiles the example from this article</li>
-  <li>Invoke <code>make menuconfig</code>. In the menu, in the <code>Applications</code> section, unselect all examples and select <code>Generated CAmkES TwotasksX86Instance application </code></li>
+  <li>Invoke <code class="highlighter-rouge">make menuconfig</code>. In the menu, in the <code class="highlighter-rouge">Applications</code> section, unselect all examples and select <code class="highlighter-rouge">Generated CAmkES TwotasksX86Instance application </code></li>
   <li>exit the configuration tool and save the changes</li>
-  <li>invoke <code>make</code></li>
-  <li>simulate the system with qemu by invoking <code>qemu-system-i386 -nographic -kernel images/kernel-ia32-pc99 -initrd images/capdl-loader-experimental-image-ia32-pc99</code></li>
+  <li>invoke <code class="highlighter-rouge">make</code></li>
+  <li>simulate the system with qemu by invoking <code class="highlighter-rouge">qemu-system-i386 -nographic -kernel images/kernel-ia32-pc99 -initrd images/capdl-loader-experimental-image-ia32-pc99</code></li>
 </ul>
 
 <p>When running the code, you should just see that you get more output every two seconds. Basically, every second, you get two <em>HELLO</em> message on the console while every two seconds, you see two messages.</p>
@@ -304,7 +311,7 @@ int run(void)
 <h1 id="issues--limitations">Issues &amp; limitations</h1>
 <p>In this post, I tried to explain how to use seL4 and its related <abbr title="Architecture Description Language">ADL</abbr> in order to implement a popular design pattern for safety-critical systems: a periodic tasks. As seL4 provides very minimal services and as no built-in timing service, you must define them yourself.</p>
 
-<p>Beyond that, one can notice that there is some issues with such an approach. First of all, it assumes that the system is <em>schedulable</em> and that all tasks will complete their job and will not interfere with the execution of the other tasks. If one task that is at a high priority takes all the CPU (in other word, if the code in <code>user_hello_spg</code> contains an infinite loop), your system will be stuck. One workaround would be to use the concept of domains in seL4 but unfortunately, it does not seem that CAmkES exports it to the user. Also, the system does not <em>enforce</em> any timing budget. The NICTA team is working on some real-time extensions that might provide such services.</p>
+<p>Beyond that, one can notice that there is some issues with such an approach. First of all, it assumes that the system is <em>schedulable</em> and that all tasks will complete their job and will not interfere with the execution of the other tasks. If one task that is at a high priority takes all the CPU (in other word, if the code in <code class="highlighter-rouge">user_hello_spg</code> contains an infinite loop), your system will be stuck. One workaround would be to use the concept of domains in seL4 but unfortunately, it does not seem that CAmkES exports it to the user. Also, the system does not <em>enforce</em> any timing budget. The NICTA team is working on some real-time extensions that might provide such services.</p>
 
 <p>Note: You might find some error/bugs in the code, this is mostly done for educational purposes. If you find any issue/bug, do not hesitate to contact me.</p>
 
