@@ -5,9 +5,101 @@
     <description>Tales of a guy living in Pittsburgh addicted with Computer-Science, Running and Peanut Butter</description>
     <link>http://julien.gunnm.org/</link>
     <atom:link href="http://julien.gunnm.org/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Mon, 22 Aug 2016 20:23:22 -0400</pubDate>
-    <lastBuildDate>Mon, 22 Aug 2016 20:23:22 -0400</lastBuildDate>
+    <pubDate>Sat, 01 Oct 2016 23:17:33 -0400</pubDate>
+    <lastBuildDate>Sat, 01 Oct 2016 23:17:33 -0400</lastBuildDate>
     <generator>Jekyll v3.2.1</generator>
+    
+      <item>
+        <title>Flaskyelp, a simple yelp-like website with Python and Flask</title>
+        <description>&lt;p&gt;This blog post details the design of a small yelp-like application in Python with Flask.&lt;/p&gt;
+
+&lt;h1 id=&quot;background&quot;&gt;Background&lt;/h1&gt;
+&lt;p&gt;Some years ago, while working at the &lt;a href=&quot;http://www.esa.int&quot;&gt;European Space Agency&lt;/a&gt;, I learned Python and decided to developed some code, mostly for the &lt;a href=&quot;http://taste.tuxfamily.org/&quot;&gt;TASTE project&lt;/a&gt;. Back then, I was pretty familiar with the language, the main thing was to get used to a strict indentation code, which took just few hours. Coding mostly in Java for the &lt;a href=&quot;https://github.com/osate/&quot;&gt;OSATE modeling platform&lt;/a&gt; since 2012, I decided to refresh my Python skills.&lt;/p&gt;
+
+&lt;p&gt;The first idea I had then was to code a small website with Python. First, I read again &lt;a href=&quot;https://thehackerguidetopython.com/&quot;&gt;The Hacker’s Guide to Python&lt;/a&gt;, a book from an old friend, &lt;a href=&quot;https://julien.danjou.info/&quot;&gt;Julien Danjou&lt;/a&gt;, which contains a lot of hacks and tricks for Python.. The second action was to ask him what was a good active framework - as he was more familiar with the Python eco-system, he probably knows better what are the code framework to use. I would then be able to start right away my small website project. He recommended &lt;a href=&quot;http://flask.pocoo.org/&quot;&gt;Flask&lt;/a&gt;, a popular Python micro-framework.&lt;/p&gt;
+
+&lt;h1 id=&quot;introducing-flaskyelp-a-small-yelp-in-python&quot;&gt;Introducing Flaskyelp, a small yelp in Python&lt;/h1&gt;
+&lt;p&gt;I decided to code a small &lt;a href=&quot;http://yelp.com&quot;&gt;Yelp&lt;/a&gt;-clone. Nothing fancy, it will be very simple to design: a basic Flask application, no CSS or fancy front-end, no complex model or interaction with &lt;a href=&quot;https://github.com/osate/&quot;&gt;SQLAlchemy&lt;/a&gt;, just a minimalistic design and a sqlite database. The emphasis was to refresh my python skills and be familiar again with the environment (build system, testing infrastructure, etc.)!&lt;/p&gt;
+
+&lt;p&gt;Also, I wanted to share it so that people in a similar situation can get the sources and potentially learn from it. I put the sources &lt;a href=&quot;https://github.com/juli1/flaskyelp&quot;&gt;on github&lt;/a&gt;, which can help you in case you want to start using Flask. It is in fact very easy to use and install. I will go through the basic steps.&lt;/p&gt;
+
+&lt;h2 id=&quot;install&quot;&gt;Install&lt;/h2&gt;
+&lt;p&gt;You need a working python environment. The tool depend on &lt;a href=&quot;http://flask.pocoo.org/&quot;&gt;Flask&lt;/a&gt;, so, you need to install it. Otherwise, you can use a virtual environment to install all the dependencies. There is the set of commands that would get you started:&lt;/p&gt;
+
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git clone https://github.com/juli1/flaskyelp.git
+&lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;flaskyelp
+virtualenv venv
+. ./venv/bin/activate
+pip install flask
+python -m flask initdb
+python -m flask run
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;During this sequence of commands, you checkout the project, install the virtual environment, activate it, install the dependency, initialize the database and run the program.&lt;/p&gt;
+
+&lt;p&gt;Once the program is running, you can see the result in a browser by going on &lt;code class=&quot;highlighter-rouge&quot;&gt;http://localhost:5000/&lt;/code&gt;. You should have something similar as below.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/flaskyelp.png&quot; alt=&quot;flaskyelp&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;test-it&quot;&gt;Test it!&lt;/h2&gt;
+
+&lt;p&gt;I always try to implement test cases for my code, it is essential to make sure you do not break any functionality when you are modifying your code or even trying to implement a new feature! That’s why I wrote some tests to check that the system is behaving as expected! I did not implement a full test-suite but simple test case that checks basic behavior.&lt;/p&gt;
+
+&lt;p&gt;In order to test the application, you can run &lt;code class=&quot;highlighter-rouge&quot;&gt;python setup.py test&lt;/code&gt; to run them.&lt;/p&gt;
+
+&lt;p&gt;You should expect a trace like this.&lt;/p&gt;
+
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;....
+Using /home/julien/git/flaskyelp/.eggs/py-1.4.31-py2.7.egg
+running egg_info
+writing requirements to flaskyelp.egg-info/requires.txt
+writing flaskyelp.egg-info/PKG-INFO
+writing top-level names to flaskyelp.egg-info/top_level.txt
+writing dependency_links to flaskyelp.egg-info/dependency_links.txt
+reading manifest file &lt;span class=&quot;s1&quot;&gt;'flaskyelp.egg-info/SOURCES.txt'&lt;/span&gt;
+reading manifest template &lt;span class=&quot;s1&quot;&gt;'MANIFEST.in'&lt;/span&gt;
+writing manifest file &lt;span class=&quot;s1&quot;&gt;'flaskyelp.egg-info/SOURCES.txt'&lt;/span&gt;
+running build_ext
+&lt;span class=&quot;o&quot;&gt;=======================================================&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;test &lt;/span&gt;session starts &lt;span class=&quot;o&quot;&gt;=======================================================&lt;/span&gt;
+platform linux2 -- Python 2.7.12+, pytest-3.0.3, py-1.4.31, pluggy-0.4.0
+rootdir: /home/julien/git/flaskyelp, inifile:
+collected 7 items
+
+tests/test_flaskyelp.py .......
+
+&lt;span class=&quot;o&quot;&gt;====================================================&lt;/span&gt; 7 passed &lt;span class=&quot;k&quot;&gt;in &lt;/span&gt;0.22 seconds &lt;span class=&quot;o&quot;&gt;=====================================================&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;julien@akira]/home/julien/git/flaskyelp#
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h1 id=&quot;whats-next&quot;&gt;What’s next?&lt;/h1&gt;
+
+&lt;p&gt;I really enjoy learning Python. The language is well-documented, which makes it easier to learn and use. The next project is to implement a bot for the &lt;a href=&quot;http://www.slack.com&quot;&gt;slack collaboration platform&lt;/a&gt;. I expect to be done during the next two weeks. As usual, I will post the code there.&lt;/p&gt;
+
+&lt;h1 id=&quot;resources&quot;&gt;Resources&lt;/h1&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/juli1/flaskyelp&quot;&gt;Flaskyelp on github&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://flask.pocoo.org/&quot;&gt;Flask&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://thehackerguidetopython.com/&quot;&gt;The Hacker’s Guide to Python&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Sat, 01 Oct 2016 09:13:20 -0400</pubDate>
+        <link>http://julien.gunnm.org/geek/python/2016/10/01/flaskyelp-a-small-yelp-in-flask-with-python/</link>
+        <guid isPermaLink="true">http://julien.gunnm.org/geek/python/2016/10/01/flaskyelp-a-small-yelp-in-flask-with-python/</guid>
+        
+        <category>Python</category>
+        
+        <category>Flask</category>
+        
+        <category>Yelp</category>
+        
+        
+        <category>geek</category>
+        
+        <category>python</category>
+        
+      </item>
     
       <item>
         <title>Simplify your OSATE and AADL analysis code with Java 8 lambda</title>
@@ -871,30 +963,6 @@ int run(void)
         <category>geek</category>
         
         <category>programming</category>
-        
-      </item>
-    
-      <item>
-        <title>High Five</title>
-        <description>&lt;p&gt;&lt;a href=&quot;http://www.momentumphotography.net/&quot;&gt;Lance&lt;/a&gt;, the photographer that comes at the races from &lt;a href=&quot;http://www.alleghenytrailrunners.com/&quot;&gt;Allegheny Trailrunner&lt;/a&gt;, sent me my pictures from &lt;a href=&quot;http://julien.gunnm.org/2015/09/16/breaking-news-allegheny-trailrunners-tm-has-been-acquired-by-tough-mudder-tm-rockn-the-knob-2015-race-report/&quot;&gt;Rock The Knob&lt;/a&gt;. I am not a fan of race picture but found this one particularly funny and captured a great time, just before eating some hills.&lt;/p&gt;
-&lt;p&gt;Lance take the pictures and post them for free. If you like what he is doing, consider a donation - having great picture for free is amazing, making a small donation on a voluntary basis is better than the usual rip-off of company such a marathonfoto.&lt;/p&gt;
-&lt;p&gt;Thanks again to &lt;a href=&quot;http://www.momentumphotography.net/&quot;&gt;Lance&lt;/a&gt; for capturing such a moment.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://juli1pb.files.wordpress.com/2015/09/juliandelangertk2015-9.jpg&quot;&gt;&lt;img class=&quot;aligncenter size-large wp-image-1816&quot; src=&quot;/assets/juliandelangertk2015-9.jpg?w=683&quot; alt=&quot;JulianDelangeRTK2015-9&quot; width=&quot;683&quot; height=&quot;1024&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-</description>
-        <pubDate>Fri, 25 Sep 2015 00:26:46 -0400</pubDate>
-        <link>http://julien.gunnm.org/misc/running/2015/09/25/high-five/</link>
-        <guid isPermaLink="true">http://julien.gunnm.org/misc/running/2015/09/25/high-five/</guid>
-        
-        <category>Allegheny Trailrunners</category>
-        
-        <category>rock the knobb</category>
-        
-        <category>running</category>
-        
-        
-        <category>misc</category>
-        
-        <category>running</category>
         
       </item>
     
