@@ -5,9 +5,45 @@
     <description>Tales of a guy living in Pittsburgh addicted with Computer-Science, Running and Peanut Butter</description>
     <link>http://julien.gunnm.org/</link>
     <atom:link href="http://julien.gunnm.org/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Sat, 07 Jan 2017 18:38:18 -0500</pubDate>
-    <lastBuildDate>Sat, 07 Jan 2017 18:38:18 -0500</lastBuildDate>
+    <pubDate>Sat, 07 Jan 2017 18:41:35 -0500</pubDate>
+    <lastBuildDate>Sat, 07 Jan 2017 18:41:35 -0500</lastBuildDate>
     <generator>Jekyll v3.2.1</generator>
+    
+      <item>
+        <title>Goodbye CMU-SEI, welcome Amazon!</title>
+        <description>&lt;p&gt;I was definitively not planning to move away from Pittsburgh but I am now
+leaving the &lt;a href=&quot;http://sei.cmu.edu&quot;&gt;Carnegie Mellon Software Engineering Institute&lt;/a&gt; to join the &lt;a href=&quot;http://aws.amazon.com&quot;&gt;AWS&lt;/a&gt; team
+in Seattle. In case you never heard of it, &lt;a href=&quot;http://aws.amazon.com&quot;&gt;Amazon Web Services&lt;/a&gt; is the leader 
+of cloud-computing services and is used by many companies all over the world. You can read
+more on &lt;a href=&quot;https://en.wikipedia.org/wiki/Amazon_Web_Services&quot;&gt;wikipedia there&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Pittsburgh has been the city where my American journey started. It has been exciting to work at CMU-SEI and I 
+met a lot of wonderful people in the city. I am really happy and excited to
+start a new chapter.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Stay Hungry!&lt;/em&gt;&lt;/p&gt;
+
+</description>
+        <pubDate>Fri, 06 Jan 2017 08:13:20 -0500</pubDate>
+        <link>http://julien.gunnm.org/geek/amazon/seattle/pittsburgh/2017/01/06/goodbye-cmu-sei-hello-amazon/</link>
+        <guid isPermaLink="true">http://julien.gunnm.org/geek/amazon/seattle/pittsburgh/2017/01/06/goodbye-cmu-sei-hello-amazon/</guid>
+        
+        <category>Amazon</category>
+        
+        <category>CMU-SEI</category>
+        
+        <category>Software Engineering Institute</category>
+        
+        
+        <category>geek</category>
+        
+        <category>amazon</category>
+        
+        <category>Seattle</category>
+        
+        <category>Pittsburgh</category>
+        
+      </item>
     
       <item>
         <title>Flaskyelp, a simple yelp-like website with Python and Flask</title>
@@ -930,34 +966,6 @@ int run(void)
         <category>security</category>
         
         <category>selinux</category>
-        
-        
-        <category>geek</category>
-        
-        <category>programming</category>
-        
-      </item>
-    
-      <item>
-        <title>Change takes time</title>
-        <description>&lt;p&gt;When multi-core processors were released in the mid-2000s, developers had to face a new programming paradigm: multi-threading. For sure, &lt;a href=&quot;https://en.wikipedia.org/wiki/Symmetric_multiprocessing&quot;&gt;SMP&lt;/a&gt; (&lt;a href=&quot;https://en.wikipedia.org/wiki/Symmetric_multiprocessing&quot;&gt;Symmetric Multiprocessing&lt;/a&gt;) was already there since years but such machines were dedicated to particular applications.&lt;/p&gt;
-&lt;p&gt;This new processor design had some side effects: since applications were no longer executed on a single processor and developers had to synchronize shared data and avoid what we call &lt;a href=&quot;https://en.wikipedia.org/wiki/Race_condition&quot;&gt;race condition&lt;/a&gt;. Interestingly,  most of the time, a race condition will crash the application. When multi-core processors were introduced, many popular applications had such issues (see this &lt;a href=&quot;https://discussions.apple.com/thread/247969?start=0&amp;amp;tstart=0&quot;&gt;discussion for iTunes&lt;/a&gt;) - mostly because developers did not design an application with synchronization constraints in mind. Of course, now, this design constraints is understood by most developers.&lt;/p&gt;
-&lt;p&gt;During a current project, I am investigating the common software vulnerabilities/weaknesses and their evolution over time. Among the most popular, the &quot;race condition&quot; issue. There is the picture.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://juli1pb.files.wordpress.com/2015/11/race-condition.png&quot;&gt;&lt;img class=&quot;wp-image-1880 size-large&quot; src=&quot;/assets/race-condition.png?w=660&quot; alt=&quot;number of issues related to synchronization issues&quot; width=&quot;660&quot; height=&quot;460&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;If we look closely, there was very few reports until multi-core were introduced. It continues to increase until 2012 (why it decreases in 2011 is still unknown) and then start to decrease. Interestingly, there are still a lot of issues related to synchronization today.&lt;/p&gt;
-&lt;p&gt;The take away from this data? Change takes time. A. Lot. It took almost 10 years for software developers to address the matter and stop writing buggy code. And there are still a lot of reported issues. Developers had to take this new constraint into account while they were not familiar with this paradigm. Teachers had to explain this issue and address the matters in class.&lt;/p&gt;
-&lt;p&gt;Change takes time and it is very difficult to predict the impact of a change - I assume nobody assumed that it would take so long for the industry to adapt to this new constraint.&lt;/p&gt;
-</description>
-        <pubDate>Sun, 01 Nov 2015 19:21:20 -0500</pubDate>
-        <link>http://julien.gunnm.org/geek/programming/2015/11/01/change-takes-time/</link>
-        <guid isPermaLink="true">http://julien.gunnm.org/geek/programming/2015/11/01/change-takes-time/</guid>
-        
-        <category>cve</category>
-        
-        <category>cwe</category>
-        
-        <category>race condition</category>
         
         
         <category>geek</category>
