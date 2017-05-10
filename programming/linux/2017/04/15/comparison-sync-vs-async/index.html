@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Why using asynchronous communications? - Julien Delange</title>
+    <link rel="alternate" type="application/rss+xml" title="Julien Delange &raquo; Feed" href="/feed.xml" />
+    <meta name="viewport" content="width=device-width">
+    <meta name="description" content="Comparison of syncrhonous and asynchronous communication">
+    <link rel="canonical" href="http://julien.gunnm.org/programming/linux/2017/04/15/comparison-sync-vs-async/">
+
+    
+    <meta name="keywords" content="epoll, linux, sync, async"/>
+    
+
+    <!-- Latest compiled and minified CSS -->
+<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous"> -->
+
+<!-- Optional theme -->
+<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous"> -->
+
+<!-- Latest compiled and minified JavaScript -->
+<!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script> -->
+
+
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/main.css">
+
+    <!-- Twitter Cards -->
+    <meta property="twitter:title" content="Why using asynchronous communications?" />
+    <meta property="twitter:description" content="Comparison of syncrhonous and asynchronous communication" />
+    <meta property="twitter:card" content="summary" />
+    <meta property="twitter:site" content="@juli1pb" />
+    <meta property="twitter:creator" content="@juli1pb" />
+    <meta property="twitter:image:src" content="/assets/profile.png"/>
+
+
+    <!-- Facebook opengraph -->
+    <meta property="og:site_name" content="Julien Delange" />
+    <meta property="og:type" content="article" />
+    <meta property="og:image" content="/assets/profile.png" />
+    <meta property="og:title" content="Why using asynchronous communications?" />
+    <meta property="og:description" content="Comparison of syncrhonous and asynchronous communication" />
+
+</head>
+
+
+    <body>
+
+    <header class="site-header">
+
+  <div class="wrap">
+
+    <a class="site-title" href="/">Julien Delange</a>
+
+    <nav class="site-nav">
+      <a href="#" class="menu-icon">
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+           viewBox="0 0 18 15" enable-background="new 0 0 18 15" xml:space="preserve">
+          <path fill="#505050" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0
+            h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#505050" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484
+            h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#505050" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0
+            c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </a>
+      <div class="trigger">
+
+         <a class="page-link" href="/projects">Projects</a>
+         <a class="page-link" href="/bibliography">Bibliography</a>
+         <a class="page-link" href="/running">Running</a>
+
+         <a class="page-link" href="/blog">Blog</a>
+        <!-- 
+          
+        
+          <a class="page-link" href="/aadl-book">AADL In Practice</a>
+        
+          <a class="page-link" href="/about/">About</a>
+        
+          <a class="page-link" href="/bibliography/">Publications</a>
+        
+          <a class="page-link" href="/blog/">Blog</a>
+        
+          
+        
+          
+        
+          <a class="page-link" href="/ohiopyle-training/">Laurel Highland Trail - Gate to 8 - Training Information</a>
+        
+          <a class="page-link" href="/projects/">Projects</a>
+        
+          <a class="page-link" href="/running/">Running Agenda and Past Races</a>
+        
+          
+         -->
+         <a class="page-link" href="/about">About</a>
+      </div>
+    </nav>
+
+  </div>
+
+</header>
+
+
+    <div class="page-content">
+      <div class="wrap">
+      <div class="post">
+
+  <header class="post-header">
+    <h1>Why using asynchronous communications?</h1>
+    <p class="meta">
+      <!-- Apr 15, 2017 -->
+      <!-- 
+       -->
+   </p>
+  </header>
+
+  <article class="post-content">
+  <p><strong>TL;DR: this blog post explains the status of async communications</strong></p>
+
+<p>It all started when I watched a video online:
+<a href="https://www.youtube.com/watch?v=gaOa-Dsbb4o">Scaling Server Software at Facebook</a>. The video
+gives interesting details used at facebook to optimize their systems. One of the big advice (among many others)
+is to use asynchronous communications. I wanted see the benefit of using
+asynchronous communication and how it compares with the traditional synchronous model.</p>
+
+<p>This blog post explains first the different between synchronuous and asynchronuous I/O,
+presents the programming models and gives some rough estimates of what you can expect.
+If you develop a massive ditributed system, you cannot avoid asynchronuous communications.</p>
+
+<h1 id="synchronous-vs-asynchronous-io">Synchronous vs. asynchronous I/O</h1>
+
+<p>Let’s first start by explaining what is the difference between synchronous and asynchronuous
+communications. A distributed application communicate by performing I/Os (Input/Output). It can
+be network communications (socket), reading/writing into a file, etc.
+In the <a href="https://en.wikipedia.org/wiki/Unix">UNIX</a>/
+<a href="https://en.wikipedia.org/wiki/POSIX">POSIX</a> world, I/O are performed
+on file descriptors (FDs): when you open a file or a network communication,
+you open a file descriptor and can then perform <code class="highlighter-rouge">read()</code> or <code class="highlighter-rouge">write()</code> operations on it.</p>
+
+<p>You have two ways to perform I/Os: <strong>synchronously</strong> and <strong>asynchronously</strong>. When using
+<strong>synchronous</strong> I/O, the caller is block until the call succeeds. When using <strong>asynchronuous</strong>, you
+are periodically checking if there is anything received. The next sections details these two worlds.</p>
+
+<h2 id="the-synchronous-world">The synchronous world</h2>
+
+<p>In the synchronous world, you wait for a reply. For example, if you call <code class="highlighter-rouge">read()</code> on a network socket,
+your current program will wait until some data is available.</p>
+
+<p>This communication pattern is very similar to a phone conversation: you talk first and then, wait for
+a reply from the other side.</p>
+
+<p>Synchronous communication are very sequential. Most of the time, you perform a
+series of operations as follow:</p>
+<ul>
+  <li>Open the communication channel (e.g. take your phone and dial your friend)</li>
+  <li>Do several exchanges (e.g. each person talks and wait for the answer of the other person)</li>
+  <li>Close the communication channel (hangup)</li>
+</ul>
+
+<p>This model is fine when you have one communication happenning. The problem is when your application
+is massively distributed and communicate with a lot of peers. In that case, you need
+to have N tasks (also called <a href="https://en.wikipedia.org/wiki/POSIX_Threads">threads</a>) and each one
+will take care of communicating with one peer.</p>
+
+<p>The following pseudo-code shows a very common way to implement such a system: create a threads for
+each request and let it handle one communication.</p>
+
+<figure class="highlight"><pre><code class="language-c" data-lang="c"><span class="kt">void</span> <span class="nf">loop</span> <span class="p">()</span>
+<span class="p">{</span>
+      <span class="n">send_request</span><span class="p">();</span>
+      <span class="n">wait_for_reply</span><span class="p">();</span>
+      <span class="n">process_reply</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">main</span> <span class="p">()</span>
+<span class="p">{</span>
+   <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span> <span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">NREQUESTS</span> <span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+   <span class="p">{</span>
+      <span class="n">create_thread</span> <span class="p">(</span><span class="n">i</span><span class="p">);</span>
+   <span class="p">}</span>
+
+   <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span> <span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">NREQUESTS</span> <span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+   <span class="p">{</span>
+      <span class="n">wait_for_thread</span> <span class="p">(</span><span class="n">i</span><span class="p">);</span>
+   <span class="p">}</span>
+<span class="p">}</span></code></pre></figure>
+
+<p>The execution diagram is as follow: the main thread creates one thread for each communication patterns
+and wait that all of them finish their work. In that model, the operating system schedules the threads and activates them
+when the data is available, adding more data structure into the kernel.</p>
+
+<p>One can note that after sending the request, a thread is waiting for the reply, doing nothing but waiting
+for incoming communication.</p>
+
+<p><img src="/assets/communication-threads.png" alt="Communication with threads" width="90%" /></p>
+
+<h2 id="the-asynchronous-world">The asynchronous world</h2>
+
+<p>In the asynchronous world, the program <strong>post</strong> operations and check the result later.
+This communication model is similar to text messages: you send a text but does not wait for an immediate
+return, the reply may arrive now or hours later. The key here: you do not have to stay on the line
+and wait for a reply, you can check it later.</p>
+
+<p>Asynchronous communication are not sequential at all. In fact, you send
+some information (text messages) and then, there is a main loop
+that receives replies and write back according to a protocol.</p>
+
+<p>There is no need for additional task in that model, you can handle all
+of them in the main task. The hard part is to follow the status of
+each operation.</p>
+
+<p>The following pseudo-code shows a common approach to do asynchronuous
+communication. The most important aspect of the main loop that handles
+new events.</p>
+
+<figure class="highlight"><pre><code class="language-c" data-lang="c"><span class="kt">void</span> <span class="nf">main</span> <span class="p">()</span>
+<span class="p">{</span>
+   <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span> <span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">NTHREADS</span> <span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+   <span class="p">{</span>
+      <span class="n">send_request</span> <span class="p">(</span><span class="n">i</span><span class="p">);</span>
+   <span class="p">}</span>
+
+   <span class="kt">int</span> <span class="n">completed</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+   <span class="k">while</span> <span class="p">(</span><span class="n">completed</span> <span class="o">&lt;</span> <span class="n">NREQUESTS</span><span class="p">)</span>
+   <span class="p">{</span>
+      <span class="n">event</span> <span class="o">=</span> <span class="n">wait_for_event</span><span class="p">();</span>
+      <span class="n">process_event</span><span class="p">();</span>
+      <span class="n">completed</span><span class="o">++</span><span class="p">;</span>
+   <span class="p">}</span>
+<span class="p">}</span></code></pre></figure>
+
+<p>The following diagram shows an execution trace of asynchronuous communication.
+There is no new task, the main tasks posts all operations to do
+in the beginning and check their status. Once all operations returned, the program
+is complete. Note that replies are not coming back in a specific order.</p>
+
+<p><img src="/assets/communication-nothread.png" alt="Communication with threads" width="90%" /></p>
+
+<h1 id="why-using-asynchronous-communications">Why using asynchronous communications?</h1>
+
+<p>There are two majors issues with synchronous communication:</p>
+<ol>
+  <li>Lot of time of threads consists of waiting for I/O completion. It is a waste of resources</li>
+  <li>It introduces overhead, especially in the kernel for managing/scheduling/dispatching resources.</li>
+</ol>
+
+<p>By using asynchronuous communication, you just avoid resources waste and then, can
+process more requests with the same hardware. If your system is massively distributed, 
+and handles thousands of simultaneous connections it will
+either (1) saves resources or (2) process more requests.</p>
+
+<p>If you are not convinced, I suggest watching
+the video <a href="https://www.youtube.com/watch?v=gaOa-Dsbb4o">Scaling Server Software at Facebook</a>, 
+a simple 5% of memory or processor usage reduction means savings in the scale of thousands
+or millions of dollars. There are more information about asynchronous communication 
+use at facebook on <a href="https://code.facebook.com/posts/1661982097368498">their blog</a>).</p>
+
+<p>To summarize, using synchronous programming is easily and straightforward
+but does not scale for massively large, distributed system. Asynchronous
+programming makes your progrma more complex but avoid bottlenecks and resources
+overhead.</p>
+
+<h1 id="comparing-sync-and-async-performance">Comparing sync and async performance</h1>
+
+<p>In order to evaluate the performance difference between synchronous and asynchronous
+communications, I wrote a small client program that starts N connections
+to a server and print the result. Basically, the program initiates a fixed number (N) of HTTP connections
+to a web server, get a page and prints it on the standard output. I wrote two variants of the program:</p>
+<ol>
+  <li><strong>Synchronous</strong>: each connection is using a thread that opens a socket, write the request and print the result. There are then N threads, N being the number of connections.</li>
+  <li><strong>Asynchronous</strong>: the main program opens N sockets and handle them in a main control loop.</li>
+</ol>
+
+<p>In order to verify that each program retrieves the same thing (e.g. they return the same output), I log the output in a file and compares the file with diff.
+Results were the same.</p>
+
+<p>I ran the tests on the following configuration</p>
+<ul>
+  <li>Linux kernel 4.9</li>
+  <li>CPU Intel(R) Core(TM) i5-3320M CPU @ 2.60GHz</li>
+  <li>8GB RAM</li>
+</ul>
+
+<p>Finally, to remove the variability factor of the latency, all requests are issued to a local host.
+I started by just running the program and vary the number of connections issued to see 
+I then varied the number of concurrent connections between 1 and 100 and capture the system time used.
+The system time is the time spent in kernel mode. It is clear that when using threads, there is an overhead
+of resources management for the kernel.</p>
+
+<p>The following picture show the time spent in kernel mode for each version of the program (X=#connections and Y=time spent in kernel mode).</p>
+
+<p><img src="/assets/async-evaluation-results.png" alt="Time spent in kernel mode (X=#connections ; Y=time in kernel mode" /></p>
+
+<p>These results are very limited - this is done on a single host that communicates with only another machine without additional load.
+One can expect more impact when using threads, especially when using locks/mutexes with more load.</p>
+
+<h1 id="a-note-on-posix-async">A note on POSIX async</h1>
+<p>When starting this work, I was looking for <a href="https://en.wikipedia.org/wiki/POSIX">POSIX</a> functions to perform async communications.
+As POSIX is the reference for programming on UNIX system, this was natural to look how it handles
+asynchronuous communications. Unfortunately, the asynchronuous API is a real disaster, in terms of its
+definition (for example, it uses threads or signals to handle incoming data - something to just avoid)
+or implementation (done in userland in Linux, which leads to poor performance).</p>
+
+<p>Other people <a href="http://davmac.org/davpage/linux/async-io.html">also reported</a> also discusses this.
+I have no idea why the current POSIX async API is so bad and why they published such a useless framework: the
+notification mechanism (signals or threads) is inefficient, counter-productive and counter-intuitive.
+I have no idea what the POSIX committee members were smoking the day they approved this.</p>
+
+<p>The result is that today, each UNIX has now its own implementation of asynchronous communication management
+(<a href="https://en.wikipedia.org/wiki/Epoll">epoll for linux</a>, <a href="https://en.wikipedia.org/wiki/Kqueue">kqueue for BSD</a>
+leaving developers with no option than developing non-portable code.</p>
+
+<h1 id="where-you-go-from-there">Where you go from there?</h1>
+<p>No question about it, asynchronous communications are definitively the way
+to go if you are developing a massive distributed system.</p>
+
+<p>So how to use asynchronous communication effectively with your favorite programming language?
+There are multiple frameworks available:</p>
+
+<ul>
+  <li>For C++, <a href="http://www.boost.org/">boost</a> includes asynchronous communication functions</li>
+  <li>For Python &gt;3.4, the <a href="https://docs.python.org/3/library/asyncio.html#module-asyncio">asyncio</a> framework
+provides everything you need to manage asynchronous communication</li>
+  <li>For Python &lt;3.4, you have existing framework as detailed in <a href="https://thehackerguidetopython.com/">The Hacker’s guide to Python</a> - you can also learn more in this <a href="https://www.youtube.com/watch?v=7sCu4gEjH5I">youtube video</a></li>
+  <li>For pure C on linux, use directly <a href="https://en.wikipedia.org/wiki/Epoll">epoll</a>. This is not portable to any other UNIX but I bet you might not migrate to any other system now.</li>
+</ul>
+
+<p>Code used for evaluate sync/async performance is <a href="https://github.com/juli1/async-study">available online</a>.</p>
+
+  </article>
+
+</div>
+
+      </div>
+    </div>
+
+    <footer class="site-footer">
+
+  <div class="wrap">
+
+    <h2 class="footer-heading">Julien Delange</h2>
+
+    <div class="footer-col-1 column">
+      <ul>
+        <li>
+          <a href="https://github.com/juli1">
+            <span class="icon github">
+              <svg version="1.1" class="github-icon-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                 viewBox="0 0 16 16" enable-background="new 0 0 16 16" xml:space="preserve">
+                <path fill-rule="evenodd" clip-rule="evenodd" fill="#C2C2C2" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761
+                c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32
+                c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472
+                c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037
+                C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65
+                c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261
+                c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082
+                c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129
+                c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/>
+              </svg>
+            </span>
+            <span class="username">juli1</span>
+          </a>
+        </li>
+        <li>
+          <a href="https://twitter.com/juli1pb">
+            <span class="icon twitter">
+              <svg version="1.1" class="twitter-icon-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                 viewBox="0 0 16 16" enable-background="new 0 0 16 16" xml:space="preserve">
+                <path fill="#C2C2C2" d="M15.969,3.058c-0.586,0.26-1.217,0.436-1.878,0.515c0.675-0.405,1.194-1.045,1.438-1.809
+                c-0.632,0.375-1.332,0.647-2.076,0.793c-0.596-0.636-1.446-1.033-2.387-1.033c-1.806,0-3.27,1.464-3.27,3.27
+                c0,0.256,0.029,0.506,0.085,0.745C5.163,5.404,2.753,4.102,1.14,2.124C0.859,2.607,0.698,3.168,0.698,3.767
+                c0,1.134,0.577,2.135,1.455,2.722C1.616,6.472,1.112,6.325,0.671,6.08c0,0.014,0,0.027,0,0.041c0,1.584,1.127,2.906,2.623,3.206
+                C3.02,9.402,2.731,9.442,2.433,9.442c-0.211,0-0.416-0.021-0.615-0.059c0.416,1.299,1.624,2.245,3.055,2.271
+                c-1.119,0.877-2.529,1.4-4.061,1.4c-0.264,0-0.524-0.015-0.78-0.046c1.447,0.928,3.166,1.469,5.013,1.469
+                c6.015,0,9.304-4.983,9.304-9.304c0-0.142-0.003-0.283-0.009-0.423C14.976,4.29,15.531,3.714,15.969,3.058z"/>
+              </svg>
+            </span>
+            <span class="username">juli1pb</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+
+   <div class="footer-col-2 column">
+      <ul>
+         <li>
+            <a href="https://www.strava.com/athletes/juli1">
+             <span class="icon twitter">
+                <img src="/assets/strava-logo.png"/>
+             </span>
+             <span class="username">juli1</span>
+            </a>
+         </li>
+         <li>
+            <a href="http://www.flickr.com/photos/juli1/">
+             <span class="icon twitter">
+                <img src="/assets/flickr-icon.png"/>
+             </span>
+             <span class="username">juli1</span>
+            </a>
+         </li>
+         <!-- <li><a href="mailto:julien@gunnm.org">julien@gunnm.org</a></li> -->
+      </ul>
+   </div>
+
+
+    <div class="footer-col-3 column">
+      <p class="text">Tales of a guy living in Pittsburgh addicted to Computer-Science, Running and Peanut Butter</p>
+    </div>
+
+  </div>
+
+</footer>
+
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-75409992-1', 'auto');
+      ga('send', 'pageview');
+
+    </script>
+    </body>
+</html>

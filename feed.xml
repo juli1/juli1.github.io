@@ -2,12 +2,246 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Julien Delange</title>
-    <description>Tales of a guy living in Pittsburgh addicted with Computer-Science, Running and Peanut Butter</description>
+    <description>Tales of a guy living in Pittsburgh addicted to Computer-Science, Running and Peanut Butter</description>
     <link>http://julien.gunnm.org/</link>
     <atom:link href="http://julien.gunnm.org/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Mon, 13 Mar 2017 22:29:42 -0700</pubDate>
-    <lastBuildDate>Mon, 13 Mar 2017 22:29:42 -0700</lastBuildDate>
-    <generator>Jekyll v3.2.1</generator>
+    <pubDate>Tue, 09 May 2017 18:44:59 -0700</pubDate>
+    <lastBuildDate>Tue, 09 May 2017 18:44:59 -0700</lastBuildDate>
+    <generator>Jekyll v3.4.3</generator>
+    
+      <item>
+        <title>Why using asynchronous communications?</title>
+        <description>&lt;p&gt;&lt;strong&gt;TL;DR: this blog post explains the status of async communications&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;It all started when I watched a video online:
+&lt;a href=&quot;https://www.youtube.com/watch?v=gaOa-Dsbb4o&quot;&gt;Scaling Server Software at Facebook&lt;/a&gt;. The video
+gives interesting details used at facebook to optimize their systems. One of the big advice (among many others)
+is to use asynchronous communications. I wanted see the benefit of using
+asynchronous communication and how it compares with the traditional synchronous model.&lt;/p&gt;
+
+&lt;p&gt;This blog post explains first the different between synchronuous and asynchronuous I/O,
+presents the programming models and gives some rough estimates of what you can expect.
+If you develop a massive ditributed system, you cannot avoid asynchronuous communications.&lt;/p&gt;
+
+&lt;h1 id=&quot;synchronous-vs-asynchronous-io&quot;&gt;Synchronous vs. asynchronous I/O&lt;/h1&gt;
+
+&lt;p&gt;Let’s first start by explaining what is the difference between synchronous and asynchronuous
+communications. A distributed application communicate by performing I/Os (Input/Output). It can
+be network communications (socket), reading/writing into a file, etc.
+In the &lt;a href=&quot;https://en.wikipedia.org/wiki/Unix&quot;&gt;UNIX&lt;/a&gt;/
+&lt;a href=&quot;https://en.wikipedia.org/wiki/POSIX&quot;&gt;POSIX&lt;/a&gt; world, I/O are performed
+on file descriptors (FDs): when you open a file or a network communication,
+you open a file descriptor and can then perform &lt;code class=&quot;highlighter-rouge&quot;&gt;read()&lt;/code&gt; or &lt;code class=&quot;highlighter-rouge&quot;&gt;write()&lt;/code&gt; operations on it.&lt;/p&gt;
+
+&lt;p&gt;You have two ways to perform I/Os: &lt;strong&gt;synchronously&lt;/strong&gt; and &lt;strong&gt;asynchronously&lt;/strong&gt;. When using
+&lt;strong&gt;synchronous&lt;/strong&gt; I/O, the caller is block until the call succeeds. When using &lt;strong&gt;asynchronuous&lt;/strong&gt;, you
+are periodically checking if there is anything received. The next sections details these two worlds.&lt;/p&gt;
+
+&lt;h2 id=&quot;the-synchronous-world&quot;&gt;The synchronous world&lt;/h2&gt;
+
+&lt;p&gt;In the synchronous world, you wait for a reply. For example, if you call &lt;code class=&quot;highlighter-rouge&quot;&gt;read()&lt;/code&gt; on a network socket,
+your current program will wait until some data is available.&lt;/p&gt;
+
+&lt;p&gt;This communication pattern is very similar to a phone conversation: you talk first and then, wait for
+a reply from the other side.&lt;/p&gt;
+
+&lt;p&gt;Synchronous communication are very sequential. Most of the time, you perform a
+series of operations as follow:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Open the communication channel (e.g. take your phone and dial your friend)&lt;/li&gt;
+  &lt;li&gt;Do several exchanges (e.g. each person talks and wait for the answer of the other person)&lt;/li&gt;
+  &lt;li&gt;Close the communication channel (hangup)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;This model is fine when you have one communication happenning. The problem is when your application
+is massively distributed and communicate with a lot of peers. In that case, you need
+to have N tasks (also called &lt;a href=&quot;https://en.wikipedia.org/wiki/POSIX_Threads&quot;&gt;threads&lt;/a&gt;) and each one
+will take care of communicating with one peer.&lt;/p&gt;
+
+&lt;p&gt;The following pseudo-code shows a very common way to implement such a system: create a threads for
+each request and let it handle one communication.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c&quot; data-lang=&quot;c&quot;&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;loop&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;send_request&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;wait_for_reply&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;process_reply&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+   &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;NREQUESTS&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+   &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;create_thread&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+   &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+   &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;NREQUESTS&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+   &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;wait_for_thread&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+   &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;The execution diagram is as follow: the main thread creates one thread for each communication patterns
+and wait that all of them finish their work. In that model, the operating system schedules the threads and activates them
+when the data is available, adding more data structure into the kernel.&lt;/p&gt;
+
+&lt;p&gt;One can note that after sending the request, a thread is waiting for the reply, doing nothing but waiting
+for incoming communication.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/communication-threads.png&quot; alt=&quot;Communication with threads&quot; width=&quot;90%&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;the-asynchronous-world&quot;&gt;The asynchronous world&lt;/h2&gt;
+
+&lt;p&gt;In the asynchronous world, the program &lt;strong&gt;post&lt;/strong&gt; operations and check the result later.
+This communication model is similar to text messages: you send a text but does not wait for an immediate
+return, the reply may arrive now or hours later. The key here: you do not have to stay on the line
+and wait for a reply, you can check it later.&lt;/p&gt;
+
+&lt;p&gt;Asynchronous communication are not sequential at all. In fact, you send
+some information (text messages) and then, there is a main loop
+that receives replies and write back according to a protocol.&lt;/p&gt;
+
+&lt;p&gt;There is no need for additional task in that model, you can handle all
+of them in the main task. The hard part is to follow the status of
+each operation.&lt;/p&gt;
+
+&lt;p&gt;The following pseudo-code shows a common approach to do asynchronuous
+communication. The most important aspect of the main loop that handles
+new events.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c&quot; data-lang=&quot;c&quot;&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+   &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;NTHREADS&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+   &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;send_request&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+   &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+   &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;completed&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+   &lt;span class=&quot;k&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;completed&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;NREQUESTS&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+   &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;event&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;wait_for_event&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;process_event&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;completed&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+   &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;The following diagram shows an execution trace of asynchronuous communication.
+There is no new task, the main tasks posts all operations to do
+in the beginning and check their status. Once all operations returned, the program
+is complete. Note that replies are not coming back in a specific order.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/communication-nothread.png&quot; alt=&quot;Communication with threads&quot; width=&quot;90%&quot; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;why-using-asynchronous-communications&quot;&gt;Why using asynchronous communications?&lt;/h1&gt;
+
+&lt;p&gt;There are two majors issues with synchronous communication:&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;Lot of time of threads consists of waiting for I/O completion. It is a waste of resources&lt;/li&gt;
+  &lt;li&gt;It introduces overhead, especially in the kernel for managing/scheduling/dispatching resources.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;By using asynchronuous communication, you just avoid resources waste and then, can
+process more requests with the same hardware. If your system is massively distributed, 
+and handles thousands of simultaneous connections it will
+either (1) saves resources or (2) process more requests.&lt;/p&gt;
+
+&lt;p&gt;If you are not convinced, I suggest watching
+the video &lt;a href=&quot;https://www.youtube.com/watch?v=gaOa-Dsbb4o&quot;&gt;Scaling Server Software at Facebook&lt;/a&gt;, 
+a simple 5% of memory or processor usage reduction means savings in the scale of thousands
+or millions of dollars. There are more information about asynchronous communication 
+use at facebook on &lt;a href=&quot;https://code.facebook.com/posts/1661982097368498&quot;&gt;their blog&lt;/a&gt;).&lt;/p&gt;
+
+&lt;p&gt;To summarize, using synchronous programming is easily and straightforward
+but does not scale for massively large, distributed system. Asynchronous
+programming makes your progrma more complex but avoid bottlenecks and resources
+overhead.&lt;/p&gt;
+
+&lt;h1 id=&quot;comparing-sync-and-async-performance&quot;&gt;Comparing sync and async performance&lt;/h1&gt;
+
+&lt;p&gt;In order to evaluate the performance difference between synchronous and asynchronous
+communications, I wrote a small client program that starts N connections
+to a server and print the result. Basically, the program initiates a fixed number (N) of HTTP connections
+to a web server, get a page and prints it on the standard output. I wrote two variants of the program:&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;&lt;strong&gt;Synchronous&lt;/strong&gt;: each connection is using a thread that opens a socket, write the request and print the result. There are then N threads, N being the number of connections.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Asynchronous&lt;/strong&gt;: the main program opens N sockets and handle them in a main control loop.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;In order to verify that each program retrieves the same thing (e.g. they return the same output), I log the output in a file and compares the file with diff.
+Results were the same.&lt;/p&gt;
+
+&lt;p&gt;I ran the tests on the following configuration&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Linux kernel 4.9&lt;/li&gt;
+  &lt;li&gt;CPU Intel(R) Core(TM) i5-3320M CPU @ 2.60GHz&lt;/li&gt;
+  &lt;li&gt;8GB RAM&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Finally, to remove the variability factor of the latency, all requests are issued to a local host.
+I started by just running the program and vary the number of connections issued to see 
+I then varied the number of concurrent connections between 1 and 100 and capture the system time used.
+The system time is the time spent in kernel mode. It is clear that when using threads, there is an overhead
+of resources management for the kernel.&lt;/p&gt;
+
+&lt;p&gt;The following picture show the time spent in kernel mode for each version of the program (X=#connections and Y=time spent in kernel mode).&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/async-evaluation-results.png&quot; alt=&quot;Time spent in kernel mode (X=#connections ; Y=time in kernel mode&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;These results are very limited - this is done on a single host that communicates with only another machine without additional load.
+One can expect more impact when using threads, especially when using locks/mutexes with more load.&lt;/p&gt;
+
+&lt;h1 id=&quot;a-note-on-posix-async&quot;&gt;A note on POSIX async&lt;/h1&gt;
+&lt;p&gt;When starting this work, I was looking for &lt;a href=&quot;https://en.wikipedia.org/wiki/POSIX&quot;&gt;POSIX&lt;/a&gt; functions to perform async communications.
+As POSIX is the reference for programming on UNIX system, this was natural to look how it handles
+asynchronuous communications. Unfortunately, the asynchronuous API is a real disaster, in terms of its
+definition (for example, it uses threads or signals to handle incoming data - something to just avoid)
+or implementation (done in userland in Linux, which leads to poor performance).&lt;/p&gt;
+
+&lt;p&gt;Other people &lt;a href=&quot;http://davmac.org/davpage/linux/async-io.html&quot;&gt;also reported&lt;/a&gt; also discusses this.
+I have no idea why the current POSIX async API is so bad and why they published such a useless framework: the
+notification mechanism (signals or threads) is inefficient, counter-productive and counter-intuitive.
+I have no idea what the POSIX committee members were smoking the day they approved this.&lt;/p&gt;
+
+&lt;p&gt;The result is that today, each UNIX has now its own implementation of asynchronous communication management
+(&lt;a href=&quot;https://en.wikipedia.org/wiki/Epoll&quot;&gt;epoll for linux&lt;/a&gt;, &lt;a href=&quot;https://en.wikipedia.org/wiki/Kqueue&quot;&gt;kqueue for BSD&lt;/a&gt;
+leaving developers with no option than developing non-portable code.&lt;/p&gt;
+
+&lt;h1 id=&quot;where-you-go-from-there&quot;&gt;Where you go from there?&lt;/h1&gt;
+&lt;p&gt;No question about it, asynchronous communications are definitively the way
+to go if you are developing a massive distributed system.&lt;/p&gt;
+
+&lt;p&gt;So how to use asynchronous communication effectively with your favorite programming language?
+There are multiple frameworks available:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;For C++, &lt;a href=&quot;http://www.boost.org/&quot;&gt;boost&lt;/a&gt; includes asynchronous communication functions&lt;/li&gt;
+  &lt;li&gt;For Python &amp;gt;3.4, the &lt;a href=&quot;https://docs.python.org/3/library/asyncio.html#module-asyncio&quot;&gt;asyncio&lt;/a&gt; framework
+provides everything you need to manage asynchronous communication&lt;/li&gt;
+  &lt;li&gt;For Python &amp;lt;3.4, you have existing framework as detailed in &lt;a href=&quot;https://thehackerguidetopython.com/&quot;&gt;The Hacker’s guide to Python&lt;/a&gt; - you can also learn more in this &lt;a href=&quot;https://www.youtube.com/watch?v=7sCu4gEjH5I&quot;&gt;youtube video&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;For pure C on linux, use directly &lt;a href=&quot;https://en.wikipedia.org/wiki/Epoll&quot;&gt;epoll&lt;/a&gt;. This is not portable to any other UNIX but I bet you might not migrate to any other system now.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Code used for evaluate sync/async performance is &lt;a href=&quot;https://github.com/juli1/async-study&quot;&gt;available online&lt;/a&gt;.&lt;/p&gt;
+</description>
+        <pubDate>Sat, 15 Apr 2017 06:13:20 -0700</pubDate>
+        <link>http://julien.gunnm.org/programming/linux/2017/04/15/comparison-sync-vs-async/</link>
+        <guid isPermaLink="true">http://julien.gunnm.org/programming/linux/2017/04/15/comparison-sync-vs-async/</guid>
+        
+        <category>epoll</category>
+        
+        <category>linux</category>
+        
+        <category>sync</category>
+        
+        <category>async</category>
+        
+        
+        <category>programming</category>
+        
+        <category>linux</category>
+        
+      </item>
     
       <item>
         <title>Goodbye CMU-SEI, welcome Amazon!</title>
@@ -149,7 +383,7 @@ tests/test_flaskyelp.py .......
 
 &lt;p&gt;The imperative version looks like this (see below): you have to browse the component hierarchy and check the component category and &lt;code class=&quot;highlighter-rouge&quot;&gt;Data_Size&lt;/code&gt; value. Really, what you care in this code is the condition that filter the component. All the rest is noise, not useful but can still introduce a lot of bugs.&lt;/p&gt;
 
-&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ComponentInstance&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;findComponentRecursive&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ComponentInstance&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;si&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ComponentInstance&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;findComponentRecursive&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ComponentInstance&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;si&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
 &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
    &lt;span class=&quot;n&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ComponentInstance&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;res&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ArrayList&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ComponentInstance&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
 
@@ -166,16 +400,16 @@ tests/test_flaskyelp.py .......
    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;res&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
 
-&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ComponentInstance&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;findComponent&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;SystemInstance&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;si&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ComponentInstance&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;findComponent&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;SystemInstance&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;si&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
 &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-   &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;findComponentRecursive&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;si&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+   &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;findComponentRecursive&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;si&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
 &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
 &lt;p&gt;Let’s now have a look at the same implementation but with the lambda expression. What you really have is a method that filters the components using a predicate. Simple. Easy to read. Efficient.&lt;/p&gt;
 
-&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ComponentInstance&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;findComponent&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;SystemInstance&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;si&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ComponentInstance&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;findComponent&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;SystemInstance&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;si&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
 &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ComponentInstance&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;si&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getAllComponentInstances&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;().&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;stream&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;
       &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;filter&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;comp&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;comp&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getCategory&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ComponentCategory&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;DATA&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;GetProperties&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getDataSizeInBytes&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;comp&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;0.0&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;collect&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Collectors&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;toList&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;());&lt;/span&gt;
@@ -937,40 +1171,6 @@ int run(void)
         
         
         <category>misc</category>
-        
-      </item>
-    
-      <item>
-        <title>It is an architecture problem</title>
-        <description>&lt;p&gt;The big news today (that got my attention!) is the Washington post about &lt;a href=&quot;http://www.washingtonpost.com/sf/business/2015/11/05/net-of-insecurity-the-kernel-of-the-argument/&quot;&gt;Linus' thoughts on security, especially in the linux kernel&lt;/a&gt;.You probably do not know but today, Linux is one of the most used kernel in the world. Every Android device rely on it - most of non-critical embedded devices use it. You are probably not aware of it but you are probably using more Linux-powered devices than Windows or Mac.&lt;/p&gt;
-&lt;p&gt;The article is well written and explain most of the issues to a non-technical people. Great. But sometimes, it messes things up. For example, when the article reports that the &lt;a href=&quot;https://en.wikipedia.org/wiki/Ashley_Madison_data_breach&quot;&gt;ashley madison data breach&lt;/a&gt;, it is totally unrelated: the article focuses on the kernel, not the userspace. This is just not accurate to connect this attack with the linux kernel, it could happen with the same software running on a different kernel.&lt;/p&gt;
-&lt;p&gt;What users must understand is that security comes at a cost and while this is an important requirement for us, this is not the most critical and people do not pay attention to it until a big attack appears. Achieving high security impact other requirements and characteristics, such as performance. At the end, the question is: are you willing to have your system running slower to protect yourself against a potential security attack against your contact list that has not been discovered yet and would be fixed as soon as it is discovered?&lt;/p&gt;
-&lt;p style=&quot;text-align:center;&quot;&gt;A&lt;em&gt;re you willing to pay the cost of security without affecting other attributes?&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;It totally depends on your objective and priorities: if your system is a smartphone, you probably do not care because once discovered, the attack will be fixed and your phone will be automatically upgraded. But if you design a nuclear power plant, there is no room for a second chance, millions of people are already dead. So, you do not want that to happen at &lt;em&gt;any&lt;/em&gt; cost.&lt;/p&gt;
-&lt;p&gt;Linus made a good point on that as well: if you are running a safety-critical system, you just do not use Linux. If you are concerned about the security of Linux, solutions exists (e.g. &lt;a href=&quot;https://en.wikipedia.org/wiki/Security-Enhanced_Linux&quot;&gt;selinux&lt;/a&gt;, &lt;a href=&quot;https://grsecurity.net/&quot;&gt;grsecurity&lt;/a&gt;). And if tomorrow the kernel needs more security, the community will work the existing kernel and add the necessary layers - this is just that it has not been the focus so far or has been done through individual efforts. But at the end, if you really want to isolate software according to their criticality, this is no longer a matter of code but an architecture concern: you have to design your system and isolate components according to their security levels. Many existing approaches address that issue (for example, &lt;a href=&quot;https://en.wikipedia.org/wiki/Multiple_Independent_Levels_of_Security&quot;&gt;MILS&lt;/a&gt;) and there are many solutions to such design: gatekeepers (filtering insecure data before they are forwarded to the secure components), physical or logical separation, etc.&lt;/p&gt;
-&lt;p&gt;This is also what has been shown by the &lt;a href=&quot;http://www.wired.com/2015/07/hackers-remotely-kill-jeep-highway/&quot;&gt;attack on the Jeep&lt;/a&gt; by &lt;a href=&quot;https://www.youtube.com/watch?v=OobLb1McxnI&quot;&gt;Miller and Valasek&lt;/a&gt;: the entertainment system is connect to several networks connecting critical and non-critical devices without any filtering. By attacking the entertainment system, attackers were able to control a car from their couch. Great. Some will argue this is a software issue but I am still convinced this is an architecture issue: the entertainment system should not be connected to critical equipment without any filtering or protection mechanism.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;http://www.washingtonpost.com/sf/business/2015/11/05/net-of-insecurity-the-kernel-of-the-argument/&quot;&gt;The Washington post article&lt;/a&gt; is interesting but the whole discussion on the Linux kernel is just too much. Rather than putting the fault of an insecure Internet on linux developers, it would rather be more interesting to understand the real architecture defects of the network. And why people choose such insecure software: if Linux is so bad, why is it still soused? There are still many open questions but this article demonstrates how cybersecurity is not understood and addressed today, in our now over-connected world.&lt;/p&gt;
-</description>
-        <pubDate>Fri, 06 Nov 2015 13:04:45 -0800</pubDate>
-        <link>http://julien.gunnm.org/geek/programming/2015/11/06/it-is-an-architecture-problem/</link>
-        <guid isPermaLink="true">http://julien.gunnm.org/geek/programming/2015/11/06/it-is-an-architecture-problem/</guid>
-        
-        <category>architecture</category>
-        
-        <category>grsecurity</category>
-        
-        <category>linux</category>
-        
-        <category>mils</category>
-        
-        <category>security</category>
-        
-        <category>selinux</category>
-        
-        
-        <category>geek</category>
-        
-        <category>programming</category>
         
       </item>
     
