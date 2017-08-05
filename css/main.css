@@ -254,6 +254,10 @@ ul.listing li.listing-item a {
   margin-top: 5px;
 }
 
+.post-content img {
+        border: 1px solid black;
+}
+
 .post-content { margin: 0 0 30px; }
 
 .post-content > * { margin: 20px 0; }

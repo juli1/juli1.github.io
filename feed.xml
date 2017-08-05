@@ -5,9 +5,160 @@
     <description>Tales of a guy living in Pittsburgh addicted to Computer-Science, Running and Peanut Butter</description>
     <link>http://julien.gunnm.org/</link>
     <atom:link href="http://julien.gunnm.org/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Mon, 05 Jun 2017 22:12:28 -0700</pubDate>
-    <lastBuildDate>Mon, 05 Jun 2017 22:12:28 -0700</lastBuildDate>
-    <generator>Jekyll v3.4.3</generator>
+    <pubDate>Sat, 05 Aug 2017 15:35:50 -0700</pubDate>
+    <lastBuildDate>Sat, 05 Aug 2017 15:35:50 -0700</lastBuildDate>
+    <generator>Jekyll v3.2.1</generator>
+    
+      <item>
+        <title>How to prepare for an interview at Amazon</title>
+        <description>&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;: I am currently a Senior SDE at Amazon Web Services (and &lt;a href=&quot;https://www.linkedin.com/in/juli1&quot;&gt;I am hiring&lt;/a&gt;, my team
+is &lt;em&gt;awesome&lt;/em&gt;, please message me if you are interested). Opinions there are my own and does not represent the one from my
+employer.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://www.amazon.com&quot;&gt;Amazon&lt;/a&gt; is a major tech company and 
+is a leader in many domains, which gives a lot of jobs opportunities (like working on Cloud Computing via &lt;a href=&quot;http://aws.amazon.com&quot;&gt;Amazon
+Web Services&lt;/a&gt;, Retail via
+&lt;a href=&quot;http://www.amazon.com&quot;&gt;Amazon.com&lt;/a&gt; or Virtual Assistant via
+&lt;a href=&quot;http://alexa.amazon.com]&quot;&gt;Alexa&lt;/a&gt;. Thousands of people want to work there
+and the interview is &lt;strong&gt;hard&lt;/strong&gt;.
+This is very common to find people frustrated because they have been rejected,
+like this on &lt;a href=&quot;http://www.quora.com&quot;&gt;Quora&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/interview-rejection.png&quot; alt=&quot;Interview Rejection Post on Quora&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The interview is hard and even if you &lt;em&gt;think&lt;/em&gt; you did great, you probably did not. 
+&lt;strong&gt;Reality check&lt;/strong&gt;: this is really hard to get another perspective (see pic below). And unfortunately,
+we probably do not perform as good as we think most of the time.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/rhino.jpg&quot; alt=&quot;Rhino&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;As a senior SDE working there, I wanted to share some advices on how to prepare
+for your interview. These advices are mine and are limited to my knowledge and experience.
+Do not consider them as the only good practices, these are just my perspective (see pic above).&lt;/p&gt;
+
+&lt;h1 id=&quot;demystify-the-interview&quot;&gt;Demystify the interview&lt;/h1&gt;
+&lt;p&gt;First of all, do not focus too much on the outcome on the interview. Hope and shoot for the best
+but keep in mind it might not happen.&lt;/p&gt;
+
+&lt;p&gt;Interviewing is like dating. You prepare, you try to be at your best and you will be
+stressed. This shows that you care about the job. But if it does not work out, no worries, 
+there are plenty of fish in the sea. But if it works, you do not have
+to seal the deal right away: a company that is rejected by a candidate is likely to come back later.&lt;/p&gt;
+
+&lt;p&gt;But first thing first, you &lt;strong&gt;have to be prepared&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;h1 id=&quot;work-on-coding-know-your-basics&quot;&gt;Work on coding. Know your basics&lt;/h1&gt;
+&lt;p&gt;The general advice, no matter the tech company is to know your basics:
+algorithms, data structure, complexity, you &lt;strong&gt;have to know&lt;/strong&gt; these topics.
+If you do not know, do not even go and try, you will waste your time.&lt;/p&gt;
+
+&lt;p&gt;I would advice to read at list two books:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://elementsofprogramminginterviews.com/&quot;&gt;Elements of Programming Interviews&lt;/a&gt;: the most complete
+ resource to be prepared for algorithmic, design and other technical aspects&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.crackingthecodinginterview.com/&quot;&gt;Cracking the Code Interview&lt;/a&gt;: a
+ good second book that explains also what to expect during the interview.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;If you think you already know your basics and you do not need this, think twice.
+Reading &lt;em&gt;Elements of Programming Interviews&lt;/em&gt; will definitively refresh your skills.&lt;/p&gt;
+
+&lt;p&gt;You can also go for a mock interview, a coding bootcamp. Whatever. Be ready to write
+code on whiteboard and answer to some basic questions.&lt;/p&gt;
+
+&lt;h1 id=&quot;know-the-leadership-principles-&quot;&gt;Know the leadership principles …&lt;/h1&gt;
+&lt;p&gt;Technical (coding/system design) skills constitute 100% of a hiring decision. The other 100% is guided
+by the leadership principles. The ratio might be be accurate (no kidding!), but what I want to highlight there
+is that most books and advices do not dive deep on this topic while this is very important. Knowing
+the leadership principles shows your culture fit and your understanding of the company principles. If you do not know them:&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Learn them.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Right.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Now.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.amazon.jobs/principles&quot;&gt;https://www.amazon.jobs/principles&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Learn and show you understand them. Connect your own experience with these principles.
+Explain how you apply &lt;em&gt;customer obsession&lt;/em&gt;, &lt;em&gt;frugality&lt;/em&gt;, &lt;em&gt;bias for action&lt;/em&gt; or &lt;em&gt;learn and be curious&lt;/em&gt; in your
+actual job. Doing this will prepare you for your interview.&lt;/p&gt;
+
+&lt;p&gt;This is an important part of an interview because these principles
+drive our work every day in the company. &lt;strong&gt;Showing that you
+understand and follow these principles is key&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;Also, do not make up stories, &lt;strong&gt;be sincere, real&lt;/strong&gt;. If you do not know something, say it
+and ask for more clarifications or to have another question to evaluate you. This is very easy for an interviewer
+to see when somebody is making up a story.&lt;/p&gt;
+
+&lt;h2 id=&quot;and-do-basic-search-about-the-company&quot;&gt;… and do basic search about the company&lt;/h2&gt;
+
+&lt;p&gt;Learn about the job and do some research about the division you are interviewing for (lab126, AWS, etc.).
+Know the products they are developing. This will show you are interested about the job and you care about it.
+Do not overdo it, just know the basic information: products, target, overall development plan, major leaders, etc.&lt;/p&gt;
+
+&lt;h1 id=&quot;practice-a-lot&quot;&gt;Practice a lot&lt;/h1&gt;
+
+&lt;p&gt;Practice, every day. Start with practicing on &lt;a href=&quot;http://www.leetcode.com&quot;&gt;leetcode&lt;/a&gt;, &lt;a href=&quot;http://www.geeksforgeeks.org/&quot;&gt;geeksforgeeks&lt;/a&gt; or any other
+online coding site. Solve at least 4 problems a day (for example, 2 in the
+morning, 2 in the evening). Make sure you solved at least 4 to 5 problems in
+every category (arrays, tree, linked-list, etc.) before scheduling any interview
+(even a mock).&lt;/p&gt;
+
+&lt;p&gt;Buy a &lt;a href=&quot;https://www.amazon.com/Lifetree-Stick-Message-Sticker-78-7-Inch/dp/B015O5QOY6/ref=sr_1_3?ie=UTF8&amp;amp;qid=1500784523&amp;amp;sr=8-3&amp;amp;keywords=whiteboard+sticker&quot;&gt;whiteboard&lt;/a&gt;.
+It costs nothing (~$10) and will help you to practice in real conditions.&lt;/p&gt;
+
+&lt;p&gt;Do not bother having a coach. This is non-sense, a waste of time and money.
+Just work hard, every day for several weeks in a row. Stop coding on your
+computer and switch to the whiteboard exclusively.&lt;/p&gt;
+
+&lt;h1 id=&quot;go-out-and-interview-periodically&quot;&gt;Go out and interview periodically&lt;/h1&gt;
+
+&lt;p&gt;&lt;strong&gt;Interviewing is like a muscle&lt;/strong&gt;: you need to practice so that you do not loose your
+ability to interview. Even if you are at your dream job today, continue
+to practice to keep it strong. This is very important to keep this ability up and
+running. You can do that in different ways: you can either practice with a
+friend or just apply to positions to evaluate yourself.&lt;/p&gt;
+
+&lt;p&gt;Remember, interviewing is like dating, you can go interview but &lt;em&gt;do not have
+to&lt;/em&gt; accept any offer. If you refuse, the other party will contact
+you later to check what you are up to. And even if you refuse it, 
+having a nice offer will boost your ego and give your value
+on the market (always good to take!).&lt;/p&gt;
+
+&lt;h1 id=&quot;same-player-try-again&quot;&gt;Same player, try again&lt;/h1&gt;
+
+&lt;p&gt;Even if you prepare at your best, there is still a chance you will not be
+selected. There are many reasons a candidate will not receive an offer. Your
+goal is to be prepared at best to reduce the probably of being rejected.
+But it can happen for various reasons. &lt;strong&gt;And that is ok&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;Do not take this personal. Consider this as a learning opportunity to
+improve and re-apply few months after. After few days, you will know where you
+probably made a mistake and can work on improving. The process is generally
+oriented towards false positive, this is why recruiters will probably re-contact
+after a few months to re-apply.&lt;/p&gt;
+
+&lt;p&gt;Good luck!&lt;/p&gt;
+
+</description>
+        <pubDate>Fri, 21 Jul 2017 06:13:20 -0700</pubDate>
+        <link>http://julien.gunnm.org/amazon/techjob/interview/2017/07/21/how-to-prepare-for-an-interview-at-amazon/</link>
+        <guid isPermaLink="true">http://julien.gunnm.org/amazon/techjob/interview/2017/07/21/how-to-prepare-for-an-interview-at-amazon/</guid>
+        
+        <category>amazon</category>
+        
+        <category>interview</category>
+        
+        
+        <category>amazon</category>
+        
+        <category>techjob</category>
+        
+        <category>interview</category>
+        
+      </item>
     
       <item>
         <title>AADL In Practice is OUT!</title>
@@ -418,7 +569,7 @@ tests/test_flaskyelp.py .......
 
 &lt;p&gt;The imperative version looks like this (see below): you have to browse the component hierarchy and check the component category and &lt;code class=&quot;highlighter-rouge&quot;&gt;Data_Size&lt;/code&gt; value. Really, what you care in this code is the condition that filter the component. All the rest is noise, not useful but can still introduce a lot of bugs.&lt;/p&gt;
 
-&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ComponentInstance&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;findComponentRecursive&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ComponentInstance&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;si&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ComponentInstance&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;findComponentRecursive&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ComponentInstance&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;si&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
 &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
    &lt;span class=&quot;n&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ComponentInstance&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;res&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ArrayList&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ComponentInstance&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
 
@@ -435,16 +586,16 @@ tests/test_flaskyelp.py .......
    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;res&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
 
-&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ComponentInstance&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;findComponent&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;SystemInstance&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;si&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ComponentInstance&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;findComponent&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;SystemInstance&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;si&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
 &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-   &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;findComponentRecursive&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;si&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+   &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;findComponentRecursive&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;si&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
 &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
 &lt;p&gt;Let’s now have a look at the same implementation but with the lambda expression. What you really have is a method that filters the components using a predicate. Simple. Easy to read. Efficient.&lt;/p&gt;
 
-&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ComponentInstance&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;findComponent&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;SystemInstance&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;si&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ComponentInstance&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;findComponent&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;SystemInstance&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;si&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
 &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ComponentInstance&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;si&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getAllComponentInstances&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;().&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;stream&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;
       &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;filter&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;comp&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;comp&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getCategory&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ComponentCategory&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;DATA&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;GetProperties&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getDataSizeInBytes&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;comp&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;0.0&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;collect&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Collectors&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;toList&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;());&lt;/span&gt;
@@ -1144,44 +1295,6 @@ int run(void)
         <category>misc</category>
         
         <category>programming</category>
-        
-      </item>
-    
-      <item>
-        <title>Paris Charles de Gaulle Airport: a metaphor of the evolution of France</title>
-        <description>&lt;p&gt;As a researcher working with an international standard committee, publishing papers and attending international conferences, I travel a lot. I often visit Europe, and, coming from the USA, the Paris Charles de Gaulle (CDG) airport is where I take most of my connecting flights. Last, as a french-native, I sometimes come back in the country to visit my family and then, land at this airport.&lt;/p&gt;
-
-&lt;img class=&quot;  wp-image-2106 aligncenter&quot; src=&quot;/assets/cdgdropoff.jpg&quot; alt=&quot;cdgdropoff&quot; width=&quot;339&quot; height=&quot;452&quot; /&gt;
-&lt;p&gt;The way to the passenger drop-off. You have big baggages? Be ready for a nice workout and work on your arms!&lt;/p&gt;
-
-&lt;p&gt;As a french citizen and having lived in this country for more than 27 years, I am ashamed of this airport. It does not make justice to this country and its capital, which deserve better than that. This airport reproduces everything you can hate about france.&lt;/p&gt;
-&lt;p&gt;I regularly took this airport since 2008. I tried to provide feedback, I thought that it might help the airport to improve itself. This airport is also rated as one of the worst in Europe (see &lt;a href=&quot;http://travel.cnn.com/explorations/life/10-most-hated-airports-324645/&quot;&gt;here on CNN &lt;/a&gt;or here on &lt;a href=&quot;http://www.offtoeurope.com/europes-best-and-worst-airports/&quot;&gt;offeurope&lt;/a&gt; or here ). So, with this in mind and also with regularly feedback from its users (I hope I was not the same to send feedback), I was hoping progress would have happened over the last years. But after 8 more years, all what I see is just an airport that is a real mess, where passengers get lost, transiting from two gates within the same terminal can take more than 30 minutes and does not even provide basic services such an airport deserves. This is what you want to show to the visitors of the most visited capital in the world? Probably not.&lt;/p&gt;
-&lt;p&gt;For example, let's see at some of the reasons the airport is so bad:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;accessibility between terminals&lt;/strong&gt;: terminals are a mess and for some terminals, you need to take a bus to move within the terminal. But not for all terminals! It can take up to 30 to 45 minutes to navigate within the same terminal. So, if you have to switch terminals, at least one hour is a reasonable bet&lt;/li&gt;
-&lt;li&gt;a&lt;strong&gt;ccessibility within the airport&lt;/strong&gt;: stairs and lift are very very narrow and disabled people might have a hard time moving. Like everything in france, everything is narrow and small (french have this tendency to associate &quot;petit&quot; with all the words). Unfortunately, tourists coming for 2 weeks have big baggages. So, using the stairs is just a mess and most of the times, this is just a pain to carry your baggage. Also, when you arrive at some terminal, you have to use stairs and there are only small lift if you have heavy baggage or if you are disabled. Welcome in france, the country where we welcome everybody, especially the people in good health and will not stay too long!&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;accessibility of restrooms&lt;/strong&gt;: there are very limited, their maintenance is terrible so that you might not even use them. Most of them no longer have soap and dryer are not working. I understand no why my US friends think french people do not clean themselves&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;lack of information of baggage claims&lt;/strong&gt;: when you exit your flights, signs for baggage claims and information about where to find your baggage are hidden and not available. On my last flight, I found my baggage on a random ramp. Sure, there was a screen to give information but there was nothing on the screen itself. Ah, the pleasure to find your own baggage at 9pm!&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;lack of information at border controls&lt;/strong&gt;: recently, during a connection, I got stuck in a corridor because of ID control. While I understand the airport has no control on the requirements of french authorities, it could at least provide accurate information to passengers. Instead of waiting 30 minutes while connecting flights in a corridor without giving any information, I would expect to wait in a big hall/room where the ID control takes places (what you have in most US airport) and where people can seat, go to the restroom or have access to water (if there was any water fountain). But as the room dedicated to ID check is as big as the stairs (remember, in france, everything is small), there is no space and so, people wait in line in a corridor and just wondering what is going on. This is probably a way to show to our tourists how dedicated we are to them.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;wireless&lt;/strong&gt;: the wireless requires to authenticate, give your name, e-mail, nationality, etc so that they can trace you and send you obnoxious ads. Fine. But you have to authenticate every time you move and your device connects to a new access point. So, you land: you have to authenticate. You try to access again when moving: you have to authenticate again every minute. You arrive at your gate: authenticate again. I think this is a way to promote the Minitel, a french thing that was supposed to beat the internet. Seriously, this shows the incompetence of the airport to provide a reasonably sized and user-friendly wireless network.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;availability of water fountains&lt;/strong&gt;: most airports now provide water fountains. This is important for an economic and ecological perspectives: why do you want to buy plastic bottles if you carry your own? And why paying for water, this is not a common good, especially when the Mayor of Paris previously declared the tap water was as good as bottled water? While there are plenty of water fountains in other airports (probably one next to every restroom in the USA), I found one or two in the whole airport. No kidding. I tried to reach out on twitter about this issue, the airport staff told me they can give me a map of the water fountains. So, just to make sure: every tourist that want water would need to contact the airport to find a water fountain! Please do not be too thirsty and take enough time: if you have to go to another gate, it might take more than 30 minutes to fill your bottle and so, more than one hour to come back to your gate. France is definitively a leader in the green economy!&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;img class=&quot;  wp-image-2111 aligncenter&quot; src=&quot;/assets/cdgbus.jpg&quot; alt=&quot;cdgbus.jpg&quot; width=&quot;503&quot; height=&quot;377&quot; /&gt; &lt;p&gt;Taking the terminal E2? This is the bus map with all the drops. Ask an attendant at the airport, some are not aware there is a bus!&lt;/p&gt;
-
-&lt;p&gt;These are just some issues I recurrently experienced as a user of the airport. I am ashamed to know that tourists arrive to this country by such a airport. It should be a convenient, pleasant and useful place that welcomes and helps you when you arrive. It should be easy to use and navigate and go to the city (and I did not even talk about transportation to the city which is also a real shame). Not the actual mess we see every day and that &lt;a href=&quot;http://travel.cnn.com/explorations/life/10-most-hated-airports-324645/&quot;&gt;people actually hates&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;I do not understand why the company that manages the airport made this mess. The airport is not too old and I do not understand why there are so many accessibility issues (people using the terminal 2F can probably testify about the restroom accessibility). This is the hub of the most visited capital, so, having a good airport is a strategic investment. Other European cities develop very nice airports (particularly &lt;a href=&quot;http://www.offtoeurope.com/europes-best-and-worst-airports/&quot;&gt;Amsterdam with Schiphol&lt;/a&gt;, very convenient), which proves making a big HUB with a lot of tourist transits is possible.&lt;/p&gt;
-&lt;p&gt;What astonished me is that the evolution of this airport sounds exactly as the evolution of this country. We changed the appearance, it looks nice from the outside (there are a lot of fancy shop in the airport, you can buy all the bullshit stuff that makes france famous) but they did not invest in the fundamentals: moving, getting around, services, connecting and having information. This is also the general feeling I have when I see this country: a strong focus on trying to work on the unnecessary cosmetics details whereas the fundamentals are still being neglected. Beyond these issues is the denial of the people: when you tell people that the airport have issues, they reply to you that there are no issue and that you are doing things wrong. They are telling you that the airport is not the problem and that you are the problem. Unfortunately and currently, facts and numbers showed the reality: the airport is considered as one of the worst in the world and it seems that france is definitively a sinking ship people are trying to escape.&lt;/p&gt;
-&lt;p&gt;Sad.&lt;/p&gt;
-</description>
-        <pubDate>Mon, 01 Feb 2016 06:01:02 -0800</pubDate>
-        <link>http://julien.gunnm.org/frenchy%20stuff/misc/2016/02/01/paris-charles-de-gaulle-airport-a-metaphor-of-the-evolution-of-france/</link>
-        <guid isPermaLink="true">http://julien.gunnm.org/frenchy%20stuff/misc/2016/02/01/paris-charles-de-gaulle-airport-a-metaphor-of-the-evolution-of-france/</guid>
-        
-        
-        <category>frenchy stuff</category>
-        
-        <category>misc</category>
         
       </item>
     
