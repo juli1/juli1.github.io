@@ -2,11 +2,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Julien Delange</title>
-    <description>Tales of a guy living in Pittsburgh addicted to Computer-Science, Running and Peanut Butter</description>
+    <description>Harder, Better, Faster, Stronger</description>
     <link>http://julien.gunnm.org/</link>
     <atom:link href="http://julien.gunnm.org/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Sat, 05 Aug 2017 15:35:50 -0700</pubDate>
-    <lastBuildDate>Sat, 05 Aug 2017 15:35:50 -0700</lastBuildDate>
+    <pubDate>Wed, 13 Sep 2017 23:09:37 -0700</pubDate>
+    <lastBuildDate>Wed, 13 Sep 2017 23:09:37 -0700</lastBuildDate>
     <generator>Jekyll v3.2.1</generator>
     
       <item>
@@ -173,7 +173,7 @@ and reuse for their own needs. I hope this will be useful for the software engin
 
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;https://www.amazon.com/dp/B071WHRJY3&quot;&gt;Amazon e-book&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://www.aadl-info.com&quot;&gt;Book website&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.aadl-book.com&quot;&gt;Book website&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://www.facebook.com/aadlinpractice/&quot;&gt;Like the book on facebook&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
