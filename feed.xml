@@ -5,9 +5,9 @@
     <description>Harder, Better, Faster, Stronger</description>
     <link>http://julien.gunnm.org/</link>
     <atom:link href="http://julien.gunnm.org/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Wed, 13 Sep 2017 23:09:37 -0700</pubDate>
-    <lastBuildDate>Wed, 13 Sep 2017 23:09:37 -0700</lastBuildDate>
-    <generator>Jekyll v3.2.1</generator>
+    <pubDate>Thu, 26 Oct 2017 22:38:00 -0700</pubDate>
+    <lastBuildDate>Thu, 26 Oct 2017 22:38:00 -0700</lastBuildDate>
+    <generator>Jekyll v3.1.6</generator>
     
       <item>
         <title>How to prepare for an interview at Amazon</title>
@@ -92,7 +92,7 @@ understand and follow these principles is key&lt;/strong&gt;.&lt;/p&gt;
 and ask for more clarifications or to have another question to evaluate you. This is very easy for an interviewer
 to see when somebody is making up a story.&lt;/p&gt;
 
-&lt;h2 id=&quot;and-do-basic-search-about-the-company&quot;&gt;… and do basic search about the company&lt;/h2&gt;
+&lt;h2 id=&quot;-and-do-basic-search-about-the-company&quot;&gt;… and do basic search about the company&lt;/h2&gt;
 
 &lt;p&gt;Learn about the job and do some research about the division you are interviewing for (lab126, AWS, etc.).
 Know the products they are developing. This will show you are interested about the job and you care about it.
@@ -489,8 +489,7 @@ virtualenv venv
 pip install flask
 python -m flask initdb
 python -m flask run
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;During this sequence of commands, you checkout the project, install the virtual environment, activate it, install the dependency, initialize the database and run the program.&lt;/p&gt;
 
@@ -513,9 +512,9 @@ writing requirements to flaskyelp.egg-info/requires.txt
 writing flaskyelp.egg-info/PKG-INFO
 writing top-level names to flaskyelp.egg-info/top_level.txt
 writing dependency_links to flaskyelp.egg-info/dependency_links.txt
-reading manifest file &lt;span class=&quot;s1&quot;&gt;'flaskyelp.egg-info/SOURCES.txt'&lt;/span&gt;
-reading manifest template &lt;span class=&quot;s1&quot;&gt;'MANIFEST.in'&lt;/span&gt;
-writing manifest file &lt;span class=&quot;s1&quot;&gt;'flaskyelp.egg-info/SOURCES.txt'&lt;/span&gt;
+reading manifest file &lt;span class=&quot;s1&quot;&gt;&#39;flaskyelp.egg-info/SOURCES.txt&#39;&lt;/span&gt;
+reading manifest template &lt;span class=&quot;s1&quot;&gt;&#39;MANIFEST.in&#39;&lt;/span&gt;
+writing manifest file &lt;span class=&quot;s1&quot;&gt;&#39;flaskyelp.egg-info/SOURCES.txt&#39;&lt;/span&gt;
 running build_ext
 &lt;span class=&quot;o&quot;&gt;=======================================================&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;test &lt;/span&gt;session starts &lt;span class=&quot;o&quot;&gt;=======================================================&lt;/span&gt;
 platform linux2 -- Python 2.7.12+, pytest-3.0.3, py-1.4.31, pluggy-0.4.0
@@ -526,8 +525,7 @@ tests/test_flaskyelp.py .......
 
 &lt;span class=&quot;o&quot;&gt;====================================================&lt;/span&gt; 7 passed &lt;span class=&quot;k&quot;&gt;in &lt;/span&gt;0.22 seconds &lt;span class=&quot;o&quot;&gt;=====================================================&lt;/span&gt;
 &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;julien@akira]/home/julien/git/flaskyelp#
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;h1 id=&quot;whats-next&quot;&gt;What’s next?&lt;/h1&gt;
 
@@ -569,7 +567,7 @@ tests/test_flaskyelp.py .......
 
 &lt;p&gt;The imperative version looks like this (see below): you have to browse the component hierarchy and check the component category and &lt;code class=&quot;highlighter-rouge&quot;&gt;Data_Size&lt;/code&gt; value. Really, what you care in this code is the condition that filter the component. All the rest is noise, not useful but can still introduce a lot of bugs.&lt;/p&gt;
 
-&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ComponentInstance&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;findComponentRecursive&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ComponentInstance&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;si&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ComponentInstance&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;findComponentRecursive&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ComponentInstance&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;si&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
 &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
    &lt;span class=&quot;n&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ComponentInstance&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;res&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ArrayList&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ComponentInstance&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
 
@@ -586,22 +584,20 @@ tests/test_flaskyelp.py .......
    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;res&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
 
-&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ComponentInstance&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;findComponent&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;SystemInstance&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;si&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ComponentInstance&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;findComponent&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;SystemInstance&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;si&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
 &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-   &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;findComponentRecursive&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;si&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+   &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;findComponentRecursive&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;si&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
 &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;Let’s now have a look at the same implementation but with the lambda expression. What you really have is a method that filters the components using a predicate. Simple. Easy to read. Efficient.&lt;/p&gt;
 
-&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ComponentInstance&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;findComponent&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;SystemInstance&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;si&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ComponentInstance&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;findComponent&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;SystemInstance&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;si&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
 &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ComponentInstance&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;si&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getAllComponentInstances&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;().&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;stream&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;
       &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;filter&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;comp&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;comp&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getCategory&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ComponentCategory&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;DATA&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;GetProperties&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getDataSizeInBytes&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;comp&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;0.0&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;collect&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Collectors&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;toList&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;());&lt;/span&gt;
 &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;I am still reading code examples about Java 8 and using lambda. I am convinced it can help a lot to write better code, increase productivity and reduce bugs. If you are writing analysis plugins for AADL, I would definitively recommend to at list &lt;a href=&quot;https://docs.oracle.com/javase/tutorial/java/javaOO/lambdaexpressions.html&quot;&gt;have a look at the tutorial&lt;/a&gt;.&lt;/p&gt;
 </description>
@@ -645,22 +641,19 @@ tests/test_flaskyelp.py .......
 &lt;p&gt;The Beaglebone supports what we call a Device Tree Overlay. Long story short, this is a way to change the usage of each PIN. You then have to use the appropriate overlay to use the UART1. The default settings do not work, and you have to issue the following command to enable UART1.&lt;/p&gt;
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;echo ADAFRUIT-UART1 &amp;gt; /sys/devices/bone_capemgr.*/slots
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;Then, you can connect on the serial and issue whatever you want. Let’s say the UART1 of the Beaglebone Black is connected to /dev/ttyUSB1, you can then connected on screen and type anything.&lt;/p&gt;
 
 &lt;p&gt;On your computer, run the following command:&lt;/p&gt;
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;screen  /dev/ttyO1 115200
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;On the Beaglebone Black, run the following command:&lt;/p&gt;
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;screen /dev/ttyUSB1 115200
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;Type stuff on both screen, you should see what is sent/received.&lt;/p&gt;
 
@@ -673,8 +666,7 @@ tests/test_flaskyelp.py .......
 &lt;p&gt;Edit the file &lt;em&gt;kernel/include/plat/am335x/plat/machine/devices.h&lt;/em&gt; and add the following line.&lt;/p&gt;
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;#define UART1_PADDR     0x48022000
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;Then, in &lt;em&gt;kernel/src/plat/am335x/machine/hardware.c&lt;/em&gt; you need to add the support for all UARTs. I found &lt;a href=&quot;https://e2e.ti.com/support/embedded/starterware/f/790/t/214547&quot;&gt;online a nice piece of code&lt;/a&gt; that configures all UARTs. I imported it directly into the kernel. You can see the code in &lt;a href=&quot;/assets/sel4-kernel-uart1bb.diff&quot;&gt;my patch&lt;/a&gt;.&lt;/p&gt;
 
@@ -735,8 +727,7 @@ assembly
     drv.mem_attributes       = &quot;0x48022000:0x1000&quot;;
   }
 }
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;In this declaration, the assembly has two interesting component:&lt;/p&gt;
 
@@ -781,8 +772,7 @@ assembly
         }
         return 0;
 }
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;We imported some code to initialize and use UART1. The CAmkES code generator mapped the 0x48022000 address (defines in the CAmkES description for the hardware component) in the uartmem component. We assigned the address of the &lt;em&gt;uartmem&lt;/em&gt; variable into &lt;em&gt;devmem&lt;/em&gt;. We can then manipulate the device using this address.&lt;/p&gt;
 
@@ -798,23 +788,20 @@ assembly
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;mw.l 0x44E10980 0x30
 mw.l 0x44E10984 0x00
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;This would be enough. It seems it cannot work in the component itself. On the other hand, as discussed in &lt;a href=&quot;http://sel4.systems/pipermail/devel/2016-June/000854.html&quot;&gt;this post&lt;/a&gt; it seems you can avoid that by inserting the following line in &lt;em&gt;platform_init()&lt;/em&gt;.&lt;/p&gt;
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;*(volatile uint32_t*)0x44E10980 = 0x30;
 *(volatile uint32_t*)0x44E10984 = 0x00;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;Then, time to load the binary. I used a network connection to do that.&lt;/p&gt;
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;dhcp ${loadaddr} 192.168.1.1:sel4.img
 
 go ${loadaddr}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;Then, just issue a &lt;em&gt;cat /dev/ttyUSB1&lt;/em&gt; and &lt;em&gt;voila!&lt;/em&gt;. The following picture show what I received from the UART1 of the BeagleBone Black.&lt;/p&gt;
 
@@ -825,16 +812,14 @@ go ${loadaddr}
 &lt;p&gt;Sometimes, you need to debug and trace when things are going wrong. You might experience this. I would recommend the &lt;a href=&quot;https://github.com/SEL4PROJ/sel4-tutorials/blob/master/docs/seL4Tutorial.pdf&quot;&gt;seL4 tutorial&lt;/a&gt; that provides some useful direction. When having an exception in a partition, the following command is very useful.&lt;/p&gt;
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;arm-none-eabi-objdump -dS /path/to/your/binary | less
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;In a nutshell, it gives you the assembly code, its address and with the associated C line. So, you can exactly know where to look for when you get the address related to a crash.&lt;/p&gt;
 
 &lt;p&gt;For example, when debugging the UART1 driver in the partition, I used this command a lot. Very useful. You might need it!&lt;/p&gt;
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;arm-none-eabi-objdump -dS build/arm/am335x/pingbeagleboneinstance/Cons_PingMe.instance.bin | less
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;h1 id=&quot;special-thanks&quot;&gt;Special thanks&lt;/h1&gt;
 
@@ -1085,8 +1070,7 @@ component Timer {
   emits sig Hello1_Thr_activator;
   emits sig Hello2_Thr_activator;
 }
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;The &lt;code class=&quot;highlighter-rouge&quot;&gt;Timerbase&lt;/code&gt; component accesses two &lt;code class=&quot;highlighter-rouge&quot;&gt;IOPort&lt;/code&gt; that are hardware register/memories used to control the timer. This is architecture-dependent and related to the &lt;abbr title=&quot;Programmable Interval Interrupt&quot;&gt;PIT&lt;/abbr&gt;. The &lt;code class=&quot;highlighter-rouge&quot;&gt;irq&lt;/code&gt; corresponds to the interrupt sent by the system.&lt;/p&gt;
 
@@ -1097,8 +1081,7 @@ component Timer {
   control;
   consumes sig activator;
 }
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;Then, we need to create an assembly that integrates and configures all components. The assembly corresponds to the components configuration showed in the picture before.&lt;/p&gt;
 
@@ -1134,8 +1117,7 @@ assembly {
     timerbase.channel0_attributes = &quot;0x40:0x40&quot;;
   }
 }
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;We define the timer component (one of type &lt;code class=&quot;highlighter-rouge&quot;&gt;Timerbase&lt;/code&gt; and one of type &lt;code class=&quot;highlighter-rouge&quot;&gt;Timer&lt;/code&gt;) as well as two software components. The connections &lt;code class=&quot;highlighter-rouge&quot;&gt;notification0&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;notification1&lt;/code&gt; are the one that will activate the tasks through a signal, to notify them that they can be activated.&lt;/p&gt;
 
@@ -1167,8 +1149,7 @@ assembly {
 
   irq_reg_callback(irq_callback, NULL);
 }
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;Let’s have a look at the &lt;code class=&quot;highlighter-rouge&quot;&gt;HelloThreadImpl&lt;/code&gt; code now. It should be pretty obvious with an infinite loop waiting for a signal and executing a piece of code. The code is provided below.&lt;/p&gt;
 
@@ -1192,8 +1173,7 @@ int run(void)
   }
   return 0;
 }
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;h1 id=&quot;getting-the-code--run-it&quot;&gt;Getting the code &amp;amp; run it&lt;/h1&gt;
 &lt;p&gt;The code is availabe &lt;a href=&quot;/assets/sel4-timer.tgz&quot;&gt;there&lt;/a&gt;&lt;/p&gt;
@@ -1265,12 +1245,12 @@ int run(void)
 &lt;p&gt;In Linux, the GPIO can be controlled using the SysFS abstraction layer. You can access it through&lt;em&gt; /sys/class/gpio. &lt;/em&gt;I am using the pre-installed debian software on the board.&lt;/p&gt;
 &lt;p&gt;To control a particular pin, you must export it. You do it by writing the value of the pin you want to export into &lt;em&gt;/sys/class/gpio/export&lt;/em&gt;. Then, a new directory is &lt;em&gt;/sys/class/gpio/gpio&amp;lt;PIN-NUMBER&amp;gt;&lt;/em&gt; is created with many different files to control the pin (direction, value, etc.).&lt;/p&gt;
 &lt;p&gt;In our example, the &lt;strong&gt;pin 14 from the bank P9&lt;/strong&gt; correspond to &lt;strong&gt;GPIO 50&lt;/strong&gt;. You can see the corresponding mapping between the pin and GPIO number in the &lt;a href=&quot;http://beagleboard.org/support/bone101&quot;&gt;beaglebone 101 &lt;/a&gt;document.&lt;/p&gt;
-&lt;p&gt;So, let's start by exporting this pin:&lt;/p&gt;
+&lt;p&gt;So, let&#39;s start by exporting this pin:&lt;/p&gt;
 &lt;pre&gt;echo 50 &amp;gt; /sys/class/gpio/export&lt;/pre&gt;
 &lt;p&gt;Then, a new directory /sys/class/gpio/gpio50 is created.&lt;/p&gt;
-&lt;p&gt;Let's set its direction to out&lt;/p&gt;
+&lt;p&gt;Let&#39;s set its direction to out&lt;/p&gt;
 &lt;pre&gt;echo out &amp;gt; /sys/class/gpio/gpio50/direction&lt;/pre&gt;
-&lt;p&gt;And let's set its value to 1&lt;/p&gt;
+&lt;p&gt;And let&#39;s set its value to 1&lt;/p&gt;
 &lt;pre&gt;echo 1 &amp;gt; /sys/class/gpio/gpio50/value&lt;/pre&gt;
 &lt;p&gt;&amp;nbsp;&lt;/p&gt;
 &lt;p&gt;And finally, if you want to make the LED blinks every second, you can use this command:&lt;/p&gt;
