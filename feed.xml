@@ -5,9 +5,142 @@
     <description>Harder, Better, Faster, Stronger</description>
     <link>http://julien.gunnm.org/</link>
     <atom:link href="http://julien.gunnm.org/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Thu, 26 Oct 2017 22:38:00 -0700</pubDate>
-    <lastBuildDate>Thu, 26 Oct 2017 22:38:00 -0700</lastBuildDate>
+    <pubDate>Sat, 18 Nov 2017 17:30:49 -0800</pubDate>
+    <lastBuildDate>Sat, 18 Nov 2017 17:30:49 -0800</lastBuildDate>
     <generator>Jekyll v3.1.6</generator>
+    
+      <item>
+        <title>Learning rust, implementing a webserver</title>
+        <description>&lt;h1 id=&quot;introduction&quot;&gt;Introduction&lt;/h1&gt;
+&lt;p&gt;I wanted to learn &lt;a href=&quot;https://www.rust-lang.org&quot;&gt;rust&lt;/a&gt; months ago. I remember
+attending a talk in Pittsburgh several years ago about rust and I liked the idea
+that instead of re-implementing the wheel, it tries to solve issues other new
+languages never try to fix (or did it in an efficient/ineffective way).&lt;/p&gt;
+
+&lt;p&gt;I spent some time over the last two weeks to learn the langage and complete a
+project in rust: a webserver. Nothing really fancy, it was rather a way to learn
+the language. I believe the best way to learn a new language is to complete few
+new projects.&lt;/p&gt;
+
+&lt;p&gt;This is the result: I am able to run a webserver that can host this blog, as
+shown in the picture below.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/rust-webserver-browser.png&quot; alt=&quot;Blog running on rust webserver&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;And this is basically how to launch it:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/rust-webserver-term.png&quot; alt=&quot;Terminal with Cargo&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;In this article, I will talk about this project and share some thoughts about
+rust.&lt;/p&gt;
+
+&lt;h1 id=&quot;a-web-server-in-rust&quot;&gt;A web server in rust&lt;/h1&gt;
+
+&lt;h2 id=&quot;specifications&quot;&gt;Specifications&lt;/h2&gt;
+&lt;p&gt;I wanted to implement a simple webserver in rust to understand/practice/use the
+language. The goal was to be able to have a server able to show a static
+website. This is an experiment and this should absolutely &lt;strong&gt;not be used in
+production&lt;/strong&gt;. This project is useful if you are new to rust and/or want a
+codebase about networking features in rust (such as using the
+&lt;a href=&quot;https://docs.rs/mio&quot;&gt;mio&lt;/a&gt; or &lt;a href=&quot;https://doc.rust-lang.org/getopts&quot;&gt;getops&lt;/a&gt;
+crates).&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Non goals&lt;/strong&gt;: full http support, large file handling, security (you can access
+the full FS ).&lt;/p&gt;
+
+&lt;h2 id=&quot;get-the-code-and-run-it&quot;&gt;Get the code and run it&lt;/h2&gt;
+&lt;p&gt;The code is publicly available on github at:
+&lt;a href=&quot;https://github.com/juli1/rust-webserver&quot;&gt;https://github.com/juli1/rust-webserver&lt;/a&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# git clone https://github.com/juli1/rust-webserver.git
+# cd rust-webserver
+# cargo build &amp;amp;&amp;amp; cargo run -- -p 9065 -l 127.0.0.1 --rootdir `pwd`
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Then, open your browser and go to
+&lt;a href=&quot;http://localhost:9065/Cargo.toml&quot;&gt;http://localhost:9065/Cargo.toml&lt;/a&gt;. You will
+be able to see the file from the source directory.&lt;/p&gt;
+
+&lt;h2 id=&quot;details-of-the-code&quot;&gt;Details of the code&lt;/h2&gt;
+
+&lt;p&gt;The code is separated into four files:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;server.rs&lt;/code&gt; is about all the server part to listen on the socket,
+communication handling and so on.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;client.rs&lt;/code&gt; is about handling request/reply for a particular connection.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;protocol.rs&lt;/code&gt; contains all the code with all the data structure related to the
+requests and replies.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;main.rs&lt;/code&gt; checks the options passed to the command line, create a server and
+… nothing else!&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The code does not handles all HTTP headers. The server supports HTTP/1.0 only.
+The parsing of command is very basic. The server supports basically two file
+types: html, png and jpg. Yes, this is very basic but met my goal: it was an
+awesome way to learn rust and I loved it!&lt;/p&gt;
+
+&lt;h1 id=&quot;feedback-about-rust&quot;&gt;Feedback about rust&lt;/h1&gt;
+
+&lt;p&gt;I really like rust. At first, the language brings a lot of frustration because of all the
+restrictions and scope, borrow, etc. You really need to undertand these concepts
+to make any progress. Once you pass the first hours digging online about the
+errorr messages (that are pretty clear by the way), you realize how the language
+help you to bring more assurance that your code is safe and free of errors. It
+reminds me several aspects of
+&lt;a href=&quot;https://en.wikipedia.org/wiki/Ada_(programming_language)&quot;&gt;Ada&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Rust is what we should be expecting for the next generation of language to do
+low-level/system programming (program like webservers, file servers, etc.). It will probably not be
+the language I will use if I design a web application. On the other hand, this
+will probably be my choice if I need to do a web-server, file server or any
+program and needs to be safe, reliable and performant.&lt;/p&gt;
+
+&lt;h2 id=&quot;rust-pros&quot;&gt;Rust: pros&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Compiler error messages&lt;/strong&gt;: Debug messages are clean and useful. We are very far from C++ compilers that
+produces a tons of useless error messages that hide the cause of the issue. When
+starting in Rust, you will have a tons of compilation errors but error messages
+will be easy to understand to fix your program and make progress.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Speed&lt;/strong&gt;: programs written in Rust seems fast. I did not benchmark but this
+seems very promising.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Predictability&lt;/strong&gt;: rust reminds me Ada: it is painful to write your first
+program because of all the language restrictions. However, once it compiles, it
+generally works as expected. I had very few crashes during the development of
+the webserver but I had a ton of error messages before it even starts working.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Ownership&lt;/strong&gt; : the concept behind ownership is painful at first but after a
+while, it is easy to understand how powerful it can be.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;rust-cons&quot;&gt;Rust: cons&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Lifetime&lt;/strong&gt;: the idea behind &lt;a href=&quot;https://rustbyexample.com/scope/lifetime.html&quot;&gt;lifetime&lt;/a&gt;
+is really powerful and useful. The language &lt;em&gt;needs&lt;/em&gt; have a way to annotate the
+lifetime of objects/variables but the syntax is horrible and the whole mechanism
+is ultra verbose.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;useful-resources&quot;&gt;Useful resources&lt;/h1&gt;
+&lt;p&gt;These are some resources I used during my search for information on rust.&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://rustbyexample.com/&quot;&gt;Rust By Example&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://blog.burntsushi.net/rust-error-handling/&quot;&gt;Error Handing in rust&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.jmarshall.com/easy/http/&quot;&gt;HTTP made very easy&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Sat, 18 Nov 2017 05:13:20 -0800</pubDate>
+        <link>http://julien.gunnm.org/rust/2017/11/18/learning-rust-in-practice-webserver-in-rust/</link>
+        <guid isPermaLink="true">http://julien.gunnm.org/rust/2017/11/18/learning-rust-in-practice-webserver-in-rust/</guid>
+        
+        <category>rust</category>
+        
+        <category>webserver</category>
+        
+        
+        <category>rust</category>
+        
+      </item>
     
       <item>
         <title>How to prepare for an interview at Amazon</title>
@@ -1219,62 +1352,6 @@ int run(void)
         <category>geek</category>
         
         <category>sel4</category>
-        
-      </item>
-    
-      <item>
-        <title>BeagleBoard Black (BBB) and GPIO</title>
-        <description>&lt;p&gt;When you buy a &lt;a href=&quot;http://beagleboard.org/black&quot;&gt;Beagleboard Black&lt;/a&gt; (a.k.a. BBB), it comes with a pre-installed version of debian with more or less everything you need to get started. I purchased the board for another purpose and develop seL4 components on top of it. But before starting to develop on seL4, it is useful to know exactly how the board works: once you know how the board works, you can start to write your code and know for sure that the bug comes from your code.&lt;/p&gt;
-&lt;p&gt;In this article, I will explain quickly how to set up a simple circuit to test the GPIO of the beaglebone.&lt;/p&gt;
-
-
-&lt;img class=&quot;  wp-image-2231 aligncenter&quot; src=&quot;/assets/cape-headers-digital.png&quot; alt=&quot;cape-headers-digital.png&quot; width=&quot;300&quot; height=&quot;225&quot; /&gt;
-
-&lt;p&gt;Mapping between pin numbers and GPIO ID from&lt;a href=&quot;http://beagleboard.org/support/bone101&quot;&gt; bone 101&lt;/a&gt;
-&lt;/p&gt;
-
-&lt;h1&gt;Setting up the circuit&lt;/h1&gt;
-&lt;p&gt;To test the circuit, you need only a breadboard, a resistance and a LED. Simple.&lt;/p&gt;
-&lt;p&gt;Connect the PIN 14 (which is mapped to GPIO id 50, see table) from bank P9 (green cable on the picture) on the breadboard. Connect it to a resistance and a LED. The other pin of the LED is then connected to the ground (last PIN of P9).&lt;/p&gt;
-
-&lt;img class=&quot;  wp-image-2224 aligncenter&quot; src=&quot;/assets/board.jpg&quot; alt=&quot;board&quot; width=&quot;460&quot; height=&quot;345&quot; /&gt;
-&lt;p&gt;Wiring scheme of the example&lt;/p&gt;
-
-
-&lt;h1&gt;Controlling the GPIO in Linux&lt;/h1&gt;
-&lt;p&gt;In Linux, the GPIO can be controlled using the SysFS abstraction layer. You can access it through&lt;em&gt; /sys/class/gpio. &lt;/em&gt;I am using the pre-installed debian software on the board.&lt;/p&gt;
-&lt;p&gt;To control a particular pin, you must export it. You do it by writing the value of the pin you want to export into &lt;em&gt;/sys/class/gpio/export&lt;/em&gt;. Then, a new directory is &lt;em&gt;/sys/class/gpio/gpio&amp;lt;PIN-NUMBER&amp;gt;&lt;/em&gt; is created with many different files to control the pin (direction, value, etc.).&lt;/p&gt;
-&lt;p&gt;In our example, the &lt;strong&gt;pin 14 from the bank P9&lt;/strong&gt; correspond to &lt;strong&gt;GPIO 50&lt;/strong&gt;. You can see the corresponding mapping between the pin and GPIO number in the &lt;a href=&quot;http://beagleboard.org/support/bone101&quot;&gt;beaglebone 101 &lt;/a&gt;document.&lt;/p&gt;
-&lt;p&gt;So, let&#39;s start by exporting this pin:&lt;/p&gt;
-&lt;pre&gt;echo 50 &amp;gt; /sys/class/gpio/export&lt;/pre&gt;
-&lt;p&gt;Then, a new directory /sys/class/gpio/gpio50 is created.&lt;/p&gt;
-&lt;p&gt;Let&#39;s set its direction to out&lt;/p&gt;
-&lt;pre&gt;echo out &amp;gt; /sys/class/gpio/gpio50/direction&lt;/pre&gt;
-&lt;p&gt;And let&#39;s set its value to 1&lt;/p&gt;
-&lt;pre&gt;echo 1 &amp;gt; /sys/class/gpio/gpio50/value&lt;/pre&gt;
-&lt;p&gt;&amp;nbsp;&lt;/p&gt;
-&lt;p&gt;And finally, if you want to make the LED blinks every second, you can use this command:&lt;/p&gt;
-&lt;pre&gt;while [ 1 ]; do echo 1 &amp;gt; /sys/class/gpio/gpio50/value ; sleep 1 ; echo 0 &amp;gt; /sys/class/gpio/gpio50/value ; sleep 1 ; done&lt;/pre&gt;
-&lt;p&gt;&amp;nbsp;&lt;/p&gt;
-&lt;p&gt;https://www.youtube.com/watch?v=k-g114EUXaE&lt;/p&gt;
-&lt;p&gt;&amp;nbsp;&lt;/p&gt;
-&lt;h1&gt;Sources&lt;/h1&gt;
-&lt;ul&gt;
-&lt;li&gt;How to use GPIO as outputs &lt;a href=&quot;http://www.dummies.com/how-to/content/setting-beaglebone-gpios-as-outputs.html&quot;&gt;http://www.dummies.com/how-to/content/setting-beaglebone-gpios-as-outputs.html&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;GPIO programming on the beaglebone: &lt;a href=&quot;http://elinux.org/images/3/33/GPIO_Programming_on_the_Beaglebone.pdf&quot;&gt;http://elinux.org/images/3/33/GPIO_Programming_on_the_Beaglebone.pdf&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;BeagleBone 101: &lt;a href=&quot;http://beagleboard.org/support/bone101&quot;&gt;http://beagleboard.org/support/bone101&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        <pubDate>Sun, 21 Feb 2016 11:34:43 -0800</pubDate>
-        <link>http://julien.gunnm.org/geek/misc/programming/2016/02/21/beagleboard-black-bbb-and-gpio/</link>
-        <guid isPermaLink="true">http://julien.gunnm.org/geek/misc/programming/2016/02/21/beagleboard-black-bbb-and-gpio/</guid>
-        
-        
-        <category>geek</category>
-        
-        <category>misc</category>
-        
-        <category>programming</category>
         
       </item>
     
