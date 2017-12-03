@@ -5,9 +5,132 @@
     <description>Harder, Better, Faster, Stronger</description>
     <link>http://julien.gunnm.org/</link>
     <atom:link href="http://julien.gunnm.org/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Sat, 18 Nov 2017 17:30:49 -0800</pubDate>
-    <lastBuildDate>Sat, 18 Nov 2017 17:30:49 -0800</lastBuildDate>
+    <pubDate>Sun, 03 Dec 2017 15:43:00 -0800</pubDate>
+    <lastBuildDate>Sun, 03 Dec 2017 15:43:00 -0800</lastBuildDate>
     <generator>Jekyll v3.1.6</generator>
+    
+      <item>
+        <title>Deploying a Flask Application with Docker on a Raspberry Pi, part 1</title>
+        <description>&lt;p&gt;&lt;em&gt;Disclaimer:&lt;/em&gt; this is the first post of a series that explains how to deploy an application with docker on your Raspberry Pi.&lt;/p&gt;
+
+&lt;p&gt;I have been very frustrated by actual messaging apps. To me, the best way to communicate is to use &lt;a href=&quot;https://en.wikipedia.org/wiki/Internet_Relay_Chat&quot;&gt;Internet Relay Chat&lt;/a&gt;. It includes all the features I need: multi-channels, private conversation, administration, etc. Unfortunately, for many people, IRC is not user friendly enough or lack many kikoolol(tm) capabilities (such as emojis, which seems to be the ultimate feature for some people).&lt;/p&gt;
+
+&lt;p&gt;I do not want to use over-killed solutions or have many applications that bother and interrupt me all the time. That was a motivation
+to implement a very simple message board to exchange messages with friends. The application is very simple: we can have different users, each user can post message. Admins can change password or delete users.&lt;/p&gt;
+
+&lt;p&gt;This is how it looks like.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/flask-chat.png&quot; alt=&quot;Flask Chat&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The application relies on the &lt;a href=&quot;http://flask.pocoo.org/&quot;&gt;Flask framework&lt;/a&gt; and uses a SQLite database to store users/messages information.
+If you want to use the application and play locally, check the github application page: &lt;a href=&quot;https://github.com/juli1/flask-chat&quot;&gt;https://github.com/juli1/flask-chat&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;This article series explains how to deploy this Flask application on your own server using docker. You can also deploy the same container
+in AWS, GCP or Azure. Your choice. I just choose my Raspberry Pi because this is a computer that I have at home, I have full control over it and there is an interesting challenge to host a docker image on such a small computer.&lt;/p&gt;
+
+&lt;p&gt;This article will explain:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;How to checkout and try the application&lt;/li&gt;
+  &lt;li&gt;How to build a docker container for it&lt;/li&gt;
+  &lt;li&gt;How to run the docker container on your local machine&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The next post will explain how to run the container on your Raspberry PI.&lt;/p&gt;
+
+&lt;h1 id=&quot;the-application&quot;&gt;The Application&lt;/h1&gt;
+&lt;p&gt;I already wrote the application. This is a simple chat, you can check out the code there: &lt;a href=&quot;https://github.com/juli1/flask-chat&quot;&gt;https://github.com/juli1/flask-chat&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;You can even try it out locally:&lt;/p&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git clone https://github.com/juli1/flask-chat.git
+&lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;flask-chat
+&lt;span class=&quot;c&quot;&gt;# Replace the following line with virtualenv if necessary&lt;/span&gt;
+python3.X -m venv venv &lt;span class=&quot;c&quot;&gt;# Replace X with your version of python&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;source &lt;/span&gt;flask/bin/activate
+pip install -r requirements.txt
+./run-debug.py
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Then, open your web-browser and go to &lt;a href=&quot;https://localhost:5000&quot;&gt;https://localhost:5000&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;I also signed up to have continuous integration with &lt;a href=&quot;https://travis-ci.org/&quot;&gt;travis-ci&lt;/a&gt; and code coverage report from &lt;a href=&quot;https://coveralls.io/&quot;&gt;coveralls&lt;/a&gt;. Just because this is cute to have.&lt;/p&gt;
+
+&lt;h1 id=&quot;building-the-docker-image&quot;&gt;Building the docker image&lt;/h1&gt;
+
+&lt;p&gt;Now, we need to build a docker image to be able to deploy this everywhere.&lt;/p&gt;
+
+&lt;p&gt;The first thing we need is to define a &lt;code class=&quot;highlighter-rouge&quot;&gt;Dockerfile&lt;/code&gt; that defines how to build your container.&lt;/p&gt;
+
+&lt;p&gt;In the following file, we perform the major following steps:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;install all dependencies (&lt;code class=&quot;highlighter-rouge&quot;&gt;python3&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;python3-pip&lt;/code&gt;)&lt;/li&gt;
+  &lt;li&gt;copy our app in &lt;code class=&quot;highlighter-rouge&quot;&gt;/app&lt;/code&gt; in the container&lt;/li&gt;
+  &lt;li&gt;install all the python dependencies (specified in &lt;code class=&quot;highlighter-rouge&quot;&gt;requirements.txt&lt;/code&gt;)&lt;/li&gt;
+  &lt;li&gt;create a fresh database &lt;code class=&quot;highlighter-rouge&quot;&gt;db_create.py&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;specify the command to execute the application &lt;code class=&quot;highlighter-rouge&quot;&gt;python3 run-production.py&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;FROM ubuntu
+MAINTAINER Julien Delange &amp;lt;julien@gunnm.org&amp;gt;
+RUN apt-get update -y
+RUN apt-get install -y python3 python-pip-whl python3-pip
+COPY . /app
+WORKDIR /app
+RUN pip3 install -r requirements.txt
+RUN rm -f app.db
+RUN python3 ./db_create.py
+EXPOSE 5050
+ENTRYPOINT [&quot;python3&quot;]
+CMD [&quot;run-production.py&quot;]
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Once we are done, we can build the docker image. To do so, just invoke the following command:&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;docker build -t flask-chat:latest .
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h1 id=&quot;running-the-docker-image&quot;&gt;Running the docker image&lt;/h1&gt;
+
+&lt;p&gt;Now, it is time to run the docker image freshly built!&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;docker run -d -p 10000:5050 flask-chat
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;This command run the container and binds the local port 10000 to the container port 5050 (on which the flask application is listening to).&lt;/p&gt;
+
+&lt;p&gt;The next post will explain how to deploy this container on your Raspberry Pi.&lt;/p&gt;
+
+&lt;h1 id=&quot;useful-resources&quot;&gt;Useful resources&lt;/h1&gt;
+&lt;p&gt;My chat application is available on my github account: &lt;a href=&quot;https://github.com/juli1/flask-chat&quot;&gt;https://github.com/juli1/flask-chat&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;These are some resources I used during my search for information on rust.&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://flask.pocoo.org/&quot;&gt;The Flask Website&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world&quot;&gt;The Amazing Flask Tutorial&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://docs.docker.com/engine/reference/builder/&quot;&gt;Dockerfile reference&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://containertutorials.com/docker-compose/flask-simple-app.html&quot;&gt;Docker container for Flask&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Sun, 03 Dec 2017 05:13:20 -0800</pubDate>
+        <link>http://julien.gunnm.org/flask/python/docker/raspberry-pi/2017/12/03/developing-deploying-with-docker-on-raspberry-pi/</link>
+        <guid isPermaLink="true">http://julien.gunnm.org/flask/python/docker/raspberry-pi/2017/12/03/developing-deploying-with-docker-on-raspberry-pi/</guid>
+        
+        <category>flask</category>
+        
+        <category>gcp</category>
+        
+        <category>azure</category>
+        
+        <category>aws</category>
+        
+        
+        <category>flask</category>
+        
+        <category>python</category>
+        
+        <category>docker</category>
+        
+        <category>raspberry-pi</category>
+        
+      </item>
     
       <item>
         <title>Learning rust, implementing a webserver</title>
@@ -1140,218 +1263,6 @@ Also, a good source of information about swissvale can be found on the
         
         
         <category>swissvale</category>
-        
-      </item>
-    
-      <item>
-        <title>Periodic tasks with seL4</title>
-        <description>&lt;h1 id=&quot;in-a-nutshell&quot;&gt;In a nutshell&lt;/h1&gt;
-
-&lt;p&gt;In this article, I explain how to implement periodic tasks in seL4, a design pattern used in many embedded, safety-critical systems. This sounds probably very basic but using periodic tasks with non-blocking communication mechanisms is really helpful to ensure that your system will continue to work and meet its deadline. Please not that it does not mean that it works correctly, it just guarantees some important timing and behavioral characteristics.&lt;/p&gt;
-
-&lt;h1 id=&quot;context&quot;&gt;Context&lt;/h1&gt;
-
-&lt;p&gt;I started using the &lt;a href=&quot;http://sel4.systems/&quot;&gt;seL4 micro-kernel&lt;/a&gt; since few months. For those who do not know what is seL4, this is a formally verified kernel. Formally verified means that seL4 services are &lt;em&gt;correctly&lt;/em&gt; implemented. It does not mean that the services are &lt;em&gt;correctly&lt;/em&gt; configured and used, which is another story (more on that in a further article).&lt;/p&gt;
-
-&lt;p&gt;The micro-kernel itself provides only very few services, mostly: &lt;abbr title=&quot;Thread Control Block&quot;&gt;TCB&lt;/abbr&gt;, endpoints and other communications services. Nothing more, especially time or scheduling. Device drivers are also implemented in user-space, meaning that partitions must require access to the hardware and manage it appropriately.&lt;/p&gt;
-
-&lt;p&gt;Also, writing code for seL4 is hard. Really hard. You have not only to understand the services but also use the API and do the right function calls with the appropriate arguments. Trust me, it is a real pain. In order to overcome these issues, the NICTA team developed a specific &lt;abbr title=&quot;Architecture Description Language&quot;&gt;ADL&lt;/abbr&gt;, &lt;a href=&quot;https://wiki.sel4.systems/CAmkES&quot;&gt;CAmkES&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h1 id=&quot;issue-with-sel4-and-periodic-tasks&quot;&gt;Issue with seL4 and periodic tasks&lt;/h1&gt;
-
-&lt;p&gt;As mentioned before, seL4 does not provide any timing service. It provides a service to schedule threads (using a Round-Robin policy with priorities) but does not provide anything to wait or be activated at a given period.&lt;/p&gt;
-
-&lt;p&gt;So, if you are looking for something like &lt;code class=&quot;highlighter-rouge&quot;&gt;pthread_cond_timedwait()&lt;/code&gt; or just &lt;code class=&quot;highlighter-rouge&quot;&gt;sleep()&lt;/code&gt; (which is &lt;strong&gt;NOT&lt;/strong&gt; real-time friendly by the way), you will feel out of luck.&lt;/p&gt;
-
-&lt;p&gt;To overcome this issue, you must design your own timing service in a process that will ultimately activate the other tasks.&lt;/p&gt;
-
-&lt;h1 id=&quot;implement-a-timing-service&quot;&gt;Implement a timing service&lt;/h1&gt;
-
-&lt;p&gt;We will implement a timing service with CAmkES. The timing service will define a hardware component (hardware timer) and a time manager that will activate the tasks according to their periods.&lt;/p&gt;
-
-&lt;p&gt;In the following example, we will have two periodic tasks: one is activated every second while the other one is activated every two seconds. We will then define four components:&lt;/p&gt;
-&lt;ol&gt;
-  &lt;li&gt;The hardware component that abstracts the hardware platform&lt;/li&gt;
-  &lt;li&gt;The time manager that manages the hardware components and send a signal to activate the other tasks. One signal will be sent every second, another every two seconds&lt;/li&gt;
-  &lt;li&gt;One task connected to the first signal (activated every second)&lt;/li&gt;
-  &lt;li&gt;One task connected to the second signal (activated every two seconds)&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;We will illustrate that with the x86 platform.&lt;/p&gt;
-
-&lt;h2 id=&quot;defining-the-camkes-components&quot;&gt;Defining the CAmkES components&lt;/h2&gt;
-
-&lt;p&gt;The overall architecture is defined below. The CAmkES hardware component models your time, what will give you the concept of time. On the x86 architecture, there is the old &lt;a href=&quot;http://wiki.osdev.org/Programmable_Interval_Timer&quot;&gt;&lt;abbr title=&quot;Programmable Interval Interrupt&quot;&gt;PIT&lt;/abbr&gt;&lt;/a&gt; that provides the concept of time. We will use it then. For more information about how it works, you can read the description on &lt;a href=&quot;http://wiki.osdev.org/Programmable_Interval_Timer&quot;&gt;osdev&lt;/a&gt; or &lt;a href=&quot;https://en.wikibooks.org/wiki/X86_Assembly/Programmable_Interval_Timer&quot;&gt;wikibooks&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/sel4-timer-architecture.png&quot; alt=&quot;architecture&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;The timer components and timer managment in CAmkES are defining like the following (&lt;code class=&quot;highlighter-rouge&quot;&gt;Timerbase&lt;/code&gt; being the hardware component and &lt;code class=&quot;highlighter-rouge&quot;&gt;Timer&lt;/code&gt; the time manager)&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;component Timerbase {
-   hardware;
-   provides IOPort command;
-   provides IOPort channel0;
-   emits PITIRQ irq;
-}
-
-component Timer {
-  uses IOPort   pit_command;
-  uses IOPort   pit_channel0;
-  has mutex     timer;
-  consumes DataAvailable  irq;
-
-  emits sig Hello1_Thr_activator;
-  emits sig Hello2_Thr_activator;
-}
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;The &lt;code class=&quot;highlighter-rouge&quot;&gt;Timerbase&lt;/code&gt; component accesses two &lt;code class=&quot;highlighter-rouge&quot;&gt;IOPort&lt;/code&gt; that are hardware register/memories used to control the timer. This is architecture-dependent and related to the &lt;abbr title=&quot;Programmable Interval Interrupt&quot;&gt;PIT&lt;/abbr&gt;. The &lt;code class=&quot;highlighter-rouge&quot;&gt;irq&lt;/code&gt; corresponds to the interrupt sent by the system.&lt;/p&gt;
-
-&lt;p&gt;Now, let’s define the application component (application task). We call it &lt;code class=&quot;highlighter-rouge&quot;&gt;HelloThreadImpl&lt;/code&gt;. This task is a control task that will consumes a signal that activates it.&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;component HelloThreadImpl
-{
-  control;
-  consumes sig activator;
-}
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;Then, we need to create an assembly that integrates and configures all components. The assembly corresponds to the components configuration showed in the picture before.&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;import &amp;lt;std_connector.camkes&amp;gt;;
-import &quot;components/timer/Timer.camkes&quot;;
-import &quot;components/HelloThreadImpl/HelloThreadImpl.camkes&quot;;
-assembly {
-  composition {
-    component Timerbase timerbase;
-    component Timer timer;
-
-
-    component HelloThreadImpl Hello1_Thr;
-    component HelloThreadImpl Hello2_Thr;
-
-    connection seL4Notification notification0
-     (from timer.Hello1_Thr_activator, to Hello1_Thr.activator);
-                connection seL4Notification notification1 (from timer.Hello2_Thr_activator, to Hello2_Thr.activator);
-
-    connection seL4HardwareInterrupt timer_irq
-      (from timerbase.irq, to timer.irq);
-
-    connection seL4HardwareIOPort pit_command
-      (from timer.pit_command, to timerbase.command);
-
-  connection seL4HardwareIOPort pit_channel0
-      (from timer.pit_channel0, to timerbase.channel0);
-  }
-
-  configuration {
-    timerbase.irq_attributes = 0;
-    timerbase.command_attributes = &quot;0x43:0x43&quot;;
-    timerbase.channel0_attributes = &quot;0x40:0x40&quot;;
-  }
-}
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;We define the timer component (one of type &lt;code class=&quot;highlighter-rouge&quot;&gt;Timerbase&lt;/code&gt; and one of type &lt;code class=&quot;highlighter-rouge&quot;&gt;Timer&lt;/code&gt;) as well as two software components. The connections &lt;code class=&quot;highlighter-rouge&quot;&gt;notification0&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;notification1&lt;/code&gt; are the one that will activate the tasks through a signal, to notify them that they can be activated.&lt;/p&gt;
-
-&lt;p&gt;In the &lt;code class=&quot;highlighter-rouge&quot;&gt;configuration&lt;/code&gt; section, the hardware component is configured. This part is architecture-dependent and if you are planning to use such a pattern on another architecture, you would need to adapt the hardware component specification and its relative configuration section.&lt;/p&gt;
-
-&lt;h2 id=&quot;implementing-the-code&quot;&gt;Implementing the code&lt;/h2&gt;
-
-&lt;p&gt;Now, we need to implement the &lt;code class=&quot;highlighter-rouge&quot;&gt;Timer&lt;/code&gt; and the &lt;code class=&quot;highlighter-rouge&quot;&gt;HelloThreadImpl&lt;/code&gt; components.&lt;/p&gt;
-
-&lt;p&gt;For the timer, there is a part that is architecture-dependent and another that is generic and activates the tasks. We will skip the architecture-dependent part, you can look at it in the code by yourself. The most interesting part is in the interrupt handler.&lt;/p&gt;
-
-&lt;p&gt;In the driver interrupt handler, we get the current time in milliseconds. Then, depending on the value, we send a signal to activate a task. In the following code, we send a signal to the first task every 1000 ms and send a signal to the second task every 2000 ms.&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;void irq_callback(void *_ UNUSED)
-{
-  timer_handle_irq(timer_drv, 0);
-
-  uint64_t ms = current_time_ms();
-
-  if ( ( ms % 1000) == 0)
-  {
-    Hello1_Thr_activator_emit();
-  }
-
-  if ( ( ms % 2000) == 0)
-  {
-    Hello2_Thr_activator_emit();
-  }
-
-  irq_reg_callback(irq_callback, NULL);
-}
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;Let’s have a look at the &lt;code class=&quot;highlighter-rouge&quot;&gt;HelloThreadImpl&lt;/code&gt; code now. It should be pretty obvious with an infinite loop waiting for a signal and executing a piece of code. The code is provided below.&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;#include &amp;lt;camkes.h&amp;gt;
-
-#include &amp;lt;generatedtypes.h&amp;gt;
-#include &amp;lt;stdio.h&amp;gt;
-#include &amp;lt;string.h&amp;gt;
-
-void user_hello_spg ()
-{
-  printf *&quot;HELLO\n&quot;);
-}
-
-int run(void)
-{
-  while (1)
-  {
-    activator_wait();
-    user_hello_spg ( );
-  }
-  return 0;
-}
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;h1 id=&quot;getting-the-code--run-it&quot;&gt;Getting the code &amp;amp; run it&lt;/h1&gt;
-&lt;p&gt;The code is availabe &lt;a href=&quot;/assets/sel4-timer.tgz&quot;&gt;there&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;If you want to run it:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Check out CAmkES and make sure it works on your system. To get started, have a look &lt;a href=&quot;https://wiki.sel4.systems/CAmkES&quot;&gt;on the instruction on the seL4 wiki&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Get the code &lt;a href=&quot;/assets/sel4-timer.tgz&quot;&gt;here&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;decompress the archive into the &lt;code class=&quot;highlighter-rouge&quot;&gt;apps/&lt;/code&gt; directory of the CAmkES installation&lt;/li&gt;
-  &lt;li&gt;Edit the &lt;code class=&quot;highlighter-rouge&quot;&gt;Kconfig&lt;/code&gt; file at the root directory of your CAmkES installation and add in the &lt;code class=&quot;highlighter-rouge&quot;&gt;Applications&lt;/code&gt; section the following line: &lt;code class=&quot;highlighter-rouge&quot;&gt;source &quot;apps/twotasksx86instance/Kconfig&quot;&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;invoke &lt;code class=&quot;highlighter-rouge&quot;&gt;make ia32_simple_defconfig&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;invoke &lt;code class=&quot;highlighter-rouge&quot;&gt;make oldconfig&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;invoke &lt;code class=&quot;highlighter-rouge&quot;&gt;make&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;If everything compiles fine, it means that a simple example for the ia32 platform works. We can then compiles the example from this article&lt;/li&gt;
-  &lt;li&gt;Invoke &lt;code class=&quot;highlighter-rouge&quot;&gt;make menuconfig&lt;/code&gt;. In the menu, in the &lt;code class=&quot;highlighter-rouge&quot;&gt;Applications&lt;/code&gt; section, unselect all examples and select &lt;code class=&quot;highlighter-rouge&quot;&gt;Generated CAmkES TwotasksX86Instance application &lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;exit the configuration tool and save the changes&lt;/li&gt;
-  &lt;li&gt;invoke &lt;code class=&quot;highlighter-rouge&quot;&gt;make&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;simulate the system with qemu by invoking &lt;code class=&quot;highlighter-rouge&quot;&gt;qemu-system-i386 -nographic -kernel images/kernel-ia32-pc99 -initrd images/capdl-loader-experimental-image-ia32-pc99&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;When running the code, you should just see that you get more output every two seconds. Basically, every second, you get two &lt;em&gt;HELLO&lt;/em&gt; message on the console while every two seconds, you see two messages.&lt;/p&gt;
-
-&lt;h1 id=&quot;issues--limitations&quot;&gt;Issues &amp;amp; limitations&lt;/h1&gt;
-&lt;p&gt;In this post, I tried to explain how to use seL4 and its related &lt;abbr title=&quot;Architecture Description Language&quot;&gt;ADL&lt;/abbr&gt; in order to implement a popular design pattern for safety-critical systems: a periodic tasks. As seL4 provides very minimal services and as no built-in timing service, you must define them yourself.&lt;/p&gt;
-
-&lt;p&gt;Beyond that, one can notice that there is some issues with such an approach. First of all, it assumes that the system is &lt;em&gt;schedulable&lt;/em&gt; and that all tasks will complete their job and will not interfere with the execution of the other tasks. If one task that is at a high priority takes all the CPU (in other word, if the code in &lt;code class=&quot;highlighter-rouge&quot;&gt;user_hello_spg&lt;/code&gt; contains an infinite loop), your system will be stuck. One workaround would be to use the concept of domains in seL4 but unfortunately, it does not seem that CAmkES exports it to the user. Also, the system does not &lt;em&gt;enforce&lt;/em&gt; any timing budget. The NICTA team is working on some real-time extensions that might provide such services.&lt;/p&gt;
-
-&lt;p&gt;Note: You might find some error/bugs in the code, this is mostly done for educational purposes. If you find any issue/bug, do not hesitate to contact me.&lt;/p&gt;
-
-</description>
-        <pubDate>Mon, 18 Apr 2016 06:13:20 -0700</pubDate>
-        <link>http://julien.gunnm.org/geek/sel4/2016/04/18/periodic-tasks-with-sel4/</link>
-        <guid isPermaLink="true">http://julien.gunnm.org/geek/sel4/2016/04/18/periodic-tasks-with-sel4/</guid>
-        
-        <category>sel4</category>
-        
-        <category>real-time</category>
-        
-        <category>CAmkES</category>
-        
-        
-        <category>geek</category>
-        
-        <category>sel4</category>
         
       </item>
     

@@ -4,14 +4,14 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Julien Delange</title>
+    <title>Deploying a Flask Application with Docker on a Raspberry Pi, part 1 - Julien Delange</title>
     <link rel="alternate" type="application/rss+xml" title="Julien Delange &raquo; Feed" href="/feed.xml" />
     <meta name="viewport" content="width=device-width">
-    <meta name="description" content="Personal website of Julien Delange">
-    <link rel="canonical" href="http://julien.gunnm.org/">
+    <meta name="description" content="Deploying Flask application using Docker on your raspberry pi">
+    <link rel="canonical" href="http://julien.gunnm.org/flask/python/docker/raspberry-pi/2017/12/03/developing-deploying-with-docker-on-raspberry-pi/">
 
     
-    <meta name="keywords" content="software engineering, amazon, aws, eclipse, modeling, running, ultra-marathon"/>
+    <meta name="keywords" content="flask, gcp, azure, aws"/>
     
 
     <!-- Latest compiled and minified CSS -->
@@ -29,8 +29,8 @@
     <link rel="stylesheet" href="/css/main.css">
 
     <!-- Twitter Cards -->
-    <meta property="twitter:title" content="" />
-    <meta property="twitter:description" content="Personal website of Julien Delange" />
+    <meta property="twitter:title" content="Deploying a Flask Application with Docker on a Raspberry Pi, part 1" />
+    <meta property="twitter:description" content="Deploying Flask application using Docker on your raspberry pi" />
     <meta property="twitter:card" content="summary" />
     <meta property="twitter:site" content="@juli1pb" />
     <meta property="twitter:creator" content="@juli1pb" />
@@ -41,8 +41,8 @@
     <meta property="og:site_name" content="Julien Delange" />
     <meta property="og:type" content="article" />
     <meta property="og:image" content="/assets/profile.png" />
-    <meta property="og:title" content="" />
-    <meta property="og:description" content="Personal website of Julien Delange" />
+    <meta property="og:title" content="Deploying a Flask Application with Docker on a Raspberry Pi, part 1" />
+    <meta property="og:description" content="Deploying Flask application using Docker on your raspberry pi" />
 
 </head>
 
@@ -109,28 +109,118 @@
 
     <div class="page-content">
       <div class="wrap">
-      <div id="profile-pic">
-   <img src="/assets/profile.png"/>
-</div>
+      <div class="post">
 
-<div class="home">
-   <div class="intro">
-      <p>
-         My name is Julien Delange. I am a software engineer working at the <a href="http://aws.amazon.com">Amazon AWS</a> and an occasional runner for distances between 5K and 100 miles. This website has most of the useful information on my <a href="/projects">research work</a> and <a href="/running">running agenda</a>. I also maintain a <a href="/blog">blog</a> on topics related to software engineering, programming and running. More about how to contact me in the <a href="/about">about section</a>.
-      </p>
-   </div>
-   <div style="margin-top: 2em;">
-      <p>
-      The views expressed here are my own.
-      </p>
-   </div>
-   <div class="lastpost">
-      <h1>Last from the blog:   <a href="/flask/python/docker/raspberry-pi/2017/12/03/developing-deploying-with-docker-on-raspberry-pi/">Deploying a Flask Application with Docker on a Raspberry Pi, part 1</a></h1>
-   </div>
+  <header class="post-header">
+    <h1>Deploying a Flask Application with Docker on a Raspberry Pi, part 1</h1>
+    <p class="meta">
+      <!-- Dec 3, 2017 -->
+      <!-- 
+       -->
+   </p>
+  </header>
 
-   <div style="margin-top: 1.5em; text-align: center;">
-     <p>You can see <a href="/blog">all blog posts</a> or just subscribe to the <a href="/feed.xml">RSS feed</a></p>
-  </div>
+  <article class="post-content">
+  <p><em>Disclaimer:</em> this is the first post of a series that explains how to deploy an application with docker on your Raspberry Pi.</p>
+
+<p>I have been very frustrated by actual messaging apps. To me, the best way to communicate is to use <a href="https://en.wikipedia.org/wiki/Internet_Relay_Chat">Internet Relay Chat</a>. It includes all the features I need: multi-channels, private conversation, administration, etc. Unfortunately, for many people, IRC is not user friendly enough or lack many kikoolol(tm) capabilities (such as emojis, which seems to be the ultimate feature for some people).</p>
+
+<p>I do not want to use over-killed solutions or have many applications that bother and interrupt me all the time. That was a motivation
+to implement a very simple message board to exchange messages with friends. The application is very simple: we can have different users, each user can post message. Admins can change password or delete users.</p>
+
+<p>This is how it looks like.</p>
+
+<p><img src="/assets/flask-chat.png" alt="Flask Chat" /></p>
+
+<p>The application relies on the <a href="http://flask.pocoo.org/">Flask framework</a> and uses a SQLite database to store users/messages information.
+If you want to use the application and play locally, check the github application page: <a href="https://github.com/juli1/flask-chat">https://github.com/juli1/flask-chat</a></p>
+
+<p>This article series explains how to deploy this Flask application on your own server using docker. You can also deploy the same container
+in AWS, GCP or Azure. Your choice. I just choose my Raspberry Pi because this is a computer that I have at home, I have full control over it and there is an interesting challenge to host a docker image on such a small computer.</p>
+
+<p>This article will explain:</p>
+<ul>
+  <li>How to checkout and try the application</li>
+  <li>How to build a docker container for it</li>
+  <li>How to run the docker container on your local machine</li>
+</ul>
+
+<p>The next post will explain how to run the container on your Raspberry PI.</p>
+
+<h1 id="the-application">The Application</h1>
+<p>I already wrote the application. This is a simple chat, you can check out the code there: <a href="https://github.com/juli1/flask-chat">https://github.com/juli1/flask-chat</a></p>
+
+<p>You can even try it out locally:</p>
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code>git clone https://github.com/juli1/flask-chat.git
+<span class="nb">cd </span>flask-chat
+<span class="c"># Replace the following line with virtualenv if necessary</span>
+python3.X -m venv venv <span class="c"># Replace X with your version of python</span>
+<span class="nb">source </span>flask/bin/activate
+pip install -r requirements.txt
+./run-debug.py
+</code></pre></div>
+
+<p>Then, open your web-browser and go to <a href="https://localhost:5000">https://localhost:5000</a></p>
+
+<p>I also signed up to have continuous integration with <a href="https://travis-ci.org/">travis-ci</a> and code coverage report from <a href="https://coveralls.io/">coveralls</a>. Just because this is cute to have.</p>
+
+<h1 id="building-the-docker-image">Building the docker image</h1>
+
+<p>Now, we need to build a docker image to be able to deploy this everywhere.</p>
+
+<p>The first thing we need is to define a <code class="highlighter-rouge">Dockerfile</code> that defines how to build your container.</p>
+
+<p>In the following file, we perform the major following steps:</p>
+<ul>
+  <li>install all dependencies (<code class="highlighter-rouge">python3</code>, <code class="highlighter-rouge">python3-pip</code>)</li>
+  <li>copy our app in <code class="highlighter-rouge">/app</code> in the container</li>
+  <li>install all the python dependencies (specified in <code class="highlighter-rouge">requirements.txt</code>)</li>
+  <li>create a fresh database <code class="highlighter-rouge">db_create.py</code></li>
+  <li>specify the command to execute the application <code class="highlighter-rouge">python3 run-production.py</code></li>
+</ul>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>FROM ubuntu
+MAINTAINER Julien Delange &lt;julien@gunnm.org&gt;
+RUN apt-get update -y
+RUN apt-get install -y python3 python-pip-whl python3-pip
+COPY . /app
+WORKDIR /app
+RUN pip3 install -r requirements.txt
+RUN rm -f app.db
+RUN python3 ./db_create.py
+EXPOSE 5050
+ENTRYPOINT ["python3"]
+CMD ["run-production.py"]
+</code></pre></div>
+
+<p>Once we are done, we can build the docker image. To do so, just invoke the following command:</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>docker build -t flask-chat:latest .
+</code></pre></div>
+
+<h1 id="running-the-docker-image">Running the docker image</h1>
+
+<p>Now, it is time to run the docker image freshly built!</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>docker run -d -p 10000:5050 flask-chat
+</code></pre></div>
+
+<p>This command run the container and binds the local port 10000 to the container port 5050 (on which the flask application is listening to).</p>
+
+<p>The next post will explain how to deploy this container on your Raspberry Pi.</p>
+
+<h1 id="useful-resources">Useful resources</h1>
+<p>My chat application is available on my github account: <a href="https://github.com/juli1/flask-chat">https://github.com/juli1/flask-chat</a></p>
+
+<p>These are some resources I used during my search for information on rust.</p>
+<ul>
+  <li><a href="http://flask.pocoo.org/">The Flask Website</a></li>
+  <li><a href="https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world">The Amazing Flask Tutorial</a></li>
+  <li><a href="https://docs.docker.com/engine/reference/builder/">Dockerfile reference</a></li>
+  <li><a href="http://containertutorials.com/docker-compose/flask-simple-app.html">Docker container for Flask</a></li>
+</ul>
+
+  </article>
+
 </div>
 
       </div>
