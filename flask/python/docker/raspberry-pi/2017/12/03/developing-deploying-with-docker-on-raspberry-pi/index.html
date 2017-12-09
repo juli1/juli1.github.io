@@ -4,14 +4,14 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Deploying a Flask Application with Docker on a Raspberry Pi, part 1 - Julien Delange</title>
+    <title>Deploying a Flask Application with Docker on a Raspberry Pi - Julien Delange</title>
     <link rel="alternate" type="application/rss+xml" title="Julien Delange &raquo; Feed" href="/feed.xml" />
     <meta name="viewport" content="width=device-width">
     <meta name="description" content="Deploying Flask application using Docker on your raspberry pi">
     <link rel="canonical" href="http://julien.gunnm.org/flask/python/docker/raspberry-pi/2017/12/03/developing-deploying-with-docker-on-raspberry-pi/">
 
     
-    <meta name="keywords" content="flask, gcp, azure, aws"/>
+    <meta name="keywords" content="flask, docker, gcp, azure, aws"/>
     
 
     <!-- Latest compiled and minified CSS -->
@@ -29,7 +29,7 @@
     <link rel="stylesheet" href="/css/main.css">
 
     <!-- Twitter Cards -->
-    <meta property="twitter:title" content="Deploying a Flask Application with Docker on a Raspberry Pi, part 1" />
+    <meta property="twitter:title" content="Deploying a Flask Application with Docker on a Raspberry Pi" />
     <meta property="twitter:description" content="Deploying Flask application using Docker on your raspberry pi" />
     <meta property="twitter:card" content="summary" />
     <meta property="twitter:site" content="@juli1pb" />
@@ -41,7 +41,7 @@
     <meta property="og:site_name" content="Julien Delange" />
     <meta property="og:type" content="article" />
     <meta property="og:image" content="/assets/profile.png" />
-    <meta property="og:title" content="Deploying a Flask Application with Docker on a Raspberry Pi, part 1" />
+    <meta property="og:title" content="Deploying a Flask Application with Docker on a Raspberry Pi" />
     <meta property="og:description" content="Deploying Flask application using Docker on your raspberry pi" />
 
 </head>
@@ -112,7 +112,7 @@
       <div class="post">
 
   <header class="post-header">
-    <h1>Deploying a Flask Application with Docker on a Raspberry Pi, part 1</h1>
+    <h1>Deploying a Flask Application with Docker on a Raspberry Pi</h1>
     <p class="meta">
       <!-- Dec 3, 2017 -->
       <!-- 
@@ -121,9 +121,7 @@
   </header>
 
   <article class="post-content">
-  <p><em>Disclaimer:</em> this is the first post of a series that explains how to deploy an application with docker on your Raspberry Pi.</p>
-
-<p>I have been very frustrated by actual messaging apps. To me, the best way to communicate is to use <a href="https://en.wikipedia.org/wiki/Internet_Relay_Chat">Internet Relay Chat</a>. It includes all the features I need: multi-channels, private conversation, administration, etc. Unfortunately, for many people, IRC is not user friendly enough or lack many kikoolol(tm) capabilities (such as emojis, which seems to be the ultimate feature for some people).</p>
+  <p>I have been very frustrated by actual messaging apps. To me, the best way to communicate is to use <a href="https://en.wikipedia.org/wiki/Internet_Relay_Chat">Internet Relay Chat</a>. It includes all the features I need: multi-channels, private conversation, administration, etc. Unfortunately, for many people, IRC is not user friendly enough or lack many kikoolol(tm) capabilities (such as emojis, which seems to be the ultimate feature for some people).</p>
 
 <p>I do not want to use over-killed solutions or have many applications that bother and interrupt me all the time. That was a motivation
 to implement a very simple message board to exchange messages with friends. The application is very simple: we can have different users, each user can post message. Admins can change password or delete users.</p>
@@ -143,9 +141,8 @@ in AWS, GCP or Azure. Your choice. I just choose my Raspberry Pi because this is
   <li>How to checkout and try the application</li>
   <li>How to build a docker container for it</li>
   <li>How to run the docker container on your local machine</li>
+  <li>How to run the docker container on a raspberry pi</li>
 </ul>
-
-<p>The next post will explain how to run the container on your Raspberry PI.</p>
 
 <h1 id="the-application">The Application</h1>
 <p>I already wrote the application. This is a simple chat, you can check out the code there: <a href="https://github.com/juli1/flask-chat">https://github.com/juli1/flask-chat</a></p>
@@ -179,7 +176,7 @@ pip install -r requirements.txt
   <li>specify the command to execute the application <code class="highlighter-rouge">python3 run-production.py</code></li>
 </ul>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>FROM ubuntu
+<div class="highlighter-rouge"><pre class="highlight"><code>FROM python:3.6-slim-stretch
 MAINTAINER Julien Delange &lt;julien@gunnm.org&gt;
 RUN apt-get update -y
 RUN apt-get install -y python3 python-pip-whl python3-pip
@@ -197,19 +194,51 @@ CMD ["run-production.py"]
 <div class="highlighter-rouge"><pre class="highlight"><code>docker build -t flask-chat:latest .
 </code></pre></div>
 
-<h1 id="running-the-docker-image">Running the docker image</h1>
+<h1 id="running-the-docker-image-on-your-local-machine-or-on-your-raspberry-pi">Running the docker image on your local machine or on your raspberry pi</h1>
 
 <p>Now, it is time to run the docker image freshly built!</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>docker run -d -p 10000:5050 flask-chat
+<p>If you want to run the image you built on your computer into a docker container, just run:</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>docker run -d -p 10000:10000 flask-chat
 </code></pre></div>
 
 <p>This command run the container and binds the local port 10000 to the container port 5050 (on which the flask application is listening to).</p>
 
-<p>The next post will explain how to deploy this container on your Raspberry Pi.</p>
+<p>If you just want to use the pre-built image from <a href="https://hub.docker.com/r/juli1/flask-chat/tags/">dockerhub</a>
+on your local machine, run:</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>docker run -d -p 10000:10000 juli1/flask-chat:latest
+</code></pre></div>
+
+<p>And finally, if you want to run the pre-built image from <a href="https://hub.docker.com/r/juli1/flask-chat/tags/">dockerhub</a>
+on your raspberry pi, run:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>docker run -d -p 10000:5050 juli1/flask-chat:rpi
+</code></pre></div>
+
+<p>If you want to actually build the container on your raspberry pi, you can use the <code class="highlighter-rouge">Dockerfile.rpi</code>`file
+in the root directory of the project like this:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>docker build -t flask-chat:latest . -f Dockerfile.rpi
+</code></pre></div>
+
+<h1 id="continuous-integration">Continuous Integration</h1>
+<p>We are in 2017 (soon 2018) and continuous deployment/integration is just the way to go. Automating
+the build of your docker container is very easy - you can just <a href="http://www.travis-ci.org">travis-ci</a> or <a href="http://docker.com">docker</a>
+do trigger every time there is a commit.</p>
+
+<p>What is more difficult is to build the image for raspberry pi. This <a href="https://blog.hypriot.com/post/setup-simple-ci-pipeline-for-arm-images/">tutorial</a>
+helped a lot. If you want to build your own docker image for raspberry pi, have a look at my 
+<a href="https://github.com/juli1/flask-chat/blob/master/Dockerfile.rpi">the Dockerfile.rpi</a> in the project github directory.</p>
 
 <h1 id="useful-resources">Useful resources</h1>
-<p>My chat application is available on my github account: <a href="https://github.com/juli1/flask-chat">https://github.com/juli1/flask-chat</a></p>
+<p>The chat application is available on my github account: <a href="https://github.com/juli1/flask-chat">https://github.com/juli1/flask-chat</a></p>
+
+<p>The docker images are on this repository: <a href="https://hub.docker.com/r/juli1/flask-chat/">https://hub.docker.com/r/juli1/flask-chat/</a></p>
+
+<ul>
+  <li>The docker image for intel is: juli1/flask-chat:latest</li>
+  <li>The docker image for raspberry pi is: juli1/flask-chat:rpi</li>
+</ul>
 
 <p>These are some resources I used during my search for information on rust.</p>
 <ul>

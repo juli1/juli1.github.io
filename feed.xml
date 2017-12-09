@@ -5,15 +5,13 @@
     <description>Harder, Better, Faster, Stronger</description>
     <link>http://julien.gunnm.org/</link>
     <atom:link href="http://julien.gunnm.org/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Sun, 03 Dec 2017 15:43:00 -0800</pubDate>
-    <lastBuildDate>Sun, 03 Dec 2017 15:43:00 -0800</lastBuildDate>
+    <pubDate>Fri, 08 Dec 2017 21:12:48 -0800</pubDate>
+    <lastBuildDate>Fri, 08 Dec 2017 21:12:48 -0800</lastBuildDate>
     <generator>Jekyll v3.1.6</generator>
     
       <item>
-        <title>Deploying a Flask Application with Docker on a Raspberry Pi, part 1</title>
-        <description>&lt;p&gt;&lt;em&gt;Disclaimer:&lt;/em&gt; this is the first post of a series that explains how to deploy an application with docker on your Raspberry Pi.&lt;/p&gt;
-
-&lt;p&gt;I have been very frustrated by actual messaging apps. To me, the best way to communicate is to use &lt;a href=&quot;https://en.wikipedia.org/wiki/Internet_Relay_Chat&quot;&gt;Internet Relay Chat&lt;/a&gt;. It includes all the features I need: multi-channels, private conversation, administration, etc. Unfortunately, for many people, IRC is not user friendly enough or lack many kikoolol(tm) capabilities (such as emojis, which seems to be the ultimate feature for some people).&lt;/p&gt;
+        <title>Deploying a Flask Application with Docker on a Raspberry Pi</title>
+        <description>&lt;p&gt;I have been very frustrated by actual messaging apps. To me, the best way to communicate is to use &lt;a href=&quot;https://en.wikipedia.org/wiki/Internet_Relay_Chat&quot;&gt;Internet Relay Chat&lt;/a&gt;. It includes all the features I need: multi-channels, private conversation, administration, etc. Unfortunately, for many people, IRC is not user friendly enough or lack many kikoolol(tm) capabilities (such as emojis, which seems to be the ultimate feature for some people).&lt;/p&gt;
 
 &lt;p&gt;I do not want to use over-killed solutions or have many applications that bother and interrupt me all the time. That was a motivation
 to implement a very simple message board to exchange messages with friends. The application is very simple: we can have different users, each user can post message. Admins can change password or delete users.&lt;/p&gt;
@@ -33,9 +31,8 @@ in AWS, GCP or Azure. Your choice. I just choose my Raspberry Pi because this is
   &lt;li&gt;How to checkout and try the application&lt;/li&gt;
   &lt;li&gt;How to build a docker container for it&lt;/li&gt;
   &lt;li&gt;How to run the docker container on your local machine&lt;/li&gt;
+  &lt;li&gt;How to run the docker container on a raspberry pi&lt;/li&gt;
 &lt;/ul&gt;
-
-&lt;p&gt;The next post will explain how to run the container on your Raspberry PI.&lt;/p&gt;
 
 &lt;h1 id=&quot;the-application&quot;&gt;The Application&lt;/h1&gt;
 &lt;p&gt;I already wrote the application. This is a simple chat, you can check out the code there: &lt;a href=&quot;https://github.com/juli1/flask-chat&quot;&gt;https://github.com/juli1/flask-chat&lt;/a&gt;&lt;/p&gt;
@@ -69,7 +66,7 @@ pip install -r requirements.txt
   &lt;li&gt;specify the command to execute the application &lt;code class=&quot;highlighter-rouge&quot;&gt;python3 run-production.py&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;FROM ubuntu
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;FROM python:3.6-slim-stretch
 MAINTAINER Julien Delange &amp;lt;julien@gunnm.org&amp;gt;
 RUN apt-get update -y
 RUN apt-get install -y python3 python-pip-whl python3-pip
@@ -87,19 +84,51 @@ CMD [&quot;run-production.py&quot;]
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;docker build -t flask-chat:latest .
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;h1 id=&quot;running-the-docker-image&quot;&gt;Running the docker image&lt;/h1&gt;
+&lt;h1 id=&quot;running-the-docker-image-on-your-local-machine-or-on-your-raspberry-pi&quot;&gt;Running the docker image on your local machine or on your raspberry pi&lt;/h1&gt;
 
 &lt;p&gt;Now, it is time to run the docker image freshly built!&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;docker run -d -p 10000:5050 flask-chat
+&lt;p&gt;If you want to run the image you built on your computer into a docker container, just run:&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;docker run -d -p 10000:10000 flask-chat
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;This command run the container and binds the local port 10000 to the container port 5050 (on which the flask application is listening to).&lt;/p&gt;
 
-&lt;p&gt;The next post will explain how to deploy this container on your Raspberry Pi.&lt;/p&gt;
+&lt;p&gt;If you just want to use the pre-built image from &lt;a href=&quot;https://hub.docker.com/r/juli1/flask-chat/tags/&quot;&gt;dockerhub&lt;/a&gt;
+on your local machine, run:&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;docker run -d -p 10000:10000 juli1/flask-chat:latest
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;And finally, if you want to run the pre-built image from &lt;a href=&quot;https://hub.docker.com/r/juli1/flask-chat/tags/&quot;&gt;dockerhub&lt;/a&gt;
+on your raspberry pi, run:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;docker run -d -p 10000:5050 juli1/flask-chat:rpi
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;If you want to actually build the container on your raspberry pi, you can use the &lt;code class=&quot;highlighter-rouge&quot;&gt;Dockerfile.rpi&lt;/code&gt;`file
+in the root directory of the project like this:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;docker build -t flask-chat:latest . -f Dockerfile.rpi
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h1 id=&quot;continuous-integration&quot;&gt;Continuous Integration&lt;/h1&gt;
+&lt;p&gt;We are in 2017 (soon 2018) and continuous deployment/integration is just the way to go. Automating
+the build of your docker container is very easy - you can just &lt;a href=&quot;http://www.travis-ci.org&quot;&gt;travis-ci&lt;/a&gt; or &lt;a href=&quot;http://docker.com&quot;&gt;docker&lt;/a&gt;
+do trigger every time there is a commit.&lt;/p&gt;
+
+&lt;p&gt;What is more difficult is to build the image for raspberry pi. This &lt;a href=&quot;https://blog.hypriot.com/post/setup-simple-ci-pipeline-for-arm-images/&quot;&gt;tutorial&lt;/a&gt;
+helped a lot. If you want to build your own docker image for raspberry pi, have a look at my 
+&lt;a href=&quot;https://github.com/juli1/flask-chat/blob/master/Dockerfile.rpi&quot;&gt;the Dockerfile.rpi&lt;/a&gt; in the project github directory.&lt;/p&gt;
 
 &lt;h1 id=&quot;useful-resources&quot;&gt;Useful resources&lt;/h1&gt;
-&lt;p&gt;My chat application is available on my github account: &lt;a href=&quot;https://github.com/juli1/flask-chat&quot;&gt;https://github.com/juli1/flask-chat&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;The chat application is available on my github account: &lt;a href=&quot;https://github.com/juli1/flask-chat&quot;&gt;https://github.com/juli1/flask-chat&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;The docker images are on this repository: &lt;a href=&quot;https://hub.docker.com/r/juli1/flask-chat/&quot;&gt;https://hub.docker.com/r/juli1/flask-chat/&lt;/a&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;The docker image for intel is: juli1/flask-chat:latest&lt;/li&gt;
+  &lt;li&gt;The docker image for raspberry pi is: juli1/flask-chat:rpi&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;p&gt;These are some resources I used during my search for information on rust.&lt;/p&gt;
 &lt;ul&gt;
@@ -114,6 +143,8 @@ CMD [&quot;run-production.py&quot;]
         <guid isPermaLink="true">http://julien.gunnm.org/flask/python/docker/raspberry-pi/2017/12/03/developing-deploying-with-docker-on-raspberry-pi/</guid>
         
         <category>flask</category>
+        
+        <category>docker</category>
         
         <category>gcp</category>
         
