@@ -5,162 +5,9 @@
     <description>Harder, Better, Faster, Stronger</description>
     <link>http://julien.gunnm.org/</link>
     <atom:link href="http://julien.gunnm.org/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Mon, 29 Jan 2018 18:14:50 -0800</pubDate>
-    <lastBuildDate>Mon, 29 Jan 2018 18:14:50 -0800</lastBuildDate>
+    <pubDate>Mon, 29 Jan 2018 18:19:27 -0800</pubDate>
+    <lastBuildDate>Mon, 29 Jan 2018 18:19:27 -0800</lastBuildDate>
     <generator>Jekyll v3.1.6</generator>
-    
-      <item>
-        <title>On working remotely</title>
-        <description>When I started working at Amazon Web Services, I moved from Pittsburgh, PA to 
-Seattle, WA. But six months later, I relocated in San Francisco, CA and continued
-to work remotely with my team located in Seattle, WA. 
-
-Working remotely can be challenging. It works for me but not without change.
-A [recent tweet](https://twitter.com/b0rk/status/944620024303702021)
-motivated me to to share this experience and what works/doesn&#39;t work for me
-(and might work/don&#39;t work for you - don&#39;t try this at &lt;del&gt;home&lt;/del&gt; work).
-
-# Pro-active communication and documentation
-By nature, you no longer have
-the regular chat about this new cool project over lunch or in the corridor.
-People are not stopping at your desk to just discuss an idea while having coffee.
-You are off these discussions and you need to find other ways to be up to date
-and informed about what is going on in your team/company.
-
-This definitively change the way you communicate and document your work and
- you need be proactive. The
-informal chat in the corridor is now a wiki page or an e-mail that describes
-the idea with references. It not only facilitates
-communicaton between with the team, but increases the quality of the documentation overall.
-
-**Take Away**: document as much as you can (on a wiki, markdown files, etc.) and
-make your team/manager aware of what you are working on. 
-Avoid to take e-mail as a way to document your work:
-people delete e-mails, use wiki (good) or markdown documents on a git repository
-(better).
-
-**Take Away 2**: be proactive when communicating with your manager. Send weekly report
-to keep him up-to-date so that he knows on what you are working. Do not assume anything,
-document explicitely everything.
-
-# Avoid work from home
-Working from home sounds very appealing but it can in fact be a terrible idea.
-When working from home, it is easy to
-spend 10 minutes every hour doing something totally unrelated to work. Or to
-assume that *you can do this chore during the day while working* 
-(for example, between two code reviews).
-
-It just doesn&#39;t work. When doing the chore, you are thinking about work. Or while working, 
-you are obssess with the chore and you want to get it done right **now**. In short:
-staying at home does not help to focus.
-
-You also end up with the feeling you are always at home (and think you do
-nothing) or at work (and you keep working all the time). Having a physical separation
-between home and work help to allocate time and know your limits.
-
-{:refdef: style=&quot;text-align: center;&quot;}
-![Working From Home](/assets/dr-evil-wfh.jpg){:width=&quot;50%&quot;}
-{: refdef}
-
-Lastly, work is also a way to socialize (engage with colleagues,
-discuss points of view and perspectives). While working remotely, it is
-important to keep this aspect, by having a desk in another location, sharing a
-co-working space or just going in a working area in a coffee shop!
-
-**Take Away**: separate work from life physically and mentally. Going to an office not only 
-helps to focus and also socialize with other people in your company (happy hour anyone?).
-
-
-# Schedule your day and stick to it
-One major benefit of working remotely: no unwanted interruption
-from your manager/co-workers (except if they page you, which does not happen
-very often). You are more effective because you can focus on something and
-nobody will come and interrupt you (downside - as discussed
-earlier: less social interaction). Also, people invites you only to important
-meeting and you can easily refuse the ones you feel you do not bring value.
-
-Consequence: you have more time and can focus on whatever you want. Downside:
-you can work on the same thing for hours while you need to make progress on
-others project too. This happens when being in an office but is amplified when working
-remotely.
-
-To avoid this, the solution is to clearly schedule the day, cut it into time slots
-(1 to 2 hours) and allocate a task for each. It helps to stay focus on what you are
-going to work through the day and make progress on all the projects you are working on.
-
-**Take Away**: write down your schedule (every day, every week, whatever period
-works for you) and stick to it. Review it after a while to see how you can
-adapt/be more efficient.
-
-
-# Keep an open-chat policy
-Your co-workers and team-members might be relunctant to engage via e-mail and/or
-chat. 
-After all, it is sometimes easier to come to your desk, ask to go for
-coffee and discuss. 
-
-This is important to make it clear to the people you help/mentor that they
-can ping/page you anytime. **Anytime**. Even after *&quot;work hours&quot;*. For any 
-(work-related) question.
-
-The rationale is simple: if one team member doesn&#39;t know what to do after receiving a page in the middle
-of the night, that is your responsibility to help them and make them feel safe.
-It is always better to be interupted for and make sure the person makes
-progress rather than letting them in the unknown and feeling they cannot do
-anything. After all, this is your job to mentor people and make them feel safe.
-
-**Take Away** : make it clear than you are available through chat and try to
-make people feel safe about discussing anything, even if they feel this is a
-stupid/silly question (no question is stupid).
-
-
-# Make sure your organization is ready
-If you are going to be be remote, make sure the rest of the organization is
-ready. That means there is the necessary infrastructure to work remotely (video
-conference system, messenger/chat (Slack or Chime), etc).
-
-Your organization must be ready for day 1. If people are scheduling meeting and
-you cannot join, this is not going to work. If your manager doesn&#39;t use the
-video conference system when having a conversation with other teams, you will
-not be included in them. Make sure your team/company has the tools and infrastructure
-(Skype, teamwork tools, etc.) so that you can communicate with your team/company.
-
-**Take Away**: make sure the company you are working for has the necessary
-infrastructure to be part of the team and share information while working
-remotely.
-
-
-# Visit periodically
-If your team is physically located somewhere (after all, some company have
-100% remote workers!), visit periodically. 
-Take the opportunity to have face to face discussions with
-other teams about new projects. Go for a beer with your colleagues and
-socialize. You will probably learn a lot about other projects and people are
-sometimes more open to discuss while having a face to face conversation.
-
-**Take Away**: if possible, come back sometimes, have meetings to discuss new
-projects (use a whiteboard!). Go for a beer with your team (and offer the first
-round).
-
-# And to finish ...
-This list represents what has been important to me while working remotely.
-Every person and company is different and what worked for me might not
-be working for you!
-</description>
-        <pubDate>Fri, 26 Jan 2018 05:13:20 -0800</pubDate>
-        <link>http://julien.gunnm.org/job/remote%20work/2018/01/26/challenge-to-work-remotely.md/</link>
-        <guid isPermaLink="true">http://julien.gunnm.org/job/remote%20work/2018/01/26/challenge-to-work-remotely.md/</guid>
-        
-        <category>job</category>
-        
-        <category>amazon</category>
-        
-        
-        <category>job</category>
-        
-        <category>remote work</category>
-        
-      </item>
     
       <item>
         <title>On working remotely</title>
@@ -1204,6 +1051,238 @@ tests/test_flaskyelp.py .......
         <category>osate</category>
         
         <category>aadl</category>
+        
+      </item>
+    
+      <item>
+        <title>Supporting the UART1 of the BeagleBone Black with seL4/CAmkES</title>
+        <description>&lt;h1 id=&quot;in-a-nutshell&quot;&gt;In a nutshell&lt;/h1&gt;
+
+&lt;p&gt;In this article, I explain how to support UART1 of the &lt;a href=&quot;http://beagleboard.org/black&quot;&gt;Beaglebone Black&lt;/a&gt; with seL4 and the CAmkES component approach. I explain how to test the UART1, build a cable, patch the kernel and make your application.&lt;/p&gt;
+
+&lt;h1 id=&quot;building-your-cable&quot;&gt;Building your cable&lt;/h1&gt;
+
+&lt;p&gt;First, you need a cable to connect to the UART1. I (well, the folks at work helped me to get one!) used &lt;a href=&quot;https://www.adafruit.com/products/954&quot;&gt;this USB to TTL serial cable from Adafruit&lt;/a&gt;, which worked fine. The white PIN is connected to PIN 24 on the P9 connector board and the green cable is connected to PIN 26 on the P9 connector board.&lt;/p&gt;
+
+&lt;p&gt;The picture is ugly but this is how it looks like.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/beaglebone-uart1.jpg&quot; alt=&quot;Beaglebone with UART1 cable&quot; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;testing-the-uart1-interface-with-debian&quot;&gt;Testing the UART1 interface with Debian&lt;/h1&gt;
+
+&lt;p&gt;You can use the UART1 interface with the pre-installed debian on the Beaglebone. It already supports UART1 operation. What you need to do is to build a cable, connect on the debian and send some stuff on the port.&lt;/p&gt;
+
+&lt;p&gt;The Beaglebone supports what we call a Device Tree Overlay. Long story short, this is a way to change the usage of each PIN. You then have to use the appropriate overlay to use the UART1. The default settings do not work, and you have to issue the following command to enable UART1.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;echo ADAFRUIT-UART1 &amp;gt; /sys/devices/bone_capemgr.*/slots
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Then, you can connect on the serial and issue whatever you want. Let’s say the UART1 of the Beaglebone Black is connected to /dev/ttyUSB1, you can then connected on screen and type anything.&lt;/p&gt;
+
+&lt;p&gt;On your computer, run the following command:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;screen  /dev/ttyO1 115200
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;On the Beaglebone Black, run the following command:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;screen /dev/ttyUSB1 115200
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Type stuff on both screen, you should see what is sent/received.&lt;/p&gt;
+
+&lt;p&gt;If it does not work, check your cables and/or the commands you invoked. Let’s move on.&lt;/p&gt;
+
+&lt;h1 id=&quot;implementing-the-kernel-side&quot;&gt;Implementing the kernel side&lt;/h1&gt;
+
+&lt;p&gt;First, checkout the seL4 and CAmkES repository. When you import the kernel, some stuff are not supported. For example, the UART1 is not declared. You then need to add the definition of UART1 in the kernel.&lt;/p&gt;
+
+&lt;p&gt;Edit the file &lt;em&gt;kernel/include/plat/am335x/plat/machine/devices.h&lt;/em&gt; and add the following line.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;#define UART1_PADDR     0x48022000
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Then, in &lt;em&gt;kernel/src/plat/am335x/machine/hardware.c&lt;/em&gt; you need to add the support for all UARTs. I found &lt;a href=&quot;https://e2e.ti.com/support/embedded/starterware/f/790/t/214547&quot;&gt;online a nice piece of code&lt;/a&gt; that configures all UARTs. I imported it directly into the kernel. You can see the code in &lt;a href=&quot;/assets/sel4-kernel-uart1bb.diff&quot;&gt;my patch&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h1 id=&quot;implementing-the-component&quot;&gt;Implementing the component&lt;/h1&gt;
+
+&lt;p&gt;So now, the kernel has the information about the UART1 device (&lt;em&gt;UART1_PADDR&lt;/em&gt;) and activate the necessary resources to handle it. Now, we need to describe the component using CAmkES and implement its driver in the user-space partition.&lt;/p&gt;
+
+&lt;h2 id=&quot;camkes-definition&quot;&gt;CAmkES definition&lt;/h2&gt;
+
+&lt;p&gt;We define a hardware CAmkES component that represents the UART component and we connect it to the device that is supposed to handle/manage it.&lt;/p&gt;
+
+&lt;p&gt;My assembly look like this:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;import &amp;lt;std_connector.camkes&amp;gt;;
+import &quot;components/timer/Timer.camkes&quot;;
+import &quot;components/ProducerThreadImpl/ProducerThreadImpl.camkes&quot;;
+import &quot;components/ConsumerThreadImpl/ConsumerThreadImpl.camkes&quot;;
+
+component UART{
+  hardware;
+  dataport Buf mem;
+}
+
+component ConsumerThreadImpl
+{
+  include &quot;generatedtypes.h&quot;;
+  control;
+  dataport simpletype data_sink;
+  consumes sig activator;
+  dataport Buf uartmem;
+}
+
+assembly
+{
+  composition
+  {
+    component Timerbase timerbase;
+    component Timer timer;
+    component UART drv;
+
+    component ProducerThreadImpl Prod_Pinger;
+    component ConsumerThreadImpl Cons_PingMe;
+
+    connection seL4SharedData connection0(from Prod_Pinger.data_source, to Cons_PingMe.data_sink);
+    connection seL4Notification notification0 (from timer.Prod_Pinger_activator, to Prod_Pinger.activator);
+    connection seL4Notification notification1 (from timer.Cons_PingMe_activator, to Cons_PingMe.activator);
+    connection seL4HardwareMMIO uart_mem (from Cons_PingMe.uartmem, to drv.mem);
+    connection seL4HardwareMMIO timer_mem (from timer.reg, to timerbase.reg);
+    connection seL4HardwareInterrupt timer_irq (from timerbase.irq, to timer.irq);
+   }
+
+  configuration
+  {
+    connection0.from_access = &quot;W&quot;;
+    connection0.to_access = &quot;R&quot;;
+    timerbase.reg_attributes = &quot;0x48040000:0x1000&quot;;
+    timerbase.irq_attributes = 68;
+    drv.mem_attributes       = &quot;0x48022000:0x1000&quot;;
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;In this declaration, the assembly has two interesting component:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;UART&lt;/strong&gt; (and its related instance &lt;em&gt;drv&lt;/em&gt;) represents the hardware component of the UART. We configure it in the configuration section and its memory area (see &lt;em&gt;drv.mem_attributes = 0x48022000:0x1000&lt;/em&gt;). This will then map the address &lt;em&gt;0x48022000&lt;/em&gt; into the partition in a pointer called uartmem.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;ConsumerThreadImpl&lt;/strong&gt; represents the component that is using the hardware component. This component will then contain all the code necessary to execute the driver.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;There are other artifacts of course, such as the timer and timerbase components that are here to handle the timer and activate periodic tasks. I detailed these aspects before, you can read &lt;a href=&quot;/geek/sel4/2016/04/18/periodic-tasks-with-sel4/&quot;&gt;this post in case you are interested&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;The architecture of our CAmkES application is as follow: the producer will send a number that is eventually send through the UART by the Consumer component.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/sel4-bb-uart1.png&quot; alt=&quot;CAmkES architecture&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;implementing-the-driver&quot;&gt;Implementing the driver&lt;/h2&gt;
+
+&lt;p&gt;Now, we need to implement the driver. As for the kernel, I used a lot of code from &lt;a href=&quot;https://e2e.ti.com/support/embedded/starterware/f/790/t/214547&quot;&gt;this post on the starterware forum&lt;/a&gt;. Mostly, the code first initialize the UART1 and send the string “hello” followed by the number received (module 10).&lt;/p&gt;
+
+&lt;p&gt;The code of the component looks like this:&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;int run(void)
+{
+        devmem = (unsigned int) uartmem;
+        unsigned int UARTparms = 0;
+        char mybuf[10];
+        int val;
+
+        memset (mybuf, 0, 10);
+        UartFIFOConfigure(devmem);
+        UARTparms = 0x3; // p4033 - 8 data bits, 1 stop bit, no parity
+        UARTsetup(devmem, 115200, UARTparms, UART16x_OPER_MODE);
+
+        while (1)
+        {
+
+                activator_wait();
+                user_ping_spg ((*data_sink) );
+                sprintf(mybuf, &quot;hello %d\n&quot;, (*data_sink % 10));
+                UART_tx(devmem, mybuf, 7);
+                UART_tx(devmem, &quot;hello&quot;, 5);
+                printf (&quot;UART= %d\n&quot;, val);
+
+        }
+        return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;We imported some code to initialize and use UART1. The CAmkES code generator mapped the 0x48022000 address (defines in the CAmkES description for the hardware component) in the uartmem component. We assigned the address of the &lt;em&gt;uartmem&lt;/em&gt; variable into &lt;em&gt;devmem&lt;/em&gt;. We can then manipulate the device using this address.&lt;/p&gt;
+
+&lt;p&gt;The code of other functions (&lt;em&gt;UArtFIFOConfigure&lt;/em&gt; and &lt;em&gt;UARTsetup&lt;/em&gt;) are included in the &lt;a href=&quot;(/assets/pingbeagleboneinstance-uart1.tgz)&quot;&gt;zip file containing the full CAmkES application&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h1 id=&quot;booting-the-application&quot;&gt;Booting the application&lt;/h1&gt;
+
+&lt;p&gt;Once you compiled the application, you need to boot it! If you do not know how to compile or produce binary files for a CAmkES application that targets the Beaglebone Black, you can read the &lt;a href=&quot;http://sel4.systems/Info/CAmkES/GettingStarted.pml&quot;&gt;CAmkES documentation&lt;/a&gt; and the seL4 documentation about the &lt;a href=&quot;https://sel4.systems/Info/Hardware/Beaglebone/&quot;&gt;Beaglebone&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;The beaglebone uses something weird called the Device Tree Overlay. You can get &lt;a href=&quot;https://learn.adafruit.com/introduction-to-the-beaglebone-black-device-tree/device-tree-overlays&quot;&gt;information there&lt;/a&gt;. Long story short, this mechanism lets you configure how the PIN of the boards are connected to the AM335x SOC.&lt;/p&gt;
+
+&lt;p&gt;We do not need to change everything but still need to activate the UART1. You can do this when booting the board with u-boot. Type the following lines in u-boot:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;mw.l 0x44E10980 0x30
+mw.l 0x44E10984 0x00
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;This would be enough. It seems it cannot work in the component itself. On the other hand, as discussed in &lt;a href=&quot;http://sel4.systems/pipermail/devel/2016-June/000854.html&quot;&gt;this post&lt;/a&gt; it seems you can avoid that by inserting the following line in &lt;em&gt;platform_init()&lt;/em&gt;.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;*(volatile uint32_t*)0x44E10980 = 0x30;
+*(volatile uint32_t*)0x44E10984 = 0x00;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Then, time to load the binary. I used a network connection to do that.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;dhcp ${loadaddr} 192.168.1.1:sel4.img
+
+go ${loadaddr}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Then, just issue a &lt;em&gt;cat /dev/ttyUSB1&lt;/em&gt; and &lt;em&gt;voila!&lt;/em&gt;. The following picture show what I received from the UART1 of the BeagleBone Black.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/sel4-bb-term.png&quot; alt=&quot;Output from UART1&quot; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;debugging&quot;&gt;Debugging&lt;/h1&gt;
+
+&lt;p&gt;Sometimes, you need to debug and trace when things are going wrong. You might experience this. I would recommend the &lt;a href=&quot;https://github.com/SEL4PROJ/sel4-tutorials/blob/master/docs/seL4Tutorial.pdf&quot;&gt;seL4 tutorial&lt;/a&gt; that provides some useful direction. When having an exception in a partition, the following command is very useful.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;arm-none-eabi-objdump -dS /path/to/your/binary | less
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;In a nutshell, it gives you the assembly code, its address and with the associated C line. So, you can exactly know where to look for when you get the address related to a crash.&lt;/p&gt;
+
+&lt;p&gt;For example, when debugging the UART1 driver in the partition, I used this command a lot. Very useful. You might need it!&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;arm-none-eabi-objdump -dS build/arm/am335x/pingbeagleboneinstance/Cons_PingMe.instance.bin | less
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h1 id=&quot;special-thanks&quot;&gt;Special thanks&lt;/h1&gt;
+
+&lt;p&gt;The staff that are working on this project at CMU as well as the seL4 community!&lt;/p&gt;
+
+&lt;h1 id=&quot;resources&quot;&gt;Resources&lt;/h1&gt;
+&lt;ul&gt;
+  &lt;li&gt;Patch for the kernel: &lt;a href=&quot;/assets/sel4-kernel-uart1bb.diff&quot;&gt;available here&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;CAmkES application with the driver: &lt;a href=&quot;/assets/pingbeagleboneinstance-uart1.tgz&quot;&gt;available here&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Bare code for UART1 support: &lt;a href=&quot;https://e2e.ti.com/support/embedded/starterware/f/790/t/214547&quot;&gt;discussion on TI forums&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://sel4.systems/pipermail/devel/2016-June/000849.html&quot;&gt;Related thread on the seL4 mailing list&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Wed, 15 Jun 2016 06:13:20 -0700</pubDate>
+        <link>http://julien.gunnm.org/geek/sel4/beaglebone%20black/2016/06/15/beaglebone-black-sel4-uart1/</link>
+        <guid isPermaLink="true">http://julien.gunnm.org/geek/sel4/beaglebone%20black/2016/06/15/beaglebone-black-sel4-uart1/</guid>
+        
+        <category>sel4</category>
+        
+        <category>real-time</category>
+        
+        <category>CAmkES</category>
+        
+        
+        <category>geek</category>
+        
+        <category>sel4</category>
+        
+        <category>beaglebone black</category>
         
       </item>
     
