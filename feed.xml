@@ -5,9 +5,140 @@
     <description>Harder, Better, Faster, Stronger</description>
     <link>http://julien.gunnm.org/</link>
     <atom:link href="http://julien.gunnm.org/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Sun, 25 Feb 2018 12:19:11 -0800</pubDate>
-    <lastBuildDate>Sun, 25 Feb 2018 12:19:11 -0800</lastBuildDate>
+    <pubDate>Sat, 12 May 2018 09:16:31 -0700</pubDate>
+    <lastBuildDate>Sat, 12 May 2018 09:16:31 -0700</lastBuildDate>
     <generator>Jekyll v3.1.6</generator>
+    
+      <item>
+        <title>The symbol of the Falcon Heavy launch</title>
+        <description>&lt;p&gt;Until very recently, space exploration was something that did not get much traction.
+People stopped dreaming about space and rockets long time ago.&lt;/p&gt;
+
+&lt;p&gt;Until this happened.&lt;/p&gt;
+
+&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/A0FZIwabctw&quot; frameborder=&quot;0&quot; allow=&quot;autoplay; encrypted-media&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+
+&lt;p&gt;In less than 10 minutes, a giant rocket took off, its side booster came back on earth and a roadster was in space.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;BOOM&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;A lot of things have been said about the rocket itself, about SpaceX founder Elon Musk
+and what it means for the future of space exploration and space travel. I do not want to talk about this.&lt;/p&gt;
+
+&lt;p&gt;I want to share some insights about the incidental effect of this launch.
+There are the main few thoughts.&lt;/p&gt;
+
+&lt;h1 id=&quot;if-you-want-to-disrupt-do-not-listen-to-the-experts&quot;&gt;If you want to disrupt, do not listen to the experts&lt;/h1&gt;
+
+&lt;p&gt;When I was working at the European Space Agency (&lt;a href=&quot;http://www.esa.int&quot;&gt;ESA&lt;/a&gt;) for about 2 years, people were making fun of SpaceX.
+Space experts (engineers, directors - almost everybody at that time)
+considered Musk was an idiot with an irrealistic dream of building reusable rockets.&lt;/p&gt;
+
+&lt;p&gt;For years, the company was discredited, saying that the idea of landing rockets
+was not feasible.&lt;/p&gt;
+
+&lt;p&gt;Until this happened.&lt;/p&gt;
+
+&lt;p style=&quot;text-align: center;&quot;&gt;&lt;img src=&quot;/assets/rocket-landing.gif&quot; alt=&quot;Landing&quot; width=&quot;50%&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;SpaceX made it happen and now, the same experts that made fun of him 
+&lt;a href=&quot;https://en.wikipedia.org/wiki/Adeline_(rocket_stage)&quot;&gt;copy him&lt;/a&gt;. It will take them years to catch-up (the first reusable rocket
+from ESA is announced to start to be tested in 2020 - SpaceX succeeded in 2015!). The person they called
+an idiot years ago disrupt their industry and will make them bankrupt.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Lesson 1&lt;/strong&gt;: dream big, worry small&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Lesson 2&lt;/strong&gt;: do not be overconfident, anybody can attack your business and make you bankrupt tomorrow&lt;/p&gt;
+
+&lt;h1 id=&quot;governments-are-inefficient&quot;&gt;Governments are inefficient&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Ariane_6&quot;&gt;Ariane 6&lt;/a&gt; will take $3.6B euros to develop. The Falcon Heavy development cost was $500M and 
+can take embedd more payload than the future Ariane. So, why such a difference?&lt;/p&gt;
+
+&lt;p&gt;There are two main reasons: work inefficiency and lack/fear of innovation.&lt;/p&gt;
+
+&lt;p&gt;Actual rocket developments is done by government agencies. The work is often done
+by contractors that are very expensive (you have to pay the contractor agency, which
+takes a fee - they act as a middleman). There are also some workers that are not 
+competent and still employed and/or people
+promoted for political reasons while not being effective and block other, more competent engineers
+that are frustrated and leave after few years. At the end of the day, this is a large overhead.
+Also, in the case of ESA, there is the &lt;a href=&quot;https://www.esa.int/About_Us/Business_with_ESA/How_to_do/Industrial_policy_and_geographical_distribution&quot;&gt;geographic return policy&lt;/a&gt;:
+past projects are not re-used and the tax payer pay the same project twice!&lt;/p&gt;
+
+&lt;p&gt;The second is lack of innovation and fear of disruption. Until SpaceX started
+to be seriously in the space business, rocket launchers and satellites were using proprietary processors
+paid at outrageous prices. In the case of european space programs,
+&lt;a href=&quot;https://www.gaisler.com/&quot;&gt;gaisler research&lt;/a&gt;, a company started by a former ESA employee, 
+is the main (only?) hardware provider for onboard computers.
+Its electronic components cost dozen of thousands of euros
+and each sub-contractor for any space program has to purchases these processors. As there is only one
+provider for these processor, there is no competition on the price and the company can set the price
+the tax-payer will end up paying! SpaceX took a radically different
+direction by using off-the-shelf components make them resilient to radiation using redundant
+systems. Instead of feeding companies
+that set their own prices, SpaceX designed a system that uses multiple cheap component and coordinate them
+to be resilient to failure. There is no doubt that they apply the same principles at different steps of the
+supply chain to reduce costs at scale. Simple and efficient.&lt;/p&gt;
+
+&lt;p&gt;The point is: space programs have been run by governmental organizations, which are
+inefficient and end up wasting the taxpayer money.
+SpaceX gave the proof by reducing drastically 
+the cost of a launch ($60M for a &lt;a href=&quot;https://en.wikipedia.org/wiki/Falcon_9&quot;&gt;Falcon9&lt;/a&gt; launch versus $200M for Ariane5) 
+and reduce development costs (see above). 
+Government presence is necessary in some areas
+but they are not designed to run businesses efficiently, this has been shown multiple times
+in history (the telecom business in France is a good one too).&lt;/p&gt;
+
+&lt;h1 id=&quot;immigration-is-a-force&quot;&gt;Immigration is a force&lt;/h1&gt;
+
+&lt;p&gt;There is a lot of discussion about immigration in the previous months. I do not want
+to have a political discussion there, this is not my objective. My point is that SpaceX is a company 
+started by an immigrant and many SpaceX employees are foreigners.&lt;/p&gt;
+
+&lt;p&gt;Immigration bring people that are hungry and want to raise the bar. Look around major US companies today:
+one founder of Alphabet is Russian, the CEO of Google is Indian as the CEO of Microsoft!
+Foreigners come in a country because they have big dream. They come to realize them
+They are a force: their positive energy is the fuel of innovation and success.&lt;/p&gt;
+
+&lt;h1 id=&quot;usa-is-where-dreams-happen&quot;&gt;USA is where dreams happen&lt;/h1&gt;
+
+&lt;p&gt;A success like the Falcon Heavy project would never have happened in Europe: were laughing at Musk
+and his ideas of reusable rockets! No government would have funded him outside of the USA. Europe is the culture of the nay-sayer, where
+people prefer blaming rather than trying and learning from their failure.&lt;/p&gt;
+
+&lt;p&gt;USA is the country where you have enough freedom to start and experience ideas. This is where
+new technologies are created. Where self-driving cars are emerging where energy efficient 
+materials are produced. And now, new rockets are taking off. USA is the country where your dreams can become reality.&lt;/p&gt;
+
+&lt;h1 id=&quot;the-future-is-bright-for-the-space-business&quot;&gt;The future is bright for the Space business&lt;/h1&gt;
+
+&lt;p&gt;This launch was a great promotion for Space X, no doubt about this. And now, people are talking again about space exploration
+and space travel. SpaceX, &lt;a href=&quot;https://www.blueorigin.com/&quot;&gt;Blue Origin&lt;/a&gt; and new companies will be competing. 
+This will open more opportunities in a very near future, not only for space travel but potentially
+for establishing colonies on other planets. The dark days are gone for the space business.&lt;/p&gt;
+
+</description>
+        <pubDate>Thu, 26 Apr 2018 06:13:20 -0700</pubDate>
+        <link>http://julien.gunnm.org/thoughts/spacex/falcon%20heavy/2018/04/26/falcon-heavy-launch/</link>
+        <guid isPermaLink="true">http://julien.gunnm.org/thoughts/spacex/falcon%20heavy/2018/04/26/falcon-heavy-launch/</guid>
+        
+        <category>us</category>
+        
+        <category>falcon heavy</category>
+        
+        <category>esa</category>
+        
+        <category>space</category>
+        
+        
+        <category>thoughts</category>
+        
+        <category>spacex</category>
+        
+        <category>falcon heavy</category>
+        
+      </item>
     
       <item>
         <title>Goodbye Amazon, Hello Twitter</title>
@@ -1014,71 +1145,6 @@ tests/test_flaskyelp.py .......
         <category>geek</category>
         
         <category>python</category>
-        
-      </item>
-    
-      <item>
-        <title>Simplify your OSATE and AADL analysis code with Java 8 lambda</title>
-        <description>&lt;p&gt;If you already wrote analysis code inside &lt;a href=&quot;http://www.osate.org&quot;&gt;OSATE&lt;/a&gt;, you probably know that when writing an analysis plug-in, filtering components (according to their type, property, etc) can be painful. It can introduce a lot of useless code that browse the model to find the component of interest. The code used to browse the model is long and add a lot of &lt;strong&gt;noise&lt;/strong&gt;, making the review difficult.&lt;/p&gt;
-
-&lt;p&gt;Over the last months, I started to use the &lt;a href=&quot;http://www.eclipse.org/xtend/&quot;&gt;xtend&lt;/a&gt; language for writing my analysis plugin. It was a way to simplify my code and learn a new language. When I started to read about Java 8, I was excited to use the &lt;a href=&quot;https://docs.oracle.com/javase/tutorial/java/javaOO/lambdaexpressions.html&quot;&gt;lambda expression mechanism&lt;/a&gt;. And realized that it can be leveraged to simplify the design of my AADL plugins.&lt;/p&gt;
-
-&lt;p&gt;Bottom line: it remove a lot of &lt;strong&gt;noisy&lt;/strong&gt; code to only focus on what is really important. It makes the code more understandable and easy to read.&lt;/p&gt;
-
-&lt;p&gt;I will illustrate that with an example. In this example, I get all data components that have the &lt;code class=&quot;highlighter-rouge&quot;&gt;Data_Size&lt;/code&gt; property set to 0. The difference between a standard, recursive implementation and the lambda-expression is simple: about 20 lines of code vs 3 lines of code.&lt;/p&gt;
-
-&lt;p&gt;The imperative version looks like this (see below): you have to browse the component hierarchy and check the component category and &lt;code class=&quot;highlighter-rouge&quot;&gt;Data_Size&lt;/code&gt; value. Really, what you care in this code is the condition that filter the component. All the rest is noise, not useful but can still introduce a lot of bugs.&lt;/p&gt;
-
-&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ComponentInstance&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;findComponentRecursive&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ComponentInstance&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;si&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-   &lt;span class=&quot;n&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ComponentInstance&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;res&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ArrayList&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ComponentInstance&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
-
-   &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ComponentInstance&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ci&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;si&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getComponentInstances&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;())&lt;/span&gt;
-   &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-      &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ci&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getCategory&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ComponentCategory&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;DATA&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;GetProperties&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getDataSizeInBytes&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ci&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;0.0&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;))&lt;/span&gt;
-      &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-         &lt;span class=&quot;n&quot;&gt;res&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;add&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ci&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-      &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-
-      &lt;span class=&quot;n&quot;&gt;res&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;addAll&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;findComponentRecursive&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ci&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;));&lt;/span&gt;
-   &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-
-   &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;res&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ComponentInstance&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;findComponent&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;SystemInstance&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;si&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-   &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;findComponentRecursive&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;si&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;Let’s now have a look at the same implementation but with the lambda expression. What you really have is a method that filters the components using a predicate. Simple. Easy to read. Efficient.&lt;/p&gt;
-
-&lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ComponentInstance&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;findComponent&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;SystemInstance&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;si&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-   &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ComponentInstance&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;si&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getAllComponentInstances&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;().&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;stream&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;
-      &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;filter&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;comp&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;comp&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getCategory&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ComponentCategory&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;DATA&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;GetProperties&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getDataSizeInBytes&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;comp&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;0.0&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;collect&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Collectors&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;toList&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;());&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;I am still reading code examples about Java 8 and using lambda. I am convinced it can help a lot to write better code, increase productivity and reduce bugs. If you are writing analysis plugins for AADL, I would definitively recommend to at list &lt;a href=&quot;https://docs.oracle.com/javase/tutorial/java/javaOO/lambdaexpressions.html&quot;&gt;have a look at the tutorial&lt;/a&gt;.&lt;/p&gt;
-</description>
-        <pubDate>Sun, 31 Jul 2016 06:13:20 -0700</pubDate>
-        <link>http://julien.gunnm.org/geek/osate/aadl/2016/07/31/java-lambda-osate-plugins/</link>
-        <guid isPermaLink="true">http://julien.gunnm.org/geek/osate/aadl/2016/07/31/java-lambda-osate-plugins/</guid>
-        
-        <category>AADL</category>
-        
-        <category>OSATE</category>
-        
-        <category>java lambda</category>
-        
-        
-        <category>geek</category>
-        
-        <category>osate</category>
-        
-        <category>aadl</category>
         
       </item>
     
