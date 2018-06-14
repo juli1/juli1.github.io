@@ -29,12 +29,12 @@
     <link rel="stylesheet" href="/css/main.css">
 
     <!-- Twitter Cards -->
-    <meta property="twitter:title" content="Flaskyelp, a simple yelp-like website with Python and Flask" />
-    <meta property="twitter:description" content="Present an implementation of a small yelp-like website using Python and Flask" />
-    <meta property="twitter:card" content="summary" />
-    <meta property="twitter:site" content="@juli1pb" />
-    <meta property="twitter:creator" content="@juli1pb" />
-    <meta property="twitter:image:src" content="/assets/profile.png"/>
+    <meta name="twitter:title" content="Flaskyelp, a simple yelp-like website with Python and Flask" />
+    <meta name="twitter:description" content="Present an implementation of a small yelp-like website using Python and Flask" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@juli1pb" />
+    <meta name="twitter:creator" content="@juli1pb" />
+    <meta name"twitter:image:src" content="/assets/profile.png"/>
 
 
     <!-- Facebook opengraph -->
@@ -136,14 +136,14 @@
 <h2 id="install">Install</h2>
 <p>You need a working python environment. The tool depend on <a href="http://flask.pocoo.org/">Flask</a>, so, you need to install it. Otherwise, you can use a virtual environment to install all the dependencies. There is the set of commands that would get you started:</p>
 
-<div class="language-shell highlighter-rouge"><pre class="highlight"><code>git clone https://github.com/juli1/flaskyelp.git
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone https://github.com/juli1/flaskyelp.git
 <span class="nb">cd </span>flaskyelp
 virtualenv venv
-. ./venv/bin/activate
+<span class="nb">.</span> ./venv/bin/activate
 pip install flask
-python -m flask initdb
-python -m flask run
-</code></pre></div>
+python <span class="nt">-m</span> flask initdb
+python <span class="nt">-m</span> flask run
+</code></pre></div></div>
 
 <p>During this sequence of commands, you checkout the project, install the virtual environment, activate it, install the dependency, initialize the database and run the program.</p>
 
@@ -159,7 +159,7 @@ python -m flask run
 
 <p>You should expect a trace like this.</p>
 
-<div class="language-shell highlighter-rouge"><pre class="highlight"><code>....
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>....
 Using /home/julien/git/flaskyelp/.eggs/py-1.4.31-py2.7.egg
 running egg_info
 writing requirements to flaskyelp.egg-info/requires.txt
@@ -171,7 +171,7 @@ reading manifest template <span class="s1">'MANIFEST.in'</span>
 writing manifest file <span class="s1">'flaskyelp.egg-info/SOURCES.txt'</span>
 running build_ext
 <span class="o">=======================================================</span> <span class="nb">test </span>session starts <span class="o">=======================================================</span>
-platform linux2 -- Python 2.7.12+, pytest-3.0.3, py-1.4.31, pluggy-0.4.0
+platform linux2 <span class="nt">--</span> Python 2.7.12+, pytest-3.0.3, py-1.4.31, pluggy-0.4.0
 rootdir: /home/julien/git/flaskyelp, inifile:
 collected 7 items
 
@@ -179,7 +179,7 @@ tests/test_flaskyelp.py .......
 
 <span class="o">====================================================</span> 7 passed <span class="k">in </span>0.22 seconds <span class="o">=====================================================</span>
 <span class="o">[</span>julien@akira]/home/julien/git/flaskyelp#
-</code></pre></div>
+</code></pre></div></div>
 
 <h1 id="whats-next">What’s next?</h1>
 

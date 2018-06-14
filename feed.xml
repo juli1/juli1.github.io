@@ -5,9 +5,121 @@
     <description>Harder, Better, Faster, Stronger</description>
     <link>http://julien.gunnm.org/</link>
     <atom:link href="http://julien.gunnm.org/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Sat, 12 May 2018 09:16:31 -0700</pubDate>
-    <lastBuildDate>Sat, 12 May 2018 09:16:31 -0700</lastBuildDate>
+    <pubDate>Wed, 13 Jun 2018 19:54:00 -0700</pubDate>
+    <lastBuildDate>Wed, 13 Jun 2018 19:54:00 -0700</lastBuildDate>
     <generator>Jekyll v3.1.6</generator>
+    
+      <item>
+        <title>Learning Scala in 2018</title>
+        <description>&lt;p&gt;Since I joined &lt;a href=&quot;http://www.twitter.com&quot;&gt;Twitter&lt;/a&gt;, I had to learn &lt;a href=&quot;http://www.scala-lang.org&quot;&gt;Scala&lt;/a&gt;
+and be familiar with the language in order to contribute to the codebase.
+I was familiar with Java (I spent 4+ years maintaining &lt;a href=&quot;http://www.osate.org&quot;&gt;OSATE&lt;/a&gt; while working
+at Carnegie Mellon) and I thought that it would be somehow easy, quick and painless.&lt;/p&gt;
+
+&lt;p&gt;I was dead wrong.&lt;/p&gt;
+
+&lt;p&gt;Yes, Scala runs on top of the JVM but it does not mean it shares so much with Java. Scala is a functional programming language and is way more
+complicated than Java. This is another level of complexity. 
+When I joined Twitter, I started to contribute to a codebase
+with people writing Scala for 4+ years and use the nice and barely documented features for advanced
+users. With such a complicated language, the learning curve was very steep and I had to go through it
+very quickly to be able to produce anything meaningful.&lt;/p&gt;
+
+&lt;p&gt;That &lt;em&gt;was&lt;/em&gt; hard. But not painful.&lt;/p&gt;
+
+&lt;p&gt;I love learning and I had a ton of fun learning a new language.&lt;/p&gt;
+
+&lt;p&gt;After three months, I am still learning every day and continue to read about advanced features
+of the language. But I am now somewhat familiar enough with the basics concepts of Scala that I can be
+an active contributor in different projects and teach the language fundamentals at my work.&lt;/p&gt;
+
+&lt;p&gt;I wanted to share the current state of the resources to learn Scala in 2018. After 14 years
+of existence, a lot of materials have been produced and I wanted to share what has been 
+working for me.&lt;/p&gt;
+
+&lt;h1 id=&quot;the-good&quot;&gt;The Good&lt;/h1&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;a href=&quot;http://horstmann.com/scala/index.html&quot;&gt;Scala The Impatient&lt;/a&gt; is a good resource but way too light. It covers only some very basic concepts and you do not see some advances features that are really interesting. Read it but do not stop there.&lt;/li&gt;
+  &lt;li&gt;The blog post series of &lt;a href=&quot;https://danielwestheide.com/&quot;&gt;Daniel Westheide&lt;/a&gt;: &lt;a href=&quot;https://danielwestheide.com/scala/neophytes.html&quot;&gt;The Neophyte’s Guide to Scala&lt;/a&gt;. A &lt;strong&gt;must-read&lt;/strong&gt; if you are new to Scala. The examples are great, with many details.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.amazon.com/Programming-Scala-Updated-2-12/dp/0981531687/ref=sr_1_1?ie=UTF8&amp;amp;qid=1528782250&amp;amp;sr=8-1&amp;amp;keywords=odersky+scala&quot;&gt;Programming in Scala&lt;/a&gt; by Martin Odersky: great resource to go deeper about the internals of the language
+(how containers work, etc.)&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://twitter.github.io/util/&quot;&gt;Twitter util&lt;/a&gt; all the code developed by Twitter - some ideas (like Future) have been merged into the language.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h1 id=&quot;the-bad&quot;&gt;The Bad&lt;/h1&gt;
+
+&lt;p&gt;The classes on Coursera are unfortunately not that great.
+There is a specialization dedicated to Scala and I completed two of the classes in that specialization.
+I was very disappointed by the content, especially because I love Coursera (and completed 
+great classes on the platform).
+Some of the assignments do not match the class, the content is often too confusing.
+This specialization is not free (you need to pay a $50 montly membership), which would be &lt;em&gt;ok&lt;/em&gt; 
+if the content was good. Unfortunately, this is not that great and I would recommend to stick
+with other resources (like the blog posts from &lt;a href=&quot;https://danielwestheide.com/scala/neophytes.html&quot;&gt;Westheide&lt;/a&gt;).&lt;/p&gt;
+
+&lt;h1 id=&quot;focus-on-the-functional-programming-concepts&quot;&gt;Focus on the Functional Programming concepts&lt;/h1&gt;
+&lt;p&gt;One of the best advice I could give is to focus on the principles of functional programming. Do not focus
+too much on the syntax and other details (such as &lt;code class=&quot;highlighter-rouge&quot;&gt;case class&lt;/code&gt;). Just learn and practice functional 
+programming concepts such as:&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;&lt;strong&gt;Monad&lt;/strong&gt;: this is just a container but a fundamental concept for functional programming. &lt;a href=&quot;https://medium.com/@sinisalouc/demystifying-the-monad-in-scala-cc716bb6f534&quot;&gt;Good article that explains the Monad&lt;/a&gt;.&lt;/li&gt;
+  &lt;li&gt;All &lt;strong&gt;transformations functions&lt;/strong&gt;: &lt;code class=&quot;highlighter-rouge&quot;&gt;map&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;flatMap&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;filter&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;drop&lt;/code&gt;. Know them. Practice them. RTFM the &lt;a href=&quot;https://www.scala-lang.org/api&quot;&gt;Scala API&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;What is &lt;strong&gt;&lt;a href=&quot;https://www.quora.com/What-is-tail-recursion-1&quot;&gt;tail recursion&lt;/a&gt;&lt;/strong&gt; and understand why Scala will not blow your stack&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h1 id=&quot;use-a-good-ide&quot;&gt;Use a good IDE&lt;/h1&gt;
+
+&lt;p&gt;If you cut meat, you do not use the bread knife. Similarly, when you program in Scala, you
+do not use vim or emacs. You could but this is just inefficient and a waste of time when
+great IDE provide a ton of support for understanding the source code and digging into
+the standard library.&lt;/p&gt;
+
+&lt;p&gt;I use &lt;a href=&quot;https://www.jetbrains.com/idea/&quot;&gt;IntelliJ&lt;/a&gt; and I am regularly discovering new capabilities
+(and amazed by many features, such as refactoring). There are my two favorite features
+in this IDE:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;If you press the &lt;code class=&quot;highlighter-rouge&quot;&gt;shift&lt;/code&gt; key three times very quickly a search dialog appears and you can search for anything inside your project (thanks Adam for the tip!).&lt;/li&gt;
+  &lt;li&gt;Just do &lt;code class=&quot;highlighter-rouge&quot;&gt;command+click&lt;/code&gt; or &lt;code class=&quot;highlighter-rouge&quot;&gt;alt+click&lt;/code&gt; on a variable, reference, type to go to its declaration. Very powerful to browse and explore code.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h1 id=&quot;code-repository&quot;&gt;Code Repository&lt;/h1&gt;
+
+&lt;p&gt;I started a repository that contains code samples for Scala beginners.
+This is a way to share some code with beginners and help newcomers in the Scala community.
+This code is intentionally over-documented and often explains what the code does
+step by step.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;You can find the repository at:  &lt;a href=&quot;https://github.com/juli1/scala-cookbook&quot;&gt;https://github.com/juli1/scala-cookbook&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;keep-learning&quot;&gt;Keep Learning&lt;/h1&gt;
+
+&lt;p&gt;There is always more to learn! Some ideas to improve your knowledge of Scala:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Follow &lt;a href=&quot;https://twitter.com/scala_lang&quot;&gt;@scala_lang&lt;/a&gt; on Twitter!&lt;/li&gt;
+  &lt;li&gt;Subscribe to &lt;a href=&quot;http://scalatimes.com/&quot;&gt;Scala Times&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Follow the Scala topic on &lt;a href=&quot;http://www.quora.com&quot;&gt;Quora&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Tue, 12 Jun 2018 06:13:20 -0700</pubDate>
+        <link>http://julien.gunnm.org/scala/programming/2018/06/12/how-to-learn-scala-in-2018/</link>
+        <guid isPermaLink="true">http://julien.gunnm.org/scala/programming/2018/06/12/how-to-learn-scala-in-2018/</guid>
+        
+        <category>scala</category>
+        
+        <category>intellij</category>
+        
+        <category>programming</category>
+        
+        <category>help</category>
+        
+        
+        <category>scala</category>
+        
+        <category>programming</category>
+        
+      </item>
     
       <item>
         <title>The symbol of the Falcon Heavy launch</title>
@@ -344,14 +456,14 @@ in AWS, GCP or Azure. Your choice. I just choose my Raspberry Pi because this is
 &lt;p&gt;I already wrote the application. This is a simple chat, you can check out the code there: &lt;a href=&quot;https://github.com/juli1/flask-chat&quot;&gt;https://github.com/juli1/flask-chat&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;You can even try it out locally:&lt;/p&gt;
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git clone https://github.com/juli1/flask-chat.git
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git clone https://github.com/juli1/flask-chat.git
 &lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;flask-chat
 &lt;span class=&quot;c&quot;&gt;# Replace the following line with virtualenv if necessary&lt;/span&gt;
-python3.X -m venv venv &lt;span class=&quot;c&quot;&gt;# Replace X with your version of python&lt;/span&gt;
+python3.X &lt;span class=&quot;nt&quot;&gt;-m&lt;/span&gt; venv venv &lt;span class=&quot;c&quot;&gt;# Replace X with your version of python&lt;/span&gt;
 &lt;span class=&quot;nb&quot;&gt;source &lt;/span&gt;flask/bin/activate
-pip install -r requirements.txt
+pip install &lt;span class=&quot;nt&quot;&gt;-r&lt;/span&gt; requirements.txt
 ./run-debug.py
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Then, open your web-browser and go to &lt;a href=&quot;https://localhost:5000&quot;&gt;https://localhost:5000&lt;/a&gt;&lt;/p&gt;
 
@@ -372,7 +484,7 @@ pip install -r requirements.txt
   &lt;li&gt;specify the command to execute the application &lt;code class=&quot;highlighter-rouge&quot;&gt;python3 run-production.py&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;FROM python:3.6-slim-stretch
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;FROM python:3.6-slim-stretch
 MAINTAINER Julien Delange &amp;lt;julien@gunnm.org&amp;gt;
 RUN apt-get update -y
 RUN apt-get install -y python3 python-pip-whl python3-pip
@@ -384,38 +496,38 @@ RUN python3 ./db_create.py
 EXPOSE 5050
 ENTRYPOINT [&quot;python3&quot;]
 CMD [&quot;run-production.py&quot;]
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Once we are done, we can build the docker image. To do so, just invoke the following command:&lt;/p&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;docker build -t flask-chat:latest .
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;docker build -t flask-chat:latest .
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h1 id=&quot;running-the-docker-image-on-your-local-machine-or-on-your-raspberry-pi&quot;&gt;Running the docker image on your local machine or on your raspberry pi&lt;/h1&gt;
 
 &lt;p&gt;Now, it is time to run the docker image freshly built!&lt;/p&gt;
 
 &lt;p&gt;If you want to run the image you built on your computer into a docker container, just run:&lt;/p&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;docker run -d -p 10000:10000 flask-chat
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;docker run -d -p 10000:10000 flask-chat
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;This command run the container and binds the local port 10000 to the container port 5050 (on which the flask application is listening to).&lt;/p&gt;
 
 &lt;p&gt;If you just want to use the pre-built image from &lt;a href=&quot;https://hub.docker.com/r/juli1/flask-chat/tags/&quot;&gt;dockerhub&lt;/a&gt;
 on your local machine, run:&lt;/p&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;docker run -d -p 10000:10000 juli1/flask-chat:latest
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;docker run -d -p 10000:10000 juli1/flask-chat:latest
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;And finally, if you want to run the pre-built image from &lt;a href=&quot;https://hub.docker.com/r/juli1/flask-chat/tags/&quot;&gt;dockerhub&lt;/a&gt;
 on your raspberry pi, run:&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;docker run -d -p 10000:5050 juli1/flask-chat:rpi
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;docker run -d -p 10000:5050 juli1/flask-chat:rpi
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;If you want to actually build the container on your raspberry pi, you can use the &lt;code class=&quot;highlighter-rouge&quot;&gt;Dockerfile.rpi&lt;/code&gt;`file
 in the root directory of the project like this:&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;docker build -t flask-chat:latest . -f Dockerfile.rpi
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;docker build -t flask-chat:latest . -f Dockerfile.rpi
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h1 id=&quot;continuous-integration&quot;&gt;Continuous Integration&lt;/h1&gt;
 &lt;p&gt;We are in 2017 (soon 2018) and continuous deployment/integration is just the way to go. Automating
@@ -512,10 +624,10 @@ the full FS ).&lt;/p&gt;
 &lt;p&gt;The code is publicly available on github at:
 &lt;a href=&quot;https://github.com/juli1/rust-webserver&quot;&gt;https://github.com/juli1/rust-webserver&lt;/a&gt;&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# git clone https://github.com/juli1/rust-webserver.git
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# git clone https://github.com/juli1/rust-webserver.git
 # cd rust-webserver
 # cargo build &amp;amp;&amp;amp; cargo run -- -p 9065 -l 127.0.0.1 --rootdir `pwd`
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;Then, open your browser and go to
 &lt;a href=&quot;http://localhost:9065/Cargo.toml&quot;&gt;http://localhost:9065/Cargo.toml&lt;/a&gt;. You will
@@ -1055,96 +1167,6 @@ start a new chapter.&lt;/p&gt;
         <category>Seattle</category>
         
         <category>Pittsburgh</category>
-        
-      </item>
-    
-      <item>
-        <title>Flaskyelp, a simple yelp-like website with Python and Flask</title>
-        <description>&lt;p&gt;This blog post details the design of a small yelp-like application in Python with Flask.&lt;/p&gt;
-
-&lt;h1 id=&quot;background&quot;&gt;Background&lt;/h1&gt;
-&lt;p&gt;Some years ago, while working at the &lt;a href=&quot;http://www.esa.int&quot;&gt;European Space Agency&lt;/a&gt;, I learned Python and decided to developed some code, mostly for the &lt;a href=&quot;http://taste.tuxfamily.org/&quot;&gt;TASTE project&lt;/a&gt;. Back then, I was pretty familiar with the language, the main thing was to get used to a strict indentation code, which took just few hours. Coding mostly in Java for the &lt;a href=&quot;https://github.com/osate/&quot;&gt;OSATE modeling platform&lt;/a&gt; since 2012, I decided to refresh my Python skills.&lt;/p&gt;
-
-&lt;p&gt;The first idea I had then was to code a small website with Python. First, I read again &lt;a href=&quot;https://thehackerguidetopython.com/&quot;&gt;The Hacker’s Guide to Python&lt;/a&gt;, a book from an old friend, &lt;a href=&quot;https://julien.danjou.info/&quot;&gt;Julien Danjou&lt;/a&gt;, which contains a lot of hacks and tricks for Python.. The second action was to ask him what was a good active framework - as he was more familiar with the Python eco-system, he probably knows better what are the code framework to use. I would then be able to start right away my small website project. He recommended &lt;a href=&quot;http://flask.pocoo.org/&quot;&gt;Flask&lt;/a&gt;, a popular Python micro-framework.&lt;/p&gt;
-
-&lt;h1 id=&quot;introducing-flaskyelp-a-small-yelp-in-python&quot;&gt;Introducing Flaskyelp, a small yelp in Python&lt;/h1&gt;
-&lt;p&gt;I decided to code a small &lt;a href=&quot;http://yelp.com&quot;&gt;Yelp&lt;/a&gt;-clone. Nothing fancy, it will be very simple to design: a basic Flask application, no CSS or fancy front-end, no complex model or interaction with &lt;a href=&quot;https://github.com/osate/&quot;&gt;SQLAlchemy&lt;/a&gt;, just a minimalistic design and a sqlite database. The emphasis was to refresh my python skills and be familiar again with the environment (build system, testing infrastructure, etc.)!&lt;/p&gt;
-
-&lt;p&gt;Also, I wanted to share it so that people in a similar situation can get the sources and potentially learn from it. I put the sources &lt;a href=&quot;https://github.com/juli1/flaskyelp&quot;&gt;on github&lt;/a&gt;, which can help you in case you want to start using Flask. It is in fact very easy to use and install. I will go through the basic steps.&lt;/p&gt;
-
-&lt;h2 id=&quot;install&quot;&gt;Install&lt;/h2&gt;
-&lt;p&gt;You need a working python environment. The tool depend on &lt;a href=&quot;http://flask.pocoo.org/&quot;&gt;Flask&lt;/a&gt;, so, you need to install it. Otherwise, you can use a virtual environment to install all the dependencies. There is the set of commands that would get you started:&lt;/p&gt;
-
-&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git clone https://github.com/juli1/flaskyelp.git
-&lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;flaskyelp
-virtualenv venv
-. ./venv/bin/activate
-pip install flask
-python -m flask initdb
-python -m flask run
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;During this sequence of commands, you checkout the project, install the virtual environment, activate it, install the dependency, initialize the database and run the program.&lt;/p&gt;
-
-&lt;p&gt;Once the program is running, you can see the result in a browser by going on &lt;code class=&quot;highlighter-rouge&quot;&gt;http://localhost:5000/&lt;/code&gt;. You should have something similar as below.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/flaskyelp.png&quot; alt=&quot;flaskyelp&quot; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;test-it&quot;&gt;Test it!&lt;/h2&gt;
-
-&lt;p&gt;I always try to implement test cases for my code, it is essential to make sure you do not break any functionality when you are modifying your code or even trying to implement a new feature! That’s why I wrote some tests to check that the system is behaving as expected! I did not implement a full test-suite but simple test case that checks basic behavior.&lt;/p&gt;
-
-&lt;p&gt;In order to test the application, you can run &lt;code class=&quot;highlighter-rouge&quot;&gt;python setup.py test&lt;/code&gt; to run them.&lt;/p&gt;
-
-&lt;p&gt;You should expect a trace like this.&lt;/p&gt;
-
-&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;....
-Using /home/julien/git/flaskyelp/.eggs/py-1.4.31-py2.7.egg
-running egg_info
-writing requirements to flaskyelp.egg-info/requires.txt
-writing flaskyelp.egg-info/PKG-INFO
-writing top-level names to flaskyelp.egg-info/top_level.txt
-writing dependency_links to flaskyelp.egg-info/dependency_links.txt
-reading manifest file &lt;span class=&quot;s1&quot;&gt;&#39;flaskyelp.egg-info/SOURCES.txt&#39;&lt;/span&gt;
-reading manifest template &lt;span class=&quot;s1&quot;&gt;&#39;MANIFEST.in&#39;&lt;/span&gt;
-writing manifest file &lt;span class=&quot;s1&quot;&gt;&#39;flaskyelp.egg-info/SOURCES.txt&#39;&lt;/span&gt;
-running build_ext
-&lt;span class=&quot;o&quot;&gt;=======================================================&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;test &lt;/span&gt;session starts &lt;span class=&quot;o&quot;&gt;=======================================================&lt;/span&gt;
-platform linux2 -- Python 2.7.12+, pytest-3.0.3, py-1.4.31, pluggy-0.4.0
-rootdir: /home/julien/git/flaskyelp, inifile:
-collected 7 items
-
-tests/test_flaskyelp.py .......
-
-&lt;span class=&quot;o&quot;&gt;====================================================&lt;/span&gt; 7 passed &lt;span class=&quot;k&quot;&gt;in &lt;/span&gt;0.22 seconds &lt;span class=&quot;o&quot;&gt;=====================================================&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;julien@akira]/home/julien/git/flaskyelp#
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;h1 id=&quot;whats-next&quot;&gt;What’s next?&lt;/h1&gt;
-
-&lt;p&gt;I really enjoy learning Python. The language is well-documented, which makes it easier to learn and use. The next project is to implement a bot for the &lt;a href=&quot;http://www.slack.com&quot;&gt;slack collaboration platform&lt;/a&gt;. I expect to be done during the next two weeks. As usual, I will post the code there.&lt;/p&gt;
-
-&lt;h1 id=&quot;resources&quot;&gt;Resources&lt;/h1&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://github.com/juli1/flaskyelp&quot;&gt;Flaskyelp on github&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://flask.pocoo.org/&quot;&gt;Flask&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://thehackerguidetopython.com/&quot;&gt;The Hacker’s Guide to Python&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        <pubDate>Sat, 01 Oct 2016 06:13:20 -0700</pubDate>
-        <link>http://julien.gunnm.org/geek/python/2016/10/01/flaskyelp-a-small-yelp-in-flask-with-python/</link>
-        <guid isPermaLink="true">http://julien.gunnm.org/geek/python/2016/10/01/flaskyelp-a-small-yelp-in-flask-with-python/</guid>
-        
-        <category>Python</category>
-        
-        <category>Flask</category>
-        
-        <category>Yelp</category>
-        
-        
-        <category>geek</category>
-        
-        <category>python</category>
         
       </item>
     
