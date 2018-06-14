@@ -5,14 +5,14 @@
     <description>Harder, Better, Faster, Stronger</description>
     <link>http://julien.gunnm.org/</link>
     <atom:link href="http://julien.gunnm.org/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Wed, 13 Jun 2018 21:53:37 -0700</pubDate>
-    <lastBuildDate>Wed, 13 Jun 2018 21:53:37 -0700</lastBuildDate>
+    <pubDate>Wed, 13 Jun 2018 21:55:17 -0700</pubDate>
+    <lastBuildDate>Wed, 13 Jun 2018 21:55:17 -0700</lastBuildDate>
     <generator>Jekyll v3.1.6</generator>
     
       <item>
         <title>Learning Scala in 2018</title>
         <description>&lt;p&gt;Four months ago, I had to learn &lt;a href=&quot;http://www.scala-lang.org&quot;&gt;Scala&lt;/a&gt;
-and be familiar with the language in order to contribute to the codebase.
+and be familiar with the language in order to contribute to a large Scala codebase.
 I was familiar with Java (I spent 4+ years maintaining &lt;a href=&quot;http://www.osate.org&quot;&gt;OSATE&lt;/a&gt; while working
 at Carnegie Mellon) and I thought that it would be somehow easy, quick and painless.&lt;/p&gt;
 
