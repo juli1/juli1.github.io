@@ -5,13 +5,13 @@
     <description>Harder, Better, Faster, Stronger</description>
     <link>http://julien.gunnm.org/</link>
     <atom:link href="http://julien.gunnm.org/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Wed, 13 Jun 2018 19:58:42 -0700</pubDate>
-    <lastBuildDate>Wed, 13 Jun 2018 19:58:42 -0700</lastBuildDate>
+    <pubDate>Wed, 13 Jun 2018 21:53:37 -0700</pubDate>
+    <lastBuildDate>Wed, 13 Jun 2018 21:53:37 -0700</lastBuildDate>
     <generator>Jekyll v3.1.6</generator>
     
       <item>
         <title>Learning Scala in 2018</title>
-        <description>&lt;p&gt;Since I joined &lt;a href=&quot;http://www.twitter.com&quot;&gt;Twitter&lt;/a&gt;, I had to learn &lt;a href=&quot;http://www.scala-lang.org&quot;&gt;Scala&lt;/a&gt;
+        <description>&lt;p&gt;Four months ago, I had to learn &lt;a href=&quot;http://www.scala-lang.org&quot;&gt;Scala&lt;/a&gt;
 and be familiar with the language in order to contribute to the codebase.
 I was familiar with Java (I spent 4+ years maintaining &lt;a href=&quot;http://www.osate.org&quot;&gt;OSATE&lt;/a&gt; while working
 at Carnegie Mellon) and I thought that it would be somehow easy, quick and painless.&lt;/p&gt;
@@ -20,7 +20,7 @@ at Carnegie Mellon) and I thought that it would be somehow easy, quick and painl
 
 &lt;p&gt;Yes, Scala runs on top of the JVM but it does not mean it shares so much with Java. Scala is a functional programming language and is way more
 complicated than Java. This is another level of complexity. 
-When I joined Twitter, I started to contribute to a codebase
+I started to contribute to a codebase
 with people writing Scala for 4+ years and use the nice and barely documented features for advanced
 users. With such a complicated language, the learning curve was very steep and I had to go through it
 very quickly to be able to produce anything meaningful.&lt;/p&gt;
@@ -40,11 +40,11 @@ working for me.&lt;/p&gt;
 &lt;h1 id=&quot;the-good&quot;&gt;The Good&lt;/h1&gt;
 
 &lt;ol&gt;
-  &lt;li&gt;&lt;a href=&quot;http://horstmann.com/scala/index.html&quot;&gt;Scala The Impatient&lt;/a&gt; is a good resource but way too light. It covers only some very basic concepts and you do not see some advances features that are really interesting. Read it but do not stop there.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://horstmann.com/scala/index.html&quot;&gt;Scala The Impatient&lt;/a&gt; is a good resource but way too light. It covers only some very basic concepts and you do not see some advanced features that are really interesting. Read it but do not stop there.&lt;/li&gt;
   &lt;li&gt;The blog post series of &lt;a href=&quot;https://danielwestheide.com/&quot;&gt;Daniel Westheide&lt;/a&gt;: &lt;a href=&quot;https://danielwestheide.com/scala/neophytes.html&quot;&gt;The Neophyte’s Guide to Scala&lt;/a&gt;. A &lt;strong&gt;must-read&lt;/strong&gt; if you are new to Scala. The examples are great, with many details.&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://www.amazon.com/Programming-Scala-Updated-2-12/dp/0981531687/ref=sr_1_1?ie=UTF8&amp;amp;qid=1528782250&amp;amp;sr=8-1&amp;amp;keywords=odersky+scala&quot;&gt;Programming in Scala&lt;/a&gt; by Martin Odersky: great resource to go deeper about the internals of the language
 (how containers work, etc.)&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://twitter.github.io/util/&quot;&gt;Twitter util&lt;/a&gt; all the code developed by Twitter - some ideas (like Future) have been merged into the language.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://twitter.github.io/util/&quot;&gt;Twitter util&lt;/a&gt; all the code developed by Twitter, an early adopter of Scala&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;h1 id=&quot;the-bad&quot;&gt;The Bad&lt;/h1&gt;
@@ -65,7 +65,7 @@ programming concepts such as:&lt;/p&gt;
 &lt;ol&gt;
   &lt;li&gt;&lt;strong&gt;Monad&lt;/strong&gt;: this is just a container but a fundamental concept for functional programming. &lt;a href=&quot;https://medium.com/@sinisalouc/demystifying-the-monad-in-scala-cc716bb6f534&quot;&gt;Good article that explains the Monad&lt;/a&gt;.&lt;/li&gt;
   &lt;li&gt;All &lt;strong&gt;transformations functions&lt;/strong&gt;: &lt;code class=&quot;highlighter-rouge&quot;&gt;map&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;flatMap&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;filter&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;drop&lt;/code&gt;. Know them. Practice them. RTFM the &lt;a href=&quot;https://www.scala-lang.org/api&quot;&gt;Scala API&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;What is &lt;strong&gt;&lt;a href=&quot;https://www.quora.com/What-is-tail-recursion-1&quot;&gt;tail recursion&lt;/a&gt;&lt;/strong&gt; and understand why Scala will not blow your stack&lt;/li&gt;
+  &lt;li&gt;What is &lt;strong&gt;&lt;a href=&quot;https://www.quora.com/What-is-tail-recursion-1&quot;&gt;tail recursion&lt;/a&gt;&lt;/strong&gt; and understand why recursing other a list with 10,000 elements will not &lt;a href=&quot;https://en.wikipedia.org/wiki/Stack_Overflow&quot;&gt;blow up your stack&lt;/a&gt;.&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;h1 id=&quot;use-a-good-ide&quot;&gt;Use a good IDE&lt;/h1&gt;
