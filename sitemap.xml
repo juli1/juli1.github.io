@@ -3,6 +3,21 @@
   
     
     <url>
+      <loc>http://julien.gunnm.org/keyboard/geek/2018/06/12/kinesis-keyboard/</loc>
+      
+        <lastmod>2018-06-12T06:13:20-07:00</lastmod>
+      
+      
+        <changefreq>monthly</changefreq>
+      
+      
+        <priority>0.5</priority>
+      
+    </url>
+    
+  
+    
+    <url>
       <loc>http://julien.gunnm.org/scala/programming/2018/06/12/how-to-learn-scala-in-2018/</loc>
       
         <lastmod>2018-06-12T06:13:20-07:00</lastmod>
@@ -865,7 +880,7 @@
     <url>
       <loc>http://julien.gunnm.org/404</loc>
       
-        <lastmod>2018-07-23T18:32:37-07:00</lastmod>
+        <lastmod>2018-08-12T21:28:14-07:00</lastmod>
       
       
         <changefreq>monthly</changefreq>
@@ -908,7 +923,7 @@
     <url>
       <loc>http://julien.gunnm.org</loc>
       
-        <lastmod>2018-07-23T18:32:37-07:00</lastmod>
+        <lastmod>2018-08-12T21:28:14-07:00</lastmod>
       
       
         <changefreq>daily</changefreq>

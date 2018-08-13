@@ -5,9 +5,91 @@
     <description>Harder, Better, Faster, Stronger</description>
     <link>http://julien.gunnm.org/</link>
     <atom:link href="http://julien.gunnm.org/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Mon, 23 Jul 2018 18:32:37 -0700</pubDate>
-    <lastBuildDate>Mon, 23 Jul 2018 18:32:37 -0700</lastBuildDate>
+    <pubDate>Sun, 12 Aug 2018 21:28:14 -0700</pubDate>
+    <lastBuildDate>Sun, 12 Aug 2018 21:28:14 -0700</lastBuildDate>
     <generator>Jekyll v3.1.6</generator>
+    
+      <item>
+        <title>Kinesis keyboard report</title>
+        <description>&lt;p&gt;This post is about the &lt;a href=&quot;https://www.kinesis-ergo.com/&quot;&gt;Kinesis Keyboard&lt;/a&gt;, and more
+particularly the &lt;a href=&quot;https://www.kinesis-ergo.com/shop/advantage2/&quot;&gt;Kinesis Advantage&lt;/a&gt; model
+that I am using since 4 months now.&lt;/p&gt;
+
+&lt;h1 id=&quot;what-is-a-kinesis-advantage-keyboard&quot;&gt;What is a kinesis advantage keyboard?&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.kinesis-ergo.com&quot;&gt;Kinesis&lt;/a&gt; is a company based in Seattle that manufactures 
+ergonomic keyboards (and other devices).
+The Advantage is an ergonomic keyboard that should help anybody with some sort of pain
+in the joints (hands, etc). They keyboard looks very futurist, very cool, there is a picture
+of my actual keyboard at work (with a Twitter key!).&lt;/p&gt;
+
+&lt;p style=&quot;text-align: center;&quot;&gt;&lt;img src=&quot;/assets/kinesis.jpg&quot; alt=&quot;Kinesis keyboard&quot; width=&quot;50%&quot; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;why-getting-one&quot;&gt;Why getting one?&lt;/h1&gt;
+&lt;p&gt;The main reason is to be more comfortable while typing on your keyboard and avoid
+injuries (hand, wrist). You might
+increase your typing speed but that is definitively not the primary reason I
+wanted to get one.&lt;/p&gt;
+
+&lt;p&gt;When using a kinesis, you literally don’t need to move your hand to type &lt;em&gt;anything&lt;/em&gt;.
+Your hands rest on the palm support and you just move your fingers, nothing else.&lt;/p&gt;
+
+&lt;p&gt;Many people reported improvements and I do too. I had pain regularly in my wrist and 
+always thought it was due to aging and there was nothing to do to improve this. The pain
+was not strong or acute enough to see a doctor but it bothered me enough to sporadically
+stop typing for few hours every few days.&lt;/p&gt;
+
+&lt;p&gt;There are many other reasons to get a kinesis (programmable keys for example), but these functions
+are also available in other keyboards too. The real killer feature of the kinesis (at least for me) is how
+comfortable it is.&lt;/p&gt;
+
+&lt;h1 id=&quot;is-it-worth-it&quot;&gt;Is it worth it?&lt;/h1&gt;
+
+&lt;p&gt;If you are typing on a keyboard several hours a day, this is probably worth it. If your job
+(and then, primary source of income) depends on being able to type on a keyboard, you might
+consider buying one.&lt;/p&gt;
+
+&lt;p&gt;It is difficult to know if this is a good idea to get one if you do not
+experience any pain - after all, I am not a doctor. I decided to try because I had issues 
+and the keyboard fixed them but
+there is no clue if my issues was related to my previous hardware. All I know is that I no
+longer have pain when using a kinesis.&lt;/p&gt;
+
+&lt;p&gt;The kinesis is expensive (more than $300) but 
+I strongly believe that many developers invest too much on hardware and not enough on their development environment
+(desk, mouse, keyboard, etc.). At that price, I consider this is a good investment
+(it keeps the pain away so that I can code as much as I want).&lt;/p&gt;
+
+&lt;h1 id=&quot;advices-on-getting-started&quot;&gt;Advices on getting started&lt;/h1&gt;
+
+&lt;p&gt;It is really difficult to get started. And this is very frustrating to learn again how to type on keyboard.
+In the beginning, you type as if you are wearing ski gloves.&lt;/p&gt;
+
+&lt;p&gt;The keyboard will also keep your brain busy (&lt;em&gt;“what key I am typing?”&lt;/em&gt;), which
+can be mentally exhausting. To start, type
+things that do not require your brain to work: answer to some basic e-mail, write reports, etc.&lt;/p&gt;
+
+&lt;p&gt;Also, alternate the regular keyboard and the kinesis: your brain need to assimilate the new keymap
+and so, giving a break is a good idea too. When I started, I was using the kinesis all anything
+that did not require any thinking and switch to the regular keyboard when I needed to think
+of what I was typing (such as programming).&lt;/p&gt;
+
+&lt;p&gt;It will take at least two weeks to start typing correctly and one month to be efficient.
+After two months, you should be back at your normal speed or even faster. And
+you will then never go back on another keyboard!&lt;/p&gt;
+
+</description>
+        <pubDate>Tue, 12 Jun 2018 06:13:20 -0700</pubDate>
+        <link>http://julien.gunnm.org/keyboard/geek/2018/06/12/kinesis-keyboard/</link>
+        <guid isPermaLink="true">http://julien.gunnm.org/keyboard/geek/2018/06/12/kinesis-keyboard/</guid>
+        
+        <category>keyboard</category>
+        
+        
+        <category>keyboard</category>
+        
+        <category>geek</category>
+        
+      </item>
     
       <item>
         <title>Learning Scala in 2018</title>
@@ -94,9 +176,10 @@ step by step.&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;You can find the repository at:  &lt;a href=&quot;https://github.com/juli1/scala-cookbook&quot;&gt;https://github.com/juli1/scala-cookbook&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
 
-&lt;h1 id=&quot;other-interesting-discussions&quot;&gt;Other interesting discussions&lt;/h1&gt;
+&lt;h1 id=&quot;other-interesting-discussionsresources&quot;&gt;Other interesting discussions/resources&lt;/h1&gt;
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;https://kubuszok.com/2018/scala-fud-faq-for-newbies/&quot;&gt;Scala FUD FAQ for newbies&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://tpolecat.github.io&quot;&gt;tpolecat blog&lt;/a&gt; - tpolecat is very active in the online communities and have always great resources/information&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h1 id=&quot;keep-learning&quot;&gt;Keep Learning&lt;/h1&gt;
@@ -1137,42 +1220,6 @@ provides everything you need to manage asynchronous communication&lt;/li&gt;
         <category>programming</category>
         
         <category>linux</category>
-        
-      </item>
-    
-      <item>
-        <title>Goodbye CMU-SEI, welcome Amazon!</title>
-        <description>&lt;p&gt;I was definitively not planning to move away from Pittsburgh but I am now
-leaving the &lt;a href=&quot;http://sei.cmu.edu&quot;&gt;Carnegie Mellon Software Engineering Institute&lt;/a&gt; to join the &lt;a href=&quot;http://aws.amazon.com&quot;&gt;AWS&lt;/a&gt; team
-in Seattle. In case you never heard of it, &lt;a href=&quot;http://aws.amazon.com&quot;&gt;Amazon Web Services&lt;/a&gt; is the leader 
-of cloud-computing services and is used by many companies all over the world. You can read
-more on &lt;a href=&quot;https://en.wikipedia.org/wiki/Amazon_Web_Services&quot;&gt;wikipedia there&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;Pittsburgh has been the city where my American journey started. It has been exciting to work at CMU-SEI and I 
-met a lot of wonderful people in the city. I am really happy and excited to
-start a new chapter.&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;Stay Hungry!&lt;/em&gt;&lt;/p&gt;
-
-</description>
-        <pubDate>Fri, 06 Jan 2017 05:13:20 -0800</pubDate>
-        <link>http://julien.gunnm.org/geek/amazon/seattle/pittsburgh/2017/01/06/goodbye-cmu-sei-hello-amazon/</link>
-        <guid isPermaLink="true">http://julien.gunnm.org/geek/amazon/seattle/pittsburgh/2017/01/06/goodbye-cmu-sei-hello-amazon/</guid>
-        
-        <category>Amazon</category>
-        
-        <category>CMU-SEI</category>
-        
-        <category>Software Engineering Institute</category>
-        
-        
-        <category>geek</category>
-        
-        <category>amazon</category>
-        
-        <category>Seattle</category>
-        
-        <category>Pittsburgh</category>
         
       </item>
     
