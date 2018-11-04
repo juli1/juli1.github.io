@@ -4,14 +4,14 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Julien Delange</title>
+    <title>Effective code review - Julien Delange</title>
     <link rel="alternate" type="application/rss+xml" title="Julien Delange &raquo; Feed" href="/feed.xml" />
     <meta name="viewport" content="width=device-width">
-    <meta name="description" content="Personal website of Julien Delange">
-    <link rel="canonical" href="http://julien.gunnm.org/">
+    <meta name="description" content="What are the rules to improve your code reviews">
+    <link rel="canonical" href="http://julien.gunnm.org/development/agile/2018/11/03/effective-code-reviews/">
 
     
-    <meta name="keywords" content="software engineering, twitter, amazon, aws, modeling, running, ultra-marathon"/>
+    <meta name="keywords" content="code review, agile"/>
     
 
     <!-- Latest compiled and minified CSS -->
@@ -29,8 +29,8 @@
     <link rel="stylesheet" href="/css/main.css">
 
     <!-- Twitter Cards -->
-    <meta name="twitter:title" content="" />
-    <meta name="twitter:description" content="Personal website of Julien Delange" />
+    <meta name="twitter:title" content="Effective code review" />
+    <meta name="twitter:description" content="What are the rules to improve your code reviews" />
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="@juli1pb" />
     <meta name="twitter:creator" content="@juli1pb" />
@@ -41,8 +41,8 @@
     <meta property="og:site_name" content="Julien Delange" />
     <meta property="og:type" content="article" />
     <meta property="og:image" content="/assets/profile.png" />
-    <meta property="og:title" content="" />
-    <meta property="og:description" content="Personal website of Julien Delange" />
+    <meta property="og:title" content="Effective code review" />
+    <meta property="og:description" content="What are the rules to improve your code reviews" />
 
 </head>
 
@@ -109,35 +109,89 @@
 
     <div class="page-content">
       <div class="wrap">
-      <div id="profile-pic">
-   <img src="/assets/profile.png"/>
-</div>
+      <div class="post">
 
-<div class="home">
-   <div class="intro">
-      <p>
-         My name is Julien Delange. I am a software engineer working at <a href="http://www.twitter.com">Twitter</a> and an occasional runner for distances between 5K and 100 miles. 
-         This website has most of the useful information on my <a href="/projects">research work</a> and <a href="/running">running agenda</a>. 
-         I also maintain a <a href="/blog">blog</a> on topics related to software engineering, programming and running. More about how to contact me in the <a href="/about">about section</a>.
-      </p>
-   </div>
-   <div style="margin-top: 2em;">
-      <p>
-      The views expressed here are my own.
-      </p>
-   </div>
-   <div style="margin-top: 2em;">
-      <p>
-      If you are a recruiter and want to contact me, please leave me alone.
-      </p>
-   </div>
-   <div class="lastpost">
-      <h1>Last from the blog:   <a href="/development/agile/2018/11/03/effective-code-reviews/">Effective code review</a></h1>
-   </div>
+  <header class="post-header">
+    <h1>Effective code review</h1>
+    <p class="meta">
+      <!-- Nov 3, 2018 -->
+      <!-- 
+       -->
+   </p>
+  </header>
 
-   <div style="margin-top: 1.5em; text-align: center;">
-     <p>You can see <a href="/blog">all blog posts</a> or just subscribe to the <a href="/feed.xml">RSS feed</a></p>
-  </div>
+  <article class="post-content">
+  <p>I recently wrote some thoughts for improving code reviews within my team.
+It started like a 5 minutes brain-dump at 6:30 in the morning on my way to work and I ended up iterating and refining the list
+several times over few days. This gave me the opportunity to reflect on the differences of code reviews 
+at the various places I worked at. Also, I strongly believe the environment (academic, industry) matters a lot.
+I wanted to share these thoughts as code review can be the
+cause of many tensions within a development team.</p>
+
+<p>There are three types of rules: general ones that apply to both the submitter/reviewer,
+submitter rules and reviewer rules.</p>
+
+<p>These guidelines are not perfect, take them as they are: an attempt to formalize what I believe
+we should shoot for.</p>
+
+<h2 id="general-guidelines">General Guidelines</h2>
+
+<ol>
+  <li><strong>Always assume good intentions</strong>. People are not commenting on your code to harm you. They are trying to help you.</li>
+  <li><strong>Be thankful for having reviews</strong>, people are dedicating time to look at your work. No matter
+the experience of the submitter and reviewer, there is always a chance it can make you a better programmer or co-worker.</li>
+  <li><strong>Always try to understand first, and then, be understood</strong>. This comes from the <a href="https://en.wikipedia.org/wiki/The_7_Habits_of_Highly_Effective_People">7 habits</a> and is especially helpful in that context.</li>
+  <li><strong>During a conversation, get the perspective of the other person</strong>, try to put yourself in his/her shoes. This will often help you understand why a comment is made and help you discuss and resolve it.</li>
+</ol>
+
+<h2 id="reviewer-guidelines">Reviewer Guidelines</h2>
+<ol>
+  <li><strong>Understand there is more than one way to do it - (c) <a href="https://en.wikipedia.org/wiki/There%27s_more_than_one_way_to_do_it">Perl</a> -</strong>.
+The goal of code is to solve problems. A problem might have several solutions that are equally effective.
+Acknowledge and accept that somebody might choose to solve a problem differently than you would do.</li>
+  <li><strong>Specify explicitly if a comment/problem is blocking the code to be shipped</strong>: some code review
+systems allow you to distinguish blocking/non-blocking issues. Try to make use of it
+so that the submitter can prioritize changes.</li>
+  <li><strong>Keep discussion/comments in the review system</strong>: it also serves other members to learn about
+potential issues and not replicate them. Ultimately, if you need to talk in person (sometimes, there is
+nothing like a face to face discussion), do it but write the outcome in the review for traceability purposes.</li>
+  <li><strong>When you point out a flaw in the code/approach, try to propose an alternative</strong>: telling somebody that his
+code is bad is not very useful if there is no indication for fixing the issue. Try to explain why this
+is bad and give some ideas how to address the issue. If this is a simple issue (syntax error or coding
+style violation), just mention this without spending much time to give details.</li>
+</ol>
+
+<h2 id="submitter-guidelines">Submitter Guidelines</h2>
+
+<ol>
+  <li><strong>Link your change your issue tracker (Jira, github, etc.)</strong> and follow a rule 1 code change belongs to one ticket (one ticket
+can have multiple code changes). It improves traceability with user stories and facilitates progress tracking
+on a particular task. Design decisions, issues, etc. should be discussed in the ticket, not in the review itself.</li>
+  <li><strong>Make short reviews</strong> and try to keep one code change per problem and per component. 
+First, it avoids long code review that will take days
+to complete and will ultimately cause merge problems (need to re-base on master, etc.). Second, reviewers are less
+likely to complete a long code review in a short period of time, which ultimately, will slow you down.
+Prefer several, incremental reviews to a larger reviews on dozens of files.</li>
+  <li><strong>If there are some temporary code that will be changed later</strong>: put a comment in the code with your login that explains
+why this is delayed and when this should be addressed. Having a random <code class="highlighter-rouge">FIXME</code> without reason is not acceptable, having
+temporary incomplete code is OK as long as we have a reason for it and a plan to address it in the future.</li>
+  <li><strong>Address comments in the review</strong>: people invests time doing review, respects the work they put in your review
+and answer their comments.</li>
+  <li><strong>If you are doing pair programming, the ship from your pair does not count</strong>: code review is there to expose the code
+to other opinions and people in your team. Code developed in pair lacks this external point of view. Having the pair
+shipping the code is like if the code was being shipped by its author. It defeats the purpose of code review.</li>
+  <li><strong>Specify how you tested the components in your review</strong>: some review system allow you to specify how you tested
+the software. Copy/paste the command you used to run the test. If you deploy to a testing environment, put the
+commend you used. It has two purposes: show the level of testing you did and, ensure that the software still
+deploys and run (at least in the testing environment).</li>
+  <li><strong>If one comment upsets you, come back to it later</strong>: one particular comment might irritate you and after reading
+it, you have only want to reply in a sarcastic way or just ignore it. Do not do any of these things. Take some time,
+try to have the perspective of the reviewer, and then, reply. Stick to the point. Try to understand why the reviewer
+raised that issue and show your good faith about solving this issue.</li>
+</ol>
+
+  </article>
+
 </div>
 
       </div>

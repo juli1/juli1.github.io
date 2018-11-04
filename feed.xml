@@ -5,9 +5,95 @@
     <description>Harder, Better, Faster, Stronger</description>
     <link>http://julien.gunnm.org/</link>
     <atom:link href="http://julien.gunnm.org/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Tue, 14 Aug 2018 17:41:39 -0700</pubDate>
-    <lastBuildDate>Tue, 14 Aug 2018 17:41:39 -0700</lastBuildDate>
+    <pubDate>Sun, 04 Nov 2018 08:51:24 -0800</pubDate>
+    <lastBuildDate>Sun, 04 Nov 2018 08:51:24 -0800</lastBuildDate>
     <generator>Jekyll v3.1.6</generator>
+    
+      <item>
+        <title>Effective code review</title>
+        <description>&lt;p&gt;I recently wrote some thoughts for improving code reviews within my team.
+It started like a 5 minutes brain-dump at 6:30 in the morning on my way to work and I ended up iterating and refining the list
+several times over few days. This gave me the opportunity to reflect on the differences of code reviews 
+at the various places I worked at. Also, I strongly believe the environment (academic, industry) matters a lot.
+I wanted to share these thoughts as code review can be the
+cause of many tensions within a development team.&lt;/p&gt;
+
+&lt;p&gt;There are three types of rules: general ones that apply to both the submitter/reviewer,
+submitter rules and reviewer rules.&lt;/p&gt;
+
+&lt;p&gt;These guidelines are not perfect, take them as they are: an attempt to formalize what I believe
+we should shoot for.&lt;/p&gt;
+
+&lt;h2 id=&quot;general-guidelines&quot;&gt;General Guidelines&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;strong&gt;Always assume good intentions&lt;/strong&gt;. People are not commenting on your code to harm you. They are trying to help you.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Be thankful for having reviews&lt;/strong&gt;, people are dedicating time to look at your work. No matter
+the experience of the submitter and reviewer, there is always a chance it can make you a better programmer or co-worker.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Always try to understand first, and then, be understood&lt;/strong&gt;. This comes from the &lt;a href=&quot;https://en.wikipedia.org/wiki/The_7_Habits_of_Highly_Effective_People&quot;&gt;7 habits&lt;/a&gt; and is especially helpful in that context.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;During a conversation, get the perspective of the other person&lt;/strong&gt;, try to put yourself in his/her shoes. This will often help you understand why a comment is made and help you discuss and resolve it.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;reviewer-guidelines&quot;&gt;Reviewer Guidelines&lt;/h2&gt;
+&lt;ol&gt;
+  &lt;li&gt;&lt;strong&gt;Understand there is more than one way to do it - (c) &lt;a href=&quot;https://en.wikipedia.org/wiki/There%27s_more_than_one_way_to_do_it&quot;&gt;Perl&lt;/a&gt; -&lt;/strong&gt;.
+The goal of code is to solve problems. A problem might have several solutions that are equally effective.
+Acknowledge and accept that somebody might choose to solve a problem differently than you would do.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Specify explicitly if a comment/problem is blocking the code to be shipped&lt;/strong&gt;: some code review
+systems allow you to distinguish blocking/non-blocking issues. Try to make use of it
+so that the submitter can prioritize changes.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Keep discussion/comments in the review system&lt;/strong&gt;: it also serves other members to learn about
+potential issues and not replicate them. Ultimately, if you need to talk in person (sometimes, there is
+nothing like a face to face discussion), do it but write the outcome in the review for traceability purposes.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;When you point out a flaw in the code/approach, try to propose an alternative&lt;/strong&gt;: telling somebody that his
+code is bad is not very useful if there is no indication for fixing the issue. Try to explain why this
+is bad and give some ideas how to address the issue. If this is a simple issue (syntax error or coding
+style violation), just mention this without spending much time to give details.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;submitter-guidelines&quot;&gt;Submitter Guidelines&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;strong&gt;Link your change your issue tracker (Jira, github, etc.)&lt;/strong&gt; and follow a rule 1 code change belongs to one ticket (one ticket
+can have multiple code changes). It improves traceability with user stories and facilitates progress tracking
+on a particular task. Design decisions, issues, etc. should be discussed in the ticket, not in the review itself.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Make short reviews&lt;/strong&gt; and try to keep one code change per problem and per component. 
+First, it avoids long code review that will take days
+to complete and will ultimately cause merge problems (need to re-base on master, etc.). Second, reviewers are less
+likely to complete a long code review in a short period of time, which ultimately, will slow you down.
+Prefer several, incremental reviews to a larger reviews on dozens of files.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;If there are some temporary code that will be changed later&lt;/strong&gt;: put a comment in the code with your login that explains
+why this is delayed and when this should be addressed. Having a random &lt;code class=&quot;highlighter-rouge&quot;&gt;FIXME&lt;/code&gt; without reason is not acceptable, having
+temporary incomplete code is OK as long as we have a reason for it and a plan to address it in the future.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Address comments in the review&lt;/strong&gt;: people invests time doing review, respects the work they put in your review
+and answer their comments.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;If you are doing pair programming, the ship from your pair does not count&lt;/strong&gt;: code review is there to expose the code
+to other opinions and people in your team. Code developed in pair lacks this external point of view. Having the pair
+shipping the code is like if the code was being shipped by its author. It defeats the purpose of code review.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Specify how you tested the components in your review&lt;/strong&gt;: some review system allow you to specify how you tested
+the software. Copy/paste the command you used to run the test. If you deploy to a testing environment, put the
+commend you used. It has two purposes: show the level of testing you did and, ensure that the software still
+deploys and run (at least in the testing environment).&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;If one comment upsets you, come back to it later&lt;/strong&gt;: one particular comment might irritate you and after reading
+it, you have only want to reply in a sarcastic way or just ignore it. Do not do any of these things. Take some time,
+try to have the perspective of the reviewer, and then, reply. Stick to the point. Try to understand why the reviewer
+raised that issue and show your good faith about solving this issue.&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+        <pubDate>Sat, 03 Nov 2018 06:13:20 -0700</pubDate>
+        <link>http://julien.gunnm.org/development/agile/2018/11/03/effective-code-reviews/</link>
+        <guid isPermaLink="true">http://julien.gunnm.org/development/agile/2018/11/03/effective-code-reviews/</guid>
+        
+        <category>code review</category>
+        
+        <category>agile</category>
+        
+        
+        <category>development</category>
+        
+        <category>agile</category>
+        
+      </item>
     
       <item>
         <title>Kinesis keyboard report</title>
@@ -846,7 +932,7 @@ to seal the deal right away: a company that is rejected by a candidate is likely
 algorithms, data structure, complexity, you &lt;strong&gt;have to know&lt;/strong&gt; these topics.
 If you do not know, do not even go and try, you will waste your time.&lt;/p&gt;
 
-&lt;p&gt;I would advice to read at list two books:&lt;/p&gt;
+&lt;p&gt;I would advise to read at list two books:&lt;/p&gt;
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;http://elementsofprogramminginterviews.com/&quot;&gt;Elements of Programming Interviews&lt;/a&gt;: the most complete
  resource to be prepared for algorithmic, design and other technical aspects&lt;/li&gt;
@@ -986,240 +1072,6 @@ and reuse for their own needs. I hope this will be useful for the software engin
         <category>architecture</category>
         
         <category>modeling</category>
-        
-      </item>
-    
-      <item>
-        <title>Why using asynchronous communications?</title>
-        <description>&lt;p&gt;&lt;strong&gt;TL;DR: this blog post explains the status of async communications&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;It all started when I watched a video online:
-&lt;a href=&quot;https://www.youtube.com/watch?v=gaOa-Dsbb4o&quot;&gt;Scaling Server Software at Facebook&lt;/a&gt;. The video
-gives interesting details used at facebook to optimize their systems. One of the big advice (among many others)
-is to use asynchronous communications. I wanted see the benefit of using
-asynchronous communication and how it compares with the traditional synchronous model.&lt;/p&gt;
-
-&lt;p&gt;This blog post explains first the different between synchronuous and asynchronuous I/O,
-presents the programming models and gives some rough estimates of what you can expect.
-If you develop a massive ditributed system, you cannot avoid asynchronuous communications.&lt;/p&gt;
-
-&lt;h1 id=&quot;synchronous-vs-asynchronous-io&quot;&gt;Synchronous vs. asynchronous I/O&lt;/h1&gt;
-
-&lt;p&gt;Let’s first start by explaining what is the difference between synchronous and asynchronuous
-communications. A distributed application communicate by performing I/Os (Input/Output). It can
-be network communications (socket), reading/writing into a file, etc.
-In the &lt;a href=&quot;https://en.wikipedia.org/wiki/Unix&quot;&gt;UNIX&lt;/a&gt;/
-&lt;a href=&quot;https://en.wikipedia.org/wiki/POSIX&quot;&gt;POSIX&lt;/a&gt; world, I/O are performed
-on file descriptors (FDs): when you open a file or a network communication,
-you open a file descriptor and can then perform &lt;code class=&quot;highlighter-rouge&quot;&gt;read()&lt;/code&gt; or &lt;code class=&quot;highlighter-rouge&quot;&gt;write()&lt;/code&gt; operations on it.&lt;/p&gt;
-
-&lt;p&gt;You have two ways to perform I/Os: &lt;strong&gt;synchronously&lt;/strong&gt; and &lt;strong&gt;asynchronously&lt;/strong&gt;. When using
-&lt;strong&gt;synchronous&lt;/strong&gt; I/O, the caller is block until the call succeeds. When using &lt;strong&gt;asynchronuous&lt;/strong&gt;, you
-are periodically checking if there is anything received. The next sections details these two worlds.&lt;/p&gt;
-
-&lt;h2 id=&quot;the-synchronous-world&quot;&gt;The synchronous world&lt;/h2&gt;
-
-&lt;p&gt;In the synchronous world, you wait for a reply. For example, if you call &lt;code class=&quot;highlighter-rouge&quot;&gt;read()&lt;/code&gt; on a network socket,
-your current program will wait until some data is available.&lt;/p&gt;
-
-&lt;p&gt;This communication pattern is very similar to a phone conversation: you talk first and then, wait for
-a reply from the other side.&lt;/p&gt;
-
-&lt;p&gt;Synchronous communication are very sequential. Most of the time, you perform a
-series of operations as follow:&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;Open the communication channel (e.g. take your phone and dial your friend)&lt;/li&gt;
-  &lt;li&gt;Do several exchanges (e.g. each person talks and wait for the answer of the other person)&lt;/li&gt;
-  &lt;li&gt;Close the communication channel (hangup)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;This model is fine when you have one communication happenning. The problem is when your application
-is massively distributed and communicate with a lot of peers. In that case, you need
-to have N tasks (also called &lt;a href=&quot;https://en.wikipedia.org/wiki/POSIX_Threads&quot;&gt;threads&lt;/a&gt;) and each one
-will take care of communicating with one peer.&lt;/p&gt;
-
-&lt;p&gt;The following pseudo-code shows a very common way to implement such a system: create a threads for
-each request and let it handle one communication.&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c&quot; data-lang=&quot;c&quot;&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;loop&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-      &lt;span class=&quot;n&quot;&gt;send_request&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
-      &lt;span class=&quot;n&quot;&gt;wait_for_reply&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
-      &lt;span class=&quot;n&quot;&gt;process_reply&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-   &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;NREQUESTS&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-   &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-      &lt;span class=&quot;n&quot;&gt;create_thread&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-   &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-   &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;NREQUESTS&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-   &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-      &lt;span class=&quot;n&quot;&gt;wait_for_thread&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-   &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;The execution diagram is as follow: the main thread creates one thread for each communication patterns
-and wait that all of them finish their work. In that model, the operating system schedules the threads and activates them
-when the data is available, adding more data structure into the kernel.&lt;/p&gt;
-
-&lt;p&gt;One can note that after sending the request, a thread is waiting for the reply, doing nothing but waiting
-for incoming communication.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/communication-threads.png&quot; alt=&quot;Communication with threads&quot; width=&quot;90%&quot; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;the-asynchronous-world&quot;&gt;The asynchronous world&lt;/h2&gt;
-
-&lt;p&gt;In the asynchronous world, the program &lt;strong&gt;post&lt;/strong&gt; operations and check the result later.
-This communication model is similar to text messages: you send a text but does not wait for an immediate
-return, the reply may arrive now or hours later. The key here: you do not have to stay on the line
-and wait for a reply, you can check it later.&lt;/p&gt;
-
-&lt;p&gt;Asynchronous communication are not sequential at all. In fact, you send
-some information (text messages) and then, there is a main loop
-that receives replies and write back according to a protocol.&lt;/p&gt;
-
-&lt;p&gt;There is no need for additional task in that model, you can handle all
-of them in the main task. The hard part is to follow the status of
-each operation.&lt;/p&gt;
-
-&lt;p&gt;The following pseudo-code shows a common approach to do asynchronuous
-communication. The most important aspect of the main loop that handles
-new events.&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-c&quot; data-lang=&quot;c&quot;&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-   &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;NTHREADS&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-   &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-      &lt;span class=&quot;n&quot;&gt;send_request&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-   &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-   &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;completed&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-
-   &lt;span class=&quot;k&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;completed&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;NREQUESTS&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-   &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-      &lt;span class=&quot;n&quot;&gt;event&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;wait_for_event&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
-      &lt;span class=&quot;n&quot;&gt;process_event&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
-      &lt;span class=&quot;n&quot;&gt;completed&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-   &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;The following diagram shows an execution trace of asynchronuous communication.
-There is no new task, the main tasks posts all operations to do
-in the beginning and check their status. Once all operations returned, the program
-is complete. Note that replies are not coming back in a specific order.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/communication-nothread.png&quot; alt=&quot;Communication with threads&quot; width=&quot;90%&quot; /&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;why-using-asynchronous-communications&quot;&gt;Why using asynchronous communications?&lt;/h1&gt;
-
-&lt;p&gt;There are two majors issues with synchronous communication:&lt;/p&gt;
-&lt;ol&gt;
-  &lt;li&gt;Lot of time of threads consists of waiting for I/O completion. It is a waste of resources&lt;/li&gt;
-  &lt;li&gt;It introduces overhead, especially in the kernel for managing/scheduling/dispatching resources.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;By using asynchronuous communication, you just avoid resources waste and then, can
-process more requests with the same hardware. If your system is massively distributed, 
-and handles thousands of simultaneous connections it will
-either (1) saves resources or (2) process more requests.&lt;/p&gt;
-
-&lt;p&gt;If you are not convinced, I suggest watching
-the video &lt;a href=&quot;https://www.youtube.com/watch?v=gaOa-Dsbb4o&quot;&gt;Scaling Server Software at Facebook&lt;/a&gt;, 
-a simple 5% of memory or processor usage reduction means savings in the scale of thousands
-or millions of dollars. There are more information about asynchronous communication 
-use at facebook on &lt;a href=&quot;https://code.facebook.com/posts/1661982097368498&quot;&gt;their blog&lt;/a&gt;).&lt;/p&gt;
-
-&lt;p&gt;To summarize, using synchronous programming is easily and straightforward
-but does not scale for massively large, distributed system. Asynchronous
-programming makes your progrma more complex but avoid bottlenecks and resources
-overhead.&lt;/p&gt;
-
-&lt;h1 id=&quot;comparing-sync-and-async-performance&quot;&gt;Comparing sync and async performance&lt;/h1&gt;
-
-&lt;p&gt;In order to evaluate the performance difference between synchronous and asynchronous
-communications, I wrote a small client program that starts N connections
-to a server and print the result. Basically, the program initiates a fixed number (N) of HTTP connections
-to a web server, get a page and prints it on the standard output. I wrote two variants of the program:&lt;/p&gt;
-&lt;ol&gt;
-  &lt;li&gt;&lt;strong&gt;Synchronous&lt;/strong&gt;: each connection is using a thread that opens a socket, write the request and print the result. There are then N threads, N being the number of connections.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Asynchronous&lt;/strong&gt;: the main program opens N sockets and handle them in a main control loop.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;In order to verify that each program retrieves the same thing (e.g. they return the same output), I log the output in a file and compares the file with diff.
-Results were the same.&lt;/p&gt;
-
-&lt;p&gt;I ran the tests on the following configuration&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;Linux kernel 4.9&lt;/li&gt;
-  &lt;li&gt;CPU Intel(R) Core(TM) i5-3320M CPU @ 2.60GHz&lt;/li&gt;
-  &lt;li&gt;8GB RAM&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Finally, to remove the variability factor of the latency, all requests are issued to a local host.
-I started by just running the program and vary the number of connections issued to see 
-I then varied the number of concurrent connections between 1 and 100 and capture the system time used.
-The system time is the time spent in kernel mode. It is clear that when using threads, there is an overhead
-of resources management for the kernel.&lt;/p&gt;
-
-&lt;p&gt;The following picture show the time spent in kernel mode for each version of the program (X=#connections and Y=time spent in kernel mode).&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/async-evaluation-results.png&quot; alt=&quot;Time spent in kernel mode (X=#connections ; Y=time in kernel mode&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;These results are very limited - this is done on a single host that communicates with only another machine without additional load.
-One can expect more impact when using threads, especially when using locks/mutexes with more load.&lt;/p&gt;
-
-&lt;h1 id=&quot;a-note-on-posix-async&quot;&gt;A note on POSIX async&lt;/h1&gt;
-&lt;p&gt;When starting this work, I was looking for &lt;a href=&quot;https://en.wikipedia.org/wiki/POSIX&quot;&gt;POSIX&lt;/a&gt; functions to perform async communications.
-As POSIX is the reference for programming on UNIX system, this was natural to look how it handles
-asynchronuous communications. Unfortunately, the asynchronuous API is a real disaster, in terms of its
-definition (for example, it uses threads or signals to handle incoming data - something to just avoid)
-or implementation (done in userland in Linux, which leads to poor performance).&lt;/p&gt;
-
-&lt;p&gt;Other people &lt;a href=&quot;http://davmac.org/davpage/linux/async-io.html&quot;&gt;also reported&lt;/a&gt; also discusses this.
-I have no idea why the current POSIX async API is so bad and why they published such a useless framework: the
-notification mechanism (signals or threads) is inefficient, counter-productive and counter-intuitive.
-I have no idea what the POSIX committee members were smoking the day they approved this.&lt;/p&gt;
-
-&lt;p&gt;The result is that today, each UNIX has now its own implementation of asynchronous communication management
-(&lt;a href=&quot;https://en.wikipedia.org/wiki/Epoll&quot;&gt;epoll for linux&lt;/a&gt;, &lt;a href=&quot;https://en.wikipedia.org/wiki/Kqueue&quot;&gt;kqueue for BSD&lt;/a&gt;
-leaving developers with no option than developing non-portable code.&lt;/p&gt;
-
-&lt;h1 id=&quot;where-you-go-from-there&quot;&gt;Where you go from there?&lt;/h1&gt;
-&lt;p&gt;No question about it, asynchronous communications are definitively the way
-to go if you are developing a massive distributed system.&lt;/p&gt;
-
-&lt;p&gt;So how to use asynchronous communication effectively with your favorite programming language?
-There are multiple frameworks available:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;For C++, &lt;a href=&quot;http://www.boost.org/&quot;&gt;boost&lt;/a&gt; includes asynchronous communication functions&lt;/li&gt;
-  &lt;li&gt;For Python &amp;gt;3.4, the &lt;a href=&quot;https://docs.python.org/3/library/asyncio.html#module-asyncio&quot;&gt;asyncio&lt;/a&gt; framework
-provides everything you need to manage asynchronous communication&lt;/li&gt;
-  &lt;li&gt;For Python &amp;lt;3.4, you have existing framework as detailed in &lt;a href=&quot;https://thehackerguidetopython.com/&quot;&gt;The Hacker’s guide to Python&lt;/a&gt; - you can also learn more in this &lt;a href=&quot;https://www.youtube.com/watch?v=7sCu4gEjH5I&quot;&gt;youtube video&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;For pure C on linux, use directly &lt;a href=&quot;https://en.wikipedia.org/wiki/Epoll&quot;&gt;epoll&lt;/a&gt;. This is not portable to any other UNIX but I bet you might not migrate to any other system now.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Code used for evaluate sync/async performance is &lt;a href=&quot;https://github.com/juli1/async-study&quot;&gt;available online&lt;/a&gt;.&lt;/p&gt;
-</description>
-        <pubDate>Sat, 15 Apr 2017 06:13:20 -0700</pubDate>
-        <link>http://julien.gunnm.org/programming/linux/2017/04/15/comparison-sync-vs-async/</link>
-        <guid isPermaLink="true">http://julien.gunnm.org/programming/linux/2017/04/15/comparison-sync-vs-async/</guid>
-        
-        <category>epoll</category>
-        
-        <category>linux</category>
-        
-        <category>sync</category>
-        
-        <category>async</category>
-        
-        
-        <category>programming</category>
-        
-        <category>linux</category>
         
       </item>
     
