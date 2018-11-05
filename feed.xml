@@ -5,9 +5,105 @@
     <description>Harder, Better, Faster, Stronger</description>
     <link>http://julien.gunnm.org/</link>
     <atom:link href="http://julien.gunnm.org/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Sun, 04 Nov 2018 08:51:24 -0800</pubDate>
-    <lastBuildDate>Sun, 04 Nov 2018 08:51:24 -0800</lastBuildDate>
+    <pubDate>Sun, 04 Nov 2018 16:00:17 -0800</pubDate>
+    <lastBuildDate>Sun, 04 Nov 2018 16:00:17 -0800</lastBuildDate>
     <generator>Jekyll v3.1.6</generator>
+    
+      <item>
+        <title>Effective code review</title>
+        <description>I recently wrote some thoughts for improving code reviews within my team.
+It started like a 5 minutes brain-dump at 6:30 in the morning on my way to work and I ended up iterating and refining the list
+several times over few days. This gave me the opportunity to reflect on the differences of code reviews 
+at the various places I worked at. Also, I strongly believe the environment (academic, industry) matters a lot.
+I wanted to share these thoughts as code review can be the
+cause of many tensions within a development team.
+
+
+There are three types of rules: general ones that apply to both the submitter/reviewer,
+submitter rules and reviewer rules.
+
+These guidelines are not perfect, take them as they are: an attempt to formalize what I believe
+we should shoot for.
+
+
+
+## General Guidelines
+
+0. **Always assume good intentions**. People are not commenting on your code to harm you. They are trying to help you.
+1. **Be thankful for having reviews**, people are dedicating time to look at your work. No matter
+   the experience of the submitter and reviewer, there is always a chance it can make you a better programmer or co-worker.
+2. **Always try to understand first, and then, be understood**. This comes from the [7 habits](https://en.wikipedia.org/wiki/The_7_Habits_of_Highly_Effective_People) and is especially helpful in that context.
+3. **During a conversation, get the perspective of the other person**, try to put yourself in his/her shoes. This will often help you understand why a comment is made and help you discuss and resolve it.
+
+
+## Reviewer Guidelines
+0. **Understand there is more than one way to do it - (c) [Perl](https://en.wikipedia.org/wiki/There%27s_more_than_one_way_to_do_it) -**.
+   The goal of code is to solve problems. A problem might have several solutions that are equally effective.
+   Acknowledge and accept that somebody might choose to solve a problem differently than you would do.  
+1. **Specify explicitly if a comment/problem is blocking the code to be shipped**: some code review
+   systems allow you to distinguish blocking/non-blocking issues. Try to make use of it
+   so that the submitter can prioritize changes.
+2. **Keep discussion/comments in the review system**: it also serves other members to learn about
+   potential issues and not replicate them. Ultimately, if you need to talk in person (sometimes, there is
+   nothing like a face to face discussion), do it but write the outcome in the review for traceability purposes.
+3. **When you point out a flaw in the code/approach, try to propose an alternative**: telling somebody that his
+   code is bad is not very useful if there is no indication for fixing the issue. Try to explain why this
+   is bad and give some ideas how to address the issue. If this is a simple issue (syntax error or coding
+   style violation), just mention this without spending much time to give details.
+4. **If the review matters to you, do it soon**, probably within 24 hours and the exact delay is something
+   a team should discuss. Is is better for everybody
+   to get it done quick: all ideas are still fresh in the head of the submitter, it does not delay
+   progress on new features, etc. Do not blame the submitter if some code has been shipped without you reviewing it
+   if it was for review for several days: the blame is probably to put on you for not reviewing it in a timely manner.
+5. **When dicussing or arguing a change** try to relate to coding guidelines, best practices or business goals.
+   There is no point requesting a change if you *&quot;just prefer this style&quot;*: you should have a valid, objective reason
+   to request that.
+   For example, I personally almost always consider readability and maintainability as one of the most important aspects of code (software
+   maintenance and developer time is more expensive than computing resources). But
+   sometimes, good readability must be impacted to favor performance: in some businesses I have been, winning few nanoseconds
+   on a code path matters more than having clean and readable code.
+
+## Submitter Guidelines
+
+0. **Link your change your issue tracker (Jira, github, etc.)** and follow a rule 1 code change belongs to one ticket (one ticket
+   can have multiple code changes). It improves traceability with user stories and facilitates progress tracking
+   on a particular task. Design decisions, issues, etc. should be discussed in the ticket, not in the review itself.
+1. **Make short reviews** and try to keep one code change per problem and per component. 
+   First, it avoids long code review that will take days
+   to complete and will ultimately cause merge problems (need to re-base on master, etc.). Second, reviewers are less
+   likely to complete a long code review in a short period of time, which ultimately, will slow you down.
+   Prefer several, incremental reviews to a larger reviews on dozens of files.
+2. **If there are some temporary code that will be changed later**: put a comment in the code with your login that explains
+   why this is delayed and when this should be addressed. Having a random `FIXME` without reason is not acceptable, having
+   temporary incomplete code is OK as long as we have a reason for it and a plan to address it in the future.
+3. **Address comments in the review**: people invests time doing review, respects the work they put in your review
+   and answer their comments.
+4. **If you are doing pair programming, the ship from your pair does not count**: code review is there to expose the code
+   to other opinions and people in your team. Code developed in pair lacks this external point of view. Having the pair
+   shipping the code is like if the code was being shipped by its author. It defeats the purpose of code review.
+5. **Specify how you tested the components in your review**: some review system allow you to specify how you tested
+   the software. Copy/paste the command you used to run the test. If you deploy to a testing environment, put the
+   commend you used. It has two purposes: show the level of testing you did and, ensure that the software still
+   deploys and run (at least in the testing environment).
+6. **If one comment upsets you, come back to it later**: one particular comment might irritate you and after reading
+   it, you have only want to reply in a sarcastic way or just ignore it. Do not do any of these things. Take some time,
+   try to have the perspective of the reviewer, and then, reply. Stick to the point. Try to understand why the reviewer
+   raised that issue and show your good faith about solving this issue.
+</description>
+        <pubDate>Sat, 03 Nov 2018 06:13:20 -0700</pubDate>
+        <link>http://julien.gunnm.org/development/agile/2018/11/03/effective-code-reviews.md/</link>
+        <guid isPermaLink="true">http://julien.gunnm.org/development/agile/2018/11/03/effective-code-reviews.md/</guid>
+        
+        <category>code review</category>
+        
+        <category>agile</category>
+        
+        
+        <category>development</category>
+        
+        <category>agile</category>
+        
+      </item>
     
       <item>
         <title>Effective code review</title>
@@ -49,6 +145,18 @@ nothing like a face to face discussion), do it but write the outcome in the revi
 code is bad is not very useful if there is no indication for fixing the issue. Try to explain why this
 is bad and give some ideas how to address the issue. If this is a simple issue (syntax error or coding
 style violation), just mention this without spending much time to give details.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;If the review matters to you, do it soon&lt;/strong&gt;, probably within 24 hours and the exact delay is something
+a team should discuss. Is is better for everybody
+to get it done quick: all ideas are still fresh in the head of the submitter, it does not delay
+progress on new features, etc. Do not blame the submitter if some code has been shipped without you reviewing it
+if it was for review for several days: the blame is probably to put on you for not reviewing it in a timely manner.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;When discussing or arguing a change&lt;/strong&gt; try to relate to coding guidelines, best practices or business goals.
+There is no point requesting a change if you &lt;em&gt;“just prefer this style”&lt;/em&gt;: you should have a valid, objective reason
+to request that.
+For example, I personally almost always consider readability and maintainability as one of the most important aspects of code (software
+maintenance and developer time is more expensive than computing resources). But
+sometimes, good readability must be impacted to favor performance: in some businesses I have been, winning few nanoseconds
+on a code path matters more than having clean and readable code.&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;h2 id=&quot;submitter-guidelines&quot;&gt;Submitter Guidelines&lt;/h2&gt;
@@ -1037,41 +1145,6 @@ after a few months to re-apply.&lt;/p&gt;
         <category>techjob</category>
         
         <category>interview</category>
-        
-      </item>
-    
-      <item>
-        <title>AADL In Practice is OUT!</title>
-        <description>&lt;p&gt;After more than 4 months of intense work, I am happy to announce that my first book, &lt;em&gt;AADL In Practice&lt;/em&gt;
-is now available online! The book is a guide to walk you through the AADL language, explains its syntax
-and semantics and helps you to extend it for your own needs. All of this for $4.99.&lt;/p&gt;
-
-&lt;p&gt;This is a nice way to give back to the AADL community and close a chapter of the research work I started
-almost 10 years ago. I wanted to make my research work available. Not having these expensives books about
-complicated stuff. I wanted to do something simple, quick. Something most of engineers can understand
-and reuse for their own needs. I hope this will be useful for the software engineering community.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.amazon.com/dp/B071WHRJY3&quot;&gt;Amazon e-book&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://www.aadl-book.com&quot;&gt;Book website&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.facebook.com/aadlinpractice/&quot;&gt;Like the book on facebook&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.amazon.com/dp/B071WHRJY3&quot;&gt;&lt;img src=&quot;/assets/aadl-book-3d.jpg&quot; alt=&quot;AADL In Practice&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-
-</description>
-        <pubDate>Sat, 03 Jun 2017 06:13:20 -0700</pubDate>
-        <link>http://julien.gunnm.org/architecture/modeling/2017/06/03/aadl-book/</link>
-        <guid isPermaLink="true">http://julien.gunnm.org/architecture/modeling/2017/06/03/aadl-book/</guid>
-        
-        <category>aadl</category>
-        
-        <category>modeling</category>
-        
-        
-        <category>architecture</category>
-        
-        <category>modeling</category>
         
       </item>
     
