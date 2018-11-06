@@ -123,8 +123,9 @@
   <article class="post-content">
   <p>I recently wrote some thoughts for improving code reviews within my team.
 It started like a 5 minutes brain-dump at 6:30 in the morning on my way to work and I ended up iterating and refining the list
-several times over few days. This gave me the opportunity to reflect on the differences of code reviews 
-at the various places I worked at. Also, I strongly believe the environment (academic, industry) matters a lot.
+several times over a few days. This gave me the opportunity to reflect on the differences between the code
+review processes among
+the various places that I worked at. Also, I strongly believe the environment (academic, industry) matters a lot.
 I wanted to share these thoughts as code review can be the
 cause of many tensions within a development team.</p>
 
@@ -155,13 +156,13 @@ so that the submitter can prioritize changes.</li>
   <li><strong>Keep discussion/comments in the review system</strong>: it also serves other members to learn about
 potential issues and not replicate them. Ultimately, if you need to talk in person (sometimes, there is
 nothing like a face to face discussion), do it but write the outcome in the review for traceability purposes.</li>
-  <li><strong>When you point out a flaw in the code/approach, try to propose an alternative</strong>: telling somebody that his
+  <li><strong>When you point out a flaw in the code/approach, try to propose an alternative</strong>: telling somebody that his/her
 code is bad is not very useful if there is no indication for fixing the issue. Try to explain why this
 is bad and give some ideas how to address the issue. If this is a simple issue (syntax error or coding
 style violation), just mention this without spending much time to give details.</li>
   <li><strong>If the review matters to you, do it soon</strong>, probably within 24 hours and the exact delay is something
-a team should discuss. Is is better for everybody
-to get it done quick: all ideas are still fresh in the head of the submitter, it does not delay
+a team should discuss. It is better for everybody
+to get it done quickly: all ideas are still fresh in the head of the submitter, it does not delay
 progress on new features, etc. Do not blame the submitter if some code has been shipped without you reviewing it
 if it was for review for several days: the blame is probably to put on you for not reviewing it in a timely manner.</li>
   <li><strong>When discussing or arguing a change</strong> try to relate to coding guidelines, best practices or business goals.
@@ -176,7 +177,7 @@ on a code path matters more than having clean and readable code.</li>
 <h2 id="submitter-guidelines">Submitter Guidelines</h2>
 
 <ol>
-  <li><strong>Link your change your issue tracker (Jira, github, etc.)</strong> and follow a rule 1 code change belongs to one ticket (one ticket
+  <li><strong>Link your change your issue tracker (Jira, github, etc.)</strong> and follow the rule that 1 code change belongs to one ticket (one ticket
 can have multiple code changes). It improves traceability with user stories and facilitates progress tracking
 on a particular task. Design decisions, issues, etc. should be discussed in the ticket, not in the review itself.</li>
   <li><strong>Make short reviews</strong> and try to keep one code change per problem and per component. 
@@ -187,7 +188,7 @@ Prefer several, incremental reviews to a larger reviews on dozens of files.</li>
   <li><strong>If there are some temporary code that will be changed later</strong>: put a comment in the code with your login that explains
 why this is delayed and when this should be addressed. Having a random <code class="highlighter-rouge">FIXME</code> without reason is not acceptable, having
 temporary incomplete code is OK as long as we have a reason for it and a plan to address it in the future.</li>
-  <li><strong>Address comments in the review</strong>: people invests time doing review, respects the work they put in your review
+  <li><strong>Address comments in the review</strong>: people invest time doing review, respects the work they put in your review
 and answer their comments.</li>
   <li><strong>If you are doing pair programming, the ship from your pair does not count</strong>: code review is there to expose the code
 to other opinions and people in your team. Code developed in pair lacks this external point of view. Having the pair
@@ -197,7 +198,7 @@ the software. Copy/paste the command you used to run the test. If you deploy to 
 commend you used. It has two purposes: show the level of testing you did and, ensure that the software still
 deploys and run (at least in the testing environment).</li>
   <li><strong>If one comment upsets you, come back to it later</strong>: one particular comment might irritate you and after reading
-it, you have only want to reply in a sarcastic way or just ignore it. Do not do any of these things. Take some time,
+it, you may want to reply in a sarcastic way or to just ignore it. Do not do any of these things. Take some time,
 try to have the perspective of the reviewer, and then, reply. Stick to the point. Try to understand why the reviewer
 raised that issue and show your good faith about solving this issue.</li>
 </ol>
