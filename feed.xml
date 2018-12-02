@@ -5,25 +5,24 @@
     <description>Harder, Better, Faster, Stronger</description>
     <link>http://julien.gunnm.org/</link>
     <atom:link href="http://julien.gunnm.org/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Sat, 01 Dec 2018 19:22:07 -0800</pubDate>
-    <lastBuildDate>Sat, 01 Dec 2018 19:22:07 -0800</lastBuildDate>
+    <pubDate>Sat, 01 Dec 2018 19:45:34 -0800</pubDate>
+    <lastBuildDate>Sat, 01 Dec 2018 19:45:34 -0800</lastBuildDate>
     <generator>Jekyll v3.8.1</generator>
     
       <item>
         <title>Coding Interview for Dummies</title>
         <description>&lt;p&gt;I recently realized that instead of giving the same advices to each person I met, it would
-be better to write them down. It will be available to anybody
-that wants to get a job and this version will be complete. I previously wrote
-a guide specific to the &lt;a href=&quot;(/amazon/techjob/interview/2017/07/21/how-to-prepare-for-an-interview-at-amazon/)&quot;&gt;Amazon interview&lt;/a&gt;, this one is more specific to the
-process itself (including how to apply, negotiate, etc.).&lt;/p&gt;
+be better and more efficient to write them down. I previously wrote
+a guide specific for the &lt;a href=&quot;/amazon/techjob/interview/2017/07/21/how-to-prepare-for-an-interview-at-amazon/&quot;&gt;Amazon interview&lt;/a&gt;, this one is more specific to the
+process itself (how to apply, negotiate, etc.).&lt;/p&gt;
 
-&lt;p&gt;I do not claim this is the ultimate guide or the only one. Following these advices help friends
-getting jobs at various tech companies and some quadruple their income within few months. It 
+&lt;p&gt;I do not claim this is the ultimate guide or the only &lt;em&gt;valid&lt;/em&gt; one. Following these advices helped myself and friends
+getting jobs at various tech companies. Some got the job they wanted for so long and others triple their income within few months. It 
 just seems to be one that works in several cases.&lt;/p&gt;
 
-&lt;p&gt;There are the various steps:&lt;/p&gt;
+&lt;p&gt;There are the various steps in the process:&lt;/p&gt;
 &lt;ol&gt;
-  &lt;li&gt;&lt;strong&gt;Preparation&lt;/strong&gt;: like running or going to the gym, this is all about reps. Nothing else. The difference is that you do not pull weights but grind leetcode daily.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Preparation&lt;/strong&gt;: like running or going to the gym, this is all about repetitions. Nothing else. The difference is that you do not pull weights but grind leetcode daily.&lt;/li&gt;
   &lt;li&gt;&lt;strong&gt;Application&lt;/strong&gt;: you apply to as many jobs as you can.&lt;/li&gt;
   &lt;li&gt;&lt;strong&gt;Interviews&lt;/strong&gt;: you do the phone screens/on site&lt;/li&gt;
   &lt;li&gt;&lt;strong&gt;Selection and negotiation&lt;/strong&gt;: you select the job you want and say thank you to the others&lt;/li&gt;
@@ -32,18 +31,18 @@ just seems to be one that works in several cases.&lt;/p&gt;
 &lt;h2 id=&quot;preparation&quot;&gt;Preparation&lt;/h2&gt;
 
 &lt;p&gt;This is 50% of the time, two months minimum. Do not pass or you will miserably fail, especially if you are a junior.
-The interview will be mostly focused on coding exercises on whiteboard (except if your company
+The interview will be mostly focused on coding exercises on white-board (except if your company
 has a smarter hiring process). You can argue about the efficiency of this process but this is 
-the reality you have to live in. Whiteboard coding is not hard, this is about knowing
+the reality you have to live in. White-board coding is not hard, this is about knowing
 your fundamentals (data structures, complexity, etc.) and applying them.&lt;/p&gt;
 
 &lt;p&gt;There is no secret: you need to refresh your memory with the fundamentals and practices
-some well-known whiteboard problems. I would recommend the excellent book 
+some well-known white-board problems. I would recommend the excellent book 
 &lt;a href=&quot;https://www.amazon.com/Elements-Programming-Interviews-Java-Insiders/dp/1517671272/ref=sr_1_1?ie=UTF8&amp;amp;qid=1534542514&amp;amp;sr=8-1&amp;amp;keywords=elements+of+programming+interviews&quot;&gt;Elements of Programming Interviews&lt;/a&gt;.
 This book is way better than &lt;a href=&quot;https://www.amazon.com/Cracking-Coding-Interview-Programming-Questions/dp/0984782850/ref=sr_1_2?ie=UTF8&amp;amp;qid=1543717911&amp;amp;sr=8-2&amp;amp;keywords=cracking+the+coding+interview&quot;&gt;Cracking the Coding Interview&lt;/a&gt; with more
 in-depths exercises and detailed explanations.&lt;/p&gt;
 
-&lt;p&gt;Once you read the book (or in parallel), practice whiteboard coding. Go on
+&lt;p&gt;Once you read the book (or in parallel), practice white-board coding. Go on
 &lt;a href=&quot;http://www.leetcode.com&quot;&gt;leetcode&lt;/a&gt; and practice questions at different levels.
 Practice &lt;strong&gt;every day&lt;/strong&gt; at least &lt;strong&gt;one hour&lt;/strong&gt; a day. I usually do sessions or two hours
 a day when preparing for interviews.&lt;/p&gt;
@@ -74,11 +73,11 @@ to be ready to go to the next level.&lt;/p&gt;
 &lt;/ol&gt;
 
 &lt;p&gt;Apply to as many companies as you can. Keep in mind that many will reject you and/or
-do not even reply to you. Apply to at least 10 to 20 companies, that should garantee 
+do not even reply to you. Apply to at least 10 to 20 companies, that should guarantee 
 few replies.&lt;/p&gt;
 
 &lt;p&gt;This is crucial that you contact all recruiters in a very short period of time.
-It maximizes the probability of getting interviews at the same time adn then, have
+It maximizes the probability of getting interviews at the same time and then, have
 competing offers you can leverage to negotiate (more on this later).&lt;/p&gt;
 
 &lt;p&gt;The recruiter will schedule a technical phone screen, that is a coding question.
@@ -90,12 +89,12 @@ you care about the position and that you are interested.&lt;/p&gt;
 
 &lt;p&gt;The recruiter will call you one or two days after your screen to tell you if you
 pass or not. If you pass, you will go on site for a full day of interviews.
-&lt;strong&gt;Try to schedule your onsites in the same two weeks window&lt;/strong&gt; so that
+&lt;strong&gt;Try to schedule your on-sites in the same two weeks window&lt;/strong&gt; so that
 you will likely get offers at the same time and use them to negotiate.&lt;/p&gt;
 
 &lt;p&gt;At that stage, you should have a success rate around 70-80% (as long as you prepare
 as described above). If you have 10 replies from recruiters, you should have 
-about 7 to 8 onsites.&lt;/p&gt;
+about 7 to 8 on-sites.&lt;/p&gt;
 
 &lt;h2 id=&quot;on-site&quot;&gt;On Site&lt;/h2&gt;
 
@@ -132,7 +131,7 @@ would like to ask.&lt;/p&gt;
 
 &lt;p&gt;If you are competing offers (likely if you follow the plan!): negotiate. &lt;strong&gt;Never
 skip the negotiation part&lt;/strong&gt;. Negotiate
-does not necessarly means more money. It also means that you can ask for more
+does not necessarily means more money. It also means that you can ask for more
 vacation/support/time off to study/whatever. I will not repeat what has been done, 
 &lt;a href=&quot;https://haseebq.com/my-ten-rules-for-negotiating-a-job-offer/&quot;&gt;Haseeb wrote an fantastic blog post about offer negotiation, go read it&lt;/a&gt;. In my experience, applying these rules
 helped to negotiate special conditions and/or get 10 to 20% total compensation.&lt;/p&gt;
@@ -141,8 +140,8 @@ helped to negotiate special conditions and/or get 10 to 20% total compensation.&
 
 &lt;ol&gt;
   &lt;li&gt;&lt;strong&gt;Prepare for at least two months&lt;/strong&gt; where &lt;a href=&quot;https://www.amazon.com/Elements-Programming-Interviews-Java-Insiders/dp/1517671272/ref=sr_1_1?ie=UTF8&amp;amp;qid=1534542514&amp;amp;sr=8-1&amp;amp;keywords=elements+of+programming+interviews&quot;&gt;EPI&lt;/a&gt; is your bible and &lt;a href=&quot;http://www.leetcode.com&quot;&gt;leetcode&lt;/a&gt; the only website you visit. Go to the next steps only if you can complete 2 mediums questions in 45 minutes and one hard in 30 minutes.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Apply to many jobs (at least 20)&lt;/strong&gt; at once to have on-site interviews in the same time window and maximixe the chances of competing offers&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Always negotiate an offer&lt;/strong&gt; ; negotiation is not necessarly financial&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Apply to many jobs (at least 20)&lt;/strong&gt; at once to have on-site interviews in the same time window and maximize the chances of competing offers&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Always negotiate an offer&lt;/strong&gt; ; negotiation is not necessarily financial&lt;/li&gt;
   &lt;li&gt;&lt;strong&gt;Be kind &amp;amp; polite&lt;/strong&gt;: if you are rejected, thanks the interviewing team and keep the door open.&lt;/li&gt;
   &lt;li&gt;&lt;strong&gt;Have fun&lt;/strong&gt;: the process is challenging but also a lot of fun. Enjoy the ride.&lt;/li&gt;
 &lt;/ol&gt;
@@ -158,10 +157,26 @@ helped to negotiate special conditions and/or get 10 to 20% total compensation.&
   &lt;li&gt;Preparation often takes between 2 to 4 months. &lt;strong&gt;This is the main step&lt;/strong&gt;.&lt;/li&gt;
 &lt;/ul&gt;
 
+&lt;h3 id=&quot;the-dating-metaphor&quot;&gt;The dating metaphor&lt;/h3&gt;
+&lt;p&gt;Hunting for a job interview is exactly like dating. You are looking to match with a good companies.
+As for dating, from a statistical perspective, the more companies you see, the more likely you will 
+find someone that likes you (make sure you like them too!).
+So do not hesitate to contact a company: you have nothing to lose.&lt;/p&gt;
+
+&lt;p&gt;Be respectful: if the other party rejects you, respect their decision and move on. There
+is no point asking why they reject you or even contest their decision.&lt;/p&gt;
+
+&lt;p&gt;Like in a date, if you say no to a company, try to explain your reasons and keep the door
+open and stay friends. The date (company) you rejected once might be the one you live with later.&lt;/p&gt;
+
+&lt;p&gt;Also, do not hesitate to know each other before you sign the deal. It is very important
+that both you and the company are totally on the same page about the deal being signed.
+Take the time to ask as many questions as you need before signing the deal.&lt;/p&gt;
+
 &lt;h3 id=&quot;faq&quot;&gt;FAQ&lt;/h3&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;What if recruiters do not reply to me?&lt;/strong&gt; if you are junior developer, try to contact the recruiting for university/new grad (big companies have such a department). If you are more senior, look for people you might know in your network (friends of friends) that work there and ask them for a referal. You have nothing to lose but rejection.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;What if recruiters do not reply to me?&lt;/strong&gt; if you are junior developer, try to contact the recruiting for university/new grad (big companies have such a department). If you are more senior, look for people you might know in your network (friends of friends) that work there and ask them for a referral. You have nothing to lose but rejection.&lt;/li&gt;
   &lt;li&gt;&lt;strong&gt;Why I never get feedback after rejection?&lt;/strong&gt; giving any information would open the door to any potential discussion and/or disagreement. Why you have been rejected is irrelevant: all what matters is that you know the result and you need to move on.&lt;/li&gt;
 &lt;/ul&gt;
 </description>
