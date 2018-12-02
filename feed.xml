@@ -5,12 +5,187 @@
     <description>Harder, Better, Faster, Stronger</description>
     <link>http://julien.gunnm.org/</link>
     <atom:link href="http://julien.gunnm.org/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Mon, 05 Nov 2018 17:53:52 -0800</pubDate>
-    <lastBuildDate>Mon, 05 Nov 2018 17:53:52 -0800</lastBuildDate>
-    <generator>Jekyll v3.1.6</generator>
+    <pubDate>Sat, 01 Dec 2018 19:22:07 -0800</pubDate>
+    <lastBuildDate>Sat, 01 Dec 2018 19:22:07 -0800</lastBuildDate>
+    <generator>Jekyll v3.8.1</generator>
     
       <item>
-        <title>Effective code review</title>
+        <title>Coding Interview for Dummies</title>
+        <description>&lt;p&gt;I recently realized that instead of giving the same advices to each person I met, it would
+be better to write them down. It will be available to anybody
+that wants to get a job and this version will be complete. I previously wrote
+a guide specific to the &lt;a href=&quot;(/amazon/techjob/interview/2017/07/21/how-to-prepare-for-an-interview-at-amazon/)&quot;&gt;Amazon interview&lt;/a&gt;, this one is more specific to the
+process itself (including how to apply, negotiate, etc.).&lt;/p&gt;
+
+&lt;p&gt;I do not claim this is the ultimate guide or the only one. Following these advices help friends
+getting jobs at various tech companies and some quadruple their income within few months. It 
+just seems to be one that works in several cases.&lt;/p&gt;
+
+&lt;p&gt;There are the various steps:&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;&lt;strong&gt;Preparation&lt;/strong&gt;: like running or going to the gym, this is all about reps. Nothing else. The difference is that you do not pull weights but grind leetcode daily.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Application&lt;/strong&gt;: you apply to as many jobs as you can.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Interviews&lt;/strong&gt;: you do the phone screens/on site&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Selection and negotiation&lt;/strong&gt;: you select the job you want and say thank you to the others&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;preparation&quot;&gt;Preparation&lt;/h2&gt;
+
+&lt;p&gt;This is 50% of the time, two months minimum. Do not pass or you will miserably fail, especially if you are a junior.
+The interview will be mostly focused on coding exercises on whiteboard (except if your company
+has a smarter hiring process). You can argue about the efficiency of this process but this is 
+the reality you have to live in. Whiteboard coding is not hard, this is about knowing
+your fundamentals (data structures, complexity, etc.) and applying them.&lt;/p&gt;
+
+&lt;p&gt;There is no secret: you need to refresh your memory with the fundamentals and practices
+some well-known whiteboard problems. I would recommend the excellent book 
+&lt;a href=&quot;https://www.amazon.com/Elements-Programming-Interviews-Java-Insiders/dp/1517671272/ref=sr_1_1?ie=UTF8&amp;amp;qid=1534542514&amp;amp;sr=8-1&amp;amp;keywords=elements+of+programming+interviews&quot;&gt;Elements of Programming Interviews&lt;/a&gt;.
+This book is way better than &lt;a href=&quot;https://www.amazon.com/Cracking-Coding-Interview-Programming-Questions/dp/0984782850/ref=sr_1_2?ie=UTF8&amp;amp;qid=1543717911&amp;amp;sr=8-2&amp;amp;keywords=cracking+the+coding+interview&quot;&gt;Cracking the Coding Interview&lt;/a&gt; with more
+in-depths exercises and detailed explanations.&lt;/p&gt;
+
+&lt;p&gt;Once you read the book (or in parallel), practice whiteboard coding. Go on
+&lt;a href=&quot;http://www.leetcode.com&quot;&gt;leetcode&lt;/a&gt; and practice questions at different levels.
+Practice &lt;strong&gt;every day&lt;/strong&gt; at least &lt;strong&gt;one hour&lt;/strong&gt; a day. I usually do sessions or two hours
+a day when preparing for interviews.&lt;/p&gt;
+
+&lt;p&gt;Also &lt;strong&gt;do not skip design the design questions&lt;/strong&gt;, they are important. The EPI book
+has good examples that covers 90% of the questions you might be asked.&lt;/p&gt;
+
+&lt;p&gt;You can consider that you are ready when the following conditions are met:&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;You read the book completely&lt;/li&gt;
+  &lt;li&gt;You can solve two medium problems in 45 minutes&lt;/li&gt;
+  &lt;li&gt;You can solve a hard problem in 30 minutes&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;It can take weeks or even months before you get there. It does not matter: you need
+to be ready to go to the next level.&lt;/p&gt;
+
+&lt;p style=&quot;text-align: center;&quot;&gt;&lt;img src=&quot;/assets/paimei-leetcode.jpg&quot; alt=&quot;Pai Mei&quot; width=&quot;50%&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;application--phone-screen&quot;&gt;Application &amp;amp; Phone Screen&lt;/h2&gt;
+
+&lt;p&gt;Once you are ready, this is time to apply! This step takes only two to three days.&lt;/p&gt;
+
+&lt;p&gt;To find jobs, follow these steps in order of priority:&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;the &lt;em&gt;careers&lt;/em&gt; section: to consider first - this is the most up to date data.&lt;/li&gt;
+  &lt;li&gt;linkedin - some companies advertise only on linkedin.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Apply to as many companies as you can. Keep in mind that many will reject you and/or
+do not even reply to you. Apply to at least 10 to 20 companies, that should garantee 
+few replies.&lt;/p&gt;
+
+&lt;p&gt;This is crucial that you contact all recruiters in a very short period of time.
+It maximizes the probability of getting interviews at the same time adn then, have
+competing offers you can leverage to negotiate (more on this later).&lt;/p&gt;
+
+&lt;p&gt;The recruiter will schedule a technical phone screen, that is a coding question.
+Make sure you do only one phone screen per day: if you do two phone screen per day and
+fail the first one, you will mentally be in a bad state for the second one.&lt;/p&gt;
+
+&lt;p&gt;After each phone screen, &lt;strong&gt;send a thank you email to the recruiter&lt;/strong&gt;. It shows
+you care about the position and that you are interested.&lt;/p&gt;
+
+&lt;p&gt;The recruiter will call you one or two days after your screen to tell you if you
+pass or not. If you pass, you will go on site for a full day of interviews.
+&lt;strong&gt;Try to schedule your onsites in the same two weeks window&lt;/strong&gt; so that
+you will likely get offers at the same time and use them to negotiate.&lt;/p&gt;
+
+&lt;p&gt;At that stage, you should have a success rate around 70-80% (as long as you prepare
+as described above). If you have 10 replies from recruiters, you should have 
+about 7 to 8 onsites.&lt;/p&gt;
+
+&lt;h2 id=&quot;on-site&quot;&gt;On Site&lt;/h2&gt;
+
+&lt;p&gt;The onsite will be 4 to 5 interviews. Most of them are whiteboard coding with one
+or two design questions. As long as you follow the preparation, you should be good to go.&lt;/p&gt;
+
+&lt;p&gt;Make sure you get plenty of sleep the night before the interview. Your brain
+need a full night of rest.&lt;/p&gt;
+
+&lt;p&gt;Make sure to keep one to two days of rest between interviews. A full day
+of interview is intensive and you need to rest.&lt;/p&gt;
+
+&lt;p&gt;Once you are done and back home, &lt;strong&gt;send a &lt;em&gt;thank you&lt;/em&gt; email&lt;/strong&gt; to the recruiter.
+Show that you had a good time and you are excited about the position.&lt;/p&gt;
+
+&lt;h2 id=&quot;negotiation-and-rejection&quot;&gt;Negotiation and rejection&lt;/h2&gt;
+
+&lt;p&gt;If you prepared correctly and your interviewer is not masochist, you should
+have a success rate on site around 50%. If you do the maths, it means you should
+have between 3 and 4 offers.&lt;/p&gt;
+
+&lt;p&gt;Make sure you get the feedback from all companies before starting the negotiations
+and make a final decision.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;If you are rejected&lt;/strong&gt;: face the reality, there is probably nothing to blame
+other than yourself. Learn your lesson and move on. Thank the recruiter and
+the interviewing team for their time. Be nice and keep the door open: the recruiter
+or the hiring manager might be working in your next dream company.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;If you get an offer&lt;/strong&gt;: &lt;strong&gt;DO NOT ACCEPT WITHOUT NEGOTIATING!&lt;/strong&gt;. Take your time,
+talk with your wife/girlfriend/cat and think about all the possibilities. Project yourself
+in your new role and try to imagine what you would need and/or if there is anything you
+would like to ask.&lt;/p&gt;
+
+&lt;p&gt;If you are competing offers (likely if you follow the plan!): negotiate. &lt;strong&gt;Never
+skip the negotiation part&lt;/strong&gt;. Negotiate
+does not necessarly means more money. It also means that you can ask for more
+vacation/support/time off to study/whatever. I will not repeat what has been done, 
+&lt;a href=&quot;https://haseebq.com/my-ten-rules-for-negotiating-a-job-offer/&quot;&gt;Haseeb wrote an fantastic blog post about offer negotiation, go read it&lt;/a&gt;. In my experience, applying these rules
+helped to negotiate special conditions and/or get 10 to 20% total compensation.&lt;/p&gt;
+
+&lt;h2 id=&quot;summary&quot;&gt;Summary&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;strong&gt;Prepare for at least two months&lt;/strong&gt; where &lt;a href=&quot;https://www.amazon.com/Elements-Programming-Interviews-Java-Insiders/dp/1517671272/ref=sr_1_1?ie=UTF8&amp;amp;qid=1534542514&amp;amp;sr=8-1&amp;amp;keywords=elements+of+programming+interviews&quot;&gt;EPI&lt;/a&gt; is your bible and &lt;a href=&quot;http://www.leetcode.com&quot;&gt;leetcode&lt;/a&gt; the only website you visit. Go to the next steps only if you can complete 2 mediums questions in 45 minutes and one hard in 30 minutes.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Apply to many jobs (at least 20)&lt;/strong&gt; at once to have on-site interviews in the same time window and maximixe the chances of competing offers&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Always negotiate an offer&lt;/strong&gt; ; negotiation is not necessarly financial&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Be kind &amp;amp; polite&lt;/strong&gt;: if you are rejected, thanks the interviewing team and keep the door open.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Have fun&lt;/strong&gt;: the process is challenging but also a lot of fun. Enjoy the ride.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Questions? &lt;a href=&quot;/about/#contact&quot;&gt;Contact me&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;misc&quot;&gt;Misc&lt;/h2&gt;
+
+&lt;h3 id=&quot;key-metrics&quot;&gt;Key metrics&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;Keep in mind that when you apply, you will have &lt;strong&gt;an average success rate between 20% and 40%&lt;/strong&gt;. In other words, if you interview to 10 companies, you will likely get 2 or 4 offers (assuming you prepare accordingly).&lt;/li&gt;
+  &lt;li&gt;In general, the whole application process from application to success/rejection takes between 1 to 2 months.&lt;/li&gt;
+  &lt;li&gt;Preparation often takes between 2 to 4 months. &lt;strong&gt;This is the main step&lt;/strong&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;faq&quot;&gt;FAQ&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;What if recruiters do not reply to me?&lt;/strong&gt; if you are junior developer, try to contact the recruiting for university/new grad (big companies have such a department). If you are more senior, look for people you might know in your network (friends of friends) that work there and ask them for a referal. You have nothing to lose but rejection.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Why I never get feedback after rejection?&lt;/strong&gt; giving any information would open the door to any potential discussion and/or disagreement. Why you have been rejected is irrelevant: all what matters is that you know the result and you need to move on.&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Sat, 01 Dec 2018 05:13:20 -0800</pubDate>
+        <link>http://julien.gunnm.org/career/job%20application/coding%20interview/leetcode/2018/12/01/coding-interview-for-dummies/</link>
+        <guid isPermaLink="true">http://julien.gunnm.org/career/job%20application/coding%20interview/leetcode/2018/12/01/coding-interview-for-dummies/</guid>
+        
+        <category>career</category>
+        
+        <category>job</category>
+        
+        
+        <category>career</category>
+        
+        <category>job application</category>
+        
+        <category>coding interview</category>
+        
+        <category>leetcode</category>
+        
+      </item>
+    
+      <item>
+        <title>Effective code reviews</title>
         <description>&lt;p&gt;I recently wrote some thoughts for improving code reviews within my team.
 It started like a 5 minutes brain-dump at 6:30 in the morning on my way to work and I ended up iterating and refining the list
 several times over a few days. This gave me the opportunity to reflect on the differences between the code
@@ -644,14 +819,14 @@ in AWS, GCP or Azure. Your choice. I just choose my Raspberry Pi because this is
 &lt;p&gt;I already wrote the application. This is a simple chat, you can check out the code there: &lt;a href=&quot;https://github.com/juli1/flask-chat&quot;&gt;https://github.com/juli1/flask-chat&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;You can even try it out locally:&lt;/p&gt;
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git clone https://github.com/juli1/flask-chat.git
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git clone https://github.com/juli1/flask-chat.git
 &lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;flask-chat
 &lt;span class=&quot;c&quot;&gt;# Replace the following line with virtualenv if necessary&lt;/span&gt;
-python3.X &lt;span class=&quot;nt&quot;&gt;-m&lt;/span&gt; venv venv &lt;span class=&quot;c&quot;&gt;# Replace X with your version of python&lt;/span&gt;
+python3.X -m venv venv &lt;span class=&quot;c&quot;&gt;# Replace X with your version of python&lt;/span&gt;
 &lt;span class=&quot;nb&quot;&gt;source &lt;/span&gt;flask/bin/activate
-pip install &lt;span class=&quot;nt&quot;&gt;-r&lt;/span&gt; requirements.txt
+pip install -r requirements.txt
 ./run-debug.py
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;Then, open your web-browser and go to &lt;a href=&quot;https://localhost:5000&quot;&gt;https://localhost:5000&lt;/a&gt;&lt;/p&gt;
 
@@ -672,7 +847,7 @@ pip install &lt;span class=&quot;nt&quot;&gt;-r&lt;/span&gt; requirements.txt
   &lt;li&gt;specify the command to execute the application &lt;code class=&quot;highlighter-rouge&quot;&gt;python3 run-production.py&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;FROM python:3.6-slim-stretch
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;FROM python:3.6-slim-stretch
 MAINTAINER Julien Delange &amp;lt;julien@gunnm.org&amp;gt;
 RUN apt-get update -y
 RUN apt-get install -y python3 python-pip-whl python3-pip
@@ -684,38 +859,38 @@ RUN python3 ./db_create.py
 EXPOSE 5050
 ENTRYPOINT [&quot;python3&quot;]
 CMD [&quot;run-production.py&quot;]
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;Once we are done, we can build the docker image. To do so, just invoke the following command:&lt;/p&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;docker build -t flask-chat:latest .
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;docker build -t flask-chat:latest .
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;h1 id=&quot;running-the-docker-image-on-your-local-machine-or-on-your-raspberry-pi&quot;&gt;Running the docker image on your local machine or on your raspberry pi&lt;/h1&gt;
 
 &lt;p&gt;Now, it is time to run the docker image freshly built!&lt;/p&gt;
 
 &lt;p&gt;If you want to run the image you built on your computer into a docker container, just run:&lt;/p&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;docker run -d -p 10000:10000 flask-chat
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;docker run -d -p 10000:10000 flask-chat
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;This command run the container and binds the local port 10000 to the container port 5050 (on which the flask application is listening to).&lt;/p&gt;
 
 &lt;p&gt;If you just want to use the pre-built image from &lt;a href=&quot;https://hub.docker.com/r/juli1/flask-chat/tags/&quot;&gt;dockerhub&lt;/a&gt;
 on your local machine, run:&lt;/p&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;docker run -d -p 10000:10000 juli1/flask-chat:latest
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;docker run -d -p 10000:10000 juli1/flask-chat:latest
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;And finally, if you want to run the pre-built image from &lt;a href=&quot;https://hub.docker.com/r/juli1/flask-chat/tags/&quot;&gt;dockerhub&lt;/a&gt;
 on your raspberry pi, run:&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;docker run -d -p 10000:5050 juli1/flask-chat:rpi
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;docker run -d -p 10000:5050 juli1/flask-chat:rpi
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;If you want to actually build the container on your raspberry pi, you can use the &lt;code class=&quot;highlighter-rouge&quot;&gt;Dockerfile.rpi&lt;/code&gt;`file
 in the root directory of the project like this:&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;docker build -t flask-chat:latest . -f Dockerfile.rpi
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;docker build -t flask-chat:latest . -f Dockerfile.rpi
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;h1 id=&quot;continuous-integration&quot;&gt;Continuous Integration&lt;/h1&gt;
 &lt;p&gt;We are in 2017 (soon 2018) and continuous deployment/integration is just the way to go. Automating
@@ -812,10 +987,10 @@ the full FS ).&lt;/p&gt;
 &lt;p&gt;The code is publicly available on github at:
 &lt;a href=&quot;https://github.com/juli1/rust-webserver&quot;&gt;https://github.com/juli1/rust-webserver&lt;/a&gt;&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# git clone https://github.com/juli1/rust-webserver.git
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# git clone https://github.com/juli1/rust-webserver.git
 # cd rust-webserver
 # cargo build &amp;amp;&amp;amp; cargo run -- -p 9065 -l 127.0.0.1 --rootdir `pwd`
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;Then, open your browser and go to
 &lt;a href=&quot;http://localhost:9065/Cargo.toml&quot;&gt;http://localhost:9065/Cargo.toml&lt;/a&gt;. You will
@@ -1050,41 +1225,6 @@ after a few months to re-apply.&lt;/p&gt;
         <category>techjob</category>
         
         <category>interview</category>
-        
-      </item>
-    
-      <item>
-        <title>AADL In Practice is OUT!</title>
-        <description>&lt;p&gt;After more than 4 months of intense work, I am happy to announce that my first book, &lt;em&gt;AADL In Practice&lt;/em&gt;
-is now available online! The book is a guide to walk you through the AADL language, explains its syntax
-and semantics and helps you to extend it for your own needs. All of this for $4.99.&lt;/p&gt;
-
-&lt;p&gt;This is a nice way to give back to the AADL community and close a chapter of the research work I started
-almost 10 years ago. I wanted to make my research work available. Not having these expensives books about
-complicated stuff. I wanted to do something simple, quick. Something most of engineers can understand
-and reuse for their own needs. I hope this will be useful for the software engineering community.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.amazon.com/dp/B071WHRJY3&quot;&gt;Amazon e-book&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://www.aadl-book.com&quot;&gt;Book website&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.facebook.com/aadlinpractice/&quot;&gt;Like the book on facebook&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.amazon.com/dp/B071WHRJY3&quot;&gt;&lt;img src=&quot;/assets/aadl-book-3d.jpg&quot; alt=&quot;AADL In Practice&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-
-</description>
-        <pubDate>Sat, 03 Jun 2017 06:13:20 -0700</pubDate>
-        <link>http://julien.gunnm.org/architecture/modeling/2017/06/03/aadl-book/</link>
-        <guid isPermaLink="true">http://julien.gunnm.org/architecture/modeling/2017/06/03/aadl-book/</guid>
-        
-        <category>aadl</category>
-        
-        <category>modeling</category>
-        
-        
-        <category>architecture</category>
-        
-        <category>modeling</category>
         
       </item>
     

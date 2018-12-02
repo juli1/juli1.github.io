@@ -95,8 +95,6 @@
           <a class="page-link" href="/projects/">Projects</a>
         
           <a class="page-link" href="/running/">Running Agenda and Past Races</a>
-        
-          
          -->
          <a class="page-link" href="/about">About</a>
       </div>
@@ -163,7 +161,7 @@
 
 <p>The timer components and timer managment in CAmkES are defining like the following (<code class="highlighter-rouge">Timerbase</code> being the hardware component and <code class="highlighter-rouge">Timer</code> the time manager)</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>component Timerbase {
+<div class="highlighter-rouge"><pre class="highlight"><code>component Timerbase {
    hardware;
    provides IOPort command;
    provides IOPort channel0;
@@ -179,22 +177,22 @@ component Timer {
   emits sig Hello1_Thr_activator;
   emits sig Hello2_Thr_activator;
 }
-</code></pre></div></div>
+</code></pre></div>
 
 <p>The <code class="highlighter-rouge">Timerbase</code> component accesses two <code class="highlighter-rouge">IOPort</code> that are hardware register/memories used to control the timer. This is architecture-dependent and related to the <abbr title="Programmable Interval Interrupt">PIT</abbr>. The <code class="highlighter-rouge">irq</code> corresponds to the interrupt sent by the system.</p>
 
 <p>Now, let’s define the application component (application task). We call it <code class="highlighter-rouge">HelloThreadImpl</code>. This task is a control task that will consumes a signal that activates it.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>component HelloThreadImpl
+<div class="highlighter-rouge"><pre class="highlight"><code>component HelloThreadImpl
 {
   control;
   consumes sig activator;
 }
-</code></pre></div></div>
+</code></pre></div>
 
 <p>Then, we need to create an assembly that integrates and configures all components. The assembly corresponds to the components configuration showed in the picture before.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>import &lt;std_connector.camkes&gt;;
+<div class="highlighter-rouge"><pre class="highlight"><code>import &lt;std_connector.camkes&gt;;
 import "components/timer/Timer.camkes";
 import "components/HelloThreadImpl/HelloThreadImpl.camkes";
 assembly {
@@ -226,7 +224,7 @@ assembly {
     timerbase.channel0_attributes = "0x40:0x40";
   }
 }
-</code></pre></div></div>
+</code></pre></div>
 
 <p>We define the timer component (one of type <code class="highlighter-rouge">Timerbase</code> and one of type <code class="highlighter-rouge">Timer</code>) as well as two software components. The connections <code class="highlighter-rouge">notification0</code> and <code class="highlighter-rouge">notification1</code> are the one that will activate the tasks through a signal, to notify them that they can be activated.</p>
 
@@ -240,7 +238,7 @@ assembly {
 
 <p>In the driver interrupt handler, we get the current time in milliseconds. Then, depending on the value, we send a signal to activate a task. In the following code, we send a signal to the first task every 1000 ms and send a signal to the second task every 2000 ms.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>void irq_callback(void *_ UNUSED)
+<div class="highlighter-rouge"><pre class="highlight"><code>void irq_callback(void *_ UNUSED)
 {
   timer_handle_irq(timer_drv, 0);
 
@@ -258,11 +256,11 @@ assembly {
 
   irq_reg_callback(irq_callback, NULL);
 }
-</code></pre></div></div>
+</code></pre></div>
 
 <p>Let’s have a look at the <code class="highlighter-rouge">HelloThreadImpl</code> code now. It should be pretty obvious with an infinite loop waiting for a signal and executing a piece of code. The code is provided below.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>#include &lt;camkes.h&gt;
+<div class="highlighter-rouge"><pre class="highlight"><code>#include &lt;camkes.h&gt;
 
 #include &lt;generatedtypes.h&gt;
 #include &lt;stdio.h&gt;
@@ -282,7 +280,7 @@ int run(void)
   }
   return 0;
 }
-</code></pre></div></div>
+</code></pre></div>
 
 <h1 id="getting-the-code--run-it">Getting the code &amp; run it</h1>
 <p>The code is availabe <a href="/assets/sel4-timer.tgz">there</a></p>
