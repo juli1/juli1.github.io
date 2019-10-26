@@ -127,10 +127,10 @@
 and also re-learn Java (after about 3 years without using it). I built network
 analysis tools in Scala and used it to entirely write the backend of
 <a href="https://www.code-inspector.com">Code Inspector</a> with it. In the meantime, when
-starting to recently form a new engineering team, I had to use Java again. I wanted
+starting to recently form a new engineering team, I had to use (and re-learn) Java again. I wanted
 to reflect on this experience to share some thoughts as to where these languages
 stand, the directions they are taking and answer the
-question too-often asked: which one to use?.</p>
+question too-often asked: which one to use?</p>
 
 <h1 id="java-has-evolved-a-lot-and-for-the-better">Java has evolved a lot, and for the better</h1>
 
@@ -138,7 +138,8 @@ question too-often asked: which one to use?.</p>
 brought fundamental changes. One example is the change in the for-loop syntax
 in Java 5 or the introduction of lambda in Java 8. As the language became very
 popular, developers added a ton of libraries for it and the language became very
-popular with infamous application (such as <a href="https://hadoop.apache.org/">Hadoop</a>.</p>
+popular with infamous application (such as <a href="https://hadoop.apache.org/">Hadoop</a>,
+<a href="https://spring.io/">Spring</a> or <a href="https://www.playframework.com/">Play</a>).</p>
 
 <p>Also, the community around the language built libraries to overcome some
 of its limitations. One good example is <a href="https://github.com/google/guava">Guava</a>,
@@ -150,11 +151,15 @@ lack of support of <code class="highlighter-rouge">Optional</code> - more on thi
 
 <p>In the meantime, it is becoming clear that Object-Oriented programming (OO)
 is not the silver bullet we thought it will be. Many people believed it was
-a revolution in the programming world (think about it: Steve Jobs at that
-time was pitching the use of <a href="https://computerhistory.org/blog/the-deep-history-of-your-apps-steve-jobs-nextstep-and-early-object-oriented-programming/&gt;`_">OO for NeXT</a>.
-At first, I was very skeptical about its benefits, especially after having used Java and
-C++ for the last 5+ years. My interest in FP started after watching
-this video of <a href="https://en.wikipedia.org/wiki/John_Carmack">John Carmack</a> on the topic.</p>
+a revolution in the programming world (e.g. Steve Jobs at
+  was pitching the use of <a href="https://computerhistory.org/blog/the-deep-history-of-your-apps-steve-jobs-nextstep-and-early-object-oriented-programming/&gt;`_">OO for NeXT</a> long time ago, seeing it as revolutionary).
+I belong to the group of engineers that were taught OO was the right way to build
+programs (and even learned <a href="https://en.wikipedia.org/wiki/Merise">Merise</a> or <a href="https://en.wikipedia.org/wiki/Unified_Modeling_Language">UML</a>).
+It is then no surprise that at first, I was very skeptical about the benefits of FP, especially after having used Java and
+C++ for the last 5+ years. My interest in FP really started to increase after watching
+this video of <a href="https://en.wikipedia.org/wiki/John_Carmack">John Carmack</a> on the topic
+where he explains the real issues our industry is facing and how FP is helping to write
+simpler programs.</p>
 
 <center>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/1PhArSujR_A" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
@@ -164,17 +169,18 @@ this video of <a href="https://en.wikipedia.org/wiki/John_Carmack">John Carmack<
 that are easier to maintain and reason about it. The use of immutability avoids
 side-effects and basic errors such as <code class="highlighter-rouge">NullPointerException</code> that
 have been plaguing programs for decades. As human, we fail to reason about
-programs structure but also how it will grow in the future. As programs
-are now written by multiple engineers, the assumptions from one engineer might
-not be understood by the engineers that will maintain (and modify the code) and
-introduce some unwanted side-effects. We can argue that these problems can be solved
-using more process, but at the end of the day, what matters is to write something
+programs structure and do not build systems with the idea that people will
+ maintain it for the years to come. And these problems increase as the size
+ of the programs (and the number of engineers working on it) increases.
+We can argue that these problems can be solved
+using more processes and tools (static analyzer, automated checks during reviews, etc.),
+but at the end of the day, what matters is to write something
 simple from the start to avoid problems and additional work later in the development
-process. And FP forces you to separate concerns (data vs. functions) and separate concerns
-in small functions (remember this 300 lines method that nobody knows how it works?).</p>
+process. The key idea is to keep thing simple from the start.
+FP forces you to separate concerns (data vs. functions) and write
+understandable code using <a href="https://en.wikipedia.org/wiki/Pure_function">pure functions</a> where outputs only depends on the inputs.</p>
 
-<p>From a mental model and design perspective,
-the clear separation between
+<p>From a mental model and design perspective, the clear separation between
 data (<code class="highlighter-rouge">case class</code> in Scala) and the functions that process it helps you to
 reasons about your data flow. Finally, the use of pure functions facilitates
 testing and is probably the biggest take-away from FP.</p>
@@ -219,33 +225,35 @@ a new set of problems.</p>
 
 <h1 id="you-cannot-get-rid-of-the-past">You cannot get rid of the past</h1>
 
-<p>The biggest issue by piling this new FP-compliant features on top of an old language is
-the new level of complexity. As the language needs to stay backward-compatible
+<p>The biggest issue by introducing this new FP-compliant features on top of an old language is
+the new level of complexity and the related ambiguity it might bring.
+As the language needs to stay backward-compatible
 with the existing feature, the new one are added without deprecating the old one,
 which let programmers do whatever they wants since no rule will be enforced
 by the compiler. This brings consistency issues in the codebase (use of multiple
 coding patterns in the language), which confuses developers and make program
 maintenance even more complex. One good example of such problem is large C++
-codebase that tried to evolve to C++14.</p>
+codebase that tried to evolve to later versions (for example, when mixing
+raw and smart pointers in C++).</p>
 
 <p>These additional features do not address the main shortcoming of the
-language (OO, mutable variables, etc.) and do not force the developer to use
+language (OO, mutable variables, separation of concerns, etc.) and do not force the developer to use
 FP. It offers the possibility to use it but does not mandate it, which means
 that using FP must be enforced through a human process that is fallible by
-definition.</p>
+definition. Not good.</p>
 
 <h1 id="so-what-language-to-choose">So what language to choose?</h1>
 
 <p>It is now clear that FP languages are superior in terms of maintenance, which
 is the biggest cost in software today.</p>
 
-<p>One argument that is often made is the hiring argument and the lack of candidates
-that know Scala. There are mainly two reasons why this argument does not stand.
-The first one is simple: if you hire a developer because of its familiarity
-with a particular language, this is not good for the long term and it is better
+<p>One argument that is often made against Scala is the lack of candidates
+that know Scala. That might be true if you are looking for a temporary position
+but otherwise, if you hire a developer because of its familiarity
+with a particular language, this is not good for the long term. It is better
 to focus on the fundamentals (data structure, algorithms, etc.) than on
-a particular technology. Learning Scala does not take much time and engineers
-are usually comfortable with the language within few weeks.</p>
+a particular technology. Learning Scala does not take much time. My experience after one year
+  of teaching Scala showed me that engineers understands the fundamentals within a month).</p>
 
 <p>If you are starting a new project from scratch, Scala is a good choice and its
 compatibility with Java lets you use any existing Java library
@@ -257,12 +265,14 @@ and reliable libraries.</p>
 not that fast. This would be a non-sense to dump a large codebase built, matured
 and stabilized for years to only switch to a new language. And it would
 also be an immediate, visible loss of productivity as all engineers are starting
-to learn Scala. The best way forward is to start using new features for the
-existing code, put processes in place
+to learn Scala. The best way forward is to start using new features of the language for the
+existing code, and put processes (such as automatic checks) in place
 to make sure the codebase stays consistent. If you start re-writing some
 services or decompose them, it can be a good idea to start using Scala
 (and its compatibility with Java helps in that direction) and let few engineers
-explore and experiment the language (reducing the potential loss of productivity).</p>
+explore and experiment the language (reducing the potential loss of productivity).
+You can then judge for yourself how comfortable your engineers are with this
+transition but also evaluates the potential benefits gradually.</p>
 
 <h1 id="final-words">Final Words</h1>
 
@@ -270,7 +280,7 @@ explore and experiment the language (reducing the potential loss of productivity
 that Functional Programming principles help you writing re-usable and
 maintainable code and that Object-Oriented principles were probably a mistake
 the industry followed blindly. FP rules and principles can be implemented by
-developers in almost any language (see Carmack talk mentioned above) and
+developers in almost any language (see Carmack talk mentioned above) And they
 help you write better programs.</p>
 
   </article>
