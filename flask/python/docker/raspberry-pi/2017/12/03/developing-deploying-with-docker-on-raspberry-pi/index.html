@@ -95,6 +95,10 @@
           <a class="page-link" href="/projects/">Projects</a>
         
           <a class="page-link" href="/running/">Running Agenda and Past Races</a>
+        
+          
+        
+          
          -->
          <a class="page-link" href="/about">About</a>
       </div>
@@ -146,14 +150,14 @@ in AWS, GCP or Azure. Your choice. I just choose my Raspberry Pi because this is
 <p>I already wrote the application. This is a simple chat, you can check out the code there: <a href="https://github.com/juli1/flask-chat">https://github.com/juli1/flask-chat</a></p>
 
 <p>You can even try it out locally:</p>
-<div class="language-bash highlighter-rouge"><pre class="highlight"><code>git clone https://github.com/juli1/flask-chat.git
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone https://github.com/juli1/flask-chat.git
 <span class="nb">cd </span>flask-chat
 <span class="c"># Replace the following line with virtualenv if necessary</span>
-python3.X -m venv venv <span class="c"># Replace X with your version of python</span>
+python3.X <span class="nt">-m</span> venv venv <span class="c"># Replace X with your version of python</span>
 <span class="nb">source </span>flask/bin/activate
-pip install -r requirements.txt
+pip <span class="nb">install</span> <span class="nt">-r</span> requirements.txt
 ./run-debug.py
-</code></pre></div>
+</code></pre></div></div>
 
 <p>Then, open your web-browser and go to <a href="https://localhost:5000">https://localhost:5000</a></p>
 
@@ -174,7 +178,7 @@ pip install -r requirements.txt
   <li>specify the command to execute the application <code class="highlighter-rouge">python3 run-production.py</code></li>
 </ul>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>FROM python:3.6-slim-stretch
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>FROM python:3.6-slim-stretch
 MAINTAINER Julien Delange &lt;julien@gunnm.org&gt;
 RUN apt-get update -y
 RUN apt-get install -y python3 python-pip-whl python3-pip
@@ -186,38 +190,38 @@ RUN python3 ./db_create.py
 EXPOSE 5050
 ENTRYPOINT ["python3"]
 CMD ["run-production.py"]
-</code></pre></div>
+</code></pre></div></div>
 
 <p>Once we are done, we can build the docker image. To do so, just invoke the following command:</p>
-<div class="highlighter-rouge"><pre class="highlight"><code>docker build -t flask-chat:latest .
-</code></pre></div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker build -t flask-chat:latest .
+</code></pre></div></div>
 
 <h1 id="running-the-docker-image-on-your-local-machine-or-on-your-raspberry-pi">Running the docker image on your local machine or on your raspberry pi</h1>
 
 <p>Now, it is time to run the docker image freshly built!</p>
 
 <p>If you want to run the image you built on your computer into a docker container, just run:</p>
-<div class="highlighter-rouge"><pre class="highlight"><code>docker run -d -p 10000:10000 flask-chat
-</code></pre></div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker run -d -p 10000:10000 flask-chat
+</code></pre></div></div>
 
 <p>This command run the container and binds the local port 10000 to the container port 5050 (on which the flask application is listening to).</p>
 
 <p>If you just want to use the pre-built image from <a href="https://hub.docker.com/r/juli1/flask-chat/tags/">dockerhub</a>
 on your local machine, run:</p>
-<div class="highlighter-rouge"><pre class="highlight"><code>docker run -d -p 10000:10000 juli1/flask-chat:latest
-</code></pre></div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker run -d -p 10000:10000 juli1/flask-chat:latest
+</code></pre></div></div>
 
 <p>And finally, if you want to run the pre-built image from <a href="https://hub.docker.com/r/juli1/flask-chat/tags/">dockerhub</a>
 on your raspberry pi, run:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>docker run -d -p 10000:5050 juli1/flask-chat:rpi
-</code></pre></div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker run -d -p 10000:5050 juli1/flask-chat:rpi
+</code></pre></div></div>
 
 <p>If you want to actually build the container on your raspberry pi, you can use the <code class="highlighter-rouge">Dockerfile.rpi</code>`file
 in the root directory of the project like this:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>docker build -t flask-chat:latest . -f Dockerfile.rpi
-</code></pre></div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker build -t flask-chat:latest . -f Dockerfile.rpi
+</code></pre></div></div>
 
 <h1 id="continuous-integration">Continuous Integration</h1>
 <p>We are in 2017 (soon 2018) and continuous deployment/integration is just the way to go. Automating
