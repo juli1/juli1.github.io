@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Java or Scala, that is the question - Julien Delange</title>
+    <link rel="alternate" type="application/rss+xml" title="Julien Delange &raquo; Feed" href="/feed.xml" />
+    <meta name="viewport" content="width=device-width">
+    <meta name="description" content="Thoughts about the benefits of Java vs. Scala">
+    <link rel="canonical" href="http://julien.gunnm.org/development/agile/2019/10/23/java-vs-scala/">
+
+    
+    <meta name="keywords" content="java, scala"/>
+    
+
+    <!-- Latest compiled and minified CSS -->
+<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous"> -->
+
+<!-- Optional theme -->
+<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous"> -->
+
+<!-- Latest compiled and minified JavaScript -->
+<!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script> -->
+
+
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/main.css">
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:title" content="Java or Scala, that is the question" />
+    <meta name="twitter:description" content="Thoughts about the benefits of Java vs. Scala" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@juli1pb" />
+    <meta name="twitter:creator" content="@juli1pb" />
+    <meta name="twitter:image:src" content="http://julien.gunnm.org/assets/profile.png"/>
+
+
+    <!-- Facebook opengraph -->
+    <meta property="og:site_name" content="Julien Delange" />
+    <meta property="og:type" content="article" />
+    <meta property="og:image" content="/assets/profile.png" />
+    <meta property="og:title" content="Java or Scala, that is the question" />
+    <meta property="og:description" content="Thoughts about the benefits of Java vs. Scala" />
+
+</head>
+
+
+    <body>
+
+    <header class="site-header">
+
+  <div class="wrap">
+
+    <a class="site-title" href="/">Julien Delange</a>
+
+    <nav class="site-nav">
+      <a href="#" class="menu-icon">
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+           viewBox="0 0 18 15" enable-background="new 0 0 18 15" xml:space="preserve">
+          <path fill="#505050" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0
+            h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#505050" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484
+            h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#505050" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0
+            c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </a>
+      <div class="trigger">
+
+         <a class="page-link" href="https://www.amazon.com/dp/B071WHRJY3">AADL In Practice</a>
+         <a class="page-link" href="/projects">Projects</a>
+         <a class="page-link" href="/bibliography">Bibliography</a>
+         <a class="page-link" href="/running">Running</a>
+
+         <a class="page-link" href="/blog">Blog</a>
+        <!-- 
+          
+        
+          <a class="page-link" href="/aadl-book">AADL In Practice</a>
+        
+          <a class="page-link" href="/about/">About</a>
+        
+          <a class="page-link" href="/bibliography/">Publications</a>
+        
+          <a class="page-link" href="/blog/">Blog</a>
+        
+          
+        
+          
+        
+          <a class="page-link" href="/ohiopyle-training/">Laurel Highland Trail - Gate to 8 - Training Information</a>
+        
+          <a class="page-link" href="/projects/">Projects</a>
+        
+          <a class="page-link" href="/running/">Running Agenda and Past Races</a>
+        
+          
+        
+          
+         -->
+         <a class="page-link" href="/about">About</a>
+      </div>
+    </nav>
+
+  </div>
+
+</header>
+
+
+    <div class="page-content">
+      <div class="wrap">
+      <div class="post">
+
+  <header class="post-header">
+    <h1>Java or Scala, that is the question</h1>
+    <p class="meta">
+      <!-- Oct 23, 2019 -->
+      <!-- 
+       -->
+   </p>
+  </header>
+
+  <article class="post-content">
+  <p>Over the last two years, I had the opportunity to gain knowledge on Scala
+and also re-learn Java (after about 3 years without using it). I built network
+analysis tools in Scala and used it to entirely write the backend of
+<a href="https://www.code-inspector.com">Code Inspector</a> with it. In the meantime, when
+starting to recently form a new engineering team, I had to use Java again. I wanted
+to reflect on this experience to share some thoughts as to where these languages
+stand, the directions they are taking and answer the
+question too-often asked: which one to use?.</p>
+
+<h1 id="java-has-evolved-a-lot-and-for-the-better">Java has evolved a lot, and for the better</h1>
+
+<p>Java evolved a lot over its about 20 years of existence. From a simple object-oriented language, it
+brought fundamental changes. One example is the change in the for-loop syntax
+in Java 5 or the introduction of lambda in Java 8. As the language became very
+popular, developers added a ton of libraries for it and the language became very
+popular with infamous application (such as <a href="https://hadoop.apache.org/">Hadoop</a>.</p>
+
+<p>Also, the community around the language built libraries to overcome some
+of its limitations. One good example is <a href="https://github.com/google/guava">Guava</a>,
+the library developed by Google that provides a lot of helper methods
+and class to overcome some clear limitations of the language (e.g. the
+lack of support of <code class="highlighter-rouge">Optional</code> - more on this later).</p>
+
+<h1 id="functional-programming-has-proven-to-be-clean-and-effective">Functional Programming has proven to be clean and effective</h1>
+
+<p>In the meantime, it is becoming clear that Object-Oriented programming (OO)
+is not the silver bullet we thought it will be. Many people believed it was
+a revolution in the programming world (think about it: Steve Jobs at that
+time was pitching the use of <a href="https://computerhistory.org/blog/the-deep-history-of-your-apps-steve-jobs-nextstep-and-early-object-oriented-programming/&gt;`_">OO for NeXT</a>.
+At first, I was very skeptical about its benefits, especially after having used Java and
+C++ for the last 5+ years. My interest in FP started after watching
+this video of <a href="https://en.wikipedia.org/wiki/John_Carmack">John Carmack</a> on the topic.</p>
+
+<center>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/1PhArSujR_A" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+</center>
+
+<p>After few months, it became obvious that Functional Programming (FP) helps to write programs
+that are easier to maintain and reason about it. The use of immutability avoids
+side-effects and basic errors such as <code class="highlighter-rouge">NullPointerException</code> that
+have been plaguing programs for decades. As human, we fail to reason about
+programs structure but also how it will grow in the future. As programs
+are now written by multiple engineers, the assumptions from one engineer might
+not be understood by the engineers that will maintain (and modify the code) and
+introduce some unwanted side-effects. We can argue that these problems can be solved
+using more process, but at the end of the day, what matters is to write something
+simple from the start to avoid problems and additional work later in the development
+process. And FP forces you to separate concerns (data vs. functions) and separate concerns
+in small functions (remember this 300 lines method that nobody knows how it works?).</p>
+
+<p>From a mental model and design perspective,
+the clear separation between
+data (<code class="highlighter-rouge">case class</code> in Scala) and the functions that process it helps you to
+reasons about your data flow. Finally, the use of pure functions facilitates
+testing and is probably the biggest take-away from FP.</p>
+
+<p>There are many reasons that make FP superior to OO and so far, I believe that
+the best summary has been written by Joe Amstrong, creator
+of Erlang, who summarizes most of them in a <a href="http://www.cs.otago.ac.nz/staffpriv/ok/Joe-Hates-OO.htm">great essay</a>.</p>
+
+<p>OO was probably a good intention but <a href="https://nickfoy.com/blog/2018/4/7/good-intentions-dont-work">good intentions don’t work</a> (probably the best thing I learned from my time at Amazon).</p>
+
+<h1 id="java-evolves-in-the-direction-of-scala">Java evolves in the direction of Scala</h1>
+
+<p>It is now clear that Java is now taking the direction of Scala since several years
+One of the obvious sign is the introduction of lambda in Java 8, a first-class
+citizen concept of the Scala language.</p>
+
+<p>Another example is the push from the community to support Scala-like constructions
+such as the <code class="highlighter-rouge">Optional</code> in <a href="https://github.com/google/guava">guava</a>
+(or even the helper methods to improve the default implementation of <code class="highlighter-rouge">toString</code>, <code class="highlighter-rouge">equals</code> or <code class="highlighter-rouge">hashCode</code> - there are plenty of examples).</p>
+
+<p>The last example in date is the project [Amber from Java|https://openjdk.java.net/projects/amber/)
+that is copying core Scala features such as [pattern matching|https://openjdk.java.net/jeps/305], <code class="highlighter-rouge">case class</code>
+(renamed <a href="https://cr.openjdk.java.net/~briangoetz/amber/datum.html">data classes</a>) or <a href="https://openjdk.java.net/jeps/286">type inference</a>.
+Once project Amber is done, you could write code like this:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>if (obj instanceof String s || s.length() &gt; 5) {s.contains("foo")}
+</code></pre></div></div>
+
+<p>The exact same functionality exists in Scala since its inception and the same
+code would look like</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>obj match {
+  case s: String if s.length() &gt; 5 =&gt; s.contains("foo")
+  case _ =&gt; false
+}
+</code></pre></div></div>
+
+<p>Is that a bad thing that Java is copying Scala? In fact, this is really healthy.
+And definitively shows the value of the concepts behind the language.
+However, as these features are added on top of a already complex language, it brings
+a new set of problems.</p>
+
+<h1 id="you-cannot-get-rid-of-the-past">You cannot get rid of the past</h1>
+
+<p>The biggest issue by piling this new FP-compliant features on top of an old language is
+the new level of complexity. As the language needs to stay backward-compatible
+with the existing feature, the new one are added without deprecating the old one,
+which let programmers do whatever they wants since no rule will be enforced
+by the compiler. This brings consistency issues in the codebase (use of multiple
+coding patterns in the language), which confuses developers and make program
+maintenance even more complex. One good example of such problem is large C++
+codebase that tried to evolve to C++14.</p>
+
+<p>These additional features do not address the main shortcoming of the
+language (OO, mutable variables, etc.) and do not force the developer to use
+FP. It offers the possibility to use it but does not mandate it, which means
+that using FP must be enforced through a human process that is fallible by
+definition.</p>
+
+<h1 id="so-what-language-to-choose">So what language to choose?</h1>
+
+<p>It is now clear that FP languages are superior in terms of maintenance, which
+is the biggest cost in software today.</p>
+
+<p>One argument that is often made is the hiring argument and the lack of candidates
+that know Scala. There are mainly two reasons why this argument does not stand.
+The first one is simple: if you hire a developer because of its familiarity
+with a particular language, this is not good for the long term and it is better
+to focus on the fundamentals (data structure, algorithms, etc.) than on
+a particular technology. Learning Scala does not take much time and engineers
+are usually comfortable with the language within few weeks.</p>
+
+<p>If you are starting a new project from scratch, Scala is a good choice and its
+compatibility with Java lets you use any existing Java library
+(and there are tons of it). That should
+open the best of both worlds by having a great language a a ton of existing
+and reliable libraries.</p>
+
+<p>But what if you already have an existing codebase, should you dump Java and start to rewrite everything in Scala? Probably not. Or at least,
+not that fast. This would be a non-sense to dump a large codebase built, matured
+and stabilized for years to only switch to a new language. And it would
+also be an immediate, visible loss of productivity as all engineers are starting
+to learn Scala. The best way forward is to start using new features for the
+existing code, put processes in place
+to make sure the codebase stays consistent. If you start re-writing some
+services or decompose them, it can be a good idea to start using Scala
+(and its compatibility with Java helps in that direction) and let few engineers
+explore and experiment the language (reducing the potential loss of productivity).</p>
+
+<h1 id="final-words">Final Words</h1>
+
+<p>While this small article is in favor of Scala, the most important idea is
+that Functional Programming principles help you writing re-usable and
+maintainable code and that Object-Oriented principles were probably a mistake
+the industry followed blindly. FP rules and principles can be implemented by
+developers in almost any language (see Carmack talk mentioned above) and
+help you write better programs.</p>
+
+  </article>
+
+</div>
+
+      </div>
+    </div>
+
+    <footer class="site-footer">
+
+  <div class="wrap">
+
+    <h2 class="footer-heading">Julien Delange</h2>
+
+    <div class="footer-col-1 column">
+      <ul>
+        <li>
+          <a href="https://github.com/juli1">
+            <span class="icon github">
+              <svg version="1.1" class="github-icon-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                 viewBox="0 0 16 16" enable-background="new 0 0 16 16" xml:space="preserve">
+                <path fill-rule="evenodd" clip-rule="evenodd" fill="#C2C2C2" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761
+                c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32
+                c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472
+                c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037
+                C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65
+                c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261
+                c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082
+                c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129
+                c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/>
+              </svg>
+            </span>
+            <span class="username">juli1</span>
+          </a>
+        </li>
+        <li>
+          <a href="https://twitter.com/juli1pb">
+            <span class="icon twitter">
+              <svg version="1.1" class="twitter-icon-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                 viewBox="0 0 16 16" enable-background="new 0 0 16 16" xml:space="preserve">
+                <path fill="#C2C2C2" d="M15.969,3.058c-0.586,0.26-1.217,0.436-1.878,0.515c0.675-0.405,1.194-1.045,1.438-1.809
+                c-0.632,0.375-1.332,0.647-2.076,0.793c-0.596-0.636-1.446-1.033-2.387-1.033c-1.806,0-3.27,1.464-3.27,3.27
+                c0,0.256,0.029,0.506,0.085,0.745C5.163,5.404,2.753,4.102,1.14,2.124C0.859,2.607,0.698,3.168,0.698,3.767
+                c0,1.134,0.577,2.135,1.455,2.722C1.616,6.472,1.112,6.325,0.671,6.08c0,0.014,0,0.027,0,0.041c0,1.584,1.127,2.906,2.623,3.206
+                C3.02,9.402,2.731,9.442,2.433,9.442c-0.211,0-0.416-0.021-0.615-0.059c0.416,1.299,1.624,2.245,3.055,2.271
+                c-1.119,0.877-2.529,1.4-4.061,1.4c-0.264,0-0.524-0.015-0.78-0.046c1.447,0.928,3.166,1.469,5.013,1.469
+                c6.015,0,9.304-4.983,9.304-9.304c0-0.142-0.003-0.283-0.009-0.423C14.976,4.29,15.531,3.714,15.969,3.058z"/>
+              </svg>
+            </span>
+            <span class="username">juli1pb</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+
+   <div class="footer-col-2 column">
+      <ul>
+         <li>
+            <a href="https://www.strava.com/athletes/juli1">
+             <span class="icon twitter">
+                <img src="/assets/strava-logo.png"/>
+             </span>
+             <span class="username">juli1</span>
+            </a>
+         </li>
+         <li>
+            <a href="http://www.flickr.com/photos/juli1/">
+             <span class="icon twitter">
+                <img src="/assets/flickr-icon.png"/>
+             </span>
+             <span class="username">juli1</span>
+            </a>
+         </li>
+         <!-- <li><a href="mailto:julien@gunnm.org">julien@gunnm.org</a></li> -->
+      </ul>
+   </div>
+
+
+    <div class="footer-col-3 column">
+      <p class="text">Harder, Better, Faster, Stronger</p>
+    </div>
+
+  </div>
+
+</footer>
+
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-75409992-1', 'auto');
+      ga('send', 'pageview');
+
+    </script>
+    </body>
+</html>
