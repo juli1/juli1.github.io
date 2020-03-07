@@ -5,9 +5,47 @@
     <description>Harder, Better, Faster, Stronger</description>
     <link>http://julien.gunnm.org/</link>
     <atom:link href="http://julien.gunnm.org/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Sun, 15 Dec 2019 20:45:59 -0800</pubDate>
-    <lastBuildDate>Sun, 15 Dec 2019 20:45:59 -0800</lastBuildDate>
+    <pubDate>Sat, 07 Mar 2020 18:18:47 +0000</pubDate>
+    <lastBuildDate>Sat, 07 Mar 2020 18:18:47 +0000</lastBuildDate>
     <generator>Jekyll v4.0.0</generator>
+    
+      <item>
+        <title>Essays on Software Engineering</title>
+        <description>&lt;p&gt;After several years in the technology industry and living in various places,
+I wanted to take the time to write some thoughts. Working on various
+domains (such as aerospace, academia, data center management or ads),
+living in different countries (or even states within the USA) and achieving
+certains goals (such as losing half of my weight or running ultra distances)
+helped me to see commonalities between domains and establish parallels
+between worlds you would consider unrelated.&lt;/p&gt;
+
+&lt;p&gt;Building software helped me to better understand real-life problems.
+And leading non-tech projects also helped me building better software.&lt;/p&gt;
+
+&lt;p&gt;One example would be fixing properties. When you fix a house,
+you architect the new building, you schedule the work, establish milestones
+and you clearly see dependencies. For example, you do not start painting before
+the dry walls are properly installed and sealed. Yet, developers often
+overlook such basic rules, even in regulated industries.&lt;/p&gt;
+
+&lt;p&gt;For the next six months, I will write a new article each month that will
+talk about one aspect similar to the one above. I have no idea or expectation about this
+experiment, I just hope it will be as useful to you as it will be to me.&lt;/p&gt;
+</description>
+        <pubDate>Fri, 06 Mar 2020 13:13:20 +0000</pubDate>
+        <link>http://julien.gunnm.org/software%20engineering/essay/2020/03/06/software-engineering-series/</link>
+        <guid isPermaLink="true">http://julien.gunnm.org/software%20engineering/essay/2020/03/06/software-engineering-series/</guid>
+        
+        <category>software engineering</category>
+        
+        <category>essay</category>
+        
+        
+        <category>software engineering</category>
+        
+        <category>essay</category>
+        
+      </item>
     
       <item>
         <title>Google is the new Microsoft</title>
@@ -97,7 +135,7 @@ And it is now &lt;em&gt;okay&lt;/em&gt; for Google to be evil.&lt;/p&gt;
 
 &lt;p&gt;Make no mistake: Google is the new Microsoft.&lt;/p&gt;
 </description>
-        <pubDate>Sun, 15 Dec 2019 05:13:20 -0800</pubDate>
+        <pubDate>Sun, 15 Dec 2019 13:13:20 +0000</pubDate>
         <link>http://julien.gunnm.org/microsoft/evil/google/2019/12/15/google-is-the-new-microsoft/</link>
         <guid isPermaLink="true">http://julien.gunnm.org/microsoft/evil/google/2019/12/15/google-is-the-new-microsoft/</guid>
         
@@ -276,7 +314,7 @@ the industry followed blindly. FP rules and principles can be implemented by
 developers in almost any language (see Carmack talk mentioned above) And they
 help you write better programs.&lt;/p&gt;
 </description>
-        <pubDate>Wed, 23 Oct 2019 06:13:20 -0700</pubDate>
+        <pubDate>Wed, 23 Oct 2019 13:13:20 +0000</pubDate>
         <link>http://julien.gunnm.org/development/agile/2019/10/23/java-vs-scala/</link>
         <guid isPermaLink="true">http://julien.gunnm.org/development/agile/2019/10/23/java-vs-scala/</guid>
         
@@ -375,7 +413,7 @@ try to have the perspective of the reviewer, and then, reply. Stick to the point
 raised that issue and show your good faith about solving this issue.&lt;/li&gt;
 &lt;/ol&gt;
 </description>
-        <pubDate>Sat, 03 Nov 2018 06:13:20 -0700</pubDate>
+        <pubDate>Sat, 03 Nov 2018 13:13:20 +0000</pubDate>
         <link>http://julien.gunnm.org/development/agile/2018/11/03/effective-code-reviews/</link>
         <guid isPermaLink="true">http://julien.gunnm.org/development/agile/2018/11/03/effective-code-reviews/</guid>
         
@@ -459,7 +497,7 @@ After two months, you should be back at your normal speed or even faster. And
 you will then never go back on another keyboard!&lt;/p&gt;
 
 </description>
-        <pubDate>Tue, 12 Jun 2018 06:13:20 -0700</pubDate>
+        <pubDate>Tue, 12 Jun 2018 13:13:20 +0000</pubDate>
         <link>http://julien.gunnm.org/keyboard/geek/2018/06/12/kinesis-keyboard/</link>
         <guid isPermaLink="true">http://julien.gunnm.org/keyboard/geek/2018/06/12/kinesis-keyboard/</guid>
         
@@ -572,7 +610,7 @@ step by step.&lt;/p&gt;
   &lt;li&gt;Follow the Scala topic on &lt;a href=&quot;http://www.quora.com&quot;&gt;Quora&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
-        <pubDate>Tue, 12 Jun 2018 06:13:20 -0700</pubDate>
+        <pubDate>Tue, 12 Jun 2018 13:13:20 +0000</pubDate>
         <link>http://julien.gunnm.org/scala/programming/2018/06/12/how-to-learn-scala-in-2018/</link>
         <guid isPermaLink="true">http://julien.gunnm.org/scala/programming/2018/06/12/how-to-learn-scala-in-2018/</guid>
         
@@ -701,7 +739,7 @@ This will open more opportunities in a very near future, not only for space trav
 for establishing colonies on other planets. The dark days are gone for the space business.&lt;/p&gt;
 
 </description>
-        <pubDate>Thu, 26 Apr 2018 06:13:20 -0700</pubDate>
+        <pubDate>Thu, 26 Apr 2018 13:13:20 +0000</pubDate>
         <link>http://julien.gunnm.org/thoughts/spacex/falcon%20heavy/2018/04/26/falcon-heavy-launch/</link>
         <guid isPermaLink="true">http://julien.gunnm.org/thoughts/spacex/falcon%20heavy/2018/04/26/falcon-heavy-launch/</guid>
         
@@ -737,7 +775,7 @@ Twitter! The future is exciting!&lt;/p&gt;
 &lt;p style=&quot;text-align: center;&quot;&gt;&lt;img src=&quot;/assets/twitter-logo.jpg&quot; alt=&quot;Twitter logo&quot; width=&quot;50%&quot; /&gt;&lt;/p&gt;
 
 </description>
-        <pubDate>Sun, 25 Feb 2018 05:13:20 -0800</pubDate>
+        <pubDate>Sun, 25 Feb 2018 13:13:20 +0000</pubDate>
         <link>http://julien.gunnm.org/job/2018/02/25/goodbye-amazon-hello-twitter/</link>
         <guid isPermaLink="true">http://julien.gunnm.org/job/2018/02/25/goodbye-amazon-hello-twitter/</guid>
         
@@ -882,7 +920,7 @@ round).&lt;/p&gt;
 Every person and company is different and what worked for me might not
 be working for you!&lt;/p&gt;
 </description>
-        <pubDate>Fri, 26 Jan 2018 05:13:20 -0800</pubDate>
+        <pubDate>Fri, 26 Jan 2018 13:13:20 +0000</pubDate>
         <link>http://julien.gunnm.org/job/remote%20work/2018/01/26/challenge-to-work-remotely/</link>
         <guid isPermaLink="true">http://julien.gunnm.org/job/remote%20work/2018/01/26/challenge-to-work-remotely/</guid>
         
@@ -1026,7 +1064,7 @@ helped a lot. If you want to build your own docker image for raspberry pi, have 
   &lt;li&gt;&lt;a href=&quot;http://containertutorials.com/docker-compose/flask-simple-app.html&quot;&gt;Docker container for Flask&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
-        <pubDate>Sun, 03 Dec 2017 05:13:20 -0800</pubDate>
+        <pubDate>Sun, 03 Dec 2017 13:13:20 +0000</pubDate>
         <link>http://julien.gunnm.org/flask/python/docker/raspberry-pi/2017/12/03/developing-deploying-with-docker-on-raspberry-pi/</link>
         <guid isPermaLink="true">http://julien.gunnm.org/flask/python/docker/raspberry-pi/2017/12/03/developing-deploying-with-docker-on-raspberry-pi/</guid>
         
@@ -1048,139 +1086,6 @@ helped a lot. If you want to build your own docker image for raspberry pi, have 
         <category>docker</category>
         
         <category>raspberry-pi</category>
-        
-      </item>
-    
-      <item>
-        <title>Learning rust, implementing a webserver</title>
-        <description>&lt;h1 id=&quot;introduction&quot;&gt;Introduction&lt;/h1&gt;
-&lt;p&gt;I wanted to learn &lt;a href=&quot;https://www.rust-lang.org&quot;&gt;rust&lt;/a&gt; months ago. I remember
-attending a talk in Pittsburgh several years ago about rust and I liked the idea
-that instead of re-implementing the wheel, it tries to solve issues other new
-languages never try to fix (or did it in an efficient/ineffective way).&lt;/p&gt;
-
-&lt;p&gt;I spent some time over the last two weeks to learn the langage and complete a
-project in rust: a webserver. Nothing really fancy, it was rather a way to learn
-the language. I believe the best way to learn a new language is to complete few
-new projects.&lt;/p&gt;
-
-&lt;p&gt;This is the result: I am able to run a webserver that can host this blog, as
-shown in the picture below.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/rust-webserver-browser.png&quot; alt=&quot;Blog running on rust webserver&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;And this is basically how to launch it:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/rust-webserver-term.png&quot; alt=&quot;Terminal with Cargo&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;In this article, I will talk about this project and share some thoughts about
-rust.&lt;/p&gt;
-
-&lt;h1 id=&quot;a-web-server-in-rust&quot;&gt;A web server in rust&lt;/h1&gt;
-
-&lt;h2 id=&quot;specifications&quot;&gt;Specifications&lt;/h2&gt;
-&lt;p&gt;I wanted to implement a simple webserver in rust to understand/practice/use the
-language. The goal was to be able to have a server able to show a static
-website. This is an experiment and this should absolutely &lt;strong&gt;not be used in
-production&lt;/strong&gt;. This project is useful if you are new to rust and/or want a
-codebase about networking features in rust (such as using the
-&lt;a href=&quot;https://docs.rs/mio&quot;&gt;mio&lt;/a&gt; or &lt;a href=&quot;https://doc.rust-lang.org/getopts&quot;&gt;getops&lt;/a&gt;
-crates).&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Non goals&lt;/strong&gt;: full http support, large file handling, security (you can access
-the full FS ).&lt;/p&gt;
-
-&lt;h2 id=&quot;get-the-code-and-run-it&quot;&gt;Get the code and run it&lt;/h2&gt;
-&lt;p&gt;The code is publicly available on github at:
-&lt;a href=&quot;https://github.com/juli1/rust-webserver&quot;&gt;https://github.com/juli1/rust-webserver&lt;/a&gt;&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# git clone https://github.com/juli1/rust-webserver.git
-# cd rust-webserver
-# cargo build &amp;amp;&amp;amp; cargo run -- -p 9065 -l 127.0.0.1 --rootdir `pwd`
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Then, open your browser and go to
-&lt;a href=&quot;http://localhost:9065/Cargo.toml&quot;&gt;http://localhost:9065/Cargo.toml&lt;/a&gt;. You will
-be able to see the file from the source directory.&lt;/p&gt;
-
-&lt;h2 id=&quot;details-of-the-code&quot;&gt;Details of the code&lt;/h2&gt;
-
-&lt;p&gt;The code is separated into four files:&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;server.rs&lt;/code&gt; is about all the server part to listen on the socket,
-communication handling and so on.&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;client.rs&lt;/code&gt; is about handling request/reply for a particular connection.&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;protocol.rs&lt;/code&gt; contains all the code with all the data structure related to the
-requests and replies.&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;main.rs&lt;/code&gt; checks the options passed to the command line, create a server and
-… nothing else!&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;The code does not handles all HTTP headers. The server supports HTTP/1.0 only.
-The parsing of command is very basic. The server supports basically two file
-types: html, png and jpg. Yes, this is very basic but met my goal: it was an
-awesome way to learn rust and I loved it!&lt;/p&gt;
-
-&lt;h1 id=&quot;feedback-about-rust&quot;&gt;Feedback about rust&lt;/h1&gt;
-
-&lt;p&gt;I really like rust. At first, the language brings a lot of frustration because of all the
-restrictions and scope, borrow, etc. You really need to undertand these concepts
-to make any progress. Once you pass the first hours digging online about the
-errorr messages (that are pretty clear by the way), you realize how the language
-help you to bring more assurance that your code is safe and free of errors. It
-reminds me several aspects of
-&lt;a href=&quot;https://en.wikipedia.org/wiki/Ada_(programming_language)&quot;&gt;Ada&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;Rust is what we should be expecting for the next generation of language to do
-low-level/system programming (program like webservers, file servers, etc.). It will probably not be
-the language I will use if I design a web application. On the other hand, this
-will probably be my choice if I need to do a web-server, file server or any
-program and needs to be safe, reliable and performant.&lt;/p&gt;
-
-&lt;h2 id=&quot;rust-pros&quot;&gt;Rust: pros&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;Compiler error messages&lt;/strong&gt;: Debug messages are clean and useful. We are very far from C++ compilers that
-produces a tons of useless error messages that hide the cause of the issue. When
-starting in Rust, you will have a tons of compilation errors but error messages
-will be easy to understand to fix your program and make progress.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Speed&lt;/strong&gt;: programs written in Rust seems fast. I did not benchmark but this
-seems very promising.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Predictability&lt;/strong&gt;: rust reminds me Ada: it is painful to write your first
-program because of all the language restrictions. However, once it compiles, it
-generally works as expected. I had very few crashes during the development of
-the webserver but I had a ton of error messages before it even starts working.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Ownership&lt;/strong&gt; : the concept behind ownership is painful at first but after a
-while, it is easy to understand how powerful it can be.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;rust-cons&quot;&gt;Rust: cons&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;Lifetime&lt;/strong&gt;: the idea behind &lt;a href=&quot;https://rustbyexample.com/scope/lifetime.html&quot;&gt;lifetime&lt;/a&gt;
-is really powerful and useful. The language &lt;em&gt;needs&lt;/em&gt; have a way to annotate the
-lifetime of objects/variables but the syntax is horrible and the whole mechanism
-is ultra verbose.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h1 id=&quot;useful-resources&quot;&gt;Useful resources&lt;/h1&gt;
-&lt;p&gt;These are some resources I used during my search for information on rust.&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://rustbyexample.com/&quot;&gt;Rust By Example&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://blog.burntsushi.net/rust-error-handling/&quot;&gt;Error Handing in rust&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://www.jmarshall.com/easy/http/&quot;&gt;HTTP made very easy&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        <pubDate>Sat, 18 Nov 2017 05:13:20 -0800</pubDate>
-        <link>http://julien.gunnm.org/rust/2017/11/18/learning-rust-in-practice-webserver-in-rust/</link>
-        <guid isPermaLink="true">http://julien.gunnm.org/rust/2017/11/18/learning-rust-in-practice-webserver-in-rust/</guid>
-        
-        <category>rust</category>
-        
-        <category>webserver</category>
-        
-        
-        <category>rust</category>
         
       </item>
     
