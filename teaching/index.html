@@ -4,14 +4,14 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>BeagleBoard Black (BBB) and GPIO - Julien Delange</title>
+    <title>Teaching - Julien Delange</title>
     <link rel="alternate" type="application/rss+xml" title="Julien Delange &raquo; Feed" href="/feed.xml" />
     <meta name="viewport" content="width=device-width">
     <meta name="description" content="Harder, Better, Faster, Stronger">
-    <link rel="canonical" href="http://julien.gunnm.org/geek/misc/programming/2016/02/21/beagleboard-black-bbb-and-gpio/">
+    <link rel="canonical" href="http://julien.gunnm.org/teaching/">
 
     
-    <meta name="keywords" content=""/>
+    <meta name="keywords" content="teaching, northeastern, khoury college"/>
     
 
     <!-- Latest compiled and minified CSS -->
@@ -29,7 +29,7 @@
     <link rel="stylesheet" href="/css/main.css">
 
     <!-- Twitter Cards -->
-    <meta name="twitter:title" content="BeagleBoard Black (BBB) and GPIO" />
+    <meta name="twitter:title" content="Teaching" />
     <meta name="twitter:description" content="Harder, Better, Faster, Stronger" />
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="@juli1pb" />
@@ -41,7 +41,7 @@
     <meta property="og:site_name" content="Julien Delange" />
     <meta property="og:type" content="article" />
     <meta property="og:image" content="/assets/profile.png" />
-    <meta property="og:title" content="BeagleBoard Black (BBB) and GPIO" />
+    <meta property="og:title" content="Teaching" />
     <meta property="og:description" content="Harder, Better, Faster, Stronger" />
 
 </head>
@@ -119,56 +119,14 @@
       <div class="wrap">
       <div class="post">
 
-  <header class="post-header">
-    <h1>BeagleBoard Black (BBB) and GPIO</h1>
-    <p class="meta">
-      <!-- Feb 21, 2016 -->
-      <!--  • {"login"=>"juli1sod", "email"=>"julien@gunnm.org", "display_name"=>"juli1", "first_name"=>"", "last_name"=>""}
-       • {"publicize_google_plus_url"=>"https://plus.google.com/+JulienDelange/posts/TK88L5smyPz", "_rest_api_published"=>"1", "_rest_api_client_id"=>"-1", "_publicize_job_id"=>"20032934890", "_publicize_done_6819837"=>"1", "_wpas_done_6804547"=>"1", "_publicize_done_external"=>"a:2:{s:7:\"twitter\";a:1:{i:7007816;s:53:\"https://twitter.com/juli1pb/status/701475387105095680\";}s:8:\"facebook\";a:1:{i:11309977;s:37:\"https://facebook.com/1694446800773279\";}}", "_publicize_done_7022570"=>"1", "_wpas_done_7007816"=>"1", "publicize_twitter_user"=>"juli1pb", "_publicize_done_11246771"=>"1", "_wpas_done_11309977"=>"1"} -->
-   </p>
-  </header>
+  <!-- <header class="post-header">
+    <h1>Teaching</h1>
+  </header> -->
 
   <article class="post-content">
-  <p>When you buy a <a href="http://beagleboard.org/black">Beagleboard Black</a> (a.k.a. BBB), it comes with a pre-installed version of debian with more or less everything you need to get started. I purchased the board for another purpose and develop seL4 components on top of it. But before starting to develop on seL4, it is useful to know exactly how the board works: once you know how the board works, you can start to write your code and know for sure that the bug comes from your code.</p>
-<p>In this article, I will explain quickly how to set up a simple circuit to test the GPIO of the beaglebone.</p>
+  <h1 id="cs5007-summer-2020">CS5007 Summer 2020</h1>
 
-
-<img class="  wp-image-2231 aligncenter" src="/assets/cape-headers-digital.png" alt="cape-headers-digital.png" width="300" height="225" />
-
-<p>Mapping between pin numbers and GPIO ID from<a href="http://beagleboard.org/support/bone101"> bone 101</a>
-</p>
-
-<h1>Setting up the circuit</h1>
-<p>To test the circuit, you need only a breadboard, a resistance and a LED. Simple.</p>
-<p>Connect the PIN 14 (which is mapped to GPIO id 50, see table) from bank P9 (green cable on the picture) on the breadboard. Connect it to a resistance and a LED. The other pin of the LED is then connected to the ground (last PIN of P9).</p>
-
-<img class="  wp-image-2224 aligncenter" src="/assets/board.jpg" alt="board" width="460" height="345" />
-<p>Wiring scheme of the example</p>
-
-
-<h1>Controlling the GPIO in Linux</h1>
-<p>In Linux, the GPIO can be controlled using the SysFS abstraction layer. You can access it through<em> /sys/class/gpio. </em>I am using the pre-installed debian software on the board.</p>
-<p>To control a particular pin, you must export it. You do it by writing the value of the pin you want to export into <em>/sys/class/gpio/export</em>. Then, a new directory is <em>/sys/class/gpio/gpio&lt;PIN-NUMBER&gt;</em> is created with many different files to control the pin (direction, value, etc.).</p>
-<p>In our example, the <strong>pin 14 from the bank P9</strong> correspond to <strong>GPIO 50</strong>. You can see the corresponding mapping between the pin and GPIO number in the <a href="http://beagleboard.org/support/bone101">beaglebone 101 </a>document.</p>
-<p>So, let's start by exporting this pin:</p>
-<pre>echo 50 &gt; /sys/class/gpio/export</pre>
-<p>Then, a new directory /sys/class/gpio/gpio50 is created.</p>
-<p>Let's set its direction to out</p>
-<pre>echo out &gt; /sys/class/gpio/gpio50/direction</pre>
-<p>And let's set its value to 1</p>
-<pre>echo 1 &gt; /sys/class/gpio/gpio50/value</pre>
-<p>&nbsp;</p>
-<p>And finally, if you want to make the LED blinks every second, you can use this command:</p>
-<pre>while [ 1 ]; do echo 1 &gt; /sys/class/gpio/gpio50/value ; sleep 1 ; echo 0 &gt; /sys/class/gpio/gpio50/value ; sleep 1 ; done</pre>
-<p>&nbsp;</p>
-<p>https://www.youtube.com/watch?v=k-g114EUXaE</p>
-<p>&nbsp;</p>
-<h1>Sources</h1>
-<ul>
-<li>How to use GPIO as outputs <a href="http://www.dummies.com/how-to/content/setting-beaglebone-gpios-as-outputs.html">http://www.dummies.com/how-to/content/setting-beaglebone-gpios-as-outputs.html</a></li>
-<li>GPIO programming on the beaglebone: <a href="http://elinux.org/images/3/33/GPIO_Programming_on_the_Beaglebone.pdf">http://elinux.org/images/3/33/GPIO_Programming_on_the_Beaglebone.pdf</a></li>
-<li>BeagleBone 101: <a href="http://beagleboard.org/support/bone101">http://beagleboard.org/support/bone101</a></li>
-</ul>
+<p>Dedicated page <a href="/teaching-cs5007-su2020">available here</a></p>
 
   </article>
 
