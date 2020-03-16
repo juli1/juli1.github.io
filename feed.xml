@@ -5,8 +5,8 @@
     <description>Harder, Better, Faster, Stronger</description>
     <link>http://julien.gunnm.org/</link>
     <atom:link href="http://julien.gunnm.org/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Sun, 08 Mar 2020 23:57:18 +0000</pubDate>
-    <lastBuildDate>Sun, 08 Mar 2020 23:57:18 +0000</lastBuildDate>
+    <pubDate>Mon, 16 Mar 2020 05:06:36 +0000</pubDate>
+    <lastBuildDate>Mon, 16 Mar 2020 05:06:36 +0000</lastBuildDate>
     <generator>Jekyll v4.0.0</generator>
     
       <item>
@@ -31,6 +31,10 @@ overlook such basic rules, even in regulated industries.&lt;/p&gt;
 &lt;p&gt;For the next six months, I will write a new article each month that will
 talk about one aspect similar to the one above. I have no idea or expectation about this
 experiment, I just hope it will be as useful to you as it will be to me.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;software engineering/essay/2020/03/06/manage-project-like-a-race/&quot;&gt;Manage projects like you run a race&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
 </description>
         <pubDate>Fri, 06 Mar 2020 13:13:20 +0000</pubDate>
         <link>http://julien.gunnm.org/software%20engineering/essay/2020/03/06/software-engineering-series/</link>
