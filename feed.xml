@@ -5,9 +5,103 @@
     <description>Harder, Better, Faster, Stronger</description>
     <link>http://julien.gunnm.org/</link>
     <atom:link href="http://julien.gunnm.org/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Mon, 16 Mar 2020 05:06:36 +0000</pubDate>
-    <lastBuildDate>Mon, 16 Mar 2020 05:06:36 +0000</lastBuildDate>
+    <pubDate>Tue, 17 Mar 2020 04:00:34 +0000</pubDate>
+    <lastBuildDate>Tue, 17 Mar 2020 04:00:34 +0000</lastBuildDate>
     <generator>Jekyll v4.0.0</generator>
+    
+      <item>
+        <title>Manage projects like you run a race</title>
+        <description>&lt;p&gt;&lt;em&gt;Note: this page is part of the &lt;a href=&quot;/software engineering/essay/2020/03/06/software-engineering-series&quot;&gt;“Essays on Software Engineering”&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;I used to run long distance trail races. My last race was in 2016, a 100 km
+race in &lt;a href=&quot;https://www.dcnr.pa.gov/StateParks/FindAPark/WorldsEndStatePark/Pages/default.aspx&quot;&gt;Worlds End State Park&lt;/a&gt;, in the middle of Pennsylvania.
+That particular day, I did not plan to finish the race: my body was already
+exhausted from years of running without much rest, I only wanted to finish
+the first 50k. Surprisingly, that day, my body felt good and at the 40 km mark,
+a race volunteer convinced me to keep going as I was way ahead in terms of time.
+Hours later, I finished the race about 15 minutes before the cut-off, limping, around midnight, after running
+about several miles without a lamp.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/worldsends.jpg&quot; alt=&quot;Worlds Ends Race Picture&quot; /&gt;
+The night before the race&lt;/p&gt;
+
+&lt;p&gt;What went wrong that day? I did not plan to run 100k but 50k and
+did not pack any battery or a lamp replacement. My mind was set on
+running 50k from the start and not ready to go any longer. I did not plan
+for the unexpected.&lt;/p&gt;
+
+&lt;p&gt;It wasn’t like this before. When a race was less than 26 miles, I took it as a training run.
+But when it was more than this, I meticulously planned it. I was
+researching the elevation profile, checking support stations and
+what food and liquids were provided. I prepare bags to drop at support station and packed them with
+more than twice of what I need: dry socks, food or a new t-shirt.
+For each race, I clearly knew where and when I should be.&lt;/p&gt;
+
+&lt;p&gt;When you think about it, a race is very simple: run X miles under Y hours.
+There are constraints, such as the elevation profile, the weather or the type
+of terrain. All of this can be planned and managed to reach the goal.
+To succeed, all you need is to make sure you are trained, know what to
+expect at regular interval of the race and have whatever you need through
+the race.&lt;/p&gt;
+
+&lt;p&gt;Over the years, I realized this process is no different than project management.
+This is exactly the same.&lt;/p&gt;
+
+&lt;p&gt;When you start a project, you also have a goal (deliver X within Y months),
+some constraints and resources. As for a race, if the goal is not realistic,
+you do not sign up and come back when you evaluate this being feasible.
+Once you sign up, you establish a roadmap that tells you what and when
+things should be completed. You have milestones that show you the incremental
+progress you are going to do over time. It gives a clear overview of the
+project work plan, not only to you but to the team that can also discuss
+potential dependencies and organize for them to be delivered on time.&lt;/p&gt;
+
+&lt;p&gt;Does it sounds basic project management to you? Yet, I still see many important projects
+being started without even having milestones set. Engineers do not know
+what they should be doing when they come at work. Even worse: sometimes, engineers
+or managers do not even know what race they are running
+(if they are running any). They are sometimes just lost in the company wilderness.&lt;/p&gt;
+
+&lt;p&gt;When I start a project, I often try to plan it accordingly:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;strong&gt;Have a clear overview of the feasibility&lt;/strong&gt;: if not feasible, either readjust the scope of do not take the project: better to deliver nothing than strong disappointment.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Research and plan&lt;/strong&gt;: like when preparing a race, look for the main obstacles
+in your project and make a plan to overcome them. Define objectives and milestones
+in a way they are measurable (e.g. I finished the code of module X by date Y).
+Write them down and communicate them to all internal stakeholders (your team, your sister teams).
+Communicate more pessimistic milestones for the customer so that you have some margin if things go wrong.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Regularly check your progress&lt;/strong&gt; to check you can finish the race before the cut-off.
+Look at your milestones every week and re-evaluate your work plan if needed. If you are ahead of time, you might help some other
+projects that need support or just finish your project earlier and polish it (better to under promise and over deliver).&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Take large margins&lt;/strong&gt;: take at least 100% of margin, if you plan to complete a project in one month, ask for two months.
+You might face unexpected issues, either human (one team member is ill or has some family issues) or technical and this margin is here to take the unexpected into account.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;These are simple rules. Not following them can transform a nice race half way
+into a long nightmare when you injure yourself.&lt;/p&gt;
+
+&lt;p&gt;Following these rules and processes helped me to manage multiple
+projects simultaneously and deliver them before the estimated delivery time. I now schedule my life
+according to these rules. It helped me to track what I should be doing and ensure
+that I complete all the tasks I want to do within a day or a weekend.&lt;/p&gt;
+
+&lt;p&gt;Managing projects is very simple: manage them as you run a race.&lt;/p&gt;
+</description>
+        <pubDate>Fri, 06 Mar 2020 13:13:20 +0000</pubDate>
+        <link>http://julien.gunnm.org/software%20engineering/essay/2020/03/06/manage-project-like-a-race/</link>
+        <guid isPermaLink="true">http://julien.gunnm.org/software%20engineering/essay/2020/03/06/manage-project-like-a-race/</guid>
+        
+        <category>software engineering</category>
+        
+        <category>essay</category>
+        
+        
+        <category>software engineering</category>
+        
+        <category>essay</category>
+        
+      </item>
     
       <item>
         <title>Essays on Software Engineering</title>
@@ -936,160 +1030,6 @@ be working for you!&lt;/p&gt;
         <category>job</category>
         
         <category>remote work</category>
-        
-      </item>
-    
-      <item>
-        <title>Deploying a Flask Application with Docker on a Raspberry Pi</title>
-        <description>&lt;p&gt;I have been very frustrated by actual messaging apps. To me, the best way to communicate is to use &lt;a href=&quot;https://en.wikipedia.org/wiki/Internet_Relay_Chat&quot;&gt;Internet Relay Chat&lt;/a&gt;. It includes all the features I need: multi-channels, private conversation, administration, etc. Unfortunately, for many people, IRC is not user friendly enough or lack many kikoolol(tm) capabilities (such as emojis, which seems to be the ultimate feature for some people).&lt;/p&gt;
-
-&lt;p&gt;I do not want to use over-killed solutions or have many applications that bother and interrupt me all the time. That was a motivation
-to implement a very simple message board to exchange messages with friends. The application is very simple: we can have different users, each user can post message. Admins can change password or delete users.&lt;/p&gt;
-
-&lt;p&gt;This is how it looks like.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/flask-chat.png&quot; alt=&quot;Flask Chat&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;The application relies on the &lt;a href=&quot;http://flask.pocoo.org/&quot;&gt;Flask framework&lt;/a&gt; and uses a SQLite database to store users/messages information.
-If you want to use the application and play locally, check the github application page: &lt;a href=&quot;https://github.com/juli1/flask-chat&quot;&gt;https://github.com/juli1/flask-chat&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;This article series explains how to deploy this Flask application on your own server using docker. You can also deploy the same container
-in AWS, GCP or Azure. Your choice. I just choose my Raspberry Pi because this is a computer that I have at home, I have full control over it and there is an interesting challenge to host a docker image on such a small computer.&lt;/p&gt;
-
-&lt;p&gt;This article will explain:&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;How to checkout and try the application&lt;/li&gt;
-  &lt;li&gt;How to build a docker container for it&lt;/li&gt;
-  &lt;li&gt;How to run the docker container on your local machine&lt;/li&gt;
-  &lt;li&gt;How to run the docker container on a raspberry pi&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h1 id=&quot;the-application&quot;&gt;The Application&lt;/h1&gt;
-&lt;p&gt;I already wrote the application. This is a simple chat, you can check out the code there: &lt;a href=&quot;https://github.com/juli1/flask-chat&quot;&gt;https://github.com/juli1/flask-chat&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;You can even try it out locally:&lt;/p&gt;
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git clone https://github.com/juli1/flask-chat.git
-&lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;flask-chat
-&lt;span class=&quot;c&quot;&gt;# Replace the following line with virtualenv if necessary&lt;/span&gt;
-python3.X &lt;span class=&quot;nt&quot;&gt;-m&lt;/span&gt; venv venv &lt;span class=&quot;c&quot;&gt;# Replace X with your version of python&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;source &lt;/span&gt;flask/bin/activate
-pip &lt;span class=&quot;nb&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-r&lt;/span&gt; requirements.txt
-./run-debug.py
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Then, open your web-browser and go to &lt;a href=&quot;https://localhost:5000&quot;&gt;https://localhost:5000&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;I also signed up to have continuous integration with &lt;a href=&quot;https://travis-ci.org/&quot;&gt;travis-ci&lt;/a&gt; and code coverage report from &lt;a href=&quot;https://coveralls.io/&quot;&gt;coveralls&lt;/a&gt;. Just because this is cute to have.&lt;/p&gt;
-
-&lt;h1 id=&quot;building-the-docker-image&quot;&gt;Building the docker image&lt;/h1&gt;
-
-&lt;p&gt;Now, we need to build a docker image to be able to deploy this everywhere.&lt;/p&gt;
-
-&lt;p&gt;The first thing we need is to define a &lt;code class=&quot;highlighter-rouge&quot;&gt;Dockerfile&lt;/code&gt; that defines how to build your container.&lt;/p&gt;
-
-&lt;p&gt;In the following file, we perform the major following steps:&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;install all dependencies (&lt;code class=&quot;highlighter-rouge&quot;&gt;python3&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;python3-pip&lt;/code&gt;)&lt;/li&gt;
-  &lt;li&gt;copy our app in &lt;code class=&quot;highlighter-rouge&quot;&gt;/app&lt;/code&gt; in the container&lt;/li&gt;
-  &lt;li&gt;install all the python dependencies (specified in &lt;code class=&quot;highlighter-rouge&quot;&gt;requirements.txt&lt;/code&gt;)&lt;/li&gt;
-  &lt;li&gt;create a fresh database &lt;code class=&quot;highlighter-rouge&quot;&gt;db_create.py&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;specify the command to execute the application &lt;code class=&quot;highlighter-rouge&quot;&gt;python3 run-production.py&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;FROM python:3.6-slim-stretch
-MAINTAINER Julien Delange &amp;lt;julien@gunnm.org&amp;gt;
-RUN apt-get update -y
-RUN apt-get install -y python3 python-pip-whl python3-pip
-COPY . /app
-WORKDIR /app
-RUN pip3 install -r requirements.txt
-RUN rm -f app.db
-RUN python3 ./db_create.py
-EXPOSE 5050
-ENTRYPOINT [&quot;python3&quot;]
-CMD [&quot;run-production.py&quot;]
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Once we are done, we can build the docker image. To do so, just invoke the following command:&lt;/p&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;docker build -t flask-chat:latest .
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h1 id=&quot;running-the-docker-image-on-your-local-machine-or-on-your-raspberry-pi&quot;&gt;Running the docker image on your local machine or on your raspberry pi&lt;/h1&gt;
-
-&lt;p&gt;Now, it is time to run the docker image freshly built!&lt;/p&gt;
-
-&lt;p&gt;If you want to run the image you built on your computer into a docker container, just run:&lt;/p&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;docker run -d -p 10000:10000 flask-chat
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;This command run the container and binds the local port 10000 to the container port 5050 (on which the flask application is listening to).&lt;/p&gt;
-
-&lt;p&gt;If you just want to use the pre-built image from &lt;a href=&quot;https://hub.docker.com/r/juli1/flask-chat/tags/&quot;&gt;dockerhub&lt;/a&gt;
-on your local machine, run:&lt;/p&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;docker run -d -p 10000:10000 juli1/flask-chat:latest
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;And finally, if you want to run the pre-built image from &lt;a href=&quot;https://hub.docker.com/r/juli1/flask-chat/tags/&quot;&gt;dockerhub&lt;/a&gt;
-on your raspberry pi, run:&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;docker run -d -p 10000:5050 juli1/flask-chat:rpi
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;If you want to actually build the container on your raspberry pi, you can use the &lt;code class=&quot;highlighter-rouge&quot;&gt;Dockerfile.rpi&lt;/code&gt;`file
-in the root directory of the project like this:&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;docker build -t flask-chat:latest . -f Dockerfile.rpi
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h1 id=&quot;continuous-integration&quot;&gt;Continuous Integration&lt;/h1&gt;
-&lt;p&gt;We are in 2017 (soon 2018) and continuous deployment/integration is just the way to go. Automating
-the build of your docker container is very easy - you can just &lt;a href=&quot;http://www.travis-ci.org&quot;&gt;travis-ci&lt;/a&gt; or &lt;a href=&quot;http://docker.com&quot;&gt;docker&lt;/a&gt;
-do trigger every time there is a commit.&lt;/p&gt;
-
-&lt;p&gt;What is more difficult is to build the image for raspberry pi. This &lt;a href=&quot;https://blog.hypriot.com/post/setup-simple-ci-pipeline-for-arm-images/&quot;&gt;tutorial&lt;/a&gt;
-helped a lot. If you want to build your own docker image for raspberry pi, have a look at my 
-&lt;a href=&quot;https://github.com/juli1/flask-chat/blob/master/Dockerfile.rpi&quot;&gt;the Dockerfile.rpi&lt;/a&gt; in the project github directory.&lt;/p&gt;
-
-&lt;h1 id=&quot;useful-resources&quot;&gt;Useful resources&lt;/h1&gt;
-&lt;p&gt;The chat application is available on my github account: &lt;a href=&quot;https://github.com/juli1/flask-chat&quot;&gt;https://github.com/juli1/flask-chat&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;The docker images are on this repository: &lt;a href=&quot;https://hub.docker.com/r/juli1/flask-chat/&quot;&gt;https://hub.docker.com/r/juli1/flask-chat/&lt;/a&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;The docker image for intel is: juli1/flask-chat:latest&lt;/li&gt;
-  &lt;li&gt;The docker image for raspberry pi is: juli1/flask-chat:rpi&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;These are some resources I used during my search for information on rust.&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;http://flask.pocoo.org/&quot;&gt;The Flask Website&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world&quot;&gt;The Amazing Flask Tutorial&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://docs.docker.com/engine/reference/builder/&quot;&gt;Dockerfile reference&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://containertutorials.com/docker-compose/flask-simple-app.html&quot;&gt;Docker container for Flask&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        <pubDate>Sun, 03 Dec 2017 13:13:20 +0000</pubDate>
-        <link>http://julien.gunnm.org/flask/python/docker/raspberry-pi/2017/12/03/developing-deploying-with-docker-on-raspberry-pi/</link>
-        <guid isPermaLink="true">http://julien.gunnm.org/flask/python/docker/raspberry-pi/2017/12/03/developing-deploying-with-docker-on-raspberry-pi/</guid>
-        
-        <category>flask</category>
-        
-        <category>docker</category>
-        
-        <category>gcp</category>
-        
-        <category>azure</category>
-        
-        <category>aws</category>
-        
-        
-        <category>flask</category>
-        
-        <category>python</category>
-        
-        <category>docker</category>
-        
-        <category>raspberry-pi</category>
         
       </item>
     
