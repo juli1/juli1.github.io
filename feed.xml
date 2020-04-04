@@ -5,9 +5,81 @@
     <description>Harder, Better, Faster, Stronger</description>
     <link>http://julien.gunnm.org/</link>
     <atom:link href="http://julien.gunnm.org/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Sat, 04 Apr 2020 04:54:58 +0000</pubDate>
-    <lastBuildDate>Sat, 04 Apr 2020 04:54:58 +0000</lastBuildDate>
+    <pubDate>Sat, 04 Apr 2020 05:44:33 +0000</pubDate>
+    <lastBuildDate>Sat, 04 Apr 2020 05:44:33 +0000</lastBuildDate>
     <generator>Jekyll v4.0.0</generator>
+    
+      <item>
+        <title>Do not take yourself too seriously</title>
+        <description>&lt;p&gt;&lt;em&gt;Note: this page is part of the &lt;a href=&quot;/software engineering/essay/2020/03/06/software-engineering-series&quot;&gt;“Essays on Software Engineering”&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;I have worked with people that believe they invented the wheel
+and are so unique thay you need to to listen to them and do exactly what they say
+(in French, you would say &lt;em&gt;“ils ont inventé le fil à couper le beurre”&lt;/em&gt;).&lt;/p&gt;
+
+&lt;p&gt;They take themselves so seriously that they believe without them, the world
+would not go round. Do not be such a person: they are full of
+themselves. And very boring.&lt;/p&gt;
+
+&lt;p&gt;The academic world is full of such people, frustrated that they did
+not found what the neighbor invented and believe a solution cannot be good unless
+they invent it. Many researchers are so frustrated
+that they just reject others work, copy it, tweak it slightly to finally claim
+a new invention. There is even a name for it: &lt;a href=&quot;https://en.wikipedia.org/wiki/Not_invented_here&quot;&gt;Not Invented Here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Of course, the very same behavior is present in the corporate world.
+Remember this co-worker that criticizes other projects because it was lead
+by their peers? Would the reaction be the same if it was their team?&lt;/p&gt;
+
+&lt;p&gt;Or remember how different teams duplicate work inside the same companies?
+Or programmers not removing their old deprecated code (aka &lt;em&gt;dead code&lt;/em&gt;)
+“just in case” it might be useful?&lt;/p&gt;
+
+&lt;p&gt;Duplicate efforts can be useful sometimes. After all, when creating
+the iPhone, Jobs had two teams: one implementing the phone using software, the
+other using hardware. But the vast majority of times, this is simply because
+of ego.&lt;/p&gt;
+
+&lt;p&gt;Do not be these people.&lt;/p&gt;
+
+&lt;p&gt;I believe there are two powerful principles to follow:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Be mindful of others&lt;/li&gt;
+  &lt;li&gt;Do not care yourself too seriously&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;The first principle is basic and yet, often overlooked. Try to put yourself in other people shoes
+and understand how they feel. That will help you empathize with the difficulties
+they might be having at the moment. That often explain why or how they react
+to a particular person or event. This principle is also illustrated
+by the habit &lt;em&gt;“Seek to understand, then to be understood”&lt;/em&gt; in &lt;a href=&quot;https://en.wikipedia.org/wiki/The_7_Habits_of_Highly_Effective_People&quot;&gt;The 7 habits of Highly Effective People&lt;/a&gt;, one of the best book I read.&lt;/p&gt;
+
+&lt;p&gt;The second principle is useful to put things in perspectives. You are a human
+being that is failable by definition. You probably believe you are smart
+and better than others because your Mom, wife or dog told you but in reality, you’re not.
+This fact is illustrated every day in the stock market: many &lt;del&gt;gamblers&lt;/del&gt;
+investors believe they can beat the market when in reality, all what they
+really get are losses. Similarly, many engineers believe they know how to
+optimize code themselves manually when in reality, the compiler does it better
+with simple optimization heuristics that have been implemented by researchers
+and language specialists. You might like to think you are better than others
+but you are probably not and entertaining this idea is counter-productive and
+is not going to help you or other people.&lt;/p&gt;
+
+&lt;p&gt;We do not succeed because we are better than others.
+We succeed because we understand others and how to be succesful with them.&lt;/p&gt;
+</description>
+        <pubDate>Fri, 03 Apr 2020 23:13:20 +0000</pubDate>
+        <link>http://julien.gunnm.org/misc/2020/04/03/do-not-take-yourself-too-seriously/</link>
+        <guid isPermaLink="true">http://julien.gunnm.org/misc/2020/04/03/do-not-take-yourself-too-seriously/</guid>
+        
+        <category>misc</category>
+        
+        
+        <category>misc</category>
+        
+      </item>
     
       <item>
         <title>Freedom</title>
@@ -795,137 +867,6 @@ step by step.&lt;/p&gt;
         <category>scala</category>
         
         <category>programming</category>
-        
-      </item>
-    
-      <item>
-        <title>The symbol of the Falcon Heavy launch</title>
-        <description>&lt;p&gt;Until very recently, space exploration was something that did not get much traction.
-People stopped dreaming about space and rockets long time ago.&lt;/p&gt;
-
-&lt;p&gt;Until this happened.&lt;/p&gt;
-
-&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/A0FZIwabctw&quot; frameborder=&quot;0&quot; allow=&quot;autoplay; encrypted-media&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
-
-&lt;p&gt;In less than 10 minutes, a giant rocket took off, its side booster came back on earth and a roadster was in space.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;BOOM&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;A lot of things have been said about the rocket itself, about SpaceX founder Elon Musk
-and what it means for the future of space exploration and space travel. I do not want to talk about this.&lt;/p&gt;
-
-&lt;p&gt;I want to share some insights about the incidental effect of this launch.
-There are the main few thoughts.&lt;/p&gt;
-
-&lt;h1 id=&quot;if-you-want-to-disrupt-do-not-listen-to-the-experts&quot;&gt;If you want to disrupt, do not listen to the experts&lt;/h1&gt;
-
-&lt;p&gt;When I was working at the European Space Agency (&lt;a href=&quot;http://www.esa.int&quot;&gt;ESA&lt;/a&gt;) for about 2 years, people were making fun of SpaceX.
-Space experts (engineers, directors - almost everybody at that time)
-considered Musk was an idiot with an irrealistic dream of building reusable rockets.&lt;/p&gt;
-
-&lt;p&gt;For years, the company was discredited, saying that the idea of landing rockets
-was not feasible.&lt;/p&gt;
-
-&lt;p&gt;Until this happened.&lt;/p&gt;
-
-&lt;p style=&quot;text-align: center;&quot;&gt;&lt;img src=&quot;/assets/rocket-landing.gif&quot; alt=&quot;Landing&quot; width=&quot;50%&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;SpaceX made it happen and now, the same experts that made fun of him 
-&lt;a href=&quot;https://en.wikipedia.org/wiki/Adeline_(rocket_stage)&quot;&gt;copy him&lt;/a&gt;. It will take them years to catch-up (the first reusable rocket
-from ESA is announced to start to be tested in 2020 - SpaceX succeeded in 2015!). The person they called
-an idiot years ago disrupt their industry and will make them bankrupt.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Lesson 1&lt;/strong&gt;: dream big, worry small&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Lesson 2&lt;/strong&gt;: do not be overconfident, anybody can attack your business and make you bankrupt tomorrow&lt;/p&gt;
-
-&lt;h1 id=&quot;governments-are-inefficient&quot;&gt;Governments are inefficient&lt;/h1&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Ariane_6&quot;&gt;Ariane 6&lt;/a&gt; will take $3.6B euros to develop. The Falcon Heavy development cost was $500M and 
-can take embedd more payload than the future Ariane. So, why such a difference?&lt;/p&gt;
-
-&lt;p&gt;There are two main reasons: work inefficiency and lack/fear of innovation.&lt;/p&gt;
-
-&lt;p&gt;Actual rocket developments is done by government agencies. The work is often done
-by contractors that are very expensive (you have to pay the contractor agency, which
-takes a fee - they act as a middleman). There are also some workers that are not 
-competent and still employed and/or people
-promoted for political reasons while not being effective and block other, more competent engineers
-that are frustrated and leave after few years. At the end of the day, this is a large overhead.
-Also, in the case of ESA, there is the &lt;a href=&quot;https://www.esa.int/About_Us/Business_with_ESA/How_to_do/Industrial_policy_and_geographical_distribution&quot;&gt;geographic return policy&lt;/a&gt;:
-past projects are not re-used and the tax payer pay the same project twice!&lt;/p&gt;
-
-&lt;p&gt;The second is lack of innovation and fear of disruption. Until SpaceX started
-to be seriously in the space business, rocket launchers and satellites were using proprietary processors
-paid at outrageous prices. In the case of european space programs,
-&lt;a href=&quot;https://www.gaisler.com/&quot;&gt;gaisler research&lt;/a&gt;, a company started by a former ESA employee, 
-is the main (only?) hardware provider for onboard computers.
-Its electronic components cost dozen of thousands of euros
-and each sub-contractor for any space program has to purchases these processors. As there is only one
-provider for these processor, there is no competition on the price and the company can set the price
-the tax-payer will end up paying! SpaceX took a radically different
-direction by using off-the-shelf components make them resilient to radiation using redundant
-systems. Instead of feeding companies
-that set their own prices, SpaceX designed a system that uses multiple cheap component and coordinate them
-to be resilient to failure. There is no doubt that they apply the same principles at different steps of the
-supply chain to reduce costs at scale. Simple and efficient.&lt;/p&gt;
-
-&lt;p&gt;The point is: space programs have been run by governmental organizations, which are
-inefficient and end up wasting the taxpayer money.
-SpaceX gave the proof by reducing drastically 
-the cost of a launch ($60M for a &lt;a href=&quot;https://en.wikipedia.org/wiki/Falcon_9&quot;&gt;Falcon9&lt;/a&gt; launch versus $200M for Ariane5) 
-and reduce development costs (see above). 
-Government presence is necessary in some areas
-but they are not designed to run businesses efficiently, this has been shown multiple times
-in history (the telecom business in France is a good one too).&lt;/p&gt;
-
-&lt;h1 id=&quot;immigration-is-a-force&quot;&gt;Immigration is a force&lt;/h1&gt;
-
-&lt;p&gt;There is a lot of discussion about immigration in the previous months. I do not want
-to have a political discussion there, this is not my objective. My point is that SpaceX is a company 
-started by an immigrant and many SpaceX employees are foreigners.&lt;/p&gt;
-
-&lt;p&gt;Immigration bring people that are hungry and want to raise the bar. Look around major US companies today:
-one founder of Alphabet is Russian, the CEO of Google is Indian as the CEO of Microsoft!
-Foreigners come in a country because they have big dream. They come to realize them
-They are a force: their positive energy is the fuel of innovation and success.&lt;/p&gt;
-
-&lt;h1 id=&quot;usa-is-where-dreams-happen&quot;&gt;USA is where dreams happen&lt;/h1&gt;
-
-&lt;p&gt;A success like the Falcon Heavy project would never have happened in Europe: were laughing at Musk
-and his ideas of reusable rockets! No government would have funded him outside of the USA. Europe is the culture of the nay-sayer, where
-people prefer blaming rather than trying and learning from their failure.&lt;/p&gt;
-
-&lt;p&gt;USA is the country where you have enough freedom to start and experience ideas. This is where
-new technologies are created. Where self-driving cars are emerging where energy efficient 
-materials are produced. And now, new rockets are taking off. USA is the country where your dreams can become reality.&lt;/p&gt;
-
-&lt;h1 id=&quot;the-future-is-bright-for-the-space-business&quot;&gt;The future is bright for the Space business&lt;/h1&gt;
-
-&lt;p&gt;This launch was a great promotion for Space X, no doubt about this. And now, people are talking again about space exploration
-and space travel. SpaceX, &lt;a href=&quot;https://www.blueorigin.com/&quot;&gt;Blue Origin&lt;/a&gt; and new companies will be competing. 
-This will open more opportunities in a very near future, not only for space travel but potentially
-for establishing colonies on other planets. The dark days are gone for the space business.&lt;/p&gt;
-
-</description>
-        <pubDate>Thu, 26 Apr 2018 13:13:20 +0000</pubDate>
-        <link>http://julien.gunnm.org/thoughts/spacex/falcon%20heavy/2018/04/26/falcon-heavy-launch/</link>
-        <guid isPermaLink="true">http://julien.gunnm.org/thoughts/spacex/falcon%20heavy/2018/04/26/falcon-heavy-launch/</guid>
-        
-        <category>us</category>
-        
-        <category>falcon heavy</category>
-        
-        <category>esa</category>
-        
-        <category>space</category>
-        
-        
-        <category>thoughts</category>
-        
-        <category>spacex</category>
-        
-        <category>falcon heavy</category>
         
       </item>
     
