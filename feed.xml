@@ -5,9 +5,79 @@
     <description>Harder, Better, Faster, Stronger</description>
     <link>http://julien.gunnm.org/</link>
     <atom:link href="http://julien.gunnm.org/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Tue, 31 Mar 2020 05:59:17 +0000</pubDate>
-    <lastBuildDate>Tue, 31 Mar 2020 05:59:17 +0000</lastBuildDate>
+    <pubDate>Sat, 04 Apr 2020 04:54:58 +0000</pubDate>
+    <lastBuildDate>Sat, 04 Apr 2020 04:54:58 +0000</lastBuildDate>
     <generator>Jekyll v4.0.0</generator>
+    
+      <item>
+        <title>Freedom</title>
+        <description>&lt;p&gt;Within weeks, fundamental liberties have been sacrified in the name of safety.&lt;/p&gt;
+
+&lt;p&gt;When we were previously infuriated by censorship and totalitarian governments,
+we are now thankful to have &lt;del&gt;controlled&lt;/del&gt; curated information, either by
+government or artificial intelligence. We are not even surprised when
+our devices are used to track any progress of the disease when we were previously
+worried about the use of device to track our moves. Nevermind if this is good or bad,
+anything is good to sacrify in the name of safety. We
+surrendered the right to be different or just disagree.
+For ourselves or others.&lt;/p&gt;
+
+&lt;p&gt;We accept to be forced to stay home. We accept to be controlled
+and be told where to go, for how long. We accept to abdicate our
+fundamental liberties.&lt;/p&gt;
+
+&lt;p&gt;We fail to build a society where citizens are empowered to take decisions and
+they rather accept to accept instructions at face value without any critical
+thinking.&lt;/p&gt;
+
+&lt;p&gt;Sad.&lt;/p&gt;
+</description>
+        <pubDate>Fri, 03 Apr 2020 13:13:20 +0000</pubDate>
+        <link>http://julien.gunnm.org/misc/2020/04/03/freedom/</link>
+        <guid isPermaLink="true">http://julien.gunnm.org/misc/2020/04/03/freedom/</guid>
+        
+        <category>misc</category>
+        
+        
+        <category>misc</category>
+        
+      </item>
+    
+      <item>
+        <title>Outside</title>
+        <description>&lt;p&gt;Today was a lucky day. I ran outside.&lt;/p&gt;
+
+&lt;p&gt;The sun was shining, the streets were empty. Shops were closed.
+The only few people I saw were other runners or homelesses.&lt;/p&gt;
+
+&lt;p&gt;Not sure how long it is going to last. We are ordered to stay
+confined until experts evaluate we are safe to resume our lives.&lt;/p&gt;
+
+&lt;p&gt;Nobody knows how deadly is this outbreak. Or how long this is going to last.&lt;/p&gt;
+
+&lt;p&gt;Modern society prepared us for this. The latest information
+is carefully crafted, curated and displayed in near real-time on all devices,
+making each of us experts able to understand and evaluate
+carefully the situation.&lt;/p&gt;
+
+&lt;p&gt;Not sure for how long I will still have the permission to run outside.
+Maybe soon I will have to stay inside, indefinitely.
+That is for the good of the community, we cannot afford to take any risk.&lt;/p&gt;
+
+&lt;p&gt;I trust our leaders to put an end to this situation.
+No doubt that will be given the permission to go outside soon.
+And that we will be able to enjoy time together again.&lt;/p&gt;
+</description>
+        <pubDate>Mon, 30 Mar 2020 13:13:20 +0000</pubDate>
+        <link>http://julien.gunnm.org/misc/2020/03/30/outside/</link>
+        <guid isPermaLink="true">http://julien.gunnm.org/misc/2020/03/30/outside/</guid>
+        
+        <category>misc</category>
+        
+        
+        <category>misc</category>
+        
+      </item>
     
       <item>
         <title>Manage projects like you run a race</title>
@@ -856,181 +926,6 @@ for establishing colonies on other planets. The dark days are gone for the space
         <category>spacex</category>
         
         <category>falcon heavy</category>
-        
-      </item>
-    
-      <item>
-        <title>Goodbye Amazon, Hello Twitter</title>
-        <description>&lt;p&gt;After more than a year at &lt;a href=&quot;https://aws.amazon.com/&quot;&gt;Amazon Web Services&lt;/a&gt;, I will
-be joining &lt;a href=&quot;https://www.twitter.com&quot;&gt;Twitter&lt;/a&gt; and work on their infrastructure.&lt;/p&gt;
-
-&lt;p&gt;My &lt;a href=&quot;https://twitter.com/juli1pb&quot;&gt;twitter account&lt;/a&gt; might be more active!&lt;/p&gt;
-
-&lt;p&gt;I am really thankful and lucky that I have been given the
-opportunity to work at AWS. I worked at a scale I would never imagine and
-met fantastic people. I hope I will make as big of an impact at
-Twitter! The future is exciting!&lt;/p&gt;
-
-&lt;p style=&quot;text-align: center;&quot;&gt;&lt;img src=&quot;/assets/twitter-logo.jpg&quot; alt=&quot;Twitter logo&quot; width=&quot;50%&quot; /&gt;&lt;/p&gt;
-
-</description>
-        <pubDate>Sun, 25 Feb 2018 13:13:20 +0000</pubDate>
-        <link>http://julien.gunnm.org/job/2018/02/25/goodbye-amazon-hello-twitter/</link>
-        <guid isPermaLink="true">http://julien.gunnm.org/job/2018/02/25/goodbye-amazon-hello-twitter/</guid>
-        
-        <category>job</category>
-        
-        <category>twitter</category>
-        
-        
-        <category>job</category>
-        
-      </item>
-    
-      <item>
-        <title>On working remotely</title>
-        <description>&lt;p&gt;When I started working at Amazon Web Services, I moved from Pittsburgh, PA to 
-Seattle, WA. But six months later, I relocated in San Francisco, CA and continued
-to work remotely with my team located in Seattle, WA.&lt;/p&gt;
-
-&lt;p&gt;Working remotely can be challenging. It works for me but not without change.
-A &lt;a href=&quot;https://twitter.com/b0rk/status/944620024303702021&quot;&gt;recent tweet&lt;/a&gt;
-motivated me to to share this experience and what works/doesn’t work for me
-(and might work/don’t work for you - don’t try this at &lt;del&gt;home&lt;/del&gt; work).&lt;/p&gt;
-
-&lt;h1 id=&quot;pro-active-communication-and-documentation&quot;&gt;Pro-active communication and documentation&lt;/h1&gt;
-&lt;p&gt;By nature, you no longer have
-the regular chat about this new cool project over lunch or in the corridor.
-People are not stopping at your desk to just discuss an idea while having coffee.
-You are off these discussions and you need to find other ways to be up to date
-and informed about what is going on in your team/company.&lt;/p&gt;
-
-&lt;p&gt;This definitively change the way you communicate and document your work and
- you need be proactive. The
-informal chat in the corridor is now a wiki page or an e-mail that describes
-the idea with references. It not only facilitates
-communication between with the team, but increases the quality of the documentation overall.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Take Away&lt;/strong&gt;: document as much as you can (on a wiki, markdown files, etc.) and
-make your team/manager aware of what you are working on. 
-Avoid to take e-mail as a way to document your work:
-people delete e-mails, use wiki (good) or markdown documents on a git repository
-(better).&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Take Away 2&lt;/strong&gt;: be proactive when communicating with your manager. Send weekly report
-to keep him up-to-date so that he knows on what you are working. Do not assume anything,
-document explicitly everything.&lt;/p&gt;
-
-&lt;h1 id=&quot;avoid-work-from-home&quot;&gt;Avoid work from home&lt;/h1&gt;
-&lt;p&gt;Working from home sounds very appealing but it can in fact be a terrible idea.
-When working from home, it is easy to
-spend 10 minutes every hour doing something totally unrelated to work. Or to
-assume that &lt;em&gt;you can do this chore during the day while working&lt;/em&gt; 
-(for example, between two code reviews).&lt;/p&gt;
-
-&lt;p&gt;It just doesn’t work. When doing the chore, you are thinking about work. Or while working, 
-you are obsess with the chore and you want to get it done right &lt;strong&gt;now&lt;/strong&gt;. In short:
-staying at home does not help to focus.&lt;/p&gt;
-
-&lt;p&gt;You also end up with the feeling you are always at home (and think you do
-nothing) or at work (and you keep working all the time). Having a physical separation
-between home and work help to allocate time and know your limits.&lt;/p&gt;
-
-&lt;p style=&quot;text-align: center;&quot;&gt;&lt;img src=&quot;/assets/dr-evil-wfh.jpg&quot; alt=&quot;Working From Home&quot; width=&quot;50%&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Lastly, work is also a way to socialize (engage with colleagues,
-discuss points of view and perspectives). While working remotely, it is
-important to keep this aspect, by having a desk in another location, sharing a
-co-working space or just going in a working area in a coffee shop!&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Take Away&lt;/strong&gt;: separate work from life physically and mentally. Going to an office not only 
-helps to focus and also socialize with other people in your company (happy hour anyone?).&lt;/p&gt;
-
-&lt;h1 id=&quot;schedule-your-day-and-stick-to-it&quot;&gt;Schedule your day and stick to it&lt;/h1&gt;
-&lt;p&gt;One major benefit of working remotely: no unwanted interruption
-from your manager/co-workers (except if they page you, which does not happen
-very often). You are more effective because you can focus on something and
-nobody will come and interrupt you (downside - as discussed
-earlier: less social interaction). Also, people invites you only to important
-meeting and you can easily refuse the ones you feel you do not bring value.&lt;/p&gt;
-
-&lt;p&gt;Consequence: you have more time and can focus on whatever you want. Downside:
-you can work on the same thing for hours while you need to make progress on
-others project too. This happens when being in an office but is amplified when working
-remotely.&lt;/p&gt;
-
-&lt;p&gt;To avoid this, the solution is to clearly schedule the day, cut it into time slots
-(1 to 2 hours) and allocate a task for each. It helps to stay focus on what you are
-going to work through the day and make progress on all the projects you are working on.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Take Away&lt;/strong&gt;: write down your schedule (every day, every week, whatever period
-works for you) and stick to it. Review it after a while to see how you can
-adapt/be more efficient.&lt;/p&gt;
-
-&lt;h1 id=&quot;keep-an-open-chat-policy&quot;&gt;Keep an open-chat policy&lt;/h1&gt;
-&lt;p&gt;Your co-workers and team-members might be reluctant to engage via e-mail and/or
-chat. 
-After all, it is sometimes easier to come to your desk, ask to go for
-coffee and discuss.&lt;/p&gt;
-
-&lt;p&gt;This is important to make it clear to the people you help/mentor that they
-can ping/page you anytime. &lt;strong&gt;Anytime&lt;/strong&gt;. Even after &lt;em&gt;“work hours”&lt;/em&gt;. For any 
-(work-related) question.&lt;/p&gt;
-
-&lt;p&gt;The rationale is simple: if one team member doesn’t know what to do after receiving a page in the middle
-of the night, that is your responsibility to help them and make them feel safe.
-It is always better to be interrupted for and make sure the person makes
-progress rather than letting them in the unknown and feeling they cannot do
-anything. After all, this is your job to mentor people and make them feel safe.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Take Away&lt;/strong&gt; : make it clear than you are available through chat and try to
-make people feel safe about discussing anything, even if they feel this is a
-stupid/silly question (no question is stupid).&lt;/p&gt;
-
-&lt;h1 id=&quot;make-sure-your-organization-is-ready&quot;&gt;Make sure your organization is ready&lt;/h1&gt;
-&lt;p&gt;If you are going to be be remote, make sure the rest of the organization is
-ready. That means there is the necessary infrastructure to work remotely (video
-conference system, messenger/chat (Slack or Chime), etc).&lt;/p&gt;
-
-&lt;p&gt;Your organization must be ready for day 1. If people are scheduling meeting and
-you cannot join, this is not going to work. If your manager doesn’t use the
-video conference system when having a conversation with other teams, you will
-not be included in them. Make sure your team/company has the tools and infrastructure
-(Skype, teamwork tools, etc.) so that you can communicate with your team/company.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Take Away&lt;/strong&gt;: make sure the company you are working for has the necessary
-infrastructure to be part of the team and share information while working
-remotely.&lt;/p&gt;
-
-&lt;h1 id=&quot;visit-periodically&quot;&gt;Visit periodically&lt;/h1&gt;
-&lt;p&gt;If your team is physically located somewhere (after all, some company have
-100% remote workers!), visit periodically. 
-Take the opportunity to have face to face discussions with
-other teams about new projects. Go for a beer with your colleagues and
-socialize. You will probably learn a lot about other projects and people are
-sometimes more open to discuss while having a face to face conversation.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Take Away&lt;/strong&gt;: if possible, come back sometimes, have meetings to discuss new
-projects (use a whiteboard!). Go for a beer with your team (and offer the first
-round).&lt;/p&gt;
-
-&lt;h1 id=&quot;and-to-finish-&quot;&gt;And to finish …&lt;/h1&gt;
-&lt;p&gt;This list represents what has been important to me while working remotely.
-Every person and company is different and what worked for me might not
-be working for you!&lt;/p&gt;
-</description>
-        <pubDate>Fri, 26 Jan 2018 13:13:20 +0000</pubDate>
-        <link>http://julien.gunnm.org/job/remote%20work/2018/01/26/challenge-to-work-remotely/</link>
-        <guid isPermaLink="true">http://julien.gunnm.org/job/remote%20work/2018/01/26/challenge-to-work-remotely/</guid>
-        
-        <category>job</category>
-        
-        <category>amazon</category>
-        
-        
-        <category>job</category>
-        
-        <category>remote work</category>
         
       </item>
     
