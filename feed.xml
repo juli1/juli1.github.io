@@ -5,8 +5,8 @@
     <description>Harder, Better, Faster, Stronger</description>
     <link>http://julien.gunnm.org/</link>
     <atom:link href="http://julien.gunnm.org/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Sun, 05 Apr 2020 18:50:05 +0000</pubDate>
-    <lastBuildDate>Sun, 05 Apr 2020 18:50:05 +0000</lastBuildDate>
+    <pubDate>Sun, 05 Apr 2020 23:26:16 +0000</pubDate>
+    <lastBuildDate>Sun, 05 Apr 2020 23:26:16 +0000</lastBuildDate>
     <generator>Jekyll v4.0.0</generator>
     
       <item>
@@ -69,8 +69,9 @@ by the habit &lt;em&gt;“Seek to understand, then to be understood”&lt;/em&gt
 
 &lt;p&gt;The second principle is useful to put things in perspectives. You are a human
 being that is failable by definition. You probably believe you are smart
-and better than others because your mom, wife or dog told you. In reality,
-you’re not that smart.
+and better than others because your mom, wife or dog told you.
+In fact, as suggested by the &lt;a href=&quot;https://en.wikipedia.org/wiki/Dunning%E2%80%93Kruger_effect&quot;&gt;Dunning Kruger effect&lt;/a&gt;,
+you are probably the worst person to know your own personal value. 
 This fact is illustrated every day in the stock market: many &lt;del&gt;gamblers&lt;/del&gt;
 investors believe they can beat the market when in reality, all what they
 really get are losses. Similarly, many engineers believe they know how to
