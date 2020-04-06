@@ -5,33 +5,33 @@
     <description>Harder, Better, Faster, Stronger</description>
     <link>http://julien.gunnm.org/</link>
     <atom:link href="http://julien.gunnm.org/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Sun, 05 Apr 2020 23:26:16 +0000</pubDate>
-    <lastBuildDate>Sun, 05 Apr 2020 23:26:16 +0000</lastBuildDate>
+    <pubDate>Mon, 06 Apr 2020 01:44:20 +0000</pubDate>
+    <lastBuildDate>Mon, 06 Apr 2020 01:44:20 +0000</lastBuildDate>
     <generator>Jekyll v4.0.0</generator>
     
       <item>
         <title>Do not take yourself too seriously</title>
         <description>&lt;p&gt;&lt;em&gt;Note: this page is part of the &lt;a href=&quot;/software engineering/essay/2020/03/06/software-engineering-series&quot;&gt;“Essays on Software Engineering”&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
 
-&lt;p&gt;I have worked with people that believe they invented the wheel
-and are so unique thay you need to to listen to them and do exactly what they say
+&lt;p&gt;I often encounter and work with people who believe they are inventing the wheel
+and are so unique that you need to to listen to them and do exactly what they say
 (in French, you would say &lt;em&gt;“ils pensent avoir inventé le fil à couper le beurre”&lt;/em&gt;).&lt;/p&gt;
 
 &lt;p&gt;Such people take themselves too seriously. They believe that without them, the world
-would not go round. They will try block you for the sake of being right when
+would not go round. They will try to block you for the sake of being right when
 in fact, all what they are is annoying. Do not be such a person. They are full of
 themselves. And very boring. Life is not made to be boring. You are better than
 this.&lt;/p&gt;
 
 &lt;p&gt;The academic world is full of such people, frustrated that they did
-not found what the neighbor invented and believe a solution cannot be good unless
+not find what their fellow neighbor invented and believe a solution cannot be good unless
 they invent it. Many researchers are so frustrated
-that they just reject others work, copy it, tweak it slightly to finally claim
+that they just reject others work, copy it, or tweak it slightly to finally claim
 a new invention. There is even a name for it: &lt;a href=&quot;https://en.wikipedia.org/wiki/Not_invented_here&quot;&gt;Not Invented Here&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;Of course, the very same behavior is present in the corporate world.
-Remember that co-worker that criticizes other projects because it was lead
-by their peers? Or this grumpy developer that re-implemented a piece of code
+Remember that coworker who criticizes other projects because it was led
+by their peers? Or the grumpy developer who re-implemented a piece of code
 just because he does not like some obscure (and often, very subjective) aspect?
 Would the reaction be the same if it was done by them?&lt;/p&gt;
 
@@ -46,8 +46,8 @@ two ways of doing one thing (we all know the result: the software variation won)
 But the vast majority of times, duplicating work
 is an ego issue, with people thinking they are better than &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;insert-name-or-thing-here&amp;gt;&lt;/code&gt;.&lt;/p&gt;
 
-&lt;p&gt;Do not be driven by your ego. This is not helping you to move forward and this
-is mentally draining. This is also not helping people around you.&lt;/p&gt;
+&lt;p&gt;Do not be driven by your ego. This does not help you to move forward and
+is mentally draining. This also does not help people around you.&lt;/p&gt;
 
 &lt;p&gt;Instead, be driven by objective goals and metrics. If there is an objective
 to improve quality of a particular piece of code, do not write a new project:
@@ -58,23 +58,23 @@ that &lt;a href=&quot;https://www.joelonsoftware.com/2000/04/06/things-you-shoul
 
 &lt;ol&gt;
   &lt;li&gt;Be mindful of others.&lt;/li&gt;
-  &lt;li&gt;Do not care yourself too seriously.&lt;/li&gt;
+  &lt;li&gt;Do not take yourself too seriously.&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;The first principle is basic and yet, often overlooked. Try to put yourself in other people shoes
+&lt;p&gt;The first principle is basic and yet, often overlooked. Try to put yourself in other people’s shoes
 and understand how they feel. That will help you empathize with the difficulties
-they might be having. That often explain why or how they react
+they might be having. This often explains why or how they react
 to a particular person or event. This principle is also illustrated
 by the habit &lt;em&gt;“Seek to understand, then to be understood”&lt;/em&gt; in &lt;a href=&quot;https://en.wikipedia.org/wiki/The_7_Habits_of_Highly_Effective_People&quot;&gt;The 7 habits of Highly Effective People&lt;/a&gt;, an amazing book I would recommend.&lt;/p&gt;
 
 &lt;p&gt;The second principle is useful to put things in perspectives. You are a human
-being that is failable by definition. You probably believe you are smart
+being who is failable by definition. You probably believe you are smart
 and better than others because your mom, wife or dog told you.
 In fact, as suggested by the &lt;a href=&quot;https://en.wikipedia.org/wiki/Dunning%E2%80%93Kruger_effect&quot;&gt;Dunning Kruger effect&lt;/a&gt;,
-you are probably the worst person to know your own personal value. 
+you are probably the worst person to know your own personal value.
 This fact is illustrated every day in the stock market: many &lt;del&gt;gamblers&lt;/del&gt;
-investors believe they can beat the market when in reality, all what they
-really get are losses. Similarly, many engineers believe they know how to
+investors believe they can beat the market when in reality, all they
+really achieve are losses. Similarly, many engineers believe they know how to
 optimize code themselves manually when in reality, the compiler does it better
 with optimization heuristics that have been implemented by researchers
 and language specialists. You might like to think you are better than others
@@ -82,14 +82,16 @@ but you are probably not. Entertaining the idea of being that smart is
 counter-productive and is not going to help you.&lt;/p&gt;
 
 &lt;p&gt;You will make mistakes and this is going to be okay.
-Your challenge is not to not make mistake: you will do bad things sometimes, regardless how hard you try not to.
+Your challenge is not to not make mistakes: you will do bad things sometimes, regardless how hard you try not to.
 Your challenge is to put mechanisms and processes that will help you to avoid mistakes so that you catch them before you commit them.
 In software, this is done by using defensive programming, increasing test coverage (unit/integration tests), and having good observability/monitoring.&lt;/p&gt;
 
 &lt;p&gt;We do not succeed because we are better than others.
-We succeed because we understand how to be succesful with them.&lt;/p&gt;
+We succeed because we understand how to be successful with them.&lt;/p&gt;
 
 &lt;p&gt;So get back to work, be nice and do not take yourself too seriously.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;: Thanks to Najwa for editing. 🙏&lt;/p&gt;
 </description>
         <pubDate>Fri, 03 Apr 2020 23:13:20 +0000</pubDate>
         <link>http://julien.gunnm.org/misc/2020/04/03/do-not-take-yourself-too-seriously/</link>
