@@ -147,19 +147,19 @@
 
 <p>The Beaglebone supports what we call a Device Tree Overlay. Long story short, this is a way to change the usage of each PIN. You then have to use the appropriate overlay to use the UART1. The default settings do not work, and you have to issue the following command to enable UART1.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>echo ADAFRUIT-UART1 &gt; /sys/devices/bone_capemgr.*/slots
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>echo ADAFRUIT-UART1 &gt; /sys/devices/bone_capemgr.*/slots
 </code></pre></div></div>
 
 <p>Then, you can connect on the serial and issue whatever you want. Let’s say the UART1 of the Beaglebone Black is connected to /dev/ttyUSB1, you can then connected on screen and type anything.</p>
 
 <p>On your computer, run the following command:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>screen  /dev/ttyO1 115200
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>screen  /dev/ttyO1 115200
 </code></pre></div></div>
 
 <p>On the Beaglebone Black, run the following command:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>screen /dev/ttyUSB1 115200
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>screen /dev/ttyUSB1 115200
 </code></pre></div></div>
 
 <p>Type stuff on both screen, you should see what is sent/received.</p>
@@ -172,7 +172,7 @@
 
 <p>Edit the file <em>kernel/include/plat/am335x/plat/machine/devices.h</em> and add the following line.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>#define UART1_PADDR     0x48022000
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>#define UART1_PADDR     0x48022000
 </code></pre></div></div>
 
 <p>Then, in <em>kernel/src/plat/am335x/machine/hardware.c</em> you need to add the support for all UARTs. I found <a href="https://e2e.ti.com/support/embedded/starterware/f/790/t/214547">online a nice piece of code</a> that configures all UARTs. I imported it directly into the kernel. You can see the code in <a href="/assets/sel4-kernel-uart1bb.diff">my patch</a>.</p>
@@ -187,7 +187,7 @@
 
 <p>My assembly look like this:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>import &lt;std_connector.camkes&gt;;
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>import &lt;std_connector.camkes&gt;;
 import "components/timer/Timer.camkes";
 import "components/ProducerThreadImpl/ProducerThreadImpl.camkes";
 import "components/ConsumerThreadImpl/ConsumerThreadImpl.camkes";
@@ -254,7 +254,7 @@ assembly
 <p>Now, we need to implement the driver. As for the kernel, I used a lot of code from <a href="https://e2e.ti.com/support/embedded/starterware/f/790/t/214547">this post on the starterware forum</a>. Mostly, the code first initialize the UART1 and send the string “hello” followed by the number received (module 10).</p>
 
 <p>The code of the component looks like this:</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>int run(void)
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>int run(void)
 {
         devmem = (unsigned int) uartmem;
         unsigned int UARTparms = 0;
@@ -293,19 +293,19 @@ assembly
 
 <p>We do not need to change everything but still need to activate the UART1. You can do this when booting the board with u-boot. Type the following lines in u-boot:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mw.l 0x44E10980 0x30
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mw.l 0x44E10980 0x30
 mw.l 0x44E10984 0x00
 </code></pre></div></div>
 
 <p>This would be enough. It seems it cannot work in the component itself. On the other hand, as discussed in <a href="http://sel4.systems/pipermail/devel/2016-June/000854.html">this post</a> it seems you can avoid that by inserting the following line in <em>platform_init()</em>.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>*(volatile uint32_t*)0x44E10980 = 0x30;
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>*(volatile uint32_t*)0x44E10980 = 0x30;
 *(volatile uint32_t*)0x44E10984 = 0x00;
 </code></pre></div></div>
 
 <p>Then, time to load the binary. I used a network connection to do that.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>dhcp ${loadaddr} 192.168.1.1:sel4.img
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>dhcp ${loadaddr} 192.168.1.1:sel4.img
 
 go ${loadaddr}
 </code></pre></div></div>
@@ -318,14 +318,14 @@ go ${loadaddr}
 
 <p>Sometimes, you need to debug and trace when things are going wrong. You might experience this. I would recommend the <a href="https://github.com/SEL4PROJ/sel4-tutorials/blob/master/docs/seL4Tutorial.pdf">seL4 tutorial</a> that provides some useful direction. When having an exception in a partition, the following command is very useful.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>arm-none-eabi-objdump -dS /path/to/your/binary | less
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>arm-none-eabi-objdump -dS /path/to/your/binary | less
 </code></pre></div></div>
 
 <p>In a nutshell, it gives you the assembly code, its address and with the associated C line. So, you can exactly know where to look for when you get the address related to a crash.</p>
 
 <p>For example, when debugging the UART1 driver in the partition, I used this command a lot. Very useful. You might need it!</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>arm-none-eabi-objdump -dS build/arm/am335x/pingbeagleboneinstance/Cons_PingMe.instance.bin | less
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>arm-none-eabi-objdump -dS build/arm/am335x/pingbeagleboneinstance/Cons_PingMe.instance.bin | less
 </code></pre></div></div>
 
 <h1 id="special-thanks">Special thanks</h1>

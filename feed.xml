@@ -5,9 +5,129 @@
     <description>Harder, Better, Faster, Stronger</description>
     <link>http://julien.gunnm.org/</link>
     <atom:link href="http://julien.gunnm.org/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Mon, 27 Apr 2020 00:08:05 +0000</pubDate>
-    <lastBuildDate>Mon, 27 Apr 2020 00:08:05 +0000</lastBuildDate>
-    <generator>Jekyll v4.0.0</generator>
+    <pubDate>Fri, 26 Jun 2020 05:49:07 +0000</pubDate>
+    <lastBuildDate>Fri, 26 Jun 2020 05:49:07 +0000</lastBuildDate>
+    <generator>Jekyll v4.1.1</generator>
+    
+      <item>
+        <title>Build software like you build a house</title>
+        <description>&lt;p&gt;&lt;em&gt;Note: this page is part of the &lt;a href=&quot;/software engineering/essay/2020/03/06/software-engineering-series&quot;&gt;“Essays on Software Engineering”&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/architectural-failure04.jpg&quot; alt=&quot;Requirements mismatches&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;When you realize your interfaces do not match, too late in the development process.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;On 15 March 1986, the Hotel New York rapidly disintegrated in less than a minute at about 11:25 am&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;The investigation led to the discovery that the original structural engineer had made a serious error in calculating the building’s structural load. The structural engineer had calculated the building’s live load (the weight of the building’s potential inhabitants, furniture, fixtures, and fittings) but the building’s dead load (the weight of the building itself) was completely omitted from the calculation. This meant that the building as constructed could not support its own weight. Collapsing was only a matter of time. After three different supporting columns failed in the days before the disaster, the other columns—which took on the added weight no longer supported by the failed columns—could not support the building&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Collapse_of_Hotel_New_World#Casualties&quot;&gt;wikipedia source&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Does that story sounds crazy to you? It should. Architectural failures
+are rare, which is a good think. Yet, this is how we build software today
+and failures are still very common in the software industry.&lt;/p&gt;
+
+&lt;h1 id=&quot;the-building-metaphor&quot;&gt;The building metaphor&lt;/h1&gt;
+
+&lt;p&gt;Building a new house follows a clear process that is more or less like this:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Establish the requirements (number of bathroom, bedrooms, placement, type of heat, etc.)&lt;/li&gt;
+  &lt;li&gt;Inspect them, validate them with the different stakeholders (customers, suppliers, etc)&lt;/li&gt;
+  &lt;li&gt;Work on an execution plan with milestones&lt;/li&gt;
+  &lt;li&gt;Inspect the work by independent inspector.&lt;/li&gt;
+  &lt;li&gt;Enjoy your new place.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;For example, if you build a house, you are going to start the foundations,
+build the structure of the house, install the plumbing and electricity
+and finally finish with the dry-wall/paint.
+Everybody will understand you cannot start to install the bathtub if
+the plumbing is not installed. You need to follow a specific order, otherwise,
+you face major delays and cost impact (e.g. if you install the bathroom before
+the plumbing is validated and checked, you might have to demolish the bathroom
+to fix it later).&lt;/p&gt;
+
+&lt;p&gt;Designing software follows the same rules and processes.&lt;/p&gt;
+
+&lt;p&gt;For example, when you design a system with a database, you need
+to understand the type of data, the frequency and type of access
+before adding indexes or think of potential sharding schemes. These would be
+your requirements. It will impact how you access or cache the data
+but can also impact how you will deploy your system.&lt;/p&gt;
+
+&lt;p&gt;However, very often, engineers overlook the most basic requirements and build systems
+that are either not satisfying them (with system under-performing)
+or go full berserk mode and over-satisfy them (with a higher implementation cost).
+Both are not efficient. A great example here is the launch of the healthcare.gov:
+the system was designed to handle 50,000 simultaneous connections when
+250,000 people visited the website on
+launch day (&lt;a href=&quot;https://en.wikipedia.org/wiki/HealthCare.gov#Issues_during_launch&quot;&gt;wikipedia&lt;/a&gt;).&lt;/p&gt;
+
+&lt;p&gt;The typical argument for a lack of attention on quality is that
+software can be changed easily once delivered. This argument
+is a fallacy, especially once the system is deployed in production. Changing
+a system reliably while fully deployed in production is way
+harder than changing it at design-phase.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/change-production.webp&quot; alt=&quot;Requirements mismatches&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;An engineer upgrading a system in production&lt;/p&gt;
+
+&lt;h1 id=&quot;the-case-of-safety-critical-systems&quot;&gt;The case of safety-critical systems&lt;/h1&gt;
+
+&lt;p&gt;Surprisingly, safety-critical systems (such as the one used in plane or rockets)
+do not fail as much as regular ones.&lt;/p&gt;
+
+&lt;p&gt;The main reasons is because as construction, these types of systems
+are regulated and need to follow a rigorous production process that
+catches such mistakes. Avionics and aerospace software follow
+more or less the same constraints than software running nuclear power plants.
+And surprisingly, these processes follow the same steps than
+the one used to build a new house (start with the requirements,
+validate them, have independent inspection, etc.). They also have clear
+inspection and requirements to satisfy by law (note that interestingly, cars
+are not as regulated).&lt;/p&gt;
+
+&lt;p&gt;The takeaway: when you carefully follow a (good) process, you avoid
+mistakes. As Bezos says: &lt;em&gt;Good intentions don’t work. Processes do&lt;/em&gt;.&lt;/p&gt;
+
+&lt;h1 id=&quot;should-we-learn-better&quot;&gt;Should we learn better?&lt;/h1&gt;
+
+&lt;p&gt;The main problem is the lack of knowledge. Projects do not fail intentionally,
+they fail because engineers do not know better. There is a gap in knowledge, where
+most engineers see software development only through the lens
+of programming/coding and never heard what a software architecture is.&lt;/p&gt;
+
+&lt;p&gt;We need to teach and explain what software architecture is
+and how systems should be designed and built. These concepts have been missed,
+especially in a world where we promise to become a software engineer
+in just a few weeks of learning. In a world where most of the future
+software engineers will not be able to get a degree before they enter
+the workforce[1], it is becoming urgent to teach these values.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/architectural-failure02.jpg&quot; alt=&quot;Architecture School&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The solution for better software: be architects&lt;/p&gt;
+
+&lt;p&gt;[1]&lt;a href=&quot;https://speakerdeck.com/heathermiller/the-times-they-are-a-changin&quot;&gt;The Times They Are a Changin’ - Heather Miller talk&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Sun, 21 Jun 2020 23:13:20 +0000</pubDate>
+        <link>http://julien.gunnm.org/misc/2020/06/21/build-software-like-you-build-a-house/</link>
+        <guid isPermaLink="true">http://julien.gunnm.org/misc/2020/06/21/build-software-like-you-build-a-house/</guid>
+        
+        <category>misc</category>
+        
+        
+        <category>misc</category>
+        
+      </item>
     
       <item>
         <title>Do not take yourself too seriously</title>
@@ -44,7 +164,7 @@ the iPhone, Jobs had two teams: one implementing the phone using software, the
 other using hardware. In this exact case, the objective was to compare
 two ways of doing one thing (we all know the result: the software variation won).
 But the vast majority of times, duplicating work
-is an ego issue, with people thinking they are better than &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;insert-name-or-thing-here&amp;gt;&lt;/code&gt;.&lt;/p&gt;
+is an ego issue, with people thinking they are better than &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;insert-name-or-thing-here&amp;gt;&lt;/code&gt;.&lt;/p&gt;
 
 &lt;p&gt;Do not be driven by your ego. This does not help you to move forward and
 is mentally draining. This also does not help people around you.&lt;/p&gt;
@@ -143,7 +263,7 @@ thinking.&lt;/p&gt;
         <description>&lt;p&gt;Today was a lucky day. I ran outside.&lt;/p&gt;
 
 &lt;p&gt;The sun was shining, the streets were empty. Shops were closed.
-The only few people I saw were other runners or homelesses.&lt;/p&gt;
+The only few people I saw were other runners or homeless persons.&lt;/p&gt;
 
 &lt;p&gt;Not sure how long it is going to last. We are ordered to stay
 confined until experts evaluate we are safe to resume our lives.&lt;/p&gt;
@@ -440,7 +560,7 @@ popular with infamous application (such as &lt;a href=&quot;https://hadoop.apach
 of its limitations. One good example is &lt;a href=&quot;https://github.com/google/guava&quot;&gt;Guava&lt;/a&gt;,
 the library developed by Google that provides a lot of helper methods
 and class to overcome some clear limitations of the language (e.g. the
-lack of support of &lt;code class=&quot;highlighter-rouge&quot;&gt;Optional&lt;/code&gt; - more on this later).&lt;/p&gt;
+lack of support of &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Optional&lt;/code&gt; - more on this later).&lt;/p&gt;
 
 &lt;h1 id=&quot;functional-programming-has-proven-to-be-clean-and-effective&quot;&gt;Functional Programming has proven to be clean and effective&lt;/h1&gt;
 
@@ -462,7 +582,7 @@ simpler programs.&lt;/p&gt;
 
 &lt;p&gt;After few months, it became obvious that Functional Programming (FP) helps to write programs
 that are easier to maintain and reason about it. The use of immutability avoids
-side-effects and basic errors such as &lt;code class=&quot;highlighter-rouge&quot;&gt;NullPointerException&lt;/code&gt; that
+side-effects and basic errors such as &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;NullPointerException&lt;/code&gt; that
 have been plaguing programs for decades. As human, we fail to reason about
 programs structure and do not build systems with the idea that people will
  maintain it for the years to come. And these problems increase as the size
@@ -476,7 +596,7 @@ FP forces you to separate concerns (data vs. functions) and write
 understandable code using &lt;a href=&quot;https://en.wikipedia.org/wiki/Pure_function&quot;&gt;pure functions&lt;/a&gt; where outputs only depends on the inputs.&lt;/p&gt;
 
 &lt;p&gt;From a mental model and design perspective, the clear separation between
-data (&lt;code class=&quot;highlighter-rouge&quot;&gt;case class&lt;/code&gt; in Scala) and the functions that process it helps you to
+data (&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;case class&lt;/code&gt; in Scala) and the functions that process it helps you to
 reasons about your data flow. Finally, the use of pure functions facilitates
 testing and is probably the biggest take-away from FP.&lt;/p&gt;
 
@@ -493,21 +613,21 @@ One of the obvious sign is the introduction of lambda in Java 8, a first-class
 citizen concept of the Scala language.&lt;/p&gt;
 
 &lt;p&gt;Another example is the push from the community to support Scala-like constructions
-such as the &lt;code class=&quot;highlighter-rouge&quot;&gt;Optional&lt;/code&gt; in &lt;a href=&quot;https://github.com/google/guava&quot;&gt;guava&lt;/a&gt;
-(or even the helper methods to improve the default implementation of &lt;code class=&quot;highlighter-rouge&quot;&gt;toString&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;equals&lt;/code&gt; or &lt;code class=&quot;highlighter-rouge&quot;&gt;hashCode&lt;/code&gt; - there are plenty of examples).&lt;/p&gt;
+such as the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Optional&lt;/code&gt; in &lt;a href=&quot;https://github.com/google/guava&quot;&gt;guava&lt;/a&gt;
+(or even the helper methods to improve the default implementation of &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;toString&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;equals&lt;/code&gt; or &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;hashCode&lt;/code&gt; - there are plenty of examples).&lt;/p&gt;
 
 &lt;p&gt;The last example in date is the project [Amber from Java|https://openjdk.java.net/projects/amber/)
-that is copying core Scala features such as [pattern matching|https://openjdk.java.net/jeps/305], &lt;code class=&quot;highlighter-rouge&quot;&gt;case class&lt;/code&gt;
+that is copying core Scala features such as [pattern matching|https://openjdk.java.net/jeps/305], &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;case class&lt;/code&gt;
 (renamed &lt;a href=&quot;https://cr.openjdk.java.net/~briangoetz/amber/datum.html&quot;&gt;data classes&lt;/a&gt;) or &lt;a href=&quot;https://openjdk.java.net/jeps/286&quot;&gt;type inference&lt;/a&gt;.
 Once project Amber is done, you could write code like this:&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;if (obj instanceof String s || s.length() &amp;gt; 5) {s.contains(&quot;foo&quot;)}
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;if (obj instanceof String s || s.length() &amp;gt; 5) {s.contains(&quot;foo&quot;)}
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;The exact same functionality exists in Scala since its inception and the same
 code would look like&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;obj match {
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;obj match {
   case s: String if s.length() &amp;gt; 5 =&amp;gt; s.contains(&quot;foo&quot;)
   case _ =&amp;gt; false
 }
@@ -660,7 +780,7 @@ to complete and will ultimately cause merge problems (need to re-base on master,
 likely to complete a long code review in a short period of time, which ultimately, will slow you down.
 Prefer several, incremental reviews to a larger reviews on dozens of files.&lt;/li&gt;
   &lt;li&gt;&lt;strong&gt;If there are some temporary code that will be changed later&lt;/strong&gt;: put a comment in the code with your login that explains
-why this is delayed and when this should be addressed. Having a random &lt;code class=&quot;highlighter-rouge&quot;&gt;FIXME&lt;/code&gt; without reason is not acceptable, having
+why this is delayed and when this should be addressed. Having a random &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;FIXME&lt;/code&gt; without reason is not acceptable, having
 temporary incomplete code is OK as long as we have a reason for it and a plan to address it in the future.&lt;/li&gt;
   &lt;li&gt;&lt;strong&gt;Address comments in the review&lt;/strong&gt;: people invest time doing review, respects the work they put in your review
 and answer their comments.&lt;/li&gt;
@@ -771,125 +891,6 @@ you will then never go back on another keyboard!&lt;/p&gt;
         <category>keyboard</category>
         
         <category>geek</category>
-        
-      </item>
-    
-      <item>
-        <title>Learning Scala in 2018</title>
-        <description>&lt;p&gt;Four months ago, I had to learn &lt;a href=&quot;http://www.scala-lang.org&quot;&gt;Scala&lt;/a&gt;
-and be familiar with the language in order to contribute to a large Scala codebase.
-I was familiar with Java (I spent 4+ years maintaining &lt;a href=&quot;http://www.osate.org&quot;&gt;OSATE&lt;/a&gt; while working
-at Carnegie Mellon) and I thought that it would be somehow easy, quick and painless.&lt;/p&gt;
-
-&lt;p&gt;I was dead wrong.&lt;/p&gt;
-
-&lt;p&gt;Yes, Scala runs on top of the JVM but it does not mean it shares so much with Java. Scala is a functional programming language and is way more
-complicated than Java. This is another level of complexity. 
-I started to contribute to a codebase
-with people writing Scala for 4+ years and use the nice and barely documented features for advanced
-users. With such a complicated language, the learning curve was very steep and I had to go through it
-very quickly to be able to produce anything meaningful.&lt;/p&gt;
-
-&lt;p&gt;That &lt;em&gt;was&lt;/em&gt; hard. But not painful.&lt;/p&gt;
-
-&lt;p&gt;I love learning and I had a ton of fun learning a new language.&lt;/p&gt;
-
-&lt;p&gt;After three months, I am still learning every day and continue to read about advanced features
-of the language. But I am now somewhat familiar enough with the basics concepts of Scala that I can be
-an active contributor in different projects and teach the language fundamentals at my work.&lt;/p&gt;
-
-&lt;p&gt;I wanted to share the current state of the resources to learn Scala in 2018. After 14 years
-of existence, a lot of materials have been produced and I wanted to share what has been 
-working for me.&lt;/p&gt;
-
-&lt;h1 id=&quot;the-good&quot;&gt;The Good&lt;/h1&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;&lt;a href=&quot;http://horstmann.com/scala/index.html&quot;&gt;Scala The Impatient&lt;/a&gt; is a good resource but way too light. It covers only some very basic concepts and you do not see some advanced features that are really interesting. Read it but do not stop there.&lt;/li&gt;
-  &lt;li&gt;The blog post series of &lt;a href=&quot;https://danielwestheide.com/&quot;&gt;Daniel Westheide&lt;/a&gt;: &lt;a href=&quot;https://danielwestheide.com/scala/neophytes.html&quot;&gt;The Neophyte’s Guide to Scala&lt;/a&gt;. A &lt;strong&gt;must-read&lt;/strong&gt; if you are new to Scala. The examples are great, with many details.&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.amazon.com/Programming-Scala-Updated-2-12/dp/0981531687/ref=sr_1_1?ie=UTF8&amp;amp;qid=1528782250&amp;amp;sr=8-1&amp;amp;keywords=odersky+scala&quot;&gt;Programming in Scala&lt;/a&gt; by Martin Odersky: great resource to go deeper about the internals of the language
-(how containers work, etc.)&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://twitter.github.io/util/&quot;&gt;Twitter util&lt;/a&gt; all the code developed by Twitter, an early adopter of Scala&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://scalacookbook.com/&quot;&gt;The Scala Cookbook&lt;/a&gt; by Alvin Alexander.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h1 id=&quot;the-bad&quot;&gt;The Bad&lt;/h1&gt;
-
-&lt;p&gt;The classes on Coursera are unfortunately not that great.
-There is a specialization dedicated to Scala and I completed two of the classes in that specialization.
-I was very disappointed by the content, especially because I love Coursera (and completed 
-great classes on the platform).
-Some of the assignments do not match the class, the content is often too confusing.
-This specialization is not free (you need to pay a $50 montly membership), which would be &lt;em&gt;ok&lt;/em&gt; 
-if the content was good. Unfortunately, this is not that great and I would recommend to stick
-with other resources (like the blog posts from &lt;a href=&quot;https://danielwestheide.com/scala/neophytes.html&quot;&gt;Westheide&lt;/a&gt;).&lt;/p&gt;
-
-&lt;h1 id=&quot;focus-on-the-functional-programming-concepts&quot;&gt;Focus on the Functional Programming concepts&lt;/h1&gt;
-&lt;p&gt;One of the best advice I could give is to focus on the principles of functional programming. Do not focus
-too much on the syntax and other details (such as &lt;code class=&quot;highlighter-rouge&quot;&gt;case class&lt;/code&gt;). Just learn and practice functional 
-programming concepts such as:&lt;/p&gt;
-&lt;ol&gt;
-  &lt;li&gt;&lt;strong&gt;Monad&lt;/strong&gt;: this is just a container but a fundamental concept for functional programming. &lt;a href=&quot;https://medium.com/@sinisalouc/demystifying-the-monad-in-scala-cc716bb6f534&quot;&gt;Good article that explains the Monad&lt;/a&gt;.&lt;/li&gt;
-  &lt;li&gt;All &lt;strong&gt;transformations functions&lt;/strong&gt;: &lt;code class=&quot;highlighter-rouge&quot;&gt;map&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;flatMap&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;filter&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;drop&lt;/code&gt;. Know them. Practice them. RTFM the &lt;a href=&quot;https://www.scala-lang.org/api&quot;&gt;Scala API&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;What is &lt;strong&gt;&lt;a href=&quot;https://www.quora.com/What-is-tail-recursion-1&quot;&gt;tail recursion&lt;/a&gt;&lt;/strong&gt; and understand why recursing other a list with 10,000 elements will not &lt;a href=&quot;https://en.wikipedia.org/wiki/Stack_Overflow&quot;&gt;blow up your stack&lt;/a&gt;.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h1 id=&quot;use-a-good-ide&quot;&gt;Use a good IDE&lt;/h1&gt;
-
-&lt;p&gt;If you cut meat, you do not use the bread knife. Similarly, when you program in Scala, you
-do not use vim or emacs. You could but this is just inefficient and a waste of time when
-great IDE provide a ton of support for understanding the source code and digging into
-the standard library.&lt;/p&gt;
-
-&lt;p&gt;I use &lt;a href=&quot;https://www.jetbrains.com/idea/&quot;&gt;IntelliJ&lt;/a&gt; and I am regularly discovering new capabilities
-(and amazed by many features, such as refactoring). There are my two favorite features
-in this IDE:&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;If you press the &lt;code class=&quot;highlighter-rouge&quot;&gt;shift&lt;/code&gt; key three times very quickly a search dialog appears and you can search for anything inside your project (thanks Adam for the tip!).&lt;/li&gt;
-  &lt;li&gt;Just do &lt;code class=&quot;highlighter-rouge&quot;&gt;command+click&lt;/code&gt; or &lt;code class=&quot;highlighter-rouge&quot;&gt;alt+click&lt;/code&gt; on a variable, reference, type to go to its declaration. Very powerful to browse and explore code.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h1 id=&quot;code-repository&quot;&gt;Code Repository&lt;/h1&gt;
-
-&lt;p&gt;I started a repository that contains code samples for Scala beginners.
-This is a way to share some code with beginners and help newcomers in the Scala community.
-This code is intentionally over-documented and often explains what the code does
-step by step.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;You can find the repository at:  &lt;a href=&quot;https://github.com/juli1/scala-cookbook&quot;&gt;https://github.com/juli1/scala-cookbook&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;other-interesting-discussionsresources&quot;&gt;Other interesting discussions/resources&lt;/h1&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://kubuszok.com/2018/scala-fud-faq-for-newbies/&quot;&gt;Scala FUD FAQ for newbies&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://tpolecat.github.io&quot;&gt;tpolecat blog&lt;/a&gt; - tpolecat is very active in the online communities and have always great resources/information&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h1 id=&quot;keep-learning&quot;&gt;Keep Learning&lt;/h1&gt;
-
-&lt;p&gt;There is always more to learn! Some ideas to improve your knowledge of Scala:&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;Follow &lt;a href=&quot;https://twitter.com/scala_lang&quot;&gt;@scala_lang&lt;/a&gt; on Twitter!&lt;/li&gt;
-  &lt;li&gt;Subscribe to &lt;a href=&quot;http://scalatimes.com/&quot;&gt;Scala Times&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Follow the Scala topic on &lt;a href=&quot;http://www.quora.com&quot;&gt;Quora&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        <pubDate>Tue, 12 Jun 2018 13:13:20 +0000</pubDate>
-        <link>http://julien.gunnm.org/scala/programming/2018/06/12/how-to-learn-scala-in-2018/</link>
-        <guid isPermaLink="true">http://julien.gunnm.org/scala/programming/2018/06/12/how-to-learn-scala-in-2018/</guid>
-        
-        <category>scala</category>
-        
-        <category>intellij</category>
-        
-        <category>programming</category>
-        
-        <category>help</category>
-        
-        
-        <category>scala</category>
-        
-        <category>programming</category>
         
       </item>
     

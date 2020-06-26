@@ -170,7 +170,7 @@ the full FS ).</p>
 <p>The code is publicly available on github at:
 <a href="https://github.com/juli1/rust-webserver">https://github.com/juli1/rust-webserver</a></p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code># git clone https://github.com/juli1/rust-webserver.git
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># git clone https://github.com/juli1/rust-webserver.git
 # cd rust-webserver
 # cargo build &amp;&amp; cargo run -- -p 9065 -l 127.0.0.1 --rootdir `pwd`
 </code></pre></div></div>
@@ -183,12 +183,12 @@ be able to see the file from the source directory.</p>
 
 <p>The code is separated into four files:</p>
 <ul>
-  <li><code class="highlighter-rouge">server.rs</code> is about all the server part to listen on the socket,
+  <li><code class="language-plaintext highlighter-rouge">server.rs</code> is about all the server part to listen on the socket,
 communication handling and so on.</li>
-  <li><code class="highlighter-rouge">client.rs</code> is about handling request/reply for a particular connection.</li>
-  <li><code class="highlighter-rouge">protocol.rs</code> contains all the code with all the data structure related to the
+  <li><code class="language-plaintext highlighter-rouge">client.rs</code> is about handling request/reply for a particular connection.</li>
+  <li><code class="language-plaintext highlighter-rouge">protocol.rs</code> contains all the code with all the data structure related to the
 requests and replies.</li>
-  <li><code class="highlighter-rouge">main.rs</code> checks the options passed to the command line, create a server and
+  <li><code class="language-plaintext highlighter-rouge">main.rs</code> checks the options passed to the command line, create a server and
 … nothing else!</li>
 </ul>
 

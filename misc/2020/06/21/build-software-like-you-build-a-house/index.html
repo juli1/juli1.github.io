@@ -4,14 +4,14 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Effective code review - Julien Delange</title>
+    <title>Build software like you build a house - Julien Delange</title>
     <link rel="alternate" type="application/rss+xml" title="Julien Delange &raquo; Feed" href="/feed.xml" />
     <meta name="viewport" content="width=device-width">
-    <meta name="description" content="What are the rules to improve your code reviews">
-    <link rel="canonical" href="http://julien.gunnm.org/development/agile/2018/11/03/effective-code-reviews/">
+    <meta name="description" content="On why we do not pay attention to the software architecture.">
+    <link rel="canonical" href="http://julien.gunnm.org/misc/2020/06/21/build-software-like-you-build-a-house/">
 
     
-    <meta name="keywords" content="code review, agile"/>
+    <meta name="keywords" content="misc"/>
     
 
     <!-- Latest compiled and minified CSS -->
@@ -29,8 +29,8 @@
     <link rel="stylesheet" href="/css/main.css">
 
     <!-- Twitter Cards -->
-    <meta name="twitter:title" content="Effective code review" />
-    <meta name="twitter:description" content="What are the rules to improve your code reviews" />
+    <meta name="twitter:title" content="Build software like you build a house" />
+    <meta name="twitter:description" content="On why we do not pay attention to the software architecture." />
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="@juli1pb" />
     <meta name="twitter:creator" content="@juli1pb" />
@@ -41,8 +41,8 @@
     <meta property="og:site_name" content="Julien Delange" />
     <meta property="og:type" content="article" />
     <meta property="og:image" content="/assets/profile.png" />
-    <meta property="og:title" content="Effective code review" />
-    <meta property="og:description" content="What are the rules to improve your code reviews" />
+    <meta property="og:title" content="Build software like you build a house" />
+    <meta property="og:description" content="On why we do not pay attention to the software architecture." />
 
 </head>
 
@@ -120,96 +120,121 @@
       <div class="post">
 
   <header class="post-header">
-    <h1>Effective code review</h1>
+    <h1>Build software like you build a house</h1>
     <p class="meta">
-      <!-- Nov 3, 2018 -->
+      <!-- Jun 21, 2020 -->
       <!-- 
        -->
    </p>
   </header>
 
   <article class="post-content">
-  <p>I recently wrote some thoughts for improving code reviews within my team.
-It started like a 5 minutes brain-dump at 6:30 in the morning on my way to work and I ended up iterating and refining the list
-several times over a few days. This gave me the opportunity to reflect on the differences between the code
-review processes among
-the various places that I worked at. Also, I strongly believe the environment (academic, industry) matters a lot.
-I wanted to share these thoughts as code review can be the
-cause of many tensions within a development team.</p>
+  <p><em>Note: this page is part of the <a href="/software engineering/essay/2020/03/06/software-engineering-series">“Essays on Software Engineering”</a></em></p>
 
-<p>There are three types of rules: general ones that apply to both the submitter/reviewer,
-submitter rules and reviewer rules.</p>
+<p><img src="/assets/architectural-failure04.jpg" alt="Requirements mismatches" /></p>
 
-<p>These guidelines are not perfect, take them as they are: an attempt to formalize what I believe
-we should shoot for.</p>
+<p>When you realize your interfaces do not match, too late in the development process.</p>
 
-<h2 id="general-guidelines">General Guidelines</h2>
+<blockquote>
+  <p>On 15 March 1986, the Hotel New York rapidly disintegrated in less than a minute at about 11:25 am</p>
+</blockquote>
 
-<ol>
-  <li><strong>Always assume good intentions</strong>. People are not commenting on your code to harm you. They are trying to help you.</li>
-  <li><strong>Be thankful for having reviews</strong>, people are dedicating time to look at your work. No matter
-the experience of the submitter and reviewer, there is always a chance it can make you a better programmer or co-worker.</li>
-  <li><strong>Always try to understand first, and then, be understood</strong>. This comes from the <a href="https://en.wikipedia.org/wiki/The_7_Habits_of_Highly_Effective_People">7 habits</a> and is especially helpful in that context.</li>
-  <li><strong>During a conversation, get the perspective of the other person</strong>, try to put yourself in his/her shoes. This will often help you understand why a comment is made and help you discuss and resolve it.</li>
-</ol>
+<blockquote>
+  <p>The investigation led to the discovery that the original structural engineer had made a serious error in calculating the building’s structural load. The structural engineer had calculated the building’s live load (the weight of the building’s potential inhabitants, furniture, fixtures, and fittings) but the building’s dead load (the weight of the building itself) was completely omitted from the calculation. This meant that the building as constructed could not support its own weight. Collapsing was only a matter of time. After three different supporting columns failed in the days before the disaster, the other columns—which took on the added weight no longer supported by the failed columns—could not support the building</p>
+</blockquote>
 
-<h2 id="reviewer-guidelines">Reviewer Guidelines</h2>
-<ol>
-  <li><strong>Understand there is more than one way to do it - (c) <a href="https://en.wikipedia.org/wiki/There%27s_more_than_one_way_to_do_it">Perl</a> -</strong>.
-The goal of code is to solve problems. A problem might have several solutions that are equally effective.
-Acknowledge and accept that somebody might choose to solve a problem differently than you would do.</li>
-  <li><strong>Specify explicitly if a comment/problem is blocking the code to be shipped</strong>: some code review
-systems allow you to distinguish blocking/non-blocking issues. Try to make use of it
-so that the submitter can prioritize changes.</li>
-  <li><strong>Keep discussion/comments in the review system</strong>: it also serves other members to learn about
-potential issues and not replicate them. Ultimately, if you need to talk in person (sometimes, there is
-nothing like a face to face discussion), do it but write the outcome in the review for traceability purposes.</li>
-  <li><strong>When you point out a flaw in the code/approach, try to propose an alternative</strong>: telling somebody that his/her
-code is bad is not very useful if there is no indication for fixing the issue. Try to explain why this
-is bad and give some ideas how to address the issue. If this is a simple issue (syntax error or coding
-style violation), just mention this without spending much time to give details.</li>
-  <li><strong>If the review matters to you, do it soon</strong>, probably within 24 hours and the exact delay is something
-a team should discuss. It is better for everybody
-to get it done quickly: all ideas are still fresh in the head of the submitter, it does not delay
-progress on new features, etc. Do not blame the submitter if some code has been shipped without you reviewing it
-if it was for review for several days: the blame is probably to put on you for not reviewing it in a timely manner.</li>
-  <li><strong>When discussing or arguing a change</strong> try to relate to coding guidelines, best practices or business goals.
-There is no point requesting a change if you <em>“just prefer this style”</em>: you should have a valid, objective reason
-to request that.
-For example, I personally almost always consider readability and maintainability as one of the most important aspects of code (software
-maintenance and developer time is more expensive than computing resources). But
-sometimes, good readability must be impacted to favor performance: in some businesses I have been, winning few nanoseconds
-on a code path matters more than having clean and readable code.</li>
-</ol>
+<blockquote>
+  <p><a href="https://en.wikipedia.org/wiki/Collapse_of_Hotel_New_World#Casualties">wikipedia source</a></p>
+</blockquote>
 
-<h2 id="submitter-guidelines">Submitter Guidelines</h2>
+<p>Does that story sounds crazy to you? It should. Architectural failures
+are rare, which is a good think. Yet, this is how we build software today
+and failures are still very common in the software industry.</p>
+
+<h1 id="the-building-metaphor">The building metaphor</h1>
+
+<p>Building a new house follows a clear process that is more or less like this:</p>
 
 <ol>
-  <li><strong>Link your change your issue tracker (Jira, github, etc.)</strong> and follow the rule that 1 code change belongs to one ticket (one ticket
-can have multiple code changes). It improves traceability with user stories and facilitates progress tracking
-on a particular task. Design decisions, issues, etc. should be discussed in the ticket, not in the review itself.</li>
-  <li><strong>Make short reviews</strong> and try to keep one code change per problem and per component. 
-First, it avoids long code review that will take days
-to complete and will ultimately cause merge problems (need to re-base on master, etc.). Second, reviewers are less
-likely to complete a long code review in a short period of time, which ultimately, will slow you down.
-Prefer several, incremental reviews to a larger reviews on dozens of files.</li>
-  <li><strong>If there are some temporary code that will be changed later</strong>: put a comment in the code with your login that explains
-why this is delayed and when this should be addressed. Having a random <code class="language-plaintext highlighter-rouge">FIXME</code> without reason is not acceptable, having
-temporary incomplete code is OK as long as we have a reason for it and a plan to address it in the future.</li>
-  <li><strong>Address comments in the review</strong>: people invest time doing review, respects the work they put in your review
-and answer their comments.</li>
-  <li><strong>If you are doing pair programming, the ship from your pair does not count</strong>: code review is there to expose the code
-to other opinions and people in your team. Code developed in pair lacks this external point of view. Having the pair
-shipping the code is like if the code was being shipped by its author. It defeats the purpose of code review.</li>
-  <li><strong>Specify how you tested the components in your review</strong>: some review system allow you to specify how you tested
-the software. Copy/paste the command you used to run the test. If you deploy to a testing environment, put the
-commend you used. It has two purposes: show the level of testing you did and, ensure that the software still
-deploys and run (at least in the testing environment).</li>
-  <li><strong>If one comment upsets you, come back to it later</strong>: one particular comment might irritate you and after reading
-it, you may want to reply in a sarcastic way or to just ignore it. Do not do any of these things. Take some time,
-try to have the perspective of the reviewer, and then, reply. Stick to the point. Try to understand why the reviewer
-raised that issue and show your good faith about solving this issue.</li>
+  <li>Establish the requirements (number of bathroom, bedrooms, placement, type of heat, etc.)</li>
+  <li>Inspect them, validate them with the different stakeholders (customers, suppliers, etc)</li>
+  <li>Work on an execution plan with milestones</li>
+  <li>Inspect the work by independent inspector.</li>
+  <li>Enjoy your new place.</li>
 </ol>
+
+<p>For example, if you build a house, you are going to start the foundations,
+build the structure of the house, install the plumbing and electricity
+and finally finish with the dry-wall/paint.
+Everybody will understand you cannot start to install the bathtub if
+the plumbing is not installed. You need to follow a specific order, otherwise,
+you face major delays and cost impact (e.g. if you install the bathroom before
+the plumbing is validated and checked, you might have to demolish the bathroom
+to fix it later).</p>
+
+<p>Designing software follows the same rules and processes.</p>
+
+<p>For example, when you design a system with a database, you need
+to understand the type of data, the frequency and type of access
+before adding indexes or think of potential sharding schemes. These would be
+your requirements. It will impact how you access or cache the data
+but can also impact how you will deploy your system.</p>
+
+<p>However, very often, engineers overlook the most basic requirements and build systems
+that are either not satisfying them (with system under-performing)
+or go full berserk mode and over-satisfy them (with a higher implementation cost).
+Both are not efficient. A great example here is the launch of the healthcare.gov:
+the system was designed to handle 50,000 simultaneous connections when
+250,000 people visited the website on
+launch day (<a href="https://en.wikipedia.org/wiki/HealthCare.gov#Issues_during_launch">wikipedia</a>).</p>
+
+<p>The typical argument for a lack of attention on quality is that
+software can be changed easily once delivered. This argument
+is a fallacy, especially once the system is deployed in production. Changing
+a system reliably while fully deployed in production is way
+harder than changing it at design-phase.</p>
+
+<p><img src="/assets/change-production.webp" alt="Requirements mismatches" /></p>
+
+<p>An engineer upgrading a system in production</p>
+
+<h1 id="the-case-of-safety-critical-systems">The case of safety-critical systems</h1>
+
+<p>Surprisingly, safety-critical systems (such as the one used in plane or rockets)
+do not fail as much as regular ones.</p>
+
+<p>The main reasons is because as construction, these types of systems
+are regulated and need to follow a rigorous production process that
+catches such mistakes. Avionics and aerospace software follow
+more or less the same constraints than software running nuclear power plants.
+And surprisingly, these processes follow the same steps than
+the one used to build a new house (start with the requirements,
+validate them, have independent inspection, etc.). They also have clear
+inspection and requirements to satisfy by law (note that interestingly, cars
+are not as regulated).</p>
+
+<p>The takeaway: when you carefully follow a (good) process, you avoid
+mistakes. As Bezos says: <em>Good intentions don’t work. Processes do</em>.</p>
+
+<h1 id="should-we-learn-better">Should we learn better?</h1>
+
+<p>The main problem is the lack of knowledge. Projects do not fail intentionally,
+they fail because engineers do not know better. There is a gap in knowledge, where
+most engineers see software development only through the lens
+of programming/coding and never heard what a software architecture is.</p>
+
+<p>We need to teach and explain what software architecture is
+and how systems should be designed and built. These concepts have been missed,
+especially in a world where we promise to become a software engineer
+in just a few weeks of learning. In a world where most of the future
+software engineers will not be able to get a degree before they enter
+the workforce[1], it is becoming urgent to teach these values.</p>
+
+<p><img src="/assets/architectural-failure02.jpg" alt="Architecture School" /></p>
+
+<p>The solution for better software: be architects</p>
+
+<p>[1]<a href="https://speakerdeck.com/heathermiller/the-times-they-are-a-changin">The Times They Are a Changin’ - Heather Miller talk</a></p>
 
   </article>
 

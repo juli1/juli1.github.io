@@ -173,18 +173,18 @@ pip <span class="nb">install</span> <span class="nt">-r</span> requirements.txt
 
 <p>Now, we need to build a docker image to be able to deploy this everywhere.</p>
 
-<p>The first thing we need is to define a <code class="highlighter-rouge">Dockerfile</code> that defines how to build your container.</p>
+<p>The first thing we need is to define a <code class="language-plaintext highlighter-rouge">Dockerfile</code> that defines how to build your container.</p>
 
 <p>In the following file, we perform the major following steps:</p>
 <ul>
-  <li>install all dependencies (<code class="highlighter-rouge">python3</code>, <code class="highlighter-rouge">python3-pip</code>)</li>
-  <li>copy our app in <code class="highlighter-rouge">/app</code> in the container</li>
-  <li>install all the python dependencies (specified in <code class="highlighter-rouge">requirements.txt</code>)</li>
-  <li>create a fresh database <code class="highlighter-rouge">db_create.py</code></li>
-  <li>specify the command to execute the application <code class="highlighter-rouge">python3 run-production.py</code></li>
+  <li>install all dependencies (<code class="language-plaintext highlighter-rouge">python3</code>, <code class="language-plaintext highlighter-rouge">python3-pip</code>)</li>
+  <li>copy our app in <code class="language-plaintext highlighter-rouge">/app</code> in the container</li>
+  <li>install all the python dependencies (specified in <code class="language-plaintext highlighter-rouge">requirements.txt</code>)</li>
+  <li>create a fresh database <code class="language-plaintext highlighter-rouge">db_create.py</code></li>
+  <li>specify the command to execute the application <code class="language-plaintext highlighter-rouge">python3 run-production.py</code></li>
 </ul>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>FROM python:3.6-slim-stretch
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>FROM python:3.6-slim-stretch
 MAINTAINER Julien Delange &lt;julien@gunnm.org&gt;
 RUN apt-get update -y
 RUN apt-get install -y python3 python-pip-whl python3-pip
@@ -199,7 +199,7 @@ CMD ["run-production.py"]
 </code></pre></div></div>
 
 <p>Once we are done, we can build the docker image. To do so, just invoke the following command:</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker build -t flask-chat:latest .
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker build -t flask-chat:latest .
 </code></pre></div></div>
 
 <h1 id="running-the-docker-image-on-your-local-machine-or-on-your-raspberry-pi">Running the docker image on your local machine or on your raspberry pi</h1>
@@ -207,26 +207,26 @@ CMD ["run-production.py"]
 <p>Now, it is time to run the docker image freshly built!</p>
 
 <p>If you want to run the image you built on your computer into a docker container, just run:</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker run -d -p 10000:10000 flask-chat
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker run -d -p 10000:10000 flask-chat
 </code></pre></div></div>
 
 <p>This command run the container and binds the local port 10000 to the container port 5050 (on which the flask application is listening to).</p>
 
 <p>If you just want to use the pre-built image from <a href="https://hub.docker.com/r/juli1/flask-chat/tags/">dockerhub</a>
 on your local machine, run:</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker run -d -p 10000:10000 juli1/flask-chat:latest
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker run -d -p 10000:10000 juli1/flask-chat:latest
 </code></pre></div></div>
 
 <p>And finally, if you want to run the pre-built image from <a href="https://hub.docker.com/r/juli1/flask-chat/tags/">dockerhub</a>
 on your raspberry pi, run:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker run -d -p 10000:5050 juli1/flask-chat:rpi
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker run -d -p 10000:5050 juli1/flask-chat:rpi
 </code></pre></div></div>
 
-<p>If you want to actually build the container on your raspberry pi, you can use the <code class="highlighter-rouge">Dockerfile.rpi</code>`file
+<p>If you want to actually build the container on your raspberry pi, you can use the <code class="language-plaintext highlighter-rouge">Dockerfile.rpi</code>`file
 in the root directory of the project like this:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker build -t flask-chat:latest . -f Dockerfile.rpi
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker build -t flask-chat:latest . -f Dockerfile.rpi
 </code></pre></div></div>
 
 <h1 id="continuous-integration">Continuous Integration</h1>

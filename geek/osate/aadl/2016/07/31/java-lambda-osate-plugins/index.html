@@ -135,9 +135,9 @@
 
 <p>Bottom line: it remove a lot of <strong>noisy</strong> code to only focus on what is really important. It makes the code more understandable and easy to read.</p>
 
-<p>I will illustrate that with an example. In this example, I get all data components that have the <code class="highlighter-rouge">Data_Size</code> property set to 0. The difference between a standard, recursive implementation and the lambda-expression is simple: about 20 lines of code vs 3 lines of code.</p>
+<p>I will illustrate that with an example. In this example, I get all data components that have the <code class="language-plaintext highlighter-rouge">Data_Size</code> property set to 0. The difference between a standard, recursive implementation and the lambda-expression is simple: about 20 lines of code vs 3 lines of code.</p>
 
-<p>The imperative version looks like this (see below): you have to browse the component hierarchy and check the component category and <code class="highlighter-rouge">Data_Size</code> value. Really, what you care in this code is the condition that filter the component. All the rest is noise, not useful but can still introduce a lot of bugs.</p>
+<p>The imperative version looks like this (see below): you have to browse the component hierarchy and check the component category and <code class="language-plaintext highlighter-rouge">Data_Size</code> value. Really, what you care in this code is the condition that filter the component. All the rest is noise, not useful but can still introduce a lot of bugs.</p>
 
 <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="nc">List</span><span class="o">&lt;</span><span class="nc">ComponentInstance</span><span class="o">&gt;</span> <span class="nf">findComponentRecursive</span> <span class="o">(</span><span class="nc">ComponentInstance</span> <span class="n">si</span><span class="o">)</span>
 <span class="o">{</span>

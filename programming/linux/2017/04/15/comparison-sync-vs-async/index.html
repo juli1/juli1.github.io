@@ -149,7 +149,7 @@ be network communications (socket), reading/writing into a file, etc.
 In the <a href="https://en.wikipedia.org/wiki/Unix">UNIX</a>/
 <a href="https://en.wikipedia.org/wiki/POSIX">POSIX</a> world, I/O are performed
 on file descriptors (FDs): when you open a file or a network communication,
-you open a file descriptor and can then perform <code class="highlighter-rouge">read()</code> or <code class="highlighter-rouge">write()</code> operations on it.</p>
+you open a file descriptor and can then perform <code class="language-plaintext highlighter-rouge">read()</code> or <code class="language-plaintext highlighter-rouge">write()</code> operations on it.</p>
 
 <p>You have two ways to perform I/Os: <strong>synchronously</strong> and <strong>asynchronously</strong>. When using
 <strong>synchronous</strong> I/O, the caller is block until the call succeeds. When using <strong>asynchronuous</strong>, you
@@ -157,7 +157,7 @@ are periodically checking if there is anything received. The next sections detai
 
 <h2 id="the-synchronous-world">The synchronous world</h2>
 
-<p>In the synchronous world, you wait for a reply. For example, if you call <code class="highlighter-rouge">read()</code> on a network socket,
+<p>In the synchronous world, you wait for a reply. For example, if you call <code class="language-plaintext highlighter-rouge">read()</code> on a network socket,
 your current program will wait until some data is available.</p>
 
 <p>This communication pattern is very similar to a phone conversation: you talk first and then, wait for

@@ -151,7 +151,7 @@ popular with infamous application (such as <a href="https://hadoop.apache.org/">
 of its limitations. One good example is <a href="https://github.com/google/guava">Guava</a>,
 the library developed by Google that provides a lot of helper methods
 and class to overcome some clear limitations of the language (e.g. the
-lack of support of <code class="highlighter-rouge">Optional</code> - more on this later).</p>
+lack of support of <code class="language-plaintext highlighter-rouge">Optional</code> - more on this later).</p>
 
 <h1 id="functional-programming-has-proven-to-be-clean-and-effective">Functional Programming has proven to be clean and effective</h1>
 
@@ -173,7 +173,7 @@ simpler programs.</p>
 
 <p>After few months, it became obvious that Functional Programming (FP) helps to write programs
 that are easier to maintain and reason about it. The use of immutability avoids
-side-effects and basic errors such as <code class="highlighter-rouge">NullPointerException</code> that
+side-effects and basic errors such as <code class="language-plaintext highlighter-rouge">NullPointerException</code> that
 have been plaguing programs for decades. As human, we fail to reason about
 programs structure and do not build systems with the idea that people will
  maintain it for the years to come. And these problems increase as the size
@@ -187,7 +187,7 @@ FP forces you to separate concerns (data vs. functions) and write
 understandable code using <a href="https://en.wikipedia.org/wiki/Pure_function">pure functions</a> where outputs only depends on the inputs.</p>
 
 <p>From a mental model and design perspective, the clear separation between
-data (<code class="highlighter-rouge">case class</code> in Scala) and the functions that process it helps you to
+data (<code class="language-plaintext highlighter-rouge">case class</code> in Scala) and the functions that process it helps you to
 reasons about your data flow. Finally, the use of pure functions facilitates
 testing and is probably the biggest take-away from FP.</p>
 
@@ -204,21 +204,21 @@ One of the obvious sign is the introduction of lambda in Java 8, a first-class
 citizen concept of the Scala language.</p>
 
 <p>Another example is the push from the community to support Scala-like constructions
-such as the <code class="highlighter-rouge">Optional</code> in <a href="https://github.com/google/guava">guava</a>
-(or even the helper methods to improve the default implementation of <code class="highlighter-rouge">toString</code>, <code class="highlighter-rouge">equals</code> or <code class="highlighter-rouge">hashCode</code> - there are plenty of examples).</p>
+such as the <code class="language-plaintext highlighter-rouge">Optional</code> in <a href="https://github.com/google/guava">guava</a>
+(or even the helper methods to improve the default implementation of <code class="language-plaintext highlighter-rouge">toString</code>, <code class="language-plaintext highlighter-rouge">equals</code> or <code class="language-plaintext highlighter-rouge">hashCode</code> - there are plenty of examples).</p>
 
 <p>The last example in date is the project [Amber from Java|https://openjdk.java.net/projects/amber/)
-that is copying core Scala features such as [pattern matching|https://openjdk.java.net/jeps/305], <code class="highlighter-rouge">case class</code>
+that is copying core Scala features such as [pattern matching|https://openjdk.java.net/jeps/305], <code class="language-plaintext highlighter-rouge">case class</code>
 (renamed <a href="https://cr.openjdk.java.net/~briangoetz/amber/datum.html">data classes</a>) or <a href="https://openjdk.java.net/jeps/286">type inference</a>.
 Once project Amber is done, you could write code like this:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>if (obj instanceof String s || s.length() &gt; 5) {s.contains("foo")}
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>if (obj instanceof String s || s.length() &gt; 5) {s.contains("foo")}
 </code></pre></div></div>
 
 <p>The exact same functionality exists in Scala since its inception and the same
 code would look like</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>obj match {
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>obj match {
   case s: String if s.length() &gt; 5 =&gt; s.contains("foo")
   case _ =&gt; false
 }
