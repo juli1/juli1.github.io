@@ -265,8 +265,12 @@
 <lastmod>2020-04-03T23:13:20+00:00</lastmod>
 </url>
 <url>
-<loc>http://julien.gunnm.org/misc/2020/06/21/build-software-like-you-build-a-house/</loc>
+<loc>http://julien.gunnm.org/software%20engineering/essay/2020/06/21/build-software-like-you-build-a-house/</loc>
 <lastmod>2020-06-21T23:13:20+00:00</lastmod>
+</url>
+<url>
+<loc>http://julien.gunnm.org/software%20engineering/essay/2020/12/06/on-team-organization/</loc>
+<lastmod>2020-12-06T23:13:20+00:00</lastmod>
 </url>
 <url>
 <loc>http://julien.gunnm.org/404</loc>
@@ -306,6 +310,6 @@
 </url>
 <url>
 <loc>http://julien.gunnm.org/resume.pdf</loc>
-<lastmod>2020-10-28T03:48:10+00:00</lastmod>
+<lastmod>2020-12-07T05:16:03+00:00</lastmod>
 </url>
 </urlset>

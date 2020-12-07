@@ -5,9 +5,69 @@
     <description>Harder, Better, Faster, Stronger</description>
     <link>http://julien.gunnm.org/</link>
     <atom:link href="http://julien.gunnm.org/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Wed, 28 Oct 2020 03:52:49 +0000</pubDate>
-    <lastBuildDate>Wed, 28 Oct 2020 03:52:49 +0000</lastBuildDate>
+    <pubDate>Mon, 07 Dec 2020 05:20:51 +0000</pubDate>
+    <lastBuildDate>Mon, 07 Dec 2020 05:20:51 +0000</lastBuildDate>
     <generator>Jekyll v4.1.1</generator>
+    
+      <item>
+        <title>On team organization</title>
+        <description>&lt;p&gt;&lt;em&gt;Note: this page is part of the &lt;a href=&quot;/software engineering/essay/2020/03/06/software-engineering-series&quot;&gt;“Essays on Software Engineering”&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Over the years, I noticed many teams are organized around three main roles:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Software Engineer (SWE)&lt;/strong&gt;: design, architect systems and write code.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Engineering Manager (EM)&lt;/strong&gt;: coordinate the life of the team, ensure work is being done, cares about promotion&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Product Manager (PM)&lt;/strong&gt;: interface between the customers and the engineering team, define the specification&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;There are some additional roles that comes into play, such as SWET (Software Engineer in Testing)
+or SRE (System Reliability Engineering).&lt;/p&gt;
+
+&lt;p&gt;Most of teams I have seen have at least one EM, few SWE and (sometimes)
+one PM. But the other roles (SWET and SRE) are definitely not always
+present and sometimes, part of a totally separate organization.&lt;/p&gt;
+
+&lt;p&gt;In addition, there is always no specific role to review the documentation,
+either internally or externally. And this part of the software development
+becomes outdated very quickly.&lt;/p&gt;
+
+&lt;p&gt;But lack of tests is what makes software unstable or introduce regressions.
+Lack of documentation is what makes it hard to maintain. These aspects
+are very often overlooked on the short term but have consequences on the
+long term.&lt;/p&gt;
+
+&lt;p&gt;There should be two ways to solve this problem:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Reduce the number of SWE and add more SWET&lt;/strong&gt;. Let the software
+engineer focus on writing code and let the SWET focus on writing code.
+This solution has the benefit of introducing independent testing: the
+test is not written by the author of the implementation. Similarly,
+with such an approach, an editor should also maintain the documentation
+of the system. Having an independent qualified editor would make sure the documentation
+is correctly written and does not skip any detail.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Make testing and documentation an evaluation criteria for SWE&lt;/strong&gt;. Often,
+testing and documentation are overlooked by SWE because they do not
+consider them &lt;em&gt;valuable&lt;/em&gt;. EM should introduce incentives to write good
+documentation and penalize engineers not writing enough tests or
+documentation.&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Sun, 06 Dec 2020 23:13:20 +0000</pubDate>
+        <link>http://julien.gunnm.org/software%20engineering/essay/2020/12/06/on-team-organization/</link>
+        <guid isPermaLink="true">http://julien.gunnm.org/software%20engineering/essay/2020/12/06/on-team-organization/</guid>
+        
+        <category>software engineering</category>
+        
+        <category>essay</category>
+        
+        
+        <category>software engineering</category>
+        
+        <category>essay</category>
+        
+      </item>
     
       <item>
         <title>Build software like you build a house</title>
@@ -119,13 +179,17 @@ the workforce[1], it is becoming urgent to teach these values.&lt;/p&gt;
 &lt;p&gt;[1]&lt;a href=&quot;https://speakerdeck.com/heathermiller/the-times-they-are-a-changin&quot;&gt;The Times They Are a Changin’ - Heather Miller talk&lt;/a&gt;&lt;/p&gt;
 </description>
         <pubDate>Sun, 21 Jun 2020 23:13:20 +0000</pubDate>
-        <link>http://julien.gunnm.org/misc/2020/06/21/build-software-like-you-build-a-house/</link>
-        <guid isPermaLink="true">http://julien.gunnm.org/misc/2020/06/21/build-software-like-you-build-a-house/</guid>
+        <link>http://julien.gunnm.org/software%20engineering/essay/2020/06/21/build-software-like-you-build-a-house/</link>
+        <guid isPermaLink="true">http://julien.gunnm.org/software%20engineering/essay/2020/06/21/build-software-like-you-build-a-house/</guid>
         
-        <category>misc</category>
+        <category>software engineering</category>
+        
+        <category>essay</category>
         
         
-        <category>misc</category>
+        <category>software engineering</category>
+        
+        <category>essay</category>
         
       </item>
     
@@ -413,7 +477,9 @@ talk about one aspect similar to the one above. I have no idea or expectation ab
 experiment, I just hope it will be as useful to you as it will be to me.&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;software engineering/essay/2020/03/06/manage-project-like-a-race/&quot;&gt;Manage projects like you run a race&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/software engineering/essay/2020/03/06/manage-project-like-a-race/&quot;&gt;Manage projects like you run a race&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/software engineering/essay/2020/06/21/build-software-like-you-build-a-house/&quot;&gt;Build software like you build a house&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;/software engineering/essay/2020/12/06/on-team-organization/&quot;&gt;On team organization&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
         <pubDate>Fri, 06 Mar 2020 13:13:20 +0000</pubDate>
@@ -809,88 +875,6 @@ raised that issue and show your good faith about solving this issue.&lt;/li&gt;
         <category>development</category>
         
         <category>agile</category>
-        
-      </item>
-    
-      <item>
-        <title>Kinesis keyboard report</title>
-        <description>&lt;p&gt;This post is about the &lt;a href=&quot;https://www.kinesis-ergo.com/&quot;&gt;Kinesis Keyboard&lt;/a&gt;, and more
-particularly the &lt;a href=&quot;https://www.kinesis-ergo.com/shop/advantage2/&quot;&gt;Kinesis Advantage&lt;/a&gt; model
-that I am using since 4 months now.&lt;/p&gt;
-
-&lt;h1 id=&quot;what-is-a-kinesis-advantage-keyboard&quot;&gt;What is a kinesis advantage keyboard?&lt;/h1&gt;
-&lt;p&gt;&lt;a href=&quot;https://www.kinesis-ergo.com&quot;&gt;Kinesis&lt;/a&gt; is a company based in Seattle that manufactures 
-ergonomic keyboards (and other devices).
-The Advantage is an ergonomic keyboard that should help anybody with some sort of pain
-in the joints (hands, etc). They keyboard looks very futurist, very cool, there is a picture
-of my actual keyboard at work (with a Twitter key!).&lt;/p&gt;
-
-&lt;p style=&quot;text-align: center;&quot;&gt;&lt;img src=&quot;/assets/kinesis.jpg&quot; alt=&quot;Kinesis keyboard&quot; width=&quot;50%&quot; /&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;why-getting-one&quot;&gt;Why getting one?&lt;/h1&gt;
-&lt;p&gt;The main reason is to be more comfortable while typing on your keyboard and avoid
-injuries (hand, wrist). You might
-increase your typing speed but that is definitively not the primary reason I
-wanted to get one.&lt;/p&gt;
-
-&lt;p&gt;When using a kinesis, you literally don’t need to move your hand to type &lt;em&gt;anything&lt;/em&gt;.
-Your hands rest on the palm support and you just move your fingers, nothing else.&lt;/p&gt;
-
-&lt;p&gt;Many people reported improvements and I do too. I had pain regularly in my wrist and 
-always thought it was due to aging and there was nothing to do to improve this. The pain
-was not strong or acute enough to see a doctor but it bothered me enough to sporadically
-stop typing for few hours every few days.&lt;/p&gt;
-
-&lt;p&gt;There are many other reasons to get a kinesis (programmable keys for example), but these functions
-are also available in other keyboards too. The real killer feature of the kinesis (at least for me) is how
-comfortable it is.&lt;/p&gt;
-
-&lt;h1 id=&quot;is-it-worth-it&quot;&gt;Is it worth it?&lt;/h1&gt;
-
-&lt;p&gt;If you are typing on a keyboard several hours a day, this is probably worth it. If your job
-(and then, primary source of income) depends on being able to type on a keyboard, you might
-consider buying one.&lt;/p&gt;
-
-&lt;p&gt;It is difficult to know if this is a good idea to get one if you do not
-experience any pain - after all, I am not a doctor. I decided to try because I had issues 
-and the keyboard fixed them but
-there is no clue if my issues was related to my previous hardware. All I know is that I no
-longer have pain when using a kinesis.&lt;/p&gt;
-
-&lt;p&gt;The kinesis is expensive (more than $300) but 
-I strongly believe that many developers invest too much on hardware and not enough on their development environment
-(desk, mouse, keyboard, etc.). At that price, I consider this is a good investment
-(it keeps the pain away so that I can code as much as I want).&lt;/p&gt;
-
-&lt;h1 id=&quot;advices-on-getting-started&quot;&gt;Advices on getting started&lt;/h1&gt;
-
-&lt;p&gt;It is really difficult to get started. And this is very frustrating to learn again how to type on keyboard.
-In the beginning, you type as if you are wearing ski gloves.&lt;/p&gt;
-
-&lt;p&gt;The keyboard will also keep your brain busy (&lt;em&gt;“what key I am typing?”&lt;/em&gt;), which
-can be mentally exhausting. To start, type
-things that do not require your brain to work: answer to some basic e-mail, write reports, etc.&lt;/p&gt;
-
-&lt;p&gt;Also, alternate the regular keyboard and the kinesis: your brain need to assimilate the new keymap
-and so, giving a break is a good idea too. When I started, I was using the kinesis all anything
-that did not require any thinking and switch to the regular keyboard when I needed to think
-of what I was typing (such as programming).&lt;/p&gt;
-
-&lt;p&gt;It will take at least two weeks to start typing correctly and one month to be efficient.
-After two months, you should be back at your normal speed or even faster. And
-you will then never go back on another keyboard!&lt;/p&gt;
-
-</description>
-        <pubDate>Tue, 12 Jun 2018 13:13:20 +0000</pubDate>
-        <link>http://julien.gunnm.org/keyboard/geek/2018/06/12/kinesis-keyboard/</link>
-        <guid isPermaLink="true">http://julien.gunnm.org/keyboard/geek/2018/06/12/kinesis-keyboard/</guid>
-        
-        <category>keyboard</category>
-        
-        
-        <category>keyboard</category>
-        
-        <category>geek</category>
         
       </item>
     

@@ -4,14 +4,14 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Introducing EMFTA, a libre, Eclipse-Based Fault-Tree Analysis tool - Julien Delange</title>
+    <title>Build software like you build a house - Julien Delange</title>
     <link rel="alternate" type="application/rss+xml" title="Julien Delange &raquo; Feed" href="/feed.xml" />
     <meta name="viewport" content="width=device-width">
-    <meta name="description" content="Harder, Better, Faster, Stronger">
-    <link rel="canonical" href="http://julien.gunnm.org/geek/misc/2015/06/25/introducing-emfta-a-libre-eclipse-based-fault-tree-analysis-tool/">
+    <meta name="description" content="On why we do not pay attention to the software architecture.">
+    <link rel="canonical" href="http://julien.gunnm.org/software%20engineering/essay/2020/06/21/build-software-like-you-build-a-house/">
 
     
-    <meta name="keywords" content="aadl, eclipse, emfta, fault-tree analysis, fta, osate, sirius"/>
+    <meta name="keywords" content="software engineering, essay"/>
     
 
     <!-- Latest compiled and minified CSS -->
@@ -29,8 +29,8 @@
     <link rel="stylesheet" href="/css/main.css">
 
     <!-- Twitter Cards -->
-    <meta name="twitter:title" content="Introducing EMFTA, a libre, Eclipse-Based Fault-Tree Analysis tool" />
-    <meta name="twitter:description" content="Harder, Better, Faster, Stronger" />
+    <meta name="twitter:title" content="Build software like you build a house" />
+    <meta name="twitter:description" content="On why we do not pay attention to the software architecture." />
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="@juli1pb" />
     <meta name="twitter:creator" content="@juli1pb" />
@@ -41,8 +41,8 @@
     <meta property="og:site_name" content="Julien Delange" />
     <meta property="og:type" content="article" />
     <meta property="og:image" content="/assets/profile.png" />
-    <meta property="og:title" content="Introducing EMFTA, a libre, Eclipse-Based Fault-Tree Analysis tool" />
-    <meta property="og:description" content="Harder, Better, Faster, Stronger" />
+    <meta property="og:title" content="Build software like you build a house" />
+    <meta property="og:description" content="On why we do not pay attention to the software architecture." />
 
 </head>
 
@@ -120,35 +120,121 @@
       <div class="post">
 
   <header class="post-header">
-    <h1>Introducing EMFTA, a libre, Eclipse-Based Fault-Tree Analysis tool</h1>
+    <h1>Build software like you build a house</h1>
     <p class="meta">
-      <!-- Jun 25, 2015 -->
-      <!--  • {"login"=>"juli1sod", "email"=>"julien@gunnm.org", "display_name"=>"juli1", "first_name"=>"", "last_name"=>""}
-       • {"_edit_last"=>"37961297", "geo_public"=>"0", "publicize_google_plus_url"=>"https://plus.google.com/+JulienDelange/posts/HVFtqhQSVCj", "_publicize_job_id"=>"12030652739", "_publicize_done_6819837"=>"1", "_wpas_done_6804547"=>"1", "_publicize_done_external"=>"a:2:{s:7:\"twitter\";a:1:{i:7007816;s:53:\"https://twitter.com/juli1pb/status/614115085007454209\";}s:8:\"facebook\";a:1:{i:11309977;s:37:\"https://facebook.com/1625280414356585\";}}", "_publicize_done_7022570"=>"1", "_wpas_done_7007816"=>"1", "publicize_twitter_user"=>"juli1pb", "_publicize_done_11246771"=>"1", "_wpas_done_11309977"=>"1", "_oembed_8afa545eaa9b7f80157d2bc881a8aefe"=>"{{unknown}}", "_oembed_762cd338eaf1847f7c487169c6b5deb3"=>"{{unknown}}"} -->
+      <!-- Jun 21, 2020 -->
+      <!-- 
+       -->
    </p>
   </header>
 
   <article class="post-content">
-  <p>A Fault-Tree Analysis (or FTA) is a popular safety analysis recommended by several well-known practices and standards, such as <a href="https://en.wikipedia.org/wiki/ARP4761">ARP4761</a>. A FTA shows the relation between a fault and its potential contributors (error events) using a simple binary logic (and/or gates). This is nothing else than a convenient representation of the relation between error events. In case you are not familiar with the notation, you can have a look at the <a href="https://en.wikipedia.org/wiki/Fault_tree_analysis">related wikipedia</a> page, it explains it in more details. When working with collaborators in safety-critical industries during the last months (avionics, automotive, aerospace, medical), I faced the same issue: most of FTA tools are commercial and there is no good open-source/free alternative. This is not completely true, there is one: <a href="http://openfta.com/">OpenFTA</a>. If this is pretty cool to have a FTA open-source program but the graphical interface looks like <a href="https://en.wikipedia.org/wiki/Windows_3.1x">Windows 3.1</a> and the code is clearly no longer maintained and outdated. OpenFTA also relies on old image processing libraries (jpeg), which makes it very difficult to compile with the last <a href="https://en.wikipedia.org/wiki/Java_Development_Kit">JDK</a>. Last thing: this is a standalone tool and as most of our modeling tools (i.e. OSATE) are running under Eclipse, it would be cool to have an Eclipse-based tool.</p>
-<p>So, in fact, there was a real need for a good integrated Fault Analysis Tool. I had a good project to work on then.</p>
-<p><a href="https://juli1pb.files.wordpress.com/2015/06/example1-diagram.png"><img class="size-full wp-image-1583" src="/assets/example1-diagram.png" alt="Fault Tree Analysis diagram" width="377" height="414" /></a><br/>Fault Tree Analysis diagram</p>
-<h1>Introducing EMFTA</h1>
-<p>So, one night, I decided to put my brain at work and design a new FTA tool, EMFTA (which is a joke - EMF stands for Eclipse Modeling Framework). This is an Eclipse-based Fault-Tree Analysis tool that relies on <a href="https://www.eclipse.org/sirius/">Sirius</a>, a framework to represent EMF models. The nice aspect of <a href="https://www.eclipse.org/sirius/">Sirius</a> is it allows you to have several representations of an EMF model while maintaining their consistency: if you change one representation, it will then modify the model and the changes will be reflected in the other representations. For example, in EMFTA, there are two representations: the graphical tree (good to see the decomposition of error events - see above) and table (to edit events information - see below). When you change one representation (e.g. the table), it automatically update the graphical representation (e.g. the tree). Synchronizing the same model across different tools/framework can be challenging and Sirius do a good work for that.</p>
-<h1>Features</h1>
-<p>In a nutshell, EMFTA is nothing else than a EMF model to represent a Fault-Tree and its different components (gates, events) associated with a Sirius project to provide the graphical representation. Actually, the current version rely on the latest stable version of Sirius. In addition to providing a viewer and editor for Fault-Tree, EMFTA provides the following capabilities:</p>
-<ul>
-<li><strong>Generation of cutset from the FTA</strong>: it creates a CSV reports containing the different cutset of your Fault Tree</li>
-<li><strong>Generation of FTA model from AADL models annotated with the EMV2 annex</strong>: creating the Fault Tree from an architecture model associated with an EMV2 annex. There was already a bridge for OpenFTA, the plugin now supports the export to EMFTA</li>
-</ul>
-<p><a href="https://juli1pb.files.wordpress.com/2015/06/example1-table.png"><img class="size-full wp-image-1584" src="/assets/example1-table.png" alt="Fault-Tree Analysis - Table Representation" width="568" height="142" /></a> <br/>Fault-Tree Analysis - Table Representation</p>
-<h1>Installation and Bugreport</h1>
-<p>As the project is still starting, the documentation is still minimal. But you have general installation instruction on the general github project page here: <a href="https://github.com/juli1/emfta">https://github.com/juli1/emfta</a>. Use also the github project to submit a bug. If you want to contribute to the source code, submit a pull request or even contact me (I promise I won't bite).</p>
-<h1>Future</h1>
-<p>This tool is yet still a prototype but I plan to improve it during the following months. It could be a first step to a real open-source Fault-Tree Analysis tool. Looking forward, I plan to make it more user-friendly but also introduce a simulation tool that would then produce probability of error occurence (e.g. what is the probability of an error occurrence considering the different cutset and associated probabilities). Also, having this technology connected with AADL, we can leverage such a notation for a security perspective and generate an Attack Tree, which would re-use the Fault-Tree notation for to describe the different attack vector that would then contribute to an attack.</p>
-<h1>Links</h1>
-<ul>
-<li><a href="https://github.com/juli1/emfta/">EMFTA project on github</a></li>
-</ul>
+  <p><em>Note: this page is part of the <a href="/software engineering/essay/2020/03/06/software-engineering-series">“Essays on Software Engineering”</a></em></p>
+
+<p><img src="/assets/architectural-failure04.jpg" alt="Requirements mismatches" /></p>
+
+<p>When you realize your interfaces do not match, too late in the development process.</p>
+
+<blockquote>
+  <p>On 15 March 1986, the Hotel New York rapidly disintegrated in less than a minute at about 11:25 am</p>
+</blockquote>
+
+<blockquote>
+  <p>The investigation led to the discovery that the original structural engineer had made a serious error in calculating the building’s structural load. The structural engineer had calculated the building’s live load (the weight of the building’s potential inhabitants, furniture, fixtures, and fittings) but the building’s dead load (the weight of the building itself) was completely omitted from the calculation. This meant that the building as constructed could not support its own weight. Collapsing was only a matter of time. After three different supporting columns failed in the days before the disaster, the other columns—which took on the added weight no longer supported by the failed columns—could not support the building</p>
+</blockquote>
+
+<blockquote>
+  <p><a href="https://en.wikipedia.org/wiki/Collapse_of_Hotel_New_World#Casualties">wikipedia source</a></p>
+</blockquote>
+
+<p>Does that story sounds crazy to you? It should. Architectural failures
+are rare, which is a good think. Yet, this is how we build software today
+and failures are still very common in the software industry.</p>
+
+<h1 id="the-building-metaphor">The building metaphor</h1>
+
+<p>Building a new house follows a clear process that is more or less like this:</p>
+
+<ol>
+  <li>Establish the requirements (number of bathroom, bedrooms, placement, type of heat, etc.)</li>
+  <li>Inspect them, validate them with the different stakeholders (customers, suppliers, etc)</li>
+  <li>Work on an execution plan with milestones</li>
+  <li>Inspect the work by independent inspector.</li>
+  <li>Enjoy your new place.</li>
+</ol>
+
+<p>For example, if you build a house, you are going to start the foundations,
+build the structure of the house, install the plumbing and electricity
+and finally finish with the dry-wall/paint.
+Everybody will understand you cannot start to install the bathtub if
+the plumbing is not installed. You need to follow a specific order, otherwise,
+you face major delays and cost impact (e.g. if you install the bathroom before
+the plumbing is validated and checked, you might have to demolish the bathroom
+to fix it later).</p>
+
+<p>Designing software follows the same rules and processes.</p>
+
+<p>For example, when you design a system with a database, you need
+to understand the type of data, the frequency and type of access
+before adding indexes or think of potential sharding schemes. These would be
+your requirements. It will impact how you access or cache the data
+but can also impact how you will deploy your system.</p>
+
+<p>However, very often, engineers overlook the most basic requirements and build systems
+that are either not satisfying them (with system under-performing)
+or go full berserk mode and over-satisfy them (with a higher implementation cost).
+Both are not efficient. A great example here is the launch of the healthcare.gov:
+the system was designed to handle 50,000 simultaneous connections when
+250,000 people visited the website on
+launch day (<a href="https://en.wikipedia.org/wiki/HealthCare.gov#Issues_during_launch">wikipedia</a>).</p>
+
+<p>The typical argument for a lack of attention on quality is that
+software can be changed easily once delivered. This argument
+is a fallacy, especially once the system is deployed in production. Changing
+a system reliably while fully deployed in production is way
+harder than changing it at design-phase.</p>
+
+<p><img src="/assets/change-production.webp" alt="Requirements mismatches" /></p>
+
+<p>An engineer upgrading a system in production</p>
+
+<h1 id="the-case-of-safety-critical-systems">The case of safety-critical systems</h1>
+
+<p>Surprisingly, safety-critical systems (such as the one used in plane or rockets)
+do not fail as much as regular ones.</p>
+
+<p>The main reasons is because as construction, these types of systems
+are regulated and need to follow a rigorous production process that
+catches such mistakes. Avionics and aerospace software follow
+more or less the same constraints than software running nuclear power plants.
+And surprisingly, these processes follow the same steps than
+the one used to build a new house (start with the requirements,
+validate them, have independent inspection, etc.). They also have clear
+inspection and requirements to satisfy by law (note that interestingly, cars
+are not as regulated).</p>
+
+<p>The takeaway: when you carefully follow a (good) process, you avoid
+mistakes. As Bezos says: <em>Good intentions don’t work. Processes do</em>.</p>
+
+<h1 id="should-we-learn-better">Should we learn better?</h1>
+
+<p>The main problem is the lack of knowledge. Projects do not fail intentionally,
+they fail because engineers do not know better. There is a gap in knowledge, where
+most engineers see software development only through the lens
+of programming/coding and never heard what a software architecture is.</p>
+
+<p>We need to teach and explain what software architecture is
+and how systems should be designed and built. These concepts have been missed,
+especially in a world where we promise to become a software engineer
+in just a few weeks of learning. In a world where most of the future
+software engineers will not be able to get a degree before they enter
+the workforce[1], it is becoming urgent to teach these values.</p>
+
+<p><img src="/assets/architectural-failure02.jpg" alt="Architecture School" /></p>
+
+<p>The solution for better software: be architects</p>
+
+<p>[1]<a href="https://speakerdeck.com/heathermiller/the-times-they-are-a-changin">The Times They Are a Changin’ - Heather Miller talk</a></p>
 
   </article>
 
