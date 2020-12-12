@@ -4,14 +4,14 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Julien Delange</title>
+    <title>On immutability - Julien Delange</title>
     <link rel="alternate" type="application/rss+xml" title="Julien Delange &raquo; Feed" href="/feed.xml" />
     <meta name="viewport" content="width=device-width">
-    <meta name="description" content="Personal website of Julien Delange">
-    <link rel="canonical" href="http://julien.gunnm.org/">
+    <meta name="description" content="Why immutability in programming languages matters">
+    <link rel="canonical" href="http://julien.gunnm.org/software%20engineering/essay/immutability/scala/2020/12/11/on-immutability/">
 
     
-    <meta name="keywords" content="software engineering, twitter, amazon, aws, modeling, running, ultra-marathon"/>
+    <meta name="keywords" content="software engineering, essay, scala, immutability"/>
     
 
     <!-- Latest compiled and minified CSS -->
@@ -29,8 +29,8 @@
     <link rel="stylesheet" href="/css/main.css">
 
     <!-- Twitter Cards -->
-    <meta name="twitter:title" content="" />
-    <meta name="twitter:description" content="Personal website of Julien Delange" />
+    <meta name="twitter:title" content="On immutability" />
+    <meta name="twitter:description" content="Why immutability in programming languages matters" />
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="@juli1pb" />
     <meta name="twitter:creator" content="@juli1pb" />
@@ -41,8 +41,8 @@
     <meta property="og:site_name" content="Julien Delange" />
     <meta property="og:type" content="article" />
     <meta property="og:image" content="/assets/profile.png" />
-    <meta property="og:title" content="" />
-    <meta property="og:description" content="Personal website of Julien Delange" />
+    <meta property="og:title" content="On immutability" />
+    <meta property="og:description" content="Why immutability in programming languages matters" />
 
 </head>
 
@@ -117,35 +117,152 @@
 
     <div class="page-content">
       <div class="wrap">
-      <div id="profile-pic">
-   <img src="/assets/profile.png"/>
-</div>
+      <div class="post">
 
-<div class="home">
-   <div class="intro">
-      <p>
-         My name is Julien Delange. I am a software engineer working at <a href="http://www.twitter.com">Twitter</a> and an occasional runner for distances between 5K and 100 miles. 
-         This website has most of the useful information on my <a href="/projects">research work</a> and <a href="/running">running agenda</a>. 
-         I also maintain a <a href="/blog">blog</a> on topics related to software engineering, programming and running. More about how to contact me in the <a href="/about">about section</a>.
-      </p>
-   </div>
-   <div style="margin-top: 2em;">
-      <p>
-      The views expressed here are my own.
-      </p>
-   </div>
-   <div style="margin-top: 2em;">
-      <p>
-      If you are a recruiter and want to contact me, please leave me alone.
-      </p>
-   </div>
-   <div class="lastpost">
-      <h1>Last from the blog:   <a href="/software%20engineering/essay/immutability/scala/2020/12/11/on-immutability/">On immutability</a></h1>
-   </div>
+  <header class="post-header">
+    <h1>On immutability</h1>
+    <p class="meta">
+      <!-- Dec 11, 2020 -->
+      <!-- 
+       -->
+   </p>
+  </header>
 
-   <div style="margin-top: 1.5em; text-align: center;">
-     <p>You can see <a href="/blog">all blog posts</a> or just subscribe to the <a href="/feed.xml">RSS feed</a></p>
-  </div>
+  <article class="post-content">
+  <p><em>Note: this page is part of the <a href="/software engineering/essay/2020/03/06/software-engineering-series">“Essays on Software Engineering”</a></em></p>
+
+<p>I discovered Scala and functional programming when I joined Twitter. Scala
+introduced me to this new world
+of pure functions and immutability. I loved it so much that I started teaching
+the language for all new employees (if you ever attended my class, I
+apologize for all the bad puns and jokes I made).</p>
+
+<p>Over the years, I really embraced functional programming as a discipline.
+No matter what language I used, I try to always stick to some keys principles:</p>
+
+<ul>
+  <li><strong>pure functions</strong>: the output of a function depends only on its inputs.</li>
+  <li><strong>immutability</strong>: keep all data immutable, any modification results in a copy</li>
+</ul>
+
+<p>You do not need to use a functional
+programming language to use these principles, you can apply them
+to almost any language. I use them while coding in Java and Python.</p>
+
+<p><a href="https://en.wikipedia.org/wiki/John_Carmack">John Carmack</a>
+also tried to apply these principles when building
+the <a href="https://en.wikipedia.org/wiki/Id_Tech_4">Doom 3 3D engine (idTech 4)</a>, built
+using C++.</p>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/1PhArSujR_A?start=124" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+
+<p>I will skips the reason to use functional programming and focus on immutability.</p>
+
+<h1 id="idempotence-and-determinism">Idempotence and determinism</h1>
+
+<p>You want your function to be easy to understand and test. Ideally, you want
+the result of a function to be idem-potent: no matter how many times you
+invoke the function, you get the same result if you provide the same inputs.</p>
+
+<p>That rule is being verified if you use immutable data, let’s illustrate this
+principle with an example.</p>
+
+<p>Let’s consider a class <code class="language-plaintext highlighter-rouge">Person</code> in an hybrid language:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>case class Person(name: String, age: Int)
+</code></pre></div></div>
+
+<p>Then, let’s define two <code class="language-plaintext highlighter-rouge">older</code> functions. One that mutates the value
+passed as parameters (let’s assume parameters are mutable).</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Person older(person: Person, age: Int) {
+  person.age = person.age + age;
+  return person;
+}
+</code></pre></div></div>
+
+<p>And another <code class="language-plaintext highlighter-rouge">older</code> function where we use immutable data (and we copy the argument).</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Person older(person: Person, age: Int) {
+  return person.copy(age = person.age + age);
+}
+</code></pre></div></div>
+
+<p>Now, consider the following block of code</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Person p = Person("foo", 42);
+
+Person p2 = older(p, 10);
+Person p3 = older(p, 10);
+</code></pre></div></div>
+
+<p>Ideally, what you really want is <code class="language-plaintext highlighter-rouge">p2 == p3</code> since they both have the same
+inputs. Unfortunately, this will not work with the first function
+since we mutate the value ahead of time. If you use the first
+function, <code class="language-plaintext highlighter-rouge">p3.age == 62</code> and if you use the first function, <code class="language-plaintext highlighter-rouge">p3.age == 52</code>.</p>
+
+<p>The problem is that such mutation will spread in your codebase like the
+plague and will make really difficult to follow the codepath. Let 10
+developers follow such practices and you will end up with spaghetti code
+that becomes a nightmare to understand.</p>
+
+<p>Immutability comes hand in hand with pure functions. If you want to embrace
+immutability, embrace pure functions.</p>
+
+<h1 id="parallelism">Parallelism</h1>
+
+<p>One of the hardest problem on computer science is to write correct
+parallel programs. With computers having multiple cores all programs are
+multi-threaded and data is being shared between cores/thread, which
+requires to use locking mechanism (e.g. mutex, semaphore, etc.).</p>
+
+<p>The reason we use mutex is precisely because a data is being mutated and
+we want to guarantee only one thread modifies a data at a time. If you
+use immutable data structure, these problems are non-existent for you
+since you <em>never</em> modify data structure (you always copy and create
+new data).</p>
+
+<p>In other words, using immutable data let’s you write scalable programs
+from the start.</p>
+
+<h1 id="the-cost-of-immutability">The cost of immutability</h1>
+
+<p>The recurrent against immutable data is the additional runtime cost. The argument is that
+using immutable data structures has a heavy runtime cost since you need to
+allocate more memory to support instantiation of multiple objects. Using immutable
+data then requires faster machines with more memory to run a program.</p>
+
+<p>This argument is a pure fallacy for two reasons.</p>
+
+<p>The first reason is technical. There are a lot of technical tricks to implement
+immutable data without having a huge runtime cost. For example, in Scala,
+the <code class="language-plaintext highlighter-rouge">copy()</code> function generated for each <code class="language-plaintext highlighter-rouge">case class</code> makes
+a <a href="https://docs.scala-lang.org/tour/case-classes.html">shallow copy</a> of a given object,
+reducing drastically the runtime footprint of your program (compared to deep copy).</p>
+
+<p>The second reason is pure economics.
+The <a href="https://www.bls.gov/ooh/computer-and-information-technology/computer-and-information-research-scientists.htm">average salary of a computer scientist is $122,840</a>.
+Tech companies such as Stripe or Google have the best engineers and still
+spend 10% to 20% of their time dealing
+with bad code (source: <a href="https://stripe.com/reports/developer-coefficient-2018">Stripe study</a>).
+To put it more clearly: the cost of bad code is more than $10,000 to $20,000 per developer
+per year.</p>
+
+<p>The reality is: <strong>the cost of labor to write and maintain the software
+is far higher than the cost of hardware</strong>. Therefore, we should use all
+potential methods (in terms of management, programming style or execution
+platform) to reduce the labor costs. The use of immutability or functional
+programming is only one candidate among others.</p>
+
+<p>Of course, engineers will <em>always</em> believe they can outsmart the system
+and produce a more efficient program by using some shady tricks (e.g. produce
+better assembly cost than the C compiler). The reality
+is that 99% of the time, they are dead wrong (e.g. compilers do a better job). And in the remaining 1%, the code should be carefully evaluated if this is worth the cost:
+if the manual optimization is used, it will need to be maintained during the lifecyle
+of the software (e.g. who wants to maintain assembly code if not an absolute necessity?).</p>
+
+  </article>
+
 </div>
 
       </div>
