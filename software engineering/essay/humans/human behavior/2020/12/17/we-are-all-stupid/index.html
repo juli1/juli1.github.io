@@ -4,14 +4,14 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Julien Delange</title>
+    <title>We are all stupid - Julien Delange</title>
     <link rel="alternate" type="application/rss+xml" title="Julien Delange &raquo; Feed" href="/feed.xml" />
     <meta name="viewport" content="width=device-width">
-    <meta name="description" content="Personal website of Julien Delange">
-    <link rel="canonical" href="http://julien.gunnm.org/">
+    <meta name="description" content="Why are humans are stupid">
+    <link rel="canonical" href="http://julien.gunnm.org/software%20engineering/essay/humans/human%20behavior/2020/12/17/we-are-all-stupid/">
 
     
-    <meta name="keywords" content="software engineering, twitter, amazon, aws, modeling, running, ultra-marathon"/>
+    <meta name="keywords" content="software engineering, essay, scala, immutability"/>
     
 
     <!-- Latest compiled and minified CSS -->
@@ -29,8 +29,8 @@
     <link rel="stylesheet" href="/css/main.css">
 
     <!-- Twitter Cards -->
-    <meta name="twitter:title" content="" />
-    <meta name="twitter:description" content="Personal website of Julien Delange" />
+    <meta name="twitter:title" content="We are all stupid" />
+    <meta name="twitter:description" content="Why are humans are stupid" />
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="@juli1pb" />
     <meta name="twitter:creator" content="@juli1pb" />
@@ -41,8 +41,8 @@
     <meta property="og:site_name" content="Julien Delange" />
     <meta property="og:type" content="article" />
     <meta property="og:image" content="/assets/profile.png" />
-    <meta property="og:title" content="" />
-    <meta property="og:description" content="Personal website of Julien Delange" />
+    <meta property="og:title" content="We are all stupid" />
+    <meta property="og:description" content="Why are humans are stupid" />
 
 </head>
 
@@ -117,35 +117,75 @@
 
     <div class="page-content">
       <div class="wrap">
-      <div id="profile-pic">
-   <img src="/assets/profile.png"/>
-</div>
+      <div class="post">
 
-<div class="home">
-   <div class="intro">
-      <p>
-         My name is Julien Delange. I am a software engineer working at <a href="http://www.twitter.com">Twitter</a> and an occasional runner for distances between 5K and 100 miles. 
-         This website has most of the useful information on my <a href="/projects">research work</a> and <a href="/running">running agenda</a>. 
-         I also maintain a <a href="/blog">blog</a> on topics related to software engineering, programming and running. More about how to contact me in the <a href="/about">about section</a>.
-      </p>
-   </div>
-   <div style="margin-top: 2em;">
-      <p>
-      The views expressed here are my own.
-      </p>
-   </div>
-   <div style="margin-top: 2em;">
-      <p>
-      If you are a recruiter and want to contact me, please leave me alone.
-      </p>
-   </div>
-   <div class="lastpost">
-      <h1>Last from the blog:   <a href="/software%20engineering/essay/humans/human%20behavior/2020/12/17/we-are-all-stupid/">We are all stupid</a></h1>
-   </div>
+  <header class="post-header">
+    <h1>We are all stupid</h1>
+    <p class="meta">
+      <!-- Dec 17, 2020 -->
+      <!-- 
+       -->
+   </p>
+  </header>
 
-   <div style="margin-top: 1.5em; text-align: center;">
-     <p>You can see <a href="/blog">all blog posts</a> or just subscribe to the <a href="/feed.xml">RSS feed</a></p>
-  </div>
+  <article class="post-content">
+  <p><em>Note: this post is part of series about the foundations for Code Inspector</em></p>
+
+<p>We, as humans, believe we are smart and intelligent. Granted, we can be
+amazing creatures capable of the best and the worst. We can strap ourselves
+to a giant ass rocket and <a href="https://en.wikipedia.org/wiki/Moon_landing">go to the moon</a>.
+The same human machine can inadvertently kill itself <a href="https://en.wikipedia.org/wiki/List_of_selfie-related_injuries_and_deaths">while
+taking a selfie</a>.</p>
+
+<p>We are inconsistent in our level of achievement.</p>
+
+<p><img src="https://media.giphy.com/media/KbZYGHClLQCB407kQW/giphy-downsized.gif" alt="On the moon" /></p>
+
+<p>When it comes to programming, engineers believe they know better than
+anyone else (even more than the machine) how to produce efficient code. Years ago,
+developers were writing assembly code, claiming
+that the C compiler was producing less efficient code. Unfortunately, even
+if they achieved to be faster sometimes, it lead to having code that is
+harder to maintain and is quickly being outdated (in terms
+of performance and maintenance) by compiler optimizations. That led to some
+questions from programmers wondering how C or C++ code can be faster than
+their own assembly code (<a href="https://stackoverflow.com/questions/40354978/why-does-c-code-for-testing-the-collatz-conjecture-run-faster-than-hand-writte">example</a>).</p>
+
+<p>Some may believe humans may outperform machines on small and repetitive tasks
+but the reality is different.</p>
+
+<p>We have proof every day about how we fail at doing repetitive tasks
+that we know well. We know the road around our home but we will have
+77% of accidents less than 15 miles around our home (<a href="https://www.sawayalaw.com/blog/auto-accident-statistics-infographic/">source</a>).
+Each year, more than 30,000 persons die on the road each year because of human
+failure (<a href="https://en.wikipedia.org/wiki/Motor_vehicle_fatality_rate_in_U.S._by_year">source</a>).
+Even when we have rigorous training like in the aviation industry, the
+vast majority of failure comes from humans factors: 88% of plane
+crashes are attributed to pilot errors (<a href="https://www.baumhedlundlaw.com/aviation-accident/why-planes-crash/human-factors-in-aviation/">source</a>).</p>
+
+<p><strong>Humans are fallible by design.</strong></p>
+
+<p>We started to automate the boring tasks. Machines are producing goods
+with an amazing quality. Planes are flying themselves with little to no
+guidance. Cars are now equipped with autopilot which keeps your vehicle in the
+lane better than any human could do. The major blocker to speed up the acceleration
+of these technologies is our acceptance. Keep in mind that no so long ago,
+lift were operated by specialized workers (<a href="https://en.wikipedia.org/wiki/Elevator_operator">source</a>)
+and they were also making mistakes (<a href="https://www.npr.org/2015/07/31/427990392/remembering-when-driverless-elevators-drew-skepticism">an interesting podcast about it</a>). Who has any concern about safety when
+entering an elevator these days?</p>
+
+<p><strong>Machines are better than humans at small, boring and repetitive tasks.</strong></p>
+
+<p>The human machine is fallible by design. And this is what makes it so
+wonderful. We do makes mistakes, either by omission
+(we forget to do something) or commission (we do something we did not
+intend to do). This is why you sometimes love or hate people.
+As humans, we need to focus on complex problems and automate repetitive and automatable tasks.</p>
+
+<p>As for developers: it’s now time to let the machine code for us.</p>
+
+  </article>
+
 </div>
 
       </div>

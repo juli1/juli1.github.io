@@ -5,9 +5,89 @@
     <description>Harder, Better, Faster, Stronger</description>
     <link>http://julien.gunnm.org/</link>
     <atom:link href="http://julien.gunnm.org/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Sat, 12 Dec 2020 03:34:18 +0000</pubDate>
-    <lastBuildDate>Sat, 12 Dec 2020 03:34:18 +0000</lastBuildDate>
-    <generator>Jekyll v4.1.1</generator>
+    <pubDate>Fri, 18 Dec 2020 06:56:01 +0000</pubDate>
+    <lastBuildDate>Fri, 18 Dec 2020 06:56:01 +0000</lastBuildDate>
+    <generator>Jekyll v4.2.0</generator>
+    
+      <item>
+        <title>We are all stupid</title>
+        <description>&lt;p&gt;&lt;em&gt;Note: this post is part of series about the foundations for Code Inspector&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;We, as humans, believe we are smart and intelligent. Granted, we can be
+amazing creatures capable of the best and the worst. We can strap ourselves
+to a giant ass rocket and &lt;a href=&quot;https://en.wikipedia.org/wiki/Moon_landing&quot;&gt;go to the moon&lt;/a&gt;.
+The same human machine can inadvertently kill itself &lt;a href=&quot;https://en.wikipedia.org/wiki/List_of_selfie-related_injuries_and_deaths&quot;&gt;while
+taking a selfie&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;We are inconsistent in our level of achievement.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://media.giphy.com/media/KbZYGHClLQCB407kQW/giphy-downsized.gif&quot; alt=&quot;On the moon&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;When it comes to programming, engineers believe they know better than
+anyone else (even more than the machine) how to produce efficient code. Years ago,
+developers were writing assembly code, claiming
+that the C compiler was producing less efficient code. Unfortunately, even
+if they achieved to be faster sometimes, it lead to having code that is
+harder to maintain and is quickly being outdated (in terms
+of performance and maintenance) by compiler optimizations. That led to some
+questions from programmers wondering how C or C++ code can be faster than
+their own assembly code (&lt;a href=&quot;https://stackoverflow.com/questions/40354978/why-does-c-code-for-testing-the-collatz-conjecture-run-faster-than-hand-writte&quot;&gt;example&lt;/a&gt;).&lt;/p&gt;
+
+&lt;p&gt;Some may believe humans may outperform machines on small and repetitive tasks
+but the reality is different.&lt;/p&gt;
+
+&lt;p&gt;We have proof every day about how we fail at doing repetitive tasks
+that we know well. We know the road around our home but we will have
+77% of accidents less than 15 miles around our home (&lt;a href=&quot;https://www.sawayalaw.com/blog/auto-accident-statistics-infographic/&quot;&gt;source&lt;/a&gt;).
+Each year, more than 30,000 persons die on the road each year because of human
+failure (&lt;a href=&quot;https://en.wikipedia.org/wiki/Motor_vehicle_fatality_rate_in_U.S._by_year&quot;&gt;source&lt;/a&gt;).
+Even when we have rigorous training like in the aviation industry, the
+vast majority of failure comes from humans factors: 88% of plane
+crashes are attributed to pilot errors (&lt;a href=&quot;https://www.baumhedlundlaw.com/aviation-accident/why-planes-crash/human-factors-in-aviation/&quot;&gt;source&lt;/a&gt;).&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Humans are fallible by design.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;We started to automate the boring tasks. Machines are producing goods
+with an amazing quality. Planes are flying themselves with little to no
+guidance. Cars are now equipped with autopilot which keeps your vehicle in the
+lane better than any human could do. The major blocker to speed up the acceleration
+of these technologies is our acceptance. Keep in mind that no so long ago,
+lift were operated by specialized workers (&lt;a href=&quot;https://en.wikipedia.org/wiki/Elevator_operator&quot;&gt;source&lt;/a&gt;)
+and they were also making mistakes (&lt;a href=&quot;https://www.npr.org/2015/07/31/427990392/remembering-when-driverless-elevators-drew-skepticism&quot;&gt;an interesting podcast about it&lt;/a&gt;). Who has any concern about safety when
+entering an elevator these days?&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Machines are better than humans at small, boring and repetitive tasks.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;The human machine is fallible by design. And this is what makes it so
+wonderful. We do makes mistakes, either by omission
+(we forget to do something) or commission (we do something we did not
+intend to do). This is why you sometimes love or hate people.
+As humans, we need to focus on complex problems and automate repetitive and automatable tasks.&lt;/p&gt;
+
+&lt;p&gt;As for developers: it’s now time to let the machine code for us.&lt;/p&gt;
+</description>
+        <pubDate>Thu, 17 Dec 2020 23:13:20 +0000</pubDate>
+        <link>http://julien.gunnm.org/software%20engineering/essay/humans/human%20behavior/2020/12/17/we-are-all-stupid/</link>
+        <guid isPermaLink="true">http://julien.gunnm.org/software%20engineering/essay/humans/human%20behavior/2020/12/17/we-are-all-stupid/</guid>
+        
+        <category>software engineering</category>
+        
+        <category>essay</category>
+        
+        <category>scala</category>
+        
+        <category>immutability</category>
+        
+        
+        <category>software engineering</category>
+        
+        <category>essay</category>
+        
+        <category>humans</category>
+        
+        <category>human behavior</category>
+        
+      </item>
     
       <item>
         <title>On immutability</title>
@@ -756,183 +836,6 @@ And it is now &lt;em&gt;okay&lt;/em&gt; for Google to be evil.&lt;/p&gt;
         <category>evil</category>
         
         <category>google</category>
-        
-      </item>
-    
-      <item>
-        <title>Java or Scala, that is the question</title>
-        <description>&lt;p&gt;Over the last two years, I had the opportunity to gain knowledge on Scala
-and also re-learn Java (after about 3 years without using it). I built network
-analysis tools in Scala and used it to entirely write the backend of
-&lt;a href=&quot;https://www.code-inspector.com&quot;&gt;Code Inspector&lt;/a&gt; with it. In the meantime, when
-starting to recently form a new engineering team, I had to use (and re-learn) Java again. I wanted
-to reflect on this experience to share some thoughts as to where these languages
-stand, the directions they are taking and answer the
-question too-often asked: which one to use?&lt;/p&gt;
-
-&lt;h1 id=&quot;java-has-evolved-a-lot-and-for-the-better&quot;&gt;Java has evolved a lot, and for the better&lt;/h1&gt;
-
-&lt;p&gt;Java evolved a lot over its about 20 years of existence. From a simple object-oriented language, it
-brought fundamental changes. One example is the change in the for-loop syntax
-in Java 5 or the introduction of lambda in Java 8. As the language became very
-popular, developers added a ton of libraries for it and the language became very
-popular with infamous application (such as &lt;a href=&quot;https://hadoop.apache.org/&quot;&gt;Hadoop&lt;/a&gt;,
-&lt;a href=&quot;https://spring.io/&quot;&gt;Spring&lt;/a&gt; or &lt;a href=&quot;https://www.playframework.com/&quot;&gt;Play&lt;/a&gt;).&lt;/p&gt;
-
-&lt;p&gt;Also, the community around the language built libraries to overcome some
-of its limitations. One good example is &lt;a href=&quot;https://github.com/google/guava&quot;&gt;Guava&lt;/a&gt;,
-the library developed by Google that provides a lot of helper methods
-and class to overcome some clear limitations of the language (e.g. the
-lack of support of &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Optional&lt;/code&gt; - more on this later).&lt;/p&gt;
-
-&lt;h1 id=&quot;functional-programming-has-proven-to-be-clean-and-effective&quot;&gt;Functional Programming has proven to be clean and effective&lt;/h1&gt;
-
-&lt;p&gt;In the meantime, it is becoming clear that Object-Oriented programming (OO)
-is not the silver bullet we thought it will be. Many people believed it was
-a revolution in the programming world (e.g. Steve Jobs at
-  was pitching the use of &lt;a href=&quot;https://computerhistory.org/blog/the-deep-history-of-your-apps-steve-jobs-nextstep-and-early-object-oriented-programming/&amp;gt;`_&quot;&gt;OO for NeXT&lt;/a&gt; long time ago, seeing it as revolutionary).
-I belong to the group of engineers that were taught OO was the right way to build
-programs (and even learned &lt;a href=&quot;https://en.wikipedia.org/wiki/Merise&quot;&gt;Merise&lt;/a&gt; or &lt;a href=&quot;https://en.wikipedia.org/wiki/Unified_Modeling_Language&quot;&gt;UML&lt;/a&gt;).
-It is then no surprise that at first, I was very skeptical about the benefits of FP, especially after having used Java and
-C++ for the last 5+ years. My interest in FP really started to increase after watching
-this video of &lt;a href=&quot;https://en.wikipedia.org/wiki/John_Carmack&quot;&gt;John Carmack&lt;/a&gt; on the topic
-where he explains the real issues our industry is facing and how FP is helping to write
-simpler programs.&lt;/p&gt;
-
-&lt;center&gt;
-&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/1PhArSujR_A&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
-&lt;/center&gt;
-
-&lt;p&gt;After few months, it became obvious that Functional Programming (FP) helps to write programs
-that are easier to maintain and reason about it. The use of immutability avoids
-side-effects and basic errors such as &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;NullPointerException&lt;/code&gt; that
-have been plaguing programs for decades. As human, we fail to reason about
-programs structure and do not build systems with the idea that people will
- maintain it for the years to come. And these problems increase as the size
- of the programs (and the number of engineers working on it) increases.
-We can argue that these problems can be solved
-using more processes and tools (static analyzer, automated checks during reviews, etc.),
-but at the end of the day, what matters is to write something
-simple from the start to avoid problems and additional work later in the development
-process. The key idea is to keep thing simple from the start.
-FP forces you to separate concerns (data vs. functions) and write
-understandable code using &lt;a href=&quot;https://en.wikipedia.org/wiki/Pure_function&quot;&gt;pure functions&lt;/a&gt; where outputs only depends on the inputs.&lt;/p&gt;
-
-&lt;p&gt;From a mental model and design perspective, the clear separation between
-data (&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;case class&lt;/code&gt; in Scala) and the functions that process it helps you to
-reasons about your data flow. Finally, the use of pure functions facilitates
-testing and is probably the biggest take-away from FP.&lt;/p&gt;
-
-&lt;p&gt;There are many reasons that make FP superior to OO and so far, I believe that
-the best summary has been written by Joe Amstrong, creator
-of Erlang, who summarizes most of them in a &lt;a href=&quot;http://www.cs.otago.ac.nz/staffpriv/ok/Joe-Hates-OO.htm&quot;&gt;great essay&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;OO was probably a good intention but &lt;a href=&quot;https://nickfoy.com/blog/2018/4/7/good-intentions-dont-work&quot;&gt;good intentions don’t work&lt;/a&gt; (probably the best thing I learned from my time at Amazon).&lt;/p&gt;
-
-&lt;h1 id=&quot;java-evolves-in-the-direction-of-scala&quot;&gt;Java evolves in the direction of Scala&lt;/h1&gt;
-
-&lt;p&gt;It is now clear that Java is now taking the direction of Scala since several years
-One of the obvious sign is the introduction of lambda in Java 8, a first-class
-citizen concept of the Scala language.&lt;/p&gt;
-
-&lt;p&gt;Another example is the push from the community to support Scala-like constructions
-such as the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Optional&lt;/code&gt; in &lt;a href=&quot;https://github.com/google/guava&quot;&gt;guava&lt;/a&gt;
-(or even the helper methods to improve the default implementation of &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;toString&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;equals&lt;/code&gt; or &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;hashCode&lt;/code&gt; - there are plenty of examples).&lt;/p&gt;
-
-&lt;p&gt;The last example in date is the project [Amber from Java|https://openjdk.java.net/projects/amber/)
-that is copying core Scala features such as [pattern matching|https://openjdk.java.net/jeps/305], &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;case class&lt;/code&gt;
-(renamed &lt;a href=&quot;https://cr.openjdk.java.net/~briangoetz/amber/datum.html&quot;&gt;data classes&lt;/a&gt;) or &lt;a href=&quot;https://openjdk.java.net/jeps/286&quot;&gt;type inference&lt;/a&gt;.
-Once project Amber is done, you could write code like this:&lt;/p&gt;
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;if (obj instanceof String s || s.length() &amp;gt; 5) {s.contains(&quot;foo&quot;)}
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;The exact same functionality exists in Scala since its inception and the same
-code would look like&lt;/p&gt;
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;obj match {
-  case s: String if s.length() &amp;gt; 5 =&amp;gt; s.contains(&quot;foo&quot;)
-  case _ =&amp;gt; false
-}
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Is that a bad thing that Java is copying Scala? In fact, this is really healthy.
-And definitively shows the value of the concepts behind the language.
-However, as these features are added on top of a already complex language, it brings
-a new set of problems.&lt;/p&gt;
-
-&lt;h1 id=&quot;you-cannot-get-rid-of-the-past&quot;&gt;You cannot get rid of the past&lt;/h1&gt;
-
-&lt;p&gt;The biggest issue by introducing this new FP-compliant features on top of an old language is
-the new level of complexity and the related ambiguity it might bring.
-As the language needs to stay backward-compatible
-with the existing feature, the new one are added without deprecating the old one,
-which let programmers do whatever they wants since no rule will be enforced
-by the compiler. This brings consistency issues in the codebase (use of multiple
-coding patterns in the language), which confuses developers and make program
-maintenance even more complex. One good example of such problem is large C++
-codebase that tried to evolve to later versions (for example, when mixing
-raw and smart pointers in C++).&lt;/p&gt;
-
-&lt;p&gt;These additional features do not address the main shortcoming of the
-language (OO, mutable variables, separation of concerns, etc.) and do not force the developer to use
-FP. It offers the possibility to use it but does not mandate it, which means
-that using FP must be enforced through a human process that is fallible by
-definition. Not good.&lt;/p&gt;
-
-&lt;h1 id=&quot;so-what-language-to-choose&quot;&gt;So what language to choose?&lt;/h1&gt;
-
-&lt;p&gt;It is now clear that FP languages are superior in terms of maintenance, which
-is the biggest cost in software today.&lt;/p&gt;
-
-&lt;p&gt;One argument that is often made against Scala is the lack of candidates
-that know Scala. That might be true if you are looking for a temporary position
-but otherwise, if you hire a developer because of its familiarity
-with a particular language, this is not good for the long term. It is better
-to focus on the fundamentals (data structure, algorithms, etc.) than on
-a particular technology. Learning Scala does not take much time. My experience after one year
-  of teaching Scala showed me that engineers understands the fundamentals within a month).&lt;/p&gt;
-
-&lt;p&gt;If you are starting a new project from scratch, Scala is a good choice and its
-compatibility with Java lets you use any existing Java library
-(and there are tons of it). That should
-open the best of both worlds by having a great language a a ton of existing
-and reliable libraries.&lt;/p&gt;
-
-&lt;p&gt;But what if you already have an existing codebase, should you dump Java and start to rewrite everything in Scala? Probably not. Or at least,
-not that fast. This would be a non-sense to dump a large codebase built, matured
-and stabilized for years to only switch to a new language. And it would
-also be an immediate, visible loss of productivity as all engineers are starting
-to learn Scala. The best way forward is to start using new features of the language for the
-existing code, and put processes (such as automatic checks) in place
-to make sure the codebase stays consistent. If you start re-writing some
-services or decompose them, it can be a good idea to start using Scala
-(and its compatibility with Java helps in that direction) and let few engineers
-explore and experiment the language (reducing the potential loss of productivity).
-You can then judge for yourself how comfortable your engineers are with this
-transition but also evaluates the potential benefits gradually.&lt;/p&gt;
-
-&lt;h1 id=&quot;final-words&quot;&gt;Final Words&lt;/h1&gt;
-
-&lt;p&gt;While this small article is in favor of Scala, the most important idea is
-that Functional Programming principles help you writing re-usable and
-maintainable code and that Object-Oriented principles were probably a mistake
-the industry followed blindly. FP rules and principles can be implemented by
-developers in almost any language (see Carmack talk mentioned above) And they
-help you write better programs.&lt;/p&gt;
-</description>
-        <pubDate>Wed, 23 Oct 2019 13:13:20 +0000</pubDate>
-        <link>http://julien.gunnm.org/development/agile/2019/10/23/java-vs-scala/</link>
-        <guid isPermaLink="true">http://julien.gunnm.org/development/agile/2019/10/23/java-vs-scala/</guid>
-        
-        <category>java</category>
-        
-        <category>scala</category>
-        
-        
-        <category>development</category>
-        
-        <category>agile</category>
         
       </item>
     
