@@ -5,8 +5,8 @@
     <description>Harder, Better, Faster, Stronger</description>
     <link>http://julien.gunnm.org/</link>
     <atom:link href="http://julien.gunnm.org/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Fri, 18 Dec 2020 06:56:01 +0000</pubDate>
-    <lastBuildDate>Fri, 18 Dec 2020 06:56:01 +0000</lastBuildDate>
+    <pubDate>Fri, 18 Dec 2020 06:58:55 +0000</pubDate>
+    <lastBuildDate>Fri, 18 Dec 2020 06:58:55 +0000</lastBuildDate>
     <generator>Jekyll v4.2.0</generator>
     
       <item>
@@ -62,9 +62,8 @@ entering an elevator these days?&lt;/p&gt;
 wonderful. We do makes mistakes, either by omission
 (we forget to do something) or commission (we do something we did not
 intend to do). This is why you sometimes love or hate people.
-As humans, we need to focus on complex problems and automate repetitive and automatable tasks.&lt;/p&gt;
-
-&lt;p&gt;As for developers: it’s now time to let the machine code for us.&lt;/p&gt;
+As humans, we need to focus on complex problems and delegate
+to machines repetitive and automatable tasks.&lt;/p&gt;
 </description>
         <pubDate>Thu, 17 Dec 2020 23:13:20 +0000</pubDate>
         <link>http://julien.gunnm.org/software%20engineering/essay/humans/human%20behavior/2020/12/17/we-are-all-stupid/</link>
