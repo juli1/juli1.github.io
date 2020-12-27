@@ -5,9 +5,82 @@
     <description>Harder, Better, Faster, Stronger</description>
     <link>http://julien.gunnm.org/</link>
     <atom:link href="http://julien.gunnm.org/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Fri, 18 Dec 2020 07:18:55 +0000</pubDate>
-    <lastBuildDate>Fri, 18 Dec 2020 07:18:55 +0000</lastBuildDate>
+    <pubDate>Sun, 27 Dec 2020 05:13:04 +0000</pubDate>
+    <lastBuildDate>Sun, 27 Dec 2020 05:13:04 +0000</lastBuildDate>
     <generator>Jekyll v4.2.0</generator>
+    
+      <item>
+        <title>The machine is better than you</title>
+        <description>&lt;p&gt;&lt;em&gt;Note: this post is part of series about the foundations for Code Inspector, you
+can find the previous article &lt;a href=&quot;/software engineering/essay/humans/human behavior/2020/12/17/we-are-all-stupid/&quot;&gt;here&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Since the industrial revolution (that started about 200 years ago),
+we are delegating more complex tasks to machines.
+At first, we delegated simple tasks on an assembly line. These machines
+were better than humans in all aspects: they do not go on strike, they
+do not stop to go to the bathrooms but most importantly: their results
+and performance are &lt;strong&gt;consistent&lt;/strong&gt; and &lt;strong&gt;predictable&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://media.giphy.com/media/XCxcmEQWxDdc8qsd2R/giphy-downsized.gif&quot; alt=&quot;Les Temps Modernes&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The result of the machine does not depend on the discussion it had with
+its partner the night before nor how much wine it had at the bar while chatting
+with its friends. The machine delivers results according to objective,
+non-ambiguous specifications.&lt;/p&gt;
+
+&lt;p&gt;Until recently, machines were dedicated to automate (mostly) blue collar jobs
+(factory, farming, etc). But in the last twenty/thirty years, machines took
+white-collar jobs too (in finance, security, sales, marketing).
+Today, the computer fixes your grammar mistakes and optimizes your finance better than many humans would do.
+They do it cheaper, faster, accelerating innovation across the world.&lt;/p&gt;
+
+&lt;p&gt;Machines start to take over very complex tasks. And they are better than us at it.
+The best example of how machines improved over the last ten years is
+the autopilot technology from Tesla.
+On highway, a Tesla drives better than you would drive. The car
+stays perfectly within its lanes, better than you would do.
+It still fails from time to time (especially in construction zones) and adapting
+the car to such situations is just a question of time: 90% of the functionality is here and
+achieving full self-driving is just a question of time.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://media.giphy.com/media/H7rpSYHRyYgamxQNqw/giphy-downsized.gif&quot; alt=&quot;Tesla Self Driving&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The most important aspect is that machines do the tasks they are dedicated to
+better than humans. They do it &lt;strong&gt;consistently&lt;/strong&gt;, &lt;strong&gt;predictably&lt;/strong&gt; and only
+fail within their Mean Time Between Failure (MTBF) which is measurable
+and again, predictable.&lt;/p&gt;
+
+&lt;p&gt;Are we doomed to be replaced by machines? That is still not clear.
+Machines are great at performing a task they are programmed for (such
+as tighten a screw or drive a car). They will get better every day. And they
+will learn to complete more complex tasks year after year.&lt;/p&gt;
+
+&lt;p&gt;But machines still need to be told what to do.
+We can program them to do perfectly one single task and they will do it better than us
+on all dimensions.
+But they are not the entity where ideas originates at first. That part is still
+dedicated to humans. For now.&lt;/p&gt;
+</description>
+        <pubDate>Sat, 26 Dec 2020 05:13:20 +0000</pubDate>
+        <link>http://julien.gunnm.org/software%20engineering/essay/humans/human%20behavior/2020/12/26/the-machine-is-better-than-you/</link>
+        <guid isPermaLink="true">http://julien.gunnm.org/software%20engineering/essay/humans/human%20behavior/2020/12/26/the-machine-is-better-than-you/</guid>
+        
+        <category>software engineering</category>
+        
+        <category>essay</category>
+        
+        <category>code inspector</category>
+        
+        
+        <category>software engineering</category>
+        
+        <category>essay</category>
+        
+        <category>humans</category>
+        
+        <category>human behavior</category>
+        
+      </item>
     
       <item>
         <title>We are all stupid</title>
@@ -64,6 +137,8 @@ wonderful. We do stupid things, either by omission
 intend to do). This is why you sometimes love or hate people.
 As humans, we need to focus on complex problems and delegate
 to machines repetitive and automatable tasks.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Next article: &lt;a href=&quot;/software engineering/essay/humans/human behavior/2020/12/25/the-machine-is-better-than-you/&quot;&gt;The machine is better than you&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
 </description>
         <pubDate>Thu, 17 Dec 2020 23:13:20 +0000</pubDate>
         <link>http://julien.gunnm.org/software%20engineering/essay/humans/human%20behavior/2020/12/17/we-are-all-stupid/</link>
@@ -73,9 +148,7 @@ to machines repetitive and automatable tasks.&lt;/p&gt;
         
         <category>essay</category>
         
-        <category>scala</category>
-        
-        <category>immutability</category>
+        <category>code inspector</category>
         
         
         <category>software engineering</category>
@@ -730,111 +803,6 @@ experiment, I just hope it will be as useful to you as it will be to me.&lt;/p&g
         <category>software engineering</category>
         
         <category>essay</category>
-        
-      </item>
-    
-      <item>
-        <title>Google is the new Microsoft</title>
-        <description>&lt;p&gt;Google is the new Microsoft. What does that mean?&lt;/p&gt;
-
-&lt;h2 id=&quot;some-history&quot;&gt;Some History&lt;/h2&gt;
-&lt;p&gt;Let’s start by explaining what was Microsoft twenty years ago.&lt;/p&gt;
-
-&lt;p&gt;Microsoft, is the company (or at least, his CEO) that once categorized
-&lt;a href=&quot;https://www.theregister.co.uk/2001/06/02/ballmer_linux_is_a_cancer/&quot;&gt;Linux as cancer&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;This is the company that did not respect technologies standards (especially
-HTML/CSS) to put away competition, which resulted in a horrible developer
-and user experience. Internet Explorer 6 was considered &lt;a href=&quot;https://en.wikipedia.org/wiki/Internet_Explorer_6#Criticism&quot;&gt;one of the worst
-product of all time&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;This is also the company that developed a collaborative scheduling Operating
-System (all Windows before XP) when superior solutions already existed at the time.&lt;/p&gt;
-
-&lt;p&gt;And worst, this is the company that integrated such pictures in a text editor.&lt;/p&gt;
-
-&lt;p style=&quot;text-align: center;&quot;&gt;&lt;img src=&quot;/assets/clippy.gif&quot; alt=&quot;Working From Home&quot; width=&quot;20%&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;This was the company with a crazy CEO (in the bad sense) &lt;a href=&quot;https://www.techradar.com/uk/news/phone-and-communications/mobile-phones/portable-devices/mp3-players/computing/apple/ballmer-apple-iphone-will-be-massive-flop-154018&quot;&gt;that predicted in 2007
-the iPhone will be a flop&lt;/a&gt; and acquired Nokia (a company that was completely done and no future) after 2010.&lt;/p&gt;
-
-&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/Vhh_GeBPOhs&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
-
-&lt;p&gt;Since then, the company is doing better, thanks to a new CEO that brought
-the company back on track.&lt;/p&gt;
-
-&lt;p&gt;But ten to twenty years ago, Microsoft was lost. They did not have good products,
-no identity and no soul. And this is where Google is today.&lt;/p&gt;
-
-&lt;h2 id=&quot;product-hell&quot;&gt;Product hell&lt;/h2&gt;
-
-&lt;p&gt;The first Google products were great. I remember when GMail was offering
-a GB to store my emails where Hotmail was offering 100 MB at most. The interface
-was fast, convenient: everything you expected for such a product. They were
-following key engineering principles: keep it simple and stupid.&lt;/p&gt;
-
-&lt;p&gt;Over the years, products started to be bloated. And slow. GMail started to
-look like Outlook or even Lotus Notes, especially on non-Chrome browsers.
-Products started to be counter-intuitive, exactly how
-Microsoft Word currently is. Google Cloud Console is the perfect example of a terrible
-user experience where nothing is intuitive and you need to go to the
-documentation &lt;strong&gt;each time&lt;/strong&gt; you use the product. There is a clear lack
-of prioritization at the company where new features are stacked and developed
-in spite of common design sense.&lt;/p&gt;
-
-&lt;p&gt;There is also a clear lack of innovation. Over the last years, Google failed
-to create new innovative products. Every attempt to start a social network
-failed miserably and new products are being thrown into
-the &lt;a href=&quot;https://gcemetery.co/&quot;&gt;Google cemetery&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h2 id=&quot;no-morale&quot;&gt;No morale&lt;/h2&gt;
-
-&lt;p&gt;Inside the company, it seems there is no morale. The perfect example is
-when the company did not immediately react to a sexual harassment case
-and &lt;a href=&quot;https://www.cnet.com/news/google-reportedly-paid-andy-rubin-90m-despite-charge-of-sexual-misconduct/&quot;&gt;kept giving a $90M bonus package to the alleged culprit&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;The same low morale also applies to the products. Google that once praised
-standardization is now behaving exactly like Microsoft, when they had
-a monopoly in the browser market. It is now not a mystery that Google is
-changing its web
-applications to &lt;a href=&quot;https://gadgets.ndtv.com/apps/news/youtube-speed-faster-google-chrome-mozilla-firefox-microsoft-edge-1889651&quot;&gt;slow down competitors such as Firefox or Edge&lt;/a&gt;.
-Exactly what Microsoft did with Internet Explorer 6 fifteen years ago.&lt;/p&gt;
-
-&lt;p&gt;These repeated practices show that instead of innovating, Google is trying to
-make the competitors look bad.&lt;/p&gt;
-
-&lt;p&gt;Do you want to be their customers?&lt;/p&gt;
-
-&lt;h2 id=&quot;do-not-be-evil&quot;&gt;Do not be evil&lt;/h2&gt;
-&lt;p&gt;The story of Google is simple: the new cool kids were here to revolutionize
-the internet. At the very beginning, Google was a game changer: a search
-on the internet was taking less than a second. Their product were cool. And free.
-They were the Microsoft anti-thesis.&lt;/p&gt;
-
-&lt;p&gt;The spirit of the company was simple: be cool. Or rather: &lt;em&gt;Don’t be evil&lt;/em&gt;.
-To developers, it meant a lot. It meant that somebody was doing the &lt;em&gt;right&lt;/em&gt; thing
-and was not going to sell their soul.&lt;/p&gt;
-
-&lt;p&gt;Unfortunately, this time is now gone, as the previous paragraphs shown.
-It was officially &lt;a href=&quot;https://gizmodo.com/google-removes-nearly-all-mentions-of-dont-be-evil-from-1826153393&quot;&gt;reflected in the company internal documents in 2018&lt;/a&gt;.
-And it is now &lt;em&gt;okay&lt;/em&gt; for Google to be evil.&lt;/p&gt;
-
-&lt;p&gt;Make no mistake: Google is the new Microsoft.&lt;/p&gt;
-</description>
-        <pubDate>Sun, 15 Dec 2019 13:13:20 +0000</pubDate>
-        <link>http://julien.gunnm.org/microsoft/evil/google/2019/12/15/google-is-the-new-microsoft/</link>
-        <guid isPermaLink="true">http://julien.gunnm.org/microsoft/evil/google/2019/12/15/google-is-the-new-microsoft/</guid>
-        
-        <category>google</category>
-        
-        <category>new microsoft</category>
-        
-        
-        <category>microsoft</category>
-        
-        <category>evil</category>
-        
-        <category>google</category>
         
       </item>
     
