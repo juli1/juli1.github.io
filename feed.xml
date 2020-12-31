@@ -5,13 +5,13 @@
     <description>Harder, Better, Faster, Stronger</description>
     <link>http://julien.gunnm.org/</link>
     <atom:link href="http://julien.gunnm.org/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Thu, 31 Dec 2020 00:40:19 +0000</pubDate>
-    <lastBuildDate>Thu, 31 Dec 2020 00:40:19 +0000</lastBuildDate>
+    <pubDate>Thu, 31 Dec 2020 05:55:34 +0000</pubDate>
+    <lastBuildDate>Thu, 31 Dec 2020 05:55:34 +0000</lastBuildDate>
     <generator>Jekyll v4.2.0</generator>
     
       <item>
         <title>Why Code Inspector?</title>
-        <description>&lt;p&gt;&lt;em&gt;Note: this post is part of series about the foundations for Code Inspector, you
+        <description>&lt;p&gt;&lt;em&gt;Note: this post is part of a series about the foundations for Code Inspector, you
 can find the previous article &lt;a href=&quot;/software engineering/essay/humans/human behavior/2020/12/25/the-machine-is-better-than-you/&quot;&gt;here&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
 
 &lt;p&gt;This is the last post in the series about Code Inspector. The &lt;a href=&quot;/software engineering/essay/humans/human behavior/2020/12/17/we-are-all-stupid/&quot;&gt;first post&lt;/a&gt;
@@ -26,7 +26,7 @@ going to be automated.&lt;/p&gt;
 &lt;h1 id=&quot;the-software-maintenance-problem&quot;&gt;The software maintenance problem&lt;/h1&gt;
 
 &lt;p&gt;There is a real struggle to develop software, especially because it is really
-hard to find and understand the design and implementation choices make by the initial
+hard to find and understand the design and implementation choices made by the initial
 authors. Software is often poorly documented, which makes it very complicated
 to troubleshoot an issue or maintain an old codebase.&lt;/p&gt;
 
@@ -42,9 +42,9 @@ too complex and the documentation, non-existent. And it is not common that issue
 go unnoticed for months because developers do not understand the impact
 of their scope.&lt;/p&gt;
 
-&lt;p&gt;There is an obvious need for a product that helps developers in understanding
+&lt;p&gt;There is an obvious need for a product that helps developers understand
 a code base and establish a plan to improve it. This product needs to be
-user-friendly, non-intimidating and gives clear actionable paths to improve
+user-friendly, non-intimidating and to give clear actionable paths to improve
 their codebase.&lt;/p&gt;
 
 &lt;h1 id=&quot;the-software-modernization-problem&quot;&gt;The software modernization problem&lt;/h1&gt;
@@ -52,12 +52,12 @@ their codebase.&lt;/p&gt;
 &lt;p&gt;Software is like our physical infrastructure: it’s aging and
 improving legacy software is a major undertaking. Reports estimates
 that bad code and technical debt takes up to 30% of developer time
-(see &lt;a href=&quot;https://stripe.com/files/reports/the-developer-coefficient.pdf&quot;&gt;stripe study&lt;/a&gt;,
+(see &lt;a href=&quot;https://stripe.com/files/reports/the-developer-coefficient.pdf&quot;&gt;Stripe study&lt;/a&gt;,
 &lt;a href=&quot;https://redfin.engineering/pay-down-your-technical-debt-faster-by-limiting-your-payments-84fdca5e4ea3&quot;&gt;other sources&lt;/a&gt; estimate it’s more like 20%).
 The same &lt;a href=&quot;https://stripe.com/files/reports/the-developer-coefficient.pdf&quot;&gt;study from Stripe&lt;/a&gt;
 reports that bad code costs companies $85B annually. Even if you cut the estimate
-in half, it’s still an number that makes you wonder if we should continue to write
-code as we do today (and is a good argument to &lt;a href=&quot;/software engineering/essay/humans/human behavior/2020/12/17/we-are-all-stupid/&quot;&gt;support the first post&lt;/a&gt;).&lt;/p&gt;
+in half, it’s still a number that makes you wonder if we should continue to write
+code as we do today.&lt;/p&gt;
 
 &lt;p&gt;There are two solutions to address the modernization problem:&lt;/p&gt;
 
@@ -70,9 +70,9 @@ code as we do today (and is a good argument to &lt;a href=&quot;/software engine
 progress on software analysis and machine learning allows to automate
 software development. This is a natural evolution: after all, today, Google translate
 writes better English than I do and a Tesla drives better than I do
-(on a highway for now). Why a computer couldn’t program better than I do?&lt;/p&gt;
+(on a highway for now). Why couldn’t a computer program better than I do?&lt;/p&gt;
 
-&lt;p&gt;At first, only few aspects will be automated. As the technology
+&lt;p&gt;At first, only a few aspects will be automated. As the technology
 develops, the scope of automation will grow and the human factor
 in software development will shrink.&lt;/p&gt;
 
@@ -84,26 +84,26 @@ to twenty years and the two problems mentioned before (maintenance + modernizati
 will require mode engineers over time.&lt;/p&gt;
 
 &lt;p&gt;The department of labor &lt;a href=&quot;https://www.bls.gov/ooh/computer-and-information-technology/software-developers.htm&quot;&gt;already predicts&lt;/a&gt;
-that demand for software engineer will grow by 20% in the next ten years.
-The traditional education system cannot absorb so many engineers. The job
+that demand for software engineers will grow by 20% in the next ten years.
+The traditional education system cannot absorb this increase. The job
 market for software engineers will be heavy on the demand (a lot of job
 openings) and limited on the offer (not enough engineers).&lt;/p&gt;
 
 &lt;p&gt;This means that many engineers will be under-trained and there will
 be a need for additional training. A code automation platform
 can help engineers to become better by providing guidance.
-Such a platform will not only guide them in their work but also help them at
-becoming better software engineers by explaining why some modification are recommended.&lt;/p&gt;
+Such a platform will not only guide them in their work but also help them become
+better software engineers by explaining why some modifications are recommended.&lt;/p&gt;
 
 &lt;h1 id=&quot;the-mission&quot;&gt;The mission&lt;/h1&gt;
 
-&lt;p&gt;The mission of Code Inspector is clear: &lt;strong&gt;help developers to produce better software&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;The mission of Code Inspector is clear: &lt;strong&gt;help developers produce better software&lt;/strong&gt;.&lt;/p&gt;
 
 &lt;p&gt;There are three main aspects to achieve this:&lt;/p&gt;
 
 &lt;ol&gt;
   &lt;li&gt;&lt;strong&gt;Identification&lt;/strong&gt;: detect issues in a codebase, surface
-them in a user-friendly interface and help developers to prioritize software maintenance.&lt;/li&gt;
+them in a user-friendly interface and help developers prioritize software maintenance.&lt;/li&gt;
   &lt;li&gt;&lt;strong&gt;Automation&lt;/strong&gt;: automate resolution of bugs and
 maintenance issues. Let the machine fix issues for you: it will do it better than
 the majority of humans.&lt;/li&gt;
