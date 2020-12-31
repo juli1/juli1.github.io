@@ -4,14 +4,14 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Julien Delange</title>
+    <title>Why Code Inspector? - Julien Delange</title>
     <link rel="alternate" type="application/rss+xml" title="Julien Delange &raquo; Feed" href="/feed.xml" />
     <meta name="viewport" content="width=device-width">
-    <meta name="description" content="Personal website of Julien Delange">
-    <link rel="canonical" href="http://julien.gunnm.org/">
+    <meta name="description" content="Why I left everything in 2020 to focus on building Code Inspector">
+    <link rel="canonical" href="http://julien.gunnm.org/software%20engineering/essay/humans/human%20behavior/2020/12/26/why-code-inspector/">
 
     
-    <meta name="keywords" content="software engineering, twitter, amazon, aws, modeling, running, ultra-marathon"/>
+    <meta name="keywords" content="software engineering, essay, code inspector"/>
     
 
     <!-- Latest compiled and minified CSS -->
@@ -29,8 +29,8 @@
     <link rel="stylesheet" href="/css/main.css">
 
     <!-- Twitter Cards -->
-    <meta name="twitter:title" content="" />
-    <meta name="twitter:description" content="Personal website of Julien Delange" />
+    <meta name="twitter:title" content="Why Code Inspector?" />
+    <meta name="twitter:description" content="Why I left everything in 2020 to focus on building Code Inspector" />
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="@juli1pb" />
     <meta name="twitter:creator" content="@juli1pb" />
@@ -41,8 +41,8 @@
     <meta property="og:site_name" content="Julien Delange" />
     <meta property="og:type" content="article" />
     <meta property="og:image" content="/assets/profile.png" />
-    <meta property="og:title" content="" />
-    <meta property="og:description" content="Personal website of Julien Delange" />
+    <meta property="og:title" content="Why Code Inspector?" />
+    <meta property="og:description" content="Why I left everything in 2020 to focus on building Code Inspector" />
 
 </head>
 
@@ -117,35 +117,130 @@
 
     <div class="page-content">
       <div class="wrap">
-      <div id="profile-pic">
-   <img src="/assets/profile.png"/>
-</div>
+      <div class="post">
 
-<div class="home">
-   <div class="intro">
-      <p>
-         My name is Julien Delange. I am a software engineer working at <a href="http://www.twitter.com">Twitter</a> and an occasional runner for distances between 5K and 100 miles. 
-         This website has most of the useful information on my <a href="/projects">research work</a> and <a href="/running">running agenda</a>. 
-         I also maintain a <a href="/blog">blog</a> on topics related to software engineering, programming and running. More about how to contact me in the <a href="/about">about section</a>.
-      </p>
-   </div>
-   <div style="margin-top: 2em;">
-      <p>
-      The views expressed here are my own.
-      </p>
-   </div>
-   <div style="margin-top: 2em;">
-      <p>
-      If you are a recruiter and want to contact me, please leave me alone.
-      </p>
-   </div>
-   <div class="lastpost">
-      <h1>Last from the blog:   <a href="/software%20engineering/essay/humans/human%20behavior/2020/12/26/why-code-inspector/">Why Code Inspector?</a></h1>
-   </div>
+  <header class="post-header">
+    <h1>Why Code Inspector?</h1>
+    <p class="meta">
+      <!-- Dec 26, 2020 -->
+      <!-- 
+       -->
+   </p>
+  </header>
 
-   <div style="margin-top: 1.5em; text-align: center;">
-     <p>You can see <a href="/blog">all blog posts</a> or just subscribe to the <a href="/feed.xml">RSS feed</a></p>
-  </div>
+  <article class="post-content">
+  <p><em>Note: this post is part of series about the foundations for Code Inspector, you
+can find the previous article <a href="/software engineering/essay/humans/human behavior/2020/12/25/the-machine-is-better-than-you/">here</a>.</em></p>
+
+<p>This is the last post in the series about Code Inspector. The <a href="/software engineering/essay/humans/human behavior/2020/12/17/we-are-all-stupid/">first post</a>
+focused on why humans are fallible by design and sub-optimal at executing
+small and repetitive tasks. The <a href="/software engineering/essay/humans/human behavior/2020/12/25/the-machine-is-better-than-you/">second post</a> focused on the
+exponential progress of automation: tasks performed by machines
+are getting more complex every day and soon, most of our jobs are
+going to be automated.</p>
+
+<p>In the next paragraphs, I explain the main drivers for starting Code Inspector.</p>
+
+<h1 id="the-software-maintenance-problem">The software maintenance problem</h1>
+
+<p>There is a real struggle to develop software, especially because it is really
+hard to find and understand the design and implementation choices make by the initial
+authors. Software is often poorly documented, which makes it very complicated
+to troubleshoot an issue or maintain an old codebase.</p>
+
+<p>The average tenure for software developers is between 2 to 3 years. But
+the software is operated and maintained for decades. As developers leave a
+company their knowledge of a project leaves the company. <strong>In some industries,
+the developers that maintains a software were not even born when the initial
+system was designed.</strong>. (Think twice about this!)</p>
+
+<p>Some developers have no idea how the system they operate actually works.
+It can take days or weeks to troubleshoot an issue because the system is way
+too complex and the documentation, non-existent. And it is not common that issues
+go unnoticed for months because developers do not understand the impact
+of their scope.</p>
+
+<p>There is an obvious need for a product that helps developers in understanding
+a code base and establish a plan to improve it. This product needs to be
+user-friendly, non-intimidating and gives clear actionable paths to improve
+their codebase.</p>
+
+<h1 id="the-software-modernization-problem">The software modernization problem</h1>
+
+<p>Software is like our physical infrastructure: it’s aging and
+improving legacy software is a major undertaking. Reports estimates
+that bad code and technical debt takes up to 30% of developer time
+(see <a href="https://stripe.com/files/reports/the-developer-coefficient.pdf">stripe study</a>,
+<a href="https://redfin.engineering/pay-down-your-technical-debt-faster-by-limiting-your-payments-84fdca5e4ea3">other sources</a> estimate it’s more like 20%).
+The same <a href="https://stripe.com/files/reports/the-developer-coefficient.pdf">study from Stripe</a>
+reports that bad code costs companies $85B annually. Even if you cut the estimate
+in half, it’s still an number that makes you wonder if we should continue to write
+code as we do today (and is a good argument to <a href="/software engineering/essay/humans/human behavior/2020/12/17/we-are-all-stupid/">support the first post</a>).</p>
+
+<p>There are two solutions to address the modernization problem:</p>
+
+<ol>
+  <li>Hire more engineers, which increases costs exponentially and increases productivity linearly (at best).</li>
+  <li>Automate software development.</li>
+</ol>
+
+<p>Until very recently, only the first solution was possible. The recent
+progress on software analysis and machine learning allows to automate
+software development. This is a natural evolution: after all, today, Google translate
+writes better English than I do and a Tesla drives better than I do
+(on a highway for now). Why a computer couldn’t program better than I do?</p>
+
+<p>At first, only few aspects will be automated. As the technology
+develops, the scope of automation will grow and the human factor
+in software development will shrink.</p>
+
+<h1 id="the-training-problem">The training problem</h1>
+
+<p>The change from manual to automated software development is not going to happen
+overnight. Demand for software engineers will still be strong for the next ten
+to twenty years and the two problems mentioned before (maintenance + modernization)
+will require mode engineers over time.</p>
+
+<p>The department of labor <a href="https://www.bls.gov/ooh/computer-and-information-technology/software-developers.htm">already predicts</a>
+that demand for software engineer will grow by 20% in the next ten years.
+The traditional education system cannot absorb so many engineers. The job
+market for software engineers will be heavy on the demand (a lot of job
+openings) and limited on the offer (not enough engineers).</p>
+
+<p>This means that many engineers will be under-trained and there will
+be a need for additional training. A code automation platform
+can help engineers to become better by providing guidance.
+Such a platform will not only guide them in their work but also help them at
+becoming better software engineers by explaining why some modification are recommended.</p>
+
+<h1 id="the-mission">The mission</h1>
+
+<p>The mission of Code Inspector is clear: <strong>help developers to produce better software</strong>.</p>
+
+<p>There are three main aspects to achieve this:</p>
+
+<ol>
+  <li><strong>Identification</strong>: detect issues in a codebase, surface
+them in a user-friendly interface and help developers to prioritize software maintenance.</li>
+  <li><strong>Automation</strong>: automate resolution of bugs and
+maintenance issues. Let the machine fix issues for you: it will do it better than
+the majority of humans.</li>
+  <li><strong>Training</strong>: incentivize developers to maintain a codebase, fix issues
+and guide them through code changes (e.g. explain why they are done).</li>
+</ol>
+
+<p>The financial impact is clear as well: with an average salary of
+<a href="https://www.bls.gov/ooh/computer-and-information-technology/software-developers.htm">$108,000 per year</a>,
+a product that makes engineers 1% more productive would already unlock a value
+of $1,000 per engineer per year. And if such a product could even cut the time spent
+in technical debt by 50%, it will then save $10,000 per developer per year.</p>
+
+<p>This is a huge, underestimated problem and this
+is why I left everything to focus on this project. The coming year is going
+to be very exciting and I can’t wait for it to start.</p>
+
+  </article>
+
 </div>
 
       </div>

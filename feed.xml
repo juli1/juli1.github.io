@@ -5,9 +5,142 @@
     <description>Harder, Better, Faster, Stronger</description>
     <link>http://julien.gunnm.org/</link>
     <atom:link href="http://julien.gunnm.org/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Sun, 27 Dec 2020 05:13:04 +0000</pubDate>
-    <lastBuildDate>Sun, 27 Dec 2020 05:13:04 +0000</lastBuildDate>
+    <pubDate>Thu, 31 Dec 2020 00:40:19 +0000</pubDate>
+    <lastBuildDate>Thu, 31 Dec 2020 00:40:19 +0000</lastBuildDate>
     <generator>Jekyll v4.2.0</generator>
+    
+      <item>
+        <title>Why Code Inspector?</title>
+        <description>&lt;p&gt;&lt;em&gt;Note: this post is part of series about the foundations for Code Inspector, you
+can find the previous article &lt;a href=&quot;/software engineering/essay/humans/human behavior/2020/12/25/the-machine-is-better-than-you/&quot;&gt;here&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;This is the last post in the series about Code Inspector. The &lt;a href=&quot;/software engineering/essay/humans/human behavior/2020/12/17/we-are-all-stupid/&quot;&gt;first post&lt;/a&gt;
+focused on why humans are fallible by design and sub-optimal at executing
+small and repetitive tasks. The &lt;a href=&quot;/software engineering/essay/humans/human behavior/2020/12/25/the-machine-is-better-than-you/&quot;&gt;second post&lt;/a&gt; focused on the
+exponential progress of automation: tasks performed by machines
+are getting more complex every day and soon, most of our jobs are
+going to be automated.&lt;/p&gt;
+
+&lt;p&gt;In the next paragraphs, I explain the main drivers for starting Code Inspector.&lt;/p&gt;
+
+&lt;h1 id=&quot;the-software-maintenance-problem&quot;&gt;The software maintenance problem&lt;/h1&gt;
+
+&lt;p&gt;There is a real struggle to develop software, especially because it is really
+hard to find and understand the design and implementation choices make by the initial
+authors. Software is often poorly documented, which makes it very complicated
+to troubleshoot an issue or maintain an old codebase.&lt;/p&gt;
+
+&lt;p&gt;The average tenure for software developers is between 2 to 3 years. But
+the software is operated and maintained for decades. As developers leave a
+company their knowledge of a project leaves the company. &lt;strong&gt;In some industries,
+the developers that maintains a software were not even born when the initial
+system was designed.&lt;/strong&gt;. (Think twice about this!)&lt;/p&gt;
+
+&lt;p&gt;Some developers have no idea how the system they operate actually works.
+It can take days or weeks to troubleshoot an issue because the system is way
+too complex and the documentation, non-existent. And it is not common that issues
+go unnoticed for months because developers do not understand the impact
+of their scope.&lt;/p&gt;
+
+&lt;p&gt;There is an obvious need for a product that helps developers in understanding
+a code base and establish a plan to improve it. This product needs to be
+user-friendly, non-intimidating and gives clear actionable paths to improve
+their codebase.&lt;/p&gt;
+
+&lt;h1 id=&quot;the-software-modernization-problem&quot;&gt;The software modernization problem&lt;/h1&gt;
+
+&lt;p&gt;Software is like our physical infrastructure: it’s aging and
+improving legacy software is a major undertaking. Reports estimates
+that bad code and technical debt takes up to 30% of developer time
+(see &lt;a href=&quot;https://stripe.com/files/reports/the-developer-coefficient.pdf&quot;&gt;stripe study&lt;/a&gt;,
+&lt;a href=&quot;https://redfin.engineering/pay-down-your-technical-debt-faster-by-limiting-your-payments-84fdca5e4ea3&quot;&gt;other sources&lt;/a&gt; estimate it’s more like 20%).
+The same &lt;a href=&quot;https://stripe.com/files/reports/the-developer-coefficient.pdf&quot;&gt;study from Stripe&lt;/a&gt;
+reports that bad code costs companies $85B annually. Even if you cut the estimate
+in half, it’s still an number that makes you wonder if we should continue to write
+code as we do today (and is a good argument to &lt;a href=&quot;/software engineering/essay/humans/human behavior/2020/12/17/we-are-all-stupid/&quot;&gt;support the first post&lt;/a&gt;).&lt;/p&gt;
+
+&lt;p&gt;There are two solutions to address the modernization problem:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Hire more engineers, which increases costs exponentially and increases productivity linearly (at best).&lt;/li&gt;
+  &lt;li&gt;Automate software development.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Until very recently, only the first solution was possible. The recent
+progress on software analysis and machine learning allows to automate
+software development. This is a natural evolution: after all, today, Google translate
+writes better English than I do and a Tesla drives better than I do
+(on a highway for now). Why a computer couldn’t program better than I do?&lt;/p&gt;
+
+&lt;p&gt;At first, only few aspects will be automated. As the technology
+develops, the scope of automation will grow and the human factor
+in software development will shrink.&lt;/p&gt;
+
+&lt;h1 id=&quot;the-training-problem&quot;&gt;The training problem&lt;/h1&gt;
+
+&lt;p&gt;The change from manual to automated software development is not going to happen
+overnight. Demand for software engineers will still be strong for the next ten
+to twenty years and the two problems mentioned before (maintenance + modernization)
+will require mode engineers over time.&lt;/p&gt;
+
+&lt;p&gt;The department of labor &lt;a href=&quot;https://www.bls.gov/ooh/computer-and-information-technology/software-developers.htm&quot;&gt;already predicts&lt;/a&gt;
+that demand for software engineer will grow by 20% in the next ten years.
+The traditional education system cannot absorb so many engineers. The job
+market for software engineers will be heavy on the demand (a lot of job
+openings) and limited on the offer (not enough engineers).&lt;/p&gt;
+
+&lt;p&gt;This means that many engineers will be under-trained and there will
+be a need for additional training. A code automation platform
+can help engineers to become better by providing guidance.
+Such a platform will not only guide them in their work but also help them at
+becoming better software engineers by explaining why some modification are recommended.&lt;/p&gt;
+
+&lt;h1 id=&quot;the-mission&quot;&gt;The mission&lt;/h1&gt;
+
+&lt;p&gt;The mission of Code Inspector is clear: &lt;strong&gt;help developers to produce better software&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;There are three main aspects to achieve this:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;strong&gt;Identification&lt;/strong&gt;: detect issues in a codebase, surface
+them in a user-friendly interface and help developers to prioritize software maintenance.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Automation&lt;/strong&gt;: automate resolution of bugs and
+maintenance issues. Let the machine fix issues for you: it will do it better than
+the majority of humans.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Training&lt;/strong&gt;: incentivize developers to maintain a codebase, fix issues
+and guide them through code changes (e.g. explain why they are done).&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;The financial impact is clear as well: with an average salary of
+&lt;a href=&quot;https://www.bls.gov/ooh/computer-and-information-technology/software-developers.htm&quot;&gt;$108,000 per year&lt;/a&gt;,
+a product that makes engineers 1% more productive would already unlock a value
+of $1,000 per engineer per year. And if such a product could even cut the time spent
+in technical debt by 50%, it will then save $10,000 per developer per year.&lt;/p&gt;
+
+&lt;p&gt;This is a huge, underestimated problem and this
+is why I left everything to focus on this project. The coming year is going
+to be very exciting and I can’t wait for it to start.&lt;/p&gt;
+</description>
+        <pubDate>Sat, 26 Dec 2020 05:13:20 +0000</pubDate>
+        <link>http://julien.gunnm.org/software%20engineering/essay/humans/human%20behavior/2020/12/26/why-code-inspector/</link>
+        <guid isPermaLink="true">http://julien.gunnm.org/software%20engineering/essay/humans/human%20behavior/2020/12/26/why-code-inspector/</guid>
+        
+        <category>software engineering</category>
+        
+        <category>essay</category>
+        
+        <category>code inspector</category>
+        
+        
+        <category>software engineering</category>
+        
+        <category>essay</category>
+        
+        <category>humans</category>
+        
+        <category>human behavior</category>
+        
+      </item>
     
       <item>
         <title>The machine is better than you</title>
@@ -750,50 +883,6 @@ that I complete all the tasks I want to do within a day, a weekend or a month.&l
         <pubDate>Fri, 06 Mar 2020 13:13:20 +0000</pubDate>
         <link>http://julien.gunnm.org/software%20engineering/essay/2020/03/06/manage-project-like-a-race/</link>
         <guid isPermaLink="true">http://julien.gunnm.org/software%20engineering/essay/2020/03/06/manage-project-like-a-race/</guid>
-        
-        <category>software engineering</category>
-        
-        <category>essay</category>
-        
-        
-        <category>software engineering</category>
-        
-        <category>essay</category>
-        
-      </item>
-    
-      <item>
-        <title>Essays on Software Engineering</title>
-        <description>&lt;p&gt;After several years in the technology industry and living in various places,
-I wanted to take the time to write some thoughts. Working on various
-domains (such as aerospace, academia, data center management or ads),
-living in different countries (or even states within the USA) and achieving
-certains goals (such as losing half of my weight or running ultra distances)
-helped me to see commonalities between domains and establish parallels
-between worlds you would consider unrelated.&lt;/p&gt;
-
-&lt;p&gt;Building software helped me to better understand real-life problems.
-And leading non-tech projects also helped me building better software.&lt;/p&gt;
-
-&lt;p&gt;One example would be fixing properties. When you fix a house,
-you architect the new building, you schedule the work, establish milestones
-and you clearly see dependencies. For example, you do not start painting before
-the dry walls are properly installed and sealed. Yet, developers often
-overlook such basic rules, even in regulated industries.&lt;/p&gt;
-
-&lt;p&gt;For the next six months, I will write a new article each month that will
-talk about one aspect similar to the one above. I have no idea or expectation about this
-experiment, I just hope it will be as useful to you as it will be to me.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;/software engineering/essay/2020/03/06/manage-project-like-a-race/&quot;&gt;Manage projects like you run a race&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;/software engineering/essay/2020/06/21/build-software-like-you-build-a-house/&quot;&gt;Build software like you build a house&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;/software engineering/essay/2020/12/06/on-team-organization/&quot;&gt;On team organization&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        <pubDate>Fri, 06 Mar 2020 13:13:20 +0000</pubDate>
-        <link>http://julien.gunnm.org/software%20engineering/essay/2020/03/06/software-engineering-series/</link>
-        <guid isPermaLink="true">http://julien.gunnm.org/software%20engineering/essay/2020/03/06/software-engineering-series/</guid>
         
         <category>software engineering</category>
         
