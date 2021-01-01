@@ -5,18 +5,18 @@
     <description>Harder, Better, Faster, Stronger</description>
     <link>http://julien.gunnm.org/</link>
     <atom:link href="http://julien.gunnm.org/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Thu, 31 Dec 2020 05:55:34 +0000</pubDate>
-    <lastBuildDate>Thu, 31 Dec 2020 05:55:34 +0000</lastBuildDate>
+    <pubDate>Fri, 01 Jan 2021 00:46:28 +0000</pubDate>
+    <lastBuildDate>Fri, 01 Jan 2021 00:46:28 +0000</lastBuildDate>
     <generator>Jekyll v4.2.0</generator>
     
       <item>
         <title>Why Code Inspector?</title>
         <description>&lt;p&gt;&lt;em&gt;Note: this post is part of a series about the foundations for Code Inspector, you
-can find the previous article &lt;a href=&quot;/software engineering/essay/humans/human behavior/2020/12/25/the-machine-is-better-than-you/&quot;&gt;here&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
+can find the previous article &lt;a href=&quot;/software engineering/essay/humans/human behavior/2020/12/26/the-machine-is-better-than-you/&quot;&gt;here&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
 
 &lt;p&gt;This is the last post in the series about Code Inspector. The &lt;a href=&quot;/software engineering/essay/humans/human behavior/2020/12/17/we-are-all-stupid/&quot;&gt;first post&lt;/a&gt;
 focused on why humans are fallible by design and sub-optimal at executing
-small and repetitive tasks. The &lt;a href=&quot;/software engineering/essay/humans/human behavior/2020/12/25/the-machine-is-better-than-you/&quot;&gt;second post&lt;/a&gt; focused on the
+small and repetitive tasks. The &lt;a href=&quot;/software engineering/essay/humans/human behavior/2020/12/26/the-machine-is-better-than-you/&quot;&gt;second post&lt;/a&gt; focused on the
 exponential progress of automation: tasks performed by machines
 are getting more complex every day and soon, most of our jobs are
 going to be automated.&lt;/p&gt;
