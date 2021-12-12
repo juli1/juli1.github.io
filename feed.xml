@@ -5,9 +5,55 @@
     <description>Harder, Better, Faster, Stronger</description>
     <link>http://julien.gunnm.org/</link>
     <atom:link href="http://julien.gunnm.org/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Wed, 19 May 2021 17:10:18 +0000</pubDate>
-    <lastBuildDate>Wed, 19 May 2021 17:10:18 +0000</lastBuildDate>
-    <generator>Jekyll v4.2.0</generator>
+    <pubDate>Sun, 12 Dec 2021 21:47:30 +0000</pubDate>
+    <lastBuildDate>Sun, 12 Dec 2021 21:47:30 +0000</lastBuildDate>
+    <generator>Jekyll v4.2.1</generator>
+    
+      <item>
+        <title>Reality Distortion</title>
+        <description>&lt;p&gt;In personal or professional relations, I realized that failure comes from the distortion of reality. You and 1+ other person(s) do not have the same vision of reality. Our vision of reality is biased, and we want to see the truth and facts better than they look.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Your company fails because your vision of the market did not match the reality, or/and your product sucks&lt;/li&gt;
+  &lt;li&gt;Your customer did not sign the contract; you thought they liked your product way more than you think&lt;/li&gt;
+  &lt;li&gt;Your friend did not contact you because you are way less attractive or interesting than you think and they don’t have time for you&lt;/li&gt;
+  &lt;li&gt;Your partner wants to separate despite you thinking your relation was significant.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The list could go on and on. The fact is that you and 1+ person(s) do not share the same reality.&lt;/p&gt;
+
+&lt;p&gt;We all have biases and mental shortcuts that let us live in a distorted reality.
+The longer we live in this false reality, the more challenging and expensive it costs to escape it.
+Over the last years, it has hit me hard in friendship, relationships, or business.&lt;/p&gt;
+
+&lt;p&gt;What is the solution here? While I do not have the perfect plan, there are some solutions I use:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Match &lt;em&gt;your&lt;/em&gt; reality with &lt;em&gt;actual&lt;/em&gt; metrics&lt;/strong&gt;: measure what you think is happening in the world and compare it to your vision and opinions.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;External monitoring&lt;/strong&gt;: have a friend or partner give &lt;em&gt;honest&lt;/em&gt; and &lt;em&gt;non-biased&lt;/em&gt; feedback. And listen to them. The hardest part is getting somebody open and not afraid to tell you how wrong you can be. Cherish such relationships.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Periodically evaluate yourself&lt;/strong&gt;: regularly question your view of reality and how distorted it can be.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;While sometimes you can be wrong, the world can also adopt your vision of reality. It happened in the past (after all, we are switching to electric cars, France dropped the Minitel for Internet), but it’s infrequent.&lt;/p&gt;
+
+&lt;p&gt;Always remember that we are all humans. When facing how wrong you are, be honest with yourself: face the reality you did not see, realize your mistake and blame no one but yourself. Cut your losses and move on. It is not about how hard wrong you were but how quickly you realize it and move forward.&lt;/p&gt;
+</description>
+        <pubDate>Sun, 05 Dec 2021 05:13:20 +0000</pubDate>
+        <link>http://julien.gunnm.org/reality/distortion/essay/2021/12/05/reality-distortion/</link>
+        <guid isPermaLink="true">http://julien.gunnm.org/reality/distortion/essay/2021/12/05/reality-distortion/</guid>
+        
+        <category>reality</category>
+        
+        <category>distortion</category>
+        
+        
+        <category>reality</category>
+        
+        <category>distortion</category>
+        
+        <category>essay</category>
+        
+      </item>
     
       <item>
         <title>Why Code Inspector?</title>
@@ -797,101 +843,6 @@ And that we will be able to enjoy time together again.&lt;/p&gt;
         
         
         <category>misc</category>
-        
-      </item>
-    
-      <item>
-        <title>Manage projects like you run a race</title>
-        <description>&lt;p&gt;&lt;em&gt;Note: this page is part of the &lt;a href=&quot;/software engineering/essay/2020/03/06/software-engineering-series&quot;&gt;“Essays on Software Engineering”&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;I used to run long distance trail races. My last race was in 2016, a 100 km
-race in &lt;a href=&quot;https://www.dcnr.pa.gov/StateParks/FindAPark/WorldsEndStatePark/Pages/default.aspx&quot;&gt;Worlds End State Park&lt;/a&gt;, in the middle of Pennsylvania.
-That particular day, I did not plan to finish the race: my body was already
-exhausted from years of running without much rest, I only wanted to finish
-the first 50k. Surprisingly, that day, my body felt good and at the 40 km mark,
-a race volunteer convinced me to keep going as I was way ahead in terms of time.
-Hours later, I finished the race about 15 minutes before the cut-off, limping,
-around midnight, after running about several miles without a lamp.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/worldsends.jpg&quot; alt=&quot;Worlds Ends Race Picture&quot; /&gt;
-The night before the race&lt;/p&gt;
-
-&lt;p&gt;What went wrong that day? I did not plan to run 100k but 50k and
-did not pack any battery or a lamp replacement. My mind was set on
-running 50k from the start and not ready to go any longer. I did not plan
-for the unexpected.&lt;/p&gt;
-
-&lt;p&gt;It wasn’t like this before. When a race was less than 26 miles, I took it as a training run.
-But when it was more than this, I meticulously planned it. I was
-researching the elevation profile, checking support stations and
-what food and liquids were provided. I prepare bags to drop at support stations located along the course and pack them with
-more than twice of what I need: dry socks, food or a new t-shirt.
-For each race, I clearly knew where and when I should be.&lt;/p&gt;
-
-&lt;p&gt;When you think about it, a race is very simple: run X miles under Y hours.
-There are constraints, such as the elevation profile, the weather or the type
-of terrain. All of this can be planned and managed to reach the goal.
-To succeed, all you need is to make sure you are trained, know what to
-expect at regular interval of the race and have whatever you need through
-the race.&lt;/p&gt;
-
-&lt;p&gt;Over the years, I realized this process is no different than project management.
-This is exactly the same.&lt;/p&gt;
-
-&lt;p&gt;When you start a project, you also have a goal (deliver X within Y months),
-some constraints and resources. As for a race, if the goal is not realistic,
-you do not sign up and come back if or when you evaluate this being feasible.
-Once you sign up, you establish a roadmap that tells you what and when
-things should be completed. You have milestones that show you the incremental
-progress you are going to do over time. It gives a clear overview of the
-project work plan, not only to you but to the team that can also discuss
-potential dependencies and organize for them to be delivered on time.&lt;/p&gt;
-
-&lt;p&gt;Does it sound like basic project management to you? Yet, I still see many important projects
-being started without even having milestones set. Engineers do not know
-what they should be doing when they come to work. Even worse: sometimes, engineers
-or managers do not even know what race they are running
-(if they are running any). They are sometimes just lost in the company wilderness.&lt;/p&gt;
-
-&lt;p&gt;When I start a project, I often try to plan it accordingly:&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;&lt;strong&gt;Have a clear overview of the feasibility&lt;/strong&gt;: if not feasible, either readjust the scope of do not take the project: better to deliver nothing than strong disappointment.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Research and plan&lt;/strong&gt;: like when preparing a race, look for the main obstacles
-in your project and make a plan to overcome them. Define objectives and milestones
-in a way they are measurable (e.g. I finished the code of module X by date Y).
-Write them down and communicate them to all internal stakeholders (your team, your sister teams).
-Communicate more pessimistic milestones for the customer so that you have some margin if things go wrong.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Regularly check your progress&lt;/strong&gt; to check you can finish the race before the cut-off.
-Look at your milestones every week and re-evaluate your work plan if needed. If you are ahead of time, you might help some other
-projects that need support or just finish your project earlier and polish it (better to under promise and over deliver).&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Take large margins&lt;/strong&gt;: take at least 100% of margin, if you plan to complete a project in one month, ask for two months.
-You might face unexpected issues, either human (one team member is ill or has some family issues) or technical and this margin is here to take the unexpected into account.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;These are simple rules. No matter how experienced you are, not following
-them can transform a nice race halfway into a long nightmare. And regardless of
-experience, many people do not apply them.&lt;/p&gt;
-
-&lt;p&gt;Following these rules and processes helped me to manage multiple
-projects simultaneously and deliver them before the estimated delivery time. I now schedule my life
-according to them. It helped me to track what I should be doing and ensure
-that I complete all the tasks I want to do within a day, a weekend or a month.&lt;/p&gt;
-
-&lt;p&gt;Managing projects is very simple: manage them as you run a race.&lt;/p&gt;
-</description>
-        <pubDate>Fri, 06 Mar 2020 13:13:20 +0000</pubDate>
-        <link>http://julien.gunnm.org/software%20engineering/essay/2020/03/06/manage-project-like-a-race/</link>
-        <guid isPermaLink="true">http://julien.gunnm.org/software%20engineering/essay/2020/03/06/manage-project-like-a-race/</guid>
-        
-        <category>software engineering</category>
-        
-        <category>essay</category>
-        
-        
-        <category>software engineering</category>
-        
-        <category>essay</category>
         
       </item>
     
