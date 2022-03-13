@@ -4,14 +4,14 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Julien Delange</title>
+    <title>Why going on premise for your early-stage SaaS startup is a bad idea - Julien Delange</title>
     <link rel="alternate" type="application/rss+xml" title="Julien Delange &raquo; Feed" href="/feed.xml" />
     <meta name="viewport" content="width=device-width">
-    <meta name="description" content="Personal website of Julien Delange">
-    <link rel="canonical" href="http://julien.gunnm.org/">
+    <meta name="description" content="We explain the reasons why developing an on-premise solution for a SaaS startup is a bad idea.">
+    <link rel="canonical" href="http://julien.gunnm.org/startup/saas/2022/03/12/why-going-on-premise-start-bad-idea/">
 
     
-    <meta name="keywords" content="software engineering, twitter, amazon, aws, modeling, running, ultra-marathon"/>
+    <meta name="keywords" content="startup, saas, developer tools"/>
     
 
     <!-- Latest compiled and minified CSS -->
@@ -29,8 +29,8 @@
     <link rel="stylesheet" href="/css/main.css">
 
     <!-- Twitter Cards -->
-    <meta name="twitter:title" content="" />
-    <meta name="twitter:description" content="Personal website of Julien Delange" />
+    <meta name="twitter:title" content="Why going on premise for your early-stage SaaS startup is a bad idea" />
+    <meta name="twitter:description" content="We explain the reasons why developing an on-premise solution for a SaaS startup is a bad idea." />
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="@juli1pb" />
     <meta name="twitter:creator" content="@juli1pb" />
@@ -41,8 +41,8 @@
     <meta property="og:site_name" content="Julien Delange" />
     <meta property="og:type" content="article" />
     <meta property="og:image" content="/assets/profile.png" />
-    <meta property="og:title" content="" />
-    <meta property="og:description" content="Personal website of Julien Delange" />
+    <meta property="og:title" content="Why going on premise for your early-stage SaaS startup is a bad idea" />
+    <meta property="og:description" content="We explain the reasons why developing an on-premise solution for a SaaS startup is a bad idea." />
 
 </head>
 
@@ -117,37 +117,64 @@
 
     <div class="page-content">
       <div class="wrap">
-      <div id="profile-pic">
-   <img src="/assets/profile.png"/>
-</div>
+      <div class="post">
 
-<div class="home">
-   <div class="intro">
-      <p>
-         My name is Julien Delange. I am the founder of <a href="http://www.codiga.io">Codiga</a> and an occasional 
-         runner for distances between 5K and 100 miles. 
-         This website has most of the useful information on my <a href="/projects">research work</a> 
-         and <a href="/running">running agenda</a>. 
-         I also maintain a <a href="/blog">blog</a> on topics related to software engineering, programming and running. More about how to contact me in the <a href="/about">about section</a>.
-      </p>
-   </div>
-   <div style="margin-top: 2em;">
-      <p>
-      The views expressed here are my own.
-      </p>
-   </div>
-   <div style="margin-top: 2em;">
-      <p>
-      If you are a recruiter and want to contact me, please leave me alone.
-      </p>
-   </div>
-   <div class="lastpost">
-      <h1>Last from the blog:   <a href="/startup/saas/2022/03/12/why-going-on-premise-start-bad-idea/">Why going on premise for your early-stage SaaS startup is a bad idea</a></h1>
-   </div>
+  <header class="post-header">
+    <h1>Why going on premise for your early-stage SaaS startup is a bad idea</h1>
+    <p class="meta">
+      <!-- Mar 12, 2022 -->
+      <!-- 
+       -->
+   </p>
+  </header>
 
-   <div style="margin-top: 1.5em; text-align: center;">
-     <p>You can see <a href="/blog">all blog posts</a> or just subscribe to the <a href="/feed.xml">RSS feed</a></p>
-  </div>
+  <article class="post-content">
+  <p>I thought going on-premise was the biggest moneymaker for early-stage startups for a long time. I had this belief so deep in my brain that I planned to develop an on-premise solution for <a href="https://www.codiga.io">Codiga</a>. However, after talking to other founders and advisors, I started to realize this was probably a decision that could sink an early-stage company.</p>
+
+<p>Note that this is not advisable for all startups, especially your startup. The following post explains my reasons, and I am sure it might not apply to many cases. Take this post as a compilation of opinions to explain why going on-premise may be a bad idea.</p>
+
+<h2 id="its-all-about-focus">It’s all about focus</h2>
+
+<p>Building a company (and, to some extent, managing your life) is about resource allocation (how you spend your time, collaborators, and money).
+When going on-premise, as the software is no longer deployed in your infrastructure, you need to provide a significant amount of resources to your customers, making sure your solution works seamlessly in their infrastructure.</p>
+
+<p>In addition, as you need to sell to these big customers and keep the flywheel going, you need to invest in sales:</p>
+
+<ul>
+  <li>Develop (and refine) a sales process.</li>
+  <li>Find prospect, schedule demo, follow-up every call.</li>
+  <li>Develop marketing to target some specific vital people.</li>
+</ul>
+
+<p>Your focus shifted from innovation and product-focused company to a sales-focused company. As an early-stage company, your resources are very limited, and investing significant time in sales means that you take these resources away from being innovative. Even if you hire a sales force (which will be limited to one salesperson and one customer manager at this stage), you have to allocate a few engineers to work with them and support the on-premise version of your product. These engineers will not work on innovative features.</p>
+
+<h2 id="the-finance-does-not-check-out">The finance does not check out</h2>
+
+<p>Imagine you price your product at $40 per user per seat for your on-premise version. At this price point, to get $500,000 of ARR, it means you need to have more than 1,000 customers using your on-premise version. With many accounts being around 50 to 100 users, you have roughly 15 accounts.</p>
+
+<p>To manage these 15 accounts, you will need at least one sales representative, two customer managers, and one engineer to debug or troubleshoot issues for your customers. These resources will already cost more than $500,000 per year, which means that even if your on-premise solution yields significant revenue, your business does not make a profit.</p>
+
+<h2 id="the-future-is-the-public-cloud">The future is the public cloud</h2>
+
+<p>Some customers want to deploy on-premise and will always like that (). The reality is that fewer and fewer customers will stay on-premises. Years ago, the narrative was about security: the public cloud was seen as being insecure/unsafe. Since that time, <a href="https://aws.amazon.com/solutions/case-studies/capital-one-all-in-on-aws/">Capital One</a> started to use AWS, large tech companies are all starting in the public cloud or moving to the public cloud (e.g., Twitter). Even the US government has its public cloud today.
+The trend will continue. Companies noticed the trend and adapted, asking their customers to go to the public cloud. Atlassian is a good example and announces the end of support for the on-premise version of their product. The reality is that on-premise products will become a niche market.</p>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>The arguments presented above may not apply to all companies and should be taken from a grain of salt.
+I believe that early-stage companies should focus on innovation and Product-Market Fit
+(e.g., make something users want), not on sales.</p>
+
+<p>The biggest issue when developing an on-premise version of a SaaS product
+is that it forces you to reallocate your resources from developing a great product
+to selling and supporting an on-premise version.</p>
+
+<p>Of course, these arguments may not be correct at later stages when you can afford to
+allocate resources to develop a sales and customer support team without impacting innovation.
+But at this stage, you may already have enough traction and revenue not even to consider going on-premise.</p>
+
+  </article>
+
 </div>
 
       </div>

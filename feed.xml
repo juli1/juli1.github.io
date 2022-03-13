@@ -5,9 +5,72 @@
     <description>Harder, Better, Faster, Stronger</description>
     <link>http://julien.gunnm.org/</link>
     <atom:link href="http://julien.gunnm.org/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Sun, 06 Mar 2022 17:29:32 +0000</pubDate>
-    <lastBuildDate>Sun, 06 Mar 2022 17:29:32 +0000</lastBuildDate>
+    <pubDate>Sun, 13 Mar 2022 06:25:54 +0000</pubDate>
+    <lastBuildDate>Sun, 13 Mar 2022 06:25:54 +0000</lastBuildDate>
     <generator>Jekyll v4.2.2</generator>
+    
+      <item>
+        <title>Why going on premise for your early-stage SaaS startup is a bad idea</title>
+        <description>&lt;p&gt;I thought going on-premise was the biggest moneymaker for early-stage startups for a long time. I had this belief so deep in my brain that I planned to develop an on-premise solution for &lt;a href=&quot;https://www.codiga.io&quot;&gt;Codiga&lt;/a&gt;. However, after talking to other founders and advisors, I started to realize this was probably a decision that could sink an early-stage company.&lt;/p&gt;
+
+&lt;p&gt;Note that this is not advisable for all startups, especially your startup. The following post explains my reasons, and I am sure it might not apply to many cases. Take this post as a compilation of opinions to explain why going on-premise may be a bad idea.&lt;/p&gt;
+
+&lt;h2 id=&quot;its-all-about-focus&quot;&gt;It’s all about focus&lt;/h2&gt;
+
+&lt;p&gt;Building a company (and, to some extent, managing your life) is about resource allocation (how you spend your time, collaborators, and money).
+When going on-premise, as the software is no longer deployed in your infrastructure, you need to provide a significant amount of resources to your customers, making sure your solution works seamlessly in their infrastructure.&lt;/p&gt;
+
+&lt;p&gt;In addition, as you need to sell to these big customers and keep the flywheel going, you need to invest in sales:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Develop (and refine) a sales process.&lt;/li&gt;
+  &lt;li&gt;Find prospect, schedule demo, follow-up every call.&lt;/li&gt;
+  &lt;li&gt;Develop marketing to target some specific vital people.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Your focus shifted from innovation and product-focused company to a sales-focused company. As an early-stage company, your resources are very limited, and investing significant time in sales means that you take these resources away from being innovative. Even if you hire a sales force (which will be limited to one salesperson and one customer manager at this stage), you have to allocate a few engineers to work with them and support the on-premise version of your product. These engineers will not work on innovative features.&lt;/p&gt;
+
+&lt;h2 id=&quot;the-finance-does-not-check-out&quot;&gt;The finance does not check out&lt;/h2&gt;
+
+&lt;p&gt;Imagine you price your product at $40 per user per seat for your on-premise version. At this price point, to get $500,000 of ARR, it means you need to have more than 1,000 customers using your on-premise version. With many accounts being around 50 to 100 users, you have roughly 15 accounts.&lt;/p&gt;
+
+&lt;p&gt;To manage these 15 accounts, you will need at least one sales representative, two customer managers, and one engineer to debug or troubleshoot issues for your customers. These resources will already cost more than $500,000 per year, which means that even if your on-premise solution yields significant revenue, your business does not make a profit.&lt;/p&gt;
+
+&lt;h2 id=&quot;the-future-is-the-public-cloud&quot;&gt;The future is the public cloud&lt;/h2&gt;
+
+&lt;p&gt;Some customers want to deploy on-premise and will always like that (). The reality is that fewer and fewer customers will stay on-premises. Years ago, the narrative was about security: the public cloud was seen as being insecure/unsafe. Since that time, &lt;a href=&quot;https://aws.amazon.com/solutions/case-studies/capital-one-all-in-on-aws/&quot;&gt;Capital One&lt;/a&gt; started to use AWS, large tech companies are all starting in the public cloud or moving to the public cloud (e.g., Twitter). Even the US government has its public cloud today.
+The trend will continue. Companies noticed the trend and adapted, asking their customers to go to the public cloud. Atlassian is a good example and announces the end of support for the on-premise version of their product. The reality is that on-premise products will become a niche market.&lt;/p&gt;
+
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
+
+&lt;p&gt;The arguments presented above may not apply to all companies and should be taken from a grain of salt.
+I believe that early-stage companies should focus on innovation and Product-Market Fit
+(e.g., make something users want), not on sales.&lt;/p&gt;
+
+&lt;p&gt;The biggest issue when developing an on-premise version of a SaaS product
+is that it forces you to reallocate your resources from developing a great product
+to selling and supporting an on-premise version.&lt;/p&gt;
+
+&lt;p&gt;Of course, these arguments may not be correct at later stages when you can afford to
+allocate resources to develop a sales and customer support team without impacting innovation.
+But at this stage, you may already have enough traction and revenue not even to consider going on-premise.&lt;/p&gt;
+</description>
+        <pubDate>Sat, 12 Mar 2022 05:13:20 +0000</pubDate>
+        <link>http://julien.gunnm.org/startup/saas/2022/03/12/why-going-on-premise-start-bad-idea/</link>
+        <guid isPermaLink="true">http://julien.gunnm.org/startup/saas/2022/03/12/why-going-on-premise-start-bad-idea/</guid>
+        
+        <category>startup</category>
+        
+        <category>saas</category>
+        
+        <category>developer tools</category>
+        
+        
+        <category>startup</category>
+        
+        <category>saas</category>
+        
+      </item>
     
       <item>
         <title>The founder starter kit</title>
@@ -843,101 +906,6 @@ the workforce[1], it is becoming urgent to teach these values.&lt;/p&gt;
         <category>software engineering</category>
         
         <category>essay</category>
-        
-      </item>
-    
-      <item>
-        <title>Do not take yourself too seriously</title>
-        <description>&lt;p&gt;&lt;em&gt;Note: this page is part of the &lt;a href=&quot;/software engineering/essay/2020/03/06/software-engineering-series&quot;&gt;“Essays on Software Engineering”&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;I often encounter and work with people who believe they are inventing the wheel
-and are so unique that you need to to listen to them and do exactly what they say
-(in French, you would say &lt;em&gt;“ils pensent avoir inventé le fil à couper le beurre”&lt;/em&gt;).&lt;/p&gt;
-
-&lt;p&gt;Such people take themselves too seriously. They believe that without them, the world
-would not go round. They will try to block you for the sake of being right when
-in fact, all what they are is annoying. Do not be such a person. They are full of
-themselves. And very boring. Life is not made to be boring. You are better than
-this.&lt;/p&gt;
-
-&lt;p&gt;The academic world is full of such people, frustrated that they did
-not find what their fellow neighbor invented and believe a solution cannot be good unless
-they invent it. Many researchers are so frustrated
-that they just reject others work, copy it, or tweak it slightly to finally claim
-a new invention. There is even a name for it: &lt;a href=&quot;https://en.wikipedia.org/wiki/Not_invented_here&quot;&gt;Not Invented Here&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;Of course, the very same behavior is present in the corporate world.
-Remember that coworker who criticizes other projects because it was led
-by their peers? Or the grumpy developer who re-implemented a piece of code
-just because he does not like some obscure (and often, very subjective) aspect?
-Would the reaction be the same if it was done by them?&lt;/p&gt;
-
-&lt;p&gt;Remember how different teams duplicate work inside the same companies
-instead of having shared code they can reuse? Or programmers not removing their
-old deprecated code (aka &lt;em&gt;dead code&lt;/em&gt;) &lt;em&gt;“just in case”&lt;/em&gt; it might be useful?&lt;/p&gt;
-
-&lt;p&gt;Duplicate efforts can be useful sometimes. For example, when creating
-the iPhone, Jobs had two teams: one implementing the phone using software, the
-other using hardware. In this exact case, the objective was to compare
-two ways of doing one thing (we all know the result: the software variation won).
-But the vast majority of times, duplicating work
-is an ego issue, with people thinking they are better than &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;insert-name-or-thing-here&amp;gt;&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;Do not be driven by your ego. This does not help you to move forward and
-is mentally draining. This also does not help people around you.&lt;/p&gt;
-
-&lt;p&gt;Instead, be driven by objective goals and metrics. If there is an objective
-to improve quality of a particular piece of code, do not write a new project:
-contribute to the existing one and improve its code coverage (remember
-that &lt;a href=&quot;https://www.joelonsoftware.com/2000/04/06/things-you-should-never-do-part-i/&quot;&gt;re-writing projects from scratch rarely works&lt;/a&gt;).&lt;/p&gt;
-
-&lt;p&gt;I believe there are two powerful principles to follow:&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Be mindful of others.&lt;/li&gt;
-  &lt;li&gt;Do not take yourself too seriously.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;The first principle is basic and yet, often overlooked. Try to put yourself in other people’s shoes
-and understand how they feel. That will help you empathize with the difficulties
-they might be having. This often explains why or how they react
-to a particular person or event. This principle is also illustrated
-by the habit &lt;em&gt;“Seek to understand, then to be understood”&lt;/em&gt; in &lt;a href=&quot;https://en.wikipedia.org/wiki/The_7_Habits_of_Highly_Effective_People&quot;&gt;The 7 habits of Highly Effective People&lt;/a&gt;, an amazing book I would recommend.&lt;/p&gt;
-
-&lt;p&gt;The second principle is useful to put things in perspectives. You are a human
-being who is failable by definition. You probably believe you are smart
-and better than others because your mom, wife or dog told you.
-In fact, as suggested by the &lt;a href=&quot;https://en.wikipedia.org/wiki/Dunning%E2%80%93Kruger_effect&quot;&gt;Dunning Kruger effect&lt;/a&gt;,
-you are probably the worst person to know your own personal value.
-This fact is illustrated every day in the stock market: many &lt;del&gt;gamblers&lt;/del&gt;
-investors believe they can beat the market when in reality, all they
-really achieve are losses. Similarly, many engineers believe they know how to
-optimize code themselves manually when in reality, the compiler does it better
-with optimization heuristics that have been implemented by researchers
-and language specialists. You might like to think you are better than others
-but you are probably not. Entertaining the idea of being that smart is
-counter-productive and is not going to help you.&lt;/p&gt;
-
-&lt;p&gt;You will make mistakes and this is going to be okay.
-Your challenge is not to not make mistakes: you will do bad things sometimes, regardless how hard you try not to.
-Your challenge is to put mechanisms and processes that will help you to avoid mistakes so that you catch them before you commit them.
-In software, this is done by using defensive programming, increasing test coverage (unit/integration tests), and having good observability/monitoring.&lt;/p&gt;
-
-&lt;p&gt;We do not succeed because we are better than others.
-We succeed because we understand how to be successful with them.&lt;/p&gt;
-
-&lt;p&gt;So get back to work, be nice and do not take yourself too seriously.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;: Thanks to Najwa for editing. 🙏&lt;/p&gt;
-</description>
-        <pubDate>Fri, 03 Apr 2020 23:13:20 +0000</pubDate>
-        <link>http://julien.gunnm.org/misc/2020/04/03/do-not-take-yourself-too-seriously/</link>
-        <guid isPermaLink="true">http://julien.gunnm.org/misc/2020/04/03/do-not-take-yourself-too-seriously/</guid>
-        
-        <category>misc</category>
-        
-        
-        <category>misc</category>
         
       </item>
     
