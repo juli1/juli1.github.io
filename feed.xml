@@ -5,51 +5,57 @@
     <description>Harder, Better, Faster, Stronger</description>
     <link>http://julien.gunnm.org/</link>
     <atom:link href="http://julien.gunnm.org/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Sun, 13 Mar 2022 06:25:54 +0000</pubDate>
-    <lastBuildDate>Sun, 13 Mar 2022 06:25:54 +0000</lastBuildDate>
+    <pubDate>Sun, 13 Mar 2022 16:47:42 +0000</pubDate>
+    <lastBuildDate>Sun, 13 Mar 2022 16:47:42 +0000</lastBuildDate>
     <generator>Jekyll v4.2.2</generator>
     
       <item>
-        <title>Why going on premise for your early-stage SaaS startup is a bad idea</title>
-        <description>&lt;p&gt;I thought going on-premise was the biggest moneymaker for early-stage startups for a long time. I had this belief so deep in my brain that I planned to develop an on-premise solution for &lt;a href=&quot;https://www.codiga.io&quot;&gt;Codiga&lt;/a&gt;. However, after talking to other founders and advisors, I started to realize this was probably a decision that could sink an early-stage company.&lt;/p&gt;
+        <title>Going on premise early is a bad idea</title>
+        <description>&lt;p&gt;For a long time, I thought going on-premise was the biggest revenue driver for early-stage startups. I had this belief so deep in my brain that I planned to develop an on-premise solution for &lt;a href=&quot;https://www.codiga.io&quot;&gt;Codiga&lt;/a&gt;. However, after talking to other founders and advisors, I started to realize this was probably a decision that could sink an early-stage company.&lt;/p&gt;
 
-&lt;p&gt;Note that this is not advisable for all startups, especially your startup. The following post explains my reasons, and I am sure it might not apply to many cases. Take this post as a compilation of opinions to explain why going on-premise may be a bad idea.&lt;/p&gt;
+&lt;p&gt;Note that these advices/opinions may not be applicable for all companies or products. The following post explains my reasons, and I am sure it might not apply to many cases. Take this post as a compilation of personal opinions, nothing else.&lt;/p&gt;
 
 &lt;h2 id=&quot;its-all-about-focus&quot;&gt;It’s all about focus&lt;/h2&gt;
 
 &lt;p&gt;Building a company (and, to some extent, managing your life) is about resource allocation (how you spend your time, collaborators, and money).
-When going on-premise, as the software is no longer deployed in your infrastructure, you need to provide a significant amount of resources to your customers, making sure your solution works seamlessly in their infrastructure.&lt;/p&gt;
+When going on-premise, as the software is no longer deployed in your infrastructure, you need to provide a significant amount of resources to your customers, making sure your solution works seamlessly in their infrastructure. You are not in control of software deployment anymore
+and this is your responsibility to make sure your customers are happy. And you will inevitably spend time making sure they are.&lt;/p&gt;
 
-&lt;p&gt;In addition, as you need to sell to these big customers and keep the flywheel going, you need to invest in sales:&lt;/p&gt;
+&lt;p&gt;In addition, as you need to sell to big customers and keep the flywheel going, you need to invest in sales:&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;Develop (and refine) a sales process.&lt;/li&gt;
-  &lt;li&gt;Find prospect, schedule demo, follow-up every call.&lt;/li&gt;
+  &lt;li&gt;Find prospects, schedule demo, follow-up every call, even when customers do not qualify.&lt;/li&gt;
   &lt;li&gt;Develop marketing to target some specific vital people.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;Your focus shifted from innovation and product-focused company to a sales-focused company. As an early-stage company, your resources are very limited, and investing significant time in sales means that you take these resources away from being innovative. Even if you hire a sales force (which will be limited to one salesperson and one customer manager at this stage), you have to allocate a few engineers to work with them and support the on-premise version of your product. These engineers will not work on innovative features.&lt;/p&gt;
+&lt;p&gt;Your focus shifts from innovation and product-focused company to a sales-focused company. As an early-stage company, your resources are very limited, and investing significant time in sales takes resources away from being innovative. Even if you hire a sales force (which will be limited to one salesperson and one customer manager at this stage), you have to allocate a few engineers to work with them and support the on-premise version of your product. These engineers will not work on innovative features.&lt;/p&gt;
 
 &lt;h2 id=&quot;the-finance-does-not-check-out&quot;&gt;The finance does not check out&lt;/h2&gt;
 
-&lt;p&gt;Imagine you price your product at $40 per user per seat for your on-premise version. At this price point, to get $500,000 of ARR, it means you need to have more than 1,000 customers using your on-premise version. With many accounts being around 50 to 100 users, you have roughly 15 accounts.&lt;/p&gt;
+&lt;p&gt;Imagine you price your product at $40 per user per seat for your on-premise version. At this price point, to get $500,000 of ARR, it means you need to have more than 1,000 paying users for your on-premise version. With many accounts being around 50 to 100 users, you have roughly 15 accounts to manage and make sure they are happy.&lt;/p&gt;
 
-&lt;p&gt;To manage these 15 accounts, you will need at least one sales representative, two customer managers, and one engineer to debug or troubleshoot issues for your customers. These resources will already cost more than $500,000 per year, which means that even if your on-premise solution yields significant revenue, your business does not make a profit.&lt;/p&gt;
+&lt;p&gt;To manage these 15 accounts, you will need at least one sales representative, two customer managers, and one engineer to debug or troubleshoot issues for your customers. These resources will already cost more than $500,000 per year, which means that even if your on-premise solution yields significant revenue, your business does not make a profit. You not only shifted your focus to sales (see previous point) but you are
+also not profitable.&lt;/p&gt;
 
 &lt;h2 id=&quot;the-future-is-the-public-cloud&quot;&gt;The future is the public cloud&lt;/h2&gt;
 
-&lt;p&gt;Some customers want to deploy on-premise and will always like that (). The reality is that fewer and fewer customers will stay on-premises. Years ago, the narrative was about security: the public cloud was seen as being insecure/unsafe. Since that time, &lt;a href=&quot;https://aws.amazon.com/solutions/case-studies/capital-one-all-in-on-aws/&quot;&gt;Capital One&lt;/a&gt; started to use AWS, large tech companies are all starting in the public cloud or moving to the public cloud (e.g., Twitter). Even the US government has its public cloud today.
-The trend will continue. Companies noticed the trend and adapted, asking their customers to go to the public cloud. Atlassian is a good example and announces the end of support for the on-premise version of their product. The reality is that on-premise products will become a niche market.&lt;/p&gt;
+&lt;p&gt;Some customers want to deploy on-premise and will always invoke some reasons for it (the VP of engineering/CEO/CTO invokes security reasons, some engineers claim that they can save large amount of $$$, etc.). The reality is that fewer and fewer companies will stay on-premises. Years ago, the narrative was about security: the public cloud was seen as being insecure/unsafe. Since that time, &lt;a href=&quot;https://aws.amazon.com/solutions/case-studies/capital-one-all-in-on-aws/&quot;&gt;Capital One&lt;/a&gt; started to use AWS, new tech companies are starting in the public cloud and existing ones are moving to the public cloud (e.g., Twitter). Even the US government has its public cloud today.&lt;/p&gt;
+
+&lt;p&gt;The trend will continue. Companies noticed the trend and adapted, asking their customers to go to the public cloud. Atlassian is a good example and announces the end of support for the on-premise version of their product. The reality is that on-premise products will become a niche market and more costly to support.&lt;/p&gt;
 
 &lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
 
 &lt;p&gt;The arguments presented above may not apply to all companies and should be taken from a grain of salt.
 I believe that early-stage companies should focus on innovation and Product-Market Fit
-(e.g., make something users want), not on sales.&lt;/p&gt;
+(e.g., make something users want), not on sales to a specific niche. If your product is &lt;em&gt;that good&lt;/em&gt;, companies
+may even have to adapt. 12 years ago, very few companies would have accepted to have all their company conversations
+and data stored on machines they do not control and today, the large majority use Google Docs, Office 365
+or Slack. These products are so popular that these companies have no choice but to use these products.&lt;/p&gt;
 
-&lt;p&gt;The biggest issue when developing an on-premise version of a SaaS product
+&lt;p&gt;The biggest issue when developing an on-premise version of a SaaS product at an early stage
 is that it forces you to reallocate your resources from developing a great product
-to selling and supporting an on-premise version.&lt;/p&gt;
+to selling and supporting an on-premise version. It will slow you from making a great product.&lt;/p&gt;
 
 &lt;p&gt;Of course, these arguments may not be correct at later stages when you can afford to
 allocate resources to develop a sales and customer support team without impacting innovation.
