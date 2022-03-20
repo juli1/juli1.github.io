@@ -5,9 +5,64 @@
     <description>Harder, Better, Faster, Stronger</description>
     <link>http://julien.gunnm.org/</link>
     <atom:link href="http://julien.gunnm.org/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Sun, 13 Mar 2022 16:47:42 +0000</pubDate>
-    <lastBuildDate>Sun, 13 Mar 2022 16:47:42 +0000</lastBuildDate>
+    <pubDate>Sun, 20 Mar 2022 22:16:18 +0000</pubDate>
+    <lastBuildDate>Sun, 20 Mar 2022 22:16:18 +0000</lastBuildDate>
     <generator>Jekyll v4.2.2</generator>
+    
+      <item>
+        <title>So, you want to start a company?</title>
+        <description>&lt;p&gt;Many people want to start a company. They have &lt;em&gt;an idea&lt;/em&gt;, believe that making a product is easy and
+if you know how to write some lines of code, overnight success is guaranteed.&lt;/p&gt;
+
+&lt;p&gt;This post is here to put some reality in perspective. Entrepreneurship is overly romanticized through thousands of articles
+detailing the overnight success of a founder, company, or product. But it’s often not what you imagine
+and the success is the result of nights of grind, hard work, sweat, and tears.&lt;/p&gt;
+
+&lt;p&gt;Starting a company is incredibly hard. The vast majority of companies do not survive. A team works relentlessly
+hard on a product for months, only to see no users sign up (other than their family and friends).
+It crushes their hope of building something useful when all they need is the mental energy to keep iterating and make a
+product that delights users.&lt;/p&gt;
+
+&lt;p&gt;Building the right product is way more complicated than it seems. You may have worked in big companies
+that have thousands or millions of users but you have no idea how they started and got the initial users.
+Finding the right feature, what &lt;em&gt;users&lt;/em&gt; (and not you) find useful is often counter-intuitive and requires many iterations
+and experimentation.&lt;/p&gt;
+
+&lt;p&gt;Assembling the right team is critical and is no easy task. You have constrained resources as you cannot offer
+the same compensation as other big tech companies. You need to hire &lt;em&gt;“believers”&lt;/em&gt;, people that will understand and follow your vision, no matter how crazy it is.&lt;/p&gt;
+
+&lt;p&gt;Marketing and selling a product is a complex task that is totally different from writing lines of code. You need
+to understand how to present a product, how to define and refine a sales process to close your first customers.
+That is no easy task and you constantly need to learn from others how to do it.&lt;/p&gt;
+
+&lt;p&gt;If you go and raise money from Venture Capital, you need to talk to investors, articulate your vision to
+show the opportunity. At the earliest stage, people will believe and trust you to build the right company
+and it’s your responsibility to build trust and show them your progress weeks after weeks.&lt;/p&gt;
+
+&lt;p&gt;Yes, starting a company is &lt;em&gt;fucking&lt;/em&gt; hard. If you are still up for it, know that customers will complain,
+your initial product will suck, you will have to fire employees, some people will betray you and investors
+will ask when you will be profitable. All of this with a high probability of 0 return whatsoever.&lt;/p&gt;
+
+&lt;p&gt;Do not take me wrong, I have no regret. As somebody that lost half of his weight
+within a year (from 300 to 150 pounds) and ran ultra-marathons, I enjoy the pain and
+I would not trade places for anything in the world.&lt;/p&gt;
+</description>
+        <pubDate>Sun, 20 Mar 2022 05:13:20 +0000</pubDate>
+        <link>http://julien.gunnm.org/startup/saas/2022/03/20/so-you-want-to-start-a-company/</link>
+        <guid isPermaLink="true">http://julien.gunnm.org/startup/saas/2022/03/20/so-you-want-to-start-a-company/</guid>
+        
+        <category>startup</category>
+        
+        <category>saas</category>
+        
+        <category>developer tools</category>
+        
+        
+        <category>startup</category>
+        
+        <category>saas</category>
+        
+      </item>
     
       <item>
         <title>Going on premise early is a bad idea</title>
@@ -779,130 +834,6 @@ documentation.&lt;/li&gt;
         <pubDate>Sun, 06 Dec 2020 23:13:20 +0000</pubDate>
         <link>http://julien.gunnm.org/software%20engineering/essay/2020/12/06/on-team-organization/</link>
         <guid isPermaLink="true">http://julien.gunnm.org/software%20engineering/essay/2020/12/06/on-team-organization/</guid>
-        
-        <category>software engineering</category>
-        
-        <category>essay</category>
-        
-        
-        <category>software engineering</category>
-        
-        <category>essay</category>
-        
-      </item>
-    
-      <item>
-        <title>Build software like you build a house</title>
-        <description>&lt;p&gt;&lt;em&gt;Note: this page is part of the &lt;a href=&quot;/software engineering/essay/2020/03/06/software-engineering-series&quot;&gt;“Essays on Software Engineering”&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/architectural-failure04.jpg&quot; alt=&quot;Requirements mismatches&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;When you realize your interfaces do not match, too late in the development process.&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;On 15 March 1986, the Hotel New York rapidly disintegrated in less than a minute at about 11:25 am&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;The investigation led to the discovery that the original structural engineer had made a serious error in calculating the building’s structural load. The structural engineer had calculated the building’s live load (the weight of the building’s potential inhabitants, furniture, fixtures, and fittings) but the building’s dead load (the weight of the building itself) was completely omitted from the calculation. This meant that the building as constructed could not support its own weight. Collapsing was only a matter of time. After three different supporting columns failed in the days before the disaster, the other columns—which took on the added weight no longer supported by the failed columns—could not support the building&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Collapse_of_Hotel_New_World#Casualties&quot;&gt;wikipedia source&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;Does that story sounds crazy to you? It should. Architectural failures
-are rare, which is a good think. Yet, this is how we build software today
-and failures are still very common in the software industry.&lt;/p&gt;
-
-&lt;h1 id=&quot;the-building-metaphor&quot;&gt;The building metaphor&lt;/h1&gt;
-
-&lt;p&gt;Building a new house follows a clear process that is more or less like this:&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Establish the requirements (number of bathroom, bedrooms, placement, type of heat, etc.)&lt;/li&gt;
-  &lt;li&gt;Inspect them, validate them with the different stakeholders (customers, suppliers, etc)&lt;/li&gt;
-  &lt;li&gt;Work on an execution plan with milestones&lt;/li&gt;
-  &lt;li&gt;Inspect the work by independent inspector.&lt;/li&gt;
-  &lt;li&gt;Enjoy your new place.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;For example, if you build a house, you are going to start the foundations,
-build the structure of the house, install the plumbing and electricity
-and finally finish with the dry-wall/paint.
-Everybody will understand you cannot start to install the bathtub if
-the plumbing is not installed. You need to follow a specific order, otherwise,
-you face major delays and cost impact (e.g. if you install the bathroom before
-the plumbing is validated and checked, you might have to demolish the bathroom
-to fix it later).&lt;/p&gt;
-
-&lt;p&gt;Designing software follows the same rules and processes.&lt;/p&gt;
-
-&lt;p&gt;For example, when you design a system with a database, you need
-to understand the type of data, the frequency and type of access
-before adding indexes or think of potential sharding schemes. These would be
-your requirements. It will impact how you access or cache the data
-but can also impact how you will deploy your system.&lt;/p&gt;
-
-&lt;p&gt;However, very often, engineers overlook the most basic requirements and build systems
-that are either not satisfying them (with system under-performing)
-or go full berserk mode and over-satisfy them (with a higher implementation cost).
-Both are not efficient. A great example here is the launch of the healthcare.gov:
-the system was designed to handle 50,000 simultaneous connections when
-250,000 people visited the website on
-launch day (&lt;a href=&quot;https://en.wikipedia.org/wiki/HealthCare.gov#Issues_during_launch&quot;&gt;wikipedia&lt;/a&gt;).&lt;/p&gt;
-
-&lt;p&gt;The typical argument for a lack of attention on quality is that
-software can be changed easily once delivered. This argument
-is a fallacy, especially once the system is deployed in production. Changing
-a system reliably while fully deployed in production is way
-harder than changing it at design-phase.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/change-production.webp&quot; alt=&quot;Requirements mismatches&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;An engineer upgrading a system in production&lt;/p&gt;
-
-&lt;h1 id=&quot;the-case-of-safety-critical-systems&quot;&gt;The case of safety-critical systems&lt;/h1&gt;
-
-&lt;p&gt;Surprisingly, safety-critical systems (such as the one used in plane or rockets)
-do not fail as much as regular ones.&lt;/p&gt;
-
-&lt;p&gt;The main reasons is because as construction, these types of systems
-are regulated and need to follow a rigorous production process that
-catches such mistakes. Avionics and aerospace software follow
-more or less the same constraints than software running nuclear power plants.
-And surprisingly, these processes follow the same steps than
-the one used to build a new house (start with the requirements,
-validate them, have independent inspection, etc.). They also have clear
-inspection and requirements to satisfy by law (note that interestingly, cars
-are not as regulated).&lt;/p&gt;
-
-&lt;p&gt;The takeaway: when you carefully follow a (good) process, you avoid
-mistakes. As Bezos says: &lt;em&gt;Good intentions don’t work. Processes do&lt;/em&gt;.&lt;/p&gt;
-
-&lt;h1 id=&quot;should-we-learn-better&quot;&gt;Should we learn better?&lt;/h1&gt;
-
-&lt;p&gt;The main problem is the lack of knowledge. Projects do not fail intentionally,
-they fail because engineers do not know better. There is a gap in knowledge, where
-most engineers see software development only through the lens
-of programming/coding and never heard what a software architecture is.&lt;/p&gt;
-
-&lt;p&gt;We need to teach and explain what software architecture is
-and how systems should be designed and built. These concepts have been missed,
-especially in a world where we promise to become a software engineer
-in just a few weeks of learning. In a world where most of the future
-software engineers will not be able to get a degree before they enter
-the workforce[1], it is becoming urgent to teach these values.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/architectural-failure02.jpg&quot; alt=&quot;Architecture School&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;The solution for better software: be architects&lt;/p&gt;
-
-&lt;p&gt;[1]&lt;a href=&quot;https://speakerdeck.com/heathermiller/the-times-they-are-a-changin&quot;&gt;The Times They Are a Changin’ - Heather Miller talk&lt;/a&gt;&lt;/p&gt;
-</description>
-        <pubDate>Sun, 21 Jun 2020 23:13:20 +0000</pubDate>
-        <link>http://julien.gunnm.org/software%20engineering/essay/2020/06/21/build-software-like-you-build-a-house/</link>
-        <guid isPermaLink="true">http://julien.gunnm.org/software%20engineering/essay/2020/06/21/build-software-like-you-build-a-house/</guid>
         
         <category>software engineering</category>
         
