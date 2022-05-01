@@ -5,9 +5,65 @@
     <description>Harder, Better, Faster, Stronger</description>
     <link>http://julien.gunnm.org/</link>
     <atom:link href="http://julien.gunnm.org/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Sun, 20 Mar 2022 22:29:33 +0000</pubDate>
-    <lastBuildDate>Sun, 20 Mar 2022 22:29:33 +0000</lastBuildDate>
+    <pubDate>Sun, 01 May 2022 06:06:42 +0000</pubDate>
+    <lastBuildDate>Sun, 01 May 2022 06:06:42 +0000</lastBuildDate>
     <generator>Jekyll v4.2.2</generator>
+    
+      <item>
+        <title>On Culture</title>
+        <description>&lt;p&gt;Culture is everything. It makes us feel connected. It gives us a sense of belonging, a sense of purpose.
+Either in society or companies, culture is what bonds a set of people with values they all believe in.&lt;/p&gt;
+
+&lt;p&gt;From a business standpoint, culture is also what can make or break a company.
+Which is more important in startups: a startup is a cult, a religion.
+A startup needs to have true believers, people who trust a company can make the impossible possible.
+And companies with a well-defined and strong culture are the ones that are the most likely to succeed.&lt;/p&gt;
+
+&lt;p&gt;Take Amazon. New hires must read the &lt;a href=&quot;https://www.aboutamazon.com/about-us/leadership-principles&quot;&gt;leadership principles&lt;/a&gt;,
+a set of core values every single employee must follow. All Amazonians operate, breathe and live by these principles.
+If you do not embrace them, you will not only have a hard time working there but will ultimately
+be let go. There are simple, actionable rules everybody must apply in their daily work.
+For example, no slides are presented during meetings: all meetings start with a 1, 3 or 6 pagers document that
+all employees must read before the meeting. Efficiency at its best.&lt;/p&gt;
+
+&lt;p&gt;Take Coinbase. Two years ago, its CEO made it clear that Coimbase is a &lt;a href=&quot;https://blog.coinbase.com/coinbase-is-a-mission-focused-company-af882df8804&quot;&gt;mission-focused company&lt;/a&gt;
+and that activities that do not help or support the company’s mission will not be tolerated. At this time,
+this document made waves and a huge backlash ensued. But today, employees know what is the mission
+of the company and what is expected from them. And new employees joining Coinbase know exactly
+what to expect and what rules will be used to evaluated their performance.&lt;/p&gt;
+
+&lt;p&gt;Take Shopify. Less than a year ago, Shopify CEO also made it clear that political discourse is
+not welcome within the company. More importantly, he emphasized that the company was not a family
+but a team. The team must play at its best and when a player is no longer an A player, they must
+be let go. This clearly shows how employees are evaluated and what rules they should follow.&lt;/p&gt;
+
+&lt;p&gt;When culture is not defined or weak (e.g. no reinforcement), others will define
+the culture for you. There will be no common understanding of working rules and
+chaos will slowly but surely ensue.&lt;/p&gt;
+
+&lt;p&gt;Keeping a strong culture makes sure that everybody (1) knows the rules of the game and (2) will follow these rules,
+which is better for the company operators and the employees. For the company operator, it ensures that every single
+employee or contractor shares the company vision and is dedicated to making the company successful.
+For employees, it ensures that they are not wasting their time working in an environment
+they dislike. Some people may not like the culture and ultimately leave, which is
+a short-term issue and an opportunity to have new people with better alignment with the company values.&lt;/p&gt;
+</description>
+        <pubDate>Sat, 30 Apr 2022 05:13:20 +0000</pubDate>
+        <link>http://julien.gunnm.org/startup/culture/2022/04/30/culture/</link>
+        <guid isPermaLink="true">http://julien.gunnm.org/startup/culture/2022/04/30/culture/</guid>
+        
+        <category>startup</category>
+        
+        <category>company</category>
+        
+        <category>culture</category>
+        
+        
+        <category>startup</category>
+        
+        <category>culture</category>
+        
+      </item>
     
       <item>
         <title>So, you want to start a company?</title>
@@ -783,66 +839,6 @@ of the software (e.g. who wants to maintain assembly code if not an absolute nec
         <category>immutability</category>
         
         <category>scala</category>
-        
-      </item>
-    
-      <item>
-        <title>On team organization</title>
-        <description>&lt;p&gt;&lt;em&gt;Note: this page is part of the &lt;a href=&quot;/software engineering/essay/2020/03/06/software-engineering-series&quot;&gt;“Essays on Software Engineering”&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;Over the years, I noticed many teams are organized around three main roles:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;Software Engineer (SWE)&lt;/strong&gt;: design, architect systems and write code.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Engineering Manager (EM)&lt;/strong&gt;: coordinate the life of the team, ensure work is being done, cares about promotion&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Product Manager (PM)&lt;/strong&gt;: interface between the customers and the engineering team, define the specification&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;There are some additional roles that comes into play, such as SWET (Software Engineer in Testing)
-or SRE (System Reliability Engineering).&lt;/p&gt;
-
-&lt;p&gt;Most of teams I have seen have at least one EM, few SWE and (sometimes)
-one PM. But the other roles (SWET and SRE) are definitely not always
-present and sometimes, part of a totally separate organization.&lt;/p&gt;
-
-&lt;p&gt;In addition, there is always no specific role to review the documentation,
-either internally or externally. And this part of the software development
-becomes outdated very quickly.&lt;/p&gt;
-
-&lt;p&gt;But lack of tests is what makes software unstable or introduce regressions.
-Lack of documentation is what makes it hard to maintain. These aspects
-are very often overlooked on the short term but have consequences on the
-long term.&lt;/p&gt;
-
-&lt;p&gt;There should be two ways to solve this problem:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;Reduce the number of SWE and add more SWET&lt;/strong&gt;. Let the software
-engineer focus on writing code and let the SWET focus on writing code.
-This solution has the benefit of introducing independent testing: the
-test is not written by the author of the implementation. Similarly,
-with such an approach, an editor should also maintain the documentation
-of the system. Having an independent qualified editor would make sure the documentation
-is correctly written and does not skip any detail.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Make testing and documentation an evaluation criteria for SWE&lt;/strong&gt;. Often,
-testing and documentation are overlooked by SWE because they do not
-consider them &lt;em&gt;valuable&lt;/em&gt;. EM should introduce incentives to write good
-documentation and penalize engineers not writing enough tests or
-documentation.&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        <pubDate>Sun, 06 Dec 2020 23:13:20 +0000</pubDate>
-        <link>http://julien.gunnm.org/software%20engineering/essay/2020/12/06/on-team-organization/</link>
-        <guid isPermaLink="true">http://julien.gunnm.org/software%20engineering/essay/2020/12/06/on-team-organization/</guid>
-        
-        <category>software engineering</category>
-        
-        <category>essay</category>
-        
-        
-        <category>software engineering</category>
-        
-        <category>essay</category>
         
       </item>
     
