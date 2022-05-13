@@ -5,9 +5,37 @@
     <description>Harder, Better, Faster, Stronger</description>
     <link>http://julien.gunnm.org/</link>
     <atom:link href="http://julien.gunnm.org/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Sun, 01 May 2022 06:06:42 +0000</pubDate>
-    <lastBuildDate>Sun, 01 May 2022 06:06:42 +0000</lastBuildDate>
+    <pubDate>Fri, 13 May 2022 05:05:40 +0000</pubDate>
+    <lastBuildDate>Fri, 13 May 2022 05:05:40 +0000</lastBuildDate>
     <generator>Jekyll v4.2.2</generator>
+    
+      <item>
+        <title>Follow the process</title>
+        <description>&lt;p&gt;Often, I have found that having discipline is what matters the most to reaching a goal. Have a process, follow and repeat it every single day.
+Most success comes from repeating the same thing every day and doing it, rain or shine. From a personal standpoint, I had only minor victories. However, I reached these personal goals by having a straightforward process and following it every day. I have lost half of my weight (from 300 pounds to 150 pounds) by eating boring meals made of protein-rich food and being active at least one hour a week for two years. I completed my Ph.D. in 2.5 years because I worked 8 hours every day, including weekends. The ultra-marathons I ran are the results of running at least 70 miles a week for two years.&lt;/p&gt;
+
+&lt;p&gt;We are often tempted to go off-track. Skip a day. Or two. When we give up, we tell ourselves a lie: skipping a day or two will not significantly impact the outcome. In reality, we are not holding ourselves accountable and not respecting the contract we made with ourselves.&lt;/p&gt;
+
+&lt;p&gt;Your process/guidelines can (and will) change over time. The willingness to follow your process should not change. And the dedication to do what you committed to doing should remain the same.&lt;/p&gt;
+
+&lt;p&gt;Discipline is not only what will help you progress every single day. It will also guide you when you are lost. If you do not know if what you are doing is worth anything or if you are making the right decisions, all you have to do is to have discipline and follow your process. There is always light at the end of the tunnel.&lt;/p&gt;
+</description>
+        <pubDate>Thu, 12 May 2022 05:13:20 +0000</pubDate>
+        <link>http://julien.gunnm.org/discipline/culture/process/2022/05/12/follow-the-process/</link>
+        <guid isPermaLink="true">http://julien.gunnm.org/discipline/culture/process/2022/05/12/follow-the-process/</guid>
+        
+        <category>startup</category>
+        
+        <category>discipline</category>
+        
+        
+        <category>discipline</category>
+        
+        <category>culture</category>
+        
+        <category>process</category>
+        
+      </item>
     
       <item>
         <title>On Culture</title>
@@ -682,163 +710,6 @@ to machines repetitive and automatable tasks.&lt;/p&gt;
         <category>humans</category>
         
         <category>human behavior</category>
-        
-      </item>
-    
-      <item>
-        <title>On immutability</title>
-        <description>&lt;p&gt;&lt;em&gt;Note: this page is part of the &lt;a href=&quot;/software engineering/essay/2020/03/06/software-engineering-series&quot;&gt;“Essays on Software Engineering”&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;I discovered Scala and functional programming when I joined Twitter. Scala
-introduced me to this new world
-of pure functions and immutability. I loved it so much that I started teaching
-the language for all new employees (if you ever attended my class, I
-apologize for all the bad puns and jokes I made).&lt;/p&gt;
-
-&lt;p&gt;Over the years, I really embraced functional programming as a discipline.
-No matter what language I used, I try to always stick to some keys principles:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;pure functions&lt;/strong&gt;: the output of a function depends only on its inputs.&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;immutability&lt;/strong&gt;: keep all data immutable, any modification results in a copy&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;You do not need to use a functional
-programming language to use these principles, you can apply them
-to almost any language. I use them while coding in Java and Python.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/John_Carmack&quot;&gt;John Carmack&lt;/a&gt;
-also tried to apply these principles when building
-the &lt;a href=&quot;https://en.wikipedia.org/wiki/Id_Tech_4&quot;&gt;Doom 3 3D engine (idTech 4)&lt;/a&gt;, built
-using C++.&lt;/p&gt;
-
-&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/1PhArSujR_A?start=124&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
-
-&lt;p&gt;I will skips the reason to use functional programming and focus on immutability.&lt;/p&gt;
-
-&lt;h1 id=&quot;idempotence-and-determinism&quot;&gt;Idempotence and determinism&lt;/h1&gt;
-
-&lt;p&gt;You want your function to be easy to understand and test. Ideally, you want
-the result of a function to be idem-potent: no matter how many times you
-invoke the function, you get the same result if you provide the same inputs.&lt;/p&gt;
-
-&lt;p&gt;That rule is being verified if you use immutable data, let’s illustrate this
-principle with an example.&lt;/p&gt;
-
-&lt;p&gt;Let’s consider a class &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Person&lt;/code&gt; in an hybrid language:&lt;/p&gt;
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;case class Person(name: String, age: Int)
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Then, let’s define two &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;older&lt;/code&gt; functions. One that mutates the value
-passed as parameters (let’s assume parameters are mutable).&lt;/p&gt;
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Person older(person: Person, age: Int) {
-  person.age = person.age + age;
-  return person;
-}
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;And another &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;older&lt;/code&gt; function where we use immutable data (and we copy the argument).&lt;/p&gt;
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Person older(person: Person, age: Int) {
-  return person.copy(age = person.age + age);
-}
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Now, consider the following block of code&lt;/p&gt;
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Person p = Person(&quot;foo&quot;, 42);
-
-Person p2 = older(p, 10);
-Person p3 = older(p, 10);
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Ideally, what you really want is &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;p2 == p3&lt;/code&gt; since they both have the same
-inputs. Unfortunately, this will not work with the first function
-since we mutate the value ahead of time. If you use the first
-function, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;p3.age == 62&lt;/code&gt; and if you use the first function, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;p3.age == 52&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;The problem is that such mutation will spread in your codebase like the
-plague and will make really difficult to follow the codepath. Let 10
-developers follow such practices and you will end up with spaghetti code
-that becomes a nightmare to understand.&lt;/p&gt;
-
-&lt;p&gt;Immutability comes hand in hand with pure functions. If you want to embrace
-immutability, embrace pure functions.&lt;/p&gt;
-
-&lt;h1 id=&quot;parallelism&quot;&gt;Parallelism&lt;/h1&gt;
-
-&lt;p&gt;One of the hardest problem on computer science is to write correct
-parallel programs. With computers having multiple cores all programs are
-multi-threaded and data is being shared between cores/thread, which
-requires to use locking mechanism (e.g. mutex, semaphore, etc.).&lt;/p&gt;
-
-&lt;p&gt;The reason we use mutex is precisely because a data is being mutated and
-we want to guarantee only one thread modifies a data at a time. If you
-use immutable data structure, these problems are non-existent for you
-since you &lt;em&gt;never&lt;/em&gt; modify data structure (you always copy and create
-new data).&lt;/p&gt;
-
-&lt;p&gt;In other words, using immutable data let’s you write scalable programs
-from the start.&lt;/p&gt;
-
-&lt;h1 id=&quot;the-cost-of-immutability&quot;&gt;The cost of immutability&lt;/h1&gt;
-
-&lt;p&gt;The recurrent against immutable data is the additional runtime cost. The argument is that
-using immutable data structures has a heavy runtime cost since you need to
-allocate more memory to support instantiation of multiple objects. Using immutable
-data then requires faster machines with more memory to run a program.&lt;/p&gt;
-
-&lt;p&gt;This argument is a pure fallacy for two reasons.&lt;/p&gt;
-
-&lt;p&gt;The first reason is technical. There are a lot of technical tricks to implement
-immutable data without having a huge runtime cost. For example, in Scala,
-the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;copy()&lt;/code&gt; function generated for each &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;case class&lt;/code&gt; makes
-a &lt;a href=&quot;https://docs.scala-lang.org/tour/case-classes.html&quot;&gt;shallow copy&lt;/a&gt; of a given object,
-reducing drastically the runtime footprint of your program (compared to deep copy).&lt;/p&gt;
-
-&lt;p&gt;The second reason is pure economics.
-The &lt;a href=&quot;https://www.bls.gov/ooh/computer-and-information-technology/computer-and-information-research-scientists.htm&quot;&gt;average salary of a computer scientist is $122,840&lt;/a&gt;.
-Tech companies such as Stripe or Google have the best engineers and still
-spend 10% to 20% of their time dealing
-with bad code (source: &lt;a href=&quot;https://stripe.com/reports/developer-coefficient-2018&quot;&gt;Stripe study&lt;/a&gt;).
-To put it more clearly: the cost of bad code is more than $10,000 to $20,000 per developer
-per year.&lt;/p&gt;
-
-&lt;p&gt;The reality is: &lt;strong&gt;the cost of labor to write and maintain the software
-is far higher than the cost of hardware&lt;/strong&gt;. Therefore, we should use all
-potential methods (in terms of management, programming style or execution
-platform) to reduce the labor costs. The use of immutability or functional
-programming is only one candidate among others.&lt;/p&gt;
-
-&lt;p&gt;Of course, engineers will &lt;em&gt;always&lt;/em&gt; believe they can outsmart the system
-and produce a more efficient program by using some shady tricks (e.g. produce
-better assembly cost than the C compiler). The reality
-is that 99% of the time, they are dead wrong (e.g. compilers do a better job). And in the remaining 1%, the code should be carefully evaluated if this is worth the cost:
-if the manual optimization is used, it will need to be maintained during the lifecyle
-of the software (e.g. who wants to maintain assembly code if not an absolute necessity?).&lt;/p&gt;
-</description>
-        <pubDate>Fri, 11 Dec 2020 23:13:20 +0000</pubDate>
-        <link>http://julien.gunnm.org/software%20engineering/essay/immutability/scala/2020/12/11/on-immutability/</link>
-        <guid isPermaLink="true">http://julien.gunnm.org/software%20engineering/essay/immutability/scala/2020/12/11/on-immutability/</guid>
-        
-        <category>software engineering</category>
-        
-        <category>essay</category>
-        
-        <category>scala</category>
-        
-        <category>immutability</category>
-        
-        
-        <category>software engineering</category>
-        
-        <category>essay</category>
-        
-        <category>immutability</category>
-        
-        <category>scala</category>
         
       </item>
     
