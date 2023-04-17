@@ -2,18 +2,69 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Julien Delange</title>
-    <description>Harder, Better, Faster, Stronger</description>
+    <description>Passe moi le shell</description>
     <link>http://julien.gunnm.org/</link>
     <atom:link href="http://julien.gunnm.org/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Wed, 14 Sep 2022 05:40:32 +0000</pubDate>
-    <lastBuildDate>Wed, 14 Sep 2022 05:40:32 +0000</lastBuildDate>
-    <generator>Jekyll v4.2.2</generator>
+    <pubDate>Mon, 17 Apr 2023 18:52:55 +0000</pubDate>
+    <lastBuildDate>Mon, 17 Apr 2023 18:52:55 +0000</lastBuildDate>
+    <generator>Jekyll v4.3.2</generator>
+    
+      <item>
+        <title>Acquired</title>
+        <description>&lt;p&gt;Today, I sold &lt;a href=&quot;https://www.codiga.io&quot;&gt;Codiga&lt;/a&gt; to &lt;a href=&quot;https://www.datadoghq.com&quot;&gt;Datadog&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;This story started in 2018 when I realized that if I did not attempt to build a company on my own, I would regret it until I died.
+I started slowly and eventually left everything to dedicate all my attention to this project.
+From 2021 to 2023, I spent two years focusing solely on building this company. I enjoyed the thrills of flying high and going through many rough turbulences.&lt;/p&gt;
+
+&lt;p&gt;It’s not been easy.&lt;/p&gt;
+
+&lt;p&gt;I made a ton of mistakes and I lost a lot along the way.&lt;/p&gt;
+
+&lt;p&gt;But I have no regret about what I accomplished. I lived this story on my own terms. And this is what matters.&lt;/p&gt;
+
+&lt;p&gt;I did not start this company to become rich or have more influence. I did it to have the freedom to make something meaningful. I also did it to show that startups can be created outside of Silicon Valley. And that you do not need to have a team of engineers from MIT, Berkeley, Stanford or a FAANG company.&lt;/p&gt;
+
+&lt;p&gt;I am proud of what I did and what we accomplished as a team.&lt;/p&gt;
+
+&lt;p&gt;To everyone that took part in this ride: thank you. Whoever you are - current or past team members, investors, and users: thank you for everything you did.&lt;/p&gt;
+
+&lt;p&gt;To everyone that did not believe in me, ignored me or dumped me: thank you. You made me question myself, and I became a better person.&lt;/p&gt;
+
+&lt;p&gt;It’s now time for me to move to NYC.&lt;/p&gt;
+
+&lt;p&gt;I still have much to learn and I can’t wait to open this new chapter.&lt;/p&gt;
+
+&lt;p&gt;Thank you,&lt;/p&gt;
+
+&lt;iframe width=&quot;840&quot; height=&quot;473&quot; style=&quot;display:block; margin: 0 auto;&quot; src=&quot;https://www.youtube.com/embed/1Vmq8kCAYng?start=3257&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+</description>
+        <pubDate>Mon, 17 Apr 2023 06:10:20 +0000</pubDate>
+        <link>http://julien.gunnm.org/acquisition/company/startup/2023/04/17/acquired/</link>
+        <guid isPermaLink="true">http://julien.gunnm.org/acquisition/company/startup/2023/04/17/acquired/</guid>
+        
+        <category>startup</category>
+        
+        <category>aquisition</category>
+        
+        <category>codiga</category>
+        
+        <category>datadog</category>
+        
+        
+        <category>acquisition</category>
+        
+        <category>company</category>
+        
+        <category>startup</category>
+        
+      </item>
     
       <item>
         <title>Principles</title>
-        <description>&lt;p&gt;Last year, I read &lt;a href=&quot;https://www.amazon.com/dp/1501124021/ref=redir_mobile_desktop?_encoding=UTF8&amp;amp;aaxitk=60e40344aab4eccfd3f61c414bdeb34a&amp;amp;content-id=amzn1.sym.488a18be-6d86-4de0-8607-bd4ea4b560f3%3Aamzn1.sym.488a18be-6d86-4de0-8607-bd4ea4b560f3&amp;amp;hsa_cr_id=3077981160001&amp;amp;pd_rd_plhdr=t&amp;amp;pd_rd_r=dbe35a17-a5db-42b9-87c4-7c7871da7903&amp;amp;pd_rd_w=ljJa6&amp;amp;pd_rd_wg=SZE3u&amp;amp;ref_=sbx_be_s_sparkle_mcd_asin_0_img&quot;&gt;Principles&lt;/a&gt; by Ray Dalio, which enumerates principles Dalio used throughout his life to drive decision-making. It heavily influenced me to guide my business and personal decisions.&lt;/p&gt;
+        <description>&lt;p&gt;Last year, I read &lt;a href=&quot;https://amzn.to/3KAsiig&quot;&gt;Principles&lt;/a&gt; by Ray Dalio, which enumerates principles Dalio used throughout his life to drive decision-making. It heavily influenced me to guide my business and personal decisions.&lt;/p&gt;
 
-&lt;p&gt;More recently, I read &lt;a href=&quot;https://www.amazon.com/Good-to-Great-Jim-Collins-audiobook/dp/B003VXI5MS/ref=sr_1_1?crid=309TKSPVM254N&amp;amp;keywords=good+to+great&amp;amp;qid=1653767180&amp;amp;s=books&amp;amp;sprefix=good+to+grea%2Cstripbooks%2C113&amp;amp;sr=1-1&quot;&gt;Good to Great&lt;/a&gt; by Jim Collins, which describes the characteristics of great companies (as opposed to good companies).&lt;/p&gt;
+&lt;p&gt;More recently, I read &lt;a href=&quot;https://amzn.to/3MmOb5M&quot;&gt;Good to Great&lt;/a&gt; by Jim Collins, which describes the characteristics of great companies (as opposed to good companies).&lt;/p&gt;
 
 &lt;p&gt;There are many commonalities between these books. They both describe principles and characteristics of what drives a company or life to success.&lt;/p&gt;
 
@@ -45,7 +96,7 @@
 
 &lt;p&gt;Company culture and values will shape who will be on the bus (e.g. who will apply for a job and who gets hired). Today more than ever, some companies put strong culture and values statements, and some employees apply (or not) to a job because of them. Setting up the culture and values of the company is a challenging task, and that is also why some companies are failing.&lt;/p&gt;
 
-&lt;p&gt;Discipline and accountability are also essential and must start from the top. If an executive fails to deliver, they should be held accountable and driven by the example.&lt;/p&gt;
+&lt;p&gt;Discipline and accountability are also essential and must start from the top. If an executive fails to deliver, they should be held accountable and driven by example.&lt;/p&gt;
 
 &lt;h2 id=&quot;your-company-is-a-team-not-a-family&quot;&gt;Your company is a team, not a family.&lt;/h2&gt;
 
@@ -82,8 +133,8 @@
     
       <item>
         <title>Follow the process</title>
-        <description>&lt;p&gt;Often, I have found that having discipline is what matters the most to reaching a goal. Have a process, follow and repeat it every single day.
-Most success comes from repeating the same thing every day and doing it, rain or shine. From a personal standpoint, I had only minor victories. However, I reached these personal goals by having a straightforward process and following it every day. I have lost half of my weight (from 300 pounds to 150 pounds) by eating boring meals made of protein-rich food and being active at least one hour a week for two years. I completed my Ph.D. in 2.5 years because I worked 8 hours every day, including weekends. The ultra-marathons I ran are the results of running at least 70 miles a week for two years.&lt;/p&gt;
+        <description>&lt;p&gt;Often, I have found that having discipline is what matters the most to reach a goal. Have a process, follow and repeat it every single day.
+Most success comes from repeating the same thing every day and doing it, rain or shine. From a personal standpoint, I had only minor victories. However, I reached these personal goals by having a straightforward process and following it every day. I have lost half of my weight (from 300 pounds to 150 pounds) by eating boring meals made of protein-rich food and being active for at least one hour a week for two years. I completed my Ph.D. in 2.5 years because I worked 8 hours every day, including weekends. The ultra-marathons I ran are the results of running at least 70 miles a week for two years.&lt;/p&gt;
 
 &lt;p&gt;We are often tempted to go off-track. Skip a day. Or two. When we give up, we tell ourselves a lie: skipping a day or two will not significantly impact the outcome. In reality, we are not holding ourselves accountable and not respecting the contract we made with ourselves.&lt;/p&gt;
 
@@ -110,7 +161,7 @@ Most success comes from repeating the same thing every day and doing it, rain or
     
       <item>
         <title>On Culture</title>
-        <description>&lt;p&gt;Culture is everything. It makes us feel connected. It gives us a sense of belonging, a sense of purpose.
+        <description>&lt;p&gt;Culture is everything. It makes us feel connected. It gives us a sense of belonging, and a sense of purpose.
 Either in society or companies, culture is what bonds a set of people with values they all believe in.&lt;/p&gt;
 
 &lt;p&gt;From a business standpoint, culture is also what can make or break a company.
@@ -122,14 +173,14 @@ And companies with a well-defined and strong culture are the ones that are the m
 a set of core values every single employee must follow. All Amazonians operate, breathe and live by these principles.
 If you do not embrace them, you will not only have a hard time working there but will ultimately
 be let go. There are simple, actionable rules everybody must apply in their daily work.
-For example, no slides are presented during meetings: all meetings start with a 1, 3 or 6 pagers document that
+For example, no slides are presented during meetings: all meetings start with a 1, 3 or 6 pages document that
 all employees must read before the meeting. Efficiency at its best.&lt;/p&gt;
 
 &lt;p&gt;Take Coinbase. Two years ago, its CEO made it clear that Coimbase is a &lt;a href=&quot;https://blog.coinbase.com/coinbase-is-a-mission-focused-company-af882df8804&quot;&gt;mission-focused company&lt;/a&gt;
 and that activities that do not help or support the company’s mission will not be tolerated. At this time,
 this document made waves and a huge backlash ensued. But today, employees know what is the mission
 of the company and what is expected from them. And new employees joining Coinbase know exactly
-what to expect and what rules will be used to evaluated their performance.&lt;/p&gt;
+what to expect and what rules will be used to evaluate their performance.&lt;/p&gt;
 
 &lt;p&gt;Take Shopify. Less than a year ago, Shopify CEO also made it clear that political discourse is
 not welcome within the company. More importantly, he emphasized that the company was not a family
@@ -145,7 +196,7 @@ which is better for the company operators and the employees. For the company ope
 employee or contractor shares the company vision and is dedicated to making the company successful.
 For employees, it ensures that they are not wasting their time working in an environment
 they dislike. Some people may not like the culture and ultimately leave, which is
-a short-term issue and an opportunity to have new people with better alignment with the company values.&lt;/p&gt;
+a short-term issue and an opportunity to have new people with a better alignment with the company values.&lt;/p&gt;
 </description>
         <pubDate>Sat, 30 Apr 2022 05:13:20 +0000</pubDate>
         <link>http://julien.gunnm.org/startup/culture/2022/04/30/culture/</link>
@@ -190,9 +241,9 @@ the same compensation as other big tech companies. You need to hire &lt;em&gt;�
 to understand how to present a product, how to define and refine a sales process to close your first customers.
 That is no easy task and you constantly need to learn from others how to do it.&lt;/p&gt;
 
-&lt;p&gt;If you go and raise money from Venture Capital, you need to talk to investors, articulate your vision to
+&lt;p&gt;If you go and raise money from Venture Capital, you need to talk to investors and articulate your vision to
 show the opportunity. At the earliest stage, people will believe and trust you to build the right company
-and it’s your responsibility to build trust and show them your progress weeks after weeks.&lt;/p&gt;
+and it’s your responsibility to build trust and show them your progress week after week.&lt;/p&gt;
 
 &lt;p&gt;Yes, starting a company is &lt;em&gt;fucking&lt;/em&gt; hard. If you are still up for it, know that customers will complain,
 your initial product will suck, you will have to fire employees, some people will betray you and investors
@@ -365,8 +416,7 @@ One year after, I firmly believe this is true.&lt;/p&gt;
 &lt;h2 id=&quot;think-first-principles&quot;&gt;Think first principles&lt;/h2&gt;
 
 &lt;p&gt;When starting a company and going through an accelerator, you get exposed to hundreds
-of opinions from the accelerator itself, other founders, employees, advisors, mentors,
-investors. It’s your responsibility to evaluate them and make sound decisions for your business.
+of opinions from the accelerator itself, other founders, employees, advisors, mentors, and investors. It’s your responsibility to evaluate them and make sound decisions for your business.
 It’s easy to get lost in the myriad of opinions others have about your company and product, especially
 so early.&lt;/p&gt;
 
@@ -380,8 +430,7 @@ so early.&lt;/p&gt;
 
 &lt;p&gt;What I just explained seems essential, and still, I see many founders getting distracted
 and lost by bad advice. One book that helps think with first principles
-is &lt;a href=&quot;https://www.amazon.com/Principles-Life-Work-Ray-Dalio-audio-cd/dp/1508243247&quot;&gt;Principles&lt;/a&gt;
-from Ray Dahlio. I read this book in 2021, and it helped me get back on track when lost under hundreds of opinions.&lt;/p&gt;
+is &lt;a href=&quot;https://amzn.to/3KAsiig&quot;&gt;Principles&lt;/a&gt; from Ray Dahlio. I read this book in 2021, and it helped me get back on track when lost under hundreds of opinions.&lt;/p&gt;
 
 &lt;h2 id=&quot;no-hire-is-better-than-a-bad-hire&quot;&gt;No hire is better than a bad hire&lt;/h2&gt;
 
@@ -427,9 +476,9 @@ and focus on PMF.&lt;/p&gt;
 &lt;p&gt;There are some books that help me navigate this first year as a founder.&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.amazon.com/Principles-Ray-Dalio-audiobook/dp/B074B2CZJG&quot;&gt;Principles by Ray Dhalio&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.amazon.com/Never-Split-Difference-Negotiating-Depended/dp/0062407805&quot;&gt;Never split the difference - Chris Voss&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.amazon.com/High-Output-Management/dp/B08Z8K64S2&quot;&gt;High Output Management&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://amzn.to/3KAsiig&quot;&gt;Principles by Ray Dhalio&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://amzn.to/40Grq0V&quot;&gt;Never split the difference - Chris Voss&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://amzn.to/3mc9RqM&quot;&gt;High Output Management&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
         <pubDate>Sun, 16 Jan 2022 05:13:20 +0000</pubDate>
@@ -523,7 +572,7 @@ to troubleshoot an issue or maintain an old codebase.&lt;/p&gt;
 &lt;p&gt;The average tenure for software developers is between 2 to 3 years. But
 the software is operated and maintained for decades. As developers leave a
 company their knowledge of a project leaves the company. &lt;strong&gt;In some industries,
-the developers that maintains a software were not even born when the initial
+the developers that maintain software were not even born when the initial
 system was designed.&lt;/strong&gt;. (Think twice about this!)&lt;/p&gt;
 
 &lt;p&gt;Some developers have no idea how the system they operate actually works.
@@ -571,9 +620,9 @@ in software development will shrink.&lt;/p&gt;
 &lt;p&gt;The change from manual to automated software development is not going to happen
 overnight. Demand for software engineers will still be strong for the next ten
 to twenty years and the two problems mentioned before (maintenance + modernization)
-will require mode engineers over time.&lt;/p&gt;
+will require more engineers over time.&lt;/p&gt;
 
-&lt;p&gt;The department of labor &lt;a href=&quot;https://www.bls.gov/ooh/computer-and-information-technology/software-developers.htm&quot;&gt;already predicts&lt;/a&gt;
+&lt;p&gt;The Department of labor &lt;a href=&quot;https://www.bls.gov/ooh/computer-and-information-technology/software-developers.htm&quot;&gt;already predicts&lt;/a&gt;
 that demand for software engineers will grow by 20% in the next ten years.
 The traditional education system cannot absorb this increase. The job
 market for software engineers will be heavy on the demand (a lot of job
@@ -614,79 +663,6 @@ to be very exciting and I can’t wait for it to start.&lt;/p&gt;
         <pubDate>Sat, 26 Dec 2020 05:13:20 +0000</pubDate>
         <link>http://julien.gunnm.org/software%20engineering/essay/humans/human%20behavior/2020/12/26/why-code-inspector/</link>
         <guid isPermaLink="true">http://julien.gunnm.org/software%20engineering/essay/humans/human%20behavior/2020/12/26/why-code-inspector/</guid>
-        
-        <category>software engineering</category>
-        
-        <category>essay</category>
-        
-        <category>code inspector</category>
-        
-        
-        <category>software engineering</category>
-        
-        <category>essay</category>
-        
-        <category>humans</category>
-        
-        <category>human behavior</category>
-        
-      </item>
-    
-      <item>
-        <title>The machine is better than you</title>
-        <description>&lt;p&gt;&lt;em&gt;Note: this post is part of series about the foundations for Code Inspector, you
-can find the previous article &lt;a href=&quot;/software engineering/essay/humans/human behavior/2020/12/17/we-are-all-stupid/&quot;&gt;here&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;Since the industrial revolution (that started about 200 years ago),
-we are delegating more complex tasks to machines.
-At first, we delegated simple tasks on an assembly line. These machines
-were better than humans in all aspects: they do not go on strike, they
-do not stop to go to the bathrooms but most importantly: their results
-and performance are &lt;strong&gt;consistent&lt;/strong&gt; and &lt;strong&gt;predictable&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://media.giphy.com/media/XCxcmEQWxDdc8qsd2R/giphy-downsized.gif&quot; alt=&quot;Les Temps Modernes&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;The result of the machine does not depend on the discussion it had with
-its partner the night before nor how much wine it had at the bar while chatting
-with its friends. The machine delivers results according to objective,
-non-ambiguous specifications.&lt;/p&gt;
-
-&lt;p&gt;Until recently, machines were dedicated to automate (mostly) blue collar jobs
-(factory, farming, etc). But in the last twenty/thirty years, machines took
-white-collar jobs too (in finance, security, sales, marketing).
-Today, the computer fixes your grammar mistakes and optimizes your finance better than many humans would do.
-They do it cheaper, faster, accelerating innovation across the world.&lt;/p&gt;
-
-&lt;p&gt;Machines start to take over very complex tasks. And they are better than us at it.
-The best example of how machines improved over the last ten years is
-the autopilot technology from Tesla.
-On highway, a Tesla drives better than you would drive. The car
-stays perfectly within its lanes, better than you would do.
-It still fails from time to time (especially in construction zones) and adapting
-the car to such situations is just a question of time: 90% of the functionality is here and
-achieving full self-driving is just a question of time.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://media.giphy.com/media/H7rpSYHRyYgamxQNqw/giphy-downsized.gif&quot; alt=&quot;Tesla Self Driving&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;The most important aspect is that machines do the tasks they are dedicated to
-better than humans. They do it &lt;strong&gt;consistently&lt;/strong&gt;, &lt;strong&gt;predictably&lt;/strong&gt; and only
-fail within their Mean Time Between Failure (MTBF) which is measurable
-and again, predictable.&lt;/p&gt;
-
-&lt;p&gt;Are we doomed to be replaced by machines? That is still not clear.
-Machines are great at performing a task they are programmed for (such
-as tighten a screw or drive a car). They will get better every day. And they
-will learn to complete more complex tasks year after year.&lt;/p&gt;
-
-&lt;p&gt;But machines still need to be told what to do.
-We can program them to do perfectly one single task and they will do it better than us
-on all dimensions.
-But they are not the entity where ideas originates at first. That part is still
-dedicated to humans. For now.&lt;/p&gt;
-</description>
-        <pubDate>Sat, 26 Dec 2020 05:13:20 +0000</pubDate>
-        <link>http://julien.gunnm.org/software%20engineering/essay/humans/human%20behavior/2020/12/26/the-machine-is-better-than-you/</link>
-        <guid isPermaLink="true">http://julien.gunnm.org/software%20engineering/essay/humans/human%20behavior/2020/12/26/the-machine-is-better-than-you/</guid>
         
         <category>software engineering</category>
         

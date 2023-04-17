@@ -4,14 +4,14 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>What is the real Cost of Software Complexity? - Julien Delange</title>
+    <title>Acquired - Julien Delange</title>
     <link rel="alternate" type="application/rss+xml" title="Julien Delange &raquo; Feed" href="/feed.xml" />
     <meta name="viewport" content="width=device-width">
-    <meta name="description" content="Passe moi le shell">
-    <link rel="canonical" href="http://julien.gunnm.org/geek/misc/2015/07/29/what-is-the-real-cost-of-software-complexity/">
+    <meta name="description" content="Codiga is acquired by Datadog.">
+    <link rel="canonical" href="http://julien.gunnm.org/acquisition/company/startup/2023/04/17/acquired/">
 
     
-    <meta name="keywords" content="geek, misc, software complexity"/>
+    <meta name="keywords" content="startup, aquisition, codiga, datadog"/>
     
 
     <!-- Latest compiled and minified CSS -->
@@ -29,8 +29,8 @@
     <link rel="stylesheet" href="/css/main.css">
 
     <!-- Twitter Cards -->
-    <meta name="twitter:title" content="What is the real Cost of Software Complexity?" />
-    <meta name="twitter:description" content="Passe moi le shell" />
+    <meta name="twitter:title" content="Acquired" />
+    <meta name="twitter:description" content="Codiga is acquired by Datadog." />
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="@juli1pb" />
     <meta name="twitter:creator" content="@juli1pb" />
@@ -41,8 +41,8 @@
     <meta property="og:site_name" content="Julien Delange" />
     <meta property="og:type" content="article" />
     <meta property="og:image" content="/assets/profile.png" />
-    <meta property="og:title" content="What is the real Cost of Software Complexity?" />
-    <meta property="og:description" content="Passe moi le shell" />
+    <meta property="og:title" content="Acquired" />
+    <meta property="og:description" content="Codiga is acquired by Datadog." />
 
 </head>
 
@@ -119,30 +119,42 @@
       <div class="post">
 
   <header class="post-header">
-    <h1>What is the real Cost of Software Complexity?</h1>
+    <h1>Acquired</h1>
     <p class="meta">
-      <!-- Jul 29, 2015 -->
-      <!--  • {"login"=>"juli1sod", "email"=>"julien@gunnm.org", "display_name"=>"juli1", "first_name"=>"", "last_name"=>""}
-       • {"_edit_last"=>"37961297", "geo_public"=>"0", "publicize_google_plus_url"=>"https://plus.google.com/+JulienDelange/posts/bpkrfqbvd7W", "_publicize_job_id"=>"13217036440", "_publicize_done_6819837"=>"1", "_wpas_done_6804547"=>"1", "_publicize_done_external"=>"a:2:{s:7:\"twitter\";a:1:{i:7007816;s:53:\"https://twitter.com/juli1pb/status/626488377303396352\";}s:8:\"facebook\";a:1:{i:11309977;s:37:\"https://facebook.com/1634608620090431\";}}", "_publicize_done_7022570"=>"1", "_wpas_done_7007816"=>"1", "publicize_twitter_user"=>"juli1pb", "_publicize_done_11246771"=>"1", "_wpas_done_11309977"=>"1"} -->
+      <!-- Apr 17, 2023 -->
+      <!-- 
+       -->
    </p>
   </header>
 
   <article class="post-content">
-  <p>Recently, I had an interest about the runtime cost of complexity. I am used to situation where people argued they used a bad or poor design, especially in embedded systems, where resources are expensive and thus, scare. For example, why would you cut your programs in different modules when you can have a bunch of functions calling each other? Why using parameters when you can use global variables?</p>
-<p>But such design flaws have concrete impacts (poor maintainability, or analysis support) and using it come at a cost: more testing (obviously) but also increases certification costs (more tests to write) and reduce potential components reuse.</p>
-<p>While this is difficult to quantify these costs, this is easy to evaluate the resources consumption of well designed software. For example, how much does it costs to avoid the use of a global variable. Captain obvious will tell you that the cost is not significant for memory but there are other costs (processor cycles, context switches, etc.).</p>
-<p>So I started to compare the same program implemented using two patterns. The program is a simple producer-consumer system with one component sending a value to another component. There are the difference between both implementations:</p>
-<ol>
-<li><strong>Shared Variable</strong>: The producer and consumer are in different tasks and use a global variable to exchange the value</li>
-<li><strong>Isolated Tasks</strong>: The producer and consumer are located in different tasks and communicate the value using communication queues</li>
-</ol>
-<p>I specified these two implementations in an <a href="http://www.aadl.info">AADL</a> model, generated the code (with Ocarina) and gather some metrics (with the <a href="https://en.wikipedia.org/wiki/Perf_%28Linux%29">Linux perf framework</a>). I got the number of context switches for each implementation: using shared variables uses more context switches. As there are the same number of tasks in both implementations, I was thinking I would get a similar value. But not at all.</p>
-<p><a href="https://juli1pb.files.wordpress.com/2015/07/producer-consumer-cswitches.png"><img class="wp-image-1658 size-medium" src="/assets/producer-consumer-cswitches.png?w=300" alt="Producer Consumer: difference of context switches" width="300" height="225" /></a> (x = number of shared variable/data flow ; y = number of context switches)</p>
-<p>&nbsp;</p>
-<p>This value is confirmed with the number of instructions for each implementations as well: the shared variable takes then way more instructions than the implementation with data flow.</p>
-<p><a href="https://juli1pb.files.wordpress.com/2015/07/producer-consumer-instructions.png"><img class="size-medium wp-image-1659" src="/assets/producer-consumer-instructions.png?w=300" alt="Variation of Processor Cycles" width="300" height="225" /></a> (x = number of shared variables/data flow in the indices ; y = number of instructions)</p>
-<p>&nbsp;</p>
-<p>Still very surprised by this result. I also want to make a comparison on the memory performances. But now, looking at this preliminary results, it sounds very weird and build an argument to avoid bad design (such as using global variable vs. encapsulated data with clear and clean interfaces). I will probably provide more details but these first results are motivating to investigate further with different code patterns and variations.</p>
+  <p>Today, I sold <a href="https://www.codiga.io">Codiga</a> to <a href="https://www.datadoghq.com">Datadog</a>.</p>
+
+<p>This story started in 2018 when I realized that if I did not attempt to build a company on my own, I would regret it until I died.
+I started slowly and eventually left everything to dedicate all my attention to this project.
+From 2021 to 2023, I spent two years focusing solely on building this company. I enjoyed the thrills of flying high and going through many rough turbulences.</p>
+
+<p>It’s not been easy.</p>
+
+<p>I made a ton of mistakes and I lost a lot along the way.</p>
+
+<p>But I have no regret about what I accomplished. I lived this story on my own terms. And this is what matters.</p>
+
+<p>I did not start this company to become rich or have more influence. I did it to have the freedom to make something meaningful. I also did it to show that startups can be created outside of Silicon Valley. And that you do not need to have a team of engineers from MIT, Berkeley, Stanford or a FAANG company.</p>
+
+<p>I am proud of what I did and what we accomplished as a team.</p>
+
+<p>To everyone that took part in this ride: thank you. Whoever you are - current or past team members, investors, and users: thank you for everything you did.</p>
+
+<p>To everyone that did not believe in me, ignored me or dumped me: thank you. You made me question myself, and I became a better person.</p>
+
+<p>It’s now time for me to move to NYC.</p>
+
+<p>I still have much to learn and I can’t wait to open this new chapter.</p>
+
+<p>Thank you,</p>
+
+<iframe width="840" height="473" style="display:block; margin: 0 auto;" src="https://www.youtube.com/embed/1Vmq8kCAYng?start=3257" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen=""></iframe>
 
   </article>
 
