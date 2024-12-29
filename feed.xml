@@ -5,9 +5,44 @@
     <description>Passe moi le shell</description>
     <link>http://julien.gunnm.org/</link>
     <atom:link href="http://julien.gunnm.org/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Sun, 02 Jun 2024 23:54:06 +0000</pubDate>
-    <lastBuildDate>Sun, 02 Jun 2024 23:54:06 +0000</lastBuildDate>
-    <generator>Jekyll v4.3.3</generator>
+    <pubDate>Sun, 29 Dec 2024 14:18:53 +0000</pubDate>
+    <lastBuildDate>Sun, 29 Dec 2024 14:18:53 +0000</lastBuildDate>
+    <generator>Jekyll v4.3.4</generator>
+    
+      <item>
+        <title>2024</title>
+        <description>&lt;p&gt;2024 was a weird year.&lt;/p&gt;
+
+&lt;p&gt;On the positive side, I enjoyed the work I am doing post-acquisition.
+I feel lucky to be where my career is heading, and I am extremely excited 
+by what is coming in the next months.&lt;/p&gt;
+
+&lt;p&gt;I have also been able to expand my real-estate footprint in Pennsylvania and buy a home. Being in Pittsburgh gives me space and brings me peace. This city gave me a lot: friends, safety and love.&lt;/p&gt;
+
+&lt;p&gt;While I was afraid that coming to the city will bring nostalgia, I project myself in the future and think about new exciting projects.&lt;/p&gt;
+
+&lt;p&gt;On the negative side, I hate how weak I became in some aspects.&lt;/p&gt;
+
+&lt;p&gt;I became less technical than before - I am no longer always looking at the code of the systems I am working on work. It’s crucial: staying technical makes you have an opinion on facts (e.g. you know exactly how things work)
+rather than subjective opinions (e.g. what people tell you).&lt;/p&gt;
+
+&lt;p&gt;More importantly, I hate how I started to be weak, lazy and fat. I started to accept decisions I disagree with. I slowly join the train of the “fat and happy: people”, and eat to cope with sadness. This is just not who I am and
+this needs to stop.&lt;/p&gt;
+
+&lt;p&gt;In 2025, I want to continue the work I started post-acquisition and grow the products I am working on. On the personal side, I also want to love myself again. I expect to come back to my technical roots and work to appreciate and love the guy I see in the mirror every morning.&lt;/p&gt;
+</description>
+        <pubDate>Sat, 28 Dec 2024 06:10:20 +0000</pubDate>
+        <link>http://julien.gunnm.org/blog/perso/2024/12/28/wrap-2024/</link>
+        <guid isPermaLink="true">http://julien.gunnm.org/blog/perso/2024/12/28/wrap-2024/</guid>
+        
+        <category>2024</category>
+        
+        
+        <category>blog</category>
+        
+        <category>perso</category>
+        
+      </item>
     
       <item>
         <title>Learning Rust in 2024</title>
@@ -531,109 +566,6 @@ But at this stage, you may already have enough traction and revenue not even to 
         <category>founder</category>
         
         <category>toolbox</category>
-        
-      </item>
-    
-      <item>
-        <title>One year as a startup founder</title>
-        <description>&lt;div style=&quot;position:relative;padding-bottom:56.25%;height:0;overflow:hidden;&quot;&gt; &lt;iframe style=&quot;width:100%;height:100%;position:absolute;left:0px;top:0px;overflow:hidden&quot; frameborder=&quot;0&quot; type=&quot;text/html&quot; src=&quot;https://www.dailymotion.com/embed/video/xtftd?autoplay=1&quot; width=&quot;100%&quot; height=&quot;100%&quot; allowfullscreen=&quot;&quot;&gt; &lt;/iframe&gt; &lt;/div&gt;
-
-&lt;p&gt;It’s been a year since I left Twitter to start my own company. Within a year, I have been
-through the startup rollercoaster: joining an accelerator, discussing with corporate
-development about aquisition offers, and of course, fundraising.&lt;/p&gt;
-
-&lt;p&gt;During Techstars, a repeated startup founder/CEO told me this truth:
-&lt;em&gt;“A startup CEO has three jobs: explain the vision, hire and fire, don’t run out of money”&lt;/em&gt;.
-One year after, I firmly believe this is true.&lt;/p&gt;
-
-&lt;p&gt;Reflecting on this year, there are a few takeaways.&lt;/p&gt;
-
-&lt;h2 id=&quot;think-first-principles&quot;&gt;Think first principles&lt;/h2&gt;
-
-&lt;p&gt;When starting a company and going through an accelerator, you get exposed to hundreds
-of opinions from the accelerator itself, other founders, employees, advisors, mentors, and investors. It’s your responsibility to evaluate them and make sound decisions for your business.
-It’s easy to get lost in the myriad of opinions others have about your company and product, especially
-so early.&lt;/p&gt;
-
-&lt;p&gt;You need to walk through this jungle of advice, weed 90+% and keep the best. To do that:&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Think &lt;a href=&quot;https://en.wikipedia.org/wiki/First_principle&quot;&gt;first principles&lt;/a&gt; and come back to your core ideas.&lt;/li&gt;
-  &lt;li&gt;Base your strategy on metrics and not what some random person told you to do.&lt;/li&gt;
-  &lt;li&gt;Take decisions that follow the culture you want to instill in your company.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;What I just explained seems essential, and still, I see many founders getting distracted
-and lost by bad advice. One book that helps think with first principles
-is &lt;a href=&quot;https://amzn.to/3KAsiig&quot;&gt;Principles&lt;/a&gt; from Ray Dahlio. I read this book in 2021, and it helped me get back on track when lost under hundreds of opinions.&lt;/p&gt;
-
-&lt;h2 id=&quot;no-hire-is-better-than-a-bad-hire&quot;&gt;No hire is better than a bad hire&lt;/h2&gt;
-
-&lt;p&gt;Hiring is hard. This is one of the most challenging problems in the startup world,
-especially at the very early stages. One bad hire can ruin your culture, team, and runway.
-One good hire can work hard and do their best to deliver a delightful product your customers will love.&lt;/p&gt;
-
-&lt;p&gt;You need to have the conviction that the people you hire are among the best
-to work on the problem you are solving. If you do not have this conviction, you waste your time and money.&lt;/p&gt;
-
-&lt;p&gt;When choosing an employee or co-founder, you need to admire this person for what they
-can deliver in their domain. Like a relationship, you do not need to agree on
-everything, but you need to (1) admire and recognize them as an expert in their domain and in the value they deliver and
-(2) ensure that they fit with the company culture.&lt;/p&gt;
-
-&lt;p&gt;As the french saying goes: &lt;em&gt;“Mieux vaut être seul que mal accompagné”&lt;/em&gt;.&lt;/p&gt;
-
-&lt;h2 id=&quot;dont-get-distracted-and-learn-to-say-no&quot;&gt;Don’t get distracted and learn to say no&lt;/h2&gt;
-
-&lt;p&gt;Don’t get distracted. You often get distracted by an opinion from an investor,
-a specific ask from one company, or just by the flow of meetings people want to have with you.
-It’s a trap.&lt;/p&gt;
-
-&lt;p&gt;If an idea comes, evaluate the value it can bring to your business. It’s easy to go down a rabbit hole to implement a new feature, product, or hire a specific person. But if this proposition does not bring value to your business: say no and move on.&lt;/p&gt;
-
-&lt;p&gt;Football players do not get distracted on the field. Be the same: you are here for the home run.&lt;/p&gt;
-
-&lt;h2 id=&quot;focus-on-pmf-build-something-people-love&quot;&gt;Focus on PMF, build something people love&lt;/h2&gt;
-
-&lt;p&gt;One main takeaway from Techstars has been focusing on Product-Market Fit (PMF).
-Put it in simple terms; it just means people want what you are building.&lt;/p&gt;
-
-&lt;p&gt;Make a product people love, delight customers with valuable, carefully crafted features.
-Your primary focus at the seed stage must be to get to PMF. If you get to PMF, sales will (normally) follow.&lt;/p&gt;
-
-&lt;p&gt;Some companies do not have PMF. Some raise giant financing rounds without having PMF.
-All of this is great, but one day, the reality of the market comes back,
-and the company has a hard time closing any sale. To avoid that trap, don’t get distracted
-and focus on PMF.&lt;/p&gt;
-
-&lt;h2 id=&quot;references&quot;&gt;References&lt;/h2&gt;
-
-&lt;p&gt;There are some books that help me navigate this first year as a founder.&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://amzn.to/3KAsiig&quot;&gt;Principles by Ray Dhalio&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://amzn.to/40Grq0V&quot;&gt;Never split the difference - Chris Voss&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://amzn.to/3mc9RqM&quot;&gt;High Output Management&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        <pubDate>Sun, 16 Jan 2022 05:13:20 +0000</pubDate>
-        <link>http://julien.gunnm.org/startup/founder/codiga/techstars/2022/01/16/one-year-as-a-founder/</link>
-        <guid isPermaLink="true">http://julien.gunnm.org/startup/founder/codiga/techstars/2022/01/16/one-year-as-a-founder/</guid>
-        
-        <category>startup</category>
-        
-        <category>founder</category>
-        
-        <category>techstars</category>
-        
-        
-        <category>startup</category>
-        
-        <category>founder</category>
-        
-        <category>codiga</category>
-        
-        <category>techstars</category>
         
       </item>
     
